@@ -1,0 +1,133 @@
+name: Azure Updates Digest
+
+on:
+  schedule:
+    # 23:00 UTC Sunday == 08:00 KST Monday
+    - cron: "0 23 * * 0"
+  workflow_dispatch:
+    inputs:
+      days:
+        description: "Lookback window in days"
+        required: false
+        default: "7"
+      include_seen:
+        description: "Include updates already published in an earlier digest"
+        type: boolean
+        required: false
+        default: false
+      send_email:
+        description: "Send the email newsletter"
+        type: boolean
+        required: false
+        default: true
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: azure-updates-digest
+  cancel-in-progress: false
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    outputs:
+      has_updates: ${{ steps.digest.outputs.has_updates }}
+      subject: ${{ steps.digest.outputs.subject }}
+      count: ${{ steps.digest.outputs.count }}
+      digest_date: ${{ steps.digest.outputs.digest_date }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Fetch Azure updates
+        id: fetch
+        run: |
+          python scripts/fetch_updates.py \
+            --days "${{ inputs.days || '7' }}" \
+            ${{ inputs.include_seen == true && '--include-seen' || '' }}
+
+      - name: Build digest and email
+        id: digest
+        run: python scripts/build_digest.py --skip-empty
+
+      - name: Build Pages site
+        run: python scripts/build_site.py
+
+      - name: Commit digest and data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data digests
+          if git diff --staged --quiet; then
+            echo "Nothing to commit."
+          else
+            git commit -m "chore: Azure updates digest ${{ steps.digest.outputs.digest_date }} (${{ steps.digest.outputs.count }} updates)"
+            git push
+          fi
+
+      - name: Upload email artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: email-${{ steps.digest.outputs.digest_date }}
+          path: build/
+          retention-days: 30
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy-pages:
+    needs: digest
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
+
+  email:
+    needs: digest
+    runs-on: ubuntu-latest
+    if: needs.digest.outputs.has_updates == 'true' && inputs.send_email != false
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: email-${{ needs.digest.outputs.digest_date }}
+          path: build
+
+      - name: Verify SMTP configuration
+        id: smtp
+        env:
+          SMTP_SERVER: ${{ secrets.SMTP_SERVER }}
+          DIGEST_RECIPIENTS: ${{ secrets.DIGEST_RECIPIENTS }}
+        run: |
+          if [ -z "$SMTP_SERVER" ] || [ -z "$DIGEST_RECIPIENTS" ]; then
+            echo "SMTP_SERVER or DIGEST_RECIPIENTS secret is not set; skipping email."
+            echo "configured=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "configured=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Send digest email
+        if: steps.smtp.outputs.configured == 'true'
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: ${{ secrets.SMTP_SERVER }}
+          server_port: ${{ secrets.SMTP_PORT || 587 }}
+          secure: false
+          username: ${{ secrets.SMTP_USERNAME }}
+          password: ${{ secrets.SMTP_PASSWORD }}
+          subject: ${{ needs.digest.outputs.subject }}
+          to: ${{ secrets.DIGEST_RECIPIENTS }}
+          from: Azure Updates Digest <${{ secrets.SMTP_FROM || secrets.SMTP_USERNAME }}>
+          html_body: file://build/email.html
+          body: file://build/email.txt
+          convert_markdown: false
