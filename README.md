@@ -79,6 +79,11 @@ The landing page is an interactive explorer:
 * **Slide deck mode** - switch the view to show **one update per screen** in large type, with
   Previous / Next buttons, a slide counter, a progress bar, fullscreen and keyboard navigation
   (arrow keys, Space, Home / End, Esc). The deck always follows the current filters.
+* **Downloadable deck** - `Save as PDF` prints the deck one update per A4 landscape page (with a
+  cover slide listing the scope and per-category counts), and `Download deck` saves a
+  self-contained `azure-updates-deck-YYYY-MM-DD.html` file that works offline with its own
+  Previous / Next navigation, keyboard shortcuts and print button. Both exports contain exactly
+  the updates matching the filters that are active at the time.
 * **Default view** - the page loads pre-filtered to **generally available updates from the last
   30 days**. `Reset filters` returns to this default.
 * **Filter by date** - `Last 7 / 30 / 90 days`, `All time`, or a custom from/to date range.

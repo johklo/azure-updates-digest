@@ -162,6 +162,8 @@ def render_deck() -> str:
         '<button class="btn" id="next">Next &rarr;</button>'
         '<span class="spacer"></span>'
         '<span class="hint">Arrow keys, Space, Home / End &middot; Esc returns to the list</span>'
+        '<button class="btn" id="pdf">&#128438; Save as PDF</button>'
+        '<button class="btn" id="dl">&#11015; Download deck</button>'
         '<button class="btn" id="fs">Fullscreen</button>'
         "</div>"
         '<div class="progress"><span id="progressbar"></span></div>'

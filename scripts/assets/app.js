@@ -212,9 +212,171 @@
     return slide.scrollHeight > slide.clientHeight + 2;
   }
 
+  function slideData(el) {
+    var link = el.querySelector("a.title");
+    var pill = el.querySelector(".meta .pill");
+    var meta = (el.querySelector(".meta") || { textContent: "" }).textContent.trim();
+    var doc = el.querySelector(".doclink a");
+    return {
+      category: el.getAttribute("data-category") || "",
+      stage: pill ? pill.textContent.trim() : "",
+      stageClass: pill ? pill.className.replace("pill", "").trim() : "muted",
+      date: el.getAttribute("data-date") || "",
+      products: meta.split("\u00b7").slice(1).join("\u00b7").trim(),
+      title: link ? link.textContent.trim() : "",
+      url: link ? link.getAttribute("href") : "",
+      summary: textOf(el, ".summary-line"),
+      points: Array.prototype.map.call(el.querySelectorAll("ul.points li"), function (li) {
+        return li.textContent.trim();
+      }),
+      docUrl: doc ? doc.getAttribute("href") : "",
+      docTitle: doc ? doc.textContent.trim() : ""
+    };
+  }
+
+  var EXPORT_CSS =
+    "*{box-sizing:border-box}" +
+    "body{margin:0;background:#eef1f4;color:#1b1f23;font:16px/1.55 'Segoe UI',Helvetica,Arial,sans-serif}" +
+    ".cover,.slide-page{background:#fff;width:100%;max-width:1280px;margin:0 auto 18px;padding:56px 64px;" +
+    "min-height:calc(100vh - 96px);display:flex;flex-direction:column;box-shadow:0 1px 4px rgba(0,0,0,.12)}" +
+    ".cover h1{font-size:38px;margin:0 0 12px;color:#004578}" +
+    ".cover p{font-size:16px;color:#57606a;margin:4px 0}" +
+    ".cover .meta{margin-top:auto;font-size:13px;color:#57606a}" +
+    ".cover ul{columns:2;font-size:14px;color:#333a42;margin:22px 0}" +
+    ".eyebrow{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:14px;font-size:13px;color:#57606a}" +
+    ".eyebrow .cat{font-weight:700;color:#0078d4;text-transform:uppercase;letter-spacing:.06em;font-size:12px}" +
+    ".pill{display:inline-block;border-radius:10px;padding:2px 10px;font-size:11px;font-weight:600;background:#eef0f2;color:#57606a}" +
+    ".pill.ga{background:#e8f5ec;color:#0f7b34}.pill.pv{background:#fdf3e0;color:#8a5a00}" +
+    ".pill.pp{background:#f2ecfa;color:#6b3fa0}.pill.rt{background:#fdeaec;color:#b02a37}" +
+    ".pill.dv{background:#e9f1f8;color:#2b5f8a}" +
+    ".body{flex:1;display:flex;flex-direction:column;justify-content:center}" +
+    "h2{font-size:31px;line-height:1.24;margin:0 0 18px;font-weight:700;letter-spacing:-.01em}" +
+    "h2 a{color:#1b1f23;text-decoration:none}" +
+    ".lead{font-size:19px;line-height:1.55;color:#2b3138;margin:0 0 18px;padding-left:14px;border-left:4px solid #0078d4}" +
+    "ul.points{margin:0;padding:0;list-style:none}" +
+    "ul.points li{position:relative;padding-left:26px;margin:0 0 12px;font-size:16px;line-height:1.5;color:#333a42}" +
+    "ul.points li::before{content:'';position:absolute;left:6px;top:.55em;width:8px;height:8px;border-radius:50%;background:#0078d4}" +
+    ".foot{margin-top:20px;padding-top:14px;border-top:1px solid #e1e4e8;display:flex;gap:20px;flex-wrap:wrap;font-size:12.5px}" +
+    ".foot a{color:#0078d4;text-decoration:none;font-weight:600}" +
+    ".num{position:absolute;top:18px;right:26px;font-size:12px;color:#8b949e}" +
+    ".slide-page{position:relative}" +
+    ".navbar{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid #e1e4e8;" +
+    "padding:10px 18px;display:flex;gap:12px;align-items:center;justify-content:center;z-index:9}" +
+    ".navbar button{cursor:pointer;background:#fff;border:1px solid #e1e4e8;border-radius:6px;padding:7px 16px;" +
+    "font:14px 'Segoe UI',Helvetica,Arial,sans-serif;color:#0078d4;font-weight:600}" +
+    ".navbar button:disabled{opacity:.4;cursor:not-allowed}" +
+    ".navbar .c{font-weight:600;min-width:90px;text-align:center}" +
+    "@media screen{body{padding-bottom:70px}.paged .cover,.paged .slide-page{display:none}" +
+    ".paged .cover.on,.paged .slide-page.on{display:flex}}" +
+    "@media print{@page{size:A4 landscape;margin:11mm}body{background:#fff;padding:0}" +
+    ".navbar{display:none}.cover,.slide-page{display:flex !important;max-width:none;margin:0;padding:9mm 11mm;" +
+    "min-height:0;height:auto;box-shadow:none;page-break-after:always;break-after:page;" +
+    "page-break-inside:avoid;break-inside:avoid}" +
+    ".slide-page:last-child{page-break-after:auto;break-after:auto}" +
+    "h2{font-size:21pt;margin-bottom:4mm}.lead{font-size:12pt;margin-bottom:4mm;padding-left:3mm}" +
+    "ul.points li{font-size:10.5pt;margin-bottom:2.6mm;padding-left:6mm}" +
+    "ul.points li::before{width:2mm;height:2mm;left:1.4mm}" +
+    ".eyebrow{margin-bottom:3mm;font-size:9pt}.foot{margin-top:4mm;padding-top:2.5mm;font-size:8.5pt}" +
+    ".num{top:5mm;right:8mm;font-size:8pt}" +
+    ".cover h1{font-size:26pt}.cover p{font-size:11pt}.cover ul{font-size:10pt;margin:6mm 0}}";
+
+  var EXPORT_JS =
+    "(function(){var s=[].slice.call(document.querySelectorAll('.cover,.slide-page'));var i=0;" +
+    "var c=document.getElementById('c'),p=document.getElementById('p'),n=document.getElementById('n');" +
+    "document.body.className='paged';" +
+    "function r(){s.forEach(function(e,k){e.classList.toggle('on',k===i)});" +
+    "c.textContent=i+' / '+(s.length-1);p.disabled=i===0;n.disabled=i===s.length-1;window.scrollTo(0,0)}" +
+    "p.onclick=function(){if(i>0){i--;r()}};n.onclick=function(){if(i<s.length-1){i++;r()}};" +
+    "document.addEventListener('keydown',function(e){" +
+    "if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' '){e.preventDefault();n.onclick()}" +
+    "else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();p.onclick()}" +
+    "else if(e.key==='Home'){i=0;r()}else if(e.key==='End'){i=s.length-1;r()}});r()})();";
+
   function esc(value) {
     return String(value == null ? "" : value)
       .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  }
+
+  function buildDeckDocument() {
+    var data = deckItems.map(slideData);
+    var today = new Date().toISOString().slice(0, 10);
+    var scope = [];
+    var activeStages = activeSet(stages);
+    var activeCats = activeSet(cats);
+    if (activeStages) scope.push("Release stage: " + activeStages.map(stageName).join(", "));
+    if (activeCats) scope.push("Categories: " + activeCats.join(", "));
+    if (fromInput.value || toInput.value) scope.push("Dates: " + (fromInput.value || "start") + " to " + (toInput.value || today));
+    if (search.value.trim()) scope.push('Search: "' + search.value.trim() + '"');
+    if (!scope.length) scope.push("All tracked updates");
+
+    var counts = {};
+    data.forEach(function (d) { counts[d.category] = (counts[d.category] || 0) + 1; });
+
+    var html = "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"utf-8\">" +
+      '<meta name="viewport" content="width=device-width,initial-scale=1">' +
+      "<title>Azure product updates - " + esc(today) + "</title><style>" + EXPORT_CSS + "</style></head><body>";
+
+    html += '<section class="cover"><h1>Azure Product Updates</h1>' +
+      "<p>" + data.length + " update(s) &middot; generated " + esc(today) + "</p>" +
+      "<p>" + esc(scope.join(" \u00b7 ")) + "</p><ul>";
+    Object.keys(counts).forEach(function (k) { html += "<li>" + esc(k) + " &mdash; " + counts[k] + "</li>"; });
+    html += '</ul><div class="meta">Source: Microsoft Azure Updates &middot; summaries generated from each announcement and its linked documentation.</div></section>';
+
+    data.forEach(function (d, index) {
+      html += '<section class="slide-page"><span class="num">' + (index + 1) + " / " + data.length + "</span>";
+      html += '<div class="body"><div class="eyebrow"><span class="cat">' + esc(d.category) + "</span>";
+      if (d.stage) html += '<span class="pill ' + esc(d.stageClass) + '">' + esc(d.stage) + "</span>";
+      html += "<span>" + esc(d.date) + "</span>";
+      if (d.products) html += "<span>" + esc(d.products) + "</span>";
+      html += "</div>";
+      html += '<h2><a href="' + esc(d.url) + '">' + esc(d.title) + "</a></h2>";
+      if (d.summary) html += '<p class="lead">' + esc(d.summary) + "</p>";
+      if (d.points.length) {
+        html += '<ul class="points">';
+        d.points.forEach(function (p) { html += "<li>" + esc(p) + "</li>"; });
+        html += "</ul>";
+      }
+      html += "</div>";
+      html += '<div class="foot"><a href="' + esc(d.url) + '">Azure Updates announcement</a>';
+      if (d.docUrl) html += '<a href="' + esc(d.docUrl) + '">' + esc(d.docTitle || "Microsoft documentation") + "</a>";
+      html += "</div></section>";
+    });
+
+    html += '<div class="navbar"><button id="p">&larr; Previous</button>' +
+      '<span class="c" id="c"></span><button id="n">Next &rarr;</button>' +
+      '<button onclick="window.print()">Save as PDF</button></div>';
+    html += "<script>" + EXPORT_JS + "<\/script></body></html>";
+    return html;
+  }
+
+  function stageName(key) {
+    var chip = document.querySelector('.chip[data-stage="' + key + '"]');
+    if (!chip) return key;
+    return chip.textContent.replace(/\d+$/, "").trim();
+  }
+
+  function downloadDeck() {
+    if (!deckItems.length) return;
+    var blob = new Blob([buildDeckDocument()], { type: "text/html;charset=utf-8" });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement("a");
+    a.href = url;
+    a.download = "azure-updates-deck-" + new Date().toISOString().slice(0, 10) + ".html";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    setTimeout(function () { URL.revokeObjectURL(url); }, 4000);
+  }
+
+  function printDeck() {
+    if (!deckItems.length) return;
+    var win = window.open("", "_blank");
+    if (!win) { downloadDeck(); return; }
+    win.document.open();
+    win.document.write(buildDeckDocument());
+    win.document.close();
+    win.focus();
+    setTimeout(function () { win.print(); }, 600);
   }
 
   function move(step) {
@@ -314,6 +476,11 @@
       }
     });
   }
+
+  var dlBtn = document.getElementById("dl");
+  if (dlBtn) dlBtn.addEventListener("click", downloadDeck);
+  var pdfBtn = document.getElementById("pdf");
+  if (pdfBtn) pdfBtn.addEventListener("click", printDeck);
 
   document.addEventListener("keydown", function (event) {
     if (view !== "slides") return;
