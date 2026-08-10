@@ -76,6 +76,8 @@ The landing page is an interactive explorer:
 
 * **Summary table by category at the top** - total, GA, public preview, private preview,
   retirement, latest date and top products per category. Counts recompute live as filters change.
+* **Default view** - the page loads pre-filtered to **generally available updates from the last
+  30 days**. `Reset filters` returns to this default.
 * **Filter by date** - `Last 7 / 30 / 90 days`, `All time`, or a custom from/to date range.
 * **Filter by release stage** - Generally available, Public preview, Private preview, Retirement,
   In development.
@@ -185,6 +187,7 @@ Useful flags:
 | `--no-fetch` | enrich | Summarize without opening documentation links |
 | `--date YYYY-MM-DD` | digest | Override the digest date |
 | `--default-days N` | site | Date filter preset selected on page load (0 = all time) |
+| `--default-stage S` | site | Release stage pre-selected on load, default `ga` (`none` = every stage) |
 
 ## Backfill example
 
