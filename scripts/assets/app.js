@@ -14,6 +14,7 @@
   var stages = {};
   var cats = {};
   var defaultDays = root.getAttribute("data-default-days") || "30";
+  var defaultStage = root.getAttribute("data-default-stage") || "";
 
   function chips(sel) { return Array.prototype.slice.call(document.querySelectorAll(sel)); }
 
@@ -144,21 +145,29 @@
     });
   });
 
+  function applyDefaults() {
+    Object.keys(stages).forEach(function (k) { stages[k] = false; });
+    Object.keys(cats).forEach(function (k) { cats[k] = false; });
+    chips(".chip[data-stage],.chip[data-cat]").forEach(function (c) { c.setAttribute("aria-pressed", "false"); });
+    search.value = ""; fromInput.value = ""; toInput.value = "";
+    if (defaultStage) {
+      stages[defaultStage] = true;
+      var chip = document.querySelector('.chip[data-stage="' + defaultStage + '"]');
+      if (chip) chip.setAttribute("aria-pressed", "true");
+    }
+    var preset = document.querySelector('[data-days="' + defaultDays + '"]');
+    if (preset) preset.click(); else apply();
+  }
+
   document.addEventListener("click", function (event) {
     var action = event.target.getAttribute("data-toggle");
     if (!action) return;
     if (action === "reset") {
-      Object.keys(stages).forEach(function (k) { stages[k] = false; });
-      Object.keys(cats).forEach(function (k) { cats[k] = false; });
-      chips(".chip[data-stage],.chip[data-cat]").forEach(function (c) { c.setAttribute("aria-pressed", "false"); });
-      search.value = ""; fromInput.value = ""; toInput.value = "";
-      var back = document.querySelector('[data-days="' + defaultDays + '"]');
-      if (back) back.click(); else apply();
+      applyDefaults();
       return;
     }
     groups.forEach(function (node) { node.open = action === "open"; });
   });
 
-  var preset = document.querySelector('[data-days="' + defaultDays + '"]');
-  if (preset) preset.click(); else apply();
+  applyDefaults();
 })();

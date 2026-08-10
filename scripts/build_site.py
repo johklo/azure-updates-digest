@@ -110,9 +110,10 @@ def render_item(item: dict, enrichment: dict) -> str:
     return "".join(parts)
 
 
-def render_filters(groups: dict, stage_counts: Counter, default_days: int) -> str:
+def render_filters(groups: dict, stage_counts: Counter, default_days: int, default_stage: str) -> str:
     stage_chips = "".join(
-        f'<button class="chip s-{esc(stage)}" data-stage="{esc(stage)}" aria-pressed="false">'
+        f'<button class="chip s-{esc(stage)}" data-stage="{esc(stage)}" '
+        f'aria-pressed="{"true" if stage == default_stage else "false"}">'
         f'{esc(STAGE_LABELS[stage])}<span class="n">{stage_counts[stage]}</span></button>'
         for stage in STAGE_ORDER
         if stage_counts.get(stage)
@@ -211,7 +212,7 @@ def digest_meta(path):
     return {"date": path.stem, "count": int(match.group(1)) if match else 0}
 
 
-def build(cfg: dict, default_days: int) -> None:
+def build(cfg: dict, default_days: int, default_stage: str) -> None:
     items = sort_items(read_json(ARCHIVE_PATH, {"items": []}).get("items", []))
     enrichment = load_enrichment()
 
@@ -251,8 +252,8 @@ def build(cfg: dict, default_days: int) -> None:
     if items:
         body = (
             stats
-            + render_filters(groups, stage_counts, default_days)
-            + f'<div id="explorer" data-default-days="{default_days}">'
+            + render_filters(groups, stage_counts, default_days, default_stage)
+            + f'<div id="explorer" data-default-days="{default_days}" data-default-stage="{esc(default_stage)}">'
             + render_summary_table(groups)
             + '<div class="toolbar"><h2>Updates by category</h2>'
             '<button class="btn" data-toggle="open">Expand all</button>'
@@ -338,8 +339,15 @@ def build(cfg: dict, default_days: int) -> None:
 def main() -> int:
     parser = argparse.ArgumentParser(description="Build the static GitHub Pages site.")
     parser.add_argument("--default-days", type=int, default=30, help="Date filter preset selected on load (0 = all).")
+    parser.add_argument(
+        "--default-stage",
+        default="ga",
+        choices=["ga", "public-preview", "private-preview", "retirement", "in-development", "none"],
+        help="Release stage pre-selected on load ('none' selects every stage).",
+    )
     args = parser.parse_args()
-    build(load_config(), args.default_days)
+    stage = "" if args.default_stage == "none" else args.default_stage
+    build(load_config(), args.default_days, stage)
     return 0
 
 
