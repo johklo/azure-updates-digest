@@ -42,18 +42,26 @@
     var to = toInput.value || "";
     var visible = 0;
     var perCat = {};
+    var stageFacet = {};
+    var catFacet = {};
 
     items.forEach(function (el) {
       var stage = el.getAttribute("data-stage");
       var cat = el.getAttribute("data-category");
       var date = el.getAttribute("data-date") || "";
       var hay = el.getAttribute("data-search") || "";
-      var ok = true;
-      if (stageOn && stageOn.indexOf(stage) === -1) ok = false;
-      if (ok && catOn && catOn.indexOf(cat) === -1) ok = false;
-      if (ok && from && date && date < from) ok = false;
-      if (ok && to && date && date > to) ok = false;
-      if (ok && q && hay.indexOf(q) === -1) ok = false;
+
+      var okDate = !((from && date && date < from) || (to && date && date > to));
+      var okSearch = !q || hay.indexOf(q) !== -1;
+      var okStage = !stageOn || stageOn.indexOf(stage) !== -1;
+      var okCat = !catOn || catOn.indexOf(cat) !== -1;
+
+      // Facet counts ignore the facet's own selection, so each chip shows how
+      // many updates it would add under the other active filters.
+      if (okDate && okSearch && okCat) stageFacet[stage] = (stageFacet[stage] || 0) + 1;
+      if (okDate && okSearch && okStage) catFacet[cat] = (catFacet[cat] || 0) + 1;
+
+      var ok = okDate && okSearch && okStage && okCat;
       el.classList.toggle("hidden", !ok);
       if (!ok) return;
       visible++;
@@ -111,8 +119,20 @@
 
     result.innerHTML = "Showing <b>" + visible + "</b> of " + items.length + " updates";
     empty.classList.toggle("hidden", visible > 0);
+    updateFacet(".chip[data-stage]", "data-stage", stageFacet, stages);
+    updateFacet(".chip[data-cat]", "data-cat", catFacet, cats);
     refreshDeck();
     layoutGrid();
+  }
+
+  function updateFacet(selector, attribute, counts, selection) {
+    chips(selector).forEach(function (chip) {
+      var key = chip.getAttribute(attribute);
+      var n = counts[key] || 0;
+      var badge = chip.querySelector(".n");
+      if (badge) badge.textContent = n;
+      chip.classList.toggle("zero", n === 0 && !selection[key]);
+    });
   }
 
   function refreshDeck() {

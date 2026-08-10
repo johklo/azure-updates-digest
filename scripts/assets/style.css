@@ -30,6 +30,8 @@ padding:4px 12px;font:13px "Segoe UI",Helvetica,Arial,sans-serif;color:#31363b}
 .chip:hover{border-color:var(--brand);color:var(--brand)}
 .chip[aria-pressed="true"]{background:var(--brand);border-color:var(--brand);color:#fff;font-weight:600}
 .chip .n{opacity:.7;font-size:11px;margin-left:5px}
+.chip.zero{opacity:.38}
+.chip.zero:hover{border-color:var(--line);color:#31363b}
 .chip.s-ga[aria-pressed="true"]{background:var(--ga);border-color:var(--ga)}
 .chip.s-public-preview[aria-pressed="true"]{background:var(--pv);border-color:var(--pv)}
 .chip.s-private-preview[aria-pressed="true"]{background:var(--pp);border-color:var(--pp)}
