@@ -189,3 +189,67 @@ def set_action_output(name: str, value: str) -> None:
 
 def utcnow() -> datetime:
     return datetime.now(timezone.utc)
+
+
+ENRICHMENT_PATH = DATA_DIR / "enrichment.json"
+
+
+def load_enrichment() -> dict:
+    data = read_json(ENRICHMENT_PATH, {})
+    return data if isinstance(data, dict) else {}
+
+
+def enrichment_for(item: dict, enrichment: dict) -> dict:
+    entry = enrichment.get(str(item.get("id"))) or {}
+    return {
+        "summary": entry.get("summary") or "",
+        "key_points": [p for p in (entry.get("key_points") or []) if p],
+        "doc_url": entry.get("doc_url") or "",
+        "doc_title": entry.get("doc_title") or "",
+        "doc_read": bool(entry.get("doc_read")),
+        "source": entry.get("source") or "",
+    }
+
+
+def is_ga(item: dict) -> bool:
+    return release_stage(item) == "ga"
+
+
+def is_preview(item: dict) -> bool:
+    return release_stage(item) in ("public-preview", "private-preview")
+
+
+STAGE_LABELS = {
+    "ga": "Generally available",
+    "public-preview": "Public preview",
+    "private-preview": "Private preview",
+    "retirement": "Retirement",
+    "in-development": "In development",
+    "other": "Other",
+}
+
+STAGE_ORDER = ["ga", "public-preview", "private-preview", "in-development", "retirement", "other"]
+
+
+def release_stage(item: dict) -> str:
+    """Classify an update as GA, public/private preview, retirement or in development."""
+    rings = {str(a.get("ring", "")).lower() for a in (item.get("availabilities") or [])}
+    tags = {str(t).lower() for t in (item.get("tags") or [])}
+    status = str(item.get("status") or "").lower()
+    title = str(item.get("title") or "").lower()
+
+    if "retirement" in rings or "retirements" in tags or "retirement" in title:
+        return "retirement"
+    if item.get("privatePreviewAvailabilityDate") or "private preview" in rings or "private preview" in title:
+        return "private-preview"
+    if item.get("generalAvailabilityDate") or "general availability" in rings or status == "launched":
+        return "ga"
+    if item.get("previewAvailabilityDate") or "preview" in rings or status == "in preview" or "preview" in title:
+        return "public-preview"
+    if status == "in development":
+        return "in-development"
+    return "other"
+
+
+def stage_label(item: dict) -> str:
+    return STAGE_LABELS.get(release_stage(item), "Other")

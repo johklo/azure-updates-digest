@@ -8,15 +8,23 @@ import json
 import re
 import sys
 from collections import Counter
+from datetime import timedelta
+from pathlib import Path
 
 from common import (
     ARCHIVE_PATH,
     DIGEST_DIR,
     SITE_DIR,
+    STAGE_LABELS,
+    STAGE_ORDER,
+    enrichment_for,
     group_by_category,
+    item_date,
     item_date_str,
     load_config,
+    load_enrichment,
     read_json,
+    release_stage,
     sort_items,
     status_label,
     summarize,
@@ -24,39 +32,26 @@ from common import (
     utcnow,
 )
 
-STYLE = """
-:root{--bg:#f4f6f8;--card:#fff;--ink:#1b1f23;--muted:#57606a;--brand:#0078d4;--line:#e1e4e8}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 "Segoe UI",Helvetica,Arial,sans-serif}
-a{color:var(--brand)}
-header{background:linear-gradient(135deg,#0078d4,#004578);color:#fff;padding:36px 20px}
-header .wrap{max-width:960px;margin:0 auto}
-header h1{margin:0;font-size:26px}
-header p{margin:8px 0 0;opacity:.92;font-size:15px}
-nav{max-width:960px;margin:0 auto;padding:14px 20px;display:flex;gap:16px;flex-wrap:wrap;font-size:14px}
-main{max-width:960px;margin:0 auto;padding:8px 20px 56px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:18px 20px;margin-bottom:16px}
-.stats{display:flex;gap:12px;flex-wrap:wrap;margin:16px 0}
-.stat{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:12px 16px;min-width:130px}
-.stat b{display:block;font-size:22px;color:var(--brand)}
-.stat span{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
-h2{font-size:18px;margin:28px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--brand)}
-h2 small{color:var(--muted);font-weight:400}
-.item{padding:14px 0;border-bottom:1px solid #eef0f2}
-.item:last-child{border-bottom:none}
-.item a.title{font-weight:600;font-size:15px;text-decoration:none;color:#0b4f9e}
-.item a.title:hover{text-decoration:underline}
-.meta{margin:6px 0;font-size:12px;color:var(--muted)}
-.badge{display:inline-block;background:#eef4fb;color:#0b4f9e;border-radius:10px;padding:2px 9px;margin-right:8px;font-size:11px}
-.summary{font-size:13.5px;color:#24292f}
-ul.list{list-style:none;padding:0;margin:0}
-ul.list li{padding:8px 0;border-bottom:1px solid #eef0f2;font-size:14px}
-footer{max-width:960px;margin:0 auto;padding:20px;color:var(--muted);font-size:12px}
-"""
+ASSETS = Path(__file__).resolve().parent / "assets"
+
+PILL_CLASS = {
+    "ga": "ga",
+    "public-preview": "pv",
+    "private-preview": "pp",
+    "retirement": "rt",
+    "in-development": "dv",
+    "other": "muted",
+}
+
+DATE_PRESETS = [(7, "7 days"), (30, "30 days"), (90, "90 days"), (0, "All time")]
 
 
 def esc(value) -> str:
     return html_lib.escape(str(value or ""), quote=True)
+
+
+def anchor(category: str) -> str:
+    return "cat-" + re.sub(r"[^a-z0-9]+", "-", category.lower()).strip("-")
 
 
 def page(cfg: dict, title: str, body_html: str, depth: int = 0) -> str:
@@ -74,121 +69,277 @@ def page(cfg: dict, title: str, body_html: str, depth: int = 0) -> str:
 <a href="{prefix}categories.html">Categories</a>
 <a href="{esc(cfg.get('azure_updates_url'))}">Azure Updates source</a></nav>
 <main>{body_html}</main>
-<footer>Generated {esc(utcnow().strftime('%Y-%m-%d %H:%M UTC'))} from the official Microsoft Azure release communications feed.</footer>
+<footer>Generated {esc(utcnow().strftime('%Y-%m-%d %H:%M UTC'))} from the official Microsoft Azure
+release communications feed. Summaries are produced from each announcement and its linked
+Microsoft documentation.</footer>
+<script src="{prefix}app.js"></script>
 </body></html>
 """
 
 
-def render_item(item: dict) -> str:
-    products = ", ".join(p for p in (item.get("products") or []) if p)
-    summary = summarize(item.get("description", ""), 340)
-    product_html = " &middot; " + esc(products) if products else ""
-    summary_html = '<div class="summary">' + esc(summary) + "</div>" if summary else ""
+def render_item(item: dict, enrichment: dict) -> str:
+    info = enrichment_for(item, enrichment)
+    stage = release_stage(item)
+    products = [p for p in (item.get("products") or []) if p]
+    product_text = ", ".join(products)
+    summary = info["summary"] or summarize(item.get("description", ""), 260)
+    points = info["key_points"][:4]
+
+    haystack = " ".join(
+        [str(item.get("title", "")), product_text, summary, " ".join(points), " ".join(item.get("tags") or [])]
+    ).lower()
+
+    parts = [
+        f'<div class="item" data-stage="{esc(stage)}" data-category="{esc(item.get("_category"))}"',
+        f' data-date="{esc(item_date_str(item))}" data-search="{esc(haystack)}">',
+        f'<a class="title" href="{esc(update_url(item))}">{esc(item.get("title"))}</a>',
+        f'<div class="meta"><span class="pill {PILL_CLASS.get(stage, "muted")}">{esc(STAGE_LABELS.get(stage))}</span> ',
+        esc(item_date_str(item)),
+    ]
+    if product_text:
+        parts.append(" &middot; " + esc(product_text))
+    parts.append("</div>")
+    if summary:
+        parts.append(f'<div class="summary-line">{esc(summary)}</div>')
+    if points:
+        parts.append('<ul class="points">' + "".join(f"<li>{esc(p)}</li>" for p in points) + "</ul>")
+    if info["doc_url"]:
+        label = info["doc_title"] or "Microsoft documentation"
+        parts.append(f'<div class="doclink">&#128196; <a href="{esc(info["doc_url"])}">{esc(label)}</a></div>')
+    parts.append("</div>")
+    return "".join(parts)
+
+
+def render_filters(groups: dict, stage_counts: Counter, default_days: int) -> str:
+    stage_chips = "".join(
+        f'<button class="chip s-{esc(stage)}" data-stage="{esc(stage)}" aria-pressed="false">'
+        f'{esc(STAGE_LABELS[stage])}<span class="n">{stage_counts[stage]}</span></button>'
+        for stage in STAGE_ORDER
+        if stage_counts.get(stage)
+    )
+    cat_chips = "".join(
+        f'<button class="chip" data-cat="{esc(category)}" aria-pressed="false">'
+        f'{esc(category)}<span class="n">{len(bucket)}</span></button>'
+        for category, bucket in groups.items()
+    )
+    date_chips = "".join(
+        f'<button class="chip" data-days="{days}" aria-pressed="{"true" if days == default_days else "false"}">'
+        f"Last {esc(label)}</button>"
+        if days
+        else f'<button class="chip" data-days="0" aria-pressed="{"true" if default_days == 0 else "false"}">{esc(label)}</button>'
+        for days, label in DATE_PRESETS
+    )
     return (
-        '<div class="item">'
-        f'<a class="title" href="{esc(update_url(item))}">{esc(item.get("title"))}</a>'
-        f'<div class="meta"><span class="badge">{esc(status_label(item))}</span>{esc(item_date_str(item))}'
-        f"{product_html}</div>"
-        f"{summary_html}"
+        '<div class="card filters">'
+        f'<div class="row"><span class="lbl">Date range</span>{date_chips}'
+        '<input type="date" id="from" aria-label="From date">'
+        '<span style="color:#57606a;font-size:13px;">to</span>'
+        '<input type="date" id="to" aria-label="To date">'
+        '<span class="result" id="result"></span></div>'
+        f'<div class="row"><span class="lbl">Release stage</span>{stage_chips}</div>'
+        f'<div class="row"><span class="lbl">Service category</span>{cat_chips}</div>'
+        '<div class="row"><span class="lbl">Search</span>'
+        '<input type="search" id="q" placeholder="Filter by product, keyword or service name...">'
+        '<button class="btn" data-toggle="reset">Reset filters</button></div>'
         "</div>"
     )
 
 
-def render_groups(groups: dict) -> str:
-    out = []
+def render_summary_table(groups: dict) -> str:
+    if not groups:
+        return ""
+    largest = max(len(bucket) for bucket in groups.values())
+    rows = []
     for category, bucket in groups.items():
-        out.append(f'<div class="card"><h2>{esc(category)} <small>({len(bucket)})</small></h2>')
-        out.extend(render_item(item) for item in bucket)
-        out.append("</div>")
-    return "\n".join(out)
+        counts = Counter(release_stage(i) for i in bucket)
+        products = Counter()
+        for item in bucket:
+            for product in item.get("products") or []:
+                products[product] += 1
+        top = ", ".join(name for name, _ in products.most_common(3))
+        latest = max((item_date_str(i) for i in bucket if item_date_str(i)), default="")
+        width = max(3, round(len(bucket) / largest * 100))
+        cells = [
+            f'<td><a class="cat" href="#{anchor(category)}">{esc(category)}</a>'
+            f'<span class="bar" style="width:{width}%"></span></td>',
+            f'<td class="num c-n"><b>{len(bucket)}</b></td>',
+            _stage_cell("c-ga", "ga", counts["ga"]),
+            _stage_cell("c-pv", "pv", counts["public-preview"]),
+            _stage_cell("c-pp", "pp", counts["private-preview"]),
+            _stage_cell("c-rt", "rt", counts["retirement"]),
+            f'<td class="num">{esc(latest)}</td>',
+            f'<td class="top">{esc(top)}</td>',
+        ]
+        rows.append(f'<tr data-category="{esc(category)}">' + "".join(cells) + "</tr>")
+
+    return (
+        '<div class="card"><h2>Summary by category '
+        "<small>updates the counts as you change the filters</small></h2>"
+        '<table class="summary"><thead><tr><th>Category</th><th class="num">Total</th>'
+        '<th class="num">GA</th><th class="num">Public preview</th><th class="num">Private preview</th>'
+        '<th class="num">Retirement</th><th class="num">Latest</th><th>Top products</th></tr></thead>'
+        "<tbody>" + "".join(rows) + "</tbody>"
+        '<tfoot><tr id="tfoot"><td>All categories</td><td class="num c-n"></td>'
+        '<td class="num c-ga"></td><td class="num c-pv"></td><td class="num c-pp"></td>'
+        '<td class="num c-rt"></td><td></td><td></td></tr></tfoot></table></div>'
+    )
+
+
+def _stage_cell(css_class: str, pill: str, count: int) -> str:
+    inner = f'<span class="pill {pill}">{count}</span>' if count else ""
+    return f'<td class="num {css_class}">{inner}</td>'
+
+
+def render_groups(groups: dict, enrichment: dict) -> str:
+    out = ['<div class="columns">']
+    for index, (category, bucket) in enumerate(groups.items()):
+        open_attr = " open" if index < 3 else ""
+        out.append(
+            f'<details id="{anchor(category)}" data-category="{esc(category)}"{open_attr}>'
+            f'<summary>{esc(category)}<span class="count">{len(bucket)} update(s)</span></summary>'
+            '<div class="body">'
+            + "".join(render_item(item, enrichment) for item in bucket)
+            + "</div></details>"
+        )
+    out.append("</div>")
+    return "".join(out)
 
 
 def digest_meta(path):
     text = path.read_text(encoding="utf-8")
-    count = 0
     match = re.search(r"^count:\s*(\d+)\s*$", text, re.MULTILINE)
-    if match:
-        count = int(match.group(1))
-    return {"date": path.stem, "count": count}
+    return {"date": path.stem, "count": int(match.group(1)) if match else 0}
 
 
-def build(cfg: dict, days: int) -> None:
-    archive = read_json(ARCHIVE_PATH, {"items": []})
-    items = sort_items(archive.get("items", []))
-
-    from common import item_date, utcnow as _now
-    from datetime import timedelta
-
-    cutoff = _now() - timedelta(days=days)
-    recent = [i for i in items if (item_date(i) or cutoff) >= cutoff]
+def build(cfg: dict, default_days: int) -> None:
+    items = sort_items(read_json(ARCHIVE_PATH, {"items": []}).get("items", []))
+    enrichment = load_enrichment()
 
     SITE_DIR.mkdir(parents=True, exist_ok=True)
-    (SITE_DIR / "style.css").write_text(STYLE, encoding="utf-8")
+    (SITE_DIR / "style.css").write_text((ASSETS / "style.css").read_text(encoding="utf-8"), encoding="utf-8")
+    (SITE_DIR / "app.js").write_text((ASSETS / "app.js").read_text(encoding="utf-8"), encoding="utf-8")
     (SITE_DIR / ".nojekyll").write_text("", encoding="utf-8")
 
-    category_counts = Counter()
-    product_counts = Counter()
-    for item in items:
-        for category in item.get("productCategories") or []:
-            category_counts[category] += 1
-        for product in item.get("products") or []:
-            product_counts[product] += 1
+    groups = group_by_category(items)
+    for category, bucket in groups.items():
+        for item in bucket:
+            item["_category"] = category
+
+    stage_counts = Counter(release_stage(i) for i in items)
+    product_counts = Counter(p for i in items for p in (i.get("products") or []))
+    category_counts = Counter(c for i in items for c in (i.get("productCategories") or []))
+    summarized = sum(1 for i in items if enrichment_for(i, enrichment)["key_points"])
+    docs_read = sum(1 for i in items if enrichment_for(i, enrichment)["doc_url"])
+
+    recent_cutoff = utcnow() - timedelta(days=7)
+    this_week = sum(1 for i in items if (item_date(i) or recent_cutoff) >= recent_cutoff)
 
     digest_files = sorted(DIGEST_DIR.glob("*.md"), reverse=True) if DIGEST_DIR.exists() else []
     digests = [digest_meta(p) for p in digest_files]
 
     stats = (
         '<div class="stats">'
-        f'<div class="stat"><b>{len(recent)}</b><span>last {days} days</span></div>'
+        f'<div class="stat"><b>{this_week}</b><span>last 7 days</span></div>'
         f'<div class="stat"><b>{len(items)}</b><span>tracked updates</span></div>'
-        f'<div class="stat"><b>{len(category_counts)}</b><span>categories</span></div>'
-        f'<div class="stat"><b>{len(digests)}</b><span>digests</span></div>'
+        f'<div class="stat"><b>{stage_counts["ga"]}</b><span>generally available</span></div>'
+        f'<div class="stat"><b>{stage_counts["public-preview"]}</b><span>public preview</span></div>'
+        f'<div class="stat"><b>{len(groups)}</b><span>categories</span></div>'
+        f'<div class="stat"><b>{docs_read}</b><span>docs summarized</span></div>'
         "</div>"
     )
 
-    body = stats + (render_groups(group_by_category(recent)) if recent else '<div class="card"><p>No updates in the current window yet.</p></div>')
+    if items:
+        body = (
+            stats
+            + render_filters(groups, stage_counts, default_days)
+            + f'<div id="explorer" data-default-days="{default_days}">'
+            + render_summary_table(groups)
+            + '<div class="toolbar"><h2>Updates by category</h2>'
+            '<button class="btn" data-toggle="open">Expand all</button>'
+            '<button class="btn" data-toggle="close">Collapse all</button></div>'
+            + render_groups(groups, enrichment)
+            + '<div class="card empty hidden" id="empty">No updates match the selected filters.</div>'
+            + "</div>"
+        )
+    else:
+        body = stats + '<div class="card"><p>No updates tracked yet.</p></div>'
     (SITE_DIR / "index.html").write_text(page(cfg, cfg.get("site_title"), body, 0), encoding="utf-8")
 
     rows = "".join(
         f'<li><a href="digests/{esc(d["date"])}.html">{esc(d["date"])}</a> &mdash; {d["count"]} update(s)</li>'
         for d in digests
     ) or "<li>No digests published yet.</li>"
-    archive_body = f'<div class="card"><h2>Digest archive</h2><ul class="list">{rows}</ul></div>'
-    (SITE_DIR / "archive.html").write_text(page(cfg, "Digest archive", archive_body, 0), encoding="utf-8")
+    (SITE_DIR / "archive.html").write_text(
+        page(cfg, "Digest archive", f'<div class="card"><h2>Digest archive</h2><ul class="list">{rows}</ul></div>', 0),
+        encoding="utf-8",
+    )
 
     cat_rows = "".join(
         f'<li><b>{esc(name)}</b> &mdash; {count} update(s)</li>' for name, count in category_counts.most_common()
     ) or "<li>No data yet.</li>"
     prod_rows = "".join(
-        f'<li>{esc(name)} &mdash; {count}</li>' for name, count in product_counts.most_common(40)
+        f'<li>{esc(name)} &mdash; {count}</li>' for name, count in product_counts.most_common(60)
     ) or "<li>No data yet.</li>"
-    cat_body = (
-        f'<div class="card"><h2>Product categories</h2><ul class="list">{cat_rows}</ul></div>'
-        f'<div class="card"><h2>Top products</h2><ul class="list">{prod_rows}</ul></div>'
+    stage_rows = "".join(
+        f'<li><span class="pill {PILL_CLASS.get(stage, "muted")}">{esc(STAGE_LABELS[stage])}</span> '
+        f"&mdash; {stage_counts[stage]} update(s)</li>"
+        for stage in STAGE_ORDER
+        if stage_counts.get(stage)
     )
-    (SITE_DIR / "categories.html").write_text(page(cfg, "Categories", cat_body, 0), encoding="utf-8")
+    (SITE_DIR / "categories.html").write_text(
+        page(
+            cfg,
+            "Categories",
+            f'<div class="card"><h2>Release stages</h2><ul class="list">{stage_rows}</ul></div>'
+            f'<div class="card"><h2>Product categories</h2><ul class="list">{cat_rows}</ul></div>'
+            f'<div class="card"><h2>Top products</h2><ul class="list">{prod_rows}</ul></div>',
+            0,
+        ),
+        encoding="utf-8",
+    )
 
     digest_dir = SITE_DIR / "digests"
     digest_dir.mkdir(parents=True, exist_ok=True)
     for path in digest_files:
-        raw = path.read_text(encoding="utf-8")
-        raw = re.sub(r"^---\n.*?\n---\n", "", raw, flags=re.DOTALL)
-        html_body = f'<div class="card"><pre style="white-space:pre-wrap;font:14px/1.6 ui-monospace,Consolas,monospace;">{esc(raw)}</pre></div>'
+        raw = re.sub(r"^---\n.*?\n---\n", "", path.read_text(encoding="utf-8"), flags=re.DOTALL)
+        html_body = (
+            '<div class="card"><pre style="white-space:pre-wrap;font:13.5px/1.6 ui-monospace,'
+            f'Consolas,monospace;">{esc(raw)}</pre></div>'
+        )
         (digest_dir / f"{path.stem}.html").write_text(page(cfg, f"Digest {path.stem}", html_body, 1), encoding="utf-8")
 
     (SITE_DIR / "updates.json").write_text(
-        json.dumps({"generated_at": utcnow().isoformat(), "count": len(items), "items": items}, ensure_ascii=False, indent=2),
+        json.dumps(
+            {
+                "generated_at": utcnow().isoformat(),
+                "count": len(items),
+                "items": [
+                    dict(
+                        {k: v for k, v in i.items() if k != "_category"},
+                        category=i.get("_category"),
+                        release_stage=release_stage(i),
+                        enrichment=enrichment_for(i, enrichment),
+                    )
+                    for i in items
+                ],
+            },
+            ensure_ascii=False,
+            indent=2,
+        ),
         encoding="utf-8",
     )
-    print(f"Site built in {SITE_DIR} ({len(items)} tracked updates, {len(digests)} digests).", file=sys.stderr)
+    print(
+        f"Site built in {SITE_DIR}: {len(items)} updates, {len(groups)} categories, "
+        f"{summarized} summarized, {docs_read} with documentation.",
+        file=sys.stderr,
+    )
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Build the static GitHub Pages site.")
-    parser.add_argument("--days", type=int, default=None, help="Window shown on the landing page.")
+    parser.add_argument("--default-days", type=int, default=30, help="Date filter preset selected on load (0 = all).")
     args = parser.parse_args()
-    cfg = load_config()
-    build(cfg, args.days if args.days is not None else int(cfg.get("lookback_days", 7)) * 4)
+    build(load_config(), args.default_days)
     return 0
 
 

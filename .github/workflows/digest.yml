@@ -52,6 +52,17 @@ jobs:
             --days "${{ inputs.days || '7' }}" \
             ${{ inputs.include_seen == true && '--include-seen' || '' }}
 
+      - name: Summarize linked documentation
+        env:
+          AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
+          AZURE_OPENAI_API_KEY: ${{ secrets.AZURE_OPENAI_API_KEY }}
+          AZURE_OPENAI_DEPLOYMENT: ${{ secrets.AZURE_OPENAI_DEPLOYMENT }}
+          AZURE_OPENAI_API_VERSION: ${{ secrets.AZURE_OPENAI_API_VERSION }}
+          OPENAI_BASE_URL: ${{ secrets.OPENAI_BASE_URL }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_MODEL: ${{ secrets.OPENAI_MODEL }}
+        run: python scripts/enrich_updates.py --input archive --limit 120 --sleep 0.4
+
       - name: Build digest and email
         id: digest
         run: python scripts/build_digest.py --skip-empty
@@ -67,8 +78,7 @@ jobs:
           if git diff --staged --quiet; then
             echo "Nothing to commit."
           else
-            git commit -m "chore: Azure updates digest ${{ steps.digest.outputs.digest_date }} (${{ steps.digest.outputs.count }} updates)"
-            git push
+            git commit -m "chore: Azure updates digest ${{ steps.digest.outputs.digest_date }} (${{ steps.digest.outputs.count }} updates)"            git push
           fi
 
       - name: Upload email artifacts
