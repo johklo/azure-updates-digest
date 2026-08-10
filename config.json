@@ -6,7 +6,7 @@
   "site_url": "https://johklo.github.io/azure-updates-digest/",
   "lookback_days": 7,
   "page_size": 100,
-  "max_pages": 20,
+  "max_pages": 40,
   "include_product_categories": [],
   "exclude_product_categories": [],
   "include_tags": [],
