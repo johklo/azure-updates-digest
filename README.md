@@ -76,6 +76,9 @@ The landing page is an interactive explorer:
 
 * **Summary table by category at the top** - total, GA, public preview, private preview,
   retirement, latest date and top products per category. Counts recompute live as filters change.
+* **Slide deck mode** - switch the view to show **one update per screen** in large type, with
+  Previous / Next buttons, a slide counter, a progress bar, fullscreen and keyboard navigation
+  (arrow keys, Space, Home / End, Esc). The deck always follows the current filters.
 * **Default view** - the page loads pre-filtered to **generally available updates from the last
   30 days**. `Reset filters` returns to this default.
 * **Filter by date** - `Last 7 / 30 / 90 days`, `All time`, or a custom from/to date range.

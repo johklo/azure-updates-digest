@@ -132,6 +132,12 @@ def render_filters(groups: dict, stage_counts: Counter, default_days: int, defau
     )
     return (
         '<div class="card filters">'
+        f'<div class="row"><span class="lbl">View</span>'
+        '<button class="chip" data-view="browse" aria-pressed="true">Browse list</button>'
+        '<button class="chip" data-view="slides" aria-pressed="false">Slide deck</button>'
+        '<span class="hint" style="font-size:12px;color:#57606a;">'
+        "One update per screen &mdash; arrow keys or the buttons below move between slides."
+        "</span></div>"
         f'<div class="row"><span class="lbl">Date range</span>{date_chips}'
         '<input type="date" id="from" aria-label="From date">'
         '<span style="color:#57606a;font-size:13px;">to</span>'
@@ -142,6 +148,23 @@ def render_filters(groups: dict, stage_counts: Counter, default_days: int, defau
         '<div class="row"><span class="lbl">Search</span>'
         '<input type="search" id="q" placeholder="Filter by product, keyword or service name...">'
         '<button class="btn" data-toggle="reset">Reset filters</button></div>'
+        "</div>"
+    )
+
+
+def render_deck() -> str:
+    return (
+        '<div class="deck hidden" id="deck">'
+        '<div class="slide" id="slide"></div>'
+        '<div class="deckbar">'
+        '<button class="btn" id="prev">&larr; Previous</button>'
+        '<span class="counter" id="counter">0 / 0</span>'
+        '<button class="btn" id="next">Next &rarr;</button>'
+        '<span class="spacer"></span>'
+        '<span class="hint">Arrow keys, Space, Home / End &middot; Esc returns to the list</span>'
+        '<button class="btn" id="fs">Fullscreen</button>'
+        "</div>"
+        '<div class="progress"><span id="progressbar"></span></div>'
         "</div>"
     )
 
@@ -254,12 +277,15 @@ def build(cfg: dict, default_days: int, default_stage: str) -> None:
             stats
             + render_filters(groups, stage_counts, default_days, default_stage)
             + f'<div id="explorer" data-default-days="{default_days}" data-default-stage="{esc(default_stage)}">'
+            + render_deck()
+            + '<div class="browse-only">'
             + render_summary_table(groups)
             + '<div class="toolbar"><h2>Updates by category</h2>'
             '<button class="btn" data-toggle="open">Expand all</button>'
             '<button class="btn" data-toggle="close">Collapse all</button></div>'
             + render_groups(groups, enrichment)
             + '<div class="card empty hidden" id="empty">No updates match the selected filters.</div>'
+            + "</div>"
             + "</div>"
         )
     else:

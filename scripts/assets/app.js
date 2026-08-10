@@ -11,6 +11,17 @@
   var result = document.getElementById("result");
   var empty = document.getElementById("empty");
 
+  var deck = document.getElementById("deck");
+  var slide = document.getElementById("slide");
+  var counter = document.getElementById("counter");
+  var progressBar = document.getElementById("progressbar");
+  var prevBtn = document.getElementById("prev");
+  var nextBtn = document.getElementById("next");
+  var browseOnly = Array.prototype.slice.call(document.querySelectorAll(".browse-only"));
+  var view = "browse";
+  var deckItems = [];
+  var deckIndex = 0;
+
   var stages = {};
   var cats = {};
   var defaultDays = root.getAttribute("data-default-days") || "30";
@@ -100,6 +111,86 @@
 
     result.innerHTML = "Showing <b>" + visible + "</b> of " + items.length + " updates";
     empty.classList.toggle("hidden", visible > 0);
+    refreshDeck();
+  }
+
+  function refreshDeck() {
+    deckItems = items.filter(function (el) { return !el.classList.contains("hidden"); });
+    if (deckIndex >= deckItems.length) deckIndex = Math.max(0, deckItems.length - 1);
+    if (view === "slides") renderSlide();
+  }
+
+  function textOf(el, selector) {
+    var node = el.querySelector(selector);
+    return node ? node.textContent.trim() : "";
+  }
+
+  function renderSlide() {
+    if (!deckItems.length) {
+      slide.innerHTML = '<div class="empty">No updates match the selected filters.</div>';
+      counter.textContent = "0 / 0";
+      progressBar.style.width = "0";
+      prevBtn.disabled = true;
+      nextBtn.disabled = true;
+      return;
+    }
+
+    var el = deckItems[deckIndex];
+    var link = el.querySelector("a.title");
+    var pill = el.querySelector(".meta .pill");
+    var meta = textOf(el, ".meta");
+    var products = meta.split("\u00b7").slice(1).join("\u00b7").trim();
+    var lead = textOf(el, ".summary-line");
+    var points = Array.prototype.map.call(el.querySelectorAll("ul.points li"), function (li) {
+      return li.textContent.trim();
+    });
+    var doc = el.querySelector(".doclink a");
+
+    var html = '<div class="eyebrow"><span class="cat">' + esc(el.getAttribute("data-category")) + "</span>";
+    if (pill) html += '<span class="pill ' + pill.className.replace("pill", "").trim() + '">' + esc(pill.textContent) + "</span>";
+    html += "<span>" + esc(el.getAttribute("data-date")) + "</span>";
+    if (products) html += "<span>" + esc(products) + "</span>";
+    html += "</div>";
+    html += '<h3><a href="' + esc(link.getAttribute("href")) + '" target="_blank" rel="noopener">' + esc(link.textContent) + "</a></h3>";
+    if (lead) html += '<p class="lead">' + esc(lead) + "</p>";
+    if (points.length) {
+      html += '<ul class="deck-points">';
+      points.forEach(function (p) { html += "<li>" + esc(p) + "</li>"; });
+      html += "</ul>";
+    }
+    html += '<div class="slide-foot"><a href="' + esc(link.getAttribute("href")) + '" target="_blank" rel="noopener">Azure Updates announcement</a>';
+    if (doc) html += '<a href="' + esc(doc.getAttribute("href")) + '" target="_blank" rel="noopener">&#128196; ' + esc(doc.textContent) + "</a>";
+    html += "</div>";
+
+    slide.innerHTML = html;
+    slide.scrollTop = 0;
+    counter.textContent = deckIndex + 1 + " / " + deckItems.length;
+    progressBar.style.width = Math.round(((deckIndex + 1) / deckItems.length) * 1000) / 10 + "%";
+    prevBtn.disabled = deckIndex === 0;
+    nextBtn.disabled = deckIndex === deckItems.length - 1;
+  }
+
+  function esc(value) {
+    return String(value == null ? "" : value)
+      .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+  }
+
+  function move(step) {
+    if (!deckItems.length) return;
+    var next = deckIndex + step;
+    if (next < 0 || next >= deckItems.length) return;
+    deckIndex = next;
+    renderSlide();
+  }
+
+  function setView(next) {
+    view = next;
+    chips("[data-view]").forEach(function (b) {
+      b.setAttribute("aria-pressed", b.getAttribute("data-view") === next ? "true" : "false");
+    });
+    deck.classList.toggle("hidden", next !== "slides");
+    browseOnly.forEach(function (node) { node.classList.toggle("hidden", next === "slides"); });
+    if (next === "slides") { deckIndex = 0; renderSlide(); }
   }
 
   chips(".chip[data-stage]").forEach(function (chip) {
@@ -143,6 +234,35 @@
       }
       apply();
     });
+  });
+
+  chips("[data-view]").forEach(function (btn) {
+    btn.addEventListener("click", function () { setView(btn.getAttribute("data-view")); });
+  });
+
+  prevBtn.addEventListener("click", function () { move(-1); });
+  nextBtn.addEventListener("click", function () { move(1); });
+
+  var fsBtn = document.getElementById("fs");
+  if (fsBtn) {
+    fsBtn.addEventListener("click", function () {
+      if (document.fullscreenElement) {
+        if (document.exitFullscreen) document.exitFullscreen();
+      } else if (deck.requestFullscreen) {
+        deck.requestFullscreen();
+      }
+    });
+  }
+
+  document.addEventListener("keydown", function (event) {
+    if (view !== "slides") return;
+    var tag = (event.target.tagName || "").toLowerCase();
+    if (tag === "input" || tag === "textarea") return;
+    if (event.key === "ArrowRight" || event.key === "PageDown" || event.key === " ") { event.preventDefault(); move(1); }
+    else if (event.key === "ArrowLeft" || event.key === "PageUp") { event.preventDefault(); move(-1); }
+    else if (event.key === "Home") { deckIndex = 0; renderSlide(); }
+    else if (event.key === "End") { deckIndex = Math.max(0, deckItems.length - 1); renderSlide(); }
+    else if (event.key === "Escape" && !document.fullscreenElement) setView("browse");
   });
 
   function applyDefaults() {
