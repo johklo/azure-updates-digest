@@ -85,8 +85,11 @@ The landing page is an interactive explorer:
 * **Filter by release stage** - Generally available, Public preview, Private preview, Retirement,
   In development.
 * **Filter by service category** and free-text search across titles, products, tags and summaries.
-* **Collapsible category panels in a responsive multi-column layout** (3 columns on desktop,
-  2 on tablet, 1 on mobile), with `Expand all` / `Collapse all`. Narrow result sets auto-expand.
+* **Collapsible category panels in a responsive masonry grid** - the column count adapts to the
+  browser width (4 / 3 / 2 / 1) and panels repack on resize, filtering and expand/collapse, with
+  `Expand all` / `Collapse all`. Narrow result sets auto-expand.
+* **Fluid sizing** - the page container, typography and the slide deck all scale with the viewport,
+  and each slide auto-shrinks its text until the content fits the screen without clipping.
 * Every update shows its stage badge, date, products, summary, key points and a direct link to the
   Microsoft documentation that was read.
 

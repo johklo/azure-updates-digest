@@ -199,13 +199,14 @@ def render_summary_table(groups: dict) -> str:
     return (
         '<div class="card"><h2>Summary by category '
         "<small>updates the counts as you change the filters</small></h2>"
+        '<div class="table-wrap">'
         '<table class="summary"><thead><tr><th>Category</th><th class="num">Total</th>'
         '<th class="num">GA</th><th class="num">Public preview</th><th class="num">Private preview</th>'
         '<th class="num">Retirement</th><th class="num">Latest</th><th>Top products</th></tr></thead>'
         "<tbody>" + "".join(rows) + "</tbody>"
         '<tfoot><tr id="tfoot"><td>All categories</td><td class="num c-n"></td>'
         '<td class="num c-ga"></td><td class="num c-pv"></td><td class="num c-pp"></td>'
-        '<td class="num c-rt"></td><td></td><td></td></tr></tfoot></table></div>'
+        '<td class="num c-rt"></td><td></td><td></td></tr></tfoot></table></div></div>'
     )
 
 

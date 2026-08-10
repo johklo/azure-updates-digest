@@ -112,12 +112,26 @@
     result.innerHTML = "Showing <b>" + visible + "</b> of " + items.length + " updates";
     empty.classList.toggle("hidden", visible > 0);
     refreshDeck();
+    layoutGrid();
   }
 
   function refreshDeck() {
     deckItems = items.filter(function (el) { return !el.classList.contains("hidden"); });
     if (deckIndex >= deckItems.length) deckIndex = Math.max(0, deckItems.length - 1);
     if (view === "slides") renderSlide();
+  }
+
+  var grid = document.querySelector(".columns");
+
+  function layoutGrid() {
+    if (!grid || view === "slides") return;
+    var styles = window.getComputedStyle(grid);
+    var row = parseFloat(styles.getPropertyValue("grid-auto-rows")) || 8;
+    var gap = parseFloat(styles.getPropertyValue("row-gap")) || 16;
+    groups.forEach(function (node) {
+      if (node.classList.contains("hidden")) return;
+      node.style.gridRowEnd = "span " + Math.max(1, Math.ceil((node.getBoundingClientRect().height + gap) / (row + gap)));
+    });
   }
 
   function textOf(el, selector) {
@@ -134,7 +148,6 @@
       nextBtn.disabled = true;
       return;
     }
-
     var el = deckItems[deckIndex];
     var link = el.querySelector("a.title");
     var pill = el.querySelector(".meta .pill");
@@ -146,7 +159,7 @@
     });
     var doc = el.querySelector(".doclink a");
 
-    var html = '<div class="eyebrow"><span class="cat">' + esc(el.getAttribute("data-category")) + "</span>";
+    var html = '<div class="slide-main"><div class="eyebrow"><span class="cat">' + esc(el.getAttribute("data-category")) + "</span>";
     if (pill) html += '<span class="pill ' + pill.className.replace("pill", "").trim() + '">' + esc(pill.textContent) + "</span>";
     html += "<span>" + esc(el.getAttribute("data-date")) + "</span>";
     if (products) html += "<span>" + esc(products) + "</span>";
@@ -158,7 +171,7 @@
       points.forEach(function (p) { html += "<li>" + esc(p) + "</li>"; });
       html += "</ul>";
     }
-    html += '<div class="slide-foot"><a href="' + esc(link.getAttribute("href")) + '" target="_blank" rel="noopener">Azure Updates announcement</a>';
+    html += '</div><div class="slide-foot"><a href="' + esc(link.getAttribute("href")) + '" target="_blank" rel="noopener">Azure Updates announcement</a>';
     if (doc) html += '<a href="' + esc(doc.getAttribute("href")) + '" target="_blank" rel="noopener">&#128196; ' + esc(doc.textContent) + "</a>";
     html += "</div>";
 
@@ -168,6 +181,35 @@
     progressBar.style.width = Math.round(((deckIndex + 1) / deckItems.length) * 1000) / 10 + "%";
     prevBtn.disabled = deckIndex === 0;
     nextBtn.disabled = deckIndex === deckItems.length - 1;
+    fitSlide();
+  }
+
+  function sizeDeck() {
+    if (view !== "slides") return;
+    if (document.fullscreenElement === deck) {
+      deck.style.removeProperty("--deck-h");
+      return;
+    }
+    var top = deck.getBoundingClientRect().top + (window.pageYOffset || 0);
+    var available = (window.innerHeight || 800) - 28;
+    deck.style.setProperty("--deck-h", Math.max(340, Math.round(available)) + "px");
+    if (top > 0 && window.scrollTo) window.scrollTo({ top: top - 8, behavior: "auto" });
+  }
+
+  function fitSlide() {
+    if (!deckItems.length || typeof slide.scrollHeight !== "number") return;
+    var scale = 1;
+    slide.style.setProperty("--fit", scale);
+    for (var i = 0; i < 12 && scale > 0.62 && slideOverflows(); i++) {
+      scale = Math.round((scale - 0.045) * 1000) / 1000;
+      slide.style.setProperty("--fit", scale);
+    }
+  }
+
+  function slideOverflows() {
+    var main = slide.querySelector(".slide-main");
+    if (main && main.scrollHeight > main.clientHeight + 2) return true;
+    return slide.scrollHeight > slide.clientHeight + 2;
   }
 
   function esc(value) {
@@ -190,8 +232,27 @@
     });
     deck.classList.toggle("hidden", next !== "slides");
     browseOnly.forEach(function (node) { node.classList.toggle("hidden", next === "slides"); });
-    if (next === "slides") { deckIndex = 0; renderSlide(); }
+    if (next === "slides") { deckIndex = 0; sizeDeck(); renderSlide(); }
+    else { deck.style.removeProperty("--deck-h"); layoutGrid(); }
   }
+
+  groups.forEach(function (node) {
+    node.addEventListener("toggle", layoutGrid);
+  });
+
+  var resizeTimer = null;
+  window.addEventListener("resize", function () {
+    if (resizeTimer) clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function () {
+      if (view === "slides") { sizeDeck(); fitSlide(); }
+      else layoutGrid();
+    }, 120);
+  });
+
+  document.addEventListener("fullscreenchange", function () {
+    sizeDeck();
+    fitSlide();
+  });
 
   chips(".chip[data-stage]").forEach(function (chip) {
     chip.addEventListener("click", function () {
@@ -290,4 +351,5 @@
   });
 
   applyDefaults();
+  if (window.requestAnimationFrame) window.requestAnimationFrame(layoutGrid);
 })();
