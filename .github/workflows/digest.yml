@@ -78,7 +78,8 @@ jobs:
           if git diff --staged --quiet; then
             echo "Nothing to commit."
           else
-            git commit -m "chore: Azure updates digest ${{ steps.digest.outputs.digest_date }} (${{ steps.digest.outputs.count }} updates)"            git push
+            git commit -m "chore: Azure updates digest ${{ steps.digest.outputs.digest_date }} (${{ steps.digest.outputs.count }} updates)"
+            git push
           fi
 
       - name: Upload email artifacts
