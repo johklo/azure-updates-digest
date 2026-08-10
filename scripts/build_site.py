@@ -72,6 +72,7 @@ def page(cfg: dict, title: str, body_html: str, depth: int = 0) -> str:
 <footer>Generated {esc(utcnow().strftime('%Y-%m-%d %H:%M UTC'))} from the official Microsoft Azure
 release communications feed. Summaries are produced from each announcement and its linked
 Microsoft documentation.</footer>
+<script src="{prefix}pptx.js"></script>
 <script src="{prefix}app.js"></script>
 </body></html>
 """
@@ -162,8 +163,9 @@ def render_deck() -> str:
         '<button class="btn" id="next">Next &rarr;</button>'
         '<span class="spacer"></span>'
         '<span class="hint">Arrow keys, Space, Home / End &middot; Esc returns to the list</span>'
-        '<button class="btn" id="pdf">&#128438; Save as PDF</button>'
-        '<button class="btn" id="dl">&#11015; Download deck</button>'
+        '<button class="btn" id="ppt">&#128202; PowerPoint</button>'
+        '<button class="btn" id="pdf">&#128438; PDF</button>'
+        '<button class="btn" id="dl">&#11015; HTML</button>'
         '<button class="btn" id="fs">Fullscreen</button>'
         "</div>"
         '<div class="progress"><span id="progressbar"></span></div>'
@@ -245,6 +247,7 @@ def build(cfg: dict, default_days: int, default_stage: str) -> None:
     SITE_DIR.mkdir(parents=True, exist_ok=True)
     (SITE_DIR / "style.css").write_text((ASSETS / "style.css").read_text(encoding="utf-8"), encoding="utf-8")
     (SITE_DIR / "app.js").write_text((ASSETS / "app.js").read_text(encoding="utf-8"), encoding="utf-8")
+    (SITE_DIR / "pptx.js").write_text((ASSETS / "pptx.js").read_text(encoding="utf-8"), encoding="utf-8")
     (SITE_DIR / ".nojekyll").write_text("", encoding="utf-8")
 
     groups = group_by_category(items)

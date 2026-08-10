@@ -305,7 +305,7 @@
     "var c=document.getElementById('c'),p=document.getElementById('p'),n=document.getElementById('n');" +
     "document.body.className='paged';" +
     "function r(){s.forEach(function(e,k){e.classList.toggle('on',k===i)});" +
-    "c.textContent=i+' / '+(s.length-1);p.disabled=i===0;n.disabled=i===s.length-1;window.scrollTo(0,0)}" +
+    "c.textContent=(i===0?'Cover':i+' / '+(s.length-1));p.disabled=i===0;n.disabled=i===s.length-1;window.scrollTo(0,0)}" +
     "p.onclick=function(){if(i>0){i--;r()}};n.onclick=function(){if(i<s.length-1){i++;r()}};" +
     "document.addEventListener('keydown',function(e){" +
     "if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' '){e.preventDefault();n.onclick()}" +
@@ -319,27 +319,16 @@
 
   function buildDeckDocument() {
     var data = deckItems.map(slideData);
-    var today = new Date().toISOString().slice(0, 10);
-    var scope = [];
-    var activeStages = activeSet(stages);
-    var activeCats = activeSet(cats);
-    if (activeStages) scope.push("Release stage: " + activeStages.map(stageName).join(", "));
-    if (activeCats) scope.push("Categories: " + activeCats.join(", "));
-    if (fromInput.value || toInput.value) scope.push("Dates: " + (fromInput.value || "start") + " to " + (toInput.value || today));
-    if (search.value.trim()) scope.push('Search: "' + search.value.trim() + '"');
-    if (!scope.length) scope.push("All tracked updates");
-
-    var counts = {};
-    data.forEach(function (d) { counts[d.category] = (counts[d.category] || 0) + 1; });
+    var meta = deckMeta();
 
     var html = "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"utf-8\">" +
       '<meta name="viewport" content="width=device-width,initial-scale=1">' +
-      "<title>Azure product updates - " + esc(today) + "</title><style>" + EXPORT_CSS + "</style></head><body>";
+      "<title>Azure product updates - " + esc(meta.date) + "</title><style>" + EXPORT_CSS + "</style></head><body>";
 
     html += '<section class="cover"><h1>Azure Product Updates</h1>' +
-      "<p>" + data.length + " update(s) &middot; generated " + esc(today) + "</p>" +
-      "<p>" + esc(scope.join(" \u00b7 ")) + "</p><ul>";
-    Object.keys(counts).forEach(function (k) { html += "<li>" + esc(k) + " &mdash; " + counts[k] + "</li>"; });
+      "<p>" + data.length + " update(s) &middot; generated " + esc(meta.date) + "</p>" +
+      "<p>" + esc(meta.scope) + "</p><ul>";
+    meta.categories.forEach(function (entry) { html += "<li>" + esc(entry[0]) + " &mdash; " + entry[1] + "</li>"; });
     html += '</ul><div class="meta">Source: Microsoft Azure Updates &middot; summaries generated from each announcement and its linked documentation.</div></section>';
 
     data.forEach(function (d, index) {
@@ -375,17 +364,54 @@
     return chip.textContent.replace(/\d+$/, "").trim();
   }
 
-  function downloadDeck() {
-    if (!deckItems.length) return;
-    var blob = new Blob([buildDeckDocument()], { type: "text/html;charset=utf-8" });
+  function downloadBlob(blob, filename) {
     var url = URL.createObjectURL(blob);
     var a = document.createElement("a");
     a.href = url;
-    a.download = "azure-updates-deck-" + new Date().toISOString().slice(0, 10) + ".html";
+    a.download = filename;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
     setTimeout(function () { URL.revokeObjectURL(url); }, 4000);
+  }
+
+  function deckMeta() {
+    var today = new Date().toISOString().slice(0, 10);
+    var scope = [];
+    var activeStages = activeSet(stages);
+    var activeCats = activeSet(cats);
+    if (activeStages) scope.push("Release stage: " + activeStages.map(stageName).join(", "));
+    if (activeCats) scope.push("Categories: " + activeCats.join(", "));
+    if (fromInput.value || toInput.value) scope.push("Dates: " + (fromInput.value || "start") + " to " + (toInput.value || today));
+    if (search.value.trim()) scope.push('Search: "' + search.value.trim() + '"');
+    if (!scope.length) scope.push("All tracked updates");
+
+    var counts = {};
+    deckItems.forEach(function (el) {
+      var cat = el.getAttribute("data-category");
+      counts[cat] = (counts[cat] || 0) + 1;
+    });
+    return {
+      date: today,
+      scope: scope.join("   \u00b7   "),
+      categories: Object.keys(counts).map(function (k) { return [k, counts[k]]; })
+        .sort(function (a, b) { return b[1] - a[1]; })
+    };
+  }
+
+  function fileStem() {
+    return "azure-updates-deck-" + new Date().toISOString().slice(0, 10);
+  }
+
+  function downloadPptx() {
+    if (!deckItems.length) return;
+    if (typeof window.buildPptx !== "function") { downloadDeck(); return; }
+    downloadBlob(window.buildPptx(deckItems.map(slideData), deckMeta()), fileStem() + ".pptx");
+  }
+
+  function downloadDeck() {
+    if (!deckItems.length) return;
+    downloadBlob(new Blob([buildDeckDocument()], { type: "text/html;charset=utf-8" }), fileStem() + ".html");
   }
 
   function printDeck() {
@@ -499,6 +525,8 @@
 
   var dlBtn = document.getElementById("dl");
   if (dlBtn) dlBtn.addEventListener("click", downloadDeck);
+  var pptBtn = document.getElementById("ppt");
+  if (pptBtn) pptBtn.addEventListener("click", downloadPptx);
   var pdfBtn = document.getElementById("pdf");
   if (pdfBtn) pdfBtn.addEventListener("click", printDeck);
 

@@ -79,11 +79,13 @@ The landing page is an interactive explorer:
 * **Slide deck mode** - switch the view to show **one update per screen** in large type, with
   Previous / Next buttons, a slide counter, a progress bar, fullscreen and keyboard navigation
   (arrow keys, Space, Home / End, Esc). The deck always follows the current filters.
-* **Downloadable deck** - `Save as PDF` prints the deck one update per A4 landscape page (with a
-  cover slide listing the scope and per-category counts), and `Download deck` saves a
-  self-contained `azure-updates-deck-YYYY-MM-DD.html` file that works offline with its own
-  Previous / Next navigation, keyboard shortcuts and print button. Both exports contain exactly
-  the updates matching the filters that are active at the time.
+* **Downloadable deck** - three export buttons, all containing exactly the updates matching the
+  filters that are active when the button is pressed:
+  * **PowerPoint** writes a real 16:9 `.pptx` (cover slide + one slide per update, clickable
+    links, bullets, automatic font scaling). It is generated in the browser by a small
+    dependency-free OOXML/ZIP writer - no external library or service is involved.
+  * **PDF** prints one update per A4 landscape page.
+  * **HTML** saves a self-contained offline deck with its own navigation and print button.
 * **Default view** - the page loads pre-filtered to **generally available updates from the last
   30 days**. `Reset filters` returns to this default.
 * **Filter by date** - `Last 7 / 30 / 90 days`, `All time`, or a custom from/to date range.
@@ -130,7 +132,7 @@ The workflow runs three jobs: `digest` (fetch, summarize, render, commit, upload
 | `scripts/enrich_updates.py` | Builds and caches `data/enrichment.json` |
 | `scripts/build_digest.py` | Renders the Markdown digest + HTML/text email |
 | `scripts/build_site.py` | Builds the static GitHub Pages site into `site/` |
-| `scripts/assets/` | Site stylesheet and filtering JavaScript |
+| `scripts/assets/` | Site stylesheet, filtering JavaScript and the PPTX writer |
 | `data/` | Committed state: `archive.json`, `state.json`, `latest.json`, `enrichment.json` |
 | `digests/` | Committed Markdown digests, one per run |
 
