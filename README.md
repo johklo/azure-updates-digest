@@ -77,6 +77,11 @@ stores `title_ko`, `summary_ko` and `key_points_ko` next to the English text in 
 entry. It reuses the English summary instead of re-reading the documentation, so translating is far
 cheaper than re-summarizing, and it only touches entries that do not have Korean yet.
 
+> **Korean needs LLM credentials.** The extractive fallback can summarize but cannot translate, so
+> with no secrets set the pass is skipped, the cache stays English-only, and the deck simply hides
+> its language switch. Set one of the secret groups in the table above (or export the same names
+> locally) before expecting Korean.
+
 ```bash
 python scripts/enrich_updates.py --translate-only                     # backfill everything
 python scripts/enrich_updates.py --translate-only --translate-limit 100
