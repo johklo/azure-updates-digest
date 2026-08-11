@@ -1,0 +1,55 @@
+name: Deploy Pages site
+
+# Rebuilds and publishes the GitHub Pages site from the data already committed
+# to the repository. The weekly digest workflow also deploys Pages, but only
+# after it fetches new updates - this workflow lets site changes (stylesheet,
+# front-end JavaScript, PPTX writer, page templates) ship as soon as they land
+# on main, without refetching or re-summarizing anything.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/assets/**"
+      - "scripts/build_site.py"
+      - "scripts/common.py"
+      - "config.json"
+      - ".github/workflows/pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build Pages site
+        run: python scripts/build_site.py
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
