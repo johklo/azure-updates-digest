@@ -15992,5 +15992,18 @@
     ],
     "source": "extractive",
     "updated_at": "2026-08-10T05:28:24.560450+00:00"
+  },
+  "569140": {
+    "summary": "Starting August 23, 2026, Microsoft Fabric will enable Item Recovery by default for tenants that have not explicitly configured the setting.",
+    "key_points": [
+      "Supported item types will have a 3-day recovery window by default.",
+      "Admins can review or change this setting in the Fabric admin portal under Tenant settings > Item Recovery."
+    ],
+    "doc_url": "",
+    "doc_title": "",
+    "doc_read": false,
+    "links": [],
+    "source": "extractive",
+    "updated_at": "2026-08-11T04:50:50.972865+00:00"
   }
 }

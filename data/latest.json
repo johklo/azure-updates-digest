@@ -1,10 +1,39 @@
 {
-  "generated_at": "2026-08-10T05:30:52.441695+00:00",
-  "window_start": "2026-08-03T05:30:52.441695+00:00",
-  "window_end": "2026-08-10T05:30:52.441695+00:00",
-  "window_days": 7,
-  "fetched_count": 13,
-  "matched_count": 13,
-  "count": 0,
-  "items": []
+  "generated_at": "2026-08-11T04:50:50.761801+00:00",
+  "window_start": "2026-08-10T04:50:50.761801+00:00",
+  "window_end": "2026-08-11T04:50:50.761801+00:00",
+  "window_days": 1,
+  "fetched_count": 1,
+  "matched_count": 1,
+  "count": 1,
+  "items": [
+    {
+      "id": "569140",
+      "productCategories": [
+        "Analytics"
+      ],
+      "tags": [
+        "Announcement"
+      ],
+      "products": [
+        "Microsoft Fabric"
+      ],
+      "generalAvailabilityDate": null,
+      "previewAvailabilityDate": null,
+      "privatePreviewAvailabilityDate": null,
+      "title": "Announcing: Microsoft Fabric Item Recovery will be enabled by default for tenants without an explicit setting",
+      "description": "Starting August 23, 2026, Microsoft Fabric will enable Item Recovery by default for tenants that have not explicitly configured the setting. Supported item types will have a 3-day recovery window by default. Admins can review or change this setting in the Fabric admin portal under Tenant settings &gt; Item Recovery.",
+      "status": null,
+      "created": "2026-08-10T17:50:54.0025923Z",
+      "modified": "2026-08-10T17:50:54.0025923Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "Effective",
+          "year": 2026,
+          "month": "August"
+        }
+      ]
+    }
+  ]
 }
