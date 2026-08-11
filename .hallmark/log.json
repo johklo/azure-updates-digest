@@ -1,0 +1,15 @@
+[
+  {
+    "date": "2026-08-11",
+    "macrostructure": "Split Studio",
+    "theme": "custom",
+    "theme_axes": "light / roman-serif / cool",
+    "vibe": "broadsheet, azure ink, hairline rules",
+    "genre": "editorial",
+    "nav": "N6 newspaper masthead",
+    "footer": "Ft2 inline rule, single line",
+    "enrichment": "none (typography only)",
+    "scope": "slide deck (browser deck view, standalone HTML/print export, .pptx export)",
+    "brief": "Azure product updates digest - redesign the slide deck as an editorial broadsheet"
+  }
+]

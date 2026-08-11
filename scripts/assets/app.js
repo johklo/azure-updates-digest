@@ -163,7 +163,7 @@
     if (!deckItems.length) {
       slide.innerHTML = '<div class="empty">No updates match the selected filters.</div>';
       counter.textContent = "0 / 0";
-      progressBar.style.width = "0";
+      progressBar.style.transform = "scaleX(0)";
       prevBtn.disabled = true;
       nextBtn.disabled = true;
       return;
@@ -178,30 +178,44 @@
       return li.textContent.trim();
     });
     var doc = el.querySelector(".doclink a");
+    var title = link.textContent.trim();
 
-    var html = '<div class="slide-main"><div class="eyebrow"><span class="cat">' + esc(el.getAttribute("data-category")) + "</span>";
-    if (pill) html += '<span class="pill ' + pill.className.replace("pill", "").trim() + '">' + esc(pill.textContent) + "</span>";
+    var html = '<div class="slide-head"><span class="mast">Azure Product Updates</span>' +
+      '<span class="folio"><b>' + pad2(deckIndex + 1) + "</b> / " + pad2(deckItems.length) + "</span></div>";
+
+    html += '<div class="slide-main' + (points.length ? "" : " single") + '"><div class="lede">';
+    html += '<p class="kicker">' + esc(el.getAttribute("data-category")) + "</p>";
+    html += '<h3><a href="' + esc(link.getAttribute("href")) + '" target="_blank" rel="noopener">' + esc(title) + "</a></h3>";
+    if (lead) html += '<p class="lead">' + esc(lead) + "</p>";
+    html += '<p class="byline">';
+    if (pill) html += '<span class="stage ' + esc(pill.className.replace("pill", "").trim()) + '">' + esc(pill.textContent) + "</span>";
     html += "<span>" + esc(el.getAttribute("data-date")) + "</span>";
     if (products) html += "<span>" + esc(products) + "</span>";
-    html += "</div>";
-    html += '<h3><a href="' + esc(link.getAttribute("href")) + '" target="_blank" rel="noopener">' + esc(link.textContent) + "</a></h3>";
-    if (lead) html += '<p class="lead">' + esc(lead) + "</p>";
+    html += "</p></div>";
+
     if (points.length) {
-      html += '<ul class="deck-points">';
+      html += '<div class="notes"><ol class="deck-points">';
       points.forEach(function (p) { html += "<li>" + esc(p) + "</li>"; });
-      html += "</ul>";
+      html += "</ol></div>";
     }
-    html += '</div><div class="slide-foot"><a href="' + esc(link.getAttribute("href")) + '" target="_blank" rel="noopener">Azure Updates announcement</a>';
-    if (doc) html += '<a href="' + esc(doc.getAttribute("href")) + '" target="_blank" rel="noopener">&#128196; ' + esc(doc.textContent) + "</a>";
     html += "</div>";
 
+    html += '<div class="slide-foot"><a href="' + esc(link.getAttribute("href")) + '" target="_blank" rel="noopener">Announcement</a>';
+    if (doc) html += '<a href="' + esc(doc.getAttribute("href")) + '" target="_blank" rel="noopener">' + esc(doc.textContent) + "</a>";
+    html += "</div>";
+
+    slide.classList.toggle("long", title.length > 62);
     slide.innerHTML = html;
     slide.scrollTop = 0;
-    counter.textContent = deckIndex + 1 + " / " + deckItems.length;
-    progressBar.style.width = Math.round(((deckIndex + 1) / deckItems.length) * 1000) / 10 + "%";
+    counter.textContent = pad2(deckIndex + 1) + " / " + pad2(deckItems.length);
+    progressBar.style.transform = "scaleX(" + (deckIndex + 1) / deckItems.length + ")";
     prevBtn.disabled = deckIndex === 0;
     nextBtn.disabled = deckIndex === deckItems.length - 1;
     fitSlide();
+  }
+
+  function pad2(n) {
+    return (n < 10 ? "0" : "") + n;
   }
 
   function sizeDeck() {
@@ -255,57 +269,124 @@
   }
 
   var EXPORT_CSS =
-    "*{box-sizing:border-box}" +
-    "body{margin:0;background:#eef1f4;color:#1b1f23;font:16px/1.55 'Segoe UI',Helvetica,Arial,sans-serif}" +
-    ".cover,.slide-page{background:#fff;width:100%;max-width:1280px;margin:0 auto 18px;padding:56px 64px;" +
-    "min-height:calc(100vh - 96px);display:flex;flex-direction:column;box-shadow:0 1px 4px rgba(0,0,0,.12)}" +
-    ".cover h1{font-size:38px;margin:0 0 12px;color:#004578}" +
-    ".cover p{font-size:16px;color:#57606a;margin:4px 0}" +
-    ".cover .meta{margin-top:auto;font-size:13px;color:#57606a}" +
-    ".cover ul{columns:2;font-size:14px;color:#333a42;margin:22px 0}" +
-    ".eyebrow{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:14px;font-size:13px;color:#57606a}" +
-    ".eyebrow .cat{font-weight:700;color:#0078d4;text-transform:uppercase;letter-spacing:.06em;font-size:12px}" +
-    ".pill{display:inline-block;border-radius:10px;padding:2px 10px;font-size:11px;font-weight:600;background:#eef0f2;color:#57606a}" +
-    ".pill.ga{background:#e8f5ec;color:#0f7b34}.pill.pv{background:#fdf3e0;color:#8a5a00}" +
-    ".pill.pp{background:#f2ecfa;color:#6b3fa0}.pill.rt{background:#fdeaec;color:#b02a37}" +
-    ".pill.dv{background:#e9f1f8;color:#2b5f8a}" +
-    ".body{flex:1;display:flex;flex-direction:column;justify-content:center}" +
-    "h2{font-size:31px;line-height:1.24;margin:0 0 18px;font-weight:700;letter-spacing:-.01em}" +
-    "h2 a{color:#1b1f23;text-decoration:none}" +
-    ".lead{font-size:19px;line-height:1.55;color:#2b3138;margin:0 0 18px;padding-left:14px;border-left:4px solid #0078d4}" +
-    "ul.points{margin:0;padding:0;list-style:none}" +
-    "ul.points li{position:relative;padding-left:26px;margin:0 0 12px;font-size:16px;line-height:1.5;color:#333a42}" +
-    "ul.points li::before{content:'';position:absolute;left:6px;top:.55em;width:8px;height:8px;border-radius:50%;background:#0078d4}" +
-    ".foot{margin-top:20px;padding-top:14px;border-top:1px solid #e1e4e8;display:flex;gap:20px;flex-wrap:wrap;font-size:12.5px}" +
-    ".foot a{color:#0078d4;text-decoration:none;font-weight:600}" +
-    ".num{position:absolute;top:18px;right:26px;font-size:12px;color:#8b949e}" +
-    ".slide-page{position:relative}" +
-    ".navbar{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid #e1e4e8;" +
-    "padding:10px 18px;display:flex;gap:12px;align-items:center;justify-content:center;z-index:9}" +
-    ".navbar button{cursor:pointer;background:#fff;border:1px solid #e1e4e8;border-radius:6px;padding:7px 16px;" +
-    "font:14px 'Segoe UI',Helvetica,Arial,sans-serif;color:#0078d4;font-weight:600}" +
-    ".navbar button:disabled{opacity:.4;cursor:not-allowed}" +
-    ".navbar .c{font-weight:600;min-width:90px;text-align:center}" +
-    "@media screen{body{padding-bottom:70px}.paged .cover,.paged .slide-page{display:none}" +
+    "@import url('https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600" +
+    "&family=IBM+Plex+Sans:wght@400;600&family=JetBrains+Mono:wght@400;500&display=swap');" +
+    ":root{--paper:oklch(97.5% 0.006 252);--paper-2:oklch(94.6% 0.009 252);" +
+    "--rule:oklch(87% 0.014 252);--rule-strong:oklch(72% 0.022 252);--muted:oklch(52% 0.024 252);" +
+    "--ink-2:oklch(38% 0.026 252);--ink:oklch(23% 0.028 252);--accent:oklch(50% 0.152 252);" +
+    "--cover:oklch(26% 0.055 252);--cover-ink:oklch(95% 0.012 252);--cover-muted:oklch(74% 0.03 252);" +
+    "--cover-rule:oklch(45% 0.05 252);--cover-rule-2:oklch(35% 0.05 252);" +
+    "--ga:oklch(45% 0.12 150);--pv:oklch(50% 0.11 70);--pp:oklch(45% 0.15 300);" +
+    "--rt:oklch(48% 0.16 25);--dv:oklch(46% 0.09 235);" +
+    "--display:'Newsreader',ui-serif,Cambria,Georgia,serif;" +
+    "--body:'IBM Plex Sans',ui-sans-serif,'Segoe UI',Helvetica,sans-serif;" +
+    "--outlier:'JetBrains Mono',ui-monospace,Consolas,monospace;" +
+    "--ease-out:cubic-bezier(.16,1,.3,1)}" +
+    "*{box-sizing:border-box}html,body{overflow-x:clip}" +
+    "body{margin:0;background:var(--paper-2);color:var(--ink);font:16px/1.55 var(--body)}" +
+    ".cover,.slide-page{background:var(--paper);width:100%;max-width:1280px;margin:0 auto 20px;" +
+    "padding:52px 68px 34px;min-height:calc(100vh - 96px);display:flex;flex-direction:column}" +
+    /* running head */
+    ".head{flex:none;display:flex;align-items:baseline;justify-content:space-between;gap:16px;" +
+    "padding-bottom:8px;border-bottom:1px solid var(--rule-strong);box-shadow:0 3px 0 -2px var(--rule);" +
+    "font-family:var(--outlier);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}" +
+    ".head .mast{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}" +
+    ".head .folio{font-variant-numeric:tabular-nums;white-space:nowrap}" +
+    ".head .folio b{color:var(--ink);font-weight:500}" +
+    /* cover */
+    ".cover{background:var(--cover);color:var(--cover-ink)}" +
+    ".cover .head{color:var(--cover-muted);border-bottom-color:var(--cover-muted);" +
+    "box-shadow:0 3px 0 -2px var(--cover-rule)}" +
+    ".cover .head .folio b{color:var(--cover-ink)}" +
+    ".cover .masthead{flex:1;display:flex;flex-direction:column;justify-content:center;padding:34px 0}" +
+    ".cover h1{font-family:var(--display);font-size:58px;font-weight:500;line-height:1.02;" +
+    "letter-spacing:-.025em;margin:0;max-width:16ch}" +
+    ".cover .issue{margin:22px 0 0;padding-top:14px;border-top:1px solid var(--cover-rule);" +
+    "font-family:var(--outlier);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;" +
+    "color:var(--cover-muted)}" +
+    ".cover .scope{margin:14px 0 0;max-width:62ch;font-family:var(--display);font-size:17px;" +
+    "line-height:1.5;color:var(--cover-ink)}" +
+    ".cover .index{margin:30px 0 0;padding:0;list-style:none;columns:2;column-gap:56px;" +
+    "font-family:var(--outlier);font-size:12px;letter-spacing:.04em}" +
+    ".cover .index li{display:flex;align-items:baseline;gap:6px;padding:7px 0;break-inside:avoid;" +
+    "border-bottom:1px solid var(--cover-rule-2);color:var(--cover-ink)}" +
+    ".cover .index .dots{flex:1;border-bottom:1px dotted var(--cover-muted);transform:translateY(-3px)}" +
+    ".cover .index .n{font-variant-numeric:tabular-nums;color:var(--cover-muted)}" +
+    ".cover .colophon{flex:none;padding-top:12px;border-top:1px solid var(--cover-rule);" +
+    "font-family:var(--outlier);font-size:10px;letter-spacing:.08em;color:var(--cover-muted)}" +
+    /* slide body — split studio */
+    ".body{flex:1;min-height:0;display:grid;align-content:center;align-content:safe center;" +
+    "grid-template-columns:1.06fr .94fr;column-gap:56px;row-gap:24px;padding:34px 0 26px}" +
+    ".body.single{grid-template-columns:minmax(0,1fr) minmax(0,.3fr)}" +
+    ".lede,.notes{min-width:0}" +
+    ".kicker{margin:0 0 14px;font-family:var(--outlier);font-size:11px;font-weight:500;" +
+    "letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}" +
+    "h2{margin:0;font-family:var(--display);font-size:40px;font-weight:500;line-height:1.08;" +
+    "letter-spacing:-.02em;overflow-wrap:anywhere}" +
+    ".long h2{font-size:32px}" +
+    "h2 a{color:var(--ink);text-decoration:none}" +
+    ".lead{margin:16px 0 0;max-width:46ch;font-family:var(--display);font-size:18.5px;" +
+    "line-height:1.5;color:var(--ink-2)}" +
+    ".byline{display:flex;align-items:center;flex-wrap:wrap;gap:9px 20px;margin:26px 0 0;padding-top:13px;" +
+    "border-top:1px solid var(--rule);font-family:var(--outlier);font-size:11px;letter-spacing:.06em;color:var(--muted)}" +
+    ".byline .stage{display:inline-flex;align-items:center;gap:7px;font-weight:500;letter-spacing:.12em;" +
+    "text-transform:uppercase}" +
+    ".byline .stage::before{content:'';width:8px;height:8px;background:currentColor}" +
+    ".byline .stage.ga{color:var(--ga)}.byline .stage.pv{color:var(--pv)}.byline .stage.pp{color:var(--pp)}" +
+    ".byline .stage.rt{color:var(--rt)}.byline .stage.dv{color:var(--dv)}.byline .stage.muted{color:var(--muted)}" +
+    "ol.points{margin:0;padding:14px 0 0;list-style:none;counter-reset:pt;border-top:2px solid var(--ink)}" +
+    "ol.points li{counter-increment:pt;display:grid;grid-template-columns:36px minmax(0,1fr);" +
+    "align-items:baseline;gap:0 6px;padding:11px 0;border-bottom:1px solid var(--rule);" +
+    "font-size:15px;line-height:1.5;color:var(--ink-2)}" +
+    "ol.points li:last-child{border-bottom:none}" +
+    "ol.points li::before{content:counter(pt,decimal-leading-zero);font-family:var(--outlier);" +
+    "font-size:11px;font-weight:500;letter-spacing:.08em;font-variant-numeric:tabular-nums;color:var(--accent)}" +
+    ".foot{flex:none;display:flex;gap:26px;flex-wrap:wrap;align-items:baseline;padding-top:13px;" +
+    "border-top:1px solid var(--rule-strong);font-family:var(--outlier);font-size:10.5px;" +
+    "letter-spacing:.08em;color:var(--muted)}" +
+    ".foot a{color:var(--accent);text-decoration:none;box-shadow:inset 0 -1px 0 var(--rule-strong)}" +
+    /* pager */
+    ".navbar{position:fixed;bottom:0;left:0;right:0;background:var(--paper-2);" +
+    "border-top:1px solid var(--rule);padding:11px 18px;display:flex;gap:18px;align-items:center;" +
+    "justify-content:center;z-index:200;font-family:var(--outlier);font-size:11.5px;letter-spacing:.1em;" +
+    "text-transform:uppercase}" +
+    ".navbar button{cursor:pointer;background:none;border:1px solid var(--rule-strong);border-radius:0;" +
+    "padding:7px 14px;font:inherit;color:var(--ink);transition:border-color .22s var(--ease-out),color .22s var(--ease-out)}" +
+    ".navbar button:hover{border-color:var(--accent);color:var(--accent)}" +
+    ".navbar button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}" +
+    ".navbar button:disabled{border-color:var(--rule);color:var(--rule-strong);cursor:not-allowed}" +
+    ".navbar .c{font-variant-numeric:tabular-nums;letter-spacing:.14em;min-width:92px;text-align:center}" +
+    "@media screen{body{padding-bottom:74px}.paged .cover,.paged .slide-page{display:none}" +
     ".paged .cover.on,.paged .slide-page.on{display:flex}}" +
-    "@media print{@page{size:A4 landscape;margin:11mm}body{background:#fff;padding:0}" +
-    ".navbar{display:none}.cover,.slide-page{display:flex !important;max-width:none;margin:0;padding:9mm 11mm;" +
-    "min-height:0;height:auto;box-shadow:none;page-break-after:always;break-after:page;" +
+    "@media screen and (max-width:820px){.body,.body.single{grid-template-columns:minmax(0,1fr);align-content:start}" +
+    ".cover h1{font-size:38px}.cover .index{columns:1}h2{font-size:29px}.long h2{font-size:25px}" +
+    ".cover,.slide-page{padding:30px 24px 24px}}" +
+    "@media (prefers-reduced-motion:reduce){*{transition-duration:1ms !important}}" +
+    "@media print{@page{size:A4 landscape;margin:9mm}body{background:var(--paper);padding:0}" +
+    ".navbar{display:none}.cover,.slide-page{display:flex !important;max-width:none;margin:0;" +
+    "padding:8mm 11mm 6mm;min-height:185mm;height:185mm;page-break-after:always;break-after:page;" +
     "page-break-inside:avoid;break-inside:avoid}" +
     ".slide-page:last-child{page-break-after:auto;break-after:auto}" +
-    "h2{font-size:21pt;margin-bottom:4mm}.lead{font-size:12pt;margin-bottom:4mm;padding-left:3mm}" +
-    "ul.points li{font-size:10.5pt;margin-bottom:2.6mm;padding-left:6mm}" +
-    "ul.points li::before{width:2mm;height:2mm;left:1.4mm}" +
-    ".eyebrow{margin-bottom:3mm;font-size:9pt}.foot{margin-top:4mm;padding-top:2.5mm;font-size:8.5pt}" +
-    ".num{top:5mm;right:8mm;font-size:8pt}" +
-    ".cover h1{font-size:26pt}.cover p{font-size:11pt}.cover ul{font-size:10pt;margin:6mm 0}}";
+    ".body{grid-template-columns:1.06fr .94fr}" +
+    ".body.single{grid-template-columns:minmax(0,1fr) minmax(0,.3fr)}" +
+    ".head{font-size:7.5pt;padding-bottom:1.5mm}" +
+    ".body{padding:6mm 0 5mm;column-gap:9mm}" +
+    ".kicker{font-size:7.5pt;margin-bottom:2.5mm}" +
+    "h2{font-size:20pt}.long h2{font-size:16pt}" +
+    ".lead{font-size:11pt;margin-top:3mm}" +
+    ".byline{font-size:7.5pt;margin-top:4mm;padding-top:2.2mm}" +
+    "ol.points li{font-size:9.5pt;padding:2mm 0;grid-template-columns:8mm minmax(0,1fr)}" +
+    "ol.points li::before{font-size:7.5pt}" +
+    ".foot{font-size:7pt;padding-top:2.2mm}" +
+    ".cover h1{font-size:34pt}.cover .issue{font-size:8.5pt}.cover .scope{font-size:11pt}" +
+    ".cover .index{font-size:8.5pt;margin-top:6mm}}";
 
   var EXPORT_JS =
     "(function(){var s=[].slice.call(document.querySelectorAll('.cover,.slide-page'));var i=0;" +
     "var c=document.getElementById('c'),p=document.getElementById('p'),n=document.getElementById('n');" +
-    "document.body.className='paged';" +
+    "document.body.className='paged';var q=function(n){return(n<10?'0':'')+n};" +
     "function r(){s.forEach(function(e,k){e.classList.toggle('on',k===i)});" +
-    "c.textContent=(i===0?'Cover':i+' / '+(s.length-1));p.disabled=i===0;n.disabled=i===s.length-1;window.scrollTo(0,0)}" +
+    "c.textContent=(i===0?'Cover':q(i)+' / '+q(s.length-1));p.disabled=i===0;n.disabled=i===s.length-1;window.scrollTo(0,0)}" +
     "p.onclick=function(){if(i>0){i--;r()}};n.onclick=function(){if(i<s.length-1){i++;r()}};" +
     "document.addEventListener('keydown',function(e){" +
     "if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' '){e.preventDefault();n.onclick()}" +
@@ -320,38 +401,52 @@
   function buildDeckDocument() {
     var data = deckItems.map(slideData);
     var meta = deckMeta();
+    var total = data.length;
 
     var html = "<!DOCTYPE html><html lang=\"en\"><head><meta charset=\"utf-8\">" +
       '<meta name="viewport" content="width=device-width,initial-scale=1">' +
-      "<title>Azure product updates - " + esc(meta.date) + "</title><style>" + EXPORT_CSS + "</style></head><body>";
+      "<title>Azure product updates \u2014 " + esc(meta.date) + "</title><style>" + EXPORT_CSS + "</style></head><body>";
 
-    html += '<section class="cover"><h1>Azure Product Updates</h1>' +
-      "<p>" + data.length + " update(s) &middot; generated " + esc(meta.date) + "</p>" +
-      "<p>" + esc(meta.scope) + "</p><ul>";
-    meta.categories.forEach(function (entry) { html += "<li>" + esc(entry[0]) + " &mdash; " + entry[1] + "</li>"; });
-    html += '</ul><div class="meta">Source: Microsoft Azure Updates &middot; summaries generated from each announcement and its linked documentation.</div></section>';
+    html += '<section class="cover">' +
+      '<div class="head"><span class="mast">Azure Product Updates</span>' +
+      '<span class="folio">Cover</span></div>' +
+      '<div class="masthead"><h1>Azure Product Updates</h1>' +
+      '<p class="issue">No. ' + esc(meta.date) + " &middot; " + total + " update" + (total === 1 ? "" : "s") + "</p>" +
+      '<p class="scope">' + esc(meta.scope) + "</p><ul class=\"index\">";
+    meta.categories.forEach(function (entry) {
+      html += "<li><span>" + esc(entry[0]) + '</span><span class="dots"></span><span class="n">' +
+        (entry[1] < 10 ? "0" : "") + entry[1] + "</span></li>";
+    });
+    html += "</ul></div>" +
+      '<div class="colophon">Source: Microsoft Azure Updates &middot; summaries generated from each announcement and its linked documentation.</div>' +
+      "</section>";
 
     data.forEach(function (d, index) {
-      html += '<section class="slide-page"><span class="num">' + (index + 1) + " / " + data.length + "</span>";
-      html += '<div class="body"><div class="eyebrow"><span class="cat">' + esc(d.category) + "</span>";
-      if (d.stage) html += '<span class="pill ' + esc(d.stageClass) + '">' + esc(d.stage) + "</span>";
-      html += "<span>" + esc(d.date) + "</span>";
-      if (d.products) html += "<span>" + esc(d.products) + "</span>";
-      html += "</div>";
+      var long = d.title.length > 62;
+      html += '<section class="slide-page' + (long ? " long" : "") + '">' +
+        '<div class="head"><span class="mast">Azure Product Updates</span>' +
+        '<span class="folio"><b>' + pad2(index + 1) + "</b> / " + pad2(total) + "</span></div>";
+      html += '<div class="body' + (d.points.length ? "" : " single") + '"><div class="lede">';
+      html += '<p class="kicker">' + esc(d.category) + "</p>";
       html += '<h2><a href="' + esc(d.url) + '">' + esc(d.title) + "</a></h2>";
       if (d.summary) html += '<p class="lead">' + esc(d.summary) + "</p>";
+      html += '<p class="byline">';
+      if (d.stage) html += '<span class="stage ' + esc(d.stageClass) + '">' + esc(d.stage) + "</span>";
+      html += "<span>" + esc(d.date) + "</span>";
+      if (d.products) html += "<span>" + esc(d.products) + "</span>";
+      html += "</p></div>";
       if (d.points.length) {
-        html += '<ul class="points">';
+        html += '<div class="notes"><ol class="points">';
         d.points.forEach(function (p) { html += "<li>" + esc(p) + "</li>"; });
-        html += "</ul>";
+        html += "</ol></div>";
       }
       html += "</div>";
-      html += '<div class="foot"><a href="' + esc(d.url) + '">Azure Updates announcement</a>';
+      html += '<div class="foot"><a href="' + esc(d.url) + '">Announcement</a>';
       if (d.docUrl) html += '<a href="' + esc(d.docUrl) + '">' + esc(d.docTitle || "Microsoft documentation") + "</a>";
       html += "</div></section>";
     });
 
-    html += '<div class="navbar"><button id="p">&larr; Previous</button>' +
+    html += '<div class="navbar"><button id="p">&larr; Prev</button>' +
       '<span class="c" id="c"></span><button id="n">Next &rarr;</button>' +
       '<button onclick="window.print()">Save as PDF</button></div>';
     html += "<script>" + EXPORT_JS + "<\/script></body></html>";

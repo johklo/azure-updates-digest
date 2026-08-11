@@ -76,14 +76,17 @@ The landing page is an interactive explorer:
 
 * **Summary table by category at the top** - total, GA, public preview, private preview,
   retirement, latest date and top products per category. Counts recompute live as filters change.
-* **Slide deck mode** - switch the view to show **one update per screen** in large type, with
-  Previous / Next buttons, a slide counter, a progress bar, fullscreen and keyboard navigation
-  (arrow keys, Space, Home / End, Esc). The deck always follows the current filters.
+* **Slide deck mode** - switch the view to show **one update per screen** as an editorial
+  broadsheet: a mono running head with folio, the category kicker above a large serif headline,
+  a standfirst, and a facing column of numbered key points separated by hairline rules. Previous /
+  Next buttons, a slide counter, a progress bar, fullscreen and keyboard navigation (arrow keys,
+  Space, Home / End, Esc). The deck always follows the current filters.
 * **Downloadable deck** - three export buttons, all containing exactly the updates matching the
   filters that are active when the button is pressed:
-  * **PowerPoint** writes a real 16:9 `.pptx` (cover slide + one slide per update, clickable
-    links, bullets, automatic font scaling). It is generated in the browser by a small
-    dependency-free OOXML/ZIP writer - no external library or service is involved.
+  * **PowerPoint** writes a real 16:9 `.pptx` (masthead cover slide with a dot-leader category
+    index + one slide per update, same two-column editorial layout, clickable links, automatic
+    font scaling). It is generated in the browser by a small dependency-free OOXML/ZIP writer -
+    no external library or service is involved.
   * **PDF** prints one update per A4 landscape page.
   * **HTML** saves a self-contained offline deck with its own navigation and print button.
 * **Default view** - the page loads pre-filtered to **generally available updates from the last

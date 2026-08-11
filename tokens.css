@@ -1,0 +1,53 @@
+/* Hallmark · genre: editorial · macrostructure: Split Studio · scope: slide deck
+ * theme: custom (vibe: "broadsheet, azure ink, hairline rules")
+ * axes: light paper / roman-serif display / cool accent
+ *
+ * Portable token export for the Azure product updates slide deck. The deck surfaces
+ * (site/style.css, the standalone HTML export and the .pptx writer) all reference these
+ * values by name; nothing inlines a raw colour.
+ */
+:root {
+  /* Type — 2 + 1: display, body, outlier */
+  --font-display: "Newsreader", ui-serif, Cambria, Georgia, serif;
+  --font-body:    "IBM Plex Sans", ui-sans-serif, "Segoe UI", Helvetica, sans-serif;
+  --font-outlier: "JetBrains Mono", ui-monospace, Consolas, monospace;
+
+  /* Paper and ink — cool newsprint, anchor hue 252 */
+  --color-paper:       oklch(97.5% 0.006 252);  /* #F4F7FB */
+  --color-paper-2:     oklch(94.6% 0.009 252);  /* #E9EEF3 */
+  --color-rule:        oklch(87%   0.014 252);  /* #CED5DD */
+  --color-rule-strong: oklch(72%   0.022 252);  /* #9BA6B2 */
+  --color-muted:       oklch(52%   0.024 252);  /* #5F6A77 — 5.12:1 on paper */
+  --color-ink-2:       oklch(38%   0.026 252);  /* #384350 — 9.37:1 on paper */
+  --color-ink:         oklch(23%   0.028 252);  /* #131E2A — 15.67:1 on paper */
+
+  /* Accent — one hue, hairlines and marks only, under 3% of any slide */
+  --color-accent:      oklch(50%   0.152 252);  /* #0064B6 — 5.59:1 on paper */
+  --color-focus:       oklch(50%   0.152 252);
+
+  /* Cover band */
+  --color-cover:       oklch(26%   0.055 252);  /* #0E253E */
+  --color-cover-ink:   oklch(95%   0.012 252);  /* #E9EFF7 — 13.42:1 on cover */
+  --color-cover-muted: oklch(74%   0.03  252);  /* #9EADBE —  6.78:1 on cover */
+
+  /* Release-stage marks — square swatch + small-caps label, never a filled pill */
+  --color-stage-ga: oklch(45% 0.12 150);        /* #09672E */
+  --color-stage-pv: oklch(50% 0.11  70);        /* #8A5600 */
+  --color-stage-pp: oklch(45% 0.15 300);        /* #643B9A */
+  --color-stage-rt: oklch(48% 0.16  25);        /* #A5292B */
+  --color-stage-dv: oklch(46% 0.09 235);        /* #135F83 */
+
+  /* 4pt scale */
+  --space-2xs: 0.25rem;  --space-xs: 0.5rem;   --space-sm: 0.75rem;
+  --space-md:  1rem;     --space-lg: 1.5rem;   --space-xl: 2.5rem;
+  --space-2xl: 4rem;
+
+  /* Rules */
+  --rule-hair:  1px;
+  --rule-heavy: 2px;
+
+  /* Motion — one entrance, one progress, one underline */
+  --ease-out:  cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-short: 220ms;
+  --dur-mid:   380ms;
+}

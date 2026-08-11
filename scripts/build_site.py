@@ -61,6 +61,8 @@ def page(cfg: dict, title: str, body_html: str, depth: int = 0) -> str:
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{esc(title)}</title>
 <meta name="description" content="{esc(cfg.get('site_description'))}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="{prefix}style.css"></head>
 <body>
 <header><div class="wrap"><h1>{esc(cfg.get('site_title'))}</h1>
@@ -158,14 +160,14 @@ def render_deck() -> str:
         '<div class="deck hidden" id="deck">'
         '<div class="slide" id="slide"></div>'
         '<div class="deckbar">'
-        '<button class="btn" id="prev">&larr; Previous</button>'
-        '<span class="counter" id="counter">0 / 0</span>'
-        '<button class="btn" id="next">Next &rarr;</button>'
+        '<button class="btn step" id="prev">&larr; Prev</button>'
+        '<span class="counter" id="counter">00 / 00</span>'
+        '<button class="btn step" id="next">Next &rarr;</button>'
         '<span class="spacer"></span>'
         '<span class="hint">Arrow keys, Space, Home / End &middot; Esc returns to the list</span>'
-        '<button class="btn" id="ppt">&#128202; PowerPoint</button>'
-        '<button class="btn" id="pdf">&#128438; PDF</button>'
-        '<button class="btn" id="dl">&#11015; HTML</button>'
+        '<button class="btn" id="ppt">PowerPoint</button>'
+        '<button class="btn" id="pdf">PDF</button>'
+        '<button class="btn" id="dl">HTML</button>'
         '<button class="btn" id="fs">Fullscreen</button>'
         "</div>"
         '<div class="progress"><span id="progressbar"></span></div>'

@@ -108,13 +108,35 @@
   var H = 6858000;
   var MARGIN = 685800;
   var BODY_W = W - MARGIN * 2;
+  var GUTTER = 457200;
+  var COL_L = Math.round((BODY_W - GUTTER) * 0.53);
+  var COL_R = BODY_W - GUTTER - COL_L;
+  var X_R = MARGIN + COL_L + GUTTER;
+  var EMU_PT = 12700;
 
-  var INK = "1B1F23";
-  var MUTED = "57606A";
-  var BRAND = "0078D4";
-  var DARK = "004578";
+  /* Hallmark · genre: editorial · macrostructure: Split Studio · scope: pptx export
+     theme: custom "broadsheet, azure ink, hairline rules"
+     paper oklch(97.5% 0.006 252) -> F4F7FB · accent oklch(50% 0.152 252) -> 0064B6 */
+  var PAPER = "F4F7FB";
+  var PAPER_2 = "E9EEF3";
+  var RULE = "CED5DD";
+  var RULE_STRONG = "9BA6B2";
+  var MUTED = "5F6A77";
+  var INK_2 = "384350";
+  var INK = "131E2A";
+  var ACCENT = "0064B6";
+  var COVER = "0E253E";
+  var COVER_INK = "E9EFF7";
+  var COVER_MUTED = "9EADBE";
+  var COVER_RULE = "3A5169";     /* oklch(45% 0.05 252) */
+  var COVER_RULE_2 = "27405A";   /* oklch(35% 0.05 252) */
 
-  var STAGE_COLOR = { ga: "0F7B34", pv: "8A5A00", pp: "6B3FA0", rt: "B02A37", dv: "2B5F8A", muted: MUTED };
+  var DISPLAY = "Cambria";
+  var BODY = "Segoe UI";
+  var OUTLIER = "Consolas";
+
+  var STAGE_COLOR = { ga: "09672E", pv: "8A5600", pp: "643B9A", rt: "A5292B", dv: "135F83", muted: MUTED };
+  var STAGE = STAGE_COLOR;
 
   function shape(id, name, x, y, cx, cy, bodyXml, extra) {
     return '<p:sp><p:nvSpPr><p:cNvPr id="' + id + '" name="' + name + '"/>' +
@@ -126,7 +148,7 @@
   }
 
   function rect(id, x, y, cx, cy, color) {
-    return '<p:sp><p:nvSpPr><p:cNvPr id="' + id + '" name="Bar ' + id + '"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr>' +
+    return '<p:sp><p:nvSpPr><p:cNvPr id="' + id + '" name="Rule ' + id + '"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr>' +
       '<p:spPr><a:xfrm><a:off x="' + x + '" y="' + y + '"/><a:ext cx="' + cx + '" cy="' + cy + '"/></a:xfrm>' +
       '<a:prstGeom prst="rect"><a:avLst/></a:prstGeom><a:solidFill><a:srgbClr val="' + color + '"/></a:solidFill>' +
       '<a:ln><a:noFill/></a:ln></p:spPr><p:txBody><a:bodyPr/><a:lstStyle/><a:p/></p:txBody></p:sp>';
@@ -134,11 +156,14 @@
 
   function run(text, opts) {
     opts = opts || {};
+    var face = opts.face || BODY;
     // OOXML requires rPr children in schema order: fill, latin/ea/cs, then hlinkClick.
     var props = '<a:rPr lang="en-US" sz="' + (opts.size || 1400) + '"' +
-      (opts.bold ? ' b="1"' : "") + ' dirty="0">' +
+      (opts.bold ? ' b="1"' : "") +
+      (opts.caps ? ' cap="all"' : "") +
+      (opts.spc ? ' spc="' + opts.spc + '"' : "") + ' dirty="0">' +
       '<a:solidFill><a:srgbClr val="' + (opts.color || INK) + '"/></a:solidFill>' +
-      '<a:latin typeface="Segoe UI"/><a:ea typeface="Segoe UI"/><a:cs typeface="Segoe UI"/>' +
+      '<a:latin typeface="' + face + '"/><a:ea typeface="' + face + '"/><a:cs typeface="' + face + '"/>' +
       (opts.link ? '<a:hlinkClick xmlns:r="' + NS_R + '" r:id="' + opts.link + '"/>' : "") +
       "</a:rPr>";
     return "<a:r>" + props + "<a:t>" + xmlEscape(text) + "</a:t></a:r>";
@@ -147,101 +172,203 @@
   function para(runs, opts) {
     opts = opts || {};
     // OOXML requires pPr children in schema order: lnSpc, spcBef, buClr, buFont, buChar.
-    var pr = "<a:pPr";
-    if (opts.bullet) pr += ' marL="285750" indent="-285750"';
-    pr += ' algn="' + (opts.align || "l") + '">';
+    var pr = '<a:pPr algn="' + (opts.align || "l") + '">';
     pr += '<a:lnSpc><a:spcPct val="' + (opts.lineSpacing || 105000) + '"/></a:lnSpc>';
     if (opts.spaceBefore) pr += '<a:spcBef><a:spcPts val="' + opts.spaceBefore + '"/></a:spcBef>';
-    pr += opts.bullet
-      ? '<a:buClr><a:srgbClr val="' + BRAND + '"/></a:buClr><a:buFont typeface="Arial"/><a:buChar char="\u2022"/>'
-      : "<a:buNone/>";
-    pr += "</a:pPr>";
+    pr += "<a:buNone/></a:pPr>";
     return "<a:p>" + pr + runs + "</a:p>";
+  }
+
+  // Rough line-count estimate: PowerPoint cannot reflow for us, so lay out by measurement.
+  function estLines(text, sizeHundredths, widthEmu, factor) {
+    if (!text) return 0;
+    var charEmu = (sizeHundredths / 100) * EMU_PT * (factor || 0.5);
+    var perLine = Math.max(6, Math.floor(widthEmu / charEmu));
+    return Math.max(1, Math.ceil(String(text).length / perLine));
+  }
+
+  function blockH(text, sizeHundredths, widthEmu, factor, leading) {
+    return estLines(text, sizeHundredths, widthEmu, factor) *
+      Math.round((sizeHundredths / 100) * EMU_PT * (leading || 1.2));
   }
 
   function scaleFor(slide) {
     var weight = (slide.title || "").length * 1.7 + (slide.summary || "").length;
     (slide.points || []).forEach(function (p) { weight += p.length + 24; });
-    if (weight > 1150) return 0.78;
-    if (weight > 900) return 0.86;
-    if (weight > 700) return 0.93;
+    if (weight > 1150) return 0.8;
+    if (weight > 900) return 0.88;
+    if (weight > 700) return 0.94;
     return 1;
+  }
+
+  // Running head — N6 masthead voice: mono small caps, double rule beneath.
+  function runningHead(shapes, idRef, leftText, folioText, inkColor, mutedColor, ruleColor, ruleLight) {
+    shapes.push(shape(idRef.id++, "Mast", MARGIN, 393700, BODY_W - 1600000, 220000,
+      para(run(leftText, { size: 900, face: OUTLIER, color: mutedColor, caps: true, spc: 300 }))));
+    shapes.push(shape(idRef.id++, "Folio", W - MARGIN - 1600000, 393700, 1600000, 220000,
+      para(folioText, { align: "r" })));
+    shapes.push(rect(idRef.id++, MARGIN, 685800, BODY_W, 12700, ruleColor));
+    shapes.push(rect(idRef.id++, MARGIN, 723900, BODY_W, 9525, ruleLight));
   }
 
   function slideXml(slide, index, total, links) {
     var s = scaleFor(slide);
     var sz = function (base) { return Math.round(base * s); };
     var shapes = [];
-    var id = 2;
+    var idRef = { id: 2 };
 
-    var eyebrow = [];
-    if (slide.category) eyebrow.push(run(slide.category.toUpperCase() + "   ", { size: 1100, bold: true, color: BRAND }));
-    if (slide.stage) eyebrow.push(run(slide.stage + "   ", { size: 1100, bold: true, color: STAGE_COLOR[slide.stageClass] || MUTED }));
-    var tail = [slide.date, slide.products].filter(Boolean).join("   \u00b7   ");
-    if (tail) eyebrow.push(run(tail, { size: 1100, color: MUTED }));
-    shapes.push(shape(id++, "Eyebrow", MARGIN, 548640, BODY_W, 320000, para(eyebrow.join(""))));
+    var folio = run(pad2(index), { size: 900, face: OUTLIER, color: INK, bold: true, spc: 200 }) +
+      run("  /  " + pad2(total), { size: 900, face: OUTLIER, color: MUTED, spc: 200 });
+    runningHead(shapes, idRef, "Azure Product Updates", folio,
+      INK, MUTED, RULE_STRONG, RULE);
 
-    shapes.push(shape(id++, "Title", MARGIN, 1005840, BODY_W, 1280160,
-      para(run(slide.title, { size: sz(2800), bold: true, color: INK, link: links.title }), { lineSpacing: 100000 })));
+    var TOP = 1143000;
+    var BOTTOM = 5715000;
+    var REGION = BOTTOM - TOP;
 
-    var y = 2377440;
+    /* ---- Left half: kicker, headline, standfirst, byline ---- */
+    var titleSize = sz(slide.title && slide.title.length > 62 ? 2400 : 3000);
+    if (slide.title && slide.title.length > 110) titleSize = sz(2000);
+    var titleH = blockH(slide.title, titleSize, COL_L, 0.5, 1.12);
+    var leadSize = sz(1450);
+    var leadH = slide.summary ? blockH(slide.summary, leadSize, COL_L, 0.48, 1.5) : 0;
+
+    var kickerH = 260350;
+    var leadGap = slide.summary ? 190500 : 0;
+    var bylineGap = 285750;
+    var bylineH = 260350;
+    var leftH = kickerH + titleH + leadGap + leadH + bylineGap + bylineH;
+    var yL = TOP + Math.max(0, Math.round((REGION - leftH) / 2));
+
+    shapes.push(shape(idRef.id++, "Kicker", MARGIN, yL, COL_L, 220000,
+      para(run(slide.category || "Update", { size: 1000, face: OUTLIER, color: ACCENT, caps: true, spc: 340 }))));
+    yL += kickerH;
+
+    shapes.push(shape(idRef.id++, "Headline", MARGIN, yL, COL_L, titleH + 120000,
+      para(run(slide.title, { size: titleSize, face: DISPLAY, color: INK, link: links.title }),
+        { lineSpacing: 100000 })));
+    yL += titleH + leadGap;
+
     if (slide.summary) {
-      shapes.push(rect(id++, MARGIN, y, 45720, 640080, BRAND));
-      shapes.push(shape(id++, "Summary", MARGIN + 182880, y, BODY_W - 182880, 640080,
-        para(run(slide.summary, { size: sz(1600), color: "2B3138" }), { lineSpacing: 110000 })));
-      y += 868680;
+      shapes.push(shape(idRef.id++, "Standfirst", MARGIN, yL, COL_L, leadH + 120000,
+        para(run(slide.summary, { size: leadSize, face: DISPLAY, color: INK_2 }), { lineSpacing: 128000 })));
+      yL += leadH;
     }
 
+    yL += bylineGap;
+    shapes.push(rect(idRef.id++, MARGIN, yL - 152400, COL_L, 9525, RULE));
+    var byline = [];
+    if (slide.stage) {
+      var stageColor = STAGE_COLOR[slide.stageClass] || MUTED;
+      byline.push(run("\u25a0 ", { size: 900, color: stageColor }));
+      byline.push(run(slide.stage + "     ", { size: 900, face: OUTLIER, color: stageColor, caps: true, spc: 200 }));
+    }
+    var tail = [slide.date, slide.products].filter(Boolean).join("     \u00b7     ");
+    if (tail) byline.push(run(tail, { size: 900, face: OUTLIER, color: MUTED, spc: 100 }));
+    shapes.push(shape(idRef.id++, "Byline", MARGIN, yL, COL_L, 240000, para(byline.join(""))));
+
+    /* ---- Right half: numbered notes, hairline separated ---- */
     var points = (slide.points || []).slice(0, 6);
     if (points.length) {
-      var body = points.map(function (text, i) {
-        return para(run(text, { size: sz(1400), color: "333A42" }), { bullet: true, spaceBefore: i ? 500 : 0 });
-      }).join("");
-      shapes.push(shape(id++, "Points", MARGIN, y, BODY_W, 5486400 - y, body));
+      var numW = 400050;
+      var textW = COL_R - numW;
+      var ptSize = sz(1250);
+      var heights = points.map(function (text) {
+        return Math.max(285750, blockH(text, ptSize, textW, 0.48, 1.45));
+      });
+      var pad = 133350;
+      var notesH = 190500 + heights.reduce(function (a, b) { return a + b + pad * 2 + 9525; }, 0);
+      var yR = TOP + Math.max(0, Math.round((REGION - notesH) / 2));
+
+      shapes.push(rect(idRef.id++, X_R, yR, COL_R, 25400, INK));
+      yR += 190500;
+
+      points.forEach(function (text, i) {
+        shapes.push(shape(idRef.id++, "PointNo" + i, X_R, yR + pad + 25400, numW - 76200, 220000,
+          para(run(pad2(i + 1), { size: 950, face: OUTLIER, color: ACCENT, spc: 200 }))));
+        shapes.push(shape(idRef.id++, "Point" + i, X_R + numW, yR + pad, textW, heights[i] + 60000,
+          para(run(text, { size: ptSize, color: INK_2 }), { lineSpacing: 122000 })));
+        yR += heights[i] + pad * 2;
+        if (i < points.length - 1) {
+          shapes.push(rect(idRef.id++, X_R, yR, COL_R, 9525, RULE));
+          yR += 9525;
+        }
+      });
     }
 
-    var foot = [run("Azure Updates announcement", { size: 1000, bold: true, color: BRAND, link: links.url })];
-    if (links.doc) foot.push(run("      " + (slide.docTitle || "Microsoft documentation"), { size: 1000, bold: true, color: BRAND, link: links.doc }));
-    shapes.push(rect(id++, MARGIN, 5943600, BODY_W, 9525, "E1E4E8"));
-    shapes.push(shape(id++, "Footer", MARGIN, 6080760, BODY_W - 800000, 320000, para(foot.join(""))));
-    shapes.push(shape(id++, "Number", W - MARGIN - 800000, 6080760, 800000, 320000,
-      para(run(index + " / " + total, { size: 1000, color: "8B949E" }), { align: "r" })));
+    /* ---- Ft2 footer: hairline + single inline line ---- */
+    shapes.push(rect(idRef.id++, MARGIN, 5943600, BODY_W, 9525, RULE_STRONG));
+    var foot = [run("Announcement", { size: 900, face: OUTLIER, color: ACCENT, caps: true, spc: 200, link: links.url })];
+    if (links.doc) {
+      foot.push(run("          ", { size: 900, face: OUTLIER, color: MUTED }));
+      foot.push(run(slide.docTitle || "Microsoft documentation",
+        { size: 900, face: OUTLIER, color: ACCENT, caps: true, spc: 200, link: links.doc }));
+    }
+    shapes.push(shape(idRef.id++, "Footer", MARGIN, 6096000, BODY_W, 260000, para(foot.join(""))));
 
-    return HEAD + '<p:sld xmlns:a="' + NS_A + '" xmlns:r="' + NS_R + '" xmlns:p="' + NS_P + '">' +
-      "<p:cSld><p:spTree><p:nvGrpSpPr><p:cNvPr id=\"1\" name=\"\"/><p:cNvGrpSpPr/><p:nvPr/></p:nvGrpSpPr>" +
-      '<p:grpSpPr><a:xfrm><a:off x="0" y="0"/><a:ext cx="0" cy="0"/>' +
-      '<a:chOff x="0" y="0"/><a:chExt cx="0" cy="0"/></a:xfrm></p:grpSpPr>' +
-      shapes.join("") + "</p:spTree></p:cSld><p:clrMapOvr><a:masterClrMapping/></p:clrMapOvr></p:sld>";
+    return wrapSlide(shapes.join(""));
+  }
+
+  function pad2(n) {
+    return (n < 10 ? "0" : "") + n;
   }
 
   function coverXml(meta, total) {
     var shapes = [];
-    var id = 2;
-    shapes.push(rect(id++, 0, 0, W, 1737360, DARK));
-    shapes.push(shape(id++, "CoverTitle", MARGIN, 548640, BODY_W, 700000,
-      para(run("Azure Product Updates", { size: 4000, bold: true, color: "FFFFFF" }))));
-    shapes.push(shape(id++, "CoverSub", MARGIN, 1280160, BODY_W, 320000,
-      para(run(total + " update(s)   \u00b7   generated " + meta.date, { size: 1400, color: "D6E7F7" }))));
-    shapes.push(shape(id++, "Scope", MARGIN, 2194560, BODY_W, 640080,
-      para(run(meta.scope, { size: 1400, color: MUTED }))));
+    var idRef = { id: 2 };
+    shapes.push(rect(idRef.id++, 0, 0, W, H, COVER));
 
-    var rows = meta.categories.map(function (entry, i) {
-      return para(run(entry[0] + "  \u2014  " + entry[1], { size: 1300, color: "333A42" }), { bullet: true, spaceBefore: i ? 400 : 0 });
-    }).join("");
-    shapes.push(shape(id++, "Categories", MARGIN, 2926080, BODY_W, 2560320, rows));
-    shapes.push(shape(id++, "CoverFoot", MARGIN, 6080760, BODY_W, 320000,
+    runningHead(shapes, idRef, "Azure Product Updates",
+      run("Cover", { size: 900, face: OUTLIER, color: COVER_MUTED, caps: true, spc: 300 }),
+      COVER_INK, COVER_MUTED, COVER_MUTED, COVER_RULE);
+
+    shapes.push(shape(idRef.id++, "Masthead", MARGIN, 1143000, BODY_W - 2000000, 1600000,
+      para(run("Azure Product Updates", { size: 5400, face: DISPLAY, color: COVER_INK }),
+        { lineSpacing: 96000 })));
+
+    shapes.push(rect(idRef.id++, MARGIN, 2679700, BODY_W, 9525, COVER_MUTED));
+    shapes.push(shape(idRef.id++, "Issue", MARGIN, 2819400, BODY_W, 240000,
+      para(run("No. " + meta.date + "     \u00b7     " + total + " update" + (total === 1 ? "" : "s"),
+        { size: 1000, face: OUTLIER, color: COVER_MUTED, caps: true, spc: 300 }))));
+
+    shapes.push(shape(idRef.id++, "Scope", MARGIN, 3200400, Math.round(BODY_W * 0.62), 700000,
+      para(run(meta.scope, { size: 1400, face: DISPLAY, color: COVER_INK }), { lineSpacing: 128000 })));
+
+    // Index — dot-leader category list, two columns.
+    var half = Math.ceil(meta.categories.length / 2);
+    var colW = Math.round((BODY_W - GUTTER) / 2);
+    [0, 1].forEach(function (col) {
+      var slice = meta.categories.slice(col * half, col * half + half);
+      var x = MARGIN + col * (colW + GUTTER);
+      var y = 4114800;
+      slice.forEach(function (entry) {
+        shapes.push(shape(idRef.id++, "Idx" + col + entry[0], x, y, colW - 500000, 220000,
+          para(run(entry[0], { size: 1000, face: OUTLIER, color: COVER_INK, spc: 80 }))));
+        shapes.push(shape(idRef.id++, "IdxN" + col + entry[0], x + colW - 500000, y, 500000, 220000,
+          para(run(pad2(entry[1]), { size: 1000, face: OUTLIER, color: COVER_MUTED, spc: 80 }), { align: "r" })));
+        y += 260350;
+        shapes.push(rect(idRef.id++, x, y - 63500, colW, 9525, COVER_RULE_2));
+      });
+    });
+
+    shapes.push(rect(idRef.id++, MARGIN, 5943600, BODY_W, 9525, COVER_MUTED));
+    shapes.push(shape(idRef.id++, "Colophon", MARGIN, 6096000, BODY_W, 260000,
       para(run("Source: Microsoft Azure Updates \u00b7 summaries generated from each announcement and its linked documentation.",
-        { size: 1000, color: "8B949E" }))));
+        { size: 850, face: OUTLIER, color: COVER_MUTED, spc: 80 }))));
 
+    return wrapSlide(shapes.join(""));
+  }
+
+  function wrapSlide(shapeXml) {
     return HEAD + '<p:sld xmlns:a="' + NS_A + '" xmlns:r="' + NS_R + '" xmlns:p="' + NS_P + '">' +
       "<p:cSld><p:spTree><p:nvGrpSpPr><p:cNvPr id=\"1\" name=\"\"/><p:cNvGrpSpPr/><p:nvPr/></p:nvGrpSpPr>" +
       '<p:grpSpPr><a:xfrm><a:off x="0" y="0"/><a:ext cx="0" cy="0"/>' +
       '<a:chOff x="0" y="0"/><a:chExt cx="0" cy="0"/></a:xfrm></p:grpSpPr>' +
-      shapes.join("") + "</p:spTree></p:cSld><p:clrMapOvr><a:masterClrMapping/></p:clrMapOvr></p:sld>";
+      shapeXml + "</p:spTree></p:cSld><p:clrMapOvr><a:masterClrMapping/></p:clrMapOvr></p:sld>";
   }
 
   function themeXml() {
-    var colors = ["4472C4", "ED7D31", "A5A5A5", "FFC000", "5B9BD5", "70AD47"];
+    var colors = [ACCENT, STAGE.pv, RULE_STRONG, STAGE.ga, STAGE.dv, STAGE.pp];
     var scheme = colors.map(function (c, i) {
       return '<a:accent' + (i + 1) + '><a:srgbClr val="' + c + '"/></a:accent' + (i + 1) + ">";
     }).join("");
@@ -261,16 +388,16 @@
     }).join("");
     var effects = "<a:effectStyle><a:effectLst/></a:effectStyle>";
 
-    return HEAD + '<a:theme xmlns:a="' + NS_A + '" name="Azure Updates">' +
-      "<a:themeElements><a:clrScheme name=\"Azure\">" +
+    return HEAD + '<a:theme xmlns:a="' + NS_A + '" name="Azure Updates Broadsheet">' +
+      "<a:themeElements><a:clrScheme name=\"Broadsheet\">" +
       '<a:dk1><a:sysClr val="windowText" lastClr="000000"/></a:dk1>' +
       '<a:lt1><a:sysClr val="window" lastClr="FFFFFF"/></a:lt1>' +
-      '<a:dk2><a:srgbClr val="1B1F23"/></a:dk2><a:lt2><a:srgbClr val="F4F6F8"/></a:lt2>' + scheme +
-      '<a:hlink><a:srgbClr val="0078D4"/></a:hlink><a:folHlink><a:srgbClr val="6B3FA0"/></a:folHlink>' +
+      '<a:dk2><a:srgbClr val="' + INK + '"/></a:dk2><a:lt2><a:srgbClr val="' + PAPER + '"/></a:lt2>' + scheme +
+      '<a:hlink><a:srgbClr val="' + ACCENT + '"/></a:hlink><a:folHlink><a:srgbClr val="' + STAGE.pp + '"/></a:folHlink>' +
       "</a:clrScheme>" +
-      '<a:fontScheme name="Azure"><a:majorFont><a:latin typeface="Segoe UI"/><a:ea typeface=""/><a:cs typeface=""/></a:majorFont>' +
-      '<a:minorFont><a:latin typeface="Segoe UI"/><a:ea typeface=""/><a:cs typeface=""/></a:minorFont></a:fontScheme>' +
-      '<a:fmtScheme name="Azure">' +
+      '<a:fontScheme name="Broadsheet"><a:majorFont><a:latin typeface="' + DISPLAY + '"/><a:ea typeface=""/><a:cs typeface=""/></a:majorFont>' +
+      '<a:minorFont><a:latin typeface="' + BODY + '"/><a:ea typeface=""/><a:cs typeface=""/></a:minorFont></a:fontScheme>' +
+      '<a:fmtScheme name="Broadsheet">' +
       "<a:fillStyleLst>" + fill + "</a:fillStyleLst>" +
       "<a:lnStyleLst>" + lines + "</a:lnStyleLst>" +
       "<a:effectStyleLst>" + effects + effects + effects + "</a:effectStyleLst>" +
@@ -280,7 +407,7 @@
 
   function masterXml() {
     return HEAD + '<p:sldMaster xmlns:a="' + NS_A + '" xmlns:r="' + NS_R + '" xmlns:p="' + NS_P + '">' +
-      '<p:cSld><p:bg><p:bgPr><a:solidFill><a:srgbClr val="FFFFFF"/></a:solidFill><a:effectLst/></p:bgPr></p:bg>' +
+      '<p:cSld><p:bg><p:bgPr><a:solidFill><a:srgbClr val="' + PAPER + '"/></a:solidFill><a:effectLst/></p:bgPr></p:bg>' +
       "<p:spTree><p:nvGrpSpPr><p:cNvPr id=\"1\" name=\"\"/><p:cNvGrpSpPr/><p:nvPr/></p:nvGrpSpPr>" +
       '<p:grpSpPr><a:xfrm><a:off x="0" y="0"/><a:ext cx="0" cy="0"/>' +
       '<a:chOff x="0" y="0"/><a:chExt cx="0" cy="0"/></a:xfrm></p:grpSpPr></p:spTree></p:cSld>' +
