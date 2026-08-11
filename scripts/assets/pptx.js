@@ -134,6 +134,10 @@
   var DISPLAY = "Cambria";
   var BODY = "Segoe UI";
   var OUTLIER = "Consolas";
+  // PowerPoint resolves Hangul through the East Asian slot, so Korean keeps its own face
+  // while Latin stays on the display/body face inside the very same run properties.
+  var EA_DISPLAY = "Batang";
+  var EA_BODY = "Malgun Gothic";
 
   var STAGE_COLOR = { ga: "09672E", pv: "8A5600", pp: "643B9A", rt: "A5292B", dv: "135F83", muted: MUTED };
   var STAGE = STAGE_COLOR;
@@ -157,13 +161,15 @@
   function run(text, opts) {
     opts = opts || {};
     var face = opts.face || BODY;
+    var ea = opts.ea || (face === DISPLAY ? EA_DISPLAY : face === OUTLIER ? EA_BODY : EA_BODY);
     // OOXML requires rPr children in schema order: fill, latin/ea/cs, then hlinkClick.
-    var props = '<a:rPr lang="en-US" sz="' + (opts.size || 1400) + '"' +
+    var props = '<a:rPr lang="en-US"' + (opts.lang ? ' altLang="' + opts.lang + '"' : "") +
+      ' sz="' + (opts.size || 1400) + '"' +
       (opts.bold ? ' b="1"' : "") +
       (opts.caps ? ' cap="all"' : "") +
       (opts.spc ? ' spc="' + opts.spc + '"' : "") + ' dirty="0">' +
       '<a:solidFill><a:srgbClr val="' + (opts.color || INK) + '"/></a:solidFill>' +
-      '<a:latin typeface="' + face + '"/><a:ea typeface="' + face + '"/><a:cs typeface="' + face + '"/>' +
+      '<a:latin typeface="' + face + '"/><a:ea typeface="' + ea + '"/><a:cs typeface="' + face + '"/>' +
       (opts.link ? '<a:hlinkClick xmlns:r="' + NS_R + '" r:id="' + opts.link + '"/>' : "") +
       "</a:rPr>";
     return "<a:r>" + props + "<a:t>" + xmlEscape(text) + "</a:t></a:r>";
@@ -180,6 +186,7 @@
   }
 
   // Rough line-count estimate: PowerPoint cannot reflow for us, so lay out by measurement.
+  // Hangul is full-width, so it needs a much larger per-character factor than Latin.
   function estLines(text, sizeHundredths, widthEmu, factor) {
     if (!text) return 0;
     var charEmu = (sizeHundredths / 100) * EMU_PT * (factor || 0.5);
@@ -192,9 +199,18 @@
       Math.round((sizeHundredths / 100) * EMU_PT * (leading || 1.2));
   }
 
+  var KO_FACTOR = 1.02;
+
+  function koBlockH(text, sizeHundredths, widthEmu, leading) {
+    return blockH(text, sizeHundredths, widthEmu, KO_FACTOR, leading || 1.45);
+  }
+
   function scaleFor(slide) {
     var weight = (slide.title || "").length * 1.7 + (slide.summary || "").length;
     (slide.points || []).forEach(function (p) { weight += p.length + 24; });
+    // Korean is denser per character, so it costs more vertical space than its length suggests.
+    weight += (slide.titleKo || "").length * 2.6 + (slide.summaryKo || "").length * 1.5;
+    (slide.pointsKo || []).forEach(function (p) { weight += (p || "").length * 1.5; });
     if (weight > 1150) return 0.8;
     if (weight > 900) return 0.88;
     if (weight > 700) return 0.94;
@@ -226,33 +242,50 @@
     var BOTTOM = 5715000;
     var REGION = BOTTOM - TOP;
 
-    /* ---- Left half: kicker, headline, standfirst, byline ---- */
+    /* ---- Left half: kicker, headline (+ Korean), standfirst (+ Korean), byline ---- */
     var titleSize = sz(slide.title && slide.title.length > 62 ? 2400 : 3000);
     if (slide.title && slide.title.length > 110) titleSize = sz(2000);
     var titleH = blockH(slide.title, titleSize, COL_L, 0.5, 1.12);
+    var titleKoSize = Math.round(titleSize * 0.66);
+    var titleKoH = slide.titleKo ? koBlockH(slide.titleKo, titleKoSize, COL_L, 1.4) + 76200 : 0;
+
     var leadSize = sz(1450);
     var leadH = slide.summary ? blockH(slide.summary, leadSize, COL_L, 0.48, 1.5) : 0;
+    var leadKoSize = Math.round(leadSize * 0.88);
+    var leadKoH = slide.summaryKo ? koBlockH(slide.summaryKo, leadKoSize, COL_L, 1.55) + 63500 : 0;
 
     var kickerH = 260350;
-    var leadGap = slide.summary ? 190500 : 0;
+    var leadGap = slide.summary || slide.summaryKo ? 190500 : 0;
     var bylineGap = 285750;
     var bylineH = 260350;
-    var leftH = kickerH + titleH + leadGap + leadH + bylineGap + bylineH;
+    var leftH = kickerH + titleH + titleKoH + leadGap + leadH + leadKoH + bylineGap + bylineH;
     var yL = TOP + Math.max(0, Math.round((REGION - leftH) / 2));
 
     shapes.push(shape(idRef.id++, "Kicker", MARGIN, yL, COL_L, 220000,
       para(run(slide.category || "Update", { size: 1000, face: OUTLIER, color: ACCENT, caps: true, spc: 340 }))));
     yL += kickerH;
 
-    shapes.push(shape(idRef.id++, "Headline", MARGIN, yL, COL_L, titleH + 120000,
-      para(run(slide.title, { size: titleSize, face: DISPLAY, color: INK, link: links.title }),
-        { lineSpacing: 100000 })));
-    yL += titleH + leadGap;
+    var headline = para(run(slide.title, { size: titleSize, face: DISPLAY, color: INK, link: links.title }),
+      { lineSpacing: 100000 });
+    if (slide.titleKo) {
+      headline += para(run(slide.titleKo, { size: titleKoSize, face: DISPLAY, color: INK_2, lang: "ko-KR" }),
+        { lineSpacing: 124000, spaceBefore: 500 });
+    }
+    shapes.push(shape(idRef.id++, "Headline", MARGIN, yL, COL_L, titleH + titleKoH + 120000, headline));
+    yL += titleH + titleKoH + leadGap;
 
-    if (slide.summary) {
-      shapes.push(shape(idRef.id++, "Standfirst", MARGIN, yL, COL_L, leadH + 120000,
-        para(run(slide.summary, { size: leadSize, face: DISPLAY, color: INK_2 }), { lineSpacing: 128000 })));
-      yL += leadH;
+    if (slide.summary || slide.summaryKo) {
+      var standfirst = "";
+      if (slide.summary) {
+        standfirst += para(run(slide.summary, { size: leadSize, face: DISPLAY, color: INK_2 }),
+          { lineSpacing: 128000 });
+      }
+      if (slide.summaryKo) {
+        standfirst += para(run(slide.summaryKo, { size: leadKoSize, face: DISPLAY, color: MUTED, lang: "ko-KR" }),
+          { lineSpacing: 138000, spaceBefore: slide.summary ? 400 : 0 });
+      }
+      shapes.push(shape(idRef.id++, "Standfirst", MARGIN, yL, COL_L, leadH + leadKoH + 120000, standfirst));
+      yL += leadH + leadKoH;
     }
 
     yL += bylineGap;
@@ -269,12 +302,16 @@
 
     /* ---- Right half: numbered notes, hairline separated ---- */
     var points = (slide.points || []).slice(0, 6);
+    var pointsKo = (slide.pointsKo || []).slice(0, 6);
     if (points.length) {
       var numW = 400050;
       var textW = COL_R - numW;
       var ptSize = sz(1250);
-      var heights = points.map(function (text) {
-        return Math.max(285750, blockH(text, ptSize, textW, 0.48, 1.45));
+      var ptKoSize = Math.round(ptSize * 0.86);
+      var heights = points.map(function (text, i) {
+        var h = Math.max(285750, blockH(text, ptSize, textW, 0.48, 1.45));
+        if (pointsKo[i]) h += koBlockH(pointsKo[i], ptKoSize, textW, 1.5) + 50800;
+        return h;
       });
       var pad = 133350;
       var notesH = 190500 + heights.reduce(function (a, b) { return a + b + pad * 2 + 9525; }, 0);
@@ -286,8 +323,12 @@
       points.forEach(function (text, i) {
         shapes.push(shape(idRef.id++, "PointNo" + i, X_R, yR + pad + 25400, numW - 76200, 220000,
           para(run(pad2(i + 1), { size: 950, face: OUTLIER, color: ACCENT, spc: 200 }))));
-        shapes.push(shape(idRef.id++, "Point" + i, X_R + numW, yR + pad, textW, heights[i] + 60000,
-          para(run(text, { size: ptSize, color: INK_2 }), { lineSpacing: 122000 })));
+        var body = para(run(text, { size: ptSize, color: INK_2 }), { lineSpacing: 122000 });
+        if (pointsKo[i]) {
+          body += para(run(pointsKo[i], { size: ptKoSize, color: MUTED, lang: "ko-KR" }),
+            { lineSpacing: 140000, spaceBefore: 300 });
+        }
+        shapes.push(shape(idRef.id++, "Point" + i, X_R + numW, yR + pad, textW, heights[i] + 60000, body));
         yR += heights[i] + pad * 2;
         if (i < points.length - 1) {
           shapes.push(rect(idRef.id++, X_R, yR, COL_R, 9525, RULE));

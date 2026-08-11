@@ -15,6 +15,10 @@ on:
         type: boolean
         required: false
         default: false
+      translate_limit:
+        description: "Maximum updates to translate into Korean in this run (0 = no limit)"
+        required: false
+        default: "150"
       send_email:
         description: "Send the email newsletter"
         type: boolean
@@ -52,7 +56,8 @@ jobs:
             --days "${{ inputs.days || '7' }}" \
             ${{ inputs.include_seen == true && '--include-seen' || '' }}
 
-      - name: Summarize linked documentation
+      - name: Summarize linked documentation and translate into Korean
+        id: enrich
         env:
           AZURE_OPENAI_ENDPOINT: ${{ secrets.AZURE_OPENAI_ENDPOINT }}
           AZURE_OPENAI_API_KEY: ${{ secrets.AZURE_OPENAI_API_KEY }}
@@ -61,7 +66,10 @@ jobs:
           OPENAI_BASE_URL: ${{ secrets.OPENAI_BASE_URL }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           OPENAI_MODEL: ${{ secrets.OPENAI_MODEL }}
-        run: python scripts/enrich_updates.py --input archive --limit 120 --sleep 0.4
+        run: |
+          python scripts/enrich_updates.py \
+            --input archive --limit 120 --sleep 0.4 \
+            --translate-limit "${{ inputs.translate_limit || '150' }}"
 
       - name: Build digest and email
         id: digest
@@ -78,7 +86,7 @@ jobs:
           if git diff --staged --quiet; then
             echo "Nothing to commit."
           else
-            git commit -m "chore: Azure updates digest ${{ steps.digest.outputs.digest_date }} (${{ steps.digest.outputs.count }} updates)"
+            git commit -m "chore: Azure updates digest ${{ steps.digest.outputs.digest_date }} (${{ steps.digest.outputs.count }} updates, ${{ steps.enrich.outputs.translated_count || 0 }} translated)"
             git push
           fi
 

@@ -328,6 +328,68 @@ PROMPT = (
     "Be specific and factual. Never invent details that are not in the provided text."
 )
 
+TRANSLATE_PROMPT = (
+    "You translate Azure product update summaries from English into Korean for enterprise "
+    "engineers who already work with Azure. Reply with JSON only: "
+    '{"title_ko": "...", "summary_ko": "...", "key_points_ko": ["...", "..."]}. '
+    "Rules: keep Azure service, product, SKU, API, region and feature names in English exactly as "
+    "written (Azure Kubernetes Service, ExpressRoute, gpt-4o, Standard_D4s_v5); keep acronyms, "
+    "version numbers, units and dates unchanged; translate only the surrounding prose. "
+    "Write natural technical Korean in the '~합니다' register - do not translate word by word. "
+    "Return key_points_ko with exactly the same number of entries, in the same order, as the input "
+    "key points. Add nothing that is not in the source text."
+)
+
+
+def llm_translate(cfg: dict, title: str, summary: str, points: list) -> dict | None:
+    """Translate an already-summarized update into Korean. Returns None on any failure."""
+    points = [str(p).strip() for p in (points or []) if str(p).strip()]
+    if not (title or summary or points):
+        return None
+
+    content = json.dumps(
+        {"title": title, "summary": summary, "key_points": points}, ensure_ascii=False
+    )
+    payload = {
+        "messages": [
+            {"role": "system", "content": TRANSLATE_PROMPT},
+            {"role": "user", "content": content},
+        ],
+        "temperature": 0.1,
+        "max_tokens": 900,
+        "response_format": {"type": "json_object"},
+    }
+    if "openai.azure.com" not in cfg["url"]:
+        payload["model"] = cfg["model"]
+
+    request = urllib.request.Request(
+        cfg["url"],
+        data=json.dumps(payload).encode("utf-8"),
+        headers={"Content-Type": "application/json", "Accept": "application/json", **cfg["headers"]},
+    )
+    try:
+        with urllib.request.urlopen(request, timeout=90) as response:
+            body = json.loads(response.read().decode("utf-8"))
+        raw = body["choices"][0]["message"]["content"]
+        parsed = json.loads(re.sub(r"(?s)^```(?:json)?|```$", "", raw).strip())
+    except Exception:
+        return None
+
+    translated = [str(p).strip() for p in (parsed.get("key_points_ko") or []) if str(p).strip()]
+    # A length mismatch means the model merged or dropped bullets; pairing them with the English
+    # list would mislabel the content, so drop the bullets rather than misalign them.
+    if len(translated) != len(points):
+        translated = []
+
+    result = {
+        "title_ko": str(parsed.get("title_ko", "")).strip(),
+        "summary_ko": str(parsed.get("summary_ko", "")).strip(),
+        "key_points_ko": translated,
+    }
+    if not any(result.values()):
+        return None
+    return result
+
 
 def llm_summary(cfg: dict, title: str, update_text: str, doc: dict | None) -> tuple[str, list[str]] | None:
     doc_text = ""

@@ -201,9 +201,16 @@ def load_enrichment() -> dict:
 
 def enrichment_for(item: dict, enrichment: dict) -> dict:
     entry = enrichment.get(str(item.get("id"))) or {}
+    points = [p for p in (entry.get("key_points") or []) if p]
+    points_ko = [p for p in (entry.get("key_points_ko") or []) if p]
     return {
         "summary": entry.get("summary") or "",
-        "key_points": [p for p in (entry.get("key_points") or []) if p],
+        "key_points": points,
+        "title_ko": entry.get("title_ko") or "",
+        "summary_ko": entry.get("summary_ko") or "",
+        # Only pair Korean bullets with English ones when the two lists line up; a partial
+        # list would attach the wrong translation to a point.
+        "key_points_ko": points_ko if len(points_ko) == len(points) else [],
         "doc_url": entry.get("doc_url") or "",
         "doc_title": entry.get("doc_title") or "",
         "doc_read": bool(entry.get("doc_read")),

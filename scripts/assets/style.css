@@ -5,20 +5,24 @@
  * axes: light paper / roman-serif display / cool accent
  * type: Newsreader (display) + IBM Plex Sans (body) + JetBrains Mono (outlier)
  *       outlier role: machine metadata only — running head, kicker, byline, folio, note numerals
+ *       Korean rides the same display/body stacks as a script fallback (Noto Serif KR / Noto Sans KR)
  * nav: N6 newspaper masthead · footer: Ft2 inline rule, single line
  * enrichment: none (typography only)
+ * bilingual: EN · 병기 · 한글 — Korean sets one step down, muted, under its English counterpart
  * contrast: pass (40–41) · slop: pass (42–45) · tokens: pass (48)
  * pre-emit critique: P5 H5 E4 S5 R5 V4
  */
-@import url("https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=IBM+Plex+Sans:wght@400;600&family=JetBrains+Mono:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=IBM+Plex+Sans:wght@400;600&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+KR:wght@400;500&family=Noto+Sans+KR:wght@400;500&display=swap");
 
 :root{--bg:#f4f6f8;--card:#fff;--ink:#1b1f23;--muted:#57606a;--brand:#0078d4;--brand-dark:#004578;
 --line:#e1e4e8;--ga:#0f7b34;--ga-bg:#e8f5ec;--pv:#8a5a00;--pv-bg:#fdf3e0;--pp:#6b3fa0;--pp-bg:#f2ecfa;
 --rt:#b02a37;--rt-bg:#fdeaec;--dv:#2b5f8a;--dv-bg:#e9f1f8;
 
-/* ---- Hallmark deck tokens (deck surfaces only) ---- */
---dk-font-display:"Newsreader",ui-serif,Cambria,Georgia,serif;
---dk-font-body:"IBM Plex Sans",ui-sans-serif,"Segoe UI",Helvetica,sans-serif;
+/* ---- Hallmark deck tokens (deck surfaces only) ----
+   Korean is a script fallback inside the same two role stacks, not a fourth and fifth
+   family: Latin resolves to Newsreader / IBM Plex Sans, Hangul falls through to Noto. */
+--dk-font-display:"Newsreader",ui-serif,"Noto Serif KR",Cambria,Georgia,serif;
+--dk-font-body:"IBM Plex Sans",ui-sans-serif,"Noto Sans KR","Segoe UI",Helvetica,sans-serif;
 --dk-font-outlier:"JetBrains Mono",ui-monospace,Consolas,monospace;
 --dk-paper:oklch(97.5% 0.006 252);
 --dk-paper-2:oklch(94.6% 0.009 252);
@@ -132,10 +136,14 @@ summary .count{font-weight:400;color:var(--muted);font-size:12px;white-space:now
 .item:last-child{border-bottom:none}
 .item a.title{font-weight:600;font-size:14.5px;text-decoration:none;color:#0b4f9e;display:block}
 .item a.title:hover{text-decoration:underline}
+.item .title-ko{font-size:13.5px;line-height:1.5;color:#4a525c;margin:3px 0 0;word-break:keep-all}
 .meta{margin:6px 0;font-size:12px;color:var(--muted)}
 .summary-line{font-size:13.5px;color:#24292f;margin:4px 0}
+.summary-line-ko{font-size:13px;line-height:1.55;color:#4a525c;margin:2px 0 4px;word-break:keep-all}
 ul.points{margin:7px 0 4px;padding-left:18px;font-size:13px;color:#3a4048}
 ul.points li{margin:3px 0}
+ul.points li .ko{display:block;font-size:12.5px;line-height:1.5;color:#5c646e;
+margin-top:2px;word-break:keep-all}
 .doclink{font-size:12px;margin-top:6px}
 .hidden{display:none !important}
 ul.list{list-style:none;padding:0;margin:0}
@@ -182,8 +190,12 @@ transition:box-shadow var(--dk-dur-short) var(--dk-ease-out)}
 .slide h3 a:hover{box-shadow:inset 0 -.06em 0 var(--dk-accent)}
 .slide h3 a:active{box-shadow:inset 0 -.06em 0 var(--dk-ink)}
 .slide h3 a:focus-visible{outline:2px solid var(--dk-focus);outline-offset:4px}
+.slide h3 .ko{display:block;margin-top:.24em;font-size:.62em;font-weight:400;line-height:1.3;
+letter-spacing:-.01em;color:var(--dk-ink-2);word-break:keep-all}
 .slide .lead{margin:.85em 0 0;max-width:46ch;font-family:var(--dk-font-display);font-size:1.06em;
 font-weight:400;line-height:1.5;color:var(--dk-ink-2)}
+.slide .lead.ko{margin-top:.32em;font-size:.86em;line-height:1.55;color:var(--dk-muted);
+word-break:keep-all}
 .slide .byline{display:flex;align-items:center;flex-wrap:wrap;gap:.55em 1.1em;margin:1.5em 0 0;
 padding-top:.85em;border-top:var(--dk-rule-hair) solid var(--dk-rule);
 font-family:var(--dk-font-outlier);font-size:.66em;letter-spacing:.06em;color:var(--dk-muted)}
@@ -204,9 +216,18 @@ border-top:var(--dk-rule-heavy) solid var(--dk-ink)}
 align-items:baseline;gap:0 .4em;padding:.72em 0;border-bottom:var(--dk-rule-hair) solid var(--dk-rule);
 font-size:.92em;line-height:1.5;color:var(--dk-ink-2)}
 .slide ol.deck-points li:last-child{border-bottom:none}
+.slide ol.deck-points li .ko{display:block;grid-column:2;margin-top:.22em;font-size:.8em;
+line-height:1.5;color:var(--dk-muted);word-break:keep-all}
 .slide ol.deck-points li::before{content:counter(pt,decimal-leading-zero);
 font-family:var(--dk-font-outlier);font-size:.66em;font-weight:500;letter-spacing:.08em;
 font-variant-numeric:tabular-nums;color:var(--dk-accent)}
+
+/* Bilingual slides carry roughly twice the copy, so they tighten their own rhythm
+   before the auto-fit has to shrink the type. */
+.slide.bilingual .slide-main{padding:1em 0 .8em;row-gap:var(--dk-space-md)}
+.slide.bilingual ol.deck-points li{padding:.5em 0}
+.slide.bilingual .lead{margin-top:.6em}
+.slide.bilingual .byline{margin-top:1.1em;padding-top:.65em}
 
 /* Ft2 — inline rule, single line */
 .slide .slide-foot{flex:none;display:flex;gap:1.6em;flex-wrap:wrap;align-items:baseline;
@@ -242,6 +263,13 @@ border:var(--dk-rule-hair) solid var(--dk-rule-strong);color:var(--dk-ink)}
 .deckbar .btn.step:disabled{border-color:var(--dk-rule);color:var(--dk-rule-strong)}
 .deckbar .counter{font-variant-numeric:tabular-nums;letter-spacing:.14em;color:var(--dk-ink);
 min-width:5.5em;text-align:center}
+.deckbar .langs{display:inline-flex;align-items:center;gap:var(--dk-space-sm);
+padding-left:var(--dk-space-md);margin-left:var(--dk-space-2xs);
+border-left:var(--dk-rule-hair) solid var(--dk-rule-strong)}
+.deckbar .btn.lang{color:var(--dk-muted);box-shadow:inset 0 -1px 0 transparent}
+.deckbar .btn.lang:hover{color:var(--dk-accent);box-shadow:inset 0 -2px 0 var(--dk-accent)}
+.deckbar .btn.lang[aria-pressed="true"]{color:var(--dk-ink);
+box-shadow:inset 0 -2px 0 var(--dk-ink)}
 .deckbar .spacer{flex:1}
 .deckbar .hint{font-size:11px;letter-spacing:.06em;text-transform:none;color:var(--dk-muted)}
 .progress{height:var(--dk-rule-heavy);background:var(--dk-rule)}

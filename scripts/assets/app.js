@@ -18,9 +18,12 @@
   var prevBtn = document.getElementById("prev");
   var nextBtn = document.getElementById("next");
   var browseOnly = Array.prototype.slice.call(document.querySelectorAll(".browse-only"));
+  var langBar = document.getElementById("langs");
   var view = "browse";
   var deckItems = [];
   var deckIndex = 0;
+  var lang = "both";
+  var LANG_KEY = "azupdates.deck.lang";
 
   var stages = {};
   var cats = {};
@@ -138,6 +141,7 @@
   function refreshDeck() {
     deckItems = items.filter(function (el) { return !el.classList.contains("hidden"); });
     if (deckIndex >= deckItems.length) deckIndex = Math.max(0, deckItems.length - 1);
+    syncLangBar();
     if (view === "slides") renderSlide();
   }
 
@@ -174,19 +178,32 @@
     var meta = textOf(el, ".meta");
     var products = meta.split("\u00b7").slice(1).join("\u00b7").trim();
     var lead = textOf(el, ".summary-line");
-    var points = Array.prototype.map.call(el.querySelectorAll("ul.points li"), function (li) {
-      return li.textContent.trim();
-    });
     var doc = el.querySelector(".doclink a");
     var title = link.textContent.trim();
+    var titleKo = textOf(el, ".title-ko");
+    var leadKo = textOf(el, ".summary-line-ko");
+    var points = pointsOf(el);
+
+    var mode = effectiveLang();
+    var showEn = mode !== "ko" || !titleKo;
+    var showKo = mode !== "en";
+    var headline = showEn ? title : titleKo;
+    var headlineKo = showEn && showKo ? titleKo : "";
 
     var html = '<div class="slide-head"><span class="mast">Azure Product Updates</span>' +
       '<span class="folio"><b>' + pad2(deckIndex + 1) + "</b> / " + pad2(deckItems.length) + "</span></div>";
 
     html += '<div class="slide-main' + (points.length ? "" : " single") + '"><div class="lede">';
     html += '<p class="kicker">' + esc(el.getAttribute("data-category")) + "</p>";
-    html += '<h3><a href="' + esc(link.getAttribute("href")) + '" target="_blank" rel="noopener">' + esc(title) + "</a></h3>";
-    if (lead) html += '<p class="lead">' + esc(lead) + "</p>";
+    html += '<h3><a href="' + esc(link.getAttribute("href")) + '" target="_blank" rel="noopener">' +
+      esc(headline) + "</a>";
+    if (headlineKo) html += '<span class="ko" lang="ko">' + esc(headlineKo) + "</span>";
+    html += "</h3>";
+
+    var leadText = showEn ? lead : leadKo;
+    if (leadText) html += '<p class="lead"' + (showEn ? "" : ' lang="ko"') + ">" + esc(leadText) + "</p>";
+    if (showEn && showKo && leadKo) html += '<p class="lead ko" lang="ko">' + esc(leadKo) + "</p>";
+
     html += '<p class="byline">';
     if (pill) html += '<span class="stage ' + esc(pill.className.replace("pill", "").trim()) + '">' + esc(pill.textContent) + "</span>";
     html += "<span>" + esc(el.getAttribute("data-date")) + "</span>";
@@ -195,7 +212,12 @@
 
     if (points.length) {
       html += '<div class="notes"><ol class="deck-points">';
-      points.forEach(function (p) { html += "<li>" + esc(p) + "</li>"; });
+      points.forEach(function (p) {
+        var en = showEn ? p.en : p.ko || p.en;
+        html += "<li><span" + (showEn ? "" : ' lang="ko"') + ">" + esc(en) + "</span>";
+        if (showEn && showKo && p.ko) html += '<span class="ko" lang="ko">' + esc(p.ko) + "</span>";
+        html += "</li>";
+      });
       html += "</ol></div>";
     }
     html += "</div>";
@@ -204,7 +226,8 @@
     if (doc) html += '<a href="' + esc(doc.getAttribute("href")) + '" target="_blank" rel="noopener">' + esc(doc.textContent) + "</a>";
     html += "</div>";
 
-    slide.classList.toggle("long", title.length > 62);
+    slide.classList.toggle("long", headline.length > 62);
+    slide.classList.toggle("bilingual", showEn && showKo && !!(headlineKo || leadKo));
     slide.innerHTML = html;
     slide.scrollTop = 0;
     counter.textContent = pad2(deckIndex + 1) + " / " + pad2(deckItems.length);
@@ -212,6 +235,42 @@
     prevBtn.disabled = deckIndex === 0;
     nextBtn.disabled = deckIndex === deckItems.length - 1;
     fitSlide();
+  }
+
+  function pointsOf(el) {
+    return Array.prototype.map.call(el.querySelectorAll("ul.points li"), function (li) {
+      var ko = li.querySelector(".ko");
+      var koText = ko ? ko.textContent.trim() : "";
+      var en = li.textContent.trim();
+      if (koText && en.slice(-koText.length) === koText) en = en.slice(0, -koText.length).trim();
+      return { en: en, ko: koText };
+    });
+  }
+
+  function hasKorean() {
+    return deckItems.some(function (el) { return !!el.querySelector(".title-ko, .summary-line-ko, ul.points .ko"); });
+  }
+
+  // `lang` is the user's preference and survives filter changes; the effective mode falls back
+  // to English whenever the current result set carries no Korean at all.
+  function effectiveLang() {
+    return hasKorean() ? lang : "en";
+  }
+
+  function syncLangBar() {
+    if (!langBar) return;
+    langBar.classList.toggle("hidden", !hasKorean());
+    chips("#langs .lang").forEach(function (btn) {
+      btn.setAttribute("aria-pressed", btn.getAttribute("data-lang") === lang ? "true" : "false");
+    });
+  }
+
+  function setLang(next) {
+    if (next === lang) return;
+    lang = next;
+    try { window.localStorage.setItem(LANG_KEY, lang); } catch (e) { /* private mode */ }
+    syncLangBar();
+    renderSlide();
   }
 
   function pad2(n) {
@@ -232,10 +291,13 @@
 
   function fitSlide() {
     if (!deckItems.length || typeof slide.scrollHeight !== "number") return;
+    // Bilingual slides carry about twice the copy, so they are allowed to shrink further
+    // before the deck gives up and lets the slide scroll.
+    var floor = slide.classList.contains("bilingual") ? 0.44 : 0.62;
     var scale = 1;
     slide.style.setProperty("--fit", scale);
-    for (var i = 0; i < 12 && scale > 0.62 && slideOverflows(); i++) {
-      scale = Math.round((scale - 0.045) * 1000) / 1000;
+    for (var i = 0; i < 20 && scale > floor && slideOverflows(); i++) {
+      scale = Math.round((scale - 0.04) * 1000) / 1000;
       slide.style.setProperty("--fit", scale);
     }
   }
@@ -251,18 +313,28 @@
     var pill = el.querySelector(".meta .pill");
     var meta = (el.querySelector(".meta") || { textContent: "" }).textContent.trim();
     var doc = el.querySelector(".doclink a");
+    var points = pointsOf(el);
+    var titleKo = textOf(el, ".title-ko");
+    var leadKo = textOf(el, ".summary-line-ko");
+    var mode = effectiveLang();
+    var showEn = mode !== "ko" || !titleKo;
+    var showKo = mode !== "en";
+    var title = link ? link.textContent.trim() : "";
+    var summary = textOf(el, ".summary-line");
+
     return {
       category: el.getAttribute("data-category") || "",
       stage: pill ? pill.textContent.trim() : "",
       stageClass: pill ? pill.className.replace("pill", "").trim() : "muted",
       date: el.getAttribute("data-date") || "",
       products: meta.split("\u00b7").slice(1).join("\u00b7").trim(),
-      title: link ? link.textContent.trim() : "",
+      title: showEn ? title : titleKo || title,
+      titleKo: showEn && showKo ? titleKo : "",
       url: link ? link.getAttribute("href") : "",
-      summary: textOf(el, ".summary-line"),
-      points: Array.prototype.map.call(el.querySelectorAll("ul.points li"), function (li) {
-        return li.textContent.trim();
-      }),
+      summary: showEn ? summary : leadKo || summary,
+      summaryKo: showEn && showKo ? leadKo : "",
+      points: points.map(function (p) { return showEn ? p.en : p.ko || p.en; }),
+      pointsKo: showEn && showKo ? points.map(function (p) { return p.ko; }) : [],
       docUrl: doc ? doc.getAttribute("href") : "",
       docTitle: doc ? doc.textContent.trim() : ""
     };
@@ -270,7 +342,8 @@
 
   var EXPORT_CSS =
     "@import url('https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600" +
-    "&family=IBM+Plex+Sans:wght@400;600&family=JetBrains+Mono:wght@400;500&display=swap');" +
+    "&family=IBM+Plex+Sans:wght@400;600&family=JetBrains+Mono:wght@400;500" +
+    "&family=Noto+Serif+KR:wght@400;500&family=Noto+Sans+KR:wght@400;500&display=swap');" +
     ":root{--paper:oklch(97.5% 0.006 252);--paper-2:oklch(94.6% 0.009 252);" +
     "--rule:oklch(87% 0.014 252);--rule-strong:oklch(72% 0.022 252);--muted:oklch(52% 0.024 252);" +
     "--ink-2:oklch(38% 0.026 252);--ink:oklch(23% 0.028 252);--accent:oklch(50% 0.152 252);" +
@@ -278,8 +351,8 @@
     "--cover-rule:oklch(45% 0.05 252);--cover-rule-2:oklch(35% 0.05 252);" +
     "--ga:oklch(45% 0.12 150);--pv:oklch(50% 0.11 70);--pp:oklch(45% 0.15 300);" +
     "--rt:oklch(48% 0.16 25);--dv:oklch(46% 0.09 235);" +
-    "--display:'Newsreader',ui-serif,Cambria,Georgia,serif;" +
-    "--body:'IBM Plex Sans',ui-sans-serif,'Segoe UI',Helvetica,sans-serif;" +
+    "--display:'Newsreader',ui-serif,'Noto Serif KR',Cambria,Georgia,serif;" +
+    "--body:'IBM Plex Sans',ui-sans-serif,'Noto Sans KR','Segoe UI',Helvetica,sans-serif;" +
     "--outlier:'JetBrains Mono',ui-monospace,Consolas,monospace;" +
     "--ease-out:cubic-bezier(.16,1,.3,1)}" +
     "*{box-sizing:border-box}html,body{overflow-x:clip}" +
@@ -325,8 +398,11 @@
     "letter-spacing:-.02em;overflow-wrap:anywhere}" +
     ".long h2{font-size:32px}" +
     "h2 a{color:var(--ink);text-decoration:none}" +
+    "h2 .ko{display:block;margin-top:.28em;font-size:.72em;font-weight:400;" +
+    "line-height:1.32;letter-spacing:-.01em;color:var(--ink-2);word-break:keep-all}" +
     ".lead{margin:16px 0 0;max-width:46ch;font-family:var(--display);font-size:18.5px;" +
     "line-height:1.5;color:var(--ink-2)}" +
+    ".lead.ko{margin-top:7px;font-size:15.5px;line-height:1.6;color:var(--muted);word-break:keep-all}" +
     ".byline{display:flex;align-items:center;flex-wrap:wrap;gap:9px 20px;margin:26px 0 0;padding-top:13px;" +
     "border-top:1px solid var(--rule);font-family:var(--outlier);font-size:11px;letter-spacing:.06em;color:var(--muted)}" +
     ".byline .stage{display:inline-flex;align-items:center;gap:7px;font-weight:500;letter-spacing:.12em;" +
@@ -339,6 +415,8 @@
     "align-items:baseline;gap:0 6px;padding:11px 0;border-bottom:1px solid var(--rule);" +
     "font-size:15px;line-height:1.5;color:var(--ink-2)}" +
     "ol.points li:last-child{border-bottom:none}" +
+    "ol.points li .ko{display:block;grid-column:2;margin-top:4px;font-size:13.5px;line-height:1.55;" +
+    "color:var(--muted);word-break:keep-all}" +
     "ol.points li::before{content:counter(pt,decimal-leading-zero);font-family:var(--outlier);" +
     "font-size:11px;font-weight:500;letter-spacing:.08em;font-variant-numeric:tabular-nums;color:var(--accent)}" +
     ".foot{flex:none;display:flex;gap:26px;flex-wrap:wrap;align-items:baseline;padding-top:13px;" +
@@ -373,10 +451,13 @@
     ".body{padding:6mm 0 5mm;column-gap:9mm}" +
     ".kicker{font-size:7.5pt;margin-bottom:2.5mm}" +
     "h2{font-size:20pt}.long h2{font-size:16pt}" +
+    "h2 .ko{font-size:12pt;margin-top:1.6mm}" +
     ".lead{font-size:11pt;margin-top:3mm}" +
+    ".lead.ko{font-size:9.5pt;margin-top:1.6mm}" +
     ".byline{font-size:7.5pt;margin-top:4mm;padding-top:2.2mm}" +
     "ol.points li{font-size:9.5pt;padding:2mm 0;grid-template-columns:8mm minmax(0,1fr)}" +
     "ol.points li::before{font-size:7.5pt}" +
+    "ol.points li .ko{font-size:8.5pt;margin-top:1mm}" +
     ".foot{font-size:7pt;padding-top:2.2mm}" +
     ".cover h1{font-size:34pt}.cover .issue{font-size:8.5pt}.cover .scope{font-size:11pt}" +
     ".cover .index{font-size:8.5pt;margin-top:6mm}}";
@@ -428,8 +509,11 @@
         '<span class="folio"><b>' + pad2(index + 1) + "</b> / " + pad2(total) + "</span></div>";
       html += '<div class="body' + (d.points.length ? "" : " single") + '"><div class="lede">';
       html += '<p class="kicker">' + esc(d.category) + "</p>";
-      html += '<h2><a href="' + esc(d.url) + '">' + esc(d.title) + "</a></h2>";
+      html += '<h2><a href="' + esc(d.url) + '">' + esc(d.title) + "</a>";
+      if (d.titleKo) html += '<span class="ko" lang="ko">' + esc(d.titleKo) + "</span>";
+      html += "</h2>";
       if (d.summary) html += '<p class="lead">' + esc(d.summary) + "</p>";
+      if (d.summaryKo) html += '<p class="lead ko" lang="ko">' + esc(d.summaryKo) + "</p>";
       html += '<p class="byline">';
       if (d.stage) html += '<span class="stage ' + esc(d.stageClass) + '">' + esc(d.stage) + "</span>";
       html += "<span>" + esc(d.date) + "</span>";
@@ -437,7 +521,11 @@
       html += "</p></div>";
       if (d.points.length) {
         html += '<div class="notes"><ol class="points">';
-        d.points.forEach(function (p) { html += "<li>" + esc(p) + "</li>"; });
+        d.points.forEach(function (p, i) {
+          html += "<li><span>" + esc(p) + "</span>";
+          if (d.pointsKo[i]) html += '<span class="ko" lang="ko">' + esc(d.pointsKo[i]) + "</span>";
+          html += "</li>";
+        });
         html += "</ol></div>";
       }
       html += "</div>";
@@ -535,7 +623,7 @@
     });
     deck.classList.toggle("hidden", next !== "slides");
     browseOnly.forEach(function (node) { node.classList.toggle("hidden", next === "slides"); });
-    if (next === "slides") { deckIndex = 0; sizeDeck(); renderSlide(); }
+    if (next === "slides") { deckIndex = 0; syncLangBar(); sizeDeck(); renderSlide(); }
     else { deck.style.removeProperty("--deck-h"); layoutGrid(); }
   }
 
@@ -603,6 +691,16 @@
   chips("[data-view]").forEach(function (btn) {
     btn.addEventListener("click", function () { setView(btn.getAttribute("data-view")); });
   });
+
+  try {
+    var savedLang = window.localStorage.getItem(LANG_KEY);
+    if (savedLang === "en" || savedLang === "ko" || savedLang === "both") lang = savedLang;
+  } catch (e) { /* storage unavailable */ }
+
+  chips("#langs .lang").forEach(function (btn) {
+    btn.addEventListener("click", function () { setLang(btn.getAttribute("data-lang")); });
+  });
+  syncLangBar();
 
   prevBtn.addEventListener("click", function () { move(-1); });
   nextBtn.addEventListener("click", function () { move(1); });

@@ -87,25 +87,48 @@ def render_item(item: dict, enrichment: dict) -> str:
     product_text = ", ".join(products)
     summary = info["summary"] or summarize(item.get("description", ""), 260)
     points = info["key_points"][:4]
+    points_ko = info["key_points_ko"][:4] if len(info["key_points_ko"]) >= len(points) else []
 
     haystack = " ".join(
-        [str(item.get("title", "")), product_text, summary, " ".join(points), " ".join(item.get("tags") or [])]
+        [
+            str(item.get("title", "")),
+            product_text,
+            summary,
+            " ".join(points),
+            " ".join(item.get("tags") or []),
+            info["title_ko"],
+            info["summary_ko"],
+            " ".join(info["key_points_ko"]),
+        ]
     ).lower()
 
     parts = [
         f'<div class="item" data-stage="{esc(stage)}" data-category="{esc(item.get("_category"))}"',
         f' data-date="{esc(item_date_str(item))}" data-search="{esc(haystack)}">',
         f'<a class="title" href="{esc(update_url(item))}">{esc(item.get("title"))}</a>',
-        f'<div class="meta"><span class="pill {PILL_CLASS.get(stage, "muted")}">{esc(STAGE_LABELS.get(stage))}</span> ',
-        esc(item_date_str(item)),
     ]
+    if info["title_ko"]:
+        parts.append(f'<div class="title-ko" lang="ko">{esc(info["title_ko"])}</div>')
+    parts.extend(
+        [
+            f'<div class="meta"><span class="pill {PILL_CLASS.get(stage, "muted")}">{esc(STAGE_LABELS.get(stage))}</span> ',
+            esc(item_date_str(item)),
+        ]
+    )
     if product_text:
         parts.append(" &middot; " + esc(product_text))
     parts.append("</div>")
     if summary:
         parts.append(f'<div class="summary-line">{esc(summary)}</div>')
+    if info["summary_ko"]:
+        parts.append(f'<div class="summary-line-ko" lang="ko">{esc(info["summary_ko"])}</div>')
     if points:
-        parts.append('<ul class="points">' + "".join(f"<li>{esc(p)}</li>" for p in points) + "</ul>")
+        items_html = []
+        for index, point in enumerate(points):
+            ko = points_ko[index] if index < len(points_ko) else ""
+            ko_html = f'<span class="ko" lang="ko">{esc(ko)}</span>' if ko else ""
+            items_html.append(f"<li>{esc(point)}{ko_html}</li>")
+        parts.append('<ul class="points">' + "".join(items_html) + "</ul>")
     if info["doc_url"]:
         label = info["doc_title"] or "Microsoft documentation"
         parts.append(f'<div class="doclink">&#128196; <a href="{esc(info["doc_url"])}">{esc(label)}</a></div>')
@@ -163,6 +186,11 @@ def render_deck() -> str:
         '<button class="btn step" id="prev">&larr; Prev</button>'
         '<span class="counter" id="counter">00 / 00</span>'
         '<button class="btn step" id="next">Next &rarr;</button>'
+        '<span class="langs hidden" id="langs" role="group" aria-label="Slide language">'
+        '<button class="btn lang" data-lang="en" aria-pressed="false">EN</button>'
+        '<button class="btn lang" data-lang="both" aria-pressed="true">\ubcd1\uae30</button>'
+        '<button class="btn lang" data-lang="ko" aria-pressed="false">\ud55c\uae00</button>'
+        "</span>"
         '<span class="spacer"></span>'
         '<span class="hint">Arrow keys, Space, Home / End &middot; Esc returns to the list</span>'
         '<button class="btn" id="ppt">PowerPoint</button>'

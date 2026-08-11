@@ -18,7 +18,7 @@ Microsoft release communications API
 scripts/fetch_updates.py   -> data/latest.json, data/archive.json, data/state.json
         |
         v
-scripts/enrich_updates.py  -> opens each update's documentation link and summarizes it
+scripts/enrich_updates.py  -> opens each update's documentation link, summarizes it, translates it
         |                     -> data/enrichment.json
         |
         +-> scripts/build_digest.py -> digests/YYYY-MM-DD.md, build/email.html, build/email.txt
@@ -70,6 +70,26 @@ To enable the LLM backend, set these repository secrets (all optional):
 Results are cached in `data/enrichment.json` keyed by update id, so each run only summarizes
 updates it has not seen before.
 
+### Korean translation
+
+When the LLM backend is configured, a second pass translates each cached summary into Korean and
+stores `title_ko`, `summary_ko` and `key_points_ko` next to the English text in the same cache
+entry. It reuses the English summary instead of re-reading the documentation, so translating is far
+cheaper than re-summarizing, and it only touches entries that do not have Korean yet.
+
+```bash
+python scripts/enrich_updates.py --translate-only                     # backfill everything
+python scripts/enrich_updates.py --translate-only --translate-limit 100
+python scripts/enrich_updates.py --no-translate                       # English only
+```
+
+The scheduled workflow translates up to 150 updates per run by default (`translate_limit` input),
+so a large backlog drains over a few runs instead of one very long job. Service, SKU, API and
+region names are kept in English; only the surrounding prose is translated. If the model returns a
+different number of bullets than it was given, the bullets are dropped rather than misaligned with
+their English counterparts. Without credentials the pass is skipped and the site simply stays
+English.
+
 ## The web page
 
 The landing page is an interactive explorer:
@@ -81,11 +101,18 @@ The landing page is an interactive explorer:
   a standfirst, and a facing column of numbered key points separated by hairline rules. Previous /
   Next buttons, a slide counter, a progress bar, fullscreen and keyboard navigation (arrow keys,
   Space, Home / End, Esc). The deck always follows the current filters.
+* **Korean alongside English** - when an update has been translated, the deck offers
+  `EN` / `병기` / `한글`. In `병기` the Korean headline, summary and key points sit directly under
+  their English counterparts, one size down and in muted ink, so the pairing reads without
+  competing. The choice is remembered between visits and carries into every export. Hangul is a
+  script fallback inside the same two type stacks (Noto Serif KR / Noto Sans KR), so the design
+  keeps its two-family discipline. The switch is hidden when no translation exists.
 * **Downloadable deck** - three export buttons, all containing exactly the updates matching the
   filters that are active when the button is pressed:
   * **PowerPoint** writes a real 16:9 `.pptx` (masthead cover slide with a dot-leader category
     index + one slide per update, same two-column editorial layout, clickable links, automatic
-    font scaling). It is generated in the browser by a small dependency-free OOXML/ZIP writer -
+    font scaling, and Korean set through PowerPoint's East Asian font slot when `병기` or `한글`
+    is selected). It is generated in the browser by a small dependency-free OOXML/ZIP writer -
     no external library or service is involved.
   * **PDF** prints one update per A4 landscape page.
   * **HTML** saves a self-contained offline deck with its own navigation and print button.
@@ -204,6 +231,10 @@ Useful flags:
 | `--limit N` | enrich | Cap how many updates are summarized in one run |
 | `--refresh` | enrich | Re-summarize updates that already have an entry |
 | `--no-fetch` | enrich | Summarize without opening documentation links |
+| `--translate-only` | enrich | Skip summarizing; only backfill Korean translations |
+| `--no-translate` | enrich | Skip the Korean pass entirely |
+| `--translate-limit N` | enrich | Cap how many updates are translated in one run |
+| `--retranslate` | enrich | Re-translate entries that already carry Korean text |
 | `--date YYYY-MM-DD` | digest | Override the digest date |
 | `--default-days N` | site | Date filter preset selected on page load (0 = all time) |
 | `--default-stage S` | site | Release stage pre-selected on load, default `ga` (`none` = every stage) |

@@ -7,9 +7,11 @@
  * values by name; nothing inlines a raw colour.
  */
 :root {
-  /* Type — 2 + 1: display, body, outlier */
-  --font-display: "Newsreader", ui-serif, Cambria, Georgia, serif;
-  --font-body:    "IBM Plex Sans", ui-sans-serif, "Segoe UI", Helvetica, sans-serif;
+  /* Type — 2 + 1: display, body, outlier.
+     Korean is a script fallback inside the same two role stacks, not a fourth and fifth
+     family: Latin resolves to Newsreader / IBM Plex Sans, Hangul falls through to Noto. */
+  --font-display: "Newsreader", ui-serif, "Noto Serif KR", Cambria, Georgia, serif;
+  --font-body:    "IBM Plex Sans", ui-sans-serif, "Noto Sans KR", "Segoe UI", Helvetica, sans-serif;
   --font-outlier: "JetBrains Mono", ui-monospace, Consolas, monospace;
 
   /* Paper and ink — cool newsprint, anchor hue 252 */
