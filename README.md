@@ -62,10 +62,14 @@ To enable the LLM backend, set these repository secrets (all optional):
 | Secret | Purpose |
 | --- | --- |
 | `AZURE_OPENAI_ENDPOINT` | e.g. `https://my-aoai.openai.azure.com` |
-| `AZURE_OPENAI_API_KEY` | Azure OpenAI key |
-| `AZURE_OPENAI_DEPLOYMENT` | Deployment name, e.g. `gpt-4o-mini` |
+| `AZURE_OPENAI_API_KEY` | Azure OpenAI key. Omit when the subscription forbids local auth |
+| `AZURE_OPENAI_DEPLOYMENT` | Deployment name, e.g. `gpt-4-1-mini` |
 | `AZURE_OPENAI_API_VERSION` | Defaults to `2024-10-21` |
+| `AZURE_CLIENT_ID` / `AZURE_TENANT_ID` / `AZURE_SUBSCRIPTION_ID` | OIDC sign-in, so the workflow mints an Entra ID token instead of storing a key |
 | `OPENAI_BASE_URL` / `OPENAI_API_KEY` / `OPENAI_MODEL` | Alternative OpenAI-compatible endpoint |
+
+`AZURE_OPENAI_TOKEN` is not a stored secret — the workflow mints it per run, and locally you export
+it from `az account get-access-token`. Either it or `AZURE_OPENAI_API_KEY` is enough.
 
 Results are cached in `data/enrichment.json` keyed by update id, so each run only summarizes
 updates it has not seen before.
@@ -85,34 +89,67 @@ cheaper than re-summarizing, and it only touches entries that do not have Korean
 #### Turning Korean on from scratch
 
 GitHub Models was retired on 30 July 2026 and is no longer an option. Any OpenAI-compatible
-endpoint works; the shortest path on Azure is a small `gpt-4o-mini` deployment. Substitute your own
-resource group, name and region:
+endpoint works; the shortest path on Azure is a small `gpt-4.1-mini` deployment. Two things that
+cost time when this was first set up, so they are worth knowing up front:
+
+* `gpt-4o-mini` version `2024-07-18` is refused as `ServiceModelDeprecating` for new deployments.
+* Subscriptions can enforce key-less access. If `disableLocalAuth` is true on the account, listing
+  keys fails, resetting the flag is reverted by policy, and only an Entra ID token works. That is
+  why `AZURE_OPENAI_TOKEN` exists alongside `AZURE_OPENAI_API_KEY`.
 
 ```bash
-RG=azupdates-rg; NAME=azupdates-aoai; LOC=eastus
+RG=azupdates-rg; NAME=azupdates-aoai; LOC=koreacentral
 
 az group create -n $RG -l $LOC
 az cognitiveservices account create -n $NAME -g $RG -l $LOC \
-  --kind OpenAI --sku S0 --custom-domain $NAME
+  --kind OpenAI --sku S0 --custom-domain $NAME --yes
 az cognitiveservices account deployment create -n $NAME -g $RG \
-  --deployment-name gpt-4o-mini \
-  --model-name gpt-4o-mini --model-version 2024-07-18 --model-format OpenAI \
-  --sku-name Standard --sku-capacity 20
+  --deployment-name gpt-4-1-mini \
+  --model-name gpt-4.1-mini --model-version 2025-04-14 --model-format OpenAI \
+  --sku-name GlobalStandard --sku-capacity 200
 
 export AZURE_OPENAI_ENDPOINT=$(az cognitiveservices account show -n $NAME -g $RG \
   --query properties.endpoint -o tsv)
+export AZURE_OPENAI_DEPLOYMENT=gpt-4-1-mini
+
+# Key auth, when the subscription allows it:
 export AZURE_OPENAI_API_KEY=$(az cognitiveservices account keys list -n $NAME -g $RG \
   --query key1 -o tsv)
-export AZURE_OPENAI_DEPLOYMENT=gpt-4o-mini
+
+# Entra ID auth, which also works when keys are disabled. Grant yourself the role once:
+az role assignment create --assignee-object-id $(az ad signed-in-user show --query id -o tsv) \
+  --assignee-principal-type User --role "Cognitive Services OpenAI User" \
+  --scope $(az cognitiveservices account show -n $NAME -g $RG --query id -o tsv)
+export AZURE_OPENAI_TOKEN=$(az account get-access-token \
+  --resource https://cognitiveservices.azure.com --query accessToken -o tsv)
 
 python scripts/enrich_updates.py --translate-only          # backfill the archive
 python scripts/build_site.py                               # rebuild with Korean
 ```
 
-Commit `data/enrichment.json` and the deck's `EN / 병기 / 한글` switch appears. Add the same three
-values as repository secrets so the scheduled run keeps new updates translated. The resource has no
-standing charge — only tokens are billed, and one full backfill of the current archive is roughly a
-dollar on `gpt-4o-mini`.
+Commit `data/enrichment.json` and the deck's `EN / 병기 / 한글` switch appears. The resource has no
+standing charge — only tokens are billed, and one full backfill of ~900 updates is roughly a dollar
+on `gpt-4.1-mini`.
+
+#### Keeping the scheduled run translating
+
+The workflow signs in with OIDC rather than storing a key, and skips both steps when
+`AZURE_CLIENT_ID` is absent, so a fork without the secrets still runs and simply stays English.
+
+Register an app, federate it to this repository, grant it the same role, then set
+`AZURE_CLIENT_ID`, `AZURE_TENANT_ID`, `AZURE_SUBSCRIPTION_ID`, `AZURE_OPENAI_ENDPOINT`,
+`AZURE_OPENAI_DEPLOYMENT` and `AZURE_OPENAI_API_VERSION` as repository secrets.
+
+The federated credential subject must match what GitHub actually presents. GitHub now sends an
+immutable form that embeds numeric ids:
+
+```
+repo:<owner>@<owner-id>/<repo>@<repo-id>:ref:refs/heads/main
+```
+
+A credential written as `repo:<owner>/<repo>:ref:refs/heads/main` fails with `AADSTS700213`. Read
+the subject out of the failed run's log and create a credential matching it exactly; keeping both
+forms is harmless.
 
 ```bash
 python scripts/enrich_updates.py --translate-only                     # backfill everything
