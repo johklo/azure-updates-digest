@@ -14,6 +14,10 @@ on:
       - "scripts/build_site.py"
       - "scripts/common.py"
       - "config.json"
+      # The rendered site is built from the committed data, so content changes have to
+      # publish too - otherwise a translation or digest lands in git but never goes live.
+      - "data/**"
+      - "digests/**"
       - ".github/workflows/pages.yml"
   workflow_dispatch:
 
