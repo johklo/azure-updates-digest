@@ -24279,5 +24279,109 @@
       "향상된 처리량은 고도로 민감하고 규제가 엄격한 환경에서 고급 방화벽 기능을 지원합니다."
     ],
     "translated_at": "2026-08-12T07:13:47.619923+00:00"
+  },
+  "568457": {
+    "summary": "Microsoft Sentinel is retiring the containerized data connector agent for SAP applications on September 14, 2026, requiring customers to migrate to the agentless data connector which offers simplified deployment and reduced maintenance.",
+    "key_points": [
+      "The containerized SAP agent will be permanently disabled on September 14, 2026, stopping SAP log collection through it.",
+      "The agentless data connector is generally available and supports side-by-side migration with no gap in log coverage.",
+      "Agentless connector offers zero footprint on SAP NetWeaver, less maintenance, and a future-proof architecture based on SAP Integration Suite and SAP Cloud Connector.",
+      "Existing analytics rules, workbooks, and playbooks remain functional with the agentless connector, ensuring continuity for customers."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/sentinel/sap/sap-agent-migrate",
+    "doc_title": "Containerized Agent to Agentless Connector migration guide",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/azure/sentinel/sap/sap-agent-migrate"
+    ],
+    "source": "llm",
+    "updated_at": "2026-08-12T23:46:06.646827+00:00",
+    "title_ko": "Retirement: Microsoft Sentinel 솔루션의 SAP 애플리케이션용 컨테이너화된 데이터 커넥터 에이전트",
+    "summary_ko": "Microsoft Sentinel은 2026년 9월 14일에 SAP 애플리케이션용 컨테이너화된 데이터 커넥터 에이전트를 Retirement하며, 고객은 배포가 간소화되고 유지 관리가 줄어든 agentless 데이터 커넥터로 마이그레이션해야 합니다.",
+    "key_points_ko": [
+      "컨테이너화된 SAP 에이전트는 2026년 9월 14일에 영구적으로 비활성화되어 이를 통한 SAP 로그 수집이 중단됩니다.",
+      "agentless 데이터 커넥터는 Generally Available 상태로, 로그 커버리지 공백 없이 병행 마이그레이션을 지원합니다.",
+      "agentless 커넥터는 SAP NetWeaver에 제로 풋프린트를 제공하며, 유지 관리가 적고 SAP Integration Suite 및 SAP Cloud Connector 기반의 미래 지향적 아키텍처를 갖추고 있습니다.",
+      "기존 분석 규칙, 워크북, 플레이북은 agentless 커넥터와 함께 계속 작동하여 고객의 연속성을 보장합니다."
+    ],
+    "translated_at": "2026-08-12T23:46:30.109876+00:00"
+  },
+  "569246": {
+    "summary": "Azure Front Door Standard and Premium now generally support batch rule updates, allowing multiple rule changes to be applied atomically for safer and more predictable Infrastructure-as-Code deployments.",
+    "key_points": [
+      "Batch rule updates enable adding, updating, deleting, or reordering multiple rules in a rule set as a single coordinated operation.",
+      "This feature improves deployment safety by preventing partial rule states, rule-order conflicts, and rollback complexity, especially in large or complex rule sets.",
+      "Batch mode must be explicitly enabled when creating a new rule set; existing rule sets continue using classic rule management by default for backward compatibility.",
+      "Batch operations have size limits (up to 100 rules per set with caching rules counting as two) and require careful batching when many caching-enabled rules exist to avoid exceeding quotas during updates."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/frontdoor/rule-set-batch",
+    "doc_title": "Batch Rule Updates for Rule Sets - Azure Front Door",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/en-us/azure/frontdoor/rule-set-batch"
+    ],
+    "source": "llm",
+    "updated_at": "2026-08-12T23:46:11.778051+00:00",
+    "title_ko": "Generally Available: Azure Front Door용 배치 규칙 업데이트",
+    "summary_ko": "Azure Front Door Standard 및 Premium에서 이제 배치 규칙 업데이트를 Generally Available 상태로 지원하여, 여러 규칙 변경을 원자적으로 적용할 수 있어 더 안전하고 예측 가능한 Infrastructure-as-Code 배포가 가능합니다.",
+    "key_points_ko": [
+      "배치 규칙 업데이트는 규칙 집합 내 여러 규칙을 추가, 업데이트, 삭제 또는 재정렬하는 작업을 단일 조정된 작업으로 수행할 수 있게 합니다.",
+      "이 기능은 부분적인 규칙 상태, 규칙 순서 충돌 및 롤백 복잡성을 방지하여 특히 크거나 복잡한 규칙 집합에서 배포 안전성을 향상합니다.",
+      "배치 모드는 새 규칙 집합 생성 시 명시적으로 활성화해야 하며, 기존 규칙 집합은 기본적으로 이전 호환성을 위해 클래식 규칙 관리를 계속 사용합니다.",
+      "배치 작업에는 크기 제한이 있으며(캐싱 규칙은 두 개로 계산하여 집합당 최대 100개 규칙), 캐싱이 활성화된 규칙이 많은 경우 업데이트 중 할당량 초과를 방지하기 위해 신중한 배치가 필요합니다."
+    ],
+    "translated_at": "2026-08-12T23:46:36.501114+00:00"
+  },
+  "569251": {
+    "summary": "Azure Front Door now supports mutual TLS (mTLS) in public preview, enabling client certificate authentication to enhance security for applications and APIs by validating client identities before requests reach the origin.",
+    "key_points": [
+      "Supports four client certificate validation modes: require and validate, require without validation, validate when presented, and pass through to origin.",
+      "Validates client certificates issued by both public and private certificate authorities, with trusted CA chains uploaded to Azure Key Vault.",
+      "Includes comprehensive validation checks such as certificate validity period, Extended Key Usage, SAN/CN matching, and revocation status via OCSP.",
+      "mTLS enhances security for sensitive scenarios like B2B, IoT, financial services, and enterprise networks, but disables caching on routes where enabled."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/frontdoor/mutual-tls",
+    "doc_title": "Mutual TLS authentication (Preview) - Azure Front Door",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/en-us/azure/frontdoor/mutual-tls"
+    ],
+    "source": "llm",
+    "updated_at": "2026-08-12T23:46:16.545275+00:00",
+    "title_ko": "Public Preview: Azure Front Door 상호 TLS",
+    "summary_ko": "Azure Front Door가 이제 Public Preview로 상호 TLS(mTLS)를 지원하여 클라이언트 인증서를 통한 인증을 가능하게 합니다. 이를 통해 요청이 오리진에 도달하기 전에 클라이언트 신원을 검증하여 애플리케이션과 API의 보안을 강화합니다.",
+    "key_points_ko": [
+      "네 가지 클라이언트 인증서 검증 모드를 지원합니다: 요구 및 검증, 요구하되 검증하지 않음, 제시 시 검증, 오리진으로 전달.",
+      "공개 및 비공개 인증 기관에서 발급한 클라이언트 인증서를 검증하며, 신뢰할 수 있는 CA 체인은 Azure Key Vault에 업로드됩니다.",
+      "인증서 유효 기간, 확장 키 사용(Extended Key Usage), SAN/CN 일치, OCSP를 통한 폐기 상태 등 포괄적인 검증을 포함합니다.",
+      "mTLS는 B2B, IoT, 금융 서비스, 엔터프라이즈 네트워크와 같은 민감한 시나리오에서 보안을 강화하지만, 활성화된 경로에서는 캐싱이 비활성화됩니다."
+    ],
+    "translated_at": "2026-08-12T23:46:44.911360+00:00"
+  },
+  "568979": {
+    "summary": "Azure App Service now supports automatic conversion of HTML responses to Markdown for AI agents, simplifying content consumption without code changes.",
+    "key_points": [
+      "Enables AI agents and tools to receive cleaner Markdown content instead of raw HTML.",
+      "Automatically converts app's HTML responses to Markdown upon client request.",
+      "Available in public preview for Azure App Service apps.",
+      "Improves integration with AI by reducing noise from scripts, styles, and HTML markup."
+    ],
+    "doc_url": "https://techcommunity.microsoft.com/blog/appsonazureblog/announcing-public-preview-markdown-for-agents-in-azure-app-service/4537023",
+    "doc_title": "Announcing public preview: Markdown for Agents in Azure App Service | Microsoft Community Hub",
+    "doc_read": true,
+    "links": [
+      "https://aka.ms/easy-markdown-public-preview"
+    ],
+    "source": "llm",
+    "updated_at": "2026-08-12T23:46:21.960359+00:00",
+    "title_ko": "Public Preview: Azure App Service의 에이전트를 위한 Markdown 지원",
+    "summary_ko": "Azure App Service가 이제 AI 에이전트를 위해 HTML 응답을 자동으로 Markdown으로 변환하는 기능을 지원하여 코드 변경 없이도 콘텐츠 소비를 간소화합니다.",
+    "key_points_ko": [
+      "AI 에이전트와 도구가 원시 HTML 대신 더 깔끔한 Markdown 콘텐츠를 받을 수 있도록 지원합니다.",
+      "클라이언트 요청 시 앱의 HTML 응답을 자동으로 Markdown으로 변환합니다.",
+      "Azure App Service 앱에서 Public Preview로 제공됩니다.",
+      "스크립트, 스타일, HTML 마크업에서 발생하는 노이즈를 줄여 AI와의 통합을 개선합니다."
+    ],
+    "translated_at": "2026-08-12T23:46:50.258435+00:00"
   }
 }

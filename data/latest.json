@@ -1,14 +1,44 @@
 {
-  "generated_at": "2026-08-12T06:49:48.506362+00:00",
-  "window_start": "2026-08-11T06:49:48.506362+00:00",
-  "window_end": "2026-08-12T06:49:48.506362+00:00",
-  "window_days": 1,
-  "fetched_count": 1,
-  "matched_count": 1,
-  "count": 1,
+  "generated_at": "2026-08-12T23:45:57.984553+00:00",
+  "window_start": "2026-08-05T23:45:57.984553+00:00",
+  "window_end": "2026-08-12T23:45:57.984553+00:00",
+  "window_days": 7,
+  "fetched_count": 9,
+  "matched_count": 9,
+  "count": 4,
   "items": [
     {
-      "id": "569256",
+      "id": "568457",
+      "productCategories": [
+        "Hybrid + multicloud",
+        "Security"
+      ],
+      "tags": [
+        "Retirements",
+        "Security"
+      ],
+      "products": [
+        "Microsoft Sentinel"
+      ],
+      "generalAvailabilityDate": null,
+      "previewAvailabilityDate": null,
+      "privatePreviewAvailabilityDate": null,
+      "title": "Retirement: Containerized data connector agent for the Microsoft Sentinel solution for SAP applications",
+      "description": "On September 14, 2026 we will retire the containerized data connector agent for the Microsoft Sentinel solution for SAP applications. After this date the agent will be permanently disabled and will stop sending SAP logs to Microsoft Sentinel.<br><br>The SAP agentless data connector is generally available and is the replacement. Creation of new containerized agents is already disabled.<br><br>How this affects you:<br>If you use the containerized agent, SAP log collection through it stops on 14 September 2026. Analytics rules, workbooks, hunting queries and playbooks that rely on this data will stop returning results for the affected SAP systems. Customers already using the agentless connector are not affected. There is no change to pricing or billing meters.<br><br>What you need to do:<br>Migrate to the SAP agentless data connector before September 14, 2026. Migration runs side-by-side with no gap in coverage: deploy the agentless connector alongside your existing agent, validate log ingestion, then decommission the agent. Your existing analytics rules, workbooks and playbooks keep working throughout.<br><br><a href=\"https://learn.microsoft.com/azure/sentinel/sap/sap-agent-migrate\">Learn\nmore</a>.<br>",
+      "status": null,
+      "created": "2026-08-12T19:41:20.8388416Z",
+      "modified": "2026-08-12T19:41:20.8388416Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "Retirement",
+          "year": 2026,
+          "month": "September"
+        }
+      ]
+    },
+    {
+      "id": "569246",
       "productCategories": [
         "Networking",
         "Security"
@@ -17,22 +47,86 @@
         "Features"
       ],
       "products": [
-        "Azure Firewall"
+        "Azure Front Door"
       ],
       "generalAvailabilityDate": "2026-08",
       "previewAvailabilityDate": null,
       "privatePreviewAvailabilityDate": null,
-      "title": "Generally Available: 2.2X IDPS performance optimization in Azure Firewall",
-      "description": "Azure Firewall Premium now delivers up to 22 Gbps\nthroughput with TLS inspection and IDPS in Deny mode, a 120% increase from 10\nGbps, and up to 600 Mbps per TCP connection with IDPS enabled in either Alert\nor Deny mode (doubled from 300 Mbps).&nbsp;<br><br><a href=\"https://learn.microsoft.com/en-us/azure/firewall/firewall-performance\">Learn\nmore</a>.",
+      "title": "Generally Available: Batch rule updates for Azure Front Door ",
+      "description": "Batch rule updates are now generally\navailable for Azure Front Door Standard and Premium. This capability enables\ncustomers to add, update, delete, or reorder multiple rules in a rule set as a\ncoordinated operation, ensuring that all changes are applied together or not\napplied at all.&nbsp;<br><p>Batch rule updates improve deployment\nsafety and predictability for customers managing large or complex rule sets\nthrough Terraform and other Infrastructure-as-Code workflows. They help prevent\npartial rule states, rule-order conflicts, deployment retries, and rollback\ncomplexity that can occur when related rules are updated individually.&nbsp;</p><p>Customers explicitly enable batch mode when\ncreating a new rule set and submit the complete desired rule configuration.\nAzure Front Door then applies the changes together at the rule-set level.\nExisting rule sets continue to use classic rule management by default,\npreserving full backward compatibility.&nbsp;</p><a href=\"https://learn.microsoft.com/en-us/azure/frontdoor/rule-set-batch\">Learn\nmore</a>.&nbsp;<br>",
       "status": "Launched",
-      "created": "2026-08-11T17:26:51.8935635Z",
-      "modified": "2026-08-11T17:26:51.8935635Z",
+      "created": "2026-08-12T17:03:08.2202194Z",
+      "modified": "2026-08-12T17:03:08.2202194Z",
       "locale": null,
       "availabilities": [
         {
           "ring": "General Availability",
           "year": 2026,
           "month": "August"
+        }
+      ]
+    },
+    {
+      "id": "569251",
+      "productCategories": [
+        "Networking",
+        "Security"
+      ],
+      "tags": [
+        "Feature"
+      ],
+      "products": [
+        "Azure Front Door"
+      ],
+      "generalAvailabilityDate": null,
+      "previewAvailabilityDate": "2026-08",
+      "privatePreviewAvailabilityDate": null,
+      "title": "Public Preview: Azure Front Door mutual TLS ",
+      "description": "<p><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">Mutual TLS, also known as client\ncertificate authentication, enables Azure Front Door to authenticate clients\nusing X.509 certificates before requests reach an application. It helps protect\nsensitive applications and APIs across business-to-business, Internet of\nThings, financial services, VPN, and enterprise network scenarios.&nbsp;&nbsp;</span></p><p><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">Customers can choose from four client\ncertificate validation modes:&nbsp;</span></p><ul type=\"disc\"><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">\n </span><li style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\"><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">Require and validate:</span><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\"> A client\n     certificate is mandatory. Azure Front Door validates the certificate at\n     the edge and forwards it to the origin in the X-Azure-ClientCertificate\n     request header.&nbsp;</span></li><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">\n </span><li style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\"><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">Require without validation:</span><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\"> A\n     client certificate is mandatory, but Azure Front Door does not validate\n     it. The certificate is forwarded in the X-Azure-ClientCertificate header\n     for validation by the origin.&nbsp;</span></li><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">\n </span><li style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\"><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">Validate when presented:</span><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\"> A client\n     certificate is optional. When a certificate is presented, Azure Front Door\n     validates it and forwards it to the origin. Requests without a certificate\n     are allowed to continue.&nbsp;</span></li><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">\n </span><li style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\"><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">Pass through to the origin:</span><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\"> A\n     client certificate is optional. Azure Front Door does not validate it but\n     forwards it to the origin when presented, allowing the origin to perform\n     validation. &nbsp;</span></li></ul><p></p><p><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">Azure Front Door supports client\ncertificates issued by public and private certificate authorities. Customers\nupload the trusted certificate authority chain to Azure Key Vault and associate\nit with a Front Door custom domain.&nbsp;</span></p><p></p><p><a href=\"https://learn.microsoft.com/en-us/azure/frontdoor/mutual-tls\"><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">Learn more</span></a><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">.</span><br></p>",
+      "status": "In preview",
+      "created": "2026-08-12T17:01:19.0043426Z",
+      "modified": "2026-08-12T17:01:19.0043426Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "Preview",
+          "year": 2026,
+          "month": "August"
+        }
+      ]
+    },
+    {
+      "id": "568979",
+      "productCategories": [
+        "Compute",
+        "Mobile",
+        "Web"
+      ],
+      "tags": [
+        "Feature"
+      ],
+      "products": [
+        "App Service"
+      ],
+      "generalAvailabilityDate": null,
+      "previewAvailabilityDate": "2026-08",
+      "privatePreviewAvailabilityDate": "2026-07",
+      "title": "Public Preview: Markdown for Agents in Azure App Service",
+      "description": "Today, we are announcing the public preview of Markdown for Agents in Azure App Service. This feature gives AI agents and other tools a cleaner way to consume content from an App Service app. When a client requests Markdown, App Service can automatically convert the app's HTML response to Markdown without requiring changes to the application code.&nbsp;<br><br><a href=\"https://aka.ms/easy-markdown-public-preview\">Learn more</a>.<br>",
+      "status": "In preview",
+      "created": "2026-08-12T16:38:31.6495985Z",
+      "modified": "2026-08-12T16:38:31.6495985Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "Preview",
+          "year": 2026,
+          "month": "August"
+        },
+        {
+          "ring": "Private Preview",
+          "year": 2026,
+          "month": "July"
         }
       ]
     }
