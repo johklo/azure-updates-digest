@@ -36,11 +36,28 @@ DEFAULT_CONFIG = {
     "archive_limit": 3000,
     "newsletter": {
         "enabled": True,
-        # Optional POST endpoint for a hosted form provider. When empty the page falls back
-        # to a mailto composer if `contact` is set, and to feed-only subscription otherwise.
+        # Optional POST endpoint for a hosted form provider. When empty the panel shows the
+        # contact address with a copy button instead, so subscribing never launches a mail client.
         "form_action": "",
         "contact": "",
         "subject": "Subscribe: Azure product updates digest",
+        "copy": {
+            "heading": "구독하기",
+            "sub": "새 다이제스트를 메일로 받거나, 피드로 구독하세요.",
+            "email_label": "이메일 주소",
+            "submit": "구독 신청",
+            "form_note": "다이제스트가 발행될 때마다 한 통씩 발송됩니다.",
+            "manual_note": "아래 주소로 구독 신청 메일을 보내주시면 등록해 드립니다.",
+            "copy_button": "주소 복사",
+            "copied": "주소를 복사했습니다. 메일로 구독 신청을 보내주세요.",
+            "copy_failed": "복사에 실패했습니다. 주소를 직접 선택해 복사해 주세요.",
+            "invalid": "받을 수 있는 이메일 주소를 입력해 주세요.",
+            "sending": "신청을 보내는 중입니다…",
+            "sent": "신청이 접수되었습니다. 확인 후 등록해 드립니다.",
+            "failed": "지금은 신청을 보낼 수 없습니다. 잠시 후 다시 시도해 주세요.",
+            "feed_label": "피드로 구독",
+            "feed_note": "발행된 모든 다이제스트를 최신순으로 제공합니다.",
+        },
     },
     "email": {
         "subject_prefix": "[Azure Updates]",

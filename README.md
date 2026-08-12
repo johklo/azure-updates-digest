@@ -129,15 +129,19 @@ The landing page is an interactive explorer:
     no external library or service is involved.
   * **PDF** prints one update per A4 landscape page.
   * **HTML** saves a self-contained offline deck with its own navigation and print button.
-* **Newsletter signup** - a `Subscribe` section at the foot of the landing page, linked from
-  the navigation. It adapts to what is configured in `config.json`:
-  * `newsletter.form_action` set - the form posts straight to that endpoint, so any hosted
-    provider (Formspree, Buttondown, Mailchimp and friends) works with no code change.
-  * only `newsletter.contact` set - the form composes a pre-written mail to that address, so
-    the reader's address goes to the maintainer and to nobody else. Add it to the
+* **Newsletter signup** - a `구독하기` section at the foot of the landing page, linked from the
+  navigation and written in Korean. It never launches a mail client. What it shows depends on
+  `config.json`:
+  * `newsletter.form_action` set - the form posts to that endpoint with `fetch`, so any hosted
+    provider (Formspree, Buttondown, Mailchimp and friends) works with no code change, and the
+    reader stays on the page.
+  * only `newsletter.contact` set - the address is shown with a copy button. The reader copies
+    it and mails whenever they like; nothing pops open. Add the address they write from to the
     `DIGEST_RECIPIENTS` secret to complete the subscription.
-  * neither set - the email field is not rendered at all, rather than shipping a control that
+  * neither set - only the short instruction and the feed are shown, rather than a control that
     silently does nothing.
+
+  All the wording lives in `newsletter.copy` so it can be edited without touching code.
 * **Atom feed** - `feed.xml` lists every published digest, newest first. It needs no address,
   no backend and no configuration, so subscribing always works.
 * **Default view** - the page loads pre-filtered to **generally available updates from the last

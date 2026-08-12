@@ -748,43 +748,98 @@
   var pdfBtn = document.getElementById("pdf");
   if (pdfBtn) pdfBtn.addEventListener("click", printDeck);
 
-  // Newsletter signup. A hosted endpoint posts normally; without one we compose a mailto,
-  // which keeps the address between the reader and the maintainer with no third party.
-  var signup = document.querySelector("form.signup");
+  // Newsletter signup. A hosted endpoint posts in place; without one we hand over the address
+  // with a copy button, so subscribing never launches a mail client.
+  var signup = document.querySelector(".signup[data-mode]");
   if (signup) {
-    var emailField = signup.querySelector("input[type=email]");
+    var strings = {};
+    try { strings = JSON.parse(signup.getAttribute("data-strings") || "{}"); } catch (e) { /* keep markup text */ }
     var help = signup.querySelector(".signup-help");
-    var defaultNote = help ? help.getAttribute("data-note") : "";
+    var defaultNote = help ? help.textContent : "";
 
     var setState = function (state, message) {
-      signup.setAttribute("data-state", state);
-      if (help) help.innerHTML = message || defaultNote;
+      signup.setAttribute("data-state", state || "");
+      if (help) help.textContent = message || defaultNote;
     };
 
-    signup.addEventListener("input", function () {
-      if (signup.getAttribute("data-state") === "error") setState("", defaultNote);
-    });
+    if (signup.getAttribute("data-mode") === "copy") {
+      var copyBtn = signup.querySelector("#nl-copy");
+      var addressNode = signup.querySelector("#nl-address");
+      var address = signup.getAttribute("data-contact") || "";
 
-    signup.addEventListener("submit", function (event) {
-      var value = (emailField.value || "").trim();
-      if (!value || !emailField.checkValidity()) {
+      var selectAddress = function () {
+        try {
+          var range = document.createRange();
+          range.selectNodeContents(addressNode);
+          var sel = window.getSelection();
+          sel.removeAllRanges();
+          sel.addRange(range);
+        } catch (e) { /* selection is a convenience, not a requirement */ }
+      };
+
+      copyBtn.addEventListener("click", function () {
+        var settled = false;
+        // The clipboard promise can hang when the document lacks focus, which would leave the
+        // button with no feedback at all. Guarantee an answer either way.
+        var finish = function (ok) {
+          if (settled) return;
+          settled = true;
+          clearTimeout(guard);
+          if (ok) {
+            setState("success", strings.copied);
+          } else {
+            selectAddress();
+            setState("error", strings.copy_failed);
+          }
+        };
+        var guard = setTimeout(function () { finish(false); }, 1200);
+
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(address).then(
+            function () { finish(true); },
+            function () { finish(false); }
+          );
+          return;
+        }
+        selectAddress();
+        var ok = false;
+        try { ok = document.execCommand("copy"); } catch (e) { ok = false; }
+        finish(ok);
+      });
+    } else {
+      var emailField = signup.querySelector("input[type=email]");
+      var submitBtn = signup.querySelector("button[type=submit]");
+
+      signup.addEventListener("input", function () {
+        if (signup.getAttribute("data-state") === "error") setState("", defaultNote);
+      });
+
+      signup.addEventListener("submit", function (event) {
         event.preventDefault();
-        setState("error", "Enter an email address you can receive mail at.");
-        emailField.focus();
-        return;
-      }
-      if (signup.getAttribute("data-mode") !== "mailto") return;
+        var value = (emailField.value || "").trim();
+        if (!value || !emailField.checkValidity()) {
+          setState("error", strings.invalid);
+          emailField.focus();
+          return;
+        }
+        setState("loading", strings.sending);
+        emailField.disabled = true;
+        submitBtn.disabled = true;
 
-      event.preventDefault();
-      setState("loading", "Opening your mail client\u2026");
-      var to = signup.getAttribute("data-contact");
-      var subject = signup.getAttribute("data-subject") || "Subscribe";
-      var body = "Please add this address to the Azure product updates digest:\n\n" + value + "\n";
-      window.location.href = "mailto:" + encodeURIComponent(to) +
-        "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
-      setState("success", "Your mail client should be open \u2014 send the message to finish.");
-      emailField.disabled = true;
-    });
+        var body = new FormData();
+        body.append("email", value);
+        fetch(signup.getAttribute("action"), {
+          method: "POST", body: body, headers: { Accept: "application/json" }
+        }).then(function (res) {
+          if (!res.ok) throw new Error(res.status);
+          setState("success", strings.sent);
+        }).catch(function () {
+          setState("error", strings.failed);
+          emailField.disabled = false;
+          submitBtn.disabled = false;
+        });
+      });
+    }
   }
 
   document.addEventListener("keydown", function (event) {    if (view !== "slides") return;

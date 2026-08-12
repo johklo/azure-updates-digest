@@ -13,6 +13,7 @@ from pathlib import Path
 
 from common import (
     ARCHIVE_PATH,
+    DEFAULT_CONFIG,
     DIGEST_DIR,
     SITE_DIR,
     STAGE_LABELS,
@@ -209,62 +210,68 @@ def render_deck() -> str:
 
 
 def render_newsletter(cfg: dict) -> str:
-    """Signup panel. Posts to a hosted form when one is configured, composes a mailto when
-    only a contact address is known, and always offers the feed, which needs no backend."""
+    """Signup panel, written in Korean.
+
+    With a hosted endpoint the form posts in place. Without one it shows the contact address
+    and a copy button, so subscribing never launches a mail client. The feed always works.
+    """
     nl = cfg.get("newsletter") or {}
     if not nl.get("enabled", True):
         return ""
 
+    t = dict((DEFAULT_CONFIG.get("newsletter") or {}).get("copy") or {})
+    t.update(nl.get("copy") or {})
+
     action = str(nl.get("form_action") or "").strip()
     contact = str(nl.get("contact") or "").strip()
-    subject = str(nl.get("subject") or "Subscribe: Azure product updates digest").strip()
-
-    if action:
-        form_attrs = f' action="{esc(action)}" method="post" data-mode="post"'
-        note = "You will get one email per digest. Unsubscribe any time from the footer of any issue."
-        fallback = ""
-    elif contact:
-        form_attrs = f' data-mode="mailto" data-contact="{esc(contact)}" data-subject="{esc(subject)}"'
-        mailto = f"mailto:{esc(contact)}?subject={esc(subject.replace(' ', '%20'))}"
-        # Plain link so the panel still works with scripting off.
-        fallback = (
-            f' Or <a href="{mailto}">mail {esc(contact)}</a> directly.'
-        )
-        note = "This opens your mail client with the request pre-written &mdash; send it and you are on the list."
-    else:
-        form_attrs = ""
-        fallback = ""
 
     parts = [
         '<div class="card subscribe" id="subscribe">',
-        "<h2>Subscribe<small>Get each digest in your inbox, or follow it in a reader.</small></h2>",
+        f'<h2 lang="ko">{esc(t["heading"])}<small>{esc(t["sub"])}</small></h2>',
         '<div class="subscribe-grid">',
     ]
 
-    if form_attrs:
+    if action:
+        strings = json.dumps(
+            {k: t[k] for k in ("invalid", "sending", "sent", "failed", "form_note")},
+            ensure_ascii=False,
+        )
         parts += [
-            f'<form class="signup"{form_attrs} novalidate>',
-            '<label class="lbl" for="nl-email">Email address</label>',
+            f'<form class="signup" lang="ko" action="{esc(action)}" method="post"'
+            f' data-mode="post" data-strings="{esc(strings)}" novalidate>',
+            f'<label class="lbl" for="nl-email">{esc(t["email_label"])}</label>',
             '<div class="signup-row">',
             '<input type="email" id="nl-email" name="email" autocomplete="email" required',
             ' placeholder="you@example.com" aria-describedby="nl-help">',
-            '<button class="btn" type="submit">Subscribe</button>',
+            f'<button class="btn" type="submit">{esc(t["submit"])}</button>',
             "</div>",
-            f'<p class="signup-help" id="nl-help" role="status" data-note="{esc(note)}{fallback}">{note}{fallback}</p>',
+            f'<p class="signup-help" id="nl-help" role="status">{esc(t["form_note"])}</p>',
             "</form>",
+        ]
+    elif contact:
+        strings = json.dumps({k: t[k] for k in ("copied", "copy_failed", "manual_note")}, ensure_ascii=False)
+        parts += [
+            f'<div class="signup" lang="ko" data-mode="copy" data-contact="{esc(contact)}"'
+            f' data-strings="{esc(strings)}">',
+            f'<p class="lbl">{esc(t["email_label"])}</p>',
+            '<div class="signup-row">',
+            f'<output class="address" id="nl-address">{esc(contact)}</output>',
+            f'<button class="btn" type="button" id="nl-copy">{esc(t["copy_button"])}</button>',
+            "</div>",
+            f'<p class="signup-help" id="nl-help" role="status">{esc(t["manual_note"])}</p>',
+            "</div>",
         ]
     else:
         parts += [
-            '<div class="signup">',
-            '<p class="signup-help signup-help--static">Email signup is not configured for this site yet. '
-            "The feed carries exactly the same digests and needs no address.</p>",
+            '<div class="signup" lang="ko">',
+            f'<p class="signup-help signup-help--static">{esc(t["manual_note"])}</p>',
             "</div>",
         ]
 
     parts += [
-        '<div class="feedbox">',
-        '<p class="lbl">Or follow the feed</p>',
-        '<p class="feedbox-note">Every published digest, newest first &mdash; works in any reader.</p>',
+        '<div class="feedbox" lang="ko">',
+        f'<p class="lbl">{esc(t["feed_label"])}</p>',
+        f'<p class="feedbox-note">{esc(t["feed_note"])}</p>',
         '<a class="btn" href="feed.xml">feed.xml</a>',
         "</div>",
         "</div></div>",
