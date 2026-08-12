@@ -140,14 +140,14 @@ font-variant-numeric:tabular-nums;opacity:.72}
 .chip.s-retirement[aria-pressed="true"]{background:var(--color-stage-rt);border-color:var(--color-stage-rt)}
 .chip.s-in-development[aria-pressed="true"]{background:var(--color-stage-dv);border-color:var(--color-stage-dv)}
 
-input[type=search],input[type=date]{font:var(--text-sm)/1.4 var(--font-body);
+input[type=search],input[type=date],input[type=email]{font:var(--text-sm)/1.4 var(--font-body);
 padding:var(--space-2xs) var(--space-sm);border:var(--rule-hair) solid var(--color-control);
 border-radius:0;color:var(--color-ink);background:var(--color-paper);
 outline:2px solid transparent;outline-offset:1px;
 transition:border-color var(--dur-short) var(--ease-out)}
 input[type=search]{min-width:260px;flex:1}
-input[type=search]:hover,input[type=date]:hover{border-color:var(--color-ink-2)}
-input[type=search]:focus-visible,input[type=date]:focus-visible{
+input[type=search]:hover,input[type=date]:hover,input[type=email]:hover{border-color:var(--color-ink-2)}
+input[type=search]:focus-visible,input[type=date]:focus-visible,input[type=email]:focus-visible{
 outline:2px solid var(--color-focus);border-color:var(--color-accent)}
 input::placeholder{color:var(--color-muted)}
 
@@ -261,6 +261,39 @@ letter-spacing:.06em}
 .doclink a{color:var(--color-accent);text-decoration:none;
 box-shadow:inset 0 -1px 0 var(--color-rule-strong)}
 .doclink a:hover{box-shadow:inset 0 -1px 0 var(--color-accent)}
+
+/* ---------- Subscribe ---------- */
+.subscribe{margin-top:var(--space-2xl)}
+.subscribe-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);
+gap:var(--space-lg) var(--space-2xl);align-items:start}
+.signup{min-width:0}
+.signup .lbl{display:block;margin-bottom:var(--space-xs);font-family:var(--font-outlier);
+font-size:var(--text-xs);text-transform:uppercase;letter-spacing:.14em;color:var(--color-muted)}
+.signup-row{display:flex;gap:var(--space-xs);flex-wrap:wrap;align-items:stretch}
+.signup-row input[type=email]{flex:1;min-width:min(100%,16rem);min-height:2.5rem}
+.signup-row .btn{min-height:2.5rem;padding-inline:var(--space-md);white-space:nowrap}
+/* The help slot is always reserved, so an error never pushes the layout down. */
+.signup-help{margin:var(--space-xs) 0 0;min-height:1lh;font-size:var(--text-sm);
+line-height:1.5;color:var(--color-muted)}
+.signup-help--static{margin-top:0;max-width:52ch}
+.signup[data-state="error"] input[type=email]{border-color:var(--color-stage-rt)}
+.signup[data-state="error"] .signup-help{color:var(--color-stage-rt)}
+.signup[data-state="success"] .signup-help{color:var(--color-stage-ga)}
+.signup[data-state="loading"] .signup-help{color:var(--color-ink-2)}
+.signup input[type=email]:disabled{opacity:.55;cursor:not-allowed;
+background:var(--color-paper-2);border-color:var(--color-rule)}
+
+.feedbox{min-width:0;padding-left:var(--space-lg);
+border-left:var(--rule-hair) solid var(--color-rule)}
+.feedbox .lbl{display:block;margin-bottom:var(--space-xs);font-family:var(--font-outlier);
+font-size:var(--text-xs);text-transform:uppercase;letter-spacing:.14em;color:var(--color-muted)}
+.feedbox-note{margin:0 0 var(--space-sm);max-width:40ch;font-size:var(--text-sm);
+line-height:1.5;color:var(--color-ink-2)}
+.feedbox .btn{display:inline-block;text-decoration:none;font-family:var(--font-outlier);
+font-size:var(--text-xs);letter-spacing:.1em}
+@media (max-width:780px){.subscribe-grid{grid-template-columns:minmax(0,1fr)}
+.feedbox{padding-left:0;padding-top:var(--space-md);border-left:none;
+border-top:var(--rule-hair) solid var(--color-rule)}}
 
 /* ---------- Index lists (archive, categories) ---------- */
 ul.list{list-style:none;padding:0;margin:0}

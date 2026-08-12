@@ -128,6 +128,17 @@ The landing page is an interactive explorer:
     no external library or service is involved.
   * **PDF** prints one update per A4 landscape page.
   * **HTML** saves a self-contained offline deck with its own navigation and print button.
+* **Newsletter signup** - a `Subscribe` section at the foot of the landing page, linked from
+  the navigation. It adapts to what is configured in `config.json`:
+  * `newsletter.form_action` set - the form posts straight to that endpoint, so any hosted
+    provider (Formspree, Buttondown, Mailchimp and friends) works with no code change.
+  * only `newsletter.contact` set - the form composes a pre-written mail to that address, so
+    the reader's address goes to the maintainer and to nobody else. Add it to the
+    `DIGEST_RECIPIENTS` secret to complete the subscription.
+  * neither set - the email field is not rendered at all, rather than shipping a control that
+    silently does nothing.
+* **Atom feed** - `feed.xml` lists every published digest, newest first. It needs no address,
+  no backend and no configuration, so subscribing always works.
 * **Default view** - the page loads pre-filtered to **generally available updates from the last
   30 days**. `Reset filters` returns to this default.
 * **Filter by date** - `Last 7 / 30 / 90 days`, `All time`, or a custom from/to date range.

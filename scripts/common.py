@@ -34,6 +34,14 @@ DEFAULT_CONFIG = {
     "exclude_product_categories": [],
     "include_tags": [],
     "archive_limit": 3000,
+    "newsletter": {
+        "enabled": True,
+        # Optional POST endpoint for a hosted form provider. When empty the page falls back
+        # to a mailto composer if `contact` is set, and to feed-only subscription otherwise.
+        "form_action": "",
+        "contact": "",
+        "subject": "Subscribe: Azure product updates digest",
+    },
     "email": {
         "subject_prefix": "[Azure Updates]",
         "from_name": "Azure Updates Digest",

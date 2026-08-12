@@ -69,6 +69,7 @@ def page(cfg: dict, title: str, body_html: str, depth: int = 0) -> str:
 <p>{esc(cfg.get('site_description'))}</p></div></header>
 <nav><a href="{prefix}index.html">Latest</a><a href="{prefix}archive.html">Digest archive</a>
 <a href="{prefix}categories.html">Categories</a>
+<a href="{prefix}index.html#subscribe">Subscribe</a>
 <a href="{esc(cfg.get('azure_updates_url'))}">Azure Updates source</a></nav>
 <main>{body_html}</main>
 <footer><b>Colophon</b>
@@ -204,6 +205,92 @@ def render_deck() -> str:
     )
 
 
+def render_newsletter(cfg: dict) -> str:
+    """Signup panel. Posts to a hosted form when one is configured, composes a mailto when
+    only a contact address is known, and always offers the feed, which needs no backend."""
+    nl = cfg.get("newsletter") or {}
+    if not nl.get("enabled", True):
+        return ""
+
+    action = str(nl.get("form_action") or "").strip()
+    contact = str(nl.get("contact") or "").strip()
+    subject = str(nl.get("subject") or "Subscribe: Azure product updates digest").strip()
+
+    if action:
+        form_attrs = f' action="{esc(action)}" method="post" data-mode="post"'
+        note = "You will get one email per digest. Unsubscribe any time from the footer of any issue."
+    elif contact:
+        form_attrs = f' data-mode="mailto" data-contact="{esc(contact)}" data-subject="{esc(subject)}"'
+        note = "This opens your mail client with the request pre-written &mdash; send it and you are on the list."
+    else:
+        form_attrs = ""
+
+    parts = [
+        '<div class="card subscribe" id="subscribe">',
+        "<h2>Subscribe<small>Get each digest in your inbox, or follow it in a reader.</small></h2>",
+        '<div class="subscribe-grid">',
+    ]
+
+    if form_attrs:
+        parts += [
+            f'<form class="signup"{form_attrs} novalidate>',
+            '<label class="lbl" for="nl-email">Email address</label>',
+            '<div class="signup-row">',
+            '<input type="email" id="nl-email" name="email" autocomplete="email" required',
+            ' placeholder="you@example.com" aria-describedby="nl-help">',
+            '<button class="btn" type="submit">Subscribe</button>',
+            "</div>",
+            f'<p class="signup-help" id="nl-help" role="status" data-note="{esc(note)}">{note}</p>',
+            "</form>",
+        ]
+    else:
+        parts += [
+            '<div class="signup">',
+            '<p class="signup-help signup-help--static">Email signup is not configured for this site yet. '
+            "The feed carries exactly the same digests and needs no address.</p>",
+            "</div>",
+        ]
+
+    parts += [
+        '<div class="feedbox">',
+        '<p class="lbl">Or follow the feed</p>',
+        '<p class="feedbox-note">Every published digest, newest first &mdash; works in any reader.</p>',
+        '<a class="btn" href="feed.xml">feed.xml</a>',
+        "</div>",
+        "</div></div>",
+    ]
+    return "".join(parts)
+
+
+def build_feed(cfg: dict, digests: list) -> str:
+    """Atom feed of published digests: a subscription path that needs no backend."""
+    site_url = str(cfg.get("site_url") or "").rstrip("/")
+    updated = digests[0]["date"] if digests else utcnow().strftime("%Y-%m-%d")
+    parts = [
+        '<?xml version="1.0" encoding="utf-8"?>',
+        '<feed xmlns="http://www.w3.org/2005/Atom">',
+        f"<title>{esc(cfg.get('site_title'))}</title>",
+        f"<subtitle>{esc(cfg.get('site_description'))}</subtitle>",
+        f'<link rel="alternate" type="text/html" href="{esc(site_url)}/"/>',
+        f'<link rel="self" type="application/atom+xml" href="{esc(site_url)}/feed.xml"/>',
+        f"<id>{esc(site_url)}/</id>",
+        f"<updated>{esc(updated)}T00:00:00Z</updated>",
+    ]
+    for d in digests[:50]:
+        url = f"{site_url}/digests/{d['date']}.html"
+        parts += [
+            "<entry>",
+            f"<title>Azure product updates &#8212; {esc(d['date'])}</title>",
+            f'<link rel="alternate" type="text/html" href="{esc(url)}"/>',
+            f"<id>{esc(url)}</id>",
+            f"<updated>{esc(d['date'])}T00:00:00Z</updated>",
+            f"<summary>{d['count']} update(s) published in this digest.</summary>",
+            "</entry>",
+        ]
+    parts.append("</feed>")
+    return "\n".join(parts) + "\n"
+
+
 def render_summary_table(groups: dict) -> str:
     if not groups:
         return ""
@@ -322,11 +409,12 @@ def build(cfg: dict, default_days: int, default_stage: str) -> None:
             '<button class="btn" data-toggle="close">Collapse all</button></div>'
             + render_groups(groups, enrichment)
             + '<div class="card empty hidden" id="empty">No updates match the selected filters.</div>'
+            + render_newsletter(cfg)
             + "</div>"
             + "</div>"
         )
     else:
-        body = stats + '<div class="card"><p>No updates tracked yet.</p></div>'
+        body = stats + '<div class="card"><p>No updates tracked yet.</p></div>' + render_newsletter(cfg)
     (SITE_DIR / "index.html").write_text(page(cfg, cfg.get("site_title"), body, 0), encoding="utf-8")
 
     rows = "".join(
@@ -369,8 +457,9 @@ def build(cfg: dict, default_days: int, default_stage: str) -> None:
         html_body = f'<div class="card"><pre class="digest-source">{esc(raw)}</pre></div>'
         (digest_dir / f"{path.stem}.html").write_text(page(cfg, f"Digest {path.stem}", html_body, 1), encoding="utf-8")
 
-    (SITE_DIR / "updates.json").write_text(
-        json.dumps(
+    (SITE_DIR / "feed.xml").write_text(build_feed(cfg, digests), encoding="utf-8")
+
+    (SITE_DIR / "updates.json").write_text(        json.dumps(
             {
                 "generated_at": utcnow().isoformat(),
                 "count": len(items),

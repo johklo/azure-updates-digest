@@ -11,6 +11,12 @@
   "exclude_product_categories": [],
   "include_tags": [],
   "archive_limit": 3000,
+  "newsletter": {
+    "enabled": true,
+    "form_action": "",
+    "contact": "",
+    "subject": "Subscribe: Azure product updates digest"
+  },
   "email": {
     "subject_prefix": "[Azure Updates]",
     "from_name": "Azure Updates Digest",

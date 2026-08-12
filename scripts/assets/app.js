@@ -723,8 +723,46 @@
   var pdfBtn = document.getElementById("pdf");
   if (pdfBtn) pdfBtn.addEventListener("click", printDeck);
 
-  document.addEventListener("keydown", function (event) {
-    if (view !== "slides") return;
+  // Newsletter signup. A hosted endpoint posts normally; without one we compose a mailto,
+  // which keeps the address between the reader and the maintainer with no third party.
+  var signup = document.querySelector("form.signup");
+  if (signup) {
+    var emailField = signup.querySelector("input[type=email]");
+    var help = signup.querySelector(".signup-help");
+    var defaultNote = help ? help.getAttribute("data-note") : "";
+
+    var setState = function (state, message) {
+      signup.setAttribute("data-state", state);
+      if (help) help.innerHTML = message || defaultNote;
+    };
+
+    signup.addEventListener("input", function () {
+      if (signup.getAttribute("data-state") === "error") setState("", defaultNote);
+    });
+
+    signup.addEventListener("submit", function (event) {
+      var value = (emailField.value || "").trim();
+      if (!value || !emailField.checkValidity()) {
+        event.preventDefault();
+        setState("error", "Enter an email address you can receive mail at.");
+        emailField.focus();
+        return;
+      }
+      if (signup.getAttribute("data-mode") !== "mailto") return;
+
+      event.preventDefault();
+      setState("loading", "Opening your mail client\u2026");
+      var to = signup.getAttribute("data-contact");
+      var subject = signup.getAttribute("data-subject") || "Subscribe";
+      var body = "Please add this address to the Azure product updates digest:\n\n" + value + "\n";
+      window.location.href = "mailto:" + encodeURIComponent(to) +
+        "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+      setState("success", "Your mail client should be open \u2014 send the message to finish.");
+      emailField.disabled = true;
+    });
+  }
+
+  document.addEventListener("keydown", function (event) {    if (view !== "slides") return;
     var tag = (event.target.tagName || "").toLowerCase();
     if (tag === "input" || tag === "textarea") return;
     if (event.key === "ArrowRight" || event.key === "PageDown" || event.key === " ") { event.preventDefault(); move(1); }
