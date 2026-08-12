@@ -58,7 +58,9 @@ def render_markdown(cfg: dict, payload: dict, date_str: str, enrichment: dict) -
         "",
         f"# {digest_title(cfg, date_str)}",
         "",
-        f"**{len(items)} update(s)** published in the last {window_days} day(s), grouped by Azure product category.",
+        f"**{len(items)} new update(s)** &mdash; first seen in this run. The last {window_days} "
+        "day(s) are rescanned every time so late or backdated announcements are not missed. "
+        "Grouped by Azure product category.",
         "",
         f"Source: [Azure Updates]({cfg.get('azure_updates_url')})",
         "",
@@ -129,7 +131,7 @@ def render_email_html(cfg: dict, payload: dict, date_str: str, enrichment: dict)
         '<div style="max-width:760px;margin:0 auto;padding:24px 16px;font-family:Segoe UI,Helvetica,Arial,sans-serif;color:#1b1f23;">',
         '<div style="background:#0078d4;color:#ffffff;padding:20px 24px;border-radius:8px 8px 0 0;">',
         f'<h1 style="margin:0;font-size:20px;line-height:1.3;">{_esc(cfg.get("site_title"))}</h1>',
-        f'<p style="margin:6px 0 0;font-size:13px;opacity:.9;">{_esc(date_str)} &middot; {len(items)} update(s) from the last {window_days} day(s)</p>',
+        f'<p style="margin:6px 0 0;font-size:13px;opacity:.9;">{_esc(date_str)} &middot; {len(items)} new update(s) &middot; last {window_days} day(s) rescanned</p>',
         "</div>",
         '<div style="background:#ffffff;padding:8px 24px 24px;border:1px solid #e1e4e8;border-top:none;border-radius:0 0 8px 8px;">',
     ]

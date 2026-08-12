@@ -2,8 +2,8 @@ name: Azure Updates Digest
 
 on:
   schedule:
-    # 23:00 UTC Sunday == 08:00 KST Monday
-    - cron: "0 23 * * 0"
+    # 23:00 UTC daily == 08:00 KST the next morning
+    - cron: "0 23 * * *"
   workflow_dispatch:
     inputs:
       days:

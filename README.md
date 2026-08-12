@@ -5,7 +5,7 @@ Automated tracking of [Azure Updates](https://azure.microsoft.com/en-us/updates)
 customers two ways:
 
 1. **Markdown digests** committed to this repo + an interactive **GitHub Pages** site
-2. **HTML + plain-text email newsletter** sent weekly by GitHub Actions
+2. **HTML + plain-text email newsletter** sent daily by GitHub Actions when there is something new
 
 Live site: <https://johklo.github.io/azure-updates-digest/>
 
@@ -114,10 +114,11 @@ The landing page is an interactive explorer:
   Next buttons, a slide counter, a progress bar, fullscreen and keyboard navigation (arrow keys,
   Space, Home / End, Esc). The deck always follows the current filters.
 * **Korean alongside English** - when an update has been translated, the deck offers
-  `EN` / `병기` / `한글`. In `병기` the Korean headline, summary and key points sit directly under
-  their English counterparts, one size down and in muted ink, so the pairing reads without
-  competing. The choice is remembered between visits and carries into every export. Hangul is a
-  script fallback inside the same two type stacks (Noto Serif KR / Noto Sans KR), so the design
+  `EN` / `병기` / `한글`. In `병기` **Korean leads**: it takes the display size and the English
+  line sits underneath, one step down and in muted ink, so a Korean reader never has to read
+  past English to reach their own language. An update with no translation quietly falls back to
+  English alone. The choice is remembered between visits and carries into every export. Hangul is
+  a script fallback inside the same two type stacks (Noto Serif KR / Noto Sans KR), so the design
   keeps its two-family discipline. The switch is hidden when no translation exists.
 * **Downloadable deck** - three export buttons, all containing exactly the updates matching the
   filters that are active when the button is pressed:
@@ -160,8 +161,13 @@ The landing page is an interactive explorer:
 
 ## Schedule
 
-The workflow runs **every Monday at 08:00 KST** (`0 23 * * 0` UTC) and can be triggered manually
+The workflow runs **every day at 08:00 KST** (`0 23 * * *` UTC) and can be triggered manually
 from the Actions tab.
+
+The lookback window stays at 7 days even on a daily run. `state.json` remembers every update id
+that has already been published, so a wider window costs nothing and acts as a safety net for
+announcements that arrive late or are backdated. A day with nothing new writes no digest file and
+sends no email, so daily scheduling does not produce empty noise.
 
 Manual dispatch inputs:
 

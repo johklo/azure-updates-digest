@@ -105,10 +105,13 @@ def render_item(item: dict, enrichment: dict) -> str:
     ).lower()
 
     parts = [
-        f'<div class="item" data-stage="{esc(stage)}" data-category="{esc(item.get("_category"))}"',
+        f'<div class="item{" bilingual" if info["title_ko"] else ""}"'
+        f' data-stage="{esc(stage)}" data-category="{esc(item.get("_category"))}"',
         f' data-date="{esc(item_date_str(item))}" data-search="{esc(haystack)}">',
         f'<a class="title" href="{esc(update_url(item))}">{esc(item.get("title"))}</a>',
     ]
+    # The DOM keeps English canonical so the deck can read it by class; CSS `order` is what
+    # puts Korean on top when a translation exists.
     if info["title_ko"]:
         parts.append(f'<div class="title-ko" lang="ko">{esc(info["title_ko"])}</div>')
     parts.extend(
@@ -129,7 +132,7 @@ def render_item(item: dict, enrichment: dict) -> str:
         for index, point in enumerate(points):
             ko = points_ko[index] if index < len(points_ko) else ""
             ko_html = f'<span class="ko" lang="ko">{esc(ko)}</span>' if ko else ""
-            items_html.append(f"<li>{esc(point)}{ko_html}</li>")
+            items_html.append(f'<li><span class="en">{esc(point)}</span>{ko_html}</li>')
         parts.append('<ul class="points">' + "".join(items_html) + "</ul>")
     if info["doc_url"]:
         label = info["doc_title"] or "Microsoft documentation"
@@ -219,11 +222,18 @@ def render_newsletter(cfg: dict) -> str:
     if action:
         form_attrs = f' action="{esc(action)}" method="post" data-mode="post"'
         note = "You will get one email per digest. Unsubscribe any time from the footer of any issue."
+        fallback = ""
     elif contact:
         form_attrs = f' data-mode="mailto" data-contact="{esc(contact)}" data-subject="{esc(subject)}"'
+        mailto = f"mailto:{esc(contact)}?subject={esc(subject.replace(' ', '%20'))}"
+        # Plain link so the panel still works with scripting off.
+        fallback = (
+            f' Or <a href="{mailto}">mail {esc(contact)}</a> directly.'
+        )
         note = "This opens your mail client with the request pre-written &mdash; send it and you are on the list."
     else:
         form_attrs = ""
+        fallback = ""
 
     parts = [
         '<div class="card subscribe" id="subscribe">',
@@ -240,7 +250,7 @@ def render_newsletter(cfg: dict) -> str:
             ' placeholder="you@example.com" aria-describedby="nl-help">',
             '<button class="btn" type="submit">Subscribe</button>',
             "</div>",
-            f'<p class="signup-help" id="nl-help" role="status" data-note="{esc(note)}">{note}</p>',
+            f'<p class="signup-help" id="nl-help" role="status" data-note="{esc(note)}{fallback}">{note}{fallback}</p>',
             "</form>",
         ]
     else:

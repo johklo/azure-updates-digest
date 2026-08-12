@@ -10,7 +10,9 @@
  *       Korean rides the same display/body stacks as a script fallback (Noto Serif KR / Noto Sans KR)
  * nav: N6 newspaper masthead · footer: Ft4 dense colophon (deck keeps Ft2 inline rule)
  * enrichment: none (typography only)
- * bilingual: EN · 병기 · 한글 — Korean sets one step down, muted, under its English counterpart
+ * bilingual: EN · 병기 · 한글 — 병기 leads with Korean at display size; English follows one step
+ *            down and muted. The DOM keeps English canonical so the deck can read it by class;
+ *            CSS `order` is what lifts Korean above it in the browse list.
  * contrast: pass (40–41) · slop: pass (42–45) · tokens: pass (48)
  * pre-emit critique: P5 H5 E4 S5 R5 V5
  */
@@ -230,8 +232,11 @@ font-size:var(--text-xs);letter-spacing:.08em;white-space:nowrap}
 .body{padding:0 var(--space-md) var(--space-sm);max-height:clamp(320px,52vh,640px);
 overflow-y:auto;overscroll-behavior:contain}
 
-/* ---------- Update rows ---------- */
+/* ---------- Update rows ----------
+   The DOM keeps English canonical so the deck can read it by class. When a translation
+   exists, `order` lifts Korean above its English counterpart and the two swap emphasis. */
 .item{padding:var(--space-md) 0;border-bottom:var(--rule-hair) solid var(--color-rule)}
+.item.bilingual{display:flex;flex-direction:column}
 .item:last-child{border-bottom:none}
 .item a.title{display:block;font-family:var(--font-display);font-weight:500;
 font-size:var(--text-md);line-height:1.28;letter-spacing:-.01em;text-decoration:none;
@@ -241,6 +246,16 @@ transition:color var(--dur-short) var(--ease-out),box-shadow var(--dur-short) va
 .item a.title:hover{color:var(--color-accent);box-shadow:inset 0 -1px 0 var(--color-accent)}
 .item .title-ko{margin:var(--space-2xs) 0 0;font-family:var(--font-display);
 font-size:var(--text-base);line-height:1.45;color:var(--color-ink-2);word-break:keep-all}
+/* Korean leads: it takes the display size, English steps down and mutes. */
+.item.bilingual .title-ko{order:1;margin:0;font-size:var(--text-md);font-weight:500;
+line-height:1.4;letter-spacing:-.005em;color:var(--color-ink)}
+.item.bilingual a.title{order:2;margin-top:var(--space-2xs);font-size:var(--text-base);
+font-weight:400;line-height:1.4;color:var(--color-ink-2)}
+.item.bilingual .meta{order:3}
+.item.bilingual .summary-line-ko{order:4}
+.item.bilingual .summary-line{order:5}
+.item.bilingual ul.points{order:6}
+.item.bilingual .doclink{order:7}
 .meta{display:flex;flex-wrap:wrap;align-items:center;gap:var(--space-2xs) var(--space-sm);
 margin:var(--space-xs) 0;font-family:var(--font-outlier);font-size:var(--text-xs);
 letter-spacing:.06em;color:var(--color-muted)}
@@ -248,14 +263,24 @@ letter-spacing:.06em;color:var(--color-muted)}
 color:var(--color-ink-2)}
 .summary-line-ko{margin:var(--space-2xs) 0 0;font-size:var(--text-sm);line-height:1.6;
 color:var(--color-muted);word-break:keep-all}
+.item.bilingual .summary-line-ko{margin-top:var(--space-xs);font-size:var(--text-base);
+line-height:1.62;color:var(--color-ink-2)}
+.item.bilingual .summary-line{margin-top:var(--space-2xs);font-size:var(--text-sm);
+line-height:1.5;color:var(--color-muted)}
 ul.points{margin:var(--space-sm) 0 0;padding:0;list-style:none;counter-reset:pt}
 ul.points li{counter-increment:pt;display:grid;grid-template-columns:2.2em minmax(0,1fr);
 gap:0 var(--space-2xs);align-items:baseline;margin:0;padding:var(--space-2xs) 0;
 font-size:var(--text-sm);line-height:1.5;color:var(--color-ink-2)}
 ul.points li::before{content:counter(pt,decimal-leading-zero);font-family:var(--font-outlier);
 font-size:var(--text-xs);font-variant-numeric:tabular-nums;color:var(--color-accent)}
-ul.points li .ko{display:block;grid-column:2;margin-top:var(--space-2xs);
+ul.points li .en,ul.points li .ko{grid-column:2}
+ul.points li .ko{display:block;margin-top:var(--space-2xs);
 font-size:var(--text-xs);line-height:1.55;color:var(--color-muted);word-break:keep-all}
+/* Korean first inside each point, English underneath. */
+.item.bilingual ul.points li .ko{order:1;margin-top:0;font-size:var(--text-sm);
+line-height:1.6;color:var(--color-ink-2)}
+.item.bilingual ul.points li .en{order:2;display:block;margin-top:var(--space-2xs);
+font-size:var(--text-xs);line-height:1.5;color:var(--color-muted)}
 .doclink{margin-top:var(--space-xs);font-family:var(--font-outlier);font-size:var(--text-xs);
 letter-spacing:.06em}
 .doclink a{color:var(--color-accent);text-decoration:none;
@@ -275,6 +300,9 @@ font-size:var(--text-xs);text-transform:uppercase;letter-spacing:.14em;color:var
 /* The help slot is always reserved, so an error never pushes the layout down. */
 .signup-help{margin:var(--space-xs) 0 0;min-height:1lh;font-size:var(--text-sm);
 line-height:1.5;color:var(--color-muted)}
+.signup-help a{color:var(--color-accent);text-decoration:none;
+box-shadow:inset 0 -1px 0 var(--color-rule-strong)}
+.signup-help a:hover{box-shadow:inset 0 -1px 0 var(--color-accent)}
 .signup-help--static{margin-top:0;max-width:52ch}
 .signup[data-state="error"] input[type=email]{border-color:var(--color-stage-rt)}
 .signup[data-state="error"] .signup-help{color:var(--color-stage-rt)}
@@ -370,12 +398,14 @@ transition:box-shadow var(--dur-short) var(--ease-out)}
 .slide h3 a:hover{box-shadow:inset 0 -.06em 0 var(--color-accent)}
 .slide h3 a:active{box-shadow:inset 0 -.06em 0 var(--color-ink)}
 .slide h3 a:focus-visible{outline:2px solid var(--color-focus);outline-offset:4px}
-.slide h3 .ko{display:block;margin-top:.24em;font-size:.62em;font-weight:400;line-height:1.3;
-letter-spacing:-.01em;color:var(--color-ink-2);word-break:keep-all}
+/* Korean now leads at display size, so it relaxes the Latin tracking and opens the leading. */
+.slide h3:lang(ko){letter-spacing:-.005em;line-height:1.26;word-break:keep-all}
+.slide h3 .alt{display:block;margin-top:.3em;font-size:.6em;font-weight:400;line-height:1.26;
+letter-spacing:-.015em;color:var(--color-ink-2)}
 .slide .lead{margin:.85em 0 0;max-width:46ch;font-family:var(--font-display);font-size:1.06em;
 font-weight:400;line-height:1.5;color:var(--color-ink-2)}
-.slide .lead.ko{margin-top:.32em;font-size:.86em;line-height:1.55;color:var(--color-muted);
-word-break:keep-all}
+.slide .lead:lang(ko){line-height:1.62;word-break:keep-all}
+.slide .lead.alt{margin-top:.32em;font-size:.86em;line-height:1.5;color:var(--color-muted)}
 .slide .byline{display:flex;align-items:center;flex-wrap:wrap;gap:.55em 1.1em;margin:1.5em 0 0;
 padding-top:.85em;border-top:var(--rule-hair) solid var(--color-rule);
 font-family:var(--font-outlier);font-size:.66em;letter-spacing:.06em;color:var(--color-muted)}
@@ -396,8 +426,9 @@ border-top:var(--rule-heavy) solid var(--color-ink)}
 align-items:baseline;gap:0 .4em;padding:.72em 0;border-bottom:var(--rule-hair) solid var(--color-rule);
 font-size:.92em;line-height:1.5;color:var(--color-ink-2)}
 .slide ol.deck-points li:last-child{border-bottom:none}
-.slide ol.deck-points li .ko{display:block;grid-column:2;margin-top:.22em;font-size:.8em;
-line-height:1.5;color:var(--color-muted);word-break:keep-all}
+.slide ol.deck-points li:lang(ko){word-break:keep-all}
+.slide ol.deck-points li .alt{display:block;grid-column:2;margin-top:.22em;font-size:.8em;
+line-height:1.5;color:var(--color-muted)}
 .slide ol.deck-points li::before{content:counter(pt,decimal-leading-zero);
 font-family:var(--font-outlier);font-size:.66em;font-weight:500;letter-spacing:.08em;
 font-variant-numeric:tabular-nums;color:var(--color-accent)}

@@ -201,16 +201,15 @@
 
   var KO_FACTOR = 1.02;
 
-  function koBlockH(text, sizeHundredths, widthEmu, leading) {
-    return blockH(text, sizeHundredths, widthEmu, KO_FACTOR, leading || 1.45);
-  }
-
   function scaleFor(slide) {
-    var weight = (slide.title || "").length * 1.7 + (slide.summary || "").length;
-    (slide.points || []).forEach(function (p) { weight += p.length + 24; });
-    // Korean is denser per character, so it costs more vertical space than its length suggests.
-    weight += (slide.titleKo || "").length * 2.6 + (slide.summaryKo || "").length * 1.5;
-    (slide.pointsKo || []).forEach(function (p) { weight += (p || "").length * 1.5; });
+    // Weight the leading language at display cost and the secondary one at body cost.
+    // Hangul is denser per character, so it costs more vertical space than its length suggests.
+    var koLeads = !!slide.titleLeadsKo;
+    var titleW = (slide.title || "").length * (koLeads ? 3.4 : 1.7);
+    var weight = titleW + (slide.summary || "").length * (koLeads ? 1.6 : 1);
+    (slide.points || []).forEach(function (p) { weight += (p || "").length * (koLeads ? 1.6 : 1) + 24; });
+    weight += (slide.titleAlt || "").length * 1.5 + (slide.summaryAlt || "").length;
+    (slide.pointsAlt || []).forEach(function (p) { weight += (p || "").length; });
     if (weight > 1150) return 0.8;
     if (weight > 900) return 0.88;
     if (weight > 700) return 0.94;
@@ -242,50 +241,67 @@
     var BOTTOM = 5715000;
     var REGION = BOTTOM - TOP;
 
-    /* ---- Left half: kicker, headline (+ Korean), standfirst (+ Korean), byline ---- */
-    var titleSize = sz(slide.title && slide.title.length > 62 ? 2400 : 3000);
-    if (slide.title && slide.title.length > 110) titleSize = sz(2000);
-    var titleH = blockH(slide.title, titleSize, COL_L, 0.5, 1.12);
-    var titleKoSize = Math.round(titleSize * 0.66);
-    var titleKoH = slide.titleKo ? koBlockH(slide.titleKo, titleKoSize, COL_L, 1.4) + 76200 : 0;
+    /* ---- Left half: kicker, headline (+ second language), standfirst, byline ---- */
+    var koLeads = !!slide.titleLeadsKo;
+    // Hangul is full-width, so the leading language decides the character factor.
+    var leadFactor = koLeads ? KO_FACTOR : 0.5;
+    var altFactor = koLeads ? 0.5 : KO_FACTOR;
+
+    var titleLen = (slide.title || "").length;
+    var titleSize = sz(koLeads
+      ? (titleLen > 34 ? 2400 : 3000)
+      : (titleLen > 62 ? 2400 : 3000));
+    if (!koLeads && titleLen > 110) titleSize = sz(2000);
+    if (koLeads && titleLen > 60) titleSize = sz(2000);
+    var titleH = blockH(slide.title, titleSize, COL_L, leadFactor, koLeads ? 1.3 : 1.12);
+    var titleAltSize = Math.round(titleSize * 0.62);
+    var titleAltH = slide.titleAlt
+      ? blockH(slide.titleAlt, titleAltSize, COL_L, altFactor, 1.25) + 76200 : 0;
 
     var leadSize = sz(1450);
-    var leadH = slide.summary ? blockH(slide.summary, leadSize, COL_L, 0.48, 1.5) : 0;
-    var leadKoSize = Math.round(leadSize * 0.88);
-    var leadKoH = slide.summaryKo ? koBlockH(slide.summaryKo, leadKoSize, COL_L, 1.55) + 63500 : 0;
+    var leadH = slide.summary
+      ? blockH(slide.summary, leadSize, COL_L, koLeads ? KO_FACTOR : 0.48, koLeads ? 1.55 : 1.5) : 0;
+    var leadAltSize = Math.round(leadSize * 0.86);
+    var leadAltH = slide.summaryAlt
+      ? blockH(slide.summaryAlt, leadAltSize, COL_L, koLeads ? 0.48 : KO_FACTOR, 1.5) + 63500 : 0;
 
     var kickerH = 260350;
-    var leadGap = slide.summary || slide.summaryKo ? 190500 : 0;
+    var leadGap = slide.summary || slide.summaryAlt ? 190500 : 0;
     var bylineGap = 285750;
     var bylineH = 260350;
-    var leftH = kickerH + titleH + titleKoH + leadGap + leadH + leadKoH + bylineGap + bylineH;
+    var leftH = kickerH + titleH + titleAltH + leadGap + leadH + leadAltH + bylineGap + bylineH;
     var yL = TOP + Math.max(0, Math.round((REGION - leftH) / 2));
 
     shapes.push(shape(idRef.id++, "Kicker", MARGIN, yL, COL_L, 220000,
       para(run(slide.category || "Update", { size: 1000, face: OUTLIER, color: ACCENT, caps: true, spc: 340 }))));
     yL += kickerH;
 
-    var headline = para(run(slide.title, { size: titleSize, face: DISPLAY, color: INK, link: links.title }),
-      { lineSpacing: 100000 });
-    if (slide.titleKo) {
-      headline += para(run(slide.titleKo, { size: titleKoSize, face: DISPLAY, color: INK_2, lang: "ko-KR" }),
-        { lineSpacing: 124000, spaceBefore: 500 });
+    var headline = para(run(slide.title, {
+      size: titleSize, face: DISPLAY, color: INK, link: links.title,
+      lang: koLeads ? "ko-KR" : null
+    }), { lineSpacing: koLeads ? 116000 : 100000 });
+    if (slide.titleAlt) {
+      headline += para(run(slide.titleAlt, {
+        size: titleAltSize, face: DISPLAY, color: INK_2, lang: koLeads ? null : "ko-KR"
+      }), { lineSpacing: 118000, spaceBefore: 500 });
     }
-    shapes.push(shape(idRef.id++, "Headline", MARGIN, yL, COL_L, titleH + titleKoH + 120000, headline));
-    yL += titleH + titleKoH + leadGap;
+    shapes.push(shape(idRef.id++, "Headline", MARGIN, yL, COL_L, titleH + titleAltH + 120000, headline));
+    yL += titleH + titleAltH + leadGap;
 
-    if (slide.summary || slide.summaryKo) {
+    if (slide.summary || slide.summaryAlt) {
       var standfirst = "";
       if (slide.summary) {
-        standfirst += para(run(slide.summary, { size: leadSize, face: DISPLAY, color: INK_2 }),
-          { lineSpacing: 128000 });
+        standfirst += para(run(slide.summary, {
+          size: leadSize, face: DISPLAY, color: INK_2, lang: koLeads ? "ko-KR" : null
+        }), { lineSpacing: koLeads ? 140000 : 128000 });
       }
-      if (slide.summaryKo) {
-        standfirst += para(run(slide.summaryKo, { size: leadKoSize, face: DISPLAY, color: MUTED, lang: "ko-KR" }),
-          { lineSpacing: 138000, spaceBefore: slide.summary ? 400 : 0 });
+      if (slide.summaryAlt) {
+        standfirst += para(run(slide.summaryAlt, {
+          size: leadAltSize, face: DISPLAY, color: MUTED, lang: koLeads ? null : "ko-KR"
+        }), { lineSpacing: 130000, spaceBefore: slide.summary ? 400 : 0 });
       }
-      shapes.push(shape(idRef.id++, "Standfirst", MARGIN, yL, COL_L, leadH + leadKoH + 120000, standfirst));
-      yL += leadH + leadKoH;
+      shapes.push(shape(idRef.id++, "Standfirst", MARGIN, yL, COL_L, leadH + leadAltH + 120000, standfirst));
+      yL += leadH + leadAltH;
     }
 
     yL += bylineGap;
@@ -302,15 +318,18 @@
 
     /* ---- Right half: numbered notes, hairline separated ---- */
     var points = (slide.points || []).slice(0, 6);
-    var pointsKo = (slide.pointsKo || []).slice(0, 6);
+    var pointsAlt = (slide.pointsAlt || []).slice(0, 6);
     if (points.length) {
       var numW = 400050;
       var textW = COL_R - numW;
       var ptSize = sz(1250);
-      var ptKoSize = Math.round(ptSize * 0.86);
+      var ptAltSize = Math.round(ptSize * 0.86);
       var heights = points.map(function (text, i) {
-        var h = Math.max(285750, blockH(text, ptSize, textW, 0.48, 1.45));
-        if (pointsKo[i]) h += koBlockH(pointsKo[i], ptKoSize, textW, 1.5) + 50800;
+        var h = Math.max(285750, blockH(text, ptSize, textW, koLeads ? KO_FACTOR : 0.48,
+          koLeads ? 1.52 : 1.45));
+        if (pointsAlt[i]) {
+          h += blockH(pointsAlt[i], ptAltSize, textW, koLeads ? 0.48 : KO_FACTOR, 1.45) + 50800;
+        }
         return h;
       });
       var pad = 133350;
@@ -323,10 +342,13 @@
       points.forEach(function (text, i) {
         shapes.push(shape(idRef.id++, "PointNo" + i, X_R, yR + pad + 25400, numW - 76200, 220000,
           para(run(pad2(i + 1), { size: 950, face: OUTLIER, color: ACCENT, spc: 200 }))));
-        var body = para(run(text, { size: ptSize, color: INK_2 }), { lineSpacing: 122000 });
-        if (pointsKo[i]) {
-          body += para(run(pointsKo[i], { size: ptKoSize, color: MUTED, lang: "ko-KR" }),
-            { lineSpacing: 140000, spaceBefore: 300 });
+        var body = para(run(text, {
+          size: ptSize, color: INK_2, lang: koLeads ? "ko-KR" : null
+        }), { lineSpacing: koLeads ? 136000 : 122000 });
+        if (pointsAlt[i]) {
+          body += para(run(pointsAlt[i], {
+            size: ptAltSize, color: MUTED, lang: koLeads ? null : "ko-KR"
+          }), { lineSpacing: 124000, spaceBefore: 300 });
         }
         shapes.push(shape(idRef.id++, "Point" + i, X_R + numW, yR + pad, textW, heights[i] + 60000, body));
         yR += heights[i] + pad * 2;

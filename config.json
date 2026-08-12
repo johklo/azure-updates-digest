@@ -14,7 +14,7 @@
   "newsletter": {
     "enabled": true,
     "form_action": "",
-    "contact": "",
+    "contact": "johk@microsoft.com",
     "subject": "Subscribe: Azure product updates digest"
   },
   "email": {

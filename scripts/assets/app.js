@@ -184,25 +184,29 @@
     var leadKo = textOf(el, ".summary-line-ko");
     var points = pointsOf(el);
 
-    var mode = effectiveLang();
-    var showEn = mode !== "ko" || !titleKo;
-    var showKo = mode !== "en";
-    var headline = showEn ? title : titleKo;
-    var headlineKo = showEn && showKo ? titleKo : "";
+    // 병기 leads with Korean and sets English underneath; an update with no translation
+    // falls back to English as the primary line and drops the secondary one entirely.
+    var pair = languagePair(!!titleKo);
+    var headline = pair.primary === "ko" && titleKo ? titleKo : title;
+    var headlineAlt = pair.secondary && titleKo ? title : "";
 
     var html = '<div class="slide-head"><span class="mast">Azure Product Updates</span>' +
       '<span class="folio"><b>' + pad2(deckIndex + 1) + "</b> / " + pad2(deckItems.length) + "</span></div>";
 
     html += '<div class="slide-main' + (points.length ? "" : " single") + '"><div class="lede">';
     html += '<p class="kicker">' + esc(el.getAttribute("data-category")) + "</p>";
-    html += '<h3><a href="' + esc(link.getAttribute("href")) + '" target="_blank" rel="noopener">' +
-      esc(headline) + "</a>";
-    if (headlineKo) html += '<span class="ko" lang="ko">' + esc(headlineKo) + "</span>";
+    html += '<h3' + (headline === titleKo ? ' lang="ko"' : "") + '><a href="' +
+      esc(link.getAttribute("href")) + '" target="_blank" rel="noopener">' + esc(headline) + "</a>";
+    if (headlineAlt) html += '<span class="alt">' + esc(headlineAlt) + "</span>";
     html += "</h3>";
 
-    var leadText = showEn ? lead : leadKo;
-    if (leadText) html += '<p class="lead"' + (showEn ? "" : ' lang="ko"') + ">" + esc(leadText) + "</p>";
-    if (showEn && showKo && leadKo) html += '<p class="lead ko" lang="ko">' + esc(leadKo) + "</p>";
+    var leadPrimary = pair.primary === "ko" && leadKo ? leadKo : lead;
+    var leadAlt = pair.secondary && leadKo && lead ? lead : "";
+    if (leadPrimary) {
+      html += '<p class="lead"' + (leadPrimary === leadKo ? ' lang="ko"' : "") + ">" +
+        esc(leadPrimary) + "</p>";
+    }
+    if (leadAlt) html += '<p class="lead alt">' + esc(leadAlt) + "</p>";
 
     html += '<p class="byline">';
     if (pill) html += '<span class="stage ' + esc(pill.className.replace("pill", "").trim()) + '">' + esc(pill.textContent) + "</span>";
@@ -213,9 +217,10 @@
     if (points.length) {
       html += '<div class="notes"><ol class="deck-points">';
       points.forEach(function (p) {
-        var en = showEn ? p.en : p.ko || p.en;
-        html += "<li><span" + (showEn ? "" : ' lang="ko"') + ">" + esc(en) + "</span>";
-        if (showEn && showKo && p.ko) html += '<span class="ko" lang="ko">' + esc(p.ko) + "</span>";
+        var main = pair.primary === "ko" && p.ko ? p.ko : p.en;
+        var alt = pair.secondary && p.ko ? p.en : "";
+        html += "<li><span" + (main === p.ko ? ' lang="ko"' : "") + ">" + esc(main) + "</span>";
+        if (alt) html += '<span class="alt">' + esc(alt) + "</span>";
         html += "</li>";
       });
       html += "</ol></div>";
@@ -226,8 +231,10 @@
     if (doc) html += '<a href="' + esc(doc.getAttribute("href")) + '" target="_blank" rel="noopener">' + esc(doc.textContent) + "</a>";
     html += "</div>";
 
-    slide.classList.toggle("long", headline.length > 62);
-    slide.classList.toggle("bilingual", showEn && showKo && !!(headlineKo || leadKo));
+    // Korean says the same thing in far fewer characters, so it needs its own step-down point.
+    var longAt = headline === titleKo ? 34 : 62;
+    slide.classList.toggle("long", headline.length > longAt);
+    slide.classList.toggle("bilingual", !!(headlineAlt || leadAlt));
     slide.innerHTML = html;
     slide.scrollTop = 0;
     counter.textContent = pad2(deckIndex + 1) + " / " + pad2(deckItems.length);
@@ -239,14 +246,14 @@
 
   function pointsOf(el) {
     return Array.prototype.map.call(el.querySelectorAll("ul.points li"), function (li) {
+      var en = li.querySelector(".en");
       var ko = li.querySelector(".ko");
-      var koText = ko ? ko.textContent.trim() : "";
-      var en = li.textContent.trim();
-      if (koText && en.slice(-koText.length) === koText) en = en.slice(0, -koText.length).trim();
-      return { en: en, ko: koText };
+      return {
+        en: en ? en.textContent.trim() : li.textContent.trim(),
+        ko: ko ? ko.textContent.trim() : ""
+      };
     });
   }
-
   function hasKorean() {
     return deckItems.some(function (el) { return !!el.querySelector(".title-ko, .summary-line-ko, ul.points .ko"); });
   }
@@ -255,6 +262,16 @@
   // to English whenever the current result set carries no Korean at all.
   function effectiveLang() {
     return hasKorean() ? lang : "en";
+  }
+
+  // Which language leads, and whether a second one follows. 병기 leads with Korean because a
+  // Korean reader should not have to read past English to reach their own language; an update
+  // with no translation quietly falls back to English alone.
+  function languagePair(hasKo) {
+    var mode = effectiveLang();
+    if (mode === "en" || !hasKo) return { primary: "en", secondary: false };
+    if (mode === "ko") return { primary: "ko", secondary: false };
+    return { primary: "ko", secondary: true };
   }
 
   function syncLangBar() {
@@ -316,11 +333,10 @@
     var points = pointsOf(el);
     var titleKo = textOf(el, ".title-ko");
     var leadKo = textOf(el, ".summary-line-ko");
-    var mode = effectiveLang();
-    var showEn = mode !== "ko" || !titleKo;
-    var showKo = mode !== "en";
     var title = link ? link.textContent.trim() : "";
     var summary = textOf(el, ".summary-line");
+    var pair = languagePair(!!titleKo);
+    var koLeads = pair.primary === "ko";
 
     return {
       category: el.getAttribute("data-category") || "",
@@ -328,13 +344,16 @@
       stageClass: pill ? pill.className.replace("pill", "").trim() : "muted",
       date: el.getAttribute("data-date") || "",
       products: meta.split("\u00b7").slice(1).join("\u00b7").trim(),
-      title: showEn ? title : titleKo || title,
-      titleKo: showEn && showKo ? titleKo : "",
+      // `title` / `summary` / `points` are always the leading language; the *Alt fields carry
+      // the second one, so every export renders the pair in the same order the deck does.
+      title: koLeads && titleKo ? titleKo : title,
+      titleAlt: pair.secondary && titleKo ? title : "",
+      titleLeadsKo: koLeads && !!titleKo,
       url: link ? link.getAttribute("href") : "",
-      summary: showEn ? summary : leadKo || summary,
-      summaryKo: showEn && showKo ? leadKo : "",
-      points: points.map(function (p) { return showEn ? p.en : p.ko || p.en; }),
-      pointsKo: showEn && showKo ? points.map(function (p) { return p.ko; }) : [],
+      summary: koLeads && leadKo ? leadKo : summary,
+      summaryAlt: pair.secondary && leadKo && summary ? summary : "",
+      points: points.map(function (p) { return koLeads && p.ko ? p.ko : p.en; }),
+      pointsAlt: points.map(function (p) { return pair.secondary && p.ko ? p.en : ""; }),
       docUrl: doc ? doc.getAttribute("href") : "",
       docTitle: doc ? doc.textContent.trim() : ""
     };
@@ -398,11 +417,15 @@
     "letter-spacing:-.02em;overflow-wrap:anywhere}" +
     ".long h2{font-size:32px}" +
     "h2 a{color:var(--ink);text-decoration:none}" +
-    "h2 .ko{display:block;margin-top:.28em;font-size:.72em;font-weight:400;" +
-    "line-height:1.32;letter-spacing:-.01em;color:var(--ink-2);word-break:keep-all}" +
+    /* Korean leads at display size, so it needs looser leading and near-zero tracking; the
+       English line follows one step down. */
+    "h2:lang(ko){letter-spacing:-.005em;line-height:1.24;word-break:keep-all}" +
+    "h2 .alt{display:block;margin-top:.3em;font-size:.62em;font-weight:400;line-height:1.24;" +
+    "letter-spacing:-.015em;color:var(--ink-2)}" +
     ".lead{margin:16px 0 0;max-width:46ch;font-family:var(--display);font-size:18.5px;" +
     "line-height:1.5;color:var(--ink-2)}" +
-    ".lead.ko{margin-top:7px;font-size:15.5px;line-height:1.6;color:var(--muted);word-break:keep-all}" +
+    ".lead:lang(ko){line-height:1.6;word-break:keep-all}" +
+    ".lead.alt{margin-top:7px;font-size:15.5px;line-height:1.5;color:var(--muted)}" +
     ".byline{display:flex;align-items:center;flex-wrap:wrap;gap:9px 20px;margin:26px 0 0;padding-top:13px;" +
     "border-top:1px solid var(--rule);font-family:var(--outlier);font-size:11px;letter-spacing:.06em;color:var(--muted)}" +
     ".byline .stage{display:inline-flex;align-items:center;gap:7px;font-weight:500;letter-spacing:.12em;" +
@@ -415,8 +438,9 @@
     "align-items:baseline;gap:0 6px;padding:11px 0;border-bottom:1px solid var(--rule);" +
     "font-size:15px;line-height:1.5;color:var(--ink-2)}" +
     "ol.points li:last-child{border-bottom:none}" +
-    "ol.points li .ko{display:block;grid-column:2;margin-top:4px;font-size:13.5px;line-height:1.55;" +
-    "color:var(--muted);word-break:keep-all}" +
+    "ol.points li:lang(ko){word-break:keep-all}" +
+    "ol.points li .alt{display:block;grid-column:2;margin-top:4px;font-size:13.5px;" +
+    "line-height:1.5;color:var(--muted)}" +
     "ol.points li::before{content:counter(pt,decimal-leading-zero);font-family:var(--outlier);" +
     "font-size:11px;font-weight:500;letter-spacing:.08em;font-variant-numeric:tabular-nums;color:var(--accent)}" +
     ".foot{flex:none;display:flex;gap:26px;flex-wrap:wrap;align-items:baseline;padding-top:13px;" +
@@ -451,13 +475,13 @@
     ".body{padding:6mm 0 5mm;column-gap:9mm}" +
     ".kicker{font-size:7.5pt;margin-bottom:2.5mm}" +
     "h2{font-size:20pt}.long h2{font-size:16pt}" +
-    "h2 .ko{font-size:12pt;margin-top:1.6mm}" +
+    "h2 .alt{font-size:12pt;margin-top:1.8mm}" +
     ".lead{font-size:11pt;margin-top:3mm}" +
-    ".lead.ko{font-size:9.5pt;margin-top:1.6mm}" +
+    ".lead.alt{font-size:9.5pt;margin-top:1.6mm}" +
     ".byline{font-size:7.5pt;margin-top:4mm;padding-top:2.2mm}" +
     "ol.points li{font-size:9.5pt;padding:2mm 0;grid-template-columns:8mm minmax(0,1fr)}" +
     "ol.points li::before{font-size:7.5pt}" +
-    "ol.points li .ko{font-size:8.5pt;margin-top:1mm}" +
+    "ol.points li .alt{font-size:8.5pt;margin-top:1mm}" +
     ".foot{font-size:7pt;padding-top:2.2mm}" +
     ".cover h1{font-size:34pt}.cover .issue{font-size:8.5pt}.cover .scope{font-size:11pt}" +
     ".cover .index{font-size:8.5pt;margin-top:6mm}}";
@@ -509,11 +533,12 @@
         '<span class="folio"><b>' + pad2(index + 1) + "</b> / " + pad2(total) + "</span></div>";
       html += '<div class="body' + (d.points.length ? "" : " single") + '"><div class="lede">';
       html += '<p class="kicker">' + esc(d.category) + "</p>";
-      html += '<h2><a href="' + esc(d.url) + '">' + esc(d.title) + "</a>";
-      if (d.titleKo) html += '<span class="ko" lang="ko">' + esc(d.titleKo) + "</span>";
+      html += '<h2' + (d.titleLeadsKo ? ' lang="ko"' : "") + '><a href="' + esc(d.url) + '">' +
+        esc(d.title) + "</a>";
+      if (d.titleAlt) html += '<span class="alt">' + esc(d.titleAlt) + "</span>";
       html += "</h2>";
       if (d.summary) html += '<p class="lead">' + esc(d.summary) + "</p>";
-      if (d.summaryKo) html += '<p class="lead ko" lang="ko">' + esc(d.summaryKo) + "</p>";
+      if (d.summaryAlt) html += '<p class="lead alt">' + esc(d.summaryAlt) + "</p>";
       html += '<p class="byline">';
       if (d.stage) html += '<span class="stage ' + esc(d.stageClass) + '">' + esc(d.stage) + "</span>";
       html += "<span>" + esc(d.date) + "</span>";
@@ -523,7 +548,7 @@
         html += '<div class="notes"><ol class="points">';
         d.points.forEach(function (p, i) {
           html += "<li><span>" + esc(p) + "</span>";
-          if (d.pointsKo[i]) html += '<span class="ko" lang="ko">' + esc(d.pointsKo[i]) + "</span>";
+          if (d.pointsAlt[i]) html += '<span class="alt">' + esc(d.pointsAlt[i]) + "</span>";
           html += "</li>";
         });
         html += "</ol></div>";
