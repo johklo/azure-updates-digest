@@ -97,6 +97,13 @@ English.
 
 ## The web page
 
+The site is set as a broadsheet: a serif masthead, hairline rules instead of card borders,
+release stages drawn as a square swatch plus a small-caps label, and machine metadata
+(navigation, counts, table headers, numerals) in mono. The design system is locked in
+[`design.md`](design.md) and exported as CSS custom properties in [`tokens.css`](tokens.css);
+every surface resolves to those tokens rather than inlining a colour. There is no border
+radius anywhere, and the accent stays under ~3 % of any viewport.
+
 The landing page is an interactive explorer:
 
 * **Summary table by category at the top** - total, GA, public preview, private preview,
@@ -168,6 +175,8 @@ The workflow runs three jobs: `digest` (fetch, summarize, render, commit, upload
 | `scripts/build_digest.py` | Renders the Markdown digest + HTML/text email |
 | `scripts/build_site.py` | Builds the static GitHub Pages site into `site/` |
 | `scripts/assets/` | Site stylesheet, filtering JavaScript and the PPTX writer |
+| `design.md` | The locked design system every page is built against |
+| `tokens.css` | Portable export of the design tokens |
 | `data/` | Committed state: `archive.json`, `state.json`, `latest.json`, `enrichment.json` |
 | `digests/` | Committed Markdown digests, one per run |
 

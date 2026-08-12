@@ -71,9 +71,10 @@ def page(cfg: dict, title: str, body_html: str, depth: int = 0) -> str:
 <a href="{prefix}categories.html">Categories</a>
 <a href="{esc(cfg.get('azure_updates_url'))}">Azure Updates source</a></nav>
 <main>{body_html}</main>
-<footer>Generated {esc(utcnow().strftime('%Y-%m-%d %H:%M UTC'))} from the official Microsoft Azure
-release communications feed. Summaries are produced from each announcement and its linked
-Microsoft documentation.</footer>
+<footer><b>Colophon</b>
+Generated {esc(utcnow().strftime('%Y-%m-%d %H:%M UTC'))} from the official Microsoft Azure release
+communications feed. Summaries are produced from each announcement and its linked Microsoft
+documentation. Set in Newsreader, IBM Plex Sans and JetBrains Mono.</footer>
 <script src="{prefix}pptx.js"></script>
 <script src="{prefix}app.js"></script>
 </body></html>
@@ -131,7 +132,7 @@ def render_item(item: dict, enrichment: dict) -> str:
         parts.append('<ul class="points">' + "".join(items_html) + "</ul>")
     if info["doc_url"]:
         label = info["doc_title"] or "Microsoft documentation"
-        parts.append(f'<div class="doclink">&#128196; <a href="{esc(info["doc_url"])}">{esc(label)}</a></div>')
+        parts.append(f'<div class="doclink"><a href="{esc(info["doc_url"])}">{esc(label)}</a></div>')
     parts.append("</div>")
     return "".join(parts)
 
@@ -161,12 +162,12 @@ def render_filters(groups: dict, stage_counts: Counter, default_days: int, defau
         f'<div class="row"><span class="lbl">View</span>'
         '<button class="chip" data-view="browse" aria-pressed="true">Browse list</button>'
         '<button class="chip" data-view="slides" aria-pressed="false">Slide deck</button>'
-        '<span class="hint" style="font-size:12px;color:#57606a;">'
+        '<span class="hint">'
         "One update per screen &mdash; arrow keys or the buttons below move between slides."
         "</span></div>"
         f'<div class="row"><span class="lbl">Date range</span>{date_chips}'
         '<input type="date" id="from" aria-label="From date">'
-        '<span style="color:#57606a;font-size:13px;">to</span>'
+        '<span class="hint">to</span>'
         '<input type="date" id="to" aria-label="To date">'
         '<span class="result" id="result"></span></div>'
         f'<div class="row"><span class="lbl">Release stage</span>{stage_chips}</div>'
@@ -216,10 +217,10 @@ def render_summary_table(groups: dict) -> str:
                 products[product] += 1
         top = ", ".join(name for name, _ in products.most_common(3))
         latest = max((item_date_str(i) for i in bucket if item_date_str(i)), default="")
-        width = max(3, round(len(bucket) / largest * 100))
+        width = max(0.03, len(bucket) / largest)
         cells = [
             f'<td><a class="cat" href="#{anchor(category)}">{esc(category)}</a>'
-            f'<span class="bar" style="width:{width}%"></span></td>',
+            f'<span class="bar" style="transform:scaleX({width:.3f})"></span></td>',
             f'<td class="num c-n"><b>{len(bucket)}</b></td>',
             _stage_cell("c-ga", "ga", counts["ga"]),
             _stage_cell("c-pv", "pv", counts["public-preview"]),
@@ -365,10 +366,7 @@ def build(cfg: dict, default_days: int, default_stage: str) -> None:
     digest_dir.mkdir(parents=True, exist_ok=True)
     for path in digest_files:
         raw = re.sub(r"^---\n.*?\n---\n", "", path.read_text(encoding="utf-8"), flags=re.DOTALL)
-        html_body = (
-            '<div class="card"><pre style="white-space:pre-wrap;font:13.5px/1.6 ui-monospace,'
-            f'Consolas,monospace;">{esc(raw)}</pre></div>'
-        )
+        html_body = f'<div class="card"><pre class="digest-source">{esc(raw)}</pre></div>'
         (digest_dir / f"{path.stem}.html").write_text(page(cfg, f"Digest {path.stem}", html_body, 1), encoding="utf-8")
 
     (SITE_DIR / "updates.json").write_text(

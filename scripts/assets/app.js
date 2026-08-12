@@ -103,7 +103,7 @@
       row.querySelector(".c-pp").innerHTML = stat.pp ? '<span class="pill pp">' + stat.pp + "</span>" : "";
       row.querySelector(".c-rt").innerHTML = stat.rt ? '<span class="pill rt">' + stat.rt + "</span>" : "";
       var bar = row.querySelector(".bar");
-      if (bar) bar.style.width = Math.max(3, Math.round((stat.n / maxN) * 100)) + "%";
+      if (bar) bar.style.transform = "scaleX(" + Math.max(0.03, stat.n / maxN) + ")";
     });
 
     var totals = { n: visible, ga: 0, pv: 0, pp: 0, rt: 0 };

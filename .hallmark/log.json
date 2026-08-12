@@ -1,5 +1,19 @@
 [
   {
+    "date": "2026-08-12",
+    "scope": "app",
+    "macrostructure": "Index-First (browse) + Split Studio (deck) + Long Document (digests)",
+    "theme": "custom",
+    "theme_axes": "light / roman-serif / cool",
+    "vibe": "broadsheet, azure ink, hairline rules",
+    "genre": "editorial",
+    "nav": "N6 newspaper masthead",
+    "footer": "Ft4 dense colophon (deck keeps Ft2 inline rule)",
+    "enrichment": "none (typography only)",
+    "design_system": "design.md",
+    "brief": "Azure product updates digest - extend the deck's editorial system to the whole site"
+  },
+  {
     "date": "2026-08-11",
     "macrostructure": "Split Studio",
     "theme": "custom",
