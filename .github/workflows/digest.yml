@@ -29,7 +29,6 @@ permissions:
   contents: write
   pages: write
   id-token: write
-
 concurrency:
   group: azure-updates-digest
   cancel-in-progress: false
@@ -37,6 +36,9 @@ concurrency:
 jobs:
   digest:
     runs-on: ubuntu-latest
+    # The `secrets` context is not available in step-level `if`, so surface the check here.
+    env:
+      HAS_AZURE_OIDC: ${{ secrets.AZURE_CLIENT_ID != '' }}
     outputs:
       has_updates: ${{ steps.digest.outputs.has_updates }}
       subject: ${{ steps.digest.outputs.subject }}
@@ -55,6 +57,25 @@ jobs:
           python scripts/fetch_updates.py \
             --days "${{ inputs.days || '7' }}" \
             ${{ inputs.include_seen == true && '--include-seen' || '' }}
+
+      - name: Sign in to Azure
+        # The subscription forbids local (key) auth on Cognitive Services, so the translation
+        # pass authenticates with a short-lived Entra ID token obtained through OIDC.
+        if: env.HAS_AZURE_OIDC == 'true'
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+      - name: Mint an Azure OpenAI token
+        if: env.HAS_AZURE_OIDC == 'true'
+        run: |
+          TOKEN=$(az account get-access-token \
+            --resource https://cognitiveservices.azure.com \
+            --query accessToken -o tsv)
+          echo "::add-mask::$TOKEN"
+          echo "AZURE_OPENAI_TOKEN=$TOKEN" >> "$GITHUB_ENV"
 
       - name: Summarize linked documentation and translate into Korean
         id: enrich
