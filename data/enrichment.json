@@ -3134,7 +3134,7 @@
     "title_ko": "Generally Available: Visual Studio Code용 Microsoft Foundry (2026년 6월 빌드 리프레시)",
     "summary_ko": "Hosted agents의 경우, 이 확장 기능은 로컬 개발과 Foundry Agent Service로의 원클릭 배포를 모두 지원하며, 빠른 반복 작업을 위한 모델과 에이전트 플레이그라운드를 나란히 제공합니다.",
     "key_points_ko": [
-      "Visual Studio Code용 Microsoft Foundry 확장이 Build 2026 리프레시와 함께 일반 제공되어 전체 모델 카탈로그, 모델 플레이그라운드, Hosted agent 배포 기능을 에디터 내에 제공합니다.",
+      "Visual Studio Code용 Microsoft Foundry 확장이 Build 2026 리프레시와 함께 Generally Available되어 전체 모델 카탈로그, 모델 플레이그라운드, Hosted agent 배포 기능을 에디터 내에 제공합니다.",
       "개발자는 Azure 계정으로 로그인하여 Foundry 프로젝트를 생성하거나 열고, 게시자 및 기능별 필터를 사용해 1,900개 이상의 모델을 탐색하며, VS Code를 벗어나지 않고 프로젝트에 모델을 배포할 수 있습니다.",
       "Foundry Toolkit for VS Code를 검색하고 선택합니다.",
       "Foundry Toolkit Extension에서 Open을 선택합니다."
@@ -3871,11 +3871,11 @@
     ],
     "source": "extractive",
     "updated_at": "2026-08-10T03:32:14.164925+00:00",
-    "title_ko": "Azure Kubernetes Service (AKS)에서 Azure Container Linux (ACL) 일반 제공",
+    "title_ko": "Azure Kubernetes Service (AKS)에서 Azure Container Linux (ACL) Generally Available",
     "summary_ko": "Azure Container Linux는 AKS 노드 풀을 위해 컨테이너 최적화되고 불변성을 가진 운영 체제로, Flatcar Container Linux에서 파생되었으며 Azure Linux RPM 패키지 기반으로 구축되었습니다.",
     "key_points_ko": [
       "컨테이너화된 워크로드를 대규모로 실행하기 위해 설계된 잠금 상태의 최소 호스트를 제공합니다.",
-      "오늘 Microsoft Build 2026에서 Azure Container Linux (ACL)의 일반 제공을 발표합니다: 보안적이고 불변성을 가진 컨테이너 호스트로서...",
+      "오늘 Microsoft Build 2026에서 Azure Container Linux (ACL)의 Generally Available을 발표합니다: 보안적이고 불변성을 가진 컨테이너 호스트로서...",
       "주요 기능은 다음과 같습니다: - 설계상 불변 — 루트 /usr 디렉터리는 dm-verity 무결성 검증과 함께 읽기 전용입니다.",
       "불필요한 구성 요소를 제거하고 시스템 수정 방식을 엄격히 제한함으로써 ACL은 공격 표면을 줄이고 신뢰할 수 있는 프로덕션 워크로드 실행을 위한 강력한 기반을 제공합니다."
     ],
@@ -4084,7 +4084,7 @@
     "source": "extractive",
     "updated_at": "2026-08-10T03:32:28.752573+00:00",
     "title_ko": "Public Preview: Azure Functions용 Serverless agents 런타임",
-    "summary_ko": "Azure Functions가 이제 마크다운 우선 프로그래밍 모델을 사용하여 AI 에이전트를 퍼블릭 프리뷰로 1급 워크로드로 빌드하는 것을 지원합니다.",
+    "summary_ko": "Azure Functions가 이제 마크다운 우선 프로그래밍 모델을 사용하여 AI 에이전트를 Public Preview로 1급 워크로드로 빌드하는 것을 지원합니다.",
     "key_points_ko": [
       "이번 릴리스로 개발자는 자연어로 이벤트 기반 serverless 에이전트를 작성할 수 있습니다.",
       "개발자는 HTTP, 타이머, 큐, Service Bus, Event Hub, Cosmos DB, blob, Event Grid 및 새로운 커넥터 기반 트리거(Teams 메시지, Outlook 메일, 캘린더 이벤트)를 포함한 모든 Azure Functions 트리거를 사용해 에이전트를 실행할 수 있습니다.",
@@ -6566,7 +6566,7 @@
     "source": "extractive",
     "updated_at": "2026-08-10T03:34:14.130685+00:00",
     "title_ko": "Generally Available: Azure AI Translator의 배치 문서 번역용 이미지 파일 번역",
-    "summary_ko": "Azure AI Translator 배치 문서 번역에서 이미지 파일을 일반 제공 입력 유형으로 지원합니다.",
+    "summary_ko": "Azure AI Translator 배치 문서 번역에서 이미지 파일을 Generally Available 입력 유형으로 지원합니다.",
     "key_points_ko": [
       "문서 번역은 두 가지 워크플로를 지원합니다.",
       "지원되는 형식에는 `.jpeg`, `.png`, `.bmp`, `.webp`가 포함됩니다.",
@@ -10363,7 +10363,7 @@
     "key_points_ko": [
       "CES를 통해 이벤트 기반 마이크로서비스를 구축하고, 실시간 분석을 활성화하며, 캐시와 검색 인덱스를 동기화하고, 스트리밍 및 분석 플랫폼으로 데이터를 지속적으로 수집할 수 있습니다. 이 모든 작업을 애플리케이션 코드를 변경하지 않고 수행할 수 있습니다.",
       "SQL은 트랜잭션 커밋 시 변경 사항을 게시하여 지연 시간을 줄이고 작업 부하에 대한 운영 오버헤드를 최소화합니다.",
-      "퍼블릭 프리뷰를 사용해 보시고 기능을 계속 개선하는 데 도움이 될 수 있도록 피드백을 공유해 주시기 바랍니다.",
+      "Public Preview를 사용해 보시고 기능을 계속 개선하는 데 도움이 될 수 있도록 피드백을 공유해 주시기 바랍니다.",
       "CES는 변경 데이터 캡처, 변경 추적, 맞춤 폴링 또는 외부 커넥터가 필요 없도록 하여 실시간 통합을 간소화합니다."
     ],
     "translated_at": "2026-08-12T08:55:47.829978+00:00"
@@ -21744,13 +21744,13 @@
     ],
     "source": "extractive",
     "updated_at": "2026-08-10T05:26:24.234579+00:00",
-    "title_ko": "Generally Available: Azure Data Box Next Gen이 추가 지역에서 일반 제공 시작",
+    "title_ko": "Generally Available: Azure Data Box Next Gen이 추가 지역에서 Generally Available 시작",
     "summary_ko": "Azure Data Box Next Gen이 인도, 카타르, 남아프리카, 한국 등 새로운 지역에서 Generally Available 상태로 제공됩니다.",
     "key_points_ko": [
       "이번 추가로 미국, 영국, 유럽, 미국 정부, 캐나다, 일본, 호주, 싱가포르, 인도, 카타르에서 Azure Data Box 120TB와 525TB 모두 Generally Available(GA) 상태가 되었습니다. 브라질, UAE, 홍콩, 스위스 등에서는 Azure Data Box 120TB가 GA 상태입니다.",
       "Azure Data Box는 고객에게 가장 비용 효율적인 데이터 마이그레이션 솔루션 중 하나를 제공하며, 오프라인 데이터 전송 솔루션 중 TB당 가장 낮은 비용을 자랑합니다.",
       "새로운 장치는 대규모 마이그레이션 프로젝트에서 신뢰성과 효율성으로 높은 평가를 받고 있습니다.",
-      "올해 초에 NVMe 기반의 차세대 컴팩트 Data Box 장치인 Azure Data Box 120 TB와 Azure Data Box 525 TB의 일반 제공을 발표했습니다."
+      "올해 초에 NVMe 기반의 차세대 컴팩트 Data Box 장치인 Azure Data Box 120 TB와 Azure Data Box 525 TB의 Generally Available을 발표했습니다."
     ],
     "translated_at": "2026-08-12T08:57:46.610201+00:00"
   },
@@ -22855,7 +22855,7 @@
     "source": "extractive",
     "updated_at": "2026-08-10T05:27:19.518919+00:00",
     "title_ko": "Generally Available: 기존 Azure Gen1 VM을 Gen2-Trusted launch로 업그레이드",
-    "summary_ko": "기존 Azure Gen1 VM을 Gen2-Trusted launch로 업그레이드하여 Trusted launch를 활성화하는 일반 제공 지원을 발표합니다.",
+    "summary_ko": "기존 Azure Gen1 VM을 Gen2-Trusted launch로 업그레이드하여 Trusted launch를 활성화하는 Generally Available 지원을 발표합니다.",
     "key_points_ko": [
       "Trusted Launch는 루트킷, 부트킷으로부터 OS를 보호하며 VM의 부트 체인을 측정하여 증명을 가능하게 합니다.",
       "Trusted Launch VM은 Secure Boot와 vTPM 기능을 활성화하여 Azure Generation 2 VM에 기본적인 컴퓨팅 보안을 제공합니다.",
@@ -22909,7 +22909,7 @@
     "title_ko": "Generally Available: Logic Apps (Standard)에서 향상된 데이터 매퍼 경험",
     "summary_ko": "Visual Studio Code용 Azure Logic Apps (Standard) 확장에 새롭게 디자인된 데이터 매퍼 UX가 이제 Generally Available 상태로 제공됩니다.",
     "key_points_ko": [
-      "퍼블릭 프리뷰였던 새로운 경험이 맵 생성 및 편집의 기본값이 됩니다.",
+      "Public Preview였던 새로운 경험이 맵 생성 및 편집의 기본값이 됩니다.",
       "이번 릴리스는 데이터 변환 워크플로우 현대화에 있어 중요한 진전입니다.",
       "통합 개발자 커뮤니티의 피드백을 반영하여 더 안정적이고, 성능이 뛰어나며, 직관적인 경험을 제공합니다.",
       "Visual Studio Code용 Azure Logic Apps (Standard) 확장에 새롭게 디자인된 데이터 매퍼 UX의 Generally Available를 발표하게 되어 기쁩니다...."

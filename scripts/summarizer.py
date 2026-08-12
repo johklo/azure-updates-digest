@@ -362,6 +362,34 @@ TRANSLATE_PROMPT = (
 )
 
 
+# Azure's lifecycle vocabulary is what a reader scans a release digest for, so it has to survive
+# translation. The prompt asks for it, but a prompt is best-effort: the model still inflects the
+# terms into Korean mid-sentence. This pass makes the guarantee deterministic. Only the
+# unambiguous lifecycle phrases are mapped; words like 지원 종료 or 공지 are left alone because
+# they carry their ordinary meaning in this corpus.
+_KEEP_TERMS = [
+    ("일반 사용 가능", "Generally Available"),
+    ("일반 제공", "Generally Available"),
+    ("일반 공급", "Generally Available"),
+    ("정식 출시", "Generally Available"),
+    ("정식 제공", "Generally Available"),
+    ("정식 공급", "Generally Available"),
+    ("퍼블릭 프리뷰", "Public Preview"),
+    ("공개 미리 보기", "Public Preview"),
+    ("공개 미리보기", "Public Preview"),
+    ("공개 프리뷰", "Public Preview"),
+    ("프라이빗 프리뷰", "Private Preview"),
+    ("비공개 미리 보기", "Private Preview"),
+    ("비공개 미리보기", "Private Preview"),
+]
+
+
+def _keep_terms(text: str) -> str:
+    for ko, en in _KEEP_TERMS:
+        text = text.replace(ko, en)
+    return text
+
+
 def llm_translate(cfg: dict, title: str, summary: str, points: list) -> dict | None:
     """Translate an already-summarized update into Korean. Returns None on any failure.
 
@@ -412,9 +440,9 @@ def llm_translate(cfg: dict, title: str, summary: str, points: list) -> dict | N
         translated = []
 
     result = {
-        "title_ko": str(parsed.get("title_ko", "")).strip(),
-        "summary_ko": str(parsed.get("summary_ko", "")).strip(),
-        "key_points_ko": translated,
+        "title_ko": _keep_terms(str(parsed.get("title_ko", "")).strip()),
+        "summary_ko": _keep_terms(str(parsed.get("summary_ko", "")).strip()),
+        "key_points_ko": [_keep_terms(p) for p in translated],
     }
     if not any(result.values()):
         return None
