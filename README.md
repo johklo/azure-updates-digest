@@ -159,10 +159,16 @@ python scripts/enrich_updates.py --no-translate                       # English 
 
 The scheduled workflow translates up to 150 updates per run by default (`translate_limit` input),
 so a large backlog drains over a few runs instead of one very long job. Service, SKU, API and
-region names are kept in English; only the surrounding prose is translated. If the model returns a
-different number of bullets than it was given, the bullets are dropped rather than misaligned with
-their English counterparts. Without credentials the pass is skipped and the site simply stays
-English.
+region names are kept in English, and so is Azure's lifecycle vocabulary — `Generally Available`,
+`Public Preview`, `Private Preview`, `Retirement`, `In Development`, `Announcing` and friends stay
+verbatim, including the leading label of a title, because those are the words readers scan for. If
+the model returns a different number of bullets than it was given, the bullets are dropped rather
+than misaligned with their English counterparts. Without credentials the pass is skipped and the
+site simply stays English.
+
+A full backfill can run for over an hour, which outlives an Entra ID token. The pass now stops as
+soon as the endpoint rejects the credential and tells you to refresh and re-run, instead of marking
+every remaining update as failed; finished entries are kept and skipped on the next run.
 
 ## The web page
 

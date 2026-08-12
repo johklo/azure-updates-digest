@@ -22,6 +22,7 @@ from common import (
     write_json,
 )
 from summarizer import (
+    AuthExpired,
     extract_links,
     extractive_summary,
     fetch_document,
@@ -191,7 +192,19 @@ def translate_pending(items, cache: dict, cfg_llm: dict | None, args) -> int:
     print(f"Korean translation: {len(queue)} update(s) queued.", file=sys.stderr)
     done = 0
     for index, (item, entry) in enumerate(queue, start=1):
-        if translate_entry(item, entry, cfg_llm):
+        try:
+            changed = translate_entry(item, entry, cfg_llm)
+        except AuthExpired as error:
+            write_json(ENRICHMENT_PATH, cache)
+            print(
+                f"\nCredential rejected after {done} translation(s): {error}\n"
+                "Entra ID tokens expire after about an hour. Refresh AZURE_OPENAI_TOKEN and run\n"
+                "the same command again - finished entries are kept and will be skipped.",
+                file=sys.stderr,
+            )
+            set_action_output("translated_count", str(done))
+            return done
+        if changed:
             done += 1
             marker = "ko "
         else:

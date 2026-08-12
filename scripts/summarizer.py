@@ -21,6 +21,12 @@ from typing import Iterable
 
 USER_AGENT = "Mozilla/5.0 (compatible; azure-updates-digest/1.0)"
 
+
+class AuthExpired(RuntimeError):
+    """The endpoint rejected the credential. Entra ID tokens are short-lived, so a long
+    backfill can outlive the one it started with; callers should stop rather than burn
+    through the remaining queue."""
+
 TRUSTED_HOSTS = (
     "learn.microsoft.com",
     "docs.microsoft.com",
@@ -341,6 +347,15 @@ TRANSLATE_PROMPT = (
     "Rules: keep Azure service, product, SKU, API, region and feature names in English exactly as "
     "written (Azure Kubernetes Service, ExpressRoute, gpt-4o, Standard_D4s_v5); keep acronyms, "
     "version numbers, units and dates unchanged; translate only the surrounding prose. "
+    "KEEP THE FOLLOWING LIFECYCLE TERMS IN ENGLISH, VERBATIM, NEVER TRANSLATED: "
+    "Generally Available, General Availability, GA, Public Preview, Private Preview, Preview, "
+    "Limited Preview, Retirement, Retired, Deprecation, Deprecated, In Development, Announcing, "
+    "Coming Soon. This applies everywhere, including the leading label of a title - "
+    "'Generally Available: X' stays 'Generally Available: ' followed by the translated remainder, "
+    "and 'Public Preview: X' stays 'Public Preview: '. Never render them as 일반 제공, 정식 출시, "
+    "퍼블릭 프리뷰, 공개 미리 보기, 미리보기, 사용 중지, 지원 종료, 서비스 종료, 개발 중 or 공지. "
+    "Korean particles may follow the English term directly (Public Preview로, Generally Available "
+    "상태로). "
     "Write natural technical Korean in the '~합니다' register - do not translate word by word. "
     "Return key_points_ko with exactly the same number of entries, in the same order, as the input "
     "key points. Add nothing that is not in the source text."
@@ -348,7 +363,12 @@ TRANSLATE_PROMPT = (
 
 
 def llm_translate(cfg: dict, title: str, summary: str, points: list) -> dict | None:
-    """Translate an already-summarized update into Korean. Returns None on any failure."""
+    """Translate an already-summarized update into Korean. Returns None on any failure.
+
+    Raises AuthExpired when the endpoint rejects the credential, so a long backfill stops
+    immediately instead of marking every remaining update as failed. Entra ID tokens last about
+    an hour, which a full-archive run can outlive.
+    """
     points = [str(p).strip() for p in (points or []) if str(p).strip()]
     if not (title or summary or points):
         return None
@@ -378,6 +398,10 @@ def llm_translate(cfg: dict, title: str, summary: str, points: list) -> dict | N
             body = json.loads(response.read().decode("utf-8"))
         raw = body["choices"][0]["message"]["content"]
         parsed = json.loads(re.sub(r"(?s)^```(?:json)?|```$", "", raw).strip())
+    except urllib.error.HTTPError as error:
+        if error.code in (401, 403):
+            raise AuthExpired(f"endpoint rejected the credential (HTTP {error.code})") from error
+        return None
     except Exception:
         return None
 
