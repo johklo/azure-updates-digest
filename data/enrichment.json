@@ -24253,5 +24253,31 @@
       "관리자는 Fabric 관리 포털의 테넌트 설정 > Item Recovery에서 이 설정을 검토하거나 변경할 수 있습니다."
     ],
     "translated_at": "2026-08-12T05:46:40.395093+00:00"
+  },
+  "569256": {
+    "summary": "Azure Firewall Premium now offers a 120% increase in IDPS throughput performance, significantly enhancing security inspection capabilities for enterprise environments.",
+    "key_points": [
+      "Throughput with TLS inspection and IDPS in Deny mode increased from 10 Gbps to 22 Gbps.",
+      "Per TCP connection throughput with IDPS enabled doubled from 300 Mbps to 600 Mbps.",
+      "Performance boost is enabled by default and includes Accelerated Networking on firewall VMs.",
+      "Improved throughput supports highly sensitive and regulated environments requiring advanced firewall capabilities."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/firewall/firewall-performance",
+    "doc_title": "Azure Firewall performance",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/en-us/azure/firewall/firewall-performance"
+    ],
+    "source": "llm",
+    "updated_at": "2026-08-12T06:49:59.900274+00:00",
+    "title_ko": "일반 제공: Azure Firewall의 2.2배 IDPS 성능 최적화",
+    "summary_ko": "Azure Firewall Premium이 이제 IDPS 처리량 성능을 120% 향상시켜 엔터프라이즈 환경에서 보안 검사 기능을 크게 강화합니다.",
+    "key_points_ko": [
+      "TLS 검사 및 Deny 모드의 IDPS 처리량이 10 Gbps에서 22 Gbps로 증가했습니다.",
+      "IDPS 활성화 시 TCP 연결당 처리량이 300 Mbps에서 600 Mbps로 두 배 향상되었습니다.",
+      "성능 향상은 기본적으로 활성화되며, 방화벽 VM에서 Accelerated Networking을 포함합니다.",
+      "향상된 처리량은 고도로 민감하고 규제가 엄격한 환경에서 고급 방화벽 기능을 지원합니다."
+    ],
+    "translated_at": "2026-08-12T06:50:03.728611+00:00"
   }
 }
