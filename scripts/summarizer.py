@@ -296,15 +296,21 @@ def _trim(sentence: str, limit: int = 260) -> str:
 
 
 def llm_config() -> dict | None:
-    """Read optional LLM credentials from the environment."""
+    """Read optional LLM credentials from the environment.
+
+    Azure OpenAI accepts either an API key or an Entra ID bearer token. Subscriptions that
+    enforce key-less access (`disableLocalAuth`) can only use the token, so both are supported.
+    """
     azure_endpoint = os.environ.get("AZURE_OPENAI_ENDPOINT", "").strip().rstrip("/")
     azure_key = os.environ.get("AZURE_OPENAI_API_KEY", "").strip()
+    azure_token = os.environ.get("AZURE_OPENAI_TOKEN", "").strip()
     azure_deployment = os.environ.get("AZURE_OPENAI_DEPLOYMENT", "").strip()
-    if azure_endpoint and azure_key and azure_deployment:
+    if azure_endpoint and azure_deployment and (azure_key or azure_token):
         version = os.environ.get("AZURE_OPENAI_API_VERSION", "2024-10-21").strip()
+        headers = {"api-key": azure_key} if azure_key else {"Authorization": "Bearer " + azure_token}
         return {
             "url": f"{azure_endpoint}/openai/deployments/{azure_deployment}/chat/completions?api-version={version}",
-            "headers": {"api-key": azure_key},
+            "headers": headers,
             "model": azure_deployment,
         }
 

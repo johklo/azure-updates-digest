@@ -82,6 +82,38 @@ cheaper than re-summarizing, and it only touches entries that do not have Korean
 > its language switch. Set one of the secret groups in the table above (or export the same names
 > locally) before expecting Korean.
 
+#### Turning Korean on from scratch
+
+GitHub Models was retired on 30 July 2026 and is no longer an option. Any OpenAI-compatible
+endpoint works; the shortest path on Azure is a small `gpt-4o-mini` deployment. Substitute your own
+resource group, name and region:
+
+```bash
+RG=azupdates-rg; NAME=azupdates-aoai; LOC=eastus
+
+az group create -n $RG -l $LOC
+az cognitiveservices account create -n $NAME -g $RG -l $LOC \
+  --kind OpenAI --sku S0 --custom-domain $NAME
+az cognitiveservices account deployment create -n $NAME -g $RG \
+  --deployment-name gpt-4o-mini \
+  --model-name gpt-4o-mini --model-version 2024-07-18 --model-format OpenAI \
+  --sku-name Standard --sku-capacity 20
+
+export AZURE_OPENAI_ENDPOINT=$(az cognitiveservices account show -n $NAME -g $RG \
+  --query properties.endpoint -o tsv)
+export AZURE_OPENAI_API_KEY=$(az cognitiveservices account keys list -n $NAME -g $RG \
+  --query key1 -o tsv)
+export AZURE_OPENAI_DEPLOYMENT=gpt-4o-mini
+
+python scripts/enrich_updates.py --translate-only          # backfill the archive
+python scripts/build_site.py                               # rebuild with Korean
+```
+
+Commit `data/enrichment.json` and the deck's `EN / 병기 / 한글` switch appears. Add the same three
+values as repository secrets so the scheduled run keeps new updates translated. The resource has no
+standing charge — only tokens are billed, and one full backfill of the current archive is roughly a
+dollar on `gpt-4o-mini`.
+
 ```bash
 python scripts/enrich_updates.py --translate-only                     # backfill everything
 python scripts/enrich_updates.py --translate-only --translate-limit 100
