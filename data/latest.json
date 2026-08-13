@@ -1,62 +1,35 @@
 {
-  "generated_at": "2026-08-12T23:45:57.984553+00:00",
-  "window_start": "2026-08-05T23:45:57.984553+00:00",
-  "window_end": "2026-08-12T23:45:57.984553+00:00",
+  "generated_at": "2026-08-13T23:45:28.693462+00:00",
+  "window_start": "2026-08-06T23:45:28.693462+00:00",
+  "window_end": "2026-08-13T23:45:28.693462+00:00",
   "window_days": 7,
-  "fetched_count": 9,
-  "matched_count": 9,
-  "count": 4,
+  "fetched_count": 10,
+  "matched_count": 10,
+  "count": 3,
   "items": [
     {
-      "id": "568457",
+      "id": "568830",
       "productCategories": [
-        "Hybrid + multicloud",
-        "Security"
+        "Compute",
+        "Containers",
+        "DevOps",
+        "Management and governance"
       ],
       "tags": [
-        "Retirements",
-        "Security"
+        "Feature"
       ],
       "products": [
-        "Microsoft Sentinel"
-      ],
-      "generalAvailabilityDate": null,
-      "previewAvailabilityDate": null,
-      "privatePreviewAvailabilityDate": null,
-      "title": "Retirement: Containerized data connector agent for the Microsoft Sentinel solution for SAP applications",
-      "description": "On September 14, 2026 we will retire the containerized data connector agent for the Microsoft Sentinel solution for SAP applications. After this date the agent will be permanently disabled and will stop sending SAP logs to Microsoft Sentinel.<br><br>The SAP agentless data connector is generally available and is the replacement. Creation of new containerized agents is already disabled.<br><br>How this affects you:<br>If you use the containerized agent, SAP log collection through it stops on 14 September 2026. Analytics rules, workbooks, hunting queries and playbooks that rely on this data will stop returning results for the affected SAP systems. Customers already using the agentless connector are not affected. There is no change to pricing or billing meters.<br><br>What you need to do:<br>Migrate to the SAP agentless data connector before September 14, 2026. Migration runs side-by-side with no gap in coverage: deploy the agentless connector alongside your existing agent, validate log ingestion, then decommission the agent. Your existing analytics rules, workbooks and playbooks keep working throughout.<br><br><a href=\"https://learn.microsoft.com/azure/sentinel/sap/sap-agent-migrate\">Learn\nmore</a>.<br>",
-      "status": null,
-      "created": "2026-08-12T19:41:20.8388416Z",
-      "modified": "2026-08-12T19:41:20.8388416Z",
-      "locale": null,
-      "availabilities": [
-        {
-          "ring": "Retirement",
-          "year": 2026,
-          "month": "September"
-        }
-      ]
-    },
-    {
-      "id": "569246",
-      "productCategories": [
-        "Networking",
-        "Security"
-      ],
-      "tags": [
-        "Features"
-      ],
-      "products": [
-        "Azure Front Door"
+        "Azure Kubernetes Service (AKS)",
+        "Azure Monitor"
       ],
       "generalAvailabilityDate": "2026-08",
       "previewAvailabilityDate": null,
       "privatePreviewAvailabilityDate": null,
-      "title": "Generally Available: Batch rule updates for Azure Front Door ",
-      "description": "Batch rule updates are now generally\navailable for Azure Front Door Standard and Premium. This capability enables\ncustomers to add, update, delete, or reorder multiple rules in a rule set as a\ncoordinated operation, ensuring that all changes are applied together or not\napplied at all.&nbsp;<br><p>Batch rule updates improve deployment\nsafety and predictability for customers managing large or complex rule sets\nthrough Terraform and other Infrastructure-as-Code workflows. They help prevent\npartial rule states, rule-order conflicts, deployment retries, and rollback\ncomplexity that can occur when related rules are updated individually.&nbsp;</p><p>Customers explicitly enable batch mode when\ncreating a new rule set and submit the complete desired rule configuration.\nAzure Front Door then applies the changes together at the rule-set level.\nExisting rule sets continue to use classic rule management by default,\npreserving full backward compatibility.&nbsp;</p><a href=\"https://learn.microsoft.com/en-us/azure/frontdoor/rule-set-batch\">Learn\nmore</a>.&nbsp;<br>",
+      "title": "Generally Available: Control plane metrics collection for AKS with Managed Prometheus",
+      "description": "Control plane metrics collection for Azure Kubernetes Service (AKS), powered by Azure Monitor Managed Service for Prometheus, is now generally available.<br><br>This capability gives AKS customers native observability into key managed control plane components, including the API server, etcd, kube-scheduler, kube-controller-manager, cluster autoscaler, and node auto-provisioning. <br><br>With these metrics, platform teams can better understand how workloads, controllers, automation, and scaling activity interact with the AKS control plane over time.<br><br><a href=\"https://aka.ms/aks/ccp-metrics\">Learn more</a>.",
       "status": "Launched",
-      "created": "2026-08-12T17:03:08.2202194Z",
-      "modified": "2026-08-12T17:03:08.2202194Z",
+      "created": "2026-08-13T16:19:56.5989095Z",
+      "modified": "2026-08-13T16:19:56.5989095Z",
       "locale": null,
       "availabilities": [
         {
@@ -67,66 +40,59 @@
       ]
     },
     {
-      "id": "569251",
+      "id": "569281",
       "productCategories": [
-        "Networking",
-        "Security"
+        "Storage"
       ],
       "tags": [
         "Feature"
       ],
       "products": [
-        "Azure Front Door"
+        "Azure Disk Storage"
       ],
-      "generalAvailabilityDate": null,
-      "previewAvailabilityDate": "2026-08",
+      "generalAvailabilityDate": "2026-08",
+      "previewAvailabilityDate": null,
       "privatePreviewAvailabilityDate": null,
-      "title": "Public Preview: Azure Front Door mutual TLS ",
-      "description": "<p><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">Mutual TLS, also known as client\ncertificate authentication, enables Azure Front Door to authenticate clients\nusing X.509 certificates before requests reach an application. It helps protect\nsensitive applications and APIs across business-to-business, Internet of\nThings, financial services, VPN, and enterprise network scenarios.&nbsp;&nbsp;</span></p><p><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">Customers can choose from four client\ncertificate validation modes:&nbsp;</span></p><ul type=\"disc\"><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">\n </span><li style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\"><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">Require and validate:</span><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\"> A client\n     certificate is mandatory. Azure Front Door validates the certificate at\n     the edge and forwards it to the origin in the X-Azure-ClientCertificate\n     request header.&nbsp;</span></li><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">\n </span><li style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\"><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">Require without validation:</span><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\"> A\n     client certificate is mandatory, but Azure Front Door does not validate\n     it. The certificate is forwarded in the X-Azure-ClientCertificate header\n     for validation by the origin.&nbsp;</span></li><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">\n </span><li style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\"><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">Validate when presented:</span><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\"> A client\n     certificate is optional. When a certificate is presented, Azure Front Door\n     validates it and forwards it to the origin. Requests without a certificate\n     are allowed to continue.&nbsp;</span></li><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">\n </span><li style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\"><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">Pass through to the origin:</span><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\"> A\n     client certificate is optional. Azure Front Door does not validate it but\n     forwards it to the origin when presented, allowing the origin to perform\n     validation. &nbsp;</span></li></ul><p></p><p><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">Azure Front Door supports client\ncertificates issued by public and private certificate authorities. Customers\nupload the trusted certificate authority chain to Azure Key Vault and associate\nit with a Front Door custom domain.&nbsp;</span></p><p></p><p><a href=\"https://learn.microsoft.com/en-us/azure/frontdoor/mutual-tls\"><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">Learn more</span></a><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">.</span><br></p>",
-      "status": "In preview",
-      "created": "2026-08-12T17:01:19.0043426Z",
-      "modified": "2026-08-12T17:01:19.0043426Z",
+      "title": "Generally Available: Live Resize for Shared Premium SSD v2 and Ultra Data Disks",
+      "description": "<p>We’re excited to announce the GA\nof Live Resize for&nbsp;<a href=\"https://learn.microsoft.com/en-us/azure/virtual-machines/disks-shared\">shared</a>&nbsp;Premium\nSSD v2 (Pv2) and Ultra data disks. This feature allows you to dynamically\nexpand the storage capacity of your disks without any disruption to your\napplications. To optimize costs, you can start with smaller disks and gradually\nincrease their storage capacity as needed, all without experiencing any\ndowntime.&nbsp;&nbsp;</p><p><a href=\"https://aka.ms/LiveResizePublicLink\">Learn more</a>.&nbsp;&nbsp;</p>",
+      "status": "Launched",
+      "created": "2026-08-13T16:17:41.8342302Z",
+      "modified": "2026-08-13T16:17:41.8342302Z",
       "locale": null,
       "availabilities": [
         {
-          "ring": "Preview",
+          "ring": "General Availability",
           "year": 2026,
           "month": "August"
         }
       ]
     },
     {
-      "id": "568979",
+      "id": "568419",
       "productCategories": [
-        "Compute",
-        "Mobile",
-        "Web"
+        "Databases",
+        "Hybrid + multicloud"
       ],
       "tags": [
         "Feature"
       ],
       "products": [
-        "App Service"
+        "Azure Database for PostgreSQL"
       ],
-      "generalAvailabilityDate": null,
-      "previewAvailabilityDate": "2026-08",
-      "privatePreviewAvailabilityDate": "2026-07",
-      "title": "Public Preview: Markdown for Agents in Azure App Service",
-      "description": "Today, we are announcing the public preview of Markdown for Agents in Azure App Service. This feature gives AI agents and other tools a cleaner way to consume content from an App Service app. When a client requests Markdown, App Service can automatically convert the app's HTML response to Markdown without requiring changes to the application code.&nbsp;<br><br><a href=\"https://aka.ms/easy-markdown-public-preview\">Learn more</a>.<br>",
-      "status": "In preview",
-      "created": "2026-08-12T16:38:31.6495985Z",
-      "modified": "2026-08-12T16:38:31.6495985Z",
+      "generalAvailabilityDate": "2026-08",
+      "previewAvailabilityDate": null,
+      "privatePreviewAvailabilityDate": null,
+      "title": "Generally Available: Pre-upgrade validation checks for Azure Database for PostgreSQL Flexible Server ",
+      "description": "<p>Pre-upgrade validation checks are now generally available for Azure Database for PostgreSQL flexible server, helping you proactively validate&nbsp;major version upgrade (MVU) readiness before initiating&nbsp;the actual upgrade process. With the general availability of this update, you can now run these checks from both the Azure portal and Azure CLI using the new --validate-only&nbsp;option.&nbsp;</p><p>With pre-upgrade validation checks,&nbsp;you can independently run upgrade compatibility validations and identify&nbsp;potential blockers ahead of time, helping reduce failed upgrade attempts and improve operational predictability. The validation process checks your server against Azure PostgreSQL upgrade policies and PostgreSQL pg_upgrade&nbsp;--check compatibility&nbsp;requirements, surfacing actionable guidance for issues such as unsupported extensions, replication slots, prepared transactions, configuration mismatches, and other upgrade constraints.&nbsp;</p><p>By shifting validation from inline execution during upgrade to a proactive pre-flight step, this capability helps improve first-time upgrade success rates, reduce troubleshooting effort, and simplify upgrade planning for production workloads. You can resolve identified issues, rerun validations as needed, and proceed&nbsp;with the upgrade only when your environment is ready.&nbsp;</p><p><a href=\"https://aka.ms/pg-flex-upgrade-checks\" rel=\"noreferrer noopener\">Learn more</a>.</p>",
+      "status": "Launched",
+      "created": "2026-08-13T16:13:22.0109031Z",
+      "modified": "2026-08-13T16:13:22.0109031Z",
       "locale": null,
       "availabilities": [
         {
-          "ring": "Preview",
+          "ring": "General Availability",
           "year": 2026,
           "month": "August"
-        },
-        {
-          "ring": "Private Preview",
-          "year": 2026,
-          "month": "July"
         }
       ]
     }
