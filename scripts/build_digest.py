@@ -7,6 +7,9 @@ import html as html_lib
 import sys
 
 from common import (
+    stage_label,
+    STAGE_LABELS,
+    release_stage,
     BUILD_DIR,
     DIGEST_DIR,
     LATEST_PATH,
@@ -115,127 +118,254 @@ def _esc(value) -> str:
     return html_lib.escape(str(value or ""), quote=True)
 
 
+# The site palette, converted from oklch because mail clients do not support it.
+C = {
+    "paper": "#F4F7FB", "paper2": "#E9EEF3", "rule": "#CED5DD", "ruleStrong": "#9BA6B2",
+    "muted": "#5F6A77", "ink2": "#384350", "ink": "#131E2A", "accent": "#0064B6",
+    "cover": "#0E253E", "coverInk": "#E9EFF7", "coverMuted": "#9EADBE", "coverRule": "#415771",
+}
+
+STAGE_COLOR = {
+    "ga": ("#09672E", "#E7F5E9"), "public-preview": ("#8A5600", "#F9EEE2"),
+    "private-preview": ("#643B9A", "#F3ECFF"), "retirement": ("#A5292B", "#FFE9E6"),
+    "in-development": ("#135F83", "#E6F2FA"), "other": ("#5F6A77", "#E9EEF3"),
+}
+
+# Web fonts do not survive most mail clients, so these mirror the site's serif display /
+# sans body pairing with stacks that are actually installed.
+FONT_DISPLAY = "Georgia,'Times New Roman',serif"
+FONT_BODY = "'Segoe UI',-apple-system,'Malgun Gothic','Apple SD Gothic Neo',Helvetica,Arial,sans-serif"
+FONT_MONO = "Consolas,'Courier New',monospace"
+
+
+def _label(text: str, color: str | None = None) -> str:
+    """Small-caps monospace label, the same device the site uses for eyebrows."""
+    return (
+        f'<div style="font-family:{FONT_MONO};font-size:10px;letter-spacing:.14em;'
+        f'text-transform:uppercase;color:{color or C["muted"]};margin:0 0 6px">{text}</div>'
+    )
+
+
 def render_email_html(cfg: dict, payload: dict, date_str: str, enrichment: dict) -> str:
+    """Bilingual HTML digest laid out like the site: Korean first, English beneath."""
     items = payload.get("items", [])
     groups = group_by_category(items)
     max_items = int(cfg.get("email", {}).get("max_items_per_category", 25))
-    window_days = payload.get("window_days", cfg.get("lookback_days", 7))
-    site_url = cfg.get("site_url") or cfg.get("azure_updates_url")
+    site = str(cfg.get("site_url") or "").rstrip("/")
 
-    parts = [
-        "<!DOCTYPE html>",
-        '<html><head><meta charset="utf-8">',
-        '<meta name="viewport" content="width=device-width, initial-scale=1">',
+    out = [
+        '<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8">',
+        '<meta name="viewport" content="width=device-width,initial-scale=1">',
+        '<meta name="color-scheme" content="light only">',
         f"<title>{_esc(digest_title(cfg, date_str))}</title></head>",
-        '<body style="margin:0;padding:0;background:#f4f6f8;">',
-        '<div style="max-width:760px;margin:0 auto;padding:24px 16px;font-family:Segoe UI,Helvetica,Arial,sans-serif;color:#1b1f23;">',
-        '<div style="background:#0078d4;color:#ffffff;padding:20px 24px;border-radius:8px 8px 0 0;">',
-        f'<h1 style="margin:0;font-size:20px;line-height:1.3;">{_esc(cfg.get("site_title"))}</h1>',
-        f'<p style="margin:6px 0 0;font-size:13px;opacity:.9;">{_esc(date_str)} &middot; {len(items)} new update(s) &middot; last {window_days} day(s) rescanned</p>',
+        f'<body style="margin:0;padding:0;background:{C["paper"]};">',
+        f'<div style="max-width:680px;margin:0 auto;padding:24px 16px;font-family:{FONT_BODY};'
+        f'color:{C["ink"]};-webkit-text-size-adjust:100%;">',
+
+        # Masthead, echoing the site cover
+        f'<div style="background:{C["cover"]};padding:26px 28px;">',
+        f'<div style="font-family:{FONT_MONO};font-size:10px;letter-spacing:.18em;'
+        f'text-transform:uppercase;color:{C["coverMuted"]};margin-bottom:10px">'
+        f'Azure Product Updates &middot; {_esc(date_str)}</div>',
+        f'<div style="font-family:{FONT_DISPLAY};font-size:27px;line-height:1.2;color:{C["coverInk"]};'
+        f'font-weight:600">오늘의 Azure 업데이트</div>',
+        f'<div style="font-size:13px;color:{C["coverMuted"]};margin-top:8px">'
+        f'{len(items)}건의 새 업데이트 &middot; 카테고리별 정리</div>',
         "</div>",
-        '<div style="background:#ffffff;padding:8px 24px 24px;border:1px solid #e1e4e8;border-top:none;border-radius:0 0 8px 8px;">',
+
+        f'<div style="background:#ffffff;padding:4px 28px 28px;border:1px solid {C["rule"]};border-top:none;">',
     ]
 
     if not items:
-        parts.append('<p style="font-size:14px;">No new Azure updates were published in this window.</p>')
+        out.append(f'<p style="font-size:14px;color:{C["muted"]}">이 기간에 새로 게시된 업데이트가 없습니다.</p>')
     else:
-        parts.append('<h2 style="font-size:15px;margin:18px 0 8px;">Summary by category</h2>')
-        parts.append('<table role="presentation" cellpadding="0" cellspacing="0" style="width:100%;border-collapse:collapse;font-size:13px;">')
-        parts.append(
-            '<tr style="background:#f2f6fa;">'
-            '<th align="left" style="padding:7px 9px;border-bottom:2px solid #e1e4e8;color:#57606a;font-size:11px;text-transform:uppercase;">Category</th>'
-            '<th align="right" style="padding:7px 9px;border-bottom:2px solid #e1e4e8;color:#57606a;font-size:11px;text-transform:uppercase;">Updates</th>'
-            '<th align="right" style="padding:7px 9px;border-bottom:2px solid #e1e4e8;color:#57606a;font-size:11px;text-transform:uppercase;">GA</th>'
-            '<th align="right" style="padding:7px 9px;border-bottom:2px solid #e1e4e8;color:#57606a;font-size:11px;text-transform:uppercase;">Preview</th>'
-            "</tr>"
+        # Summary table
+        out.append('<div style="margin:22px 0 6px">' + _label("Summary by category / 카테고리 요약") + "</div>")
+        out.append('<table role="presentation" cellpadding="0" cellspacing="0" width="100%" '
+                   'style="width:100%;border-collapse:collapse;font-size:13px">')
+        out.append(
+            f'<tr><th align="left" style="padding:7px 8px;border-bottom:2px solid {C["ruleStrong"]};'
+            f'font-family:{FONT_MONO};font-size:10px;letter-spacing:.1em;text-transform:uppercase;'
+            f'color:{C["muted"]};font-weight:400">Category</th>'
+            f'<th align="right" style="padding:7px 8px;border-bottom:2px solid {C["ruleStrong"]};'
+            f'font-family:{FONT_MONO};font-size:10px;letter-spacing:.1em;text-transform:uppercase;'
+            f'color:{C["muted"]};font-weight:400">Total</th>'
+            f'<th align="right" style="padding:7px 8px;border-bottom:2px solid {C["ruleStrong"]};'
+            f'font-family:{FONT_MONO};font-size:10px;letter-spacing:.1em;text-transform:uppercase;'
+            f'color:{C["muted"]};font-weight:400">GA</th>'
+            f'<th align="right" style="padding:7px 8px;border-bottom:2px solid {C["ruleStrong"]};'
+            f'font-family:{FONT_MONO};font-size:10px;letter-spacing:.1em;text-transform:uppercase;'
+            f'color:{C["muted"]};font-weight:400">Preview</th></tr>'
         )
         for index, (category, bucket, ga, preview) in enumerate(category_rows(groups)):
+            out.append(
+                f'<tr><td style="padding:8px;border-bottom:1px solid {C["rule"]}">'
+                f'<a href="#cat-{index}" style="color:{C["accent"]};text-decoration:none;font-weight:600">'
+                f'{_esc(category)}</a></td>'
+                f'<td align="right" style="padding:8px;border-bottom:1px solid {C["rule"]};'
+                f'font-family:{FONT_MONO}"><b>{len(bucket)}</b></td>'
+                f'<td align="right" style="padding:8px;border-bottom:1px solid {C["rule"]};'
+                f'font-family:{FONT_MONO};color:{STAGE_COLOR["ga"][0]}">{ga or "&ndash;"}</td>'
+                f'<td align="right" style="padding:8px;border-bottom:1px solid {C["rule"]};'
+                f'font-family:{FONT_MONO};color:{STAGE_COLOR["public-preview"][0]}">{preview or "&ndash;"}</td></tr>'
+            )
+        out.append("</table>")
+
+        for index, (category, bucket, _, _) in enumerate(category_rows(groups)):
+            out.append(
+                f'<h2 id="cat-{index}" style="font-family:{FONT_DISPLAY};font-size:19px;font-weight:600;'
+                f'margin:34px 0 2px;padding-bottom:8px;border-bottom:2px solid {C["ink"]};color:{C["ink"]}">'
+                f'{_esc(category)} <span style="font-family:{FONT_MONO};font-size:11px;color:{C["muted"]};'
+                f'font-weight:400">{len(bucket)}</span></h2>'
+            )
+            for item in bucket[:max_items]:
+                out.append(_render_item(cfg, item, enrichment))
+            if len(bucket) > max_items:
+                out.append(
+                    f'<p style="font-size:12px;color:{C["muted"]};margin:10px 0">'
+                    f'이 카테고리에 {len(bucket) - max_items}건이 더 있습니다. '
+                    f'<a href="{_esc(site)}" style="color:{C["accent"]}">웹에서 보기</a></p>'
+                )
+
+    out += [
+        f'<div style="margin-top:30px;padding-top:16px;border-top:1px solid {C["rule"]};'
+        f'font-size:12px;color:{C["muted"]};line-height:1.7">',
+        f'출처: <a href="{_esc(cfg.get("azure_updates_url"))}" style="color:{C["accent"]};'
+        f'text-decoration:none">Azure Updates</a> &middot; '
+        f'요약은 각 공지와 연결된 Microsoft 문서를 읽어 생성했습니다.<br>'
+        f'<a href="{_esc(site)}" style="color:{C["accent"]};text-decoration:none">'
+        f'전체 아카이브와 필터 보기 &rarr;</a>',
+        "</div></div></div></body></html>",
+    ]
+    return "\n".join(out)
+
+
+def _render_item(cfg: dict, item: dict, enrichment: dict) -> str:
+    """One update: Korean on top, English underneath, matching the site's bilingual order."""
+    info = enrichment_for(item, enrichment)
+    stage = release_stage(item)
+    fg, bg = STAGE_COLOR.get(stage, STAGE_COLOR["other"])
+    products = ", ".join(p for p in (item.get("products") or []) if p)
+
+    summary_en = info["summary"] or summarize(item.get("description", ""), 300)
+    points_en = info["key_points"][:4]
+    points_ko = info["key_points_ko"][:4] if len(info["key_points_ko"]) >= len(points_en) else []
+
+    parts = [f'<div style="padding:18px 0;border-bottom:1px solid {C["rule"]}">']
+
+    parts.append(
+        f'<div style="margin-bottom:9px">'
+        f'<span style="display:inline-block;background:{bg};color:{fg};font-family:{FONT_MONO};'
+        f'font-size:10px;letter-spacing:.08em;text-transform:uppercase;padding:3px 9px;'
+        f'margin-right:8px">{_esc(STAGE_LABELS.get(stage, "Other"))}</span>'
+        f'<span style="font-family:{FONT_MONO};font-size:11px;color:{C["muted"]}">'
+        f'{_esc(item_date_str(item))}{" &middot; " + _esc(products) if products else ""}</span></div>'
+    )
+
+    # Title: Korean first when translated, English kept as the canonical link.
+    if info["title_ko"]:
+        parts.append(
+            f'<div lang="ko" style="font-family:{FONT_DISPLAY};font-size:17px;line-height:1.4;'
+            f'font-weight:600;color:{C["ink"]};margin:0 0 3px;word-break:keep-all">'
+            f'{_esc(info["title_ko"])}</div>'
+        )
+        parts.append(
+            f'<a href="{_esc(update_url(item))}" style="display:block;font-size:12.5px;line-height:1.45;'
+            f'color:{C["muted"]};text-decoration:none;margin:0 0 9px">{_esc(item.get("title"))}</a>'
+        )
+    else:
+        parts.append(
+            f'<a href="{_esc(update_url(item))}" style="display:block;font-family:{FONT_DISPLAY};'
+            f'font-size:17px;line-height:1.4;font-weight:600;color:{C["ink"]};'
+            f'text-decoration:none;margin:0 0 9px">{_esc(item.get("title"))}</a>'
+        )
+
+    if info["summary_ko"]:
+        parts.append(
+            f'<div lang="ko" style="font-size:14px;line-height:1.65;color:{C["ink2"]};'
+            f'border-left:3px solid {C["accent"]};padding-left:11px;margin:0 0 6px;'
+            f'word-break:keep-all">{_esc(info["summary_ko"])}</div>'
+        )
+        if summary_en:
             parts.append(
-                f'<tr><td style="padding:7px 9px;border-bottom:1px solid #eef0f2;">'
-                f'<a href="#cat-{index}" style="color:#0b4f9e;text-decoration:none;font-weight:600;">{_esc(category)}</a></td>'
-                f'<td align="right" style="padding:7px 9px;border-bottom:1px solid #eef0f2;"><b>{len(bucket)}</b></td>'
-                f'<td align="right" style="padding:7px 9px;border-bottom:1px solid #eef0f2;color:#0f7b34;">{ga or "&ndash;"}</td>'
-                f'<td align="right" style="padding:7px 9px;border-bottom:1px solid #eef0f2;color:#8a5a00;">{preview or "&ndash;"}</td></tr>'
+                f'<div style="font-size:12.5px;line-height:1.6;color:{C["muted"]};'
+                f'padding-left:14px;margin:0 0 10px">{_esc(summary_en)}</div>'
+            )
+    elif summary_en:
+        parts.append(
+            f'<div style="font-size:14px;line-height:1.65;color:{C["ink2"]};'
+            f'border-left:3px solid {C["accent"]};padding-left:11px;margin:0 0 10px">'
+            f'{_esc(summary_en)}</div>'
+        )
+
+    if points_en:
+        parts.append('<table role="presentation" cellpadding="0" cellspacing="0" width="100%" '
+                     'style="width:100%;border-collapse:collapse;margin:2px 0 0">')
+        for position, point in enumerate(points_en):
+            ko = points_ko[position] if position < len(points_ko) else ""
+            body = (
+                f'<div lang="ko" style="font-size:13px;line-height:1.6;color:{C["ink2"]};'
+                f'word-break:keep-all">{_esc(ko)}</div>'
+                f'<div style="font-size:12px;line-height:1.55;color:{C["muted"]};margin-top:2px">'
+                f'{_esc(point)}</div>'
+            ) if ko else (
+                f'<div style="font-size:13px;line-height:1.6;color:{C["ink2"]}">{_esc(point)}</div>'
+            )
+            parts.append(
+                f'<tr><td width="14" valign="top" style="padding:4px 0 0;color:{C["accent"]};'
+                f'font-size:13px;line-height:1.6">&bull;</td>'
+                f'<td valign="top" style="padding:4px 0 0">{body}</td></tr>'
             )
         parts.append("</table>")
 
-        for index, (category, bucket, _, _) in enumerate(category_rows(groups)):
-            parts.append(
-                f'<h2 id="cat-{index}" style="font-size:16px;margin:26px 0 8px;padding-bottom:6px;'
-                f'border-bottom:2px solid #0078d4;">{_esc(category)} '
-                f'<span style="color:#57606a;font-weight:400;">({len(bucket)})</span></h2>'
-            )
-            for item in bucket[:max_items]:
-                info = enrichment_for(item, enrichment)
-                products = ", ".join(p for p in (item.get("products") or []) if p)
-                summary = info["summary"] or summarize(item.get("description", ""), 300)
-                parts.append('<div style="padding:12px 0;border-bottom:1px solid #eaecef;">')
-                parts.append(
-                    f'<a href="{_esc(update_url(item))}" style="font-size:15px;font-weight:600;'
-                    f'color:#0b4f9e;text-decoration:none;">{_esc(item.get("title"))}</a>'
-                )
-                meta_tail = " &middot; " + _esc(products) if products else ""
-                parts.append(
-                    f'<div style="margin:6px 0;font-size:12px;color:#57606a;">'
-                    f'<span style="display:inline-block;background:#eef4fb;color:#0b4f9e;border-radius:10px;'
-                    f'padding:2px 8px;margin-right:6px;">{_esc(status_label(item))}</span>'
-                    f'{_esc(item_date_str(item))}{meta_tail}</div>'
-                )
-                if summary:
-                    parts.append(f'<div style="font-size:13px;line-height:1.5;color:#24292f;">{_esc(summary)}</div>')
-                if info["key_points"]:
-                    bullets = "".join(f"<li style=\"margin:3px 0;\">{_esc(p)}</li>" for p in info["key_points"][:4])
-                    parts.append(f'<ul style="margin:7px 0 0;padding-left:18px;font-size:12.5px;color:#3a4048;">{bullets}</ul>')
-                if info["doc_url"]:
-                    label = info["doc_title"] or "Microsoft documentation"
-                    parts.append(
-                        f'<div style="margin-top:6px;font-size:12px;">&#128196; '
-                        f'<a href="{_esc(info["doc_url"])}" style="color:#0078d4;">{_esc(label)}</a></div>'
-                    )
-                parts.append("</div>")
-            if len(bucket) > max_items:
-                parts.append(
-                    f'<p style="font-size:12px;color:#57606a;margin:8px 0;">+ {len(bucket) - max_items} '
-                    "more in this category - see the full digest online.</p>"
-                )
+    if info["doc_url"]:
+        label = info["doc_title"] or "Microsoft 문서"
+        parts.append(
+            f'<div style="margin-top:11px;font-family:{FONT_MONO};font-size:11px">'
+            f'<a href="{_esc(info["doc_url"])}" style="color:{C["accent"]};text-decoration:none">'
+            f'&#8599; {_esc(label)}</a></div>'
+        )
 
-    parts += [
-        f'<p style="margin:24px 0 0;font-size:12px;color:#57606a;">Full archive: '
-        f'<a href="{_esc(site_url)}" style="color:#0078d4;">{_esc(site_url)}</a><br>Source: '
-        f'<a href="{_esc(cfg.get("azure_updates_url"))}" style="color:#0078d4;">Azure Updates</a> &middot; '
-        f'generated {_esc(utcnow().strftime("%Y-%m-%d %H:%M UTC"))}</p>',
-        "</div></div></body></html>",
-    ]
-    return "\n".join(parts)
+    parts.append("</div>")
+    return "".join(parts)
 
 
 def render_email_text(cfg: dict, payload: dict, date_str: str, enrichment: dict) -> str:
+    """Plain-text twin of the HTML mail, Korean first with the English kept underneath."""
     items = payload.get("items", [])
     groups = group_by_category(items)
-    title = digest_title(cfg, date_str)
-    lines = [title, "=" * len(title), ""]
-    if not items:
-        return "\n".join(lines + ["No new Azure updates were published in this window."]) + "\n"
+    title = f"오늘의 Azure 업데이트 · {date_str}"
+    lines = [title, "=" * 46, ""]
 
-    lines += ["SUMMARY BY CATEGORY", "-" * 19]
+    if not items:
+        return "\n".join(lines + ["이 기간에 새로 게시된 업데이트가 없습니다."]) + "\n"
+
+    lines += ["카테고리 요약 / SUMMARY BY CATEGORY", "-" * 46]
     for category, bucket, ga, preview in category_rows(groups):
-        lines.append(f"  {category}: {len(bucket)} update(s) (GA {ga}, preview {preview})")
+        lines.append(f"  {category}: {len(bucket)}건 (GA {ga}, preview {preview})")
     lines.append("")
 
     for category, bucket, _, _ in category_rows(groups):
-        lines += [f"{category} ({len(bucket)})", "-" * (len(category) + 6)]
+        lines += [f"{category} ({len(bucket)})", "-" * 46]
         for item in bucket:
             info = enrichment_for(item, enrichment)
-            lines.append(f"* {item.get('title')} [{status_label(item)}, {item_date_str(item)}]")
-            if info["summary"]:
-                lines.append(f"  {info['summary']}")
-            for point in info["key_points"][:3]:
-                lines.append(f"    - {point}")
-            lines.append(f"  {update_url(item)}")
+            lines.append(f"[{stage_label(item)}] {item_date_str(item)}")
+            lines.append(f"  {info['title_ko'] or item.get('title')}")
+            if info["title_ko"]:
+                lines.append(f"  {item.get('title')}")
+            summary = info["summary_ko"] or info["summary"]
+            if summary:
+                lines.append(f"    {summary}")
+            points_ko = info["key_points_ko"]
+            for position, point in enumerate(info["key_points"][:4]):
+                lines.append(f"    - {points_ko[position] if position < len(points_ko) else point}")
+            lines.append(f"    {update_url(item)}")
             if info["doc_url"]:
-                lines.append(f"  Docs: {info['doc_url']}")
-        lines.append("")
-    lines.append(f"Source: {cfg.get('azure_updates_url')}")
+                lines.append(f"    문서: {info['doc_url']}")
+            lines.append("")
+
+    lines.append(f"출처: {cfg.get('azure_updates_url')}")
+    lines.append(f"전체 보기: {str(cfg.get('site_url') or '').rstrip('/')}")
     return "\n".join(lines) + "\n"
 
 
