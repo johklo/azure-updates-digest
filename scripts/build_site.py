@@ -9,6 +9,7 @@ import re
 import sys
 from collections import Counter
 from datetime import timedelta
+from urllib.parse import quote
 from pathlib import Path
 
 from common import (
@@ -249,9 +250,10 @@ def render_newsletter(cfg: dict) -> str:
             "</form>",
         ]
     elif contact:
+        # Fallback for when no form endpoint is configured. The old mail-in automation
+        # was removed, so this only offers the address for a manual request.
         strings = json.dumps({k: t[k] for k in ("copied", "copy_failed", "manual_note")}, ensure_ascii=False)
-        subscribe_link = f"mailto:{contact}?subject=subscribe"
-        unsubscribe_link = f"mailto:{contact}?subject=unsubscribe"
+        subscribe_link = f"mailto:{contact}?subject={quote(str(nl.get('subject') or 'Subscribe'))}"
         parts += [
             f'<div class="signup" lang="ko" data-mode="copy" data-contact="{esc(contact)}"'
             f' data-strings="{esc(strings)}">',
@@ -261,12 +263,10 @@ def render_newsletter(cfg: dict) -> str:
             f'<button class="btn" type="button" id="nl-copy">{esc(t["copy_button"])}</button>',
             "</div>",
             '<div class="signup-row signup-row--links">',
-            f'<a class="btn btn--primary" href="{esc(subscribe_link)}">메일로 구독 신청</a>',
-            f'<a class="btn" href="{esc(unsubscribe_link)}">수신 해지</a>',
+            f'<a class="btn btn--primary" href="{esc(subscribe_link)}">메일로 문의</a>',
             "</div>",
             '<p class="signup-help" id="nl-help" role="status">'
-            "제목을 <strong>subscribe</strong> 로 하여 메일을 보내시면 자동으로 등록되고 확인 메일이 발송됩니다. "
-            "해지는 제목을 <strong>unsubscribe</strong> 로 보내시면 됩니다.</p>",
+            "지금은 자동 등록 창구가 열려 있지 않습니다. 위 주소로 메일을 주시면 수동으로 등록해 드립니다.</p>",
             "</div>",
         ]
     else:
