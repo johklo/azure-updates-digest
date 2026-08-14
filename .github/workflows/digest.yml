@@ -138,36 +138,55 @@ jobs:
     runs-on: ubuntu-latest
     if: needs.digest.outputs.has_updates == 'true' && inputs.send_email != false
     steps:
-      - uses: actions/download-artifact@v4
+      # Check out main after the digest job pushed, so the freshly committed
+      # data/latest.json and subscriber list are the ones we send from.
+      - uses: actions/checkout@v4
         with:
-          name: email-${{ needs.digest.outputs.digest_date }}
-          path: build
+          ref: main
 
-      - name: Verify SMTP configuration
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install --quiet cryptography
+
+      - name: Verify mail configuration
         id: smtp
         env:
           SMTP_SERVER: ${{ secrets.SMTP_SERVER }}
-          DIGEST_RECIPIENTS: ${{ secrets.DIGEST_RECIPIENTS }}
+          SUBSCRIBER_KEY: ${{ secrets.SUBSCRIBER_KEY }}
         run: |
-          if [ -z "$SMTP_SERVER" ] || [ -z "$DIGEST_RECIPIENTS" ]; then
-            echo "SMTP_SERVER or DIGEST_RECIPIENTS secret is not set; skipping email."
+          if [ -z "$SMTP_SERVER" ] || [ -z "$SUBSCRIBER_KEY" ]; then
+            echo "SMTP_SERVER or SUBSCRIBER_KEY is not set; skipping email."
             echo "configured=false" >> "$GITHUB_OUTPUT"
           else
             echo "configured=true" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Send digest email
+      - name: Send to subscribers
+        id: send
         if: steps.smtp.outputs.configured == 'true'
-        uses: dawidd6/action-send-mail@v3
-        with:
-          server_address: ${{ secrets.SMTP_SERVER }}
-          server_port: ${{ secrets.SMTP_PORT || 587 }}
-          secure: false
-          username: ${{ secrets.SMTP_USERNAME }}
-          password: ${{ secrets.SMTP_PASSWORD }}
-          subject: ${{ needs.digest.outputs.subject }}
-          to: ${{ secrets.DIGEST_RECIPIENTS }}
-          from: Azure Updates Digest <${{ secrets.SMTP_FROM || secrets.SMTP_USERNAME }}>
-          html_body: file://build/email.html
-          body: file://build/email.txt
-          convert_markdown: false
+        env:
+          SMTP_SERVER: ${{ secrets.SMTP_SERVER }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_SECURITY: ${{ secrets.SMTP_SECURITY }}
+          SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          SMTP_FROM: ${{ secrets.SMTP_FROM }}
+          SUBSCRIBER_KEY: ${{ secrets.SUBSCRIBER_KEY }}
+        run: python scripts/send_digest.py --date "${{ needs.digest.outputs.digest_date }}"
+
+      - name: Record delivery
+        if: steps.smtp.outputs.configured == 'true' && steps.send.outputs.sent != '0'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git pull --rebase --quiet origin main
+          git add data/subscribers.json
+          if git diff --staged --quiet; then
+            echo "Nothing to commit."
+          else
+            git commit -m "chore: digest delivered to ${{ steps.send.outputs.sent }} subscriber(s)"
+            git push
+          fi

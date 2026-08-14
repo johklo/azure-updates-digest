@@ -238,6 +238,39 @@ The landing page is an interactive explorer:
 
 `site/updates.json` is also published for downstream consumers.
 
+## Email subscription (self-service)
+
+Readers subscribe themselves by mailing the digest address - no manual list keeping.
+
+| Action | What the reader does |
+| --- | --- |
+| Subscribe | Mail the digest address with subject `subscribe` (or Korean `구독`) |
+| Unsubscribe | Reply `unsubscribe`, use the footer link, or the client's native unsubscribe button |
+
+`scripts/mailbox_sync.py` polls the mailbox hourly over IMAP, applies each request and
+replies with a Korean confirmation. `scripts/send_digest.py` then sends **one personalised
+message per subscriber**, so recipients never see each other, and every message carries a
+`List-Unsubscribe` header with that subscriber's own token.
+
+Addresses are **never committed in clear text**. `data/subscribers.json` stores each address
+encrypted with Fernet plus an HMAC id and a masked form, so the public repository shows only
+`jo***@example.com`. Only the workflow, holding `SUBSCRIBER_KEY`, can recover real addresses.
+
+Secrets to add (Settings -> Secrets and variables -> Actions):
+
+| Secret | Required | Description |
+| --- | --- | --- |
+| `SUBSCRIBER_KEY` | yes | Encryption key, from `python scripts/subscribers.py keygen` |
+| `IMAP_SERVER` | yes | e.g. `outlook.office365.com` |
+| `IMAP_PORT` / `IMAP_USERNAME` / `IMAP_PASSWORD` / `IMAP_FOLDER` | no | Default 993, SMTP credentials, `INBOX` |
+| `SMTP_SERVER` / `SMTP_USERNAME` / `SMTP_PASSWORD` | yes | Sending relay |
+| `SMTP_PORT` / `SMTP_SECURITY` / `SMTP_FROM` | no | Default 587, `starttls`, the SMTP user |
+
+`cryptography` is the only dependency, installed by the workflows and needed just for this
+feature. Manage the list locally with `python scripts/subscribers.py list|stats|add|remove`,
+and check the whole pipeline with `python tests/test_subscription.py`, which runs a real SMTP
+server and a stub mailbox.
+
 ## Schedule
 
 The workflow runs **every day at 08:00 KST** (`0 23 * * *` UTC) and can be triggered manually
