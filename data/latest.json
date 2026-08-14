@@ -1,100 +1,10 @@
 {
-  "generated_at": "2026-08-13T23:45:28.693462+00:00",
-  "window_start": "2026-08-06T23:45:28.693462+00:00",
-  "window_end": "2026-08-13T23:45:28.693462+00:00",
-  "window_days": 7,
-  "fetched_count": 10,
-  "matched_count": 10,
-  "count": 3,
-  "items": [
-    {
-      "id": "568830",
-      "productCategories": [
-        "Compute",
-        "Containers",
-        "DevOps",
-        "Management and governance"
-      ],
-      "tags": [
-        "Feature"
-      ],
-      "products": [
-        "Azure Kubernetes Service (AKS)",
-        "Azure Monitor"
-      ],
-      "generalAvailabilityDate": "2026-08",
-      "previewAvailabilityDate": null,
-      "privatePreviewAvailabilityDate": null,
-      "title": "Generally Available: Control plane metrics collection for AKS with Managed Prometheus",
-      "description": "Control plane metrics collection for Azure Kubernetes Service (AKS), powered by Azure Monitor Managed Service for Prometheus, is now generally available.<br><br>This capability gives AKS customers native observability into key managed control plane components, including the API server, etcd, kube-scheduler, kube-controller-manager, cluster autoscaler, and node auto-provisioning. <br><br>With these metrics, platform teams can better understand how workloads, controllers, automation, and scaling activity interact with the AKS control plane over time.<br><br><a href=\"https://aka.ms/aks/ccp-metrics\">Learn more</a>.",
-      "status": "Launched",
-      "created": "2026-08-13T16:19:56.5989095Z",
-      "modified": "2026-08-13T16:19:56.5989095Z",
-      "locale": null,
-      "availabilities": [
-        {
-          "ring": "General Availability",
-          "year": 2026,
-          "month": "August"
-        }
-      ]
-    },
-    {
-      "id": "569281",
-      "productCategories": [
-        "Storage"
-      ],
-      "tags": [
-        "Feature"
-      ],
-      "products": [
-        "Azure Disk Storage"
-      ],
-      "generalAvailabilityDate": "2026-08",
-      "previewAvailabilityDate": null,
-      "privatePreviewAvailabilityDate": null,
-      "title": "Generally Available: Live Resize for Shared Premium SSD v2 and Ultra Data Disks",
-      "description": "<p>We’re excited to announce the GA\nof Live Resize for&nbsp;<a href=\"https://learn.microsoft.com/en-us/azure/virtual-machines/disks-shared\">shared</a>&nbsp;Premium\nSSD v2 (Pv2) and Ultra data disks. This feature allows you to dynamically\nexpand the storage capacity of your disks without any disruption to your\napplications. To optimize costs, you can start with smaller disks and gradually\nincrease their storage capacity as needed, all without experiencing any\ndowntime.&nbsp;&nbsp;</p><p><a href=\"https://aka.ms/LiveResizePublicLink\">Learn more</a>.&nbsp;&nbsp;</p>",
-      "status": "Launched",
-      "created": "2026-08-13T16:17:41.8342302Z",
-      "modified": "2026-08-13T16:17:41.8342302Z",
-      "locale": null,
-      "availabilities": [
-        {
-          "ring": "General Availability",
-          "year": 2026,
-          "month": "August"
-        }
-      ]
-    },
-    {
-      "id": "568419",
-      "productCategories": [
-        "Databases",
-        "Hybrid + multicloud"
-      ],
-      "tags": [
-        "Feature"
-      ],
-      "products": [
-        "Azure Database for PostgreSQL"
-      ],
-      "generalAvailabilityDate": "2026-08",
-      "previewAvailabilityDate": null,
-      "privatePreviewAvailabilityDate": null,
-      "title": "Generally Available: Pre-upgrade validation checks for Azure Database for PostgreSQL Flexible Server ",
-      "description": "<p>Pre-upgrade validation checks are now generally available for Azure Database for PostgreSQL flexible server, helping you proactively validate&nbsp;major version upgrade (MVU) readiness before initiating&nbsp;the actual upgrade process. With the general availability of this update, you can now run these checks from both the Azure portal and Azure CLI using the new --validate-only&nbsp;option.&nbsp;</p><p>With pre-upgrade validation checks,&nbsp;you can independently run upgrade compatibility validations and identify&nbsp;potential blockers ahead of time, helping reduce failed upgrade attempts and improve operational predictability. The validation process checks your server against Azure PostgreSQL upgrade policies and PostgreSQL pg_upgrade&nbsp;--check compatibility&nbsp;requirements, surfacing actionable guidance for issues such as unsupported extensions, replication slots, prepared transactions, configuration mismatches, and other upgrade constraints.&nbsp;</p><p>By shifting validation from inline execution during upgrade to a proactive pre-flight step, this capability helps improve first-time upgrade success rates, reduce troubleshooting effort, and simplify upgrade planning for production workloads. You can resolve identified issues, rerun validations as needed, and proceed&nbsp;with the upgrade only when your environment is ready.&nbsp;</p><p><a href=\"https://aka.ms/pg-flex-upgrade-checks\" rel=\"noreferrer noopener\">Learn more</a>.</p>",
-      "status": "Launched",
-      "created": "2026-08-13T16:13:22.0109031Z",
-      "modified": "2026-08-13T16:13:22.0109031Z",
-      "locale": null,
-      "availabilities": [
-        {
-          "ring": "General Availability",
-          "year": 2026,
-          "month": "August"
-        }
-      ]
-    }
-  ]
+  "generated_at": "2026-08-14T12:33:09.136007+00:00",
+  "window_start": "2026-08-12T12:33:09.136007+00:00",
+  "window_end": "2026-08-14T12:33:09.136007+00:00",
+  "window_days": 2,
+  "fetched_count": 7,
+  "matched_count": 7,
+  "count": 0,
+  "items": []
 }
