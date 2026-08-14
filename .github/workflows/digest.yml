@@ -136,7 +136,12 @@ jobs:
   email:
     needs: digest
     runs-on: ubuntu-latest
-    if: needs.digest.outputs.has_updates == 'true' && inputs.send_email != false
+    # On a schedule the `inputs` context is empty, and an empty value compares equal to
+    # `false`, so a plain `inputs.send_email != false` would skip every scheduled run.
+    # Only honour the toggle when the run actually came from the manual dispatch form.
+    if: >-
+      needs.digest.outputs.has_updates == 'true' &&
+      (github.event_name != 'workflow_dispatch' || inputs.send_email)
     steps:
       # Check out main after the digest job pushed, so the freshly committed
       # data/latest.json and subscriber list are the ones we send from.
