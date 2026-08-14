@@ -831,10 +831,18 @@
         fetch(signup.getAttribute("action"), {
           method: "POST", body: body, headers: { Accept: "application/json" }
         }).then(function (res) {
-          if (!res.ok) throw new Error(res.status);
-          setState("success", strings.sent);
-        }).catch(function () {
-          setState("error", strings.failed);
+          // Prefer the server's own wording: it explains rate limits and rejected
+          // addresses far better than a generic failure line.
+          return res.json().catch(function () { return {}; }).then(function (data) {
+            if (!res.ok || data.ok === false) {
+              var error = new Error(res.status);
+              error.serverMessage = data.message;
+              throw error;
+            }
+            setState("success", data.message || strings.sent);
+          });
+        }).catch(function (error) {
+          setState("error", (error && error.serverMessage) || strings.failed);
           emailField.disabled = false;
           submitBtn.disabled = false;
         });

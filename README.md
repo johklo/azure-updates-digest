@@ -238,38 +238,52 @@ The landing page is an interactive explorer:
 
 `site/updates.json` is also published for downstream consumers.
 
-## Email subscription (self-service)
+## Email subscription
 
-Readers subscribe themselves by mailing the digest address - no manual list keeping.
+Readers subscribe on the site: they type an address, press **구독하기**, click the link in the
+confirmation mail, and from the next morning the digest arrives automatically.
 
-| Action | What the reader does |
+```
+signup form (GitHub Pages)
+        |  POST /api/subscribe
+        v
+subscribe-api/  (Azure App Service, Flask)
+        |  confirmation mail via Azure Communication Services
+        v
+reader clicks the confirm link  ->  address stored on the service
+        |
+        |  GET /api/subscribers   (authenticated, called by the daily workflow)
+        v
+scripts/send_digest.py  ->  one message per subscriber via ACS
+```
+
+Design notes:
+
+* **Double opt-in.** `POST /api/subscribe` never stores anything; it mails an HMAC-signed,
+  time-limited link. Only clicking that link records the address, so nobody can subscribe
+  somebody else.
+* **No mail passwords anywhere.** Delivery uses Azure Communication Services with an
+  Azure-managed sender domain, so there is no SMTP account to create or rotate.
+* **No subscriber data in this repository.** The list lives on the App Service instance,
+  and the workflow reads it over an authenticated endpoint at send time.
+* **Unsubscribe always works.** Every message carries a signed one-click link in the footer
+  and in the `List-Unsubscribe` header.
+
+The intake service lives in `subscribe-api/`. Deploy changes with:
+
+```bash
+cd subscribe-api && zip -r ../api.zip app.py requirements.txt
+az webapp deploy -g rg-azupdates-newsletter -n <app-name> --src-path ../api.zip --type zip
+```
+
+Repository secrets used by the daily send:
+
+| Secret | Description |
 | --- | --- |
-| Subscribe | Mail the digest address with subject `subscribe` (or Korean `구독`) |
-| Unsubscribe | Reply `unsubscribe`, use the footer link, or the client's native unsubscribe button |
-
-`scripts/mailbox_sync.py` polls the mailbox hourly over IMAP, applies each request and
-replies with a Korean confirmation. `scripts/send_digest.py` then sends **one personalised
-message per subscriber**, so recipients never see each other, and every message carries a
-`List-Unsubscribe` header with that subscriber's own token.
-
-Addresses are **never committed in clear text**. `data/subscribers.json` stores each address
-encrypted with Fernet plus an HMAC id and a masked form, so the public repository shows only
-`jo***@example.com`. Only the workflow, holding `SUBSCRIBER_KEY`, can recover real addresses.
-
-Secrets to add (Settings -> Secrets and variables -> Actions):
-
-| Secret | Required | Description |
-| --- | --- | --- |
-| `SUBSCRIBER_KEY` | yes | Encryption key, from `python scripts/subscribers.py keygen` |
-| `IMAP_SERVER` | yes | e.g. `outlook.office365.com` |
-| `IMAP_PORT` / `IMAP_USERNAME` / `IMAP_PASSWORD` / `IMAP_FOLDER` | no | Default 993, SMTP credentials, `INBOX` |
-| `SMTP_SERVER` / `SMTP_USERNAME` / `SMTP_PASSWORD` | yes | Sending relay |
-| `SMTP_PORT` / `SMTP_SECURITY` / `SMTP_FROM` | no | Default 587, `starttls`, the SMTP user |
-
-`cryptography` is the only dependency, installed by the workflows and needed just for this
-feature. Manage the list locally with `python scripts/subscribers.py list|stats|add|remove`,
-and check the whole pipeline with `python tests/test_subscription.py`, which runs a real SMTP
-server and a stub mailbox.
+| `ACS_CONNECTION_STRING` | Azure Communication Services connection string |
+| `ACS_SENDER` | Sender address on the Azure-managed domain |
+| `SUBSCRIBE_API_BASE` | Base URL of the intake service |
+| `SUBSCRIBE_API_KEY` | Shared key for `GET /api/subscribers` |
 
 ## Schedule
 

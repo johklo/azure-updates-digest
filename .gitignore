@@ -6,3 +6,5 @@ venv/
 build/
 site/
 .DS_Store
+
+api.zip
