@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import html as html_lib
+import re
 import sys
 
 from common import (
@@ -138,6 +139,29 @@ FONT_BODY = "'Segoe UI',-apple-system,'Malgun Gothic','Apple SD Gothic Neo',Helv
 FONT_MONO = "Consolas,'Courier New',monospace"
 
 
+# Almost every announcement title opens with its own release stage, which the badge
+# beside it already carries. Typos in the feed are common enough to match loosely.
+_STAGE_PREFIX = re.compile(
+    r"^\s*(?:general(?:ly)?\s+ava\w*|general\s+availability|public\s+preview|private\s+preview|"
+    r"limited\s+preview|preview|in\s+development|retirement|retiring|deprecation|announcing)\s*[:\-\u2013]\s*",
+    re.IGNORECASE,
+)
+
+
+def _strip_stage_prefix(title: str) -> str:
+    """Drop leading stage labels so they are not read twice on every card.
+
+    A few feed entries carry the label twice, so this strips repeatedly rather than once.
+    """
+    trimmed = str(title or "").strip()
+    for _ in range(3):
+        shorter = _STAGE_PREFIX.sub("", trimmed, count=1).strip()
+        if shorter == trimmed:
+            break
+        trimmed = shorter
+    return trimmed or str(title or "").strip()
+
+
 def _label(text: str, color: str | None = None) -> str:
     """Small-caps monospace label, the same device the site uses for eyebrows."""
     return (
@@ -241,15 +265,18 @@ def render_email_html(cfg: dict, payload: dict, date_str: str, enrichment: dict)
 
 
 def _render_item(cfg: dict, item: dict, enrichment: dict) -> str:
-    """One update: Korean on top, English underneath, matching the site's bilingual order."""
+    """One update. Korean carries the meaning; the English title stays as the link."""
     info = enrichment_for(item, enrichment)
     stage = release_stage(item)
     fg, bg = STAGE_COLOR.get(stage, STAGE_COLOR["other"])
     products = ", ".join(p for p in (item.get("products") or []) if p)
 
+    title_en = _strip_stage_prefix(item.get("title"))
+    title_ko = _strip_stage_prefix(info["title_ko"]) if info["title_ko"] else ""
     summary_en = info["summary"] or summarize(item.get("description", ""), 300)
-    points_en = info["key_points"][:4]
-    points_ko = info["key_points_ko"][:4] if len(info["key_points_ko"]) >= len(points_en) else []
+    # Three points is what fits on a phone screen without scrolling past the next card.
+    points_ko = info["key_points_ko"][:3]
+    points_en = info["key_points"][:3]
 
     parts = [f'<div style="padding:18px 0;border-bottom:1px solid {C["rule"]}">']
 
@@ -263,58 +290,46 @@ def _render_item(cfg: dict, item: dict, enrichment: dict) -> str:
     )
 
     # Title: Korean first when translated, English kept as the canonical link.
-    if info["title_ko"]:
+    if title_ko:
         parts.append(
             f'<div lang="ko" style="font-family:{FONT_DISPLAY};font-size:17px;line-height:1.4;'
             f'font-weight:600;color:{C["ink"]};margin:0 0 3px;word-break:keep-all">'
-            f'{_esc(info["title_ko"])}</div>'
+            f'{_esc(title_ko)}</div>'
         )
         parts.append(
             f'<a href="{_esc(update_url(item))}" style="display:block;font-size:12.5px;line-height:1.45;'
-            f'color:{C["muted"]};text-decoration:none;margin:0 0 9px">{_esc(item.get("title"))}</a>'
+            f'color:{C["muted"]};text-decoration:none;margin:0 0 9px">{_esc(title_en)}</a>'
         )
     else:
         parts.append(
             f'<a href="{_esc(update_url(item))}" style="display:block;font-family:{FONT_DISPLAY};'
             f'font-size:17px;line-height:1.4;font-weight:600;color:{C["ink"]};'
-            f'text-decoration:none;margin:0 0 9px">{_esc(item.get("title"))}</a>'
+            f'text-decoration:none;margin:0 0 9px">{_esc(title_en)}</a>'
         )
 
-    if info["summary_ko"]:
+    # Only one language of prose. Printing both doubles the reading without adding meaning.
+    summary = info["summary_ko"] or summary_en
+    if summary:
+        lang = ' lang="ko"' if info["summary_ko"] else ""
+        keep = "word-break:keep-all;" if info["summary_ko"] else ""
         parts.append(
-            f'<div lang="ko" style="font-size:14px;line-height:1.65;color:{C["ink2"]};'
-            f'border-left:3px solid {C["accent"]};padding-left:11px;margin:0 0 6px;'
-            f'word-break:keep-all">{_esc(info["summary_ko"])}</div>'
-        )
-        if summary_en:
-            parts.append(
-                f'<div style="font-size:12.5px;line-height:1.6;color:{C["muted"]};'
-                f'padding-left:14px;margin:0 0 10px">{_esc(summary_en)}</div>'
-            )
-    elif summary_en:
-        parts.append(
-            f'<div style="font-size:14px;line-height:1.65;color:{C["ink2"]};'
-            f'border-left:3px solid {C["accent"]};padding-left:11px;margin:0 0 10px">'
-            f'{_esc(summary_en)}</div>'
+            f'<div{lang} style="font-size:14px;line-height:1.65;color:{C["ink2"]};'
+            f'border-left:3px solid {C["accent"]};padding-left:11px;margin:0 0 10px;{keep}">'
+            f'{_esc(summary)}</div>'
         )
 
-    if points_en:
+    points = points_ko if len(points_ko) >= len(points_en) else points_en
+    if points:
+        korean = points is points_ko
         parts.append('<table role="presentation" cellpadding="0" cellspacing="0" width="100%" '
                      'style="width:100%;border-collapse:collapse;margin:2px 0 0">')
-        for position, point in enumerate(points_en):
-            ko = points_ko[position] if position < len(points_ko) else ""
-            body = (
-                f'<div lang="ko" style="font-size:13px;line-height:1.6;color:{C["ink2"]};'
-                f'word-break:keep-all">{_esc(ko)}</div>'
-                f'<div style="font-size:12px;line-height:1.55;color:{C["muted"]};margin-top:2px">'
-                f'{_esc(point)}</div>'
-            ) if ko else (
-                f'<div style="font-size:13px;line-height:1.6;color:{C["ink2"]}">{_esc(point)}</div>'
-            )
+        for point in points:
             parts.append(
                 f'<tr><td width="14" valign="top" style="padding:4px 0 0;color:{C["accent"]};'
                 f'font-size:13px;line-height:1.6">&bull;</td>'
-                f'<td valign="top" style="padding:4px 0 0">{body}</td></tr>'
+                f'<td valign="top" style="padding:4px 0 0"><div{" lang=\'ko\'" if korean else ""} '
+                f'style="font-size:13px;line-height:1.6;color:{C["ink2"]};'
+                f'{"word-break:keep-all" if korean else ""}">{_esc(point)}</div></td></tr>'
             )
         parts.append("</table>")
 
