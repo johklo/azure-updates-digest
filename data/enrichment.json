@@ -24462,5 +24462,31 @@
       "유효성 검사는 모든 데이터베이스에 대한 연결이 필요하며, 읽기 전용 복제본에서는 지원되지 않고, 간섭을 피하기 위해 활동이 적은 기간에 실행해야 합니다."
     ],
     "translated_at": "2026-08-13T23:46:11.261950+00:00"
+  },
+  "569353": {
+    "summary": "Azure Databricks Runtime 10.4 LTS will reach end of life on November 1, 2026, requiring customers to migrate workloads to supported versions to avoid disruption.",
+    "key_points": [
+      "Databricks Runtime 10.4 LTS reached end of support on March 18, 2025, and will be unusable after November 1, 2026.",
+      "After end of life, workloads on version 10.4 LTS will no longer run and the runtime will not be selectable in the UI.",
+      "Customers must migrate clusters and workloads to supported Databricks Runtime versions before November 1, 2026 to prevent service disruption.",
+      "Microsoft provides queries to identify legacy Databricks Runtime usage and jobs that require upgrading to assist customers in migration planning."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/databricks/release-notes/runtime/databricks-runtime-ver",
+    "doc_title": "Databricks support lifecycles - Azure Databricks",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/azure/databricks/release-notes/runtime/databricks-runtime-ver#databricks-runtime-lts-version-lifecycle"
+    ],
+    "source": "llm",
+    "updated_at": "2026-08-14T23:25:29.633892+00:00",
+    "title_ko": "Announcing: Azure Databricks Runtime 10.4 LTS가 2026년 11월 1일에 End of Life에 도달합니다",
+    "summary_ko": "Azure Databricks Runtime 10.4 LTS가 2026년 11월 1일에 End of Life에 도달하여, 고객은 서비스 중단을 방지하기 위해 지원되는 버전으로 워크로드를 마이그레이션해야 합니다.",
+    "key_points_ko": [
+      "Databricks Runtime 10.4 LTS는 2025년 3월 18일에 지원 종료되었으며, 2026년 11월 1일 이후에는 사용할 수 없습니다.",
+      "End of Life 이후에는 10.4 LTS 버전의 워크로드가 더 이상 실행되지 않으며, UI에서 해당 런타임을 선택할 수 없습니다.",
+      "고객은 2026년 11월 1일 이전에 클러스터와 워크로드를 지원되는 Databricks Runtime 버전으로 마이그레이션하여 서비스 중단을 방지해야 합니다.",
+      "Microsoft는 고객의 마이그레이션 계획을 지원하기 위해 레거시 Databricks Runtime 사용과 업그레이드가 필요한 작업을 식별하는 쿼리를 제공합니다."
+    ],
+    "translated_at": "2026-08-14T23:25:35.967514+00:00"
   }
 }

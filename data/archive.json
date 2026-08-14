@@ -1,7 +1,36 @@
 {
-  "updated_at": "2026-08-14T12:39:55.738642+00:00",
-  "count": 946,
+  "updated_at": "2026-08-14T23:25:15.760650+00:00",
+  "count": 947,
   "items": [
+    {
+      "id": "569353",
+      "productCategories": [
+        "AI + machine learning",
+        "Analytics"
+      ],
+      "tags": [
+        "Announcement"
+      ],
+      "products": [
+        "Azure Databricks"
+      ],
+      "generalAvailabilityDate": null,
+      "previewAvailabilityDate": null,
+      "privatePreviewAvailabilityDate": null,
+      "title": "Announcing: Azure Databricks Runtime 10.4 LTS will reach end of life on November 1, 2026",
+      "description": "Azure Databricks Runtime\n10.4 LTS, a Databricks-managed runtime available on Azure Databricks, reached\nend of support on March 18, 2025 and will reach end of life on November 1, 2026.&nbsp;After this date,\nDatabricks Runtime 10.4 LTS will no longer be available or usable, and\nworkloads remaining on this version will no longer run. To avoid disruption,\nmigrate affected clusters and workloads to a supported Databricks Runtime\nversion before November 1, 2026.&nbsp;<br><br><a href=\"https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Flearn.microsoft.com%2Fazure%2Fdatabricks%2Frelease-notes%2Fruntime%2Fdatabricks-runtime-ver%23databricks-runtime-lts-version-lifecycle&amp;data=05%7C02%7Cv-mendoncama%40microsoft.com%7C5913ae405daf4704be1b08def8a276cd%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C639221573816637504%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&amp;sdata=0Br46egfuiIMBNy853GlNGmiKp1pcnq31TsFEBMl3AA%3D&amp;reserved=0\">Learn\nmore</a>.",
+      "status": null,
+      "created": "2026-08-14T17:43:51.3792538Z",
+      "modified": "2026-08-14T17:43:51.3792538Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "Effective",
+          "year": 2026,
+          "month": "November"
+        }
+      ]
+    },
     {
       "id": "568830",
       "productCategories": [
