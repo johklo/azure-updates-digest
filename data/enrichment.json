@@ -24488,5 +24488,85 @@
       "Microsoft는 고객의 마이그레이션 계획을 지원하기 위해 레거시 Databricks Runtime 사용과 업그레이드가 필요한 작업을 식별하는 쿼리를 제공합니다."
     ],
     "translated_at": "2026-08-14T23:25:35.967514+00:00"
+  },
+  "568344": {
+    "summary": "Azure SQL Managed Instance Next-gen General Purpose now supports zone redundancy in public preview, enhancing business continuity by distributing compute and data across availability zones to reduce downtime risk.",
+    "key_points": [
+      "Zone redundancy automatically distributes compute and data across availability zones for improved resilience and up to 99.995% uptime.",
+      "This feature is available in public preview for the Next-gen General Purpose service tier, which offers upgraded storage and performance capabilities.",
+      "Maintains cost efficiency and flexibility of the General Purpose tier while supporting mission-critical workloads with built-in high availability.",
+      "Enables customers to meet stricter uptime requirements with less operational effort without changing application architecture."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/azure-sql/managed-instance/service-tiers-next-gen-general-purpose-use?view=azuresql",
+    "doc_title": "Use Next-gen General Purpose service tier - Azure SQL Managed Instance",
+    "doc_read": true,
+    "links": [
+      "https://aka.ms/mi-next-gen-gp-docs"
+    ],
+    "source": "llm",
+    "updated_at": "2026-08-17T23:26:36.554704+00:00",
+    "title_ko": "Public Preview: Azure SQL Managed Instance Next-gen General Purpose의 영역 중복 지원",
+    "summary_ko": "Azure SQL Managed Instance Next-gen General Purpose가 이제 Public Preview로 영역 중복을 지원하여, 컴퓨트와 데이터를 가용 영역에 분산시켜 다운타임 위험을 줄이고 비즈니스 연속성을 강화합니다.",
+    "key_points_ko": [
+      "영역 중복은 컴퓨트와 데이터를 자동으로 가용 영역에 분산하여 복원력을 높이고 최대 99.995% 가동 시간을 제공합니다.",
+      "이 기능은 업그레이드된 스토리지 및 성능 기능을 제공하는 Next-gen General Purpose 서비스 계층에서 Public Preview로 제공됩니다.",
+      "General Purpose 계층의 비용 효율성과 유연성을 유지하면서 내장된 고가용성으로 미션 크리티컬 워크로드를 지원합니다.",
+      "애플리케이션 아키텍처 변경 없이도 운영 부담을 줄이고 더 엄격한 가동 시간 요구 사항을 충족할 수 있도록 합니다."
+    ],
+    "translated_at": "2026-08-17T23:26:58.224145+00:00"
+  },
+  "557775": {
+    "summary": "Dragon Copilot Physician Apps and Agents are now generally available for discovery and purchase through Microsoft Marketplace in the U.S., streamlining procurement and enhancing clinical workflows with AI-powered documentation and automation.",
+    "key_points": [
+      "Microsoft Marketplace provides a new channel for U.S. customers to discover, evaluate, and purchase Dragon Copilot Physician Apps and Agents.",
+      "Dragon Copilot enhances clinical workflows by automating documentation, surfacing information, and supporting discrete clinical data capture to improve clinician efficiency and patient care.",
+      "Purchasing via Microsoft Marketplace simplifies procurement with consolidated billing and eliminates the need for onboarding new vendors.",
+      "Dragon Copilot integrates with EHR systems either as standalone apps or embedded solutions, enabling seamless clinical note generation and workflow integration."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/industry/healthcare/dragon-copilot/about/",
+    "doc_title": "What is Microsoft Dragon Copilot (physicians)?",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/en-us/industry/healthcare/dragon-copilot/about/",
+      "https://aka.ms/mp-dragon-mslearn"
+    ],
+    "source": "llm",
+    "updated_at": "2026-08-17T23:26:44.100044+00:00",
+    "title_ko": "Generally Available: Microsoft Marketplace에서 Dragon Copilot Physician Apps 및 Agents 제공",
+    "summary_ko": "Dragon Copilot Physician Apps 및 Agents가 미국 내 Microsoft Marketplace를 통해 Generally Available되어, AI 기반 문서화 및 자동화를 통해 임상 워크플로우를 개선하고 조달 과정을 간소화합니다.",
+    "key_points_ko": [
+      "Microsoft Marketplace는 미국 고객이 Dragon Copilot Physician Apps 및 Agents를 발견, 평가, 구매할 수 있는 새로운 채널을 제공합니다.",
+      "Dragon Copilot은 문서 자동화, 정보 제공, 개별 임상 데이터 캡처 지원을 통해 임상 워크플로우를 개선하여 임상의 효율성과 환자 치료를 향상합니다.",
+      "Microsoft Marketplace를 통한 구매는 통합 청구로 조달을 간소화하고 신규 공급업체 온보딩 필요성을 제거합니다.",
+      "Dragon Copilot은 독립형 앱 또는 임베디드 솔루션으로 EHR 시스템과 통합되어 원활한 임상 노트 생성 및 워크플로우 통합을 지원합니다."
+    ],
+    "translated_at": "2026-08-17T23:27:04.503977+00:00"
+  },
+  "569376": {
+    "summary": "Azure Linux on WSL is now in Public Preview, enabling developers to use a consistent Microsoft-supported Linux environment across development, testing, and production to improve reliability and reduce debugging time.",
+    "key_points": [
+      "Public Preview release of Azure Linux on Windows Subsystem for Linux (WSL) for developer workstations.",
+      "Allows validation of production-aligned configurations and more reliable issue reproduction locally.",
+      "Supports familiar tools like VS Code and Git, with seamless deployment to Azure VMs, AKS, and containers.",
+      "Improves developer productivity by reducing cross-environment differences and enabling full-time development inside WSL."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/azure-linux/windows-subsystem-for-linux-overview",
+    "doc_title": "Overview of Azure Linux on Windows Subsystem for Linux (WSL)",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/en-us/azure/azure-linux/windows-subsystem-for-linux-overview",
+      "https://aka.ms/AZLonWSLBlog"
+    ],
+    "source": "llm",
+    "updated_at": "2026-08-17T23:26:49.680186+00:00",
+    "title_ko": "Public Preview: WSL에서의 Azure Linux",
+    "summary_ko": "Azure Linux on WSL이 Public Preview로 출시되어 개발자가 개발, 테스트, 프로덕션 전반에 걸쳐 일관된 Microsoft 지원 Linux 환경을 사용할 수 있어 신뢰성을 높이고 디버깅 시간을 줄일 수 있습니다.",
+    "key_points_ko": [
+      "개발자 워크스테이션용 Windows Subsystem for Linux(WSL)에서 Azure Linux의 Public Preview 출시.",
+      "프로덕션에 맞춘 구성 검증과 더 신뢰할 수 있는 문제 재현을 로컬에서 가능하게 함.",
+      "VS Code, Git 등 익숙한 도구를 지원하며 Azure VM, AKS, 컨테이너로 원활한 배포 제공.",
+      "환경 간 차이를 줄이고 WSL 내에서 상시 개발을 가능하게 하여 개발자 생산성 향상."
+    ],
+    "translated_at": "2026-08-17T23:27:09.440298+00:00"
   }
 }

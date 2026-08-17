@@ -1,7 +1,86 @@
 {
-  "updated_at": "2026-08-16T23:23:09.461259+00:00",
-  "count": 947,
+  "updated_at": "2026-08-17T23:26:25.874810+00:00",
+  "count": 950,
   "items": [
+    {
+      "id": "568344",
+      "productCategories": [
+        "Databases"
+      ],
+      "tags": [
+        "Feature"
+      ],
+      "products": [
+        "Azure SQL Managed Instance"
+      ],
+      "generalAvailabilityDate": null,
+      "previewAvailabilityDate": "2026-08",
+      "privatePreviewAvailabilityDate": null,
+      "title": "Public Preview: Zone redundancy for Azure SQL Managed Instance Next-gen General Purpose",
+      "description": "You can now benefit&nbsp;from enhanced resilience with the public preview of zone redundancy for Azure SQL Managed Instance Next-gen General Purpose. This update helps you improve business continuity by automatically distributing your compute&nbsp;and data across availability zones, reducing the risk of downtime from localized failures. You gain greater reliability with up to 99.995% uptime without changing your application architecture, while maintaining&nbsp;the cost efficiency and flexibility of the General Purpose&nbsp;tier. With built-in high availability, you can confidently run mission-critical workloads and meet stricter uptime requirements with less operational effort.&nbsp;<p><a href=\"https://aka.ms/mi-next-gen-gp-docs\" rel=\"noreferrer noopener\">Learn more</a>.&nbsp;</p>",
+      "status": "In preview",
+      "created": "2026-08-17T19:54:52.7452533Z",
+      "modified": "2026-08-17T19:54:52.7452533Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "Preview",
+          "year": 2026,
+          "month": "August"
+        }
+      ]
+    },
+    {
+      "id": "557775",
+      "productCategories": [],
+      "tags": [
+        "Features"
+      ],
+      "products": [],
+      "generalAvailabilityDate": "2026-08",
+      "previewAvailabilityDate": null,
+      "privatePreviewAvailabilityDate": null,
+      "title": "Generally Available: Dragon Copilot Physician Apps and Agents on Microsoft Marketplace ",
+      "description": "This release adds Microsoft Marketplace as a new discovery and procurement channel&nbsp;for Dragon Copilot AI apps and agents.&nbsp;<a href=\"https://learn.microsoft.com/en-us/industry/healthcare/dragon-copilot/about/\" rel=\"noreferrer noopener\">Dragon Copilot</a>&nbsp;customers&nbsp;in the United States&nbsp;can now&nbsp;discover,&nbsp;evaluate&nbsp;and&nbsp;purchase&nbsp;Dragon Copilot&nbsp;Physician&nbsp;Apps&nbsp;and&nbsp;Agents&nbsp;through Microsoft Marketplace.<p>Dragon Copilot&nbsp;Physician Apps&nbsp;and&nbsp;Agents&nbsp;enhance clinical workflows using advanced AI for documentation guidance, information surfacing, and task automation. These solutions&nbsp;help&nbsp;physicians&nbsp;in creating, summarizing, searching, automating, and analyzing data—helping improve efficiency,&nbsp;clinician&nbsp;wellbeing, patient experience, and care delivery. Dragon Copilot is part of&nbsp;Microsoft for&nbsp;Healthcare and is built on a modern architecture with enhanced security.</p><p></p><p>Purchasing through Microsoft Marketplace removes the need to onboard a new vendor or navigate separate procurement processes. Customers can&nbsp;acquire&nbsp;Dragon Copilot Physician Apps and Agents&nbsp;through a streamlined purchase experience with&nbsp;consolidated&nbsp;billing through Microsoft.&nbsp;<br></p>  <a href=\"https://aka.ms/mp-dragon-mslearn\" rel=\"noreferrer noopener\">Learn more</a>.<br> ",
+      "status": "Launched",
+      "created": "2026-08-17T19:37:49.0696169Z",
+      "modified": "2026-08-17T19:37:49.0696169Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "General Availability",
+          "year": 2026,
+          "month": "August"
+        }
+      ]
+    },
+    {
+      "id": "569376",
+      "productCategories": [],
+      "tags": [
+        "Open Source",
+        "Feature"
+      ],
+      "products": [
+        "Azure Linux"
+      ],
+      "generalAvailabilityDate": null,
+      "previewAvailabilityDate": "2026-08",
+      "privatePreviewAvailabilityDate": null,
+      "title": "Public Preview: Azure Linux on WSL",
+      "description": "Azure Linux on WSL is now available in Public Preview (Beta). &nbsp;Extending Azure Linux to the developer workstation means that teams can now:<ul><li>Validate behavior using production-aligned configurations</li><li>Reproduce issues more reliably</li><li>Reduce time spent debugging cross-environment differences</li></ul><p>With WSL support, teams can now use one Microsoft-supported Linux foundation across development, testing, and production. Now you can use familiar tools such as VS Code and Git locally, then deploy to Azure targets including virtual machines, AKS, and containers.</p><p></p><p>Learn more:&nbsp;</p><ul><li><a href=\"https://aka.ms/AZLonWSLBlog\">Read the blog</a>&nbsp;</li><li><a href=\"https://learn.microsoft.com/en-us/azure/azure-linux/windows-subsystem-for-linux-overview\" title=\"https://learn.microsoft.com/en-us/azure/azure-linux/windows-subsystem-for-linux-overview\">Overview\nof Azure Linux on WSL</a>&nbsp;</li></ul><p></p>",
+      "status": "In preview",
+      "created": "2026-08-17T17:08:40.4876970Z",
+      "modified": "2026-08-17T17:08:40.4876970Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "Preview",
+          "year": 2026,
+          "month": "August"
+        }
+      ]
+    },
     {
       "id": "569353",
       "productCategories": [
