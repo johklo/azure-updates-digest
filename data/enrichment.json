@@ -24568,5 +24568,84 @@
       "환경 간 차이를 줄이고 WSL 내에서 상시 개발을 가능하게 하여 개발자 생산성 향상."
     ],
     "translated_at": "2026-08-17T23:27:09.440298+00:00"
+  },
+  "569535": {
+    "summary": "Azure VMware Solution's license-included service will be retired by August 30, 2027, requiring customers to transition to a bring-your-own-license (BYOL) model due to Broadcom's updated VMware licensing policies, ensuring compliance and uninterrupted service.",
+    "key_points": [
+      "The AVS license-included Reserved Instance SKUs will retire on August 30, 2027, requiring customers to purchase portable Broadcom VMware Cloud Foundation (VCF) licenses and switch to AVS VCF BYOL SKUs.",
+      "License-included Pay-As-You-Go (PayGo) SKUs will retire earlier on October 15, 2026, with AV36 SKU retirement aligned to August 30, 2027.",
+      "Customers must plan and execute their transition or exit AVS before August 31, 2027, to avoid service disruption.",
+      "Microsoft provides support through account teams, self-service exchanges, and guidance to facilitate a smooth transition to the new licensing model."
+    ],
+    "doc_url": "https://techcommunity.microsoft.com/blog/azuremigrationblog/updated-broadcom-vmware-licensing-changes-what-azure-vmware-solution-customers-n/4448784",
+    "doc_title": "UPDATED: Broadcom VMware Licensing Changes: What Azure VMware Solution Customers Need to Know | Microsoft Community Hub",
+    "doc_read": true,
+    "links": [
+      "https://techcommunity.microsoft.com/blog/azuremigrationblog/broadcom-vmware-licensing-changes-what-azure-vmware-solution-customers-need-to-k/4448784",
+      "https://aka.ms/AVS_License-included_retirement"
+    ],
+    "source": "llm",
+    "updated_at": "2026-08-18T23:25:42.490656+00:00",
+    "title_ko": "Retirement: Azure VMware Solution License-included 서비스 2027년 8월 30일에 Retirement 예정",
+    "summary_ko": "Azure VMware Solution의 license-included 서비스가 2027년 8월 30일까지 Retirement되며, Broadcom의 업데이트된 VMware 라이선스 정책에 따라 고객은 BYOL(Bring-Your-Own-License) 모델로 전환해야 하여 규정 준수와 서비스 연속성을 보장합니다.",
+    "key_points_ko": [
+      "AVS license-included Reserved Instance SKU는 2027년 8월 30일에 Retirement되며, 고객은 휴대 가능한 Broadcom VMware Cloud Foundation(VCF) 라이선스를 구매하고 AVS VCF BYOL SKU로 전환해야 합니다.",
+      "License-included Pay-As-You-Go(PayGo) SKU는 2026년 10월 15일에 조기 Retirement되며, AV36 SKU Retirement는 2027년 8월 30일에 맞춰집니다.",
+      "고객은 서비스 중단을 방지하기 위해 2027년 8월 31일 이전에 전환 계획을 수립하고 AVS를 전환하거나 종료해야 합니다.",
+      "Microsoft는 계정 팀, 셀프 서비스 교환 및 가이드를 통해 새로운 라이선스 모델로 원활한 전환을 지원합니다."
+    ],
+    "translated_at": "2026-08-18T23:26:01.885072+00:00"
+  },
+  "568952": {
+    "summary": "Managed Instance on Azure App Service is now generally available, enabling seamless migration of complex Windows-based .NET applications to a fully managed PaaS environment with enhanced performance, security, and operational control.",
+    "key_points": [
+      "Supports migration of legacy .NET Framework apps with Windows-specific dependencies and no code changes, reducing modernization barriers.",
+      "Available in at least 8 Azure regions with zone redundancy, Premium v4 integration, and enhanced observability via Azure Monitor and Application Insights.",
+      "Enterprise-grade features include 99.95% SLA, Azure Policy and Defender for Cloud integration, Managed Identity by default, and infrastructure-as-code support with Bicep, Terraform, and ARM templates.",
+      "Improves migration timelines from months to weeks, reduces infrastructure footprint by consolidating Windows Server VMs, and offers seamless deployment and troubleshooting via Azure portal, CLI, and Azure Bastion RDP."
+    ],
+    "doc_url": "https://techcommunity.microsoft.com/blog/AppsonAzureBlog/announcing-general-availability-of-managed-instance-on-azure-app-service/4541283",
+    "doc_title": "Announcing General Availability of Managed Instance on Azure App Service | Microsoft Community Hub",
+    "doc_read": true,
+    "links": [
+      "https://aka.ms/MIonAppSvcGA"
+    ],
+    "source": "llm",
+    "updated_at": "2026-08-18T23:25:49.815434+00:00",
+    "title_ko": "Generally Available: Azure App Service의 Managed Instance",
+    "summary_ko": "Azure App Service의 Managed Instance가 이제 Generally Available 상태로 제공되어, 복잡한 Windows 기반 .NET 애플리케이션을 코드 변경 없이 향상된 성능, 보안 및 운영 제어가 가능한 완전 관리형 PaaS 환경으로 원활하게 마이그레이션할 수 있습니다.",
+    "key_points_ko": [
+      "Windows 특정 종속성을 가진 레거시 .NET Framework 앱의 마이그레이션을 지원하며, 코드 변경 없이 현대화 장벽을 줄입니다.",
+      "최소 8개 Azure 지역에서 가용하며, 영역 중복성, Premium v4 통합, Azure Monitor 및 Application Insights를 통한 향상된 관측 기능을 제공합니다.",
+      "99.95% SLA, Azure Policy 및 Defender for Cloud 통합, 기본 제공 Managed Identity, Bicep, Terraform, ARM 템플릿을 통한 인프라 코드 지원 등 엔터프라이즈급 기능을 포함합니다.",
+      "마이그레이션 기간을 수개월에서 수주로 단축하고, Windows Server VM 통합으로 인프라 규모를 줄이며, Azure 포털, CLI, Azure Bastion RDP를 통한 원활한 배포 및 문제 해결을 지원합니다."
+    ],
+    "translated_at": "2026-08-18T23:26:08.414745+00:00"
+  },
+  "569520": {
+    "summary": "Azure Firewall now supports IPv6 in public preview, enabling dual-stack mode for IPv4 and IPv6 traffic to help organizations secure modern dual-stack network architectures.",
+    "key_points": [
+      "Supports native IPv6 network-rule filtering and DNS Proxy for IPv6 traffic.",
+      "Available in most Azure regions except Israel Central, Israel Northwest, Qatar Central, UAE Central, and UAE North, with portal deployment support coming soon.",
+      "Limitations include no support yet for threat intelligence, IDPS, Explicit Proxy, IP Groups, and inability to revert from dual-stack to IPv4-only mode.",
+      "Customers can upgrade existing Azure Firewalls to dual-stack by adding IPv6 address spaces and public IPs via CLI or PowerShell, enhancing security for cloud, hybrid, and internal IPv6 traffic."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/firewall/deploy-dual-stack-firewall",
+    "doc_title": "Deploy Azure Firewall in dual stack mode (preview)",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/en-us/azure/firewall/deploy-dual-stack-firewall"
+    ],
+    "source": "llm",
+    "updated_at": "2026-08-18T23:25:55.182879+00:00",
+    "title_ko": "Public Preview: Azure Firewall의 IPv6 지원",
+    "summary_ko": "Azure Firewall이 Public Preview로 IPv6를 지원하여 IPv4와 IPv6 트래픽에 대해 듀얼 스택 모드를 활성화함으로써 현대적인 듀얼 스택 네트워크 아키텍처의 보안을 강화할 수 있습니다.",
+    "key_points_ko": [
+      "IPv6 트래픽에 대해 네이티브 IPv6 네트워크 규칙 필터링과 DNS Proxy를 지원합니다.",
+      "이스라엘 센트럴, 이스라엘 노스웨스트, 카타르 센트럴, UAE 센트럴, UAE 노스를 제외한 대부분의 Azure 지역에서 사용 가능하며, 포털 배포 지원은 곧 제공될 예정입니다.",
+      "제한 사항으로는 위협 인텔리전스, IDPS, 명시적 프록시, IP 그룹 지원이 아직 없으며, 듀얼 스택에서 IPv4 전용 모드로 되돌릴 수 없습니다.",
+      "고객은 CLI 또는 PowerShell을 통해 IPv6 주소 공간과 공용 IP를 추가하여 기존 Azure Firewall을 듀얼 스택으로 업그레이드할 수 있으며, 이를 통해 클라우드, 하이브리드 및 내부 IPv6 트래픽에 대한 보안을 강화할 수 있습니다."
+    ],
+    "translated_at": "2026-08-18T23:26:15.210430+00:00"
   }
 }

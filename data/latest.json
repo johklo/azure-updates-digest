@@ -1,55 +1,62 @@
 {
-  "generated_at": "2026-08-17T23:26:25.874810+00:00",
-  "window_start": "2026-08-10T23:26:25.874810+00:00",
-  "window_end": "2026-08-17T23:26:25.874810+00:00",
+  "generated_at": "2026-08-18T23:25:29.313293+00:00",
+  "window_start": "2026-08-11T23:25:29.313293+00:00",
+  "window_end": "2026-08-18T23:25:29.313293+00:00",
   "window_days": 7,
-  "fetched_count": 12,
-  "matched_count": 12,
+  "fetched_count": 14,
+  "matched_count": 14,
   "count": 3,
   "items": [
     {
-      "id": "568344",
+      "id": "569535",
       "productCategories": [
-        "Databases"
+        "Compute"
       ],
       "tags": [
-        "Feature"
+        "Retirements"
       ],
       "products": [
-        "Azure SQL Managed Instance"
+        "Azure VMware Solution"
       ],
       "generalAvailabilityDate": null,
-      "previewAvailabilityDate": "2026-08",
+      "previewAvailabilityDate": null,
       "privatePreviewAvailabilityDate": null,
-      "title": "Public Preview: Zone redundancy for Azure SQL Managed Instance Next-gen General Purpose",
-      "description": "You can now benefit&nbsp;from enhanced resilience with the public preview of zone redundancy for Azure SQL Managed Instance Next-gen General Purpose. This update helps you improve business continuity by automatically distributing your compute&nbsp;and data across availability zones, reducing the risk of downtime from localized failures. You gain greater reliability with up to 99.995% uptime without changing your application architecture, while maintaining&nbsp;the cost efficiency and flexibility of the General Purpose&nbsp;tier. With built-in high availability, you can confidently run mission-critical workloads and meet stricter uptime requirements with less operational effort.&nbsp;<p><a href=\"https://aka.ms/mi-next-gen-gp-docs\" rel=\"noreferrer noopener\">Learn more</a>.&nbsp;</p>",
-      "status": "In preview",
-      "created": "2026-08-17T19:54:52.7452533Z",
-      "modified": "2026-08-17T19:54:52.7452533Z",
+      "title": "Retirement: Azure VMware Solution License-included service will be retired August 30, 2027",
+      "description": "In November last year <a href=\"https://techcommunity.microsoft.com/blog/azuremigrationblog/broadcom-vmware-licensing-changes-what-azure-vmware-solution-customers-need-to-k/4448784\">Broadcom changed its VMware licensing policies</a> across all hyperscaler platforms to require customers to “bring your own” portable license for VMware Cloud Foundation (VCF).<br><br>What’s changing?<br><br>On August 30, 2027, as a result of the latest Broadcom VCF licensing change, the AVS license-included service will be retired. &nbsp;Customers currently using license-included Reserved Instance (RI) SKUs will be required to purchase portable Broadcom VCF Licenses and transition to an AVS VCF BYOL SKU or exit AVS prior to August 30, 2027, to avoid service disruption on August 31, 2027.<br><br>Take Action Today:<br><br>Allow plenty of time to purchase VCF licenses from Broadcom and complete the transition to AVS VCF BYOL. For customers evaluating modernization opportunities, start assessing current AVS environments immediately, and develop a transition roadmap to ensure you have ample time to exit AVS and avoid service disruption on August 31, 2027. <br><br>Contact your account team to plan your transition.<br><br>Key Dates and Transition Details<ul data-editing-info=\"{&quot;orderedStyleType&quot;:1,&quot;unorderedStyleType&quot;:1}\"><li>August 30, 2027 Last Day of all AVS license-included services</li><li>AVS License-included RIs Microsoft allows for the exchange of Reservations with expiration dates beyond August 30, 2027</li><li>AVS License-included PayGo SKUs will retire on October 15, 2026</li><li>UPDATE AV36 SKU Retirement is now August 30, 2027</li></ul><a href=\"https://aka.ms/AVS_License-included_retirement\">Learn more</a>.<br>",
+      "status": null,
+      "created": "2026-08-18T19:52:06.2772756Z",
+      "modified": "2026-08-18T19:52:06.2772756Z",
       "locale": null,
       "availabilities": [
         {
-          "ring": "Preview",
+          "ring": "Retirement",
           "year": 2026,
           "month": "August"
         }
       ]
     },
     {
-      "id": "557775",
-      "productCategories": [],
-      "tags": [
-        "Features"
+      "id": "568952",
+      "productCategories": [
+        "Compute",
+        "Mobile",
+        "Web"
       ],
-      "products": [],
+      "tags": [
+        "Services",
+        "Feature"
+      ],
+      "products": [
+        "App Service"
+      ],
       "generalAvailabilityDate": "2026-08",
       "previewAvailabilityDate": null,
       "privatePreviewAvailabilityDate": null,
-      "title": "Generally Available: Dragon Copilot Physician Apps and Agents on Microsoft Marketplace ",
-      "description": "This release adds Microsoft Marketplace as a new discovery and procurement channel&nbsp;for Dragon Copilot AI apps and agents.&nbsp;<a href=\"https://learn.microsoft.com/en-us/industry/healthcare/dragon-copilot/about/\" rel=\"noreferrer noopener\">Dragon Copilot</a>&nbsp;customers&nbsp;in the United States&nbsp;can now&nbsp;discover,&nbsp;evaluate&nbsp;and&nbsp;purchase&nbsp;Dragon Copilot&nbsp;Physician&nbsp;Apps&nbsp;and&nbsp;Agents&nbsp;through Microsoft Marketplace.<p>Dragon Copilot&nbsp;Physician Apps&nbsp;and&nbsp;Agents&nbsp;enhance clinical workflows using advanced AI for documentation guidance, information surfacing, and task automation. These solutions&nbsp;help&nbsp;physicians&nbsp;in creating, summarizing, searching, automating, and analyzing data—helping improve efficiency,&nbsp;clinician&nbsp;wellbeing, patient experience, and care delivery. Dragon Copilot is part of&nbsp;Microsoft for&nbsp;Healthcare and is built on a modern architecture with enhanced security.</p><p></p><p>Purchasing through Microsoft Marketplace removes the need to onboard a new vendor or navigate separate procurement processes. Customers can&nbsp;acquire&nbsp;Dragon Copilot Physician Apps and Agents&nbsp;through a streamlined purchase experience with&nbsp;consolidated&nbsp;billing through Microsoft.&nbsp;<br></p>  <a href=\"https://aka.ms/mp-dragon-mslearn\" rel=\"noreferrer noopener\">Learn more</a>.<br> ",
+      "title": "Generally Available: Managed Instance on Azure App Service",
+      "description": "<p>Managed Instance on Azure App Service is now generally available.&nbsp;</p><p>Managed Instance helps organizations migrate web applications to Azure App Service with minimal configuration and no code changes. Applications running on-premises or in virtual machines can move to a fully managed PaaS environment while maintaining compatibility with Windows-specific dependencies.</p><p>Many business-critical .NET applications rely on Windows services, third-party libraries, custom runtimes, and other components that can make modernization challenging. Managed Instance enables these applications to run on Azure App Service while preserving compatibility and reducing operational overhead.</p><p>Key benefits include:</p><ul><li>Built-in App Service capabilities such as autoscale, resiliency, zone redundancy, and Azure service integration.</li><li>Administrative control through Azure Bastion-enabled RDP access, custom scripts, registry adapters, storage mounts, and identity management.</li><li>Support for complex workloads, including classic .NET Framework applications, without code changes.</li><li>Enterprise-ready capabilities, including a 99.95% SLA, Premium v4 performance, Azure Policy integration, Microsoft Defender for Cloud support, and deployment through Bicep, Terraform, and ARM templates.</li></ul><p>Get started by assessing eligible workloads with Azure Migrate and deploying through the Azure portal, Azure CLI, or infrastructure-as-code tools.</p><a href=\"https://aka.ms/MIonAppSvcGA\">Learn more</a>.<br><br>",
       "status": "Launched",
-      "created": "2026-08-17T19:37:49.0696169Z",
-      "modified": "2026-08-17T19:37:49.0696169Z",
+      "created": "2026-08-18T17:26:25.0178405Z",
+      "modified": "2026-08-18T17:26:25.0178405Z",
       "locale": null,
       "availabilities": [
         {
@@ -60,23 +67,26 @@
       ]
     },
     {
-      "id": "569376",
-      "productCategories": [],
+      "id": "569520",
+      "productCategories": [
+        "Networking",
+        "Security"
+      ],
       "tags": [
-        "Open Source",
-        "Feature"
+        "Features",
+        "Security"
       ],
       "products": [
-        "Azure Linux"
+        "Azure Firewall"
       ],
       "generalAvailabilityDate": null,
       "previewAvailabilityDate": "2026-08",
       "privatePreviewAvailabilityDate": null,
-      "title": "Public Preview: Azure Linux on WSL",
-      "description": "Azure Linux on WSL is now available in Public Preview (Beta). &nbsp;Extending Azure Linux to the developer workstation means that teams can now:<ul><li>Validate behavior using production-aligned configurations</li><li>Reproduce issues more reliably</li><li>Reduce time spent debugging cross-environment differences</li></ul><p>With WSL support, teams can now use one Microsoft-supported Linux foundation across development, testing, and production. Now you can use familiar tools such as VS Code and Git locally, then deploy to Azure targets including virtual machines, AKS, and containers.</p><p></p><p>Learn more:&nbsp;</p><ul><li><a href=\"https://aka.ms/AZLonWSLBlog\">Read the blog</a>&nbsp;</li><li><a href=\"https://learn.microsoft.com/en-us/azure/azure-linux/windows-subsystem-for-linux-overview\" title=\"https://learn.microsoft.com/en-us/azure/azure-linux/windows-subsystem-for-linux-overview\">Overview\nof Azure Linux on WSL</a>&nbsp;</li></ul><p></p>",
+      "title": "Public Preview: Ipv6 support in Azure Firewall",
+      "description": "Azure Firewall now supports IPv6 in public\npreview, enabling customers to configure Azure Firewall and Firewall Policy in\ndual-stack mode for both IPv4 and IPv6 traffic. This preview allows native IPv6\nnetwork-rule filtering and DNS Proxy support, helping organizations secure\ncloud, hybrid, and internal IPv6 traffic as they modernize toward dual-stack\narchitectures.&nbsp;<br><br><a href=\"https://learn.microsoft.com/en-us/azure/firewall/deploy-dual-stack-firewall\">Learn more</a>.",
       "status": "In preview",
-      "created": "2026-08-17T17:08:40.4876970Z",
-      "modified": "2026-08-17T17:08:40.4876970Z",
+      "created": "2026-08-18T17:25:30.3598477Z",
+      "modified": "2026-08-18T17:25:30.3598477Z",
       "locale": null,
       "availabilities": [
         {
