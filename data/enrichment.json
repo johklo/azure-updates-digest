@@ -24647,5 +24647,159 @@
       "고객은 CLI 또는 PowerShell을 통해 IPv6 주소 공간과 공용 IP를 추가하여 기존 Azure Firewall을 듀얼 스택으로 업그레이드할 수 있으며, 이를 통해 클라우드, 하이브리드 및 내부 IPv6 트래픽에 대한 보안을 강화할 수 있습니다."
     ],
     "translated_at": "2026-08-18T23:26:15.210430+00:00"
+  },
+  "569684": {
+    "summary": "Azure Databricks Lakebase is now generally available in four additional Azure regions, expanding deployment options and regional availability for customers.",
+    "key_points": [
+      "Lakebase is generally available in North Central US, France Central, Germany West Central, and East Asia regions.",
+      "This expansion provides customers with more regional deployment choices for their Lakebase workloads.",
+      "Broader regional availability helps meet data residency, compliance, and latency requirements.",
+      "Customers can now deploy Lakebase closer to their users and data sources in these new regions."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/databricks/release-notes/product/2026/august#lakebase-available-in-four-new-azure-regions",
+    "doc_title": "August 2026 - Azure Databricks",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/en-us/azure/databricks/release-notes/product/2026/august#lakebase-available-in-four-new-azure-regions"
+    ],
+    "source": "llm",
+    "updated_at": "2026-08-19T23:26:15.636445+00:00",
+    "title_ko": "Generally Available: Azure Databricks Lakebase 네 개 추가 지역에서 제공",
+    "summary_ko": "Azure Databricks Lakebase가 네 개의 추가 Azure 지역에서 Generally Available 상태로 제공되어 고객의 배포 옵션과 지역 가용성이 확대되었습니다.",
+    "key_points_ko": [
+      "Lakebase가 North Central US, France Central, Germany West Central, East Asia 지역에서 Generally Available 상태로 제공됩니다.",
+      "이번 확장으로 고객은 Lakebase 워크로드에 대해 더 다양한 지역 배포 선택권을 갖게 되었습니다.",
+      "더 넓어진 지역 가용성은 데이터 거주, 규정 준수, 지연 시간 요구 사항 충족에 도움이 됩니다.",
+      "고객은 이제 이 새로운 지역에서 사용자 및 데이터 소스와 더 가까운 곳에 Lakebase를 배포할 수 있습니다."
+    ],
+    "translated_at": "2026-08-19T23:26:58.038007+00:00"
+  },
+  "569145": {
+    "summary": "Azure SQL updates in mid-August 2026 introduce generally available features in Visual Studio Code for customizable keyboard shortcuts, free tier database provisioning, and a new SQL formatter, enhancing developer productivity and ease of database management.",
+    "key_points": [
+      "Shortcuts Configuration GA allows users to customize and manage keyboard shortcuts for Quick Queries, Query Editor, and Results Grid directly in VS Code, speeding up common database tasks.",
+      "Azure SQL Database Provisioning GA enables easy creation of free tier managed Azure SQL databases via a single-page wizard in VS Code, supporting ARM, Bicep, and Terraform deployment scripts and post-deployment actions.",
+      "New built-in SQL Formatter (preview) in VS Code formats T-SQL code on demand or on save with customizable casing, alignment, multiline formatting, and preserves comments, improving code consistency.",
+      "These updates streamline database development workflows by integrating key management and provisioning features directly into Visual Studio Code, benefiting prototyping, dev/test, and production scenarios."
+    ],
+    "doc_url": "https://devblogs.microsoft.com/azure-sql/vscode-mssql-august2026/",
+    "doc_title": "MSSQL Extension for VS Code v1.45 | Introducing SQL Formatter - Azure SQL Dev Corner",
+    "doc_read": true,
+    "links": [
+      "https://aka.ms/vscode-mssql-august2026"
+    ],
+    "source": "llm",
+    "updated_at": "2026-08-19T23:26:22.873798+00:00",
+    "title_ko": "Generally Available: 2026년 8월 중순 Azure SQL 업데이트",
+    "summary_ko": "2026년 8월 중순 Azure SQL 업데이트는 Visual Studio Code에서 사용자 지정 가능한 키보드 단축키, 무료 티어 데이터베이스 프로비저닝, 새로운 SQL 포매터 기능을 Generally Available 상태로 도입하여 개발자 생산성과 데이터베이스 관리 편의성을 향상합니다.",
+    "key_points_ko": [
+      "Shortcuts Configuration GA를 통해 사용자는 VS Code 내에서 Quick Queries, Query Editor, Results Grid의 키보드 단축키를 직접 사용자 지정 및 관리할 수 있어 일반적인 데이터베이스 작업 속도를 높입니다.",
+      "Azure SQL Database Provisioning GA는 VS Code의 단일 페이지 마법사를 통해 무료 티어 관리형 Azure SQL 데이터베이스를 쉽게 생성할 수 있으며, ARM, Bicep, Terraform 배포 스크립트와 배포 후 작업을 지원합니다.",
+      "VS Code에 새로 내장된 SQL Formatter (preview)는 T-SQL 코드를 필요 시 또는 저장 시 포맷하며, 대소문자, 정렬, 다중 행 포맷팅을 사용자 지정할 수 있고 주석을 보존하여 코드 일관성을 개선합니다.",
+      "이 업데이트들은 핵심 관리 및 프로비저닝 기능을 Visual Studio Code에 직접 통합하여 데이터베이스 개발 워크플로우를 간소화하며, 프로토타이핑, 개발/테스트, 프로덕션 시나리오에 유용합니다."
+    ],
+    "translated_at": "2026-08-19T23:27:06.631382+00:00"
+  },
+  "569155": {
+    "summary": "The MSSQL extension for VS Code v1.45 introduces a public preview of a customizable SQL Formatter for cleaner code, alongside generally available Azure SQL Database provisioning and shortcuts configuration features to streamline development and database management.",
+    "key_points": [
+      "SQL Formatter (public preview) enables on-demand or automatic formatting of T-SQL with customizable casing, alignment, multiline list formatting, and preserves comments using the ScriptDOM library.",
+      "Azure SQL Database provisioning (GA) allows developers to create free tier managed Azure SQL databases via a single-page wizard in VS Code, with post-deployment actions and exportable ARM, Bicep, and Terraform scripts.",
+      "Shortcuts Configuration (GA) offers a centralized interface to save reusable SQL queries, assign custom keybindings, and manage MSSQL commands for query editor and results view, integrated with VS Code keyboard shortcuts.",
+      "These updates improve code consistency, accelerate database setup, and enhance workflow customization for developers using the MSSQL extension in Visual Studio Code."
+    ],
+    "doc_url": "https://devblogs.microsoft.com/azure-sql/vscode-mssql-august2026/",
+    "doc_title": "MSSQL Extension for VS Code v1.45 | Introducing SQL Formatter - Azure SQL Dev Corner",
+    "doc_read": true,
+    "links": [
+      "https://aka.ms/vscode-mssql-august2026"
+    ],
+    "source": "llm",
+    "updated_at": "2026-08-19T23:26:29.697395+00:00",
+    "title_ko": "Public Preview: MSSQL 확장 기능의 SQL Formatter",
+    "summary_ko": "VS Code용 MSSQL 확장 기능 v1.45에서는 더 깔끔한 코드를 위한 사용자 지정 가능한 SQL Formatter의 Public Preview를 도입했으며, 개발 및 데이터베이스 관리를 간소화하는 Generally Available 상태의 Azure SQL Database 프로비저닝과 단축키 구성 기능도 함께 제공합니다.",
+    "key_points_ko": [
+      "SQL Formatter (public preview)는 ScriptDOM 라이브러리를 사용하여 주석을 유지하면서 대소문자, 정렬, 다중 행 목록 형식을 사용자 지정할 수 있으며, 필요에 따라 또는 자동으로 T-SQL을 포맷할 수 있습니다.",
+      "Azure SQL Database 프로비저닝 (GA)은 VS Code 내 단일 페이지 마법사를 통해 개발자가 무료 등급 관리형 Azure SQL 데이터베이스를 생성할 수 있게 하며, 배포 후 작업과 ARM, Bicep, Terraform 스크립트 내보내기를 지원합니다.",
+      "단축키 구성 (GA)은 재사용 가능한 SQL 쿼리를 저장하고, 사용자 지정 키 바인딩을 할당하며, 쿼리 편집기와 결과 보기용 MSSQL 명령을 관리할 수 있는 중앙 인터페이스를 제공하며, VS Code 키보드 단축키와 통합됩니다.",
+      "이 업데이트들은 MSSQL 확장 기능을 사용하는 개발자들의 코드 일관성을 향상시키고, 데이터베이스 설정 속도를 높이며, 워크플로우 맞춤화를 강화합니다."
+    ],
+    "translated_at": "2026-08-19T23:27:18.538929+00:00"
+  },
+  "569160": {
+    "summary": "Azure SQL Database provisioning in the MSSQL extension for VS Code is now generally available, enabling developers to create free tier managed databases directly from the editor with Infrastructure-as-Code support, improving development speed and consistency.",
+    "key_points": [
+      "Provision fully managed free tier Azure SQL Databases at no cost directly from VS Code using a single-page wizard.",
+      "Export deployment scripts in ARM, Bicep, and Terraform formats for repeatable, automated deployments across teams and environments.",
+      "Automatically add database connections post-provisioning and access connection strings and migration commands instantly to accelerate development.",
+      "Shortcuts Configuration feature is also GA, allowing users to save reusable SQL queries and customize keybindings within the MSSQL extension for improved productivity."
+    ],
+    "doc_url": "https://devblogs.microsoft.com/azure-sql/vscode-mssql-august2026/",
+    "doc_title": "MSSQL Extension for VS Code v1.45 | Introducing SQL Formatter - Azure SQL Dev Corner",
+    "doc_read": true,
+    "links": [
+      "https://aka.ms/vscode-mssql-august2026"
+    ],
+    "source": "llm",
+    "updated_at": "2026-08-19T23:26:39.403255+00:00",
+    "title_ko": "Generally Available: MSSQL 확장 프로그램에서 Azure SQL Database 프로비저닝",
+    "summary_ko": "VS Code용 MSSQL 확장 프로그램에서 Azure SQL Database 프로비저닝이 이제 Generally Available 상태로 제공되어, 개발자가 Infrastructure-as-Code 지원과 함께 에디터 내에서 무료 등급 관리형 데이터베이스를 직접 생성할 수 있어 개발 속도와 일관성을 향상합니다.",
+    "key_points_ko": [
+      "단일 페이지 마법사를 사용해 VS Code에서 비용 없이 완전 관리형 무료 등급 Azure SQL Database를 직접 프로비저닝할 수 있습니다.",
+      "ARM, Bicep, Terraform 형식의 배포 스크립트를 내보내 팀과 환경 전반에 걸쳐 반복 가능하고 자동화된 배포를 지원합니다.",
+      "프로비저닝 후 데이터베이스 연결을 자동으로 추가하며, 연결 문자열과 마이그레이션 명령을 즉시 제공해 개발 속도를 높입니다.",
+      "Shortcuts Configuration 기능도 GA로 제공되어, MSSQL 확장 내에서 재사용 가능한 SQL 쿼리를 저장하고 키 바인딩을 사용자 지정해 생산성을 향상할 수 있습니다."
+    ],
+    "translated_at": "2026-08-19T23:27:28.290603+00:00"
+  },
+  "569051": {
+    "summary": "Azure Virtual Machines now generally support vCore customization with options to disable SMT/HT and configure constrained cores, enabling optimized performance and reduced software licensing costs.",
+    "key_points": [
+      "Introduces disabling of Simultaneous Multi-Threading/Hyper-Threading (SMT/HT) for improved latency consistency and performance.",
+      "Allows selection of specific vCPU counts independent of VM size to better align with workload demands and software licensing requirements.",
+      "Available in all Azure public regions and supports VM Scale Sets with Uniform orchestration mode.",
+      "Configuration supported via Azure portal, ARM templates, CLI, and PowerShell; currently limited to first-party Azure OS images, excluding third-party licensed marketplace images."
+    ],
+    "doc_url": "",
+    "doc_title": "",
+    "doc_read": false,
+    "links": [],
+    "source": "llm",
+    "updated_at": "2026-08-19T23:26:45.056579+00:00",
+    "title_ko": "Generally Available: vCore 사용자 지정 - 멀티스레딩 비활성화 및 제약된 코어 구성 기능",
+    "summary_ko": "Azure Virtual Machines에서 이제 SMT/HT 비활성화 및 제약된 코어 구성 옵션을 포함한 vCore 사용자 지정을 Generally Available 상태로 지원하여 최적화된 성능과 소프트웨어 라이선스 비용 절감을 가능하게 합니다.",
+    "key_points_ko": [
+      "지연 시간 일관성과 성능 향상을 위해 Simultaneous Multi-Threading/Hyper-Threading(SMT/HT) 비활성화 기능을 도입했습니다.",
+      "워크로드 요구 사항과 소프트웨어 라이선스 조건에 더 잘 맞도록 VM 크기와 무관하게 특정 vCPU 수를 선택할 수 있습니다.",
+      "모든 Azure 퍼블릭 리전에서 사용 가능하며 Uniform 오케스트레이션 모드의 VM Scale Sets를 지원합니다.",
+      "Azure 포털, ARM 템플릿, CLI, PowerShell을 통해 구성이 가능하며, 현재는 서드파티 라이선스 마켓플레이스 이미지 제외한 퍼스트파티 Azure OS 이미지에 한해 지원됩니다."
+    ],
+    "translated_at": "2026-08-19T23:27:35.024191+00:00"
+  },
+  "569515": {
+    "summary": "Azure Site Recovery is now generally available with Bring Your Own NIC (BYON) capability, allowing customers to use pre-provisioned network interfaces during failover to maintain networking configurations and reserved IPs, enhancing disaster recovery control.",
+    "key_points": [
+      "BYON enables attachment of existing NICs in the target region for Azure-to-Azure test-failover and failover scenarios.",
+      "Preserves prepared networking setups and reserved IP addresses, providing greater control over disaster recovery environments.",
+      "Improves consistency and reduces configuration efforts during failover operations.",
+      "Available now for enterprise customers using Azure Site Recovery."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/site-recovery/feature-updates-whats-new#byon-bring-your-own-nic-in-azure-site-recovery",
+    "doc_title": "New feature updates in Azure Site Recovery - Azure Site Recovery",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/en-us/azure/site-recovery/feature-updates-whats-new#byon-bring-your-own-nic-in-azure-site-recovery"
+    ],
+    "source": "llm",
+    "updated_at": "2026-08-19T23:26:50.905849+00:00",
+    "title_ko": "Generally Available: Azure Site Recovery의 BYON(Bring Your Own NIC)",
+    "summary_ko": "Azure Site Recovery가 Bring Your Own NIC(BYON) 기능과 함께 Generally Available 상태로 제공되어, 고객이 장애 조치 시 사전 프로비저닝된 네트워크 인터페이스를 사용하여 네트워킹 구성과 예약된 IP를 유지할 수 있어 재해 복구 제어를 강화합니다.",
+    "key_points_ko": [
+      "BYON은 Azure-to-Azure 테스트 장애 조치 및 장애 조치 시 대상 지역에 기존 NIC를 연결할 수 있게 합니다.",
+      "준비된 네트워킹 설정과 예약된 IP 주소를 유지하여 재해 복구 환경에 대한 제어를 강화합니다.",
+      "장애 조치 작업 중 일관성을 높이고 구성 노력을 줄입니다.",
+      "현재 Azure Site Recovery를 사용하는 엔터프라이즈 고객에게 제공됩니다."
+    ],
+    "translated_at": "2026-08-19T23:27:40.808960+00:00"
   }
 }

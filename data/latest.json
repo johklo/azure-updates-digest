@@ -1,62 +1,32 @@
 {
-  "generated_at": "2026-08-18T23:25:29.313293+00:00",
-  "window_start": "2026-08-11T23:25:29.313293+00:00",
-  "window_end": "2026-08-18T23:25:29.313293+00:00",
+  "generated_at": "2026-08-19T23:26:04.084160+00:00",
+  "window_start": "2026-08-12T23:26:04.084160+00:00",
+  "window_end": "2026-08-19T23:26:04.084160+00:00",
   "window_days": 7,
-  "fetched_count": 14,
-  "matched_count": 14,
-  "count": 3,
+  "fetched_count": 16,
+  "matched_count": 16,
+  "count": 6,
   "items": [
     {
-      "id": "569535",
+      "id": "569684",
       "productCategories": [
-        "Compute"
+        "AI + machine learning",
+        "Analytics"
       ],
       "tags": [
-        "Retirements"
-      ],
-      "products": [
-        "Azure VMware Solution"
-      ],
-      "generalAvailabilityDate": null,
-      "previewAvailabilityDate": null,
-      "privatePreviewAvailabilityDate": null,
-      "title": "Retirement: Azure VMware Solution License-included service will be retired August 30, 2027",
-      "description": "In November last year <a href=\"https://techcommunity.microsoft.com/blog/azuremigrationblog/broadcom-vmware-licensing-changes-what-azure-vmware-solution-customers-need-to-k/4448784\">Broadcom changed its VMware licensing policies</a> across all hyperscaler platforms to require customers to “bring your own” portable license for VMware Cloud Foundation (VCF).<br><br>What’s changing?<br><br>On August 30, 2027, as a result of the latest Broadcom VCF licensing change, the AVS license-included service will be retired. &nbsp;Customers currently using license-included Reserved Instance (RI) SKUs will be required to purchase portable Broadcom VCF Licenses and transition to an AVS VCF BYOL SKU or exit AVS prior to August 30, 2027, to avoid service disruption on August 31, 2027.<br><br>Take Action Today:<br><br>Allow plenty of time to purchase VCF licenses from Broadcom and complete the transition to AVS VCF BYOL. For customers evaluating modernization opportunities, start assessing current AVS environments immediately, and develop a transition roadmap to ensure you have ample time to exit AVS and avoid service disruption on August 31, 2027. <br><br>Contact your account team to plan your transition.<br><br>Key Dates and Transition Details<ul data-editing-info=\"{&quot;orderedStyleType&quot;:1,&quot;unorderedStyleType&quot;:1}\"><li>August 30, 2027 Last Day of all AVS license-included services</li><li>AVS License-included RIs Microsoft allows for the exchange of Reservations with expiration dates beyond August 30, 2027</li><li>AVS License-included PayGo SKUs will retire on October 15, 2026</li><li>UPDATE AV36 SKU Retirement is now August 30, 2027</li></ul><a href=\"https://aka.ms/AVS_License-included_retirement\">Learn more</a>.<br>",
-      "status": null,
-      "created": "2026-08-18T19:52:06.2772756Z",
-      "modified": "2026-08-18T19:52:06.2772756Z",
-      "locale": null,
-      "availabilities": [
-        {
-          "ring": "Retirement",
-          "year": 2026,
-          "month": "August"
-        }
-      ]
-    },
-    {
-      "id": "568952",
-      "productCategories": [
-        "Compute",
-        "Mobile",
-        "Web"
-      ],
-      "tags": [
-        "Services",
         "Feature"
       ],
       "products": [
-        "App Service"
+        "Azure Databricks"
       ],
       "generalAvailabilityDate": "2026-08",
       "previewAvailabilityDate": null,
       "privatePreviewAvailabilityDate": null,
-      "title": "Generally Available: Managed Instance on Azure App Service",
-      "description": "<p>Managed Instance on Azure App Service is now generally available.&nbsp;</p><p>Managed Instance helps organizations migrate web applications to Azure App Service with minimal configuration and no code changes. Applications running on-premises or in virtual machines can move to a fully managed PaaS environment while maintaining compatibility with Windows-specific dependencies.</p><p>Many business-critical .NET applications rely on Windows services, third-party libraries, custom runtimes, and other components that can make modernization challenging. Managed Instance enables these applications to run on Azure App Service while preserving compatibility and reducing operational overhead.</p><p>Key benefits include:</p><ul><li>Built-in App Service capabilities such as autoscale, resiliency, zone redundancy, and Azure service integration.</li><li>Administrative control through Azure Bastion-enabled RDP access, custom scripts, registry adapters, storage mounts, and identity management.</li><li>Support for complex workloads, including classic .NET Framework applications, without code changes.</li><li>Enterprise-ready capabilities, including a 99.95% SLA, Premium v4 performance, Azure Policy integration, Microsoft Defender for Cloud support, and deployment through Bicep, Terraform, and ARM templates.</li></ul><p>Get started by assessing eligible workloads with Azure Migrate and deploying through the Azure portal, Azure CLI, or infrastructure-as-code tools.</p><a href=\"https://aka.ms/MIonAppSvcGA\">Learn more</a>.<br><br>",
+      "title": "Generally Available: Azure Databricks Lakebase in four additional regions",
+      "description": "Lakebase&nbsp;is now generally available in four additional&nbsp;Azure regions: North Central US, France Central, Germany West Central, and East Asia.&nbsp;<p lang=\"EN-US\">This expansion provides customers with additional&nbsp;deployment options and broader regional availability for Lakebase&nbsp;workloads.&nbsp;</p><p lang=\"EN-US\">The newly supported regions are:&nbsp;</p><ul><li data-leveltext=\"\" data-font=\"Symbol\" data-list=\"\" data-list-defn-props=\"{&quot;335552541&quot;:1,&quot;335559683&quot;:0,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}\" data-aria-posinset=\"1\" data-aria-level=\"1\"><p lang=\"EN-US\">North Central US (northcentralus)&nbsp;</p></li><li data-leveltext=\"\" data-font=\"Symbol\" data-list=\"\" data-list-defn-props=\"{&quot;335552541&quot;:1,&quot;335559683&quot;:0,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}\" data-aria-posinset=\"2\" data-aria-level=\"1\"><p lang=\"EN-US\">France Central (francecentral)&nbsp;</p></li><li data-leveltext=\"\" data-font=\"Symbol\" data-list=\"\" data-list-defn-props=\"{&quot;335552541&quot;:1,&quot;335559683&quot;:0,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}\" data-aria-posinset=\"3\" data-aria-level=\"1\"><p lang=\"EN-US\">Germany West Central (germanywestcentral)&nbsp;</p></li><li data-leveltext=\"\" data-font=\"Symbol\" data-list=\"\" data-list-defn-props=\"{&quot;335552541&quot;:1,&quot;335559683&quot;:0,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}\" data-aria-posinset=\"4\" data-aria-level=\"1\"><p lang=\"EN-US\">East Asia (eastasia)&nbsp;</p></li></ul><p lang=\"EN-US\"><a href=\"https://learn.microsoft.com/en-us/azure/databricks/release-notes/product/2026/august#lakebase-available-in-four-new-azure-regions\" rel=\"noreferrer noopener\">Learn more</a>. </p>",
       "status": "Launched",
-      "created": "2026-08-18T17:26:25.0178405Z",
-      "modified": "2026-08-18T17:26:25.0178405Z",
+      "created": "2026-08-19T21:04:18.6843671Z",
+      "modified": "2026-08-19T21:04:18.6843671Z",
       "locale": null,
       "availabilities": [
         {
@@ -67,30 +37,144 @@
       ]
     },
     {
-      "id": "569520",
+      "id": "569145",
       "productCategories": [
-        "Networking",
-        "Security"
+        "Databases",
+        "Hybrid + multicloud"
       ],
       "tags": [
-        "Features",
-        "Security"
+        "Feature"
       ],
       "products": [
-        "Azure Firewall"
+        "Azure SQL Database"
+      ],
+      "generalAvailabilityDate": "2026-08",
+      "previewAvailabilityDate": null,
+      "privatePreviewAvailabilityDate": null,
+      "title": "Generally Available: Azure SQL updates for mid-August 2026 ",
+      "description": "<p>In&nbsp;mid-August&nbsp;2026, the following updates and enhancements were made to Azure SQL:&nbsp;</p><ul data-editing-info=\"{&quot;orderedStyleType&quot;:1,&quot;unorderedStyleType&quot;:1}\"><li data-leveltext=\"\" data-font=\"Symbol\" data-list=\"\" data-list-defn-props=\"{&quot;335552541&quot;:1,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}\" data-aria-posinset=\"1\" data-aria-level=\"1\"><p>You can&nbsp;customize keyboard shortcuts for Quick Queries, the Results Grid, and the Query Editor directly within Visual Studio Code—without leaving your editor.&nbsp;Shortcut Configuration helps&nbsp;you complete your data tasks faster.&nbsp;</p></li></ul><p><a href=\"https://aka.ms/vscode-mssql-august2026\" rel=\"noreferrer noopener\">Learn more</a>.<br><br></p><br>",
+      "status": "Launched",
+      "created": "2026-08-19T21:01:47.4699862Z",
+      "modified": "2026-08-19T21:01:47.4699862Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "General Availability",
+          "year": 2026,
+          "month": "August"
+        }
+      ]
+    },
+    {
+      "id": "569155",
+      "productCategories": [
+        "Databases",
+        "Hybrid + multicloud"
+      ],
+      "tags": [
+        "Feature"
+      ],
+      "products": [
+        "Azure SQL Database"
       ],
       "generalAvailabilityDate": null,
       "previewAvailabilityDate": "2026-08",
       "privatePreviewAvailabilityDate": null,
-      "title": "Public Preview: Ipv6 support in Azure Firewall",
-      "description": "Azure Firewall now supports IPv6 in public\npreview, enabling customers to configure Azure Firewall and Firewall Policy in\ndual-stack mode for both IPv4 and IPv6 traffic. This preview allows native IPv6\nnetwork-rule filtering and DNS Proxy support, helping organizations secure\ncloud, hybrid, and internal IPv6 traffic as they modernize toward dual-stack\narchitectures.&nbsp;<br><br><a href=\"https://learn.microsoft.com/en-us/azure/firewall/deploy-dual-stack-firewall\">Learn more</a>.",
+      "title": "Public Preview: SQL Formatter in MSSQL extension ",
+      "description": "With&nbsp;SQL Formatter,&nbsp;you&nbsp;can&nbsp;format SQL scripts directly in your editor for cleaner, more consistent, and readable code. Now in public preview, it includes more customizable formatting options to match your preferred coding style and streamline development.&nbsp;<br>&nbsp;<br><a href=\"https://aka.ms/vscode-mssql-august2026\" rel=\"noreferrer noopener\">Learn more</a>.<br>",
       "status": "In preview",
-      "created": "2026-08-18T17:25:30.3598477Z",
-      "modified": "2026-08-18T17:25:30.3598477Z",
+      "created": "2026-08-19T21:00:19.4445006Z",
+      "modified": "2026-08-19T21:00:19.4445006Z",
       "locale": null,
       "availabilities": [
         {
           "ring": "Preview",
+          "year": 2026,
+          "month": "August"
+        }
+      ]
+    },
+    {
+      "id": "569160",
+      "productCategories": [
+        "Databases",
+        "Hybrid + multicloud"
+      ],
+      "tags": [
+        "Feature"
+      ],
+      "products": [
+        "Azure SQL Database"
+      ],
+      "generalAvailabilityDate": "2026-08",
+      "previewAvailabilityDate": null,
+      "privatePreviewAvailabilityDate": null,
+      "title": "Generally Available: Azure SQL Database provisioning in MSSQL extension ",
+      "description": "<p>With&nbsp;Azure SQL Database provisioning,&nbsp;you&nbsp;can&nbsp;create and connect to a fully managed cloud database directly from your editor—at no cost. Now generally available, the feature also includes ready-to-use&nbsp;Azure Resource Manager (ARM), Bicep, and Terraform templates for repeatable deployments, along with&nbsp;additional&nbsp;options to help you get started faster.</p><p>&nbsp;<a href=\"https://aka.ms/vscode-mssql-august2026\" rel=\"noreferrer noopener\">Learn more</a>.</p>",
+      "status": "Launched",
+      "created": "2026-08-19T20:59:19.2601578Z",
+      "modified": "2026-08-19T20:59:19.2601578Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "General Availability",
+          "year": 2026,
+          "month": "August"
+        }
+      ]
+    },
+    {
+      "id": "569051",
+      "productCategories": [
+        "Compute"
+      ],
+      "tags": [
+        "Feature"
+      ],
+      "products": [
+        "Virtual Machines"
+      ],
+      "generalAvailabilityDate": "2026-08",
+      "previewAvailabilityDate": null,
+      "privatePreviewAvailabilityDate": null,
+      "title": "Generally Available: vCore Customization: Disable Multithreading and Configurable Constrained Cores  ",
+      "description": "<p>Today, we are announcing the General Availability of VM vCore Customization for Azure Virtual Machines, introducing two new capabilities: Disable Simultaneous Multi-Threading/Hyper-Threading (SMT/HT) and Configurable Constrained Cores. These features provide greater control over virtual CPU configurations, helping customers optimize performance while reducing software licensing costs.</p><p>With VM vCore Customization, customers can now disable SMT/HT on supported VMs to provide workloads exclusive access to physical cores for improved latency consistency and performance. Customers can also select from supported vCPU counts to align with software licensing requirements or workload demands without changing the VM's memory, storage, or network bandwidth.</p><p>By decoupling active core count from VM size, organizations can deploy larger-memory or higher-bandwidth VMs while activating only the vCores they need. This is especially valuable for licensed software workloads such as SQL Server, Oracle, and SAP, where licensing costs are tied to core count.</p>VM vCore Customization is now available in all Azure public regions and includes support for Virtual Machine Scale Sets (VMSS) Uniform orchestration mode. Customers can configure these capabilities through the Azure portal, ARM templates, Azure CLI, and PowerShell. Support is currently available for first-party Azure operating system images. Marketplace images that include third-party licensing are not supported.<br>",
+      "status": "Launched",
+      "created": "2026-08-19T17:20:42.1113638Z",
+      "modified": "2026-08-19T17:20:42.1113638Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "General Availability",
+          "year": 2026,
+          "month": "August"
+        }
+      ]
+    },
+    {
+      "id": "569515",
+      "productCategories": [
+        "Management and governance",
+        "Migration"
+      ],
+      "tags": [
+        "Feature"
+      ],
+      "products": [
+        "Azure Site Recovery"
+      ],
+      "generalAvailabilityDate": "2026-08",
+      "previewAvailabilityDate": null,
+      "privatePreviewAvailabilityDate": null,
+      "title": "Generally Available: BYON (Bring Your Own NIC) in Azure Site Recovery",
+      "description": "Azure Site Recovery now lets you use and attach an existing, pre-provisioned Network Interface Card (NIC) in the target region for test-failover and failover in the Azure-to-Azure scenario. This helps preserve prepared networking configurations, reserve IPs in the target region and more, giving you greater control over the disaster recovery environment.&nbsp;<br><br><a href=\"https://learn.microsoft.com/en-us/azure/site-recovery/feature-updates-whats-new#byon-bring-your-own-nic-in-azure-site-recovery\">Learn more</a>.<br>",
+      "status": "Launched",
+      "created": "2026-08-19T16:36:30.9785659Z",
+      "modified": "2026-08-19T16:36:30.9785659Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "General Availability",
           "year": 2026,
           "month": "August"
         }
