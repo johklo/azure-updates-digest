@@ -1,7 +1,69 @@
 {
-  "updated_at": "2026-08-19T23:26:04.084160+00:00",
-  "count": 959,
+  "updated_at": "2026-08-20T23:28:43.909227+00:00",
+  "count": 961,
   "items": [
+    {
+      "id": "569743",
+      "productCategories": [
+        "Hybrid + multicloud",
+        "Networking",
+        "Security"
+      ],
+      "tags": [
+        "Features",
+        "Management",
+        "Services"
+      ],
+      "products": [
+        "Azure ExpressRoute",
+        "Virtual Network",
+        "VPN Gateway"
+      ],
+      "generalAvailabilityDate": "2026-08",
+      "previewAvailabilityDate": null,
+      "privatePreviewAvailabilityDate": null,
+      "title": "Generally Available: Summarized advertised gateway prefixes for route advertisement",
+      "description": "<p>Summarized advertised gateway\nprefixes for route advertisement is now generally available. You can specify\naggregated (summarized) prefixes for an Azure gateway to advertise to your\non-premises networks, rather than having every individual virtual network\naddress space advertised. The capability is supported on both ExpressRoute\nGateway and VPN Gateway, and covers IPv4 and IPv6 address spaces.&nbsp;&nbsp;</p><p>Large hub-and-spoke deployments\noften approach the advertised-prefix limits of ExpressRoute and VPN Gateway as\nspokes are added. Advertising a covering prefix such as 10.0.0.0/16 in place of\nhundreds of individual spoke prefixes keeps route counts well within those\nlimits and lets you keep growing an environment without re-architecting the\naddress plan or splitting virtual networks. Any spoke address space that falls\noutside the summarized prefix continues to be advertised on its own, so\nexisting connectivity is preserved when you turn the feature on.&nbsp;</p><a href=\"https://learn.microsoft.com/en-us/azure/virtual-network/advertised-gateway-prefixes-overview\">Learn\nmore</a>.<br><br>",
+      "status": "Launched",
+      "created": "2026-08-20T17:02:23.1350478Z",
+      "modified": "2026-08-20T17:02:23.1350478Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "General Availability",
+          "year": 2026,
+          "month": "August"
+        }
+      ]
+    },
+    {
+      "id": "569685",
+      "productCategories": [
+        "Management and governance"
+      ],
+      "tags": [
+        "Announcement"
+      ],
+      "products": [
+        "Azure Copilot"
+      ],
+      "generalAvailabilityDate": null,
+      "previewAvailabilityDate": null,
+      "privatePreviewAvailabilityDate": null,
+      "title": "Announcing: Azure Copilot introduces direct access to agents",
+      "description": "Starting in August 2026, customers can engage directly with Azure Copilot agents to move more quickly from questions to action.<br>With this update:<ul data-spread=\"false\"><li>Choose the right agent for your goal. Customers can select the specific agent best suited to their needs and get to the right action faster.</li><li>Agents are enabled by default. Azure Copilot agents are enabled by default for users who have access to Azure Copilot.</li><li>Admins have granular control. Global administrators can enable or disable individual agents directly from the Azure Copilot Admin Center.</li></ul><p>As of August 2026, users can directly invoke four Azure Copilot agents from the Azure Copilot chat experience: Troubleshooting, Deployment, Optimization, and Resiliency.</p><a href=\"https://aka.ms/blog-copilotagent\">Learn more</a>.<br>",
+      "status": null,
+      "created": "2026-08-20T16:08:02.9408781Z",
+      "modified": "2026-08-20T16:08:02.9408781Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "Effective",
+          "year": 2026,
+          "month": "August"
+        }
+      ]
+    },
     {
       "id": "569684",
       "productCategories": [
@@ -190,7 +252,7 @@
       "previewAvailabilityDate": null,
       "privatePreviewAvailabilityDate": null,
       "title": "Retirement: Azure VMware Solution License-included service will be retired August 30, 2027",
-      "description": "In November last year <a href=\"https://techcommunity.microsoft.com/blog/azuremigrationblog/broadcom-vmware-licensing-changes-what-azure-vmware-solution-customers-need-to-k/4448784\">Broadcom changed its VMware licensing policies</a> across all hyperscaler platforms to require customers to “bring your own” portable license for VMware Cloud Foundation (VCF).<br><br>What’s changing?<br><br>On August 30, 2027, as a result of the latest Broadcom VCF licensing change, the AVS license-included service will be retired. &nbsp;Customers currently using license-included Reserved Instance (RI) SKUs will be required to purchase portable Broadcom VCF Licenses and transition to an AVS VCF BYOL SKU or exit AVS prior to August 30, 2027, to avoid service disruption on August 31, 2027.<br><br>Take Action Today:<br><br>Allow plenty of time to purchase VCF licenses from Broadcom and complete the transition to AVS VCF BYOL. For customers evaluating modernization opportunities, start assessing current AVS environments immediately, and develop a transition roadmap to ensure you have ample time to exit AVS and avoid service disruption on August 31, 2027. <br><br>Contact your account team to plan your transition.<br><br>Key Dates and Transition Details<ul data-editing-info=\"{&quot;orderedStyleType&quot;:1,&quot;unorderedStyleType&quot;:1}\"><li>August 30, 2027 Last Day of all AVS license-included services</li><li>AVS License-included RIs Microsoft allows for the exchange of Reservations with expiration dates beyond August 30, 2027</li><li>AVS License-included PayGo SKUs will retire on October 15, 2026</li><li>UPDATE AV36 SKU Retirement is now August 30, 2027</li></ul><a href=\"https://aka.ms/AVS_License-included_retirement\">Learn more</a>.<br>",
+      "description": "In November last year,&nbsp;<a href=\"https://techcommunity.microsoft.com/blog/azuremigrationblog/broadcom-vmware-licensing-changes-what-azure-vmware-solution-customers-need-to-k/4448784\">Broadcom changed its VMware licensing policies</a> across all hyperscaler platforms to require customers to “bring your own” portable license for VMware Cloud Foundation (VCF).<br><br><b>What’s changing?</b><br><br>On August 30, 2027, as a result of the latest Broadcom VCF licensing change, the AVS license-included service will be retired. &nbsp;Customers currently using license-included Reserved Instance (RI) SKUs will be required to purchase portable Broadcom VCF Licenses and transition to an AVS VCF BYOL SKU or exit AVS prior to August 30, 2027, to avoid service disruption on August 31, 2027.<br><br><b>Take Action Today:</b><br><br>Allow plenty of time to purchase VCF licenses from Broadcom and complete the transition to AVS VCF BYOL. For customers evaluating modernization opportunities, start assessing current AVS environments immediately, and develop a transition roadmap to ensure you have ample time to exit AVS and avoid service disruption on August 31, 2027. <br><br>Contact your account team to plan your transition.<br><br><b>Key Dates and Transition Details:</b><ul data-editing-info=\"{&quot;orderedStyleType&quot;:1,&quot;unorderedStyleType&quot;:1}\"><li>August 30, 2027 Last Day of all AVS license-included services</li><li>AVS License-included RIs Microsoft allows for the exchange of Reservations with expiration dates beyond August 30, 2027</li><li>AVS License-included PayGo SKUs will retire on October 31, 2026</li><li>UPDATE AV36 SKU Retirement is now August 30, 2027</li></ul><a href=\"https://aka.ms/AVS_License-included_retirement\">Learn more</a>.<br>",
       "status": null,
       "created": "2026-08-18T19:52:06.2772756Z",
       "modified": "2026-08-18T19:52:06.2772756Z",
