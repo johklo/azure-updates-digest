@@ -1,73 +1,10 @@
 {
-  "generated_at": "2026-08-20T23:28:43.909227+00:00",
-  "window_start": "2026-08-13T23:28:43.909227+00:00",
-  "window_end": "2026-08-20T23:28:43.909227+00:00",
+  "generated_at": "2026-08-21T23:27:37.222822+00:00",
+  "window_start": "2026-08-14T23:27:37.222822+00:00",
+  "window_end": "2026-08-21T23:27:37.222822+00:00",
   "window_days": 7,
-  "fetched_count": 15,
-  "matched_count": 15,
-  "count": 2,
-  "items": [
-    {
-      "id": "569743",
-      "productCategories": [
-        "Hybrid + multicloud",
-        "Networking",
-        "Security"
-      ],
-      "tags": [
-        "Features",
-        "Management",
-        "Services"
-      ],
-      "products": [
-        "Azure ExpressRoute",
-        "Virtual Network",
-        "VPN Gateway"
-      ],
-      "generalAvailabilityDate": "2026-08",
-      "previewAvailabilityDate": null,
-      "privatePreviewAvailabilityDate": null,
-      "title": "Generally Available: Summarized advertised gateway prefixes for route advertisement",
-      "description": "<p>Summarized advertised gateway\nprefixes for route advertisement is now generally available. You can specify\naggregated (summarized) prefixes for an Azure gateway to advertise to your\non-premises networks, rather than having every individual virtual network\naddress space advertised. The capability is supported on both ExpressRoute\nGateway and VPN Gateway, and covers IPv4 and IPv6 address spaces.&nbsp;&nbsp;</p><p>Large hub-and-spoke deployments\noften approach the advertised-prefix limits of ExpressRoute and VPN Gateway as\nspokes are added. Advertising a covering prefix such as 10.0.0.0/16 in place of\nhundreds of individual spoke prefixes keeps route counts well within those\nlimits and lets you keep growing an environment without re-architecting the\naddress plan or splitting virtual networks. Any spoke address space that falls\noutside the summarized prefix continues to be advertised on its own, so\nexisting connectivity is preserved when you turn the feature on.&nbsp;</p><a href=\"https://learn.microsoft.com/en-us/azure/virtual-network/advertised-gateway-prefixes-overview\">Learn\nmore</a>.<br><br>",
-      "status": "Launched",
-      "created": "2026-08-20T17:02:23.1350478Z",
-      "modified": "2026-08-20T17:02:23.1350478Z",
-      "locale": null,
-      "availabilities": [
-        {
-          "ring": "General Availability",
-          "year": 2026,
-          "month": "August"
-        }
-      ]
-    },
-    {
-      "id": "569685",
-      "productCategories": [
-        "Management and governance"
-      ],
-      "tags": [
-        "Announcement"
-      ],
-      "products": [
-        "Azure Copilot"
-      ],
-      "generalAvailabilityDate": null,
-      "previewAvailabilityDate": null,
-      "privatePreviewAvailabilityDate": null,
-      "title": "Announcing: Azure Copilot introduces direct access to agents",
-      "description": "Starting in August 2026, customers can engage directly with Azure Copilot agents to move more quickly from questions to action.<br>With this update:<ul data-spread=\"false\"><li>Choose the right agent for your goal. Customers can select the specific agent best suited to their needs and get to the right action faster.</li><li>Agents are enabled by default. Azure Copilot agents are enabled by default for users who have access to Azure Copilot.</li><li>Admins have granular control. Global administrators can enable or disable individual agents directly from the Azure Copilot Admin Center.</li></ul><p>As of August 2026, users can directly invoke four Azure Copilot agents from the Azure Copilot chat experience: Troubleshooting, Deployment, Optimization, and Resiliency.</p><a href=\"https://aka.ms/blog-copilotagent\">Learn more</a>.<br>",
-      "status": null,
-      "created": "2026-08-20T16:08:02.9408781Z",
-      "modified": "2026-08-20T16:08:02.9408781Z",
-      "locale": null,
-      "availabilities": [
-        {
-          "ring": "Effective",
-          "year": 2026,
-          "month": "August"
-        }
-      ]
-    }
-  ]
+  "fetched_count": 14,
+  "matched_count": 14,
+  "count": 0,
+  "items": []
 }
