@@ -1,10 +1,132 @@
 {
-  "generated_at": "2026-08-23T23:24:54.486760+00:00",
-  "window_start": "2026-08-16T23:24:54.486760+00:00",
-  "window_end": "2026-08-23T23:24:54.486760+00:00",
+  "generated_at": "2026-08-24T23:25:20.657516+00:00",
+  "window_start": "2026-08-17T23:25:20.657516+00:00",
+  "window_end": "2026-08-24T23:25:20.657516+00:00",
   "window_days": 7,
-  "fetched_count": 14,
-  "matched_count": 14,
-  "count": 0,
-  "items": []
+  "fetched_count": 15,
+  "matched_count": 15,
+  "count": 4,
+  "items": [
+    {
+      "id": "569526",
+      "productCategories": [
+        "Databases",
+        "Hybrid + multicloud"
+      ],
+      "tags": [
+        "Announcement"
+      ],
+      "products": [
+        "Azure Database for PostgreSQL"
+      ],
+      "generalAvailabilityDate": null,
+      "previewAvailabilityDate": null,
+      "privatePreviewAvailabilityDate": null,
+      "title": "Announcing: Extended Support for Azure Database for PostgreSQL Flexible Server ",
+      "description": "Extended Support for Azure Database for PostgreSQL Flexible Server helps you maintain&nbsp;secure, supported workloads while transitioning to newer PostgreSQL versions. With access to critical security updates, critical bug fixes, and technical support for eligible versions after community support ends, you can upgrade on&nbsp;your timeline with greater flexibility and confidence.&nbsp;<br><p><a href=\"https://learn.microsoft.com/azure/postgresql/configure-maintain/extended-support\" rel=\"noreferrer noopener\">Learn more</a>.</p>",
+      "status": null,
+      "created": "2026-08-24T19:15:05.0204585Z",
+      "modified": "2026-08-24T19:15:05.0204585Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "Effective",
+          "year": 2026,
+          "month": "August"
+        }
+      ]
+    },
+    {
+      "id": "569873",
+      "productCategories": [
+        "Compute",
+        "Containers"
+      ],
+      "tags": [
+        "Features",
+        "Microsoft Build",
+        "Services"
+      ],
+      "products": [
+        "Azure Kubernetes Service (AKS)"
+      ],
+      "generalAvailabilityDate": "2026-06",
+      "previewAvailabilityDate": null,
+      "privatePreviewAvailabilityDate": null,
+      "title": "Generally Available: eBPF host routing in Advanced Container Networking Services for AKS",
+      "description": "<div style=\"font-family: Arial; font-size: 10pt;\"><p style=\"font-size: 11pt; font-family: Calibri, sans-serif; margin: 9pt 0in; background: white;\"><span style=\"color: black;\">eBPF Host Routing in Advanced\nContainer Networking Services for Azure Kubernetes Service (AKS) is now\ngenerally available.&nbsp;</span></p><p style=\"font-size: 11pt; font-family: Calibri, sans-serif; margin: 9pt 0in; background: white;\"><span style=\"color: black;\">eBPF Host Routing improves\nKubernetes networking performance by moving packet forwarding and routing\ndecisions directly into the Linux kernel using eBPF. This removes the overhead\nof iptables-based processing and reduces dependence on the host networking\nstack, resulting in lower latency, fewer network hops, and higher throughput\nfor application traffic. For large-scale AKS deployments, eBPF Host Routing\nhelps deliver more efficient network performance, improved scalability, and a\nbetter experience for latency-sensitive and high-traffic workloads.&nbsp;</span></p></div><div style=\"font-family: Arial; font-size: 10pt;\"><span style=\"font-size: 11pt; font-family: Calibri, sans-serif; color: black;\">This release also\nintroduces an enhanced enablement experience that respects existing network\nconnections during rollout. When eBPF Host Routing is enabled on an existing\ncluster, AKS performs a controlled node rotation to transition nodes to the new\nnetworking mode, helping maintain connection continuity and minimize disruption\nto running applications.</span><br></div><div style=\"font-family: Arial; font-size: 10pt;\"><br></div><div style=\"\"><font face=\"Calibri, sans-serif\" style=\"color: rgb(0, 0, 0);\"><span style=\"font-size: 14.6667px;\"><a href=\"https://aka.ms/acns/ebpfhostrouting\">Learn more</a>.</span></font></div>",
+      "status": "Launched",
+      "created": "2026-08-24T18:36:01.7715232Z",
+      "modified": "2026-08-24T18:36:01.7715232Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "General Availability",
+          "year": 2026,
+          "month": "June"
+        }
+      ]
+    },
+    {
+      "id": "567334",
+      "productCategories": [
+        "Compute",
+        "Mobile",
+        "Web"
+      ],
+      "tags": [
+        "Retirements"
+      ],
+      "products": [
+        "App Service"
+      ],
+      "generalAvailabilityDate": null,
+      "previewAvailabilityDate": null,
+      "privatePreviewAvailabilityDate": null,
+      "title": "Retirement: Support for Node 22 LTS ends on April 30, 2027",
+      "description": "<p>On April 30 2027, support for Node 22 LTS will end. Your apps that are hosted on App\nService will continue to run, but security updates will no longer be available,\nand we’ll no longer provide customer service for Node 22 LTS. </p><p><b>Required action:&nbsp;</b></p><p>To\navoid potential security vulnerabilities and minimize risk for your App Service\napps, <a href=\"https://aka.ms/nodeversion\">follow the steps to upgrade your app to Node 24 LTS\nbefore April 30, 2027.</a>&nbsp;</p><a href=\"https://learn.microsoft.com/azure/app-service/language-support-policy\">Learn\nmore</a>.&nbsp;<br>",
+      "status": null,
+      "created": "2026-08-24T17:30:43.3459834Z",
+      "modified": "2026-08-24T17:30:43.3459834Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "Retirement",
+          "year": 2027,
+          "month": "April"
+        }
+      ]
+    },
+    {
+      "id": "569504",
+      "productCategories": [
+        "Networking",
+        "Security"
+      ],
+      "tags": [
+        "Security",
+        "Feature"
+      ],
+      "products": [
+        "Application Gateway",
+        "Web Application Firewall"
+      ],
+      "generalAvailabilityDate": "2026-08",
+      "previewAvailabilityDate": null,
+      "privatePreviewAvailabilityDate": null,
+      "title": "Generally Available: Custom block response code and body for Application Gateway WAF ",
+      "description": "<p>Announcing the&nbsp;General&nbsp;Availability&nbsp;of custom block response code and body for WAF integrated with Application&nbsp;Gateway&nbsp;</p><p>Azure WAF&nbsp;integrated with Application&nbsp;Gateway&nbsp;now supports customizable response status codes and bodies for blocked requests, enabling greater flexibility and&nbsp;control.&nbsp;</p><p>By default, when the WAF blocks a request due to a matched rule, it returns a&nbsp;403 status&nbsp;code with a \"The request is blocked\" message.&nbsp;As with&nbsp;WAF with Azure Front&nbsp;Door,&nbsp;now&nbsp;customers can&nbsp;also&nbsp;define a custom response status code and message&nbsp;with Application Gateway&nbsp;when WAF blocks a request.&nbsp;This customization is a policy-level setting, ensuring that all blocked requests receive the same custom response status and message.&nbsp;</p><p>For further details, please reach out to the Azure WAF product team.</p><p></p><p><a href=\"https://learn.microsoft.com/en-us/azure/web-application-firewall/ag/configure-custom-response-code\">Learn\nmore</a>.&nbsp;&nbsp;</p><p></p>",
+      "status": "Launched",
+      "created": "2026-08-24T17:25:03.0751952Z",
+      "modified": "2026-08-24T17:25:03.0751952Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "General Availability",
+          "year": 2026,
+          "month": "August"
+        }
+      ]
+    }
+  ]
 }

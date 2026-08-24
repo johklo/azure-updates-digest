@@ -24853,5 +24853,110 @@
       "이번 업데이트는 핵심 에이전트에 대해 추가 요금 없이 기존 가격 모델을 유지하며, 관측 에이전트는 사용량 기반 청구를 계속 적용합니다."
     ],
     "translated_at": "2026-08-20T23:29:14.828215+00:00"
+  },
+  "569526": {
+    "summary": "Azure Database for PostgreSQL Flexible Server now offers Extended Support to provide critical security updates and technical support for eligible PostgreSQL versions after community support ends, enabling customers to upgrade on their own timeline with confidence.",
+    "key_points": [
+      "Provides critical security updates, bug fixes, and Azure technical support for PostgreSQL versions after community support ends, excluding new features or minor version upgrades.",
+      "Automatically enrolls eligible servers running unsupported PostgreSQL versions into Extended Support starting August 1, 2026, with a one-month grace period for versions 11, 12, and 13.",
+      "Extended Support billing applies only to running servers and stops once the server is upgraded to a supported PostgreSQL version; customers cannot opt out without upgrading.",
+      "Designed as a temporary bridge to maintain secure, compliant workloads while planning upgrades to newer PostgreSQL versions like 15 or 16 for improved performance and support."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/postgresql/configure-maintain/extended-support",
+    "doc_title": "Extended Support in Azure Database for PostgreSQL Flexible Server - Azure Database for PostgreSQL",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/azure/postgresql/configure-maintain/extended-support"
+    ],
+    "source": "llm",
+    "updated_at": "2026-08-24T23:25:31.621194+00:00",
+    "title_ko": "Announcing: Azure Database for PostgreSQL Flexible Server의 Extended Support 제공",
+    "summary_ko": "Azure Database for PostgreSQL Flexible Server가 Extended Support를 제공하여 커뮤니티 지원 종료 후에도 해당 PostgreSQL 버전에 대해 중요한 보안 업데이트와 기술 지원을 제공함으로써 고객이 자신만의 일정에 맞춰 안심하고 업그레이드할 수 있도록 지원합니다.",
+    "key_points_ko": [
+      "커뮤니티 지원 종료 후에도 새로운 기능이나 마이너 버전 업그레이드는 제외하고 PostgreSQL 버전에 대해 중요한 보안 업데이트, 버그 수정 및 Azure 기술 지원을 제공합니다.",
+      "2026년 8월 1일부터 지원되지 않는 PostgreSQL 버전을 실행하는 적격 서버를 자동으로 Extended Support에 등록하며, 버전 11, 12, 13에 대해서는 한 달의 유예 기간을 제공합니다.",
+      "Extended Support 요금은 실행 중인 서버에만 적용되며, 서버가 지원되는 PostgreSQL 버전으로 업그레이드되면 요금 부과가 중지됩니다; 고객은 업그레이드 없이 선택 해제가 불가능합니다.",
+      "성능 및 지원 향상을 위해 PostgreSQL 15 또는 16과 같은 최신 버전으로 업그레이드를 계획하는 동안 보안과 규정 준수를 유지할 수 있도록 설계된 임시 다리 역할을 합니다."
+    ],
+    "translated_at": "2026-08-24T23:25:55.583466+00:00"
+  },
+  "569873": {
+    "summary": "eBPF Host Routing in Advanced Container Networking Services for AKS is now generally available, enhancing Kubernetes networking performance by bypassing iptables and improving latency, throughput, and scalability for large-scale and latency-sensitive workloads.",
+    "key_points": [
+      "Capability: Moves packet forwarding and routing into the Linux kernel using eBPF, bypassing iptables to reduce latency, CPU usage, and network hops.",
+      "Availability: Generally available for AKS clusters running Ubuntu 24.04 or Azure Linux 3.0 nodes; not supported on Windows nodes, Confidential VMs, Pod Sandboxing, or hybrid node scenarios.",
+      "Customer Impact: Enables better network performance and scalability for high-throughput, real-time, and AI/ML workloads with a controlled node rotation rollout to maintain connection continuity.",
+      "Limitations: Cannot be enabled selectively per node; incompatible with Static Egress Gateway and Istio Ambient with ACNS Performance mode; iptables rules in host namespace are blocked when enabled."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/aks/container-network-performance-ebpf-host-routing",
+    "doc_title": "eBPF Host Routing with Advanced Container Networking Services (ACNS) - Azure Kubernetes Service",
+    "doc_read": true,
+    "links": [
+      "https://aka.ms/acns/ebpfhostrouting"
+    ],
+    "source": "llm",
+    "updated_at": "2026-08-24T23:25:38.315317+00:00",
+    "title_ko": "Generally Available: AKS용 Advanced Container Networking Services의 eBPF 호스트 라우팅",
+    "summary_ko": "AKS용 Advanced Container Networking Services의 eBPF 호스트 라우팅이 Generally Available 상태로 제공되어 iptables를 우회함으로써 Kubernetes 네트워킹 성능을 향상시키고, 대규모 및 지연 시간에 민감한 워크로드에 대해 지연 시간, 처리량, 확장성을 개선합니다.",
+    "key_points_ko": [
+      "기능: eBPF를 사용해 패킷 전달 및 라우팅을 Linux 커널로 이동시켜 iptables를 우회함으로써 지연 시간, CPU 사용량, 네트워크 홉 수를 줄입니다.",
+      "가용성: Ubuntu 24.04 또는 Azure Linux 3.0 노드에서 실행되는 AKS 클러스터에 Generally Available로 제공되며, Windows 노드, Confidential VM, Pod Sandboxing, 하이브리드 노드 시나리오에서는 지원되지 않습니다.",
+      "고객 영향: 노드 교체를 제어하여 연결 연속성을 유지하면서 고처리량, 실시간, AI/ML 워크로드에 대해 더 나은 네트워크 성능과 확장성을 제공합니다.",
+      "제한 사항: 노드별로 선택적 활성화가 불가능하며, Static Egress Gateway 및 ACNS Performance 모드의 Istio Ambient과 호환되지 않고, 활성화 시 호스트 네임스페이스의 iptables 규칙이 차단됩니다."
+    ],
+    "translated_at": "2026-08-24T23:26:02.360281+00:00"
+  },
+  "567334": {
+    "summary": "Support for Node 22 LTS on Azure App Service will end on April 30, 2027, requiring customers to upgrade to Node 24 LTS to maintain security and support.",
+    "key_points": [
+      "Node 22 LTS will no longer receive security updates or customer support after April 30, 2027.",
+      "Apps running on Node 22 LTS will continue to operate but may be vulnerable to security risks.",
+      "Customers must upgrade their App Service apps to Node 24 LTS before the retirement date to avoid potential vulnerabilities.",
+      "This change aligns with Azure App Service's language runtime support policy to ensure secure and supported environments."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/app-service/language-support-policy",
+    "doc_title": "Language Runtime Support Policy - Azure App Service",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/azure/app-service/language-support-policy",
+      "https://aka.ms/nodeversion"
+    ],
+    "source": "llm",
+    "updated_at": "2026-08-24T23:25:43.338559+00:00",
+    "title_ko": "Retirement: Node 22 LTS 지원이 2027년 4월 30일에 종료됩니다",
+    "summary_ko": "Azure App Service에서 Node 22 LTS에 대한 지원이 2027년 4월 30일에 종료되며, 고객은 보안 및 지원 유지를 위해 Node 24 LTS로 업그레이드해야 합니다.",
+    "key_points_ko": [
+      "Node 22 LTS는 2027년 4월 30일 이후로 보안 업데이트 및 고객 지원을 받지 못합니다.",
+      "Node 22 LTS에서 실행 중인 앱은 계속 작동하지만 보안 위험에 노출될 수 있습니다.",
+      "고객은 잠재적 취약점을 방지하기 위해 Retirement 이전에 App Service 앱을 Node 24 LTS로 업그레이드해야 합니다.",
+      "이 변경 사항은 안전하고 지원되는 환경을 보장하기 위해 Azure App Service의 언어 런타임 지원 정책과 일치합니다."
+    ],
+    "translated_at": "2026-08-24T23:26:07.053076+00:00"
+  },
+  "569504": {
+    "summary": "Azure Web Application Firewall (WAF) on Application Gateway is now generally available with the ability to customize block response status codes and bodies, providing customers greater control over blocked request handling.",
+    "key_points": [
+      "Supports custom response status codes (e.g., 200, 429) and messages for blocked requests at the WAF policy level.",
+      "Available for Azure WAF integrated with Application Gateway, excluding Application Gateway for Containers WAF.",
+      "Limits include up to 20 WAF policies with custom responses per Application Gateway and a 32 KB max size for response bodies.",
+      "Custom block response bodies must be base64 encoded when configured via Azure Resource Manager API."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/web-application-firewall/ag/configure-custom-response-code",
+    "doc_title": "Configure a Custom Response for Azure Application Gateway - Azure Web Application Firewall",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/en-us/azure/web-application-firewall/ag/configure-custom-response-code"
+    ],
+    "source": "llm",
+    "updated_at": "2026-08-24T23:25:48.467307+00:00",
+    "title_ko": "Generally Available: Application Gateway WAF용 맞춤 차단 응답 코드 및 본문",
+    "summary_ko": "Azure Web Application Firewall(WAF) on Application Gateway가 차단 응답 상태 코드와 본문을 맞춤 설정할 수 있는 기능과 함께 Generally Available 상태로 제공되어, 고객이 차단된 요청 처리에 대해 더 큰 제어권을 가질 수 있습니다.",
+    "key_points_ko": [
+      "WAF 정책 수준에서 차단된 요청에 대해 맞춤 응답 상태 코드(예: 200, 429)와 메시지를 지원합니다.",
+      "Application Gateway와 통합된 Azure WAF에 대해 제공되며, Application Gateway for Containers WAF는 제외됩니다.",
+      "제한 사항으로는 Application Gateway당 맞춤 응답을 가진 WAF 정책이 최대 20개까지 가능하며, 응답 본문 크기는 최대 32KB입니다.",
+      "맞춤 차단 응답 본문은 Azure Resource Manager API를 통해 구성할 때 base64로 인코딩되어야 합니다."
+    ],
+    "translated_at": "2026-08-24T23:26:13.200420+00:00"
   }
 }
