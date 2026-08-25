@@ -24958,5 +24958,63 @@
       "맞춤 차단 응답 본문은 Azure Resource Manager API를 통해 구성할 때 base64로 인코딩되어야 합니다."
     ],
     "translated_at": "2026-08-24T23:26:13.200420+00:00"
+  },
+  "569910": {
+    "summary": "Aspire 13.5 enhances the developer experience by refreshing the dashboard, expanding interaction capabilities, supporting cross-scope Azure references and Kubernetes persistent volumes, and integrating live terminals within the apphost.",
+    "key_points": [
+      "Dashboard and aspire.dev refreshed with improved log filtering, telemetry, and health-check handling for better usability.",
+      "Interaction Service expanded with file import support, progress dialogs, and named arguments enabling richer, integrated developer workflows.",
+      "Live terminals added inside the dashboard allowing interactive terminal sessions with multi-viewer support, simplifying management of REPLs and shells.",
+      "Support for Kubernetes persistent volumes and cross-scope Azure resource references added, enabling more accurate infrastructure modeling and resource sharing.",
+      "Aspire CLI now available via multiple package managers (Homebrew, WinGet, npm, Nix, mise, NuGet) for easier installation and updates."
+    ],
+    "doc_url": "https://devblogs.microsoft.com/aspire/whats-new-aspire-13-5/",
+    "doc_title": "Aspire 13.5: Fresh pixels and better workflows | Aspire Blog",
+    "doc_read": true,
+    "links": [
+      "https://devblogs.microsoft.com/aspire/whats-new-aspire-13-5/"
+    ],
+    "source": "llm",
+    "updated_at": "2026-08-25T23:27:53.729238+00:00",
+    "title_ko": "Announcing: Aspire 13.5 출시",
+    "summary_ko": "Aspire 13.5는 대시보드 새로고침, 상호작용 기능 확장, 크로스 스코프 Azure 참조 및 Kubernetes 영구 볼륨 지원, 그리고 앱호스트 내 라이브 터미널 통합을 통해 개발자 경험을 향상합니다.",
+    "key_points_ko": [
+      "대시보드와 aspire.dev가 로그 필터링, 텔레메트리, 헬스 체크 처리 개선으로 사용성을 높여 새로워졌습니다.",
+      "Interaction Service가 파일 가져오기 지원, 진행 대화상자, 명명된 인수 기능을 추가해 더 풍부하고 통합된 개발자 워크플로우를 가능하게 했습니다.",
+      "대시보드 내에 라이브 터미널이 추가되어 다중 뷰어 지원과 함께 대화형 터미널 세션을 제공하며 REPL 및 셸 관리를 단순화합니다.",
+      "Kubernetes 영구 볼륨과 크로스 스코프 Azure 리소스 참조 지원이 추가되어 보다 정확한 인프라 모델링과 리소스 공유가 가능해졌습니다.",
+      "Aspire CLI가 Homebrew, WinGet, npm, Nix, mise, NuGet 등 여러 패키지 관리자를 통해 제공되어 설치와 업데이트가 더욱 편리해졌습니다."
+    ],
+    "translated_at": "2026-08-25T23:28:08.244329+00:00"
+  },
+  "569546": {
+    "summary": "Azure has made 248 and 372 vCPU D/E v7 series VMs generally available, offering up to 20% better compute performance and enhanced networking and storage capabilities to support larger, latency-sensitive workloads.",
+    "key_points": [
+      "New Dlsv7, Dsv7, and Esv7 VMs scale up to 372 vCPUs and 2.8 TiB memory, enabling larger in-memory databases and agentic AI workloads.",
+      "Up to 400 Gbps networking bandwidth and up to 800k IOPS with 20 GBps throughput to remote storage on 372 vCPU Esv7/Edsv7 sizes.",
+      "Improved local NVMe storage performance with up to 9.6M IOPS and 53 GBps throughput on 372 vCPU Ddsv7/Edsv7 sizes.",
+      "These VM sizes are now generally available in multiple regions including Central US, East US, Germany West Central, and Sweden Central."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/general-purpose/dsv7-series?tabs=sizebasic",
+    "doc_title": "Dsv7 size series - Azure Virtual Machines",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/general-purpose/dsv7-series?tabs=sizebasic",
+      "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/general-purpose/ddsv7-series?tabs=sizebasic",
+      "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/general-purpose/dlsv7-series?tabs=sizebasic",
+      "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/general-purpose/dldsv7-series?tabs=sizebasic",
+      "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/memory-optimized/esv7-series?tabs=sizebasic"
+    ],
+    "source": "llm",
+    "updated_at": "2026-08-25T23:28:00.647070+00:00",
+    "title_ko": "Generally Available: D/E v7 시리즈 VM용 Azure 248 및 372 vCPU 크기",
+    "summary_ko": "Azure는 248 및 372 vCPU D/E v7 시리즈 VM을 Generally Available 상태로 제공하며, 최대 20% 향상된 컴퓨트 성능과 강화된 네트워킹 및 스토리지 기능으로 더 크고 지연 시간에 민감한 워크로드를 지원합니다.",
+    "key_points_ko": [
+      "새로운 Dlsv7, Dsv7, 및 Esv7 VM은 최대 372 vCPU와 2.8 TiB 메모리까지 확장되어 더 큰 인메모리 데이터베이스와 에이전틱 AI 워크로드를 가능하게 합니다.",
+      "372 vCPU Esv7/Edsv7 크기에서 최대 400 Gbps 네트워킹 대역폭과 최대 800k IOPS, 원격 스토리지에 20 GBps 처리량을 제공합니다.",
+      "372 vCPU Ddsv7/Edsv7 크기에서 최대 9.6M IOPS와 53 GBps 처리량으로 향상된 로컬 NVMe 스토리지 성능을 지원합니다.",
+      "이 VM 크기는 Central US, East US, Germany West Central, Sweden Central 등 여러 지역에서 Generally Available 상태로 제공됩니다."
+    ],
+    "translated_at": "2026-08-25T23:28:15.197244+00:00"
   }
 }
