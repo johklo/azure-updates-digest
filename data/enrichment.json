@@ -25016,5 +25016,161 @@
       "이 VM 크기는 Central US, East US, Germany West Central, Sweden Central 등 여러 지역에서 Generally Available 상태로 제공됩니다."
     ],
     "translated_at": "2026-08-25T23:28:15.197244+00:00"
+  },
+  "570020": {
+    "summary": "Azure Bastion now generally supports setting expiration dates on shareable links to enhance security by limiting persistent access to resources.",
+    "key_points": [
+      "Administrators can specify date and time expiration for each shareable link when created.",
+      "Expired links become unusable, preventing further connections to the target resource.",
+      "Feature requires Azure Bastion Standard SKU and must be enabled in the Bastion configuration.",
+      "Supports up to 500 shareable links per Bastion resource and 50 requests (create/delete) at a time."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/bastion/shareable-link",
+    "doc_title": "Create a shareable link for Azure Bastion",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/en-us/azure/bastion/shareable-link"
+    ],
+    "source": "llm",
+    "updated_at": "2026-08-27T04:25:32.522591+00:00",
+    "title_ko": "Generally Available: Azure Bastion 공유 링크 만료 기능",
+    "summary_ko": "Azure Bastion은 이제 공유 링크에 만료 날짜를 설정할 수 있어 리소스에 대한 지속적인 접근을 제한함으로써 보안을 강화합니다.",
+    "key_points_ko": [
+      "관리자는 공유 링크 생성 시 각 링크에 대해 날짜와 시간 만료를 지정할 수 있습니다.",
+      "만료된 링크는 더 이상 사용할 수 없으며 대상 리소스에 대한 추가 연결을 차단합니다.",
+      "이 기능은 Azure Bastion Standard SKU가 필요하며 Bastion 구성에서 활성화해야 합니다.",
+      "Bastion 리소스당 최대 500개의 공유 링크를 지원하며 한 번에 50개의 요청(생성/삭제)을 처리할 수 있습니다."
+    ],
+    "translated_at": "2026-08-27T04:26:16.318336+00:00"
+  },
+  "570025": {
+    "summary": "Azure Bastion now supports IPv4 and IPv6 dual-stack configurations in public preview, enabling users to connect via IPv6 while maintaining IPv4 connections to target VMs, enhancing connectivity options.",
+    "key_points": [
+      "Dual-stack support allows new Bastion deployments to have both IPv4 and IPv6 public IP addresses; existing IPv4-only deployments cannot be converted.",
+      "IPv6 is supported only for user-to-Bastion connections; Bastion-to-VM connections remain IPv4.",
+      "Dual-stack requires virtual networks and AzureBastionSubnet configured for IPv6 dual stack and compatible VM network interfaces.",
+      "IPv6 is not supported on Private-only Bastion deployments or between Bastion and target VMs."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/bastion/configuration-settings",
+    "doc_title": "About Azure Bastion configuration settings",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/en-us/azure/bastion/configuration-settings"
+    ],
+    "source": "llm",
+    "updated_at": "2026-08-27T04:25:38.904019+00:00",
+    "title_ko": "Public Preview: Azure Bastion의 IPv6 듀얼 스택 지원",
+    "summary_ko": "Azure Bastion이 이제 Public Preview로 IPv4와 IPv6 듀얼 스택 구성을 지원하여 사용자가 IPv6를 통해 연결하면서도 대상 VM에 대한 IPv4 연결을 유지할 수 있어 연결 옵션이 향상되었습니다.",
+    "key_points_ko": [
+      "듀얼 스택 지원은 새로운 Bastion 배포에 IPv4 및 IPv6 공용 IP 주소를 모두 할당할 수 있게 하며, 기존의 IPv4 전용 배포는 변환할 수 없습니다.",
+      "IPv6는 사용자에서 Bastion으로의 연결에만 지원되며, Bastion에서 VM으로의 연결은 여전히 IPv4입니다.",
+      "듀얼 스택은 IPv6 듀얼 스택용으로 구성된 가상 네트워크와 AzureBastionSubnet, 그리고 호환 가능한 VM 네트워크 인터페이스가 필요합니다.",
+      "IPv6는 Private-only Bastion 배포나 Bastion과 대상 VM 간 연결에서는 지원되지 않습니다."
+    ],
+    "translated_at": "2026-08-27T04:26:29.221318+00:00"
+  },
+  "570030": {
+    "summary": "Azure Bastion now generally supports secure, seamless connections to AKS clusters, enabling safer Kubernetes management without exposing private endpoints or needing extra infrastructure.",
+    "key_points": [
+      "Enables secure tunneling from local machines to AKS cluster API servers via Azure Bastion.",
+      "Eliminates the need for jump boxes, VPNs, or additional access agents by using native client tunneling.",
+      "Requires Standard or Premium Bastion SKU with native client support and appropriate network permissions.",
+      "Improves security posture by avoiding public exposure of private AKS cluster endpoints while maintaining standard Kubernetes tool usage."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/bastion/bastion-connect-to-aks-private-cluster",
+    "doc_title": "Connect to AKS Private Cluster Using Azure Bastion - Azure Bastion",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/en-us/azure/bastion/bastion-connect-to-aks-private-cluster"
+    ],
+    "source": "llm",
+    "updated_at": "2026-08-27T04:25:46.531412+00:00",
+    "title_ko": "Generally Available: Azure Bastion을 통한 AKS 클러스터 연결",
+    "summary_ko": "Azure Bastion이 이제 Generally Available 상태로 AKS 클러스터에 대한 안전하고 원활한 연결을 지원하여, 프라이빗 엔드포인트를 노출하거나 추가 인프라 없이도 Kubernetes 관리를 보다 안전하게 할 수 있습니다.",
+    "key_points_ko": [
+      "Azure Bastion을 통해 로컬 머신에서 AKS 클러스터 API 서버로의 안전한 터널링을 가능하게 합니다.",
+      "네이티브 클라이언트 터널링을 사용하여 점프 박스, VPN 또는 추가 액세스 에이전트가 필요하지 않습니다.",
+      "네이티브 클라이언트 지원과 적절한 네트워크 권한이 포함된 Standard 또는 Premium Bastion SKU가 필요합니다.",
+      "표준 Kubernetes 도구 사용을 유지하면서 프라이빗 AKS 클러스터 엔드포인트의 공개 노출을 방지하여 보안 태세를 향상시킵니다."
+    ],
+    "translated_at": "2026-08-27T04:26:36.952618+00:00"
+  },
+  "569690": {
+    "summary": "Azure SRE Agent now offers Live Reports in Public Preview, enabling operations teams to generate and maintain dynamic, up-to-date operational views directly from conversations, improving efficiency and decision-making.",
+    "key_points": [
+      "Live Reports automatically create and update operational dashboards from SRE Agent conversations.",
+      "Reports refresh on a user-defined daily, weekly, or monthly schedule with the latest environment data.",
+      "Supports tracking of incidents, service health, operational trends, and recurring investigations.",
+      "Provides teams with consistent, shareable, and always-current insights to accelerate informed decisions."
+    ],
+    "doc_url": "https://aka.ms/sre-agent-live-report",
+    "doc_title": "",
+    "doc_read": false,
+    "links": [
+      "https://aka.ms/sre-agent-live-report"
+    ],
+    "source": "llm",
+    "updated_at": "2026-08-27T04:25:52.275038+00:00",
+    "title_ko": "Public Preview: Azure SRE Agent용 Live Reports 소개",
+    "summary_ko": "Azure SRE Agent가 이제 Public Preview로 Live Reports를 제공하여 운영 팀이 대화에서 직접 동적이고 최신의 운영 뷰를 생성하고 유지할 수 있어 효율성과 의사결정을 향상합니다.",
+    "key_points_ko": [
+      "Live Reports는 SRE Agent 대화에서 운영 대시보드를 자동으로 생성하고 업데이트합니다.",
+      "보고서는 사용자가 정의한 일간, 주간 또는 월간 일정에 따라 최신 환경 데이터로 새로 고쳐집니다.",
+      "사건, 서비스 상태, 운영 추세 및 반복 조사 추적을 지원합니다.",
+      "팀에 일관되고 공유 가능하며 항상 최신 상태의 인사이트를 제공하여 신속한 정보 기반 의사결정을 돕습니다."
+    ],
+    "translated_at": "2026-08-27T04:26:43.470426+00:00"
+  },
+  "569695": {
+    "summary": "Azure SRE Agent VNet Integration is now generally available, enabling the agent to securely operate within customer virtual networks to access private resources without changing network boundaries, enhancing security and compliance.",
+    "key_points": [
+      "VNet integration allows Azure SRE Agent to function within existing network controls like NSGs, private DNS, and firewalls.",
+      "Supports secure access to private resources behind private endpoints during incident investigation and remediation.",
+      "Includes new network audit capabilities to inspect outbound network activity and policy decisions from the Azure SRE Agent portal.",
+      "Requires a dedicated subnet (/27 or larger) delegated to Microsoft.App/environments in the same region as the agent."
+    ],
+    "doc_url": "https://techcommunity.microsoft.com/blog/appsonazureblog/azure-sre-agent-vnet-integration-is-now-generally-available/4549774",
+    "doc_title": "Azure SRE Agent VNet integration is now generally available | Microsoft Community Hub",
+    "doc_read": true,
+    "links": [
+      "https://aka.ms/sre-agent-vnet"
+    ],
+    "source": "llm",
+    "updated_at": "2026-08-27T04:26:01.871087+00:00",
+    "title_ko": "Generally Available: Azure SRE Agent VNet 통합",
+    "summary_ko": "Azure SRE Agent VNet 통합이 이제 Generally Available 상태로 제공되어, 에이전트가 고객 가상 네트워크 내에서 안전하게 작동하며 네트워크 경계를 변경하지 않고도 프라이빗 리소스에 접근할 수 있어 보안과 컴플라이언스를 강화합니다.",
+    "key_points_ko": [
+      "VNet 통합을 통해 Azure SRE Agent가 NSG, 프라이빗 DNS, 방화벽과 같은 기존 네트워크 제어 내에서 작동할 수 있습니다.",
+      "사고 조사 및 복구 시 프라이빗 엔드포인트 뒤에 있는 프라이빗 리소스에 대한 안전한 접근을 지원합니다.",
+      "Azure SRE Agent 포털에서 아웃바운드 네트워크 활동 및 정책 결정 사항을 검사할 수 있는 새로운 네트워크 감사 기능이 포함되어 있습니다.",
+      "에이전트와 동일한 지역에 Microsoft.App/environments에 위임된 전용 서브넷(/27 이상)이 필요합니다."
+    ],
+    "translated_at": "2026-08-27T04:26:55.830908+00:00"
+  },
+  "569760": {
+    "summary": "Azure SRE Agent is now generally available with a 30-day trial allowing new customers to explore its operational capabilities without baseline charges, paying only for actual agent work, enabling easier root cause analysis, alert automation, and operational risk management.",
+    "key_points": [
+      "New customers can start a 30-day trial to create and connect Azure SRE Agents without always-on baseline charges.",
+      "Agents can investigate root causes, automate alert responses, and monitor operational risks across multiple data sources and tools.",
+      "The trial supports integrations with Azure Monitor, Datadog, Dynatrace, PagerDuty, GitHub, ServiceNow, Jira, and Azure DevOps.",
+      "Customers pay only for Azure Agent Units consumed during agent work, allowing cost-effective exploration of SRE automation capabilities."
+    ],
+    "doc_url": "https://developer.microsoft.com/blog/try-azure-sre-agent-with-no-always-on-charges/",
+    "doc_title": "Try Azure SRE Agent with no always-on charges - Microsoft for Developers",
+    "doc_read": true,
+    "links": [
+      "https://aka.ms/sre-agent-trial"
+    ],
+    "source": "llm",
+    "updated_at": "2026-08-27T04:26:08.415258+00:00",
+    "title_ko": "Generally Available: Azure SRE Agent 30-Day Trial",
+    "summary_ko": "Azure SRE Agent가 이제 Generally Available 상태로 30일 평가판을 제공하여 신규 고객이 기본 요금 없이 운영 기능을 탐색할 수 있으며, 실제 에이전트 작업에 대해서만 비용을 지불하여 근본 원인 분석, 알림 자동화 및 운영 위험 관리를 보다 쉽게 수행할 수 있습니다.",
+    "key_points_ko": [
+      "신규 고객은 30일 평가판을 시작하여 항상 켜져 있는 기본 요금 없이 Azure SRE Agent를 생성하고 연결할 수 있습니다.",
+      "에이전트는 여러 데이터 소스와 도구 전반에서 근본 원인 조사, 알림 대응 자동화 및 운영 위험 모니터링을 수행할 수 있습니다.",
+      "평가판은 Azure Monitor, Datadog, Dynatrace, PagerDuty, GitHub, ServiceNow, Jira 및 Azure DevOps와의 통합을 지원합니다.",
+      "고객은 에이전트 작업 중 소비된 Azure Agent Units에 대해서만 비용을 지불하여 SRE 자동화 기능을 비용 효율적으로 탐색할 수 있습니다."
+    ],
+    "translated_at": "2026-08-27T04:27:04.965907+00:00"
   }
 }

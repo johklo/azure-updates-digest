@@ -1,7 +1,175 @@
 {
-  "updated_at": "2026-08-25T23:27:43.288921+00:00",
-  "count": 967,
+  "updated_at": "2026-08-27T04:25:13.557729+00:00",
+  "count": 973,
   "items": [
+    {
+      "id": "570020",
+      "productCategories": [
+        "Networking",
+        "Security"
+      ],
+      "tags": [
+        "Features",
+        "Security"
+      ],
+      "products": [
+        "Azure Bastion"
+      ],
+      "generalAvailabilityDate": "2026-08",
+      "previewAvailabilityDate": null,
+      "privatePreviewAvailabilityDate": null,
+      "title": "Generally Available: Azure Bastion shareable link expiration ",
+      "description": "<p>Azure Bastion shareable link expiration is now generally\navailable. When creating a shareable link, administrators can specify the date\nand time when the link should expire.&nbsp;</p><p>After the configured expiration time, the link can no longer\nbe used to connect to the target resource. This helps organizations limit\npersistent access and better manage temporary connections provided through\nAzure Bastion.&nbsp;</p><p><a href=\"https://learn.microsoft.com/en-us/azure/bastion/shareable-link\">Learn more</a>.</p>",
+      "status": "Launched",
+      "created": "2026-08-26T16:57:56.4461092Z",
+      "modified": "2026-08-26T16:57:56.4461092Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "General Availability",
+          "year": 2026,
+          "month": "August"
+        }
+      ]
+    },
+    {
+      "id": "570025",
+      "productCategories": [
+        "Networking",
+        "Security"
+      ],
+      "tags": [
+        "Features",
+        "Security"
+      ],
+      "products": [
+        "Azure Bastion"
+      ],
+      "generalAvailabilityDate": null,
+      "previewAvailabilityDate": "2026-08",
+      "privatePreviewAvailabilityDate": null,
+      "title": "Public Preview: IPv6 dual-stack support for Azure Bastion",
+      "description": "<p>Azure Bastion support for IPv4 and IPv6 dual-stack\nconfigurations is now available in public preview. Customers can configure a\nnewly created Bastion deployment with both IPv4 and IPv6 public IP addresses.&nbsp;</p><p>IPv6 is supported for connections between the user and Azure\nBastion. Connections from Azure Bastion to target virtual machines continue to\nuse IPv4. Existing IPv4-only Bastion deployments cannot currently be converted\nto dual stack.&nbsp;</p><a href=\"https://learn.microsoft.com/en-us/azure/bastion/configuration-settings\">Learn more</a>.",
+      "status": "In preview",
+      "created": "2026-08-26T16:56:29.1432127Z",
+      "modified": "2026-08-26T16:56:29.1432127Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "Preview",
+          "year": 2026,
+          "month": "August"
+        }
+      ]
+    },
+    {
+      "id": "570030",
+      "productCategories": [
+        "Networking",
+        "Security",
+        "Compute",
+        "Containers"
+      ],
+      "tags": [
+        "Features",
+        "Security"
+      ],
+      "products": [
+        "Azure Bastion",
+        "Azure Kubernetes Service (AKS)"
+      ],
+      "generalAvailabilityDate": "2026-08",
+      "previewAvailabilityDate": null,
+      "privatePreviewAvailabilityDate": null,
+      "title": "Generally Available: Connect to AKS clusters using Azure Bastion",
+      "description": "<p>Azure Bastion integration with Azure Kubernetes Service is\nnow generally available. Customers can establish a secure tunnel from their\nlocal machine through Azure Bastion to an AKS cluster API server.&nbsp;</p>The integration enables customers to use\nstandard Kubernetes tools while avoiding public exposure of private cluster\nendpoints. It reduces the need to deploy and maintain separate jump boxes, VPN\nservers, or additional access agents.<br><br><a href=\"https://learn.microsoft.com/en-us/azure/bastion/bastion-connect-to-aks-private-cluster\">Learn more</a>.",
+      "status": "Launched",
+      "created": "2026-08-26T16:55:25.4584262Z",
+      "modified": "2026-08-26T16:55:25.4584262Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "General Availability",
+          "year": 2026,
+          "month": "August"
+        }
+      ]
+    },
+    {
+      "id": "569690",
+      "productCategories": [],
+      "tags": [
+        "Features",
+        "Services"
+      ],
+      "products": [],
+      "generalAvailabilityDate": null,
+      "previewAvailabilityDate": "2026-08",
+      "privatePreviewAvailabilityDate": null,
+      "title": "Public Preview: Introducing Live Reports for Azure SRE Agent",
+      "description": "We're excited to announce Live Reports, now in Public Preview for Azure SRE Agent. <br>Live Reports help operations teams create dynamic operational views directly from SRE Agent conversations and keep them continuously up to date with the latest data from connected environments. <br><br>Instead of manually rebuilding dashboards or collecting information across multiple tools, teams can use Azure SRE Agent to automatically generate the report and return to it anytime, with fresh data surfaced on a daily, weekly or monthly cadence that you define. <br><br>Whether you're tracking incidents, service health, operational trends, or recurring investigations, Live Reports provide a consistent, shareable, and always-current view that helps teams make faster, more informed decisions.<br><br><a href=\"https://aka.ms/sre-agent-live-report\">Learn more</a>.<br>",
+      "status": "In preview",
+      "created": "2026-08-26T16:52:23.4483775Z",
+      "modified": "2026-08-26T16:52:23.4483775Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "Preview",
+          "year": 2026,
+          "month": "August"
+        }
+      ]
+    },
+    {
+      "id": "569695",
+      "productCategories": [],
+      "tags": [
+        "Features",
+        "Security",
+        "Services"
+      ],
+      "products": [],
+      "generalAvailabilityDate": "2026-08",
+      "previewAvailabilityDate": null,
+      "privatePreviewAvailabilityDate": null,
+      "title": "Generally Available: Azure SRE Agent VNet Integration ",
+      "description": "Azure SRE Agent VNet Integration is now generally available. VNet integration enables Azure SRE Agent to operate within your existing network controls, including Network Security Groups (NSGs), private DNS, and firewall policies, etc.&nbsp;<br><br>With VNet support, the agent can securely access private resources, including services behind private endpoints, during incident investigation and remediation without requiring changes to your network boundary.&nbsp;<br><br>This capability helps organizations extend Azure SRE Agent into security-sensitive environments while maintaining existing networking, security, and compliance controls.<br><br><a href=\"https://aka.ms/sre-agent-vnet\">Learn more</a>.<br>",
+      "status": "Launched",
+      "created": "2026-08-26T16:51:31.9579567Z",
+      "modified": "2026-08-26T16:51:31.9579567Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "General Availability",
+          "year": 2026,
+          "month": "August"
+        }
+      ]
+    },
+    {
+      "id": "569760",
+      "productCategories": [],
+      "tags": [
+        "Pricing & Offerings"
+      ],
+      "products": [],
+      "generalAvailabilityDate": "2026-08",
+      "previewAvailabilityDate": null,
+      "privatePreviewAvailabilityDate": null,
+      "title": "Generally Available: Azure SRE Agent 30-Day Trial",
+      "description": "New customers can now get started with Azure SRE Agent through a 30-day trial experience. During the trial, customers can create SRE Agents and connect them to your operational tools and data sources, and explore capabilities at their own pace without baseline always-on charges.<p>Customers pay only for Azure Agent Units (AAUs) consumed when agents perform work.</p><p>Here are a few practical ways developers, SREs, and IT operations teams can use the 30-day trial:&nbsp;</p><ul><li data-leveltext=\"\" data-font=\"Symbol\" data-list=\"\" data-list-defn-props=\"{&quot;335552541&quot;:1,&quot;335559683&quot;:0,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}\" data-aria-posinset=\"1\" data-aria-level=\"1\"><p>Investigate a root cause:&nbsp;Let the agent work across alerts, logs, metrics, traces, Azure resource state, code, and recent deployments to build a&nbsp;likely root&nbsp;cause and suggest a mitigation.&nbsp;</p></li><li data-leveltext=\"\" data-font=\"Symbol\" data-list=\"\" data-list-defn-props=\"{&quot;335552541&quot;:1,&quot;335559683&quot;:0,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}\" data-aria-posinset=\"2\" data-aria-level=\"1\"><p>Automate alert response:&nbsp;Trigger investigations from Azure Monitor, Datadog, Dynatrace, or PagerDuty and guide the response with your team's existing runbooks and practices.&nbsp;</p></li><li data-leveltext=\"\" data-font=\"Symbol\" data-list=\"\" data-list-defn-props=\"{&quot;335552541&quot;:1,&quot;335559683&quot;:0,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}\" data-aria-posinset=\"3\" data-aria-level=\"1\"><p>Get ahead of operational risks:&nbsp;Run post-deployment health checks,&nbsp;monitor&nbsp;certificate&nbsp;expiration, detect configuration drift, review costs, or support compliance checks.&nbsp;</p></li><li data-leveltext=\"\" data-font=\"Symbol\" data-list=\"\" data-list-defn-props=\"{&quot;335552541&quot;:1,&quot;335559683&quot;:0,&quot;335559684&quot;:-2,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}\" data-aria-posinset=\"4\" data-aria-level=\"1\"><p>Close the loop:&nbsp;Have your agent send evidence, root cause, mitigation, and follow-up work to GitHub, ServiceNow, Jira, or Azure DevOps.&nbsp;</p></li></ul><a href=\"https://aka.ms/sre-agent-trial\">Learn more</a>.<br>",
+      "status": "Launched",
+      "created": "2026-08-26T16:50:22.5734515Z",
+      "modified": "2026-08-26T16:50:22.5734515Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "General Availability",
+          "year": 2026,
+          "month": "August"
+        }
+      ]
+    },
     {
       "id": "569910",
       "productCategories": [],
