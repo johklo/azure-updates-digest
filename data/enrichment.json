@@ -25172,5 +25172,60 @@
       "고객은 에이전트 작업 중 소비된 Azure Agent Units에 대해서만 비용을 지불하여 SRE 자동화 기능을 비용 효율적으로 탐색할 수 있습니다."
     ],
     "translated_at": "2026-08-27T04:27:04.965907+00:00"
+  },
+  "570120": {
+    "summary": "Azure Files CSI driver for AKS now supports workload identity for SMB shares, enabling pod-level least-privilege access and enhanced security for regulated workloads.",
+    "key_points": [
+      "Enables pod-level authentication to Azure Files SMB shares using workload identity, avoiding storage account keys.",
+      "Provides granular, least-privilege access control scoped to application pods rather than nodes.",
+      "Available in all Azure regions supporting Azure Files and AKS, enhancing security compliance for regulated industries.",
+      "Supports dynamic provisioning of persistent volumes with built-in storage classes for HDD and SSD Azure Files shares."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-gb/azure/aks/create-volume-azure-files#use-workload-identity-to-access-azure-files-storage",
+    "doc_title": "Create and Manage Persistent Volumes with Azure Files in Azure Kubernetes Service (AKS) - Azure Kubernetes Service",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/en-gb/azure/aks/create-volume-azure-files#use-workload-identity-to-access-azure-files-storage",
+      "https://learn.microsoft.com/en-gb/entra/workload-id/workload-identities-overview"
+    ],
+    "source": "llm",
+    "updated_at": "2026-08-29T04:04:30.448533+00:00",
+    "title_ko": "Generally Available: Azure Files CSI 드라이버(SMB)의 워크로드 아이덴티티 지원",
+    "summary_ko": "AKS용 Azure Files CSI 드라이버가 이제 SMB 공유에 대해 워크로드 아이덴티티를 지원하여, 파드 수준의 최소 권한 액세스와 규제된 워크로드에 대한 보안 강화를 제공합니다.",
+    "key_points_ko": [
+      "워크로드 아이덴티티를 사용해 Azure Files SMB 공유에 파드 수준 인증을 가능하게 하여 스토리지 계정 키 사용을 피합니다.",
+      "노드가 아닌 애플리케이션 파드에 범위를 한정한 세분화된 최소 권한 액세스 제어를 제공합니다.",
+      "Azure Files와 AKS를 지원하는 모든 Azure 지역에서 제공되어 규제 산업의 보안 컴플라이언스를 강화합니다.",
+      "HDD 및 SSD Azure Files 공유용 내장 스토리지 클래스를 통한 퍼시스턴트 볼륨의 동적 프로비저닝을 지원합니다."
+    ],
+    "translated_at": "2026-08-29T04:04:43.794286+00:00"
+  },
+  "570105": {
+    "summary": "Azure VM Image Builder is now generally available in sovereign and air-gapped clouds, enabling secure, consistent, and automated image customization across regulated and isolated environments.",
+    "key_points": [
+      "Available in Azure Government, China North 3, Azure Government Secret, and Azure Government Top Secret clouds.",
+      "Provides a fully managed, secure service to automate image customization without the need to manage build infrastructure.",
+      "Supports consistent image pipelines across global Azure and sovereign clouds, facilitating compliance and standardization.",
+      "Enables image distribution via Azure Compute Gallery with regional replication, supporting regulated industries and workloads with strict data residency and sovereignty requirements."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/virtual-machines/image-builder-overview",
+    "doc_title": "Azure VM Image Builder overview - Azure Virtual Machines",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/azure/virtual-machines/image-builder-overview",
+      "https://learn.microsoft.com/azure/virtual-machines/linux/image-builder-json",
+      "https://github.com/Azure/azvmimagebuilder/tree/main/quickquickstarts"
+    ],
+    "source": "llm",
+    "updated_at": "2026-08-29T04:04:35.879367+00:00",
+    "title_ko": "Generally Available: 주권 및 에어갭 클라우드에서 Azure VM Image Builder",
+    "summary_ko": "Azure VM Image Builder가 주권 및 에어갭 클라우드에서 Generally Available 상태로 제공되어, 규제되고 격리된 환경 전반에서 안전하고 일관되며 자동화된 이미지 커스터마이징을 지원합니다.",
+    "key_points_ko": [
+      "Azure Government, China North 3, Azure Government Secret, Azure Government Top Secret 클라우드에서 사용 가능.",
+      "빌드 인프라 관리를 필요로 하지 않는 완전 관리형 보안 서비스로 이미지 커스터마이징 자동화 제공.",
+      "글로벌 Azure 및 주권 클라우드 전반에 걸쳐 일관된 이미지 파이프라인 지원으로 컴플라이언스 및 표준화 촉진.",
+      "지역 복제를 지원하는 Azure Compute Gallery를 통한 이미지 배포 가능, 엄격한 데이터 거주 및 주권 요구사항이 있는 규제 산업 및 워크로드 지원."
+    ],
+    "translated_at": "2026-08-29T04:04:50.467935+00:00"
   }
 }
