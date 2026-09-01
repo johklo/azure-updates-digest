@@ -25227,5 +25227,58 @@
       "지역 복제를 지원하는 Azure Compute Gallery를 통한 이미지 배포 가능, 엄격한 데이터 거주 및 주권 요구사항이 있는 규제 산업 및 워크로드 지원."
     ],
     "translated_at": "2026-08-29T04:04:50.467935+00:00"
+  },
+  "569711": {
+    "summary": "Azure introduces per-disk resiliency in public preview, allowing VMs to continue running when individual data disks lose connectivity, improving application availability without requiring VM restarts.",
+    "key_points": [
+      "Per-disk resiliency detaches only the affected data disk during connectivity issues, keeping the VM and other disks operational.",
+      "Currently in public preview in select regions and must be enabled per managed data disk; OS disks retain default VM restart behavior.",
+      "Ideal for workloads where a single data disk failure should not impact the entire VM, such as clustered apps, containerized workloads, and backup disks.",
+      "Limitations include unsupported VMs created before August 15, 2026, no support for Write Accelerator VMs, and the setting is not preserved by VM restore or backup operations."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/virtual-machines/disks-per-disk-resiliency",
+    "doc_title": "Improve workload availability with per-disk resiliency (preview) - Azure Virtual Machines",
+    "doc_read": true,
+    "links": [
+      "https://aka.ms/perdiskresilliency"
+    ],
+    "source": "llm",
+    "updated_at": "2026-09-01T01:43:50.196947+00:00",
+    "title_ko": "Public Preview: Azure VM용 디스크별 복원력",
+    "summary_ko": "Azure가 디스크별 복원력을 Public Preview로 도입하여 개별 데이터 디스크 연결이 끊겨도 VM이 계속 실행되도록 지원하며, VM 재시작 없이 애플리케이션 가용성을 향상합니다.",
+    "key_points_ko": [
+      "디스크별 복원력은 연결 문제 시 영향을 받은 데이터 디스크만 분리하여 VM과 다른 디스크는 정상 작동 상태를 유지합니다.",
+      "현재 일부 지역에서 Public Preview로 제공되며 관리형 데이터 디스크별로 활성화해야 하고, OS 디스크는 기본 VM 재시작 동작을 유지합니다.",
+      "클러스터형 애플리케이션, 컨테이너화된 워크로드, 백업 디스크 등 단일 데이터 디스크 장애가 전체 VM에 영향을 주지 않아야 하는 워크로드에 적합합니다.",
+      "제한 사항으로 2026년 8월 15일 이전 생성된 VM은 지원하지 않으며, Write Accelerator VM은 지원하지 않고, VM 복원 또는 백업 시 설정이 유지되지 않습니다."
+    ],
+    "translated_at": "2026-09-01T01:44:01.042743+00:00"
+  },
+  "570364": {
+    "summary": "Azure Multicloud Interconnect is now in public preview, offering managed private connectivity between Azure and supported cloud providers like AWS to simplify and secure multicloud deployments.",
+    "key_points": [
+      "Provides private, high-throughput cloud-to-cloud connectivity using Azure ExpressRoute as the foundation.",
+      "Simplifies deployment with a guided onboarding experience and automated provisioning via activation keys.",
+      "Built-in resiliency with redundant infrastructure and MACsec-enabled physical links ensures high availability for mission-critical workloads.",
+      "Currently supports Amazon Web Services (AWS) as the first cloud provider in preview, enabling seamless connection of Azure VNets with AWS VPCs."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/multicloud-interconnect/overview",
+    "doc_title": "What is Azure Multicloud Interconnect Preview?",
+    "doc_read": true,
+    "links": [
+      "https://aka.ms/AzureMulticloudInterconnect_learn",
+      "https://aka.ms/MulticloudInterconnect-blog"
+    ],
+    "source": "llm",
+    "updated_at": "2026-09-01T01:43:54.792088+00:00",
+    "title_ko": "Public Preview: Azure Multicloud Interconnect",
+    "summary_ko": "Azure Multicloud Interconnect가 Public Preview로 제공되며, Azure와 AWS 같은 지원되는 클라우드 공급자 간의 관리형 프라이빗 연결을 제공하여 멀티클라우드 배포를 간소화하고 보안을 강화합니다.",
+    "key_points_ko": [
+      "Azure ExpressRoute를 기반으로 하는 프라이빗 고처리량 클라우드 간 연결을 제공합니다.",
+      "가이드 온보딩 경험과 활성화 키를 통한 자동 프로비저닝으로 배포를 간소화합니다.",
+      "중복 인프라와 MACsec 지원 물리적 링크를 통한 내장된 복원력으로 미션 크리티컬 워크로드에 높은 가용성을 보장합니다.",
+      "현재 프리뷰에서 첫 번째 클라우드 공급자로 Amazon Web Services (AWS)를 지원하며, Azure VNet과 AWS VPC 간의 원활한 연결을 가능하게 합니다."
+    ],
+    "translated_at": "2026-09-01T01:44:04.657694+00:00"
   }
 }

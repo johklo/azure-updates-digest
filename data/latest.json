@@ -1,10 +1,68 @@
 {
-  "generated_at": "2026-08-31T01:13:15.416105+00:00",
-  "window_start": "2026-08-24T01:13:15.416105+00:00",
-  "window_end": "2026-08-31T01:13:15.416105+00:00",
+  "generated_at": "2026-09-01T01:43:34.008034+00:00",
+  "window_start": "2026-08-25T01:43:34.008034+00:00",
+  "window_end": "2026-09-01T01:43:34.008034+00:00",
   "window_days": 7,
-  "fetched_count": 14,
-  "matched_count": 14,
-  "count": 0,
-  "items": []
+  "fetched_count": 12,
+  "matched_count": 12,
+  "count": 2,
+  "items": [
+    {
+      "id": "569711",
+      "productCategories": [
+        "Storage"
+      ],
+      "tags": [
+        "Feature"
+      ],
+      "products": [
+        "Azure Disk Storage"
+      ],
+      "generalAvailabilityDate": null,
+      "previewAvailabilityDate": "2026-08",
+      "privatePreviewAvailabilityDate": null,
+      "title": "Public Preview: Per-disk resiliency for Azure VMs",
+      "description": "Azure automatically recovers a VM when it loses access to an attached managed disk for an extended period. The VM is shut down and powered back on after disk connectivity is restored, with no customer action required. This remains the default behavior.<br><br>Now in public preview in select regions, per-disk resiliency provides another option for applications that can tolerate the temporary loss of an individual data disk. When enabled, Azure detaches and takes only the affected disk offline while the VM and its remaining disks continue running. Once disk connectivity is restored, Azure automatically attaches and brings the disk back online.<br><br>Use per-disk resiliency where a single data disk is not a single point of failure:<br><ol data-editing-info=\"{&quot;orderedStyleType&quot;:1,&quot;unorderedStyleType&quot;:1}\"><li>Production VMs with backup or auxiliary disks, so a secondary disk issue does not interrupt the primary workload.</li><li>Clustered and shared-disk applications with their own high-availability or failover logic.<br></li><li>Containerized workloads with per-pod disks, so one persistent volume can recover without disrupting other pods on the node.</li></ol>Per-disk resiliency is opt-in for each Azure Managed Disk. While a data disk is offline, I/Os to it returns errors, so the application must continue without that disk until&nbsp;access is restored. OS disks continue to use the default VM shut down recovery behavior.<p>Available now in public preview in select regions.&nbsp;</p><p><a href=\"https://aka.ms/perdiskresilliency\">Learn more</a>.</p>",
+      "status": "In preview",
+      "created": "2026-08-31T23:11:39.7892384Z",
+      "modified": "2026-08-31T23:11:39.7892384Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "Preview",
+          "year": 2026,
+          "month": "August"
+        }
+      ]
+    },
+    {
+      "id": "570364",
+      "productCategories": [
+        "Hybrid + multicloud",
+        "Networking"
+      ],
+      "tags": [
+        "Services"
+      ],
+      "products": [
+        "Azure ExpressRoute"
+      ],
+      "generalAvailabilityDate": null,
+      "previewAvailabilityDate": "2026-08",
+      "privatePreviewAvailabilityDate": null,
+      "title": "Public Preview: Azure Multicloud Interconnect",
+      "description": "<p>Announcing the public preview of Azure Multicloud Interconnect, a managed service that provides private connectivity between Azure and supported cloud providers, with Amazon Web Services (AWS) available as the first supported provider in preview.&nbsp;</p><p>As organizations increasingly distribute applications, data, AI services, and business-critical workloads across multiple clouds, establishing and operating cloud-to-cloud connectivity can become complex and operationally intensive. Azure Multicloud Interconnect helps simplify this experience by providing a managed connectivity solution that reduces deployment complexity while delivering resilient private, high-performance connectivity between Azure and supported cloud environments.</p><p>With Azure Multicloud Interconnect, you can deploy a multicloud connection directly from the Azure portal, select your cloud provider, region, and bandwidth, and onboard your environment through a guided experience. Once provisioned, you can connect Azure virtual networks and supported cloud-provider virtual networks through a private cloud-to-cloud connection, helping streamline operations and accelerate multicloud deployments.</p><p>Key highlights:</p><ul data-editing-info=\"{&quot;orderedStyleType&quot;:1,&quot;unorderedStyleType&quot;:1}\"><li>Managed private connectivity between Azure and supported cloud providers</li><li>Simplified deployment and onboarding</li><li>Built-in resiliency designed for mission-critical workloads</li></ul><p>Learn more:&nbsp;</p><ul><li>Read the&nbsp;<a href=\"https://aka.ms/AzureMulticloudInterconnect_learn\">documentation</a>&nbsp;</li><li>Read the&nbsp;<a href=\"https://aka.ms/MulticloudInterconnect-blog\">announcement blog</a>&nbsp;</li></ul><br>",
+      "status": "In preview",
+      "created": "2026-08-31T18:36:12.3628022Z",
+      "modified": "2026-08-31T18:36:12.3628022Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "Preview",
+          "year": 2026,
+          "month": "August"
+        }
+      ]
+    }
+  ]
 }
