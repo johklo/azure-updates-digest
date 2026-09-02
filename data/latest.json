@@ -1,64 +1,269 @@
 {
-  "generated_at": "2026-09-01T01:43:34.008034+00:00",
-  "window_start": "2026-08-25T01:43:34.008034+00:00",
-  "window_end": "2026-09-01T01:43:34.008034+00:00",
+  "generated_at": "2026-09-02T00:54:06.223885+00:00",
+  "window_start": "2026-08-26T00:54:06.223885+00:00",
+  "window_end": "2026-09-02T00:54:06.223885+00:00",
   "window_days": 7,
-  "fetched_count": 12,
-  "matched_count": 12,
-  "count": 2,
+  "fetched_count": 19,
+  "matched_count": 19,
+  "count": 9,
   "items": [
     {
-      "id": "569711",
+      "id": "570282",
       "productCategories": [
-        "Storage"
+        "Containers"
       ],
       "tags": [
         "Feature"
       ],
       "products": [
-        "Azure Disk Storage"
+        "Azure Container Apps"
       ],
-      "generalAvailabilityDate": null,
-      "previewAvailabilityDate": "2026-08",
+      "generalAvailabilityDate": "2026-07",
+      "previewAvailabilityDate": null,
       "privatePreviewAvailabilityDate": null,
-      "title": "Public Preview: Per-disk resiliency for Azure VMs",
-      "description": "Azure automatically recovers a VM when it loses access to an attached managed disk for an extended period. The VM is shut down and powered back on after disk connectivity is restored, with no customer action required. This remains the default behavior.<br><br>Now in public preview in select regions, per-disk resiliency provides another option for applications that can tolerate the temporary loss of an individual data disk. When enabled, Azure detaches and takes only the affected disk offline while the VM and its remaining disks continue running. Once disk connectivity is restored, Azure automatically attaches and brings the disk back online.<br><br>Use per-disk resiliency where a single data disk is not a single point of failure:<br><ol data-editing-info=\"{&quot;orderedStyleType&quot;:1,&quot;unorderedStyleType&quot;:1}\"><li>Production VMs with backup or auxiliary disks, so a secondary disk issue does not interrupt the primary workload.</li><li>Clustered and shared-disk applications with their own high-availability or failover logic.<br></li><li>Containerized workloads with per-pod disks, so one persistent volume can recover without disrupting other pods on the node.</li></ol>Per-disk resiliency is opt-in for each Azure Managed Disk. While a data disk is offline, I/Os to it returns errors, so the application must continue without that disk until&nbsp;access is restored. OS disks continue to use the default VM shut down recovery behavior.<p>Available now in public preview in select regions.&nbsp;</p><p><a href=\"https://aka.ms/perdiskresilliency\">Learn more</a>.</p>",
-      "status": "In preview",
-      "created": "2026-08-31T23:11:39.7892384Z",
-      "modified": "2026-08-31T23:11:39.7892384Z",
+      "title": "Generally Available: Microsoft Defender for Cloud support for Azure Container Apps (Serverless Containers Posture)",
+      "description": "<p>Customers can now bring Azure Container Apps environments into Microsoft Defender for Cloud’s <a href=\"https://learn.microsoft.com/en-us/azure/container-apps/security#microsoft-defender-for-cloud-serverless-containers-posture-preview\">Serverless Containers Posture</a> experience, helping security teams extend posture management across more of their container estate from a single workflow. This makes it easier to gain visibility into Container Apps resources and assess risks across areas such as identity, networking, and container or image configuration.&nbsp;</p><p>With this capability, teams can more consistently evaluate risk across container environments and use attack path analysis to identify potential exposure faster. The result is a more unified security posture, less manual effort, and stronger confidence when securing Container Apps deployments.&nbsp;</p><p><a href=\"https://aka.ms/containerappscspm\">Learn more.</a></p>",
+      "status": "Launched",
+      "created": "2026-09-01T22:34:43.8927127Z",
+      "modified": "2026-09-01T22:34:43.8927127Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "General Availability",
+          "year": 2026,
+          "month": "July"
+        }
+      ]
+    },
+    {
+      "id": "570090",
+      "productCategories": [
+        "Compute",
+        "Containers"
+      ],
+      "tags": [
+        "Features"
+      ],
+      "products": [
+        "Azure Kubernetes Service (AKS)"
+      ],
+      "generalAvailabilityDate": "2026-05",
+      "previewAvailabilityDate": null,
+      "privatePreviewAvailabilityDate": null,
+      "title": "Generally Available: Windows Server 2025 on AKS",
+      "description": "Organizations running Windows-based workloads on Azure Kubernetes Service (AKS) face increasing pressure to modernize as support timelines for older Windows Server versions approach retirement. To help customers prepare, AKS now offers GA support for Windows Server 2025, bringing significant improvements such as Stable ABI, Generation 2 VM default, containerd 2.0, and FIPS enablement by default.<br><br><a href=\"https://aka.ms/aks/windows-os\">Learn more.</a>",
+      "status": "Launched",
+      "created": "2026-09-01T22:31:50.8522627Z",
+      "modified": "2026-09-01T22:31:50.8522627Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "General Availability",
+          "year": 2026,
+          "month": "May"
+        }
+      ]
+    },
+    {
+      "id": "570095",
+      "productCategories": [
+        "Compute",
+        "Containers"
+      ],
+      "tags": [
+        "Feature"
+      ],
+      "products": [
+        "Azure Kubernetes Service (AKS)"
+      ],
+      "generalAvailabilityDate": "2026-07",
+      "previewAvailabilityDate": null,
+      "privatePreviewAvailabilityDate": null,
+      "title": "Generally Available: Artifact Streaming on AKS",
+      "description": "You can now accelerate your containerized workloads on Azure Kubernetes Service (AKS) using Azure Container Registry (ACR) with Artifact streaming. Artifact streaming will allow you to scale your workloads without having to fully wait for images to be pulled into the clusters.<br><br><a href=\"https://aka.ms/artifactstreaming\">Learn more.</a>",
+      "status": "Launched",
+      "created": "2026-09-01T22:30:59.8786524Z",
+      "modified": "2026-09-01T22:30:59.8786524Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "General Availability",
+          "year": 2026,
+          "month": "July"
+        }
+      ]
+    },
+    {
+      "id": "570100",
+      "productCategories": [
+        "Compute",
+        "Containers"
+      ],
+      "tags": [
+        "Feature"
+      ],
+      "products": [
+        "Azure Kubernetes Service (AKS)"
+      ],
+      "generalAvailabilityDate": "2026-06",
+      "previewAvailabilityDate": null,
+      "privatePreviewAvailabilityDate": null,
+      "title": "Generally Available: Confidential VMs for Azure Linux",
+      "description": "Confidential Virtual Machines (CVM) offer strong security and confidentiality for tenants. CVM for Azure Linux in AKS is now generally available and enables node pools with CVM to target the migration of highly sensitive container workloads to AKS without any code refactoring while benefiting from the features of AKS.&nbsp;<br><br>You can create new node pools using supported CVM vm sizes with Azure Linux 3. The nodes in a node pool created with CVM use a customized Azure Linux 3 image specially configured for CVM. <br><br><a href=\"https://aka.ms/aks/cvm\">Learn more.</a>",
+      "status": "Launched",
+      "created": "2026-09-01T22:30:18.0639636Z",
+      "modified": "2026-09-01T22:30:18.0639636Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "General Availability",
+          "year": 2026,
+          "month": "June"
+        }
+      ]
+    },
+    {
+      "id": "569700",
+      "productCategories": [],
+      "tags": [
+        "Feature"
+      ],
+      "products": [],
+      "generalAvailabilityDate": "2026-09",
+      "previewAvailabilityDate": "2026-07",
+      "privatePreviewAvailabilityDate": null,
+      "title": "Generally Available: Purchase order mapping available in Microsoft Marketplace ",
+      "description": "Align Microsoft Marketplace purchases to your business's accounting needs. Purchase order mapping helps allocate your Microsoft invoice, including Marketplace purchases, making it easier to reconcile your organization's cloud and AI spend. Get supplemental invoice views by purchase order and remap spend for up to three months after invoicing, so your teams get the flexibility to adapt as your needs evolve.<br><br><div><a href=\"https://learn.microsoft.com/en-us/marketplace/purchase-orders\">Learn more</a>.</div>",
+      "status": "Launched",
+      "created": "2026-09-01T18:40:59.5904166Z",
+      "modified": "2026-09-01T18:40:59.5904166Z",
       "locale": null,
       "availabilities": [
         {
           "ring": "Preview",
+          "year": 2026,
+          "month": "July"
+        },
+        {
+          "ring": "General Availability",
+          "year": 2026,
+          "month": "September"
+        }
+      ]
+    },
+    {
+      "id": "570474",
+      "productCategories": [
+        "Networking",
+        "Security"
+      ],
+      "tags": [
+        "Features",
+        "Security"
+      ],
+      "products": [
+        "Azure Firewall"
+      ],
+      "generalAvailabilityDate": "2026-09",
+      "previewAvailabilityDate": null,
+      "privatePreviewAvailabilityDate": null,
+      "title": "Generally Available: Azure Firewall auto-learn SNAT routes ",
+      "description": "Azure Firewall’s auto-learn SNAT routes is now\ngenerally available, automatically learning registered and private destination\nprefixes periodically and applying them as No-SNAT ranges to preserve original\nsource IPs and simplify SNAT management.<br><br><a href=\"https://learn.microsoft.com/en-us/azure/firewall/snat-private-range?tabs=powershell\">Learn more</a>.",
+      "status": "Launched",
+      "created": "2026-09-01T17:10:38.3279302Z",
+      "modified": "2026-09-01T17:10:38.3279302Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "General Availability",
+          "year": 2026,
+          "month": "September"
+        }
+      ]
+    },
+    {
+      "id": "570250",
+      "productCategories": [
+        "DevOps",
+        "Management and governance"
+      ],
+      "tags": [
+        "Feature"
+      ],
+      "products": [
+        "Azure Monitor",
+        "Azure Copilot"
+      ],
+      "generalAvailabilityDate": "2026-08",
+      "previewAvailabilityDate": null,
+      "privatePreviewAvailabilityDate": null,
+      "title": "Generally Available: Azure Copilot Observability Agent supports Basic and Auxiliary table plans",
+      "description": "<p>Azure Copilot Observability Agent, an\nAI-powered operational companion in Azure Monitor, is now covering Log Analytics data\nin Basic and Auxiliary table plans during interactive analysis\nand deep investigations.&nbsp;</p><p>Teams can move high-volume telemetry - including\ncontainer <i>stdout</i> and <i>stderr</i>, audit trails, and node <i>syslog -&nbsp;</i>to\nlower-cost table plans while keeping supported data available to the agent\nalongside metrics, traces, topology, and Azure resource context.&nbsp;</p><p>This is especially useful for Kubernetes\noperations, where high-volume telemetry such as <i>ContainerLogV2,&nbsp;</i>AKS audit logs, and\ncontrol-plane logs can be candidates for the Basic table plan.&nbsp;</p>If eligible tables already use the Basic or Auxiliary plans, no additional user configuration is required.<br><br><a href=\"https://learn.microsoft.com/azure/azure-monitor/logs/basic-logs-query\">Learn\nmore</a>.<br>",
+      "status": "Launched",
+      "created": "2026-09-01T16:31:14.2094207Z",
+      "modified": "2026-09-01T16:31:14.2094207Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "General Availability",
           "year": 2026,
           "month": "August"
         }
       ]
     },
     {
-      "id": "570364",
+      "id": "569899",
       "productCategories": [
-        "Hybrid + multicloud",
-        "Networking"
+        "DevOps",
+        "Management and governance"
       ],
       "tags": [
-        "Services"
+        "Features"
       ],
       "products": [
-        "Azure ExpressRoute"
+        "Azure Monitor"
       ],
-      "generalAvailabilityDate": null,
-      "previewAvailabilityDate": "2026-08",
+      "generalAvailabilityDate": "2026-08",
+      "previewAvailabilityDate": null,
       "privatePreviewAvailabilityDate": null,
-      "title": "Public Preview: Azure Multicloud Interconnect",
-      "description": "<p>Announcing the public preview of Azure Multicloud Interconnect, a managed service that provides private connectivity between Azure and supported cloud providers, with Amazon Web Services (AWS) available as the first supported provider in preview.&nbsp;</p><p>As organizations increasingly distribute applications, data, AI services, and business-critical workloads across multiple clouds, establishing and operating cloud-to-cloud connectivity can become complex and operationally intensive. Azure Multicloud Interconnect helps simplify this experience by providing a managed connectivity solution that reduces deployment complexity while delivering resilient private, high-performance connectivity between Azure and supported cloud environments.</p><p>With Azure Multicloud Interconnect, you can deploy a multicloud connection directly from the Azure portal, select your cloud provider, region, and bandwidth, and onboard your environment through a guided experience. Once provisioned, you can connect Azure virtual networks and supported cloud-provider virtual networks through a private cloud-to-cloud connection, helping streamline operations and accelerate multicloud deployments.</p><p>Key highlights:</p><ul data-editing-info=\"{&quot;orderedStyleType&quot;:1,&quot;unorderedStyleType&quot;:1}\"><li>Managed private connectivity between Azure and supported cloud providers</li><li>Simplified deployment and onboarding</li><li>Built-in resiliency designed for mission-critical workloads</li></ul><p>Learn more:&nbsp;</p><ul><li>Read the&nbsp;<a href=\"https://aka.ms/AzureMulticloudInterconnect_learn\">documentation</a>&nbsp;</li><li>Read the&nbsp;<a href=\"https://aka.ms/MulticloudInterconnect-blog\">announcement blog</a>&nbsp;</li></ul><br>",
-      "status": "In preview",
-      "created": "2026-08-31T18:36:12.3628022Z",
-      "modified": "2026-08-31T18:36:12.3628022Z",
+      "title": "Generally Available: Azure Monitor Auxiliary Logs Plan in Azure Government and China regions",
+      "description": "The Auxiliary table plan in Azure Monitor Logs is a cost-effective option for ingesting and retaining high-volume, verbose logs used for compliance and auditing.&nbsp;Auxiliary Logs is now generally available in the sovereign clouds: Azure Government (Fairfax) and China.<br><br><a href=\"https://techcommunity.microsoft.com/blog/azureobservabilityblog/azure-monitor-auxiliary-logs-expands-with-azure-tables-support-plan-switching-an/4525206\">Learn more.</a>",
+      "status": "Launched",
+      "created": "2026-09-01T16:29:24.3305731Z",
+      "modified": "2026-09-01T16:29:24.3305731Z",
       "locale": null,
       "availabilities": [
         {
-          "ring": "Preview",
+          "ring": "General Availability",
+          "year": 2026,
+          "month": "August"
+        }
+      ]
+    },
+    {
+      "id": "569904",
+      "productCategories": [
+        "DevOps",
+        "Management and governance"
+      ],
+      "tags": [
+        "Features"
+      ],
+      "products": [
+        "Azure Monitor"
+      ],
+      "generalAvailabilityDate": "2026-08",
+      "previewAvailabilityDate": null,
+      "privatePreviewAvailabilityDate": null,
+      "title": "Generally Available: Azure Monitor Auxiliary Logs Plan support for Azure tables and plan switching",
+      "description": "The Auxiliary table plan in Azure Monitor Logs gives you a cost-effective way to ingest and retain high-volume, verbose logs that you keep for compliance and auditing but rarely query. Two highly requested capabilities are now generally available.<br><br>Auxiliary now supports a subset of standard Azure tables, in addition to DCR-based custom tables (_CL). You can keep low-value data on its original standard table — retaining its name, schema, and existing queries — instead of building custom pipelines to reshape it.<br><br>You can also switch existing tables between the Analytics and Auxiliary plans without recreating them. The change applies to the table in place, so you keep history, schema, and integrations, and the switch is fully reversible as your workload evolves.<br><br><a href=\"https://techcommunity.microsoft.com/blog/azureobservabilityblog/azure-monitor-auxiliary-logs-expands-with-azure-tables-support-plan-switching-an/4525206\">Learn more.</a><br>",
+      "status": "Launched",
+      "created": "2026-09-01T16:25:33.6876567Z",
+      "modified": "2026-09-01T16:25:33.6876567Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "General Availability",
           "year": 2026,
           "month": "August"
         }
