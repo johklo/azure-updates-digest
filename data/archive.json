@@ -1,7 +1,66 @@
 {
-  "updated_at": "2026-09-02T00:54:06.223885+00:00",
-  "count": 986,
+  "updated_at": "2026-09-03T01:01:26.806518+00:00",
+  "count": 988,
   "items": [
+    {
+      "id": "569804",
+      "productCategories": [
+        "Networking",
+        "Security"
+      ],
+      "tags": [
+        "Features",
+        "Security"
+      ],
+      "products": [
+        "Azure Front Door",
+        "Web Application Firewall"
+      ],
+      "generalAvailabilityDate": null,
+      "previewAvailabilityDate": "2026-09",
+      "privatePreviewAvailabilityDate": null,
+      "title": "Public Preview: Azure Front Door profile and route level WAF policies",
+      "description": "<p>Azure Front\nDoor’s Web Application Firewall (WAF) now supports profile and route level WAF\npolicy associations in public preview. This gives you more flexibility to apply\nbroad baseline protection across an Azure Front Door profile while using\ntargeted policies for specific applications, domains, or routes that need\ndifferent controls.&nbsp;</p><p>With this\nupdate, you can associate WAF policies at the profile, domain, or route scope.\nFor example, you can use a profile level policy for common protections across\nall domains in a profile, then apply a route level policy to sensitive paths\nsuch as sign-in, checkout, or API routes. This helps reduce policy duplication\nwhile still allowing more granular security configuration where it's needed.&nbsp;</p><p>If multiple\nWAF policy scopes apply to a request, Azure Front Door uses the most specific\npolicy: a route level policy takes precedence over a domain level policy, and a\ndomain level policy takes precedence over a profile level policy. To get\nstarted, create or update an Azure Front Door WAF policy in the Azure portal\nand choose the associated scope that matches your deployment needs.&nbsp;</p><a href=\"https://learn.microsoft.com/azure/web-application-firewall/afds/afds-overview\">Learn more</a>.<p></p>",
+      "status": "In preview",
+      "created": "2026-09-02T17:00:51.9883567Z",
+      "modified": "2026-09-02T17:00:51.9883567Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "Preview",
+          "year": 2026,
+          "month": "September"
+        }
+      ]
+    },
+    {
+      "id": "569653",
+      "productCategories": [
+        "Databases"
+      ],
+      "tags": [
+        "Feature"
+      ],
+      "products": [
+        "Azure Database for MySQL"
+      ],
+      "generalAvailabilityDate": null,
+      "previewAvailabilityDate": "2026-09",
+      "privatePreviewAvailabilityDate": null,
+      "title": "Public Preview: Reader Endpoint for Azure Database for MySQL ",
+      "description": "<p>We’re&nbsp;happy to announce the public preview of reader endpoint&nbsp;support to simplify connection management when using multiple replicas in Azure Database for MySQL - Flexible Server. A reader endpoint enables automatic load balancing&nbsp;of read-only connection traffic across multiple replicas. It simplifies application architecture by giving you a&nbsp;single endpoint for read operations, enhancing both scalability and fault tolerance.</p><p>Azure Database for MySQL supports&nbsp;up to 10 read replicas&nbsp;per primary server.&nbsp;By routing read-only traffic through the reader endpoint, you can efficiently manage connections and optimize&nbsp;performance without needing to handle individual replica endpoints.&nbsp;</p><p><a href=\"https://learn.microsoft.com/azure/mysql/flexible-server/whats-new\" rel=\"noreferrer noopener\">Learn more</a>.&nbsp;</p>",
+      "status": "In preview",
+      "created": "2026-09-02T16:59:15.7071022Z",
+      "modified": "2026-09-02T16:59:15.7071022Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "Preview",
+          "year": 2026,
+          "month": "September"
+        }
+      ]
+    },
     {
       "id": "570282",
       "productCategories": [

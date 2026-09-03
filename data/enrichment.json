@@ -25515,5 +25515,57 @@
       "이러한 개선 사항은 엔지니어링 부담을 줄이고, 규정 준수를 위한 상세 로그의 비용 효율적 보관을 가능하게 하며, 워크로드 패턴 변화에 따라 테이블 플랜을 유연하게 조정할 수 있도록 지원합니다."
     ],
     "translated_at": "2026-09-02T00:55:46.973194+00:00"
+  },
+  "569804": {
+    "summary": "Azure Front Door WAF now supports profile, domain, and route level policy associations in public preview, enabling more flexible and granular security configurations.",
+    "key_points": [
+      "WAF policies can be associated at profile, domain, or route scope to balance broad baseline protection with targeted controls.",
+      "Route-level policies take precedence over domain-level, which take precedence over profile-level policies for requests matching multiple scopes.",
+      "This reduces policy duplication and allows specific protections for sensitive paths like sign-in or checkout routes.",
+      "Available in public preview, customers can configure these policies via the Azure portal to better tailor security to their application needs."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/web-application-firewall/afds/afds-overview",
+    "doc_title": "What Is Azure Web Application Firewall on Azure Front Door?",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/azure/web-application-firewall/afds/afds-overview"
+    ],
+    "source": "llm",
+    "updated_at": "2026-09-03T01:01:38.218783+00:00",
+    "title_ko": "Public Preview: Azure Front Door 프로필 및 라우트 수준 WAF 정책",
+    "summary_ko": "Azure Front Door WAF가 프로필, 도메인, 라우트 수준의 정책 연계를 Public Preview로 지원하여 보다 유연하고 세분화된 보안 구성이 가능해졌습니다.",
+    "key_points_ko": [
+      "WAF 정책은 프로필, 도메인 또는 라우트 범위에서 연계할 수 있어 광범위한 기본 보호와 대상별 제어를 균형 있게 적용할 수 있습니다.",
+      "라우트 수준 정책은 도메인 수준 정책보다 우선하며, 도메인 수준 정책은 프로필 수준 정책보다 우선하여 여러 범위에 일치하는 요청에 적용됩니다.",
+      "이로 인해 정책 중복이 줄어들고, 로그인 또는 결제 경로와 같은 민감한 경로에 대해 특정 보호를 제공할 수 있습니다.",
+      "Public Preview로 제공되며, 고객은 Azure 포털을 통해 이러한 정책을 구성하여 애플리케이션 요구에 맞게 보안을 보다 세밀하게 조정할 수 있습니다."
+    ],
+    "translated_at": "2026-09-03T01:01:48.831891+00:00"
+  },
+  "569653": {
+    "summary": "Azure Database for MySQL - Flexible Server now supports a reader endpoint in public preview, enabling automatic load balancing of read-only traffic across multiple replicas to simplify connection management and improve scalability.",
+    "key_points": [
+      "Introduces a reader endpoint that automatically balances read-only connections across up to 10 read replicas per primary server.",
+      "Simplifies application architecture by providing a single endpoint for all read operations instead of managing individual replica endpoints.",
+      "Enhances scalability and fault tolerance by distributing read traffic efficiently among replicas.",
+      "Currently available in public preview for Azure Database for MySQL - Flexible Server."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/mysql/whats-new/whats-new-2026",
+    "doc_title": "What's new - 2026 - Azure Database for MySQL",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/azure/mysql/flexible-server/whats-new"
+    ],
+    "source": "llm",
+    "updated_at": "2026-09-03T01:01:43.733855+00:00",
+    "title_ko": "Public Preview: Azure Database for MySQL용 Reader Endpoint",
+    "summary_ko": "Azure Database for MySQL - Flexible Server가 이제 reader endpoint를 Public Preview로 지원하여 여러 복제본에 걸쳐 읽기 전용 트래픽을 자동으로 부하 분산함으로써 연결 관리를 간소화하고 확장성을 향상합니다.",
+    "key_points_ko": [
+      "기본 서버당 최대 10개의 읽기 복제본에 읽기 전용 연결을 자동으로 분산하는 reader endpoint를 도입합니다.",
+      "개별 복제본 엔드포인트를 관리하는 대신 모든 읽기 작업에 단일 엔드포인트를 제공하여 애플리케이션 아키텍처를 단순화합니다.",
+      "복제본 간에 읽기 트래픽을 효율적으로 분산하여 확장성과 장애 허용성을 향상합니다.",
+      "현재 Azure Database for MySQL - Flexible Server에 대해 Public Preview로 제공됩니다."
+    ],
+    "translated_at": "2026-09-03T01:01:52.900249+00:00"
   }
 }
