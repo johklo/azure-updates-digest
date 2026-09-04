@@ -25567,5 +25567,31 @@
       "현재 Azure Database for MySQL - Flexible Server에 대해 Public Preview로 제공됩니다."
     ],
     "translated_at": "2026-09-03T01:01:52.900249+00:00"
+  },
+  "570557": {
+    "summary": "Azure Virtual Network Manager IPAM is now generally available in additional US Gov and China regions, enabling centralized, cross-region IP address management to prevent conflicts and improve network governance.",
+    "key_points": [
+      "IPAM is generally available in US Gov Virginia, US Gov Texas, US Gov Arizona, China North 3, and China East 3 regions.",
+      "Centralizes IP address planning and allocation with hierarchical pools to prevent overlapping CIDRs across Azure, on-premises, and multi-cloud environments.",
+      "Supports cross-region association, allowing management of IP addresses for virtual networks across multiple regions for global governance.",
+      "Integration with Azure Policy enforces use of designated IP pools, ensuring consistent and conflict-free IP allocation for new and existing virtual networks."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/virtual-network-manager/concept-ip-address-management",
+    "doc_title": "What is IP address management (IPAM) in Azure Virtual Network Manager?",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/en-us/azure/virtual-network-manager/concept-ip-address-management"
+    ],
+    "source": "llm",
+    "updated_at": "2026-09-04T00:52:03.002449+00:00",
+    "title_ko": "Generally Available: 추가 Azure 지역에서 Azure Virtual Network Manager IPAM 제공",
+    "summary_ko": "Azure Virtual Network Manager IPAM이 추가된 미국 정부 및 중국 지역에서 Generally Available 상태로 제공되어 중앙 집중식, 지역 간 IP 주소 관리를 통해 충돌을 방지하고 네트워크 거버넌스를 향상합니다.",
+    "key_points_ko": [
+      "IPAM이 US Gov Virginia, US Gov Texas, US Gov Arizona, China North 3, China East 3 지역에서 Generally Available 상태입니다.",
+      "계층적 풀을 사용해 Azure, 온프레미스, 멀티클라우드 환경 전반에서 중복 CIDR을 방지하며 IP 주소 계획 및 할당을 중앙 집중화합니다.",
+      "지역 간 연관 지원으로 여러 지역에 걸친 가상 네트워크의 IP 주소 관리를 가능하게 하여 글로벌 거버넌스를 지원합니다.",
+      "Azure Policy와 통합되어 지정된 IP 풀 사용을 강제함으로써 신규 및 기존 가상 네트워크에 대해 일관되고 충돌 없는 IP 할당을 보장합니다."
+    ],
+    "translated_at": "2026-09-04T00:52:08.588767+00:00"
   }
 }
