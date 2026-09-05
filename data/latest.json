@@ -1,42 +1,10 @@
 {
-  "generated_at": "2026-09-04T00:51:49.858426+00:00",
-  "window_start": "2026-08-28T00:51:49.858426+00:00",
-  "window_end": "2026-09-04T00:51:49.858426+00:00",
+  "generated_at": "2026-09-05T00:44:26.222213+00:00",
+  "window_start": "2026-08-29T00:44:26.222213+00:00",
+  "window_end": "2026-09-05T00:44:26.222213+00:00",
   "window_days": 7,
-  "fetched_count": 16,
-  "matched_count": 16,
-  "count": 1,
-  "items": [
-    {
-      "id": "570557",
-      "productCategories": [
-        "Networking"
-      ],
-      "tags": [
-        "Features",
-        "Management",
-        "Regions & Datacenters",
-        "Services"
-      ],
-      "products": [
-        "Azure Virtual Network Manager"
-      ],
-      "generalAvailabilityDate": "2026-09",
-      "previewAvailabilityDate": null,
-      "privatePreviewAvailabilityDate": null,
-      "title": "Generally Available: Azure Virtual Network Manager IPAM in additional Azure regions ",
-      "description": "<p>Azure\nVirtual Network Manager IP address management is now generally available in\nadditional regions: US Gov Virginia, US Gov Texas and US Gov Arizona, and China\nNorth 3 and China East 3.&nbsp;</p><p>In complex\nnetwork environments, managing IP addresses effectively is essential. This\nfeature centralizes IP planning and allocation, allowing users to automatically\nassign non-overlapping addresses and prevent conflicts between Azure,\non-premises, and multi-cloud address spaces. It also provides clear insights\ninto IP usage and allocation across your network resources. Through its\nintegration with Azure Policy, the feature ensures that virtual networks are\ncreated using the designated IP pool, preventing unintended overlapping\nprefixes for both new and existing virtual networks.&nbsp;With cross-region\nassociation, users can manage IP addresses for virtual networks across regions,\nallowing customers to plan and govern their full address space globally.&nbsp;</p><a href=\"https://learn.microsoft.com/en-us/azure/virtual-network-manager/concept-ip-address-management\">Learn\nmore</a>.&nbsp;<br>",
-      "status": "Launched",
-      "created": "2026-09-03T17:17:08.5092447Z",
-      "modified": "2026-09-03T17:17:08.5092447Z",
-      "locale": null,
-      "availabilities": [
-        {
-          "ring": "General Availability",
-          "year": 2026,
-          "month": "September"
-        }
-      ]
-    }
-  ]
+  "fetched_count": 14,
+  "matched_count": 14,
+  "count": 0,
+  "items": []
 }
