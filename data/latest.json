@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-09-07T00:47:39.559224+00:00",
-  "window_start": "2026-08-31T00:47:39.559224+00:00",
-  "window_end": "2026-09-07T00:47:39.559224+00:00",
+  "generated_at": "2026-09-08T01:00:46.886898+00:00",
+  "window_start": "2026-09-01T01:00:46.886898+00:00",
+  "window_end": "2026-09-08T01:00:46.886898+00:00",
   "window_days": 7,
-  "fetched_count": 14,
-  "matched_count": 14,
+  "fetched_count": 12,
+  "matched_count": 12,
   "count": 0,
   "items": []
 }
