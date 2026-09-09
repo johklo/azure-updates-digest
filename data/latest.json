@@ -1,10 +1,83 @@
 {
-  "generated_at": "2026-09-08T01:00:46.886898+00:00",
-  "window_start": "2026-09-01T01:00:46.886898+00:00",
-  "window_end": "2026-09-08T01:00:46.886898+00:00",
+  "generated_at": "2026-09-09T01:06:28.685712+00:00",
+  "window_start": "2026-09-02T01:06:28.685712+00:00",
+  "window_end": "2026-09-09T01:06:28.685712+00:00",
   "window_days": 7,
-  "fetched_count": 12,
-  "matched_count": 12,
-  "count": 0,
-  "items": []
+  "fetched_count": 5,
+  "matched_count": 5,
+  "count": 2,
+  "items": [
+    {
+      "id": "570919",
+      "productCategories": [
+        "Developer tools",
+        "DevOps"
+      ],
+      "tags": [
+        "Regions & Datacenters",
+        "Feature"
+      ],
+      "products": [
+        "Azure Load Testing"
+      ],
+      "generalAvailabilityDate": "2026-09",
+      "previewAvailabilityDate": null,
+      "privatePreviewAvailabilityDate": null,
+      "title": "Generally Available: Playwright Workspaces in Australia East, Japan East, and Switzerland North",
+      "description": "Playwright Workspaces in Azure App Testing is now generally available in Switzerland North, Japan East, and Australia East.<br><br>Playwright Workspaces provides fully managed cloud-hosted browsers for running end-to-end Playwright tests at scale, with parallel execution, rich debugging artifacts including traces, videos, and screenshots, and seamless CI/CD integration. Customers can use their existing Playwright test suites and get started in minutes.<br><br><a href=\"https://aka.ms/pww/docs\">Learn more</a>.<br>",
+      "status": "Launched",
+      "created": "2026-09-08T17:35:32.1636029Z",
+      "modified": "2026-09-08T17:35:32.1636029Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "General Availability",
+          "year": 2026,
+          "month": "September"
+        }
+      ]
+    },
+    {
+      "id": "570881",
+      "productCategories": [
+        "AI + machine learning",
+        "Storage",
+        "Containers",
+        "Compute",
+        "Internet of Things",
+        "Security",
+        "Developer tools"
+      ],
+      "tags": [
+        "Features",
+        "Open Source",
+        "SDK and Tools"
+      ],
+      "products": [
+        "Microsoft Foundry",
+        "Azure Blob Storage",
+        "Azure Container Apps",
+        "Azure Container Registry",
+        "Azure Functions",
+        "Key Vault",
+        "SDKs"
+      ],
+      "generalAvailabilityDate": "2026-08",
+      "previewAvailabilityDate": null,
+      "privatePreviewAvailabilityDate": null,
+      "title": "Generally Available: Azure Developer CLI (azd) Extension Framework",
+      "description": "The Azure Developer CLI (azd) Extension Framework is now generally available. The framework enables developers, teams, and partners to extend Azure Developer CLI with custom capabilities that support their preferred application development workflows.<br><br>With the GA release, organizations can build and distribute extensions that integrate custom tools, automate development and deployment tasks, and provide tailored experiences for cloud application development on Azure. The extension framework helps standardize and simplify developer workflows while allowing teams to incorporate organization-specific processes and tooling.<br><br>The Azure Developer CLI extension model supports a growing ecosystem of extensions, enabling developers to enhance azd with additional functionality beyond the core CLI experience. This flexibility helps development teams streamline application delivery and adapt azd to their unique requirements.<br><br><a href=\"https://devblogs.microsoft.com/azure-sdk/azd-extension-framework-ga/\">Learn\nmore</a>. <br><br>",
+      "status": "Launched",
+      "created": "2026-09-08T17:18:38.4446075Z",
+      "modified": "2026-09-08T17:18:38.4446075Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "General Availability",
+          "year": 2026,
+          "month": "August"
+        }
+      ]
+    }
+  ]
 }
