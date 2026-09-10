@@ -25645,5 +25645,56 @@
       "엔지니어링 플랫폼 팀과 제품 팀이 맞춤형 개발자 경험을 만들어 Azure 애플리케이션 라이프사이클 관리에서 마찰을 줄이고 생산성을 향상할 수 있도록 지원합니다."
     ],
     "translated_at": "2026-09-09T01:07:05.931802+00:00"
+  },
+  "569241": {
+    "summary": "Azure Storage now generally supports user-bound user delegation SAS tokens, enhancing security by restricting SAS token usage to a specific end user identity.",
+    "key_points": [
+      "User-bound user delegation SAS extends existing user delegation SAS by binding the SAS token to an end user's Entra ID, ensuring only the intended user can use the token.",
+      "This feature is generally available in all public Azure regions with no additional cost beyond standard storage transaction fees.",
+      "Supports cross-tenant scenarios with configuration, allowing SAS tokens to be used by users in different tenants when enabled.",
+      "Improves security best practices by leveraging Microsoft Entra credentials and RBAC, reducing the need to store account keys in application code."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/rest/api/storageservices/create-user-delegation-sas",
+    "doc_title": "Create a user delegation SAS - Azure Storage",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/rest/api/storageservices/create-user-delegation-sas",
+      "https://techcommunity.microsoft.com/blog/azurestorageblog/generally-available-restrict-usage-of-user-delegation-sas-to-an-entra-id-identit/4554967"
+    ],
+    "source": "llm",
+    "updated_at": "2026-09-10T00:55:13.107134+00:00",
+    "title_ko": "Generally Available: Azure Storage용 사용자 바인딩 사용자 위임 SAS",
+    "summary_ko": "Azure Storage가 이제 사용자 바인딩 사용자 위임 SAS 토큰을 Generally Available 상태로 지원하여 SAS 토큰 사용을 특정 최종 사용자 ID로 제한함으로써 보안을 강화합니다.",
+    "key_points_ko": [
+      "사용자 바인딩 사용자 위임 SAS는 기존 사용자 위임 SAS를 확장하여 SAS 토큰을 최종 사용자의 Entra ID에 바인딩함으로써 의도된 사용자만 토큰을 사용할 수 있도록 보장합니다.",
+      "이 기능은 모든 퍼블릭 Azure 리전에서 Generally Available 상태로 제공되며 표준 스토리지 트랜잭션 요금 외에 추가 비용이 없습니다.",
+      "구성을 통해 크로스 테넌트 시나리오를 지원하여 활성화 시 다른 테넌트의 사용자가 SAS 토큰을 사용할 수 있습니다.",
+      "Microsoft Entra 자격 증명과 RBAC를 활용하여 보안 모범 사례를 개선하고 애플리케이션 코드에 계정 키를 저장할 필요를 줄입니다."
+    ],
+    "translated_at": "2026-09-10T00:55:21.064464+00:00"
+  },
+  "570551": {
+    "summary": "Azure Ephemeral OS Disk with full caching is now generally available, providing significantly faster OS disk access and improved resilience for I/O-sensitive workloads by caching the entire OS image on local VM storage.",
+    "key_points": [
+      "Caches complete OS image on local storage to eliminate remote-storage reads after caching.",
+      "Delivers up to 10× better I/O performance and low-millisecond OS disk access.",
+      "Available for new VMs and VM Scale Sets with 8-core-and-larger GPU, storage-optimized, memory-optimized, HPC, general-purpose, and compute-optimized series across Azure public regions.",
+      "Enables improved resilience during storage interruptions without slowing VM provisioning, configurable via Azure CLI, ARM templates, or REST APIs."
+    ],
+    "doc_url": "",
+    "doc_title": "",
+    "doc_read": false,
+    "links": [],
+    "source": "llm",
+    "updated_at": "2026-09-10T00:55:16.545849+00:00",
+    "title_ko": "Generally Available: VM/VMSS용 전체 캐싱 지원 Azure Ephemeral OS Disk",
+    "summary_ko": "전체 캐싱을 지원하는 Azure Ephemeral OS Disk가 이제 Generally Available 상태로 제공되어, 로컬 VM 스토리지에 전체 OS 이미지를 캐싱함으로써 OS 디스크 접근 속도가 크게 향상되고 I/O 민감 워크로드의 복원력이 개선됩니다.",
+    "key_points_ko": [
+      "캐싱 후 원격 스토리지 읽기를 제거하기 위해 전체 OS 이미지를 로컬 스토리지에 캐시합니다.",
+      "최대 10배 향상된 I/O 성능과 밀리초 단위의 OS 디스크 접근 속도를 제공합니다.",
+      "8코어 이상 GPU, 스토리지 최적화, 메모리 최적화, HPC, 범용, 컴퓨트 최적화 시리즈의 신규 VM 및 VM Scale Sets에 대해 Azure 퍼블릭 리전 전역에서 사용 가능합니다.",
+      "VM 프로비저닝 속도를 저하시키지 않으면서 스토리지 중단 시 복원력을 개선하며, Azure CLI, ARM 템플릿 또는 REST API를 통해 구성할 수 있습니다."
+    ],
+    "translated_at": "2026-09-10T00:55:25.255424+00:00"
   }
 }

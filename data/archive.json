@@ -1,7 +1,64 @@
 {
-  "updated_at": "2026-09-09T01:06:28.685712+00:00",
-  "count": 991,
+  "updated_at": "2026-09-10T00:55:04.346740+00:00",
+  "count": 993,
   "items": [
+    {
+      "id": "569241",
+      "productCategories": [
+        "Storage"
+      ],
+      "tags": [
+        "Security",
+        "Feature"
+      ],
+      "products": [
+        "Azure Blob Storage"
+      ],
+      "generalAvailabilityDate": "2026-09",
+      "previewAvailabilityDate": null,
+      "privatePreviewAvailabilityDate": null,
+      "title": "Generally Available: User-bound user delegation SAS for Azure Storage ",
+      "description": "<div style=\"font-family: Arial; font-size: 10pt;\"><div style=\"margin: 0px; user-select: text; clear: both; cursor: text; font-family: &quot;Segoe UI&quot;, &quot;Segoe UI Web&quot;, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);\"><p lang=\"EN-US\" style=\"margin:16px 0px;user-select:text;overflow-wrap:break-word;font-weight:normal;font-kerning:none;text-align:left\"><span data-contrast=\"none\" lang=\"EN-US\" style=\"margin:0px;user-select:text;font-size:12pt;line-height:22.0875px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSCustomFont, Calibri_MSFontService, sans-serif\"><span style=\"margin:0px;user-select:text\">Announcing the addition of enhanced secure authentication in Azure Storage that combines the flexibility of user-delegation shared access signature (SAS) with the user-bound access of Entra ID. User-bound user delegation SAS is now generally available for all regions.&nbsp;</span></span></p></div><div style=\"margin: 0px; user-select: text; clear: both; cursor: text; font-family: &quot;Segoe UI&quot;, &quot;Segoe UI Web&quot;, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);\"><p lang=\"EN-US\" style=\"margin:16px 0px;user-select:text;overflow-wrap:break-word;font-weight:normal;font-kerning:none;text-align:left\"><span data-contrast=\"none\" lang=\"EN-US\" style=\"margin:0px;user-select:text;font-size:12pt;line-height:22.0875px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSCustomFont, Calibri_MSFontService, sans-serif\"><span style=\"margin:0px;user-select:text\">User delegation SAS is an existing feature that allows users to create secure SAS tokens that are tied to the delegator, meaning the delegator must verify their identity with Entra to create the token. The resulting token can be traced to the delegator and can only be valid for up to 7 days. This feature is an extension of user delegation (UD) SAS, which is already generally available for Azure Blobs</span><span style=\"margin:0px;user-select:text\">,</span><span style=\"margin:0px;user-select:text\">&nbsp;Azure Files, Azure Tables, and Azure Queues. User-bound user delegation SAS allows users to create a more secure SAS token than account SAS, service SAS, or normal user delegation SAS by restricting the usage of the SAS token to an end user identity. This will help enforce that the user delegated SAS can only be used by intended users</span><span style=\"margin:0px;user-select:text\">.&nbsp;&nbsp;</span></span></p></div><div style=\"margin: 0px; user-select: text; clear: both; cursor: text; font-family: &quot;Segoe UI&quot;, &quot;Segoe UI Web&quot;, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);\"><p lang=\"EN-US\" style=\"margin:16px 0px;user-select:text;overflow-wrap:break-word;font-weight:normal;font-kerning:none;text-align:left\"><span data-contrast=\"none\" lang=\"EN-US\" style=\"margin:0px;user-select:text;font-size:12pt;line-height:22.0875px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSCustomFont, Calibri_MSFontService, sans-serif\"><span style=\"margin:0px;user-select:text\">There is no&nbsp;</span><span style=\"margin:0px;user-select:text\">additional</span><span style=\"margin:0px;user-select:text\">&nbsp;cost to use&nbsp;user-bound&nbsp;user&nbsp;</span><span style=\"margin:0px;user-select:text;background-position:0px 100%;background-repeat:repeat-x;background-image:url(&quot;data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjMiPjxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlPSIjOTlBQUY1IiBzdHJva2UtbGluZWNhcD0icm91bmQiPjxwYXRoIGQ9Ik0wIC41aDVNMCAyLjVoNSIvPjwvZz48L3N2Zz4=&quot;:base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjMiPjxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlPSIjOTlBQUY1IiBzdHJva2UtbGluZWNhcD0icm91bmQiPjxwYXRoIGQ9Ik0wIC41aDVNMCAyLjVoNSIvPjwvZz48L3N2Zz4=&quot;);border-bottom:1px solid transparent\">delegation</span><span style=\"margin:0px;user-select:text\">&nbsp;SAS.&nbsp;</span><span style=\"margin:0px;user-select:text\">Pricing is based on standard transaction costs for your storage account type,</span><span style=\"margin:0px;user-select:text\">&nbsp;refer to&nbsp;</span></span><a href=\"https://azure.microsoft.com/pricing/details/storage/blobs/?ef_id=_k_7e4097eb867a1805e1bafef4c5f13a6b_k_&amp;OCID=AIDcmm5edswduu_SEM__k_7e4097eb867a1805e1bafef4c5f13a6b_k_&amp;msclkid=7e4097eb867a1805e1bafef4c5f13a6b\" rel=\"noreferrer noopener\" style=\"margin:0px;user-select:text;text-decoration:none\"><span data-contrast=\"none\" lang=\"EN-US\" style=\"margin: 0px; user-select: text; font-size: 12pt; text-decoration: underline; line-height: 20.925px; font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSCustomFont, Aptos_MSFontService, sans-serif; color: rgb(70, 120, 134);\"><span data-ccp-charstyle=\"Hyperlink\" style=\"margin:0px;user-select:text\">Azure Storage Pricing</span></span></a>&nbsp;for details.&nbsp;</p></div><div style=\"margin: 0px; user-select: text; clear: both; cursor: text; font-family: &quot;Segoe UI&quot;, &quot;Segoe UI Web&quot;, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);\"><p lang=\"EN-US\" style=\"margin:16px 0px;user-select:text;overflow-wrap:break-word;font-weight:normal;font-kerning:none;text-align:left\"><span data-contrast=\"none\" lang=\"EN-US\" style=\"margin:0px;user-select:text;font-size:12pt;line-height:22.0875px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSCustomFont, Calibri_MSFontService, sans-serif\"><span style=\"margin:0px;user-select:text\">This<span>&nbsp;</span></span><span style=\"margin:0px;user-select:text\">feature&nbsp;</span><span style=\"margin:0px;user-select:text\">is available in all public regions.</span></span></p></div><div style=\"margin: 0px; user-select: text; clear: both; cursor: text; font-family: &quot;Segoe UI&quot;, &quot;Segoe UI Web&quot;, Arial, Verdana, sans-serif; font-size: 12px; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255);\"><p lang=\"EN-US\" style=\"margin:16px 0px;user-select:text;overflow-wrap:break-word;font-weight:normal;font-kerning:none;text-align:left\"><span data-contrast=\"none\" lang=\"EN-US\" style=\"margin:0px;user-select:text;font-size:12pt;line-height:22.0875px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSCustomFont, Calibri_MSFontService, sans-serif\"><span style=\"margin:0px;user-select:text\">Learn more:</span></span></p><p lang=\"EN-US\" style=\"margin:16px 0px;user-select:text;overflow-wrap:break-word;font-weight:normal;font-kerning:none;text-align:left\"></p><ul data-editing-info=\"{&quot;orderedStyleType&quot;:1,&quot;unorderedStyleType&quot;:1}\" style=\"margin-top: 0px; margin-bottom: 0px;\"><li style=\"list-style-type: disc;\"><span><span data-contrast=\"none\" lang=\"EN-US\" style=\"margin:0px;user-select:text;font-size:12pt;line-height:22.0875px;font-family:Calibri, Calibri_EmbeddedFont, Calibri_MSCustomFont, Calibri_MSFontService, sans-serif\"><span style=\"margin:0px;user-select:text\">&nbsp;</span></span><a href=\"https://learn.microsoft.com/rest/api/storageservices/create-user-delegation-sas\" rel=\"noreferrer noopener\" style=\"margin:0px;user-select:text;text-decoration:none\"><span data-contrast=\"none\" lang=\"EN-US\" style=\"margin: 0px; user-select: text; font-size: 12pt; text-decoration: underline; line-height: 20.925px; font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSCustomFont, Aptos_MSFontService, sans-serif; color: rgb(70, 120, 134);\"><span data-ccp-charstyle=\"Hyperlink\" style=\"margin:0px;user-select:text\">Create a user delegation SAS</span></span></a><span data-contrast=\"auto\" lang=\"EN-US\" style=\"margin:0px;user-select:text;font-size:12pt;text-decoration:none;line-height:20.925px;font-family:Aptos, Aptos_EmbeddedFont, Aptos_MSCustomFont, Aptos_MSFontService, sans-serif\"><span style=\"margin:0px;user-select:text\">&nbsp;</span></span></span></li><li style=\"list-style-type: disc;\"><span><span data-contrast=\"auto\" lang=\"EN-US\" style=\"margin:0px;user-select:text;font-size:12pt;text-decoration:none;line-height:20.925px;font-family:Aptos, Aptos_EmbeddedFont, Aptos_MSCustomFont, Aptos_MSFontService, sans-serif\"><span style=\"margin:0px;user-select:text\">&nbsp;Read the&nbsp;<a href=\"https://techcommunity.microsoft.com/blog/azurestorageblog/generally-available-restrict-usage-of-user-delegation-sas-to-an-entra-id-identit/4554967\">announcement blog</a></span></span></span></li></ul><p></p></div><br></div>",
+      "status": "Launched",
+      "created": "2026-09-09T22:30:41.8966856Z",
+      "modified": "2026-09-09T22:30:41.8966856Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "General Availability",
+          "year": 2026,
+          "month": "September"
+        }
+      ]
+    },
+    {
+      "id": "570551",
+      "productCategories": [
+        "Compute"
+      ],
+      "tags": [
+        "Features"
+      ],
+      "products": [
+        "Virtual Machines"
+      ],
+      "generalAvailabilityDate": "2026-09",
+      "previewAvailabilityDate": null,
+      "privatePreviewAvailabilityDate": null,
+      "title": "Generally Available: Azure Ephemeral OS Disk with full caching for VM/VMSS ",
+      "description": "<div style=\"font-family: Arial; font-size: 10pt;\"><span data-contrast=\"auto\" lang=\"EN-US\" style=\"margin: 0px; user-select: text; font-size: 12pt; line-height: 19.425px; font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, sans-serif; font-variant-ligatures: none !important; color: rgb(0, 0, 0);\"><span style=\"margin: 0px; user-select: text; box-shadow: rgb(15, 108, 189) 2px 0px 0px 0px;\">Azure Ephemeral OS Disk with full caching is now generally available for new virtual machines and Virtual Machine Scale Sets. The capability caches the complete OS image on a VM’s local storage, eliminating remote-storage reads after caching finishes. This delivers consistently fast, low-millisecond OS disk access, up to 10× better I/O performance, and greater resilience during storage interruptions—without slowing VM provisioning because caching runs asynchronously after boot. It is designed for I/O-sensitive, stateless workloads such as AI training and inference, quorum-based databases, real-time analytics, and large-scale services. Full caching uses a VM’s cache, resource, or NVMe disk and reduces available local capacity by twice the OS disk size.</span></span></div><div style=\"font-family: Arial; font-size: 10pt;\"><span style=\"font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, sans-serif; font-size: 12pt; font-variant-ligatures: none; color: rgb(0, 0, 0);\"><br></span></div><div style=\"font-family: Arial; font-size: 10pt;\"><span style=\"font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, sans-serif; font-size: 12pt; font-variant-ligatures: none; color: rgb(0, 0, 0);\"><br></span></div><div><span style=\"font-family: Aptos, Aptos_EmbeddedFont, Aptos_MSFontService, sans-serif; font-size: 12pt; font-variant-ligatures: none; color: rgb(0, 0, 0);\">It is available across Azure public regions for supported 8-core-and-larger GPU, storage-optimized, memory-optimized, HPC, general-purpose, and compute-optimized VM series. Customers can enable it through Azure CLI, ARM templates, or REST APIs by setting the full-caching option for Ephemeral OS disks.</span></div>",
+      "status": "Launched",
+      "created": "2026-09-09T21:24:37.7972663Z",
+      "modified": "2026-09-09T21:24:37.7972663Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "General Availability",
+          "year": 2026,
+          "month": "September"
+        }
+      ]
+    },
     {
       "id": "570919",
       "productCategories": [
