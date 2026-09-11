@@ -25696,5 +25696,60 @@
       "VM 프로비저닝 속도를 저하시키지 않으면서 스토리지 중단 시 복원력을 개선하며, Azure CLI, ARM 템플릿 또는 REST API를 통해 구성할 수 있습니다."
     ],
     "translated_at": "2026-09-10T00:55:25.255424+00:00"
+  },
+  "570940": {
+    "summary": "Azure Functions Flex Consumption plan now generally supports TLS/SSL certificates and end-to-end TLS encryption, enhancing security for custom domains and encrypted traffic.",
+    "key_points": [
+      "Supports up to 3 private (.pfx) and 3 public (.cer) certificates per function app via direct upload, Azure Key Vault import, or free App Service Managed Certificates.",
+      "Enables custom domains, client-certificate authentication, and mutual TLS scenarios on Flex Consumption plan.",
+      "End-to-end TLS encryption secures traffic between platform front ends and function workers.",
+      "Available generally, improving security posture and compliance for enterprise customers using Azure Functions Flex Consumption."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/azure-functions/flex-consumption-how-to",
+    "doc_title": "Create and Manage Function Apps in a Flex Consumption Plan",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/azure/azure-functions/flex-consumption-how-to#configure-site-scoped-certificates",
+      "https://learn.microsoft.com/en-us/azure/azure-functions/functions-infrastructure-as-code#site-scoped-certificates",
+      "https://learn.microsoft.com/azure/azure-functions/functions-scale#certificates",
+      "https://learn.microsoft.com/en-us/azure/azure-functions/flex-consumption-how-to#configure-end-to-end-tls-encryption"
+    ],
+    "source": "llm",
+    "updated_at": "2026-09-11T00:52:47.391226+00:00",
+    "title_ko": "Generally Available: Azure Functions Flex Consumption의 TLS/SSL 인증서 및 종단 간 TLS 암호화 지원",
+    "summary_ko": "Azure Functions Flex Consumption 플랜이 이제 TLS/SSL 인증서와 종단 간 TLS 암호화를 Generally Available 상태로 지원하여, 사용자 지정 도메인과 암호화된 트래픽의 보안을 강화합니다.",
+    "key_points_ko": [
+      "함수 앱당 최대 3개의 개인(.pfx) 및 3개의 공개(.cer) 인증서를 직접 업로드, Azure Key Vault 가져오기 또는 무료 App Service Managed Certificates를 통해 지원합니다.",
+      "Flex Consumption 플랜에서 사용자 지정 도메인, 클라이언트 인증서 인증 및 상호 TLS 시나리오를 활성화합니다.",
+      "종단 간 TLS 암호화는 플랫폼 프런트 엔드와 함수 워커 간의 트래픽을 보호합니다.",
+      "Generally Available로 제공되어 Azure Functions Flex Consumption을 사용하는 엔터프라이즈 고객의 보안 태세와 규정 준수를 향상합니다."
+    ],
+    "translated_at": "2026-09-11T00:52:57.094205+00:00"
+  },
+  "570980": {
+    "summary": "Azure Copilot Troubleshooting Agent is now generally available, providing a unified, built-in tool that accelerates operational issue investigation and resolution by consolidating insights, context, and recommended actions in one experience.",
+    "key_points": [
+      "Enables faster troubleshooting by integrating diagnostics and operational context for Azure resources like AKS, VMs, and more.",
+      "Accessible via Azure Copilot and Support + Troubleshooting in the Azure portal at no additional cost, with no extra licensing or query charges.",
+      "Maintains customer control by respecting Azure RBAC and explaining findings with recommended actions for informed remediation decisions.",
+      "Supports a conversational experience that evolves to cover more Azure services, enhancing operational efficiency and reducing reliance on external support."
+    ],
+    "doc_url": "https://techcommunity.microsoft.com/blog/appsonazureblog/azure-copilot-announces-general-availability-of-the-troubleshooting-agent/4554549",
+    "doc_title": "Azure Copilot announces general availability of the Troubleshooting Agent | Microsoft Community Hub",
+    "doc_read": true,
+    "links": [
+      "https://aka.ms/troubleshootingagent/ga"
+    ],
+    "source": "llm",
+    "updated_at": "2026-09-11T00:52:52.455882+00:00",
+    "title_ko": "Generally Available: Azure Copilot Troubleshooting Agent",
+    "summary_ko": "Azure Copilot Troubleshooting Agent가 이제 Generally Available 상태로 제공되며, 통합된 내장 도구를 통해 인사이트, 컨텍스트 및 권장 조치를 하나의 경험으로 통합하여 운영 문제 조사와 해결을 가속화합니다.",
+    "key_points_ko": [
+      "AKS, VM 등 Azure 리소스에 대한 진단과 운영 컨텍스트를 통합하여 더 빠른 문제 해결을 지원합니다.",
+      "Azure Copilot 및 Azure 포털의 Support + Troubleshooting을 통해 추가 비용 없이 접근 가능하며, 별도의 라이선스나 쿼리 비용이 없습니다.",
+      "Azure RBAC를 준수하여 고객의 제어권을 유지하며, 권장 조치와 함께 결과를 설명하여 정보에 기반한 문제 해결 결정을 돕습니다.",
+      "대화형 경험을 지원하며 점차 더 많은 Azure 서비스를 포함하도록 확장되어 운영 효율성을 높이고 외부 지원 의존도를 줄입니다."
+    ],
+    "translated_at": "2026-09-11T00:53:01.113170+00:00"
   }
 }

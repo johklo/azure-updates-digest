@@ -1,7 +1,67 @@
 {
-  "updated_at": "2026-09-10T00:55:04.346740+00:00",
-  "count": 993,
+  "updated_at": "2026-09-11T00:52:35.388190+00:00",
+  "count": 995,
   "items": [
+    {
+      "id": "570940",
+      "productCategories": [
+        "Compute",
+        "Containers",
+        "Internet of Things"
+      ],
+      "tags": [
+        "Features",
+        "Security",
+        "Feature"
+      ],
+      "products": [
+        "Azure Functions"
+      ],
+      "generalAvailabilityDate": "2026-09",
+      "previewAvailabilityDate": null,
+      "privatePreviewAvailabilityDate": null,
+      "title": "Generally Available: TLS/SSL certificate and end-to-end TLS encryption support for Azure Functions Flex Consumption ",
+      "description": "<p>Azure\nFunctions Flex Consumption support for TLS/SSL certificates is now generally\navailable through a new site-scoped certificate model. Each function app can\nhold up to 3 private (.pfx) and 3 public (.cer) certificates uploaded directly,\nimported from Azure Key Vault, or issued as free App Service Managed\nCertificates to enable custom domains, client-certificate authentication, and\nmutual TLS scenarios on Flex Consumption.&nbsp;</p><p>End-to-end\nTLS encryption is also generally available for Flex Consumption and allows traffic\nencryption between the platform front ends and the workers that run your\nfunctions.&nbsp;</p><p>Learn more:&nbsp;&nbsp;</p><ul><li><a href=\"https://learn.microsoft.com/azure/azure-functions/flex-consumption-how-to#configure-site-scoped-certificates\">Configure\nsite-scoped certificates</a>&nbsp;</li><li><a href=\"https://learn.microsoft.com/en-us/azure/azure-functions/functions-infrastructure-as-code#site-scoped-certificates\">Infrastructure\nas code instructions</a>&nbsp;</li><li><a href=\"https://learn.microsoft.com/azure/azure-functions/functions-scale#certificates\">Cross-plan\ncertificate comparison</a>&nbsp;</li><li><a href=\"https://learn.microsoft.com/en-us/azure/azure-functions/flex-consumption-how-to#configure-end-to-end-tls-encryption\">Configure\nend-to-end TLS encryption</a>&nbsp;</li></ul>",
+      "status": "Launched",
+      "created": "2026-09-10T16:12:49.3807434Z",
+      "modified": "2026-09-10T16:12:49.3807434Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "General Availability",
+          "year": 2026,
+          "month": "September"
+        }
+      ]
+    },
+    {
+      "id": "570980",
+      "productCategories": [
+        "Management and governance"
+      ],
+      "tags": [
+        "Features"
+      ],
+      "products": [
+        "Azure Copilot"
+      ],
+      "generalAvailabilityDate": "2026-09",
+      "previewAvailabilityDate": null,
+      "privatePreviewAvailabilityDate": null,
+      "title": "Generally Available: Azure Copilot Troubleshooting Agent",
+      "description": "Azure Copilot Troubleshooting Agent is now generally available. Troubleshooting Agent is&nbsp;a unified, built-in Azure Copilot capability that helps customers investigate and resolve operational issues faster. Available through both Azure Copilot and Support + Troubleshooting in the Azure portal, Troubleshooting Agent enables you to move from issue detection to resolution faster by bringing together troubleshooting insights, operational context, and recommended actions in a single experience.&nbsp;<br><br><a href=\"https://aka.ms/troubleshootingagent/ga\">Learn more</a>.<br>",
+      "status": "Launched",
+      "created": "2026-09-10T15:25:52.9183356Z",
+      "modified": "2026-09-10T15:25:52.9183356Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "General Availability",
+          "year": 2026,
+          "month": "September"
+        }
+      ]
+    },
     {
       "id": "569241",
       "productCategories": [
