@@ -1,64 +1,10 @@
 {
-  "generated_at": "2026-09-12T00:57:38.009462+00:00",
-  "window_start": "2026-09-05T00:57:38.009462+00:00",
-  "window_end": "2026-09-12T00:57:38.009462+00:00",
+  "generated_at": "2026-09-13T00:42:03.796979+00:00",
+  "window_start": "2026-09-06T00:42:03.796979+00:00",
+  "window_end": "2026-09-13T00:42:03.796979+00:00",
   "window_days": 7,
   "fetched_count": 8,
   "matched_count": 8,
-  "count": 2,
-  "items": [
-    {
-      "id": "571257",
-      "productCategories": [],
-      "tags": [
-        "Retirements"
-      ],
-      "products": [],
-      "generalAvailabilityDate": null,
-      "previewAvailabilityDate": null,
-      "privatePreviewAvailabilityDate": null,
-      "title": "Retirement: Azure Linux with OS Guard in Azure Kubernetes Service",
-      "description": "Support for Azure Linux&nbsp;with OS Guard in Azure Kubernetes Service will&nbsp;end&nbsp;on December 10, 2026. Azure Container Linux is the replacement&nbsp;for Azure Linux with OS Guard (preview). Starting on December 10, 2026:<ul><li>Users&nbsp;won’t be able to create new Azure Linux with OS Guard (preview) node pools.</li><li>AKS won’t produce new node images for affected node pools.</li><li>Existing node pools won’t receive security patches.</li></ul>On March 10,&nbsp;2027, AKS will remove the Azure Linux with OS Guard node images. After the images are removed, scaling and remediation operations, including reimage and redeploy operations, will fail for affected node pools. You can use either of the following migration options:<ul><li>Migrate an existing Azure Linux with OS Guard node pool in place by following the <a href=\"https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Flearn.microsoft.com%2Fen-us%2Fazure%2Fazure-linux%2Ftutorial-migrate-azure-container-linux-aks&amp;data=05%7C02%7Cazureupdatesops%40microsoft.com%7Cc58d81ac8e7245c11d4308df102499ee%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C639247421529477921%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&amp;sdata=NRx28OxzlA3umXv6JJi6iTNOeEhyrdQv5%2Bu90lBqENA%3D&amp;reserved=0\" data-auth=\"NotApplicable\" title=\"Original URL: https://learn.microsoft.com/en-us/azure/azure-linux/tutorial-migrate-azure-container-linux-aks. Click or tap if you trust this link.\" data-linkindex=\"0\">Migrate nodes to Azure Container Linux for Azure Kubernetes Service documentation</a>. This operation preforms a standard node image upgrade.</li><li>Alternatively,&nbsp;create a new Azure Container Linux node pool, migrate and validate&nbsp;workloads, and then delete&nbsp;the Azure Linux with OS&nbsp;Guard node pool. Follow <a href=\"https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Flearn.microsoft.com%2Fazure%2Fazure-linux%2Ftutorial-migrate-azure-container-linux-aks%23add-acl-node-pools-and-remove-existing-node-pools&amp;data=05%7C02%7Cazureupdatesops%40microsoft.com%7Cc58d81ac8e7245c11d4308df102499ee%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C639247421529495193%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&amp;sdata=aNkQJNGJAU6uYIWPdDTSoWFmcB4IthaTOQZbYuNkg34%3D&amp;reserved=0\" data-auth=\"NotApplicable\" title=\"Original URL: https://learn.microsoft.com/azure/azure-linux/tutorial-migrate-azure-container-linux-aks#add-acl-node-pools-and-remove-existing-node-pools. Click or tap if you trust this link.\" data-linkindex=\"1\">Add Azure Container Linux node pools and remove existing node pools</a>.</li></ul>For other available options, see the <a href=\"https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Flearn.microsoft.com%2Fazure%2Faks%2Fcore-aks-concepts%23nodes-and-node-pools%3A~%3Atext%3Din%2520AKS.-%2COS%2C-AKS%2520supports%2520two&amp;data=05%7C02%7Cazureupdatesops%40microsoft.com%7Cc58d81ac8e7245c11d4308df102499ee%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C639247421529505232%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&amp;sdata=l0OGIlVrOHRh4Rky%2BCuRL4MG9i2uwkHSswA0U8YcN0U%3D&amp;reserved=0\" data-auth=\"NotApplicable\" title=\"Original URL: https://learn.microsoft.com/azure/aks/core-aks-concepts#nodes-and-node-pools:~:text=in%20AKS.-,OS,-AKS%20supports%20two. Click or tap if you trust this link.\" data-linkindex=\"2\">AKS node operating system</a>. If you have questions, get answers from community experts in <a href=\"https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fdocs.microsoft.com%2Fanswers%2Ftopics%2F25346%2Fazure-kubernetes-service.html&amp;data=05%7C02%7Cazureupdatesops%40microsoft.com%7Cc58d81ac8e7245c11d4308df102499ee%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C639247421529517787%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&amp;sdata=0YAuextj2X%2BSU6WwwE90AVt%2BI2Kcz7p6kwtxfjTRiuQ%3D&amp;reserved=0\" data-auth=\"NotApplicable\" title=\"Original URL: https://docs.microsoft.com/answers/topics/25346/azure-kubernetes-service.html. Click or tap if you trust this link.\" data-linkindex=\"3\">Microsoft Q&amp;A</a>&nbsp;or <a href=\"https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fgithub.com%2FAzure%2FAKS&amp;data=05%7C02%7Cazureupdatesops%40microsoft.com%7Cc58d81ac8e7245c11d4308df102499ee%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C639247421529528663%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&amp;sdata=Z1fZxYKmTyLi8RDB9u7Bh7TCVYE5Ge9kTb1a284no7I%3D&amp;reserved=0\" data-auth=\"NotApplicable\" title=\"Original URL: https://github.com/Azure/AKS. Click or tap if you trust this link.\" data-linkindex=\"4\">AKS GitHub Repository</a>.&nbsp;If you have a support plan and need technical help, <a href=\"https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Flearn.microsoft.com%2Fazure%2Fazure-portal%2Fsupportability%2Fhow-to-create-azure-support-request&amp;data=05%7C02%7Cazureupdatesops%40microsoft.com%7Cc58d81ac8e7245c11d4308df102499ee%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C639247421529538446%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&amp;sdata=M%2FUiyUeDeXFI5kwNQDWk6hUr%2Bnzwswaf0UARwU6u4aE%3D&amp;reserved=0\" data-auth=\"NotApplicable\" title=\"Original URL: https://learn.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request. Click or tap if you trust this link.\" data-linkindex=\"5\">create a support request</a>.",
-      "status": null,
-      "created": "2026-09-11T18:08:28.7193012Z",
-      "modified": "2026-09-11T18:08:28.7193012Z",
-      "locale": null,
-      "availabilities": [
-        {
-          "ring": "Retirement",
-          "year": 2026,
-          "month": "December"
-        }
-      ]
-    },
-    {
-      "id": "570910",
-      "productCategories": [
-        "Migration",
-        "Storage"
-      ],
-      "tags": [
-        "Features"
-      ],
-      "products": [
-        "Azure Storage Mover"
-      ],
-      "generalAvailabilityDate": null,
-      "previewAvailabilityDate": "2026-09",
-      "privatePreviewAvailabilityDate": null,
-      "title": "Public Preview: Agentless migration of on-premises SMB file shares to Azure Files (SMB)",
-      "description": "Azure Storage Mover now supports agentless migration of on-premises SMB file shares to Azure Files (SMB), in public preview. You can move file data from Windows Server or NAS shares into Azure without deploying, registering, or maintaining a migration agent on-premises.<br><br>With agentless migration, the Storage Mover service connects directly to your SMB share over your existing private connection (VPN or ExpressRoute) and copies data to the destination Azure file share. Source credentials are stored securely in Azure Key Vault, and Storage Mover's managed identities handle access to both the source secrets and the target share. Configure source and target endpoints, create a job, and start the copy from the Azure portal or Azure CLI. <br><br>Agentless SMB migration joins Storage Mover's existing agent-based paths for SMB and NFS sources, giving you more flexibility to modernize file storage on your own terms.<br><br><a href=\"https://learn.microsoft.com/en-us/azure/storage-mover/agentless-on-premises-files-migration?tabs=portal\">Learn\nmore</a>.<br>",
-      "status": "In preview",
-      "created": "2026-09-11T15:58:56.5174477Z",
-      "modified": "2026-09-11T15:58:56.5174477Z",
-      "locale": null,
-      "availabilities": [
-        {
-          "ring": "Preview",
-          "year": 2026,
-          "month": "September"
-        }
-      ]
-    }
-  ]
+  "count": 0,
+  "items": []
 }
