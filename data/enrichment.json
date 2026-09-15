@@ -25807,5 +25807,58 @@
       "현재 프리뷰 상태로 제한 사항이 있으며, SMB 2.x/3.x만 지원하고 데이터는 복사되며(이동 아님), 충돌 방지를 위해 대상 공유당 하나의 작업만 권장합니다."
     ],
     "translated_at": "2026-09-12T00:58:00.607523+00:00"
+  },
+  "571360": {
+    "summary": "Starting October 2026, Windows App for Azure Virtual Desktop will use three new wildcard client-side FQDNs to unify domain requirements, requiring organizations to update network controls to prevent connection issues.",
+    "key_points": [
+      "Windows App will use *.windows.cloud.microsoft, *.service.windows.cloud.microsoft, and *.windows.static.microsoft for client-side traffic over port 443/TCP.",
+      "These domains are already included in cloud-side requirements; this update affects client-side network policies like firewall, proxy, VPN, DNS filtering, and Secure Web Gateway.",
+      "Organizations must allow outbound HTTPS traffic to these endpoints before October 2026 to avoid sign-in, connection, or session failures.",
+      "The change supports Microsoft's broader effort to unify domain requirements across Microsoft 365 and Azure Virtual Desktop services."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/microsoft-365/enterprise/cloud-microsoft-domain?view=o365-worldwide",
+    "doc_title": "Unified cloud.microsoft domain for Microsoft 365 apps - Microsoft 365 Enterprise",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/microsoft-365/enterprise/cloud-microsoft-domain?view=o365-worldwide",
+      "https://learn.microsoft.com/azure/virtual-desktop/required-fqdn-endpoint?tabs=azure"
+    ],
+    "source": "llm",
+    "updated_at": "2026-09-15T01:16:54.210690+00:00",
+    "title_ko": "Announcing: Azure Virtual Desktop용 새로운 Windows App 클라이언트 측 엔드포인트",
+    "summary_ko": "2026년 10월부터 Windows App for Azure Virtual Desktop은 도메인 요구 사항을 통합하기 위해 세 개의 새로운 와일드카드 클라이언트 측 FQDN을 사용하며, 이로 인해 조직에서는 연결 문제를 방지하기 위해 네트워크 제어를 업데이트해야 합니다.",
+    "key_points_ko": [
+      "Windows App은 클라이언트 측 트래픽에 대해 포트 443/TCP를 사용하는 *.windows.cloud.microsoft, *.service.windows.cloud.microsoft, *.windows.static.microsoft을 사용합니다.",
+      "이 도메인들은 이미 클라우드 측 요구 사항에 포함되어 있으며, 이번 업데이트는 방화벽, 프록시, VPN, DNS 필터링, Secure Web Gateway와 같은 클라이언트 측 네트워크 정책에 영향을 미칩니다.",
+      "조직은 2026년 10월 이전에 이러한 엔드포인트로의 아웃바운드 HTTPS 트래픽을 허용해야 로그인, 연결 또는 세션 실패를 방지할 수 있습니다.",
+      "이번 변경은 Microsoft 365와 Azure Virtual Desktop 서비스 전반에 걸친 도메인 요구 사항 통합을 위한 Microsoft의 광범위한 노력의 일환입니다."
+    ],
+    "translated_at": "2026-09-15T01:17:04.717985+00:00"
+  },
+  "571123": {
+    "summary": "Azure Application Gateway now publicly previews HTTP/3 over QUIC support to improve connection setup time, reduce latency, and enhance resiliency for frontend client connections, benefiting latency-sensitive workloads.",
+    "key_points": [
+      "HTTP/3 over QUIC is supported on Basic listeners at the listener level, configurable via Azure portal or REST API during public preview.",
+      "Backend communication remains HTTP/1.1; IPv6 listeners, mutual authentication, WAF gateways, and Public-Private IP Same Port feature are not supported with HTTP/3 listeners.",
+      "Requires TLS 1.3 with predefined 2022 TLS policies; enabling HTTP/3 applies only to the specific listener.",
+      "Azure PowerShell, Azure CLI, and Terraform support for HTTP/3 is planned for general availability but not available during preview."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/application-gateway/http3-quic-support",
+    "doc_title": "HTTP/3 support in Azure Application Gateway - Preview",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/azure/application-gateway/http3-quic-support"
+    ],
+    "source": "llm",
+    "updated_at": "2026-09-15T01:16:59.171625+00:00",
+    "title_ko": "Public Preview: Azure Application Gateway에서 HTTP/3 over QUIC 지원",
+    "summary_ko": "Azure Application Gateway가 HTTP/3 over QUIC 지원을 Public Preview로 제공하여 연결 설정 시간을 단축하고 지연 시간을 줄이며 프런트엔드 클라이언트 연결의 복원력을 향상시켜 지연에 민감한 워크로드에 이점을 제공합니다.",
+    "key_points_ko": [
+      "HTTP/3 over QUIC는 Public Preview 동안 Azure 포털 또는 REST API를 통해 구성 가능한 Basic 리스너 수준에서 지원됩니다.",
+      "백엔드 통신은 HTTP/1.1을 유지하며, IPv6 리스너, 상호 인증, WAF 게이트웨이 및 Public-Private IP Same Port 기능은 HTTP/3 리스너와 함께 지원되지 않습니다.",
+      "TLS 1.3과 2022년 사전 정의된 TLS 정책이 필요하며, HTTP/3 활성화는 특정 리스너에만 적용됩니다.",
+      "Azure PowerShell, Azure CLI 및 Terraform의 HTTP/3 지원은 General Availability를 목표로 계획 중이며 Preview 기간에는 제공되지 않습니다."
+    ],
+    "translated_at": "2026-09-15T01:17:09.666261+00:00"
   }
 }
