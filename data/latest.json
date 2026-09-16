@@ -1,69 +1,10 @@
 {
-  "generated_at": "2026-09-15T01:16:42.136433+00:00",
-  "window_start": "2026-09-08T01:16:42.136433+00:00",
-  "window_end": "2026-09-15T01:16:42.136433+00:00",
+  "generated_at": "2026-09-16T01:10:38.242844+00:00",
+  "window_start": "2026-09-09T01:10:38.242844+00:00",
+  "window_end": "2026-09-16T01:10:38.242844+00:00",
   "window_days": 7,
-  "fetched_count": 10,
-  "matched_count": 10,
-  "count": 2,
-  "items": [
-    {
-      "id": "571360",
-      "productCategories": [
-        "Compute",
-        "Virtual desktop infrastructure"
-      ],
-      "tags": [
-        "Announcement"
-      ],
-      "products": [
-        "Azure Virtual Desktop"
-      ],
-      "generalAvailabilityDate": null,
-      "previewAvailabilityDate": null,
-      "privatePreviewAvailabilityDate": null,
-      "title": "Announcing: New Windows App client-side endpoints for Azure Virtual Desktop",
-      "description": "Beginning in&nbsp;early October&nbsp;2026,&nbsp;Windows App will begin using&nbsp;three new wildcard&nbsp;fully qualified domain names (FQDNs) for client-side service traffic&nbsp;to Azure Virtual Desktop.&nbsp;These domains are already included in the cloud-side connectivity requirements.&nbsp;If your organization applies network controls to devices running Windows App, you must allow these endpoints before activation. If the endpoints are not reachable, users may experience sign-in and connection failures.&nbsp;&nbsp;<p>This&nbsp;is a client-side change for Windows App&nbsp;and is separate from the previous&nbsp;cloud-side domain update.&nbsp;Organizations that&nbsp;have&nbsp;already completed the cloud-side update&nbsp;should still review&nbsp;proxy, firewall, VPN, DNS filtering, and Secure Web Gateway policies that apply to user devices to ensure these endpoints are allowed.</p><p>This work is part of a&nbsp;<a href=\"https://learn.microsoft.com/microsoft-365/enterprise/cloud-microsoft-domain?view=o365-worldwide\" rel=\"noreferrer noopener\">wider Microsoft approach</a>&nbsp;to unify domain requirements.</p><p><b>Required client-side endpoints</b></p><p>*.windows.cloud.microsoft&nbsp;</p><ul><li data-aria-level=\"1\" data-aria-posinset=\"13\" data-font=\"Courier New\" data-leveltext=\"o\" data-list-defn-props=\"{\" data-list=\"\"><p>Purpose: General Windows cloud service traffic</p></li></ul><ul><li data-aria-level=\"1\" data-aria-posinset=\"14\" data-font=\"Courier New\" data-leveltext=\"o\" data-list-defn-props=\"{\" data-list=\"\"><p>Port: 443/TCP</p></li></ul><p>*.service.windows.cloud.microsoft&nbsp;</p><ul><li data-aria-level=\"1\" data-aria-posinset=\"15\" data-font=\"Courier New\" data-leveltext=\"o\" data-list-defn-props=\"{\" data-list=\"\"><p>Purpose: Service traffic&nbsp;which requires optimization</p></li></ul><ul><li data-aria-level=\"1\" data-aria-posinset=\"16\" data-font=\"Courier New\" data-leveltext=\"o\" data-list-defn-props=\"{\" data-list=\"\"><p>Port: 443/TCP</p></li></ul><p>*.windows.static.microsoft&nbsp;</p><ul><li data-aria-level=\"1\" data-aria-posinset=\"17\" data-font=\"Courier New\" data-leveltext=\"o\" data-list-defn-props=\"{\" data-list=\"\"><p>Purpose: Static content, installation, and update assets</p></li></ul><ul><li data-aria-level=\"1\" data-aria-posinset=\"18\" data-font=\"Courier New\" data-leveltext=\"o\" data-list-defn-props=\"{\" data-list=\"\"><p>Port: 443/TCP</p></li></ul><p><b>Timeline</b></p><p>Windows App will begin using these endpoints in early&nbsp;October 2026.&nbsp;</p><p><b>Who is affected?</b></p><p>Organizations that:</p><p></p><ul data-editing-info=\"{&quot;orderedStyleType&quot;:1,&quot;unorderedStyleType&quot;:1}\"><li>Use Windows App to connect to Azure Virtual Desktop.</li><li><p>Apply firewall, proxy, VPN, DNS filtering, Secure Web Gateway, or similar controls to end-user devices.</p></li></ul><p></p><p><b>Potential Impact&nbsp;</b></p><p>If these endpoints are unavailable, blocked, or inspected in a way that interrupts the connection, users may experience failures during sign-in, resource discovery, connection, or an active session.</p><p><b>Recommended Action</b></p><p>Before early October&nbsp;2026:</p><p></p><ul data-editing-info=\"{&quot;orderedStyleType&quot;:1,&quot;unorderedStyleType&quot;:1}\"><li>Allow outbound HTTPS traffic on 443/TCP to all three FQDNs in applicable firewall&nbsp;rules, proxy allow lists, VPN configurations, DNS filters, and Secure Web Gateway policies.</li><li><p>Review TLS inspection or other traffic interception that could prevent Windows App from reaching Microsoft services. Where permitted&nbsp;by organizational policy, route this traffic directly to Microsoft.</p></li><li><p>If client devices are behind managed&nbsp;network boundary engage the team that manages those controls as early as possible, as approval and change-management processes may require additional&nbsp;lead time.</p></li><li><p>Inform your help desk and update internal network and troubleshoot guide.</p></li></ul><p></p><p>Learn more:</p><ul><li data-aria-level=\"1\" data-aria-posinset=\"2\" data-font=\"Symbol\" data-leveltext=\"\" data-list-defn-props=\"{\" data-list=\"\"><p><a href=\"https://learn.microsoft.com/azure/virtual-desktop/required-fqdn-endpoint?tabs=azure\" rel=\"noreferrer noopener\">Required FQDNs and endpoints for Azure Virtual Desktop</a></p></li></ul><ul><li data-aria-level=\"1\" data-aria-posinset=\"3\" data-font=\"Symbol\" data-leveltext=\"\" data-list-defn-props=\"{\" data-list=\"\"><p><a href=\"https://learn.microsoft.com/microsoft-365/enterprise/cloud-microsoft-domain?view=o365-worldwide\" rel=\"noreferrer noopener\">Microsoft unified cloud.microsoft domain</a></p></li></ul><p><br></p>",
-      "status": null,
-      "created": "2026-09-14T18:24:04.8309867Z",
-      "modified": "2026-09-14T18:24:04.8309867Z",
-      "locale": null,
-      "availabilities": [
-        {
-          "ring": "Effective",
-          "year": 2026,
-          "month": "October"
-        }
-      ]
-    },
-    {
-      "id": "571123",
-      "productCategories": [
-        "Networking",
-        "Security"
-      ],
-      "tags": [
-        "Features"
-      ],
-      "products": [
-        "Application Gateway"
-      ],
-      "generalAvailabilityDate": null,
-      "previewAvailabilityDate": "2026-09",
-      "privatePreviewAvailabilityDate": null,
-      "title": "Public Preview: HTTP/3 over QUIC support in Azure Application Gateway",
-      "description": "Announcing public preview\nsupport for HTTP/3 over QUIC on Azure Application Gateway. HTTP/3 is the next\nevolution of HTTP and uses QUIC to improve connection setup time, reduce\nlatency, and provide better resiliency for modern web applications and APIs.&nbsp;<p>With HTTP/3 support,\nApplication Gateway can now serve frontend client connections over QUIC,\nhelping improve performance for latency-sensitive workloads such as web\napplications, messaging platforms, mobile experiences, transactions, and APIs.\nQUIC reduces connection establishment overhead and supports independent\nstreams, helping minimize the impact of packet loss and improving\nresponsiveness over unreliable or high-latency networks.&nbsp;</p><p>HTTP/3 is configured at the\nlistener level, allowing you to enable it selectively on Basic listeners.\nDuring public preview, HTTP/3 can be configured by using the Azure portal or\nthrough the REST API.&nbsp;</p><p><a href=\"https://learn.microsoft.com/azure/application-gateway/http3-quic-support\">Learn more</a>.</p>",
-      "status": "In preview",
-      "created": "2026-09-14T17:55:00.1174889Z",
-      "modified": "2026-09-14T17:55:00.1174889Z",
-      "locale": null,
-      "availabilities": [
-        {
-          "ring": "Preview",
-          "year": 2026,
-          "month": "September"
-        }
-      ]
-    }
-  ]
+  "fetched_count": 8,
+  "matched_count": 8,
+  "count": 0,
+  "items": []
 }
