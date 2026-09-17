@@ -25860,5 +25860,109 @@
       "Azure PowerShell, Azure CLI 및 Terraform의 HTTP/3 지원은 General Availability를 목표로 계획 중이며 Preview 기간에는 제공되지 않습니다."
     ],
     "translated_at": "2026-09-15T01:17:09.666261+00:00"
+  },
+  "571342": {
+    "summary": "Microsoft is retiring the containerized SAP data connector by October 14, 2026, requiring customers to migrate to the supported agentless SAP data connector to ensure continued SAP log ingestion in Microsoft Sentinel.",
+    "key_points": [
+      "The containerized SAP data connector was retired on September 14, 2026, and container images will be removed on October 14, 2026, disabling new pulls and deployments.",
+      "Customers must migrate to the agentless SAP data connector, which offers simplified deployment, reduced maintenance, and a future-proof architecture based on SAP Integration Suite and SAP Cloud Connector.",
+      "Migration involves running the agentless connector alongside the containerized agent, validating log ingestion, and then decommissioning the containerized agent to maintain uninterrupted SAP log collection.",
+      "Existing analytics rules, workbooks, and playbooks remain functional with the agentless connector, which provides feature parity and supports extensions without changes to existing content."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/sentinel/sap/sap-agent-migrate",
+    "doc_title": "Migrate to the Microsoft Sentinel agentless SAP data connector",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/azure/sentinel/sap/sap-agent-migrate"
+    ],
+    "source": "llm",
+    "updated_at": "2026-09-17T01:11:48.468019+00:00",
+    "title_ko": "Retirement Update: 2026년 10월 14일 SAP 컨테이너 이미지 제거",
+    "summary_ko": "Microsoft는 2026년 10월 14일까지 컨테이너화된 SAP 데이터 커넥터를 Retirement하며, 고객은 Microsoft Sentinel에서 SAP 로그 수집을 계속하기 위해 지원되는 agentless SAP 데이터 커넥터로 마이그레이션해야 합니다.",
+    "key_points_ko": [
+      "컨테이너화된 SAP 데이터 커넥터는 2026년 9월 14일에 Retirement되었으며, 컨테이너 이미지는 2026년 10월 14일에 제거되어 새로운 풀 및 배포가 불가능해집니다.",
+      "고객은 SAP Integration Suite와 SAP Cloud Connector 기반의 향후 확장 가능한 아키텍처를 제공하며 배포가 간소화되고 유지 관리가 감소된 agentless SAP 데이터 커넥터로 마이그레이션해야 합니다.",
+      "마이그레이션은 agentless 커넥터를 컨테이너화된 에이전트와 함께 실행하고 로그 수집을 검증한 후, 컨테이너화된 에이전트를 종료하여 SAP 로그 수집이 중단되지 않도록 진행합니다.",
+      "기존 분석 규칙, 워크북, 플레이북은 agentless 커넥터와 함께 계속 작동하며, 기능 동등성을 제공하고 기존 콘텐츠 변경 없이 확장을 지원합니다."
+    ],
+    "translated_at": "2026-09-17T01:12:10.860818+00:00"
+  },
+  "571056": {
+    "summary": "Azure SQL now supports configurable soft delete for logical servers, enabling self-restore within a retention period to prevent accidental data loss without Microsoft support.",
+    "key_points": [
+      "Soft delete can be configured for Azure SQL logical servers with retention periods from 1 to 7 days, allowing recovery of deleted servers and their databases.",
+      "This feature improves operational safety by reducing risks during automation, scripted cleanup, or bulk operations.",
+      "Soft delete retention can be set or updated via PowerShell, Azure CLI, or Azure portal (for existing servers), but not during server creation in the portal.",
+      "Customers gain enhanced governance and protection by adding a recovery buffer to mitigate irreversible loss due to human error."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/azure-sql/database/deleted-logical-server-restore?view=azuresql&tabs=azure-portal",
+    "doc_title": "Restore a Deleted Logical Server (Preview) - Azure SQL Database",
+    "doc_read": true,
+    "links": [
+      "https://aka.ms/selfserverestore"
+    ],
+    "source": "llm",
+    "updated_at": "2026-09-17T01:11:52.742241+00:00",
+    "title_ko": "Public Preview: 2026년 9월 중순 Azure SQL 업데이트",
+    "summary_ko": "Azure SQL이 이제 논리 서버에 대해 구성 가능한 소프트 삭제를 지원하여, Microsoft 지원 없이도 보존 기간 내에 자체 복원을 가능하게 하여 우발적인 데이터 손실을 방지합니다.",
+    "key_points_ko": [
+      "소프트 삭제는 1일에서 7일 사이의 보존 기간으로 Azure SQL 논리 서버에 구성할 수 있어 삭제된 서버와 해당 데이터베이스를 복구할 수 있습니다.",
+      "이 기능은 자동화, 스크립트 정리 또는 대량 작업 중 위험을 줄여 운영 안전성을 향상합니다.",
+      "소프트 삭제 보존 기간은 PowerShell, Azure CLI 또는 Azure 포털(기존 서버에 한함)을 통해 설정하거나 업데이트할 수 있으나, 포털에서 서버 생성 시에는 설정할 수 없습니다.",
+      "고객은 복구 버퍼를 추가하여 인간 오류로 인한 되돌릴 수 없는 손실을 완화함으로써 거버넌스와 보호 기능을 강화할 수 있습니다."
+    ],
+    "translated_at": "2026-09-17T01:12:15.040340+00:00"
+  },
+  "571621": {
+    "summary": "Azure Red Hat OpenShift with hosted control planes is now in public preview, offering a fully managed control plane to accelerate application modernization, simplify operations, and enhance security.",
+    "key_points": [
+      "Hosted control planes run the OpenShift control plane as a fully managed service by Microsoft and Red Hat SREs, separate from customer worker nodes.",
+      "Public preview is available in multiple regions including UK South, Canada Central, Australia East, Switzerland North, Brazil South, Central India, East US 2, and West Europe.",
+      "This deployment model enables faster cluster provisioning, scalable development/test environments, and independent lifecycle management of control plane and worker nodes.",
+      "Security is strengthened with managed identities, workload identities, short-lived tokens, default etcd encryption, and bring-your-own keys to meet compliance and regulatory needs."
+    ],
+    "doc_url": "https://techcommunity.microsoft.com/blog/appsonazureblog/azure-red-hat-openshift-with-hosted-control-planes-now-available-in-public-previ/4555997",
+    "doc_title": "Azure Red Hat OpenShift with hosted control planes now available in public preview | Microsoft Community Hub",
+    "doc_read": true,
+    "links": [
+      "https://techcommunity.microsoft.com/blog/appsonazureblog/azure-red-hat-openshift-with-hosted-control-planes-now-available-in-public-previ/4555997"
+    ],
+    "source": "llm",
+    "updated_at": "2026-09-17T01:11:58.590771+00:00",
+    "title_ko": "Public Preview: 호스티드 컨트롤 플레인을 갖춘 Azure Red Hat OpenShift",
+    "summary_ko": "호스티드 컨트롤 플레인을 갖춘 Azure Red Hat OpenShift가 Public Preview로 제공되며, 완전 관리형 컨트롤 플레인을 통해 애플리케이션 현대화를 가속화하고 운영을 간소화하며 보안을 강화합니다.",
+    "key_points_ko": [
+      "호스티드 컨트롤 플레인은 OpenShift 컨트롤 플레인을 고객 워커 노드와 분리하여 Microsoft와 Red Hat SRE가 완전 관리형 서비스로 운영합니다.",
+      "Public Preview는 UK South, Canada Central, Australia East, Switzerland North, Brazil South, Central India, East US 2, West Europe 등 여러 지역에서 이용 가능합니다.",
+      "이 배포 모델은 클러스터 프로비저닝 속도를 높이고, 확장 가능한 개발/테스트 환경을 제공하며, 컨트롤 플레인과 워커 노드의 라이프사이클을 독립적으로 관리할 수 있게 합니다.",
+      "관리형 ID, 워크로드 ID, 단기 토큰, 기본 etcd 암호화, BYOK(Bring-Your-Own Keys)를 통해 보안이 강화되어 컴플라이언스 및 규제 요구사항을 충족합니다."
+    ],
+    "translated_at": "2026-09-17T01:12:20.225864+00:00"
+  },
+  "569664": {
+    "summary": "Azure Database for PostgreSQL now supports a public preview of PostgreSQL skills and an MCP plugin that enable AI coding assistants to provide context-aware, expert guidance and safely act on live PostgreSQL databases, improving development accuracy and operational safety.",
+    "key_points": [
+      "The plugin integrates expert-curated PostgreSQL and Azure Database for PostgreSQL skills with an MCP server to inspect live database context, run queries, and apply changes.",
+      "Available through AI coding assistants like GitHub Copilot CLI, Claude Code, and Codex CLI, it delivers tailored guidance based on schema, PostgreSQL version, extensions, and Azure environment.",
+      "Supports scenarios including query tuning, vector search, JSONB, partitioning, security, Azure provisioning/scaling, high availability, failover, and advanced features like Apache AGE knowledge graphs.",
+      "Ensures safe operations by confirming destructive actions, enforcing Azure-specific constraints, and validating changes before applying, thus enabling verified and deployment-aware database management."
+    ],
+    "doc_url": "https://techcommunity.microsoft.com/blog/adforpostgresql/postgres-skills-give-your-ai-agent-postgresql-expertise/4556705",
+    "doc_title": "Postgres Skills: Give Your AI Agent PostgreSQL Expertise | Microsoft Community Hub",
+    "doc_read": true,
+    "links": [
+      "https://techcommunity.microsoft.com/blog/adforpostgresql/postgres-skills-give-your-ai-agent-postgresql-expertise/4556705"
+    ],
+    "source": "llm",
+    "updated_at": "2026-09-17T01:12:04.819716+00:00",
+    "title_ko": "Public Preview: PostgreSQL 기술 및 MCP 플러그인 Azure Database for PostgreSQL용",
+    "summary_ko": "Azure Database for PostgreSQL이 이제 PostgreSQL 기술과 MCP 플러그인의 Public Preview를 지원하여 AI 코딩 어시스턴트가 컨텍스트 인지형 전문 가이드를 제공하고 실시간 PostgreSQL 데이터베이스에서 안전하게 작업할 수 있어 개발 정확성과 운영 안전성을 향상합니다.",
+    "key_points_ko": [
+      "이 플러그인은 전문가가 선별한 PostgreSQL 및 Azure Database for PostgreSQL 기술을 MCP 서버와 통합하여 실시간 데이터베이스 컨텍스트를 검사하고 쿼리를 실행하며 변경 사항을 적용합니다.",
+      "GitHub Copilot CLI, Claude Code, Codex CLI와 같은 AI 코딩 어시스턴트를 통해 제공되며, 스키마, PostgreSQL 버전, 확장 기능, Azure 환경을 기반으로 맞춤형 가이드를 제공합니다.",
+      "쿼리 튜닝, 벡터 검색, JSONB, 파티셔닝, 보안, Azure 프로비저닝/스케일링, 고가용성, 장애 조치, Apache AGE 지식 그래프와 같은 고급 기능을 포함한 다양한 시나리오를 지원합니다.",
+      "파괴적 작업 확인, Azure 특정 제약 조건 적용, 변경 사항 검증을 통해 안전한 운영을 보장하여 검증되고 배포 인지형 데이터베이스 관리를 가능하게 합니다."
+    ],
+    "translated_at": "2026-09-17T01:12:25.570116+00:00"
   }
 }
