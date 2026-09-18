@@ -1,117 +1,63 @@
 {
-  "generated_at": "2026-09-17T01:11:34.604939+00:00",
-  "window_start": "2026-09-10T01:11:34.604939+00:00",
-  "window_end": "2026-09-17T01:11:34.604939+00:00",
+  "generated_at": "2026-09-18T01:07:31.251372+00:00",
+  "window_start": "2026-09-11T01:07:31.251372+00:00",
+  "window_end": "2026-09-18T01:07:31.251372+00:00",
   "window_days": 7,
   "fetched_count": 10,
   "matched_count": 10,
-  "count": 4,
+  "count": 2,
   "items": [
     {
-      "id": "571342",
+      "id": "570509",
       "productCategories": [],
       "tags": [
-        "Retirements"
+        "Features",
+        "Security",
+        "Services"
       ],
       "products": [],
       "generalAvailabilityDate": null,
+      "previewAvailabilityDate": "2026-09",
+      "privatePreviewAvailabilityDate": null,
+      "title": "Public Preview: Azure Payments HSM v2",
+      "description": "<p><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">Azure Payments HSM v2</span><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\"> is a highly available,\nsingle-tenant Payment HSM service for payment processing, credential issuance,\nPIN processing, key management, and authentication data protection. Customers\nretain exclusive administrative control of an isolated, single-tenant Payment\nHSM cluster while Microsoft manages the underlying infrastructure,\navailability, and lifecycle operations. Azure Payments HSM v2 enables customers\nto protect sensitive payment assets, maintain key sovereignty, and meet the\nstringent security, compliance, audit, performance, and operational\nrequirements of the Payment Card Industry (PCI).&nbsp;</span></p><p><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">Azure Payment HSM v2 runs in PCI DSS and PCI 3DS\ncompliant Azure data centers, on security infrastructure certified to FIPS\n140-3 Level 3, PCI DSS, PCI 3DS, and PCI PIN (PTS).</span><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\"> Because payment HSM\nclusters are isolated per customer, customers can deploy the service as a\nvalidated component within their own PCI solution, simplifying ongoing audit\nand compliance.&nbsp;</span></p><p><a href=\"https://learn.microsoft.com/azure/payment-hsm-v2/overview\"><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">Learn more</span></a><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">.&nbsp;</span></p>",
+      "status": "In preview",
+      "created": "2026-09-17T18:36:44.4352804Z",
+      "modified": "2026-09-17T18:36:44.4352804Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "Preview",
+          "year": 2026,
+          "month": "September"
+        }
+      ]
+    },
+    {
+      "id": "571572",
+      "productCategories": [
+        "Networking"
+      ],
+      "tags": [
+        "Features",
+        "Management",
+        "Services"
+      ],
+      "products": [
+        "Azure Virtual Network Manager"
+      ],
+      "generalAvailabilityDate": "2026-09",
       "previewAvailabilityDate": null,
       "privatePreviewAvailabilityDate": null,
-      "title": "Retirement Update: SAP container images removed October 14, 2026",
-      "description": "The containerized SAP data connector retired on September 14, 2026 and is unsupported and unmaintained. Existing TLS-compliant agents may continue sending logs through the retired HTTP Data Collector API. Container images will be removed on October 14, 2026, preventing new pulls, installation, redeployment, scaling, replacement, and disaster recovery. Customers must migrate to the supported SAP agentless connector.<br><p><a href=\"https://learn.microsoft.com/azure/sentinel/sap/sap-agent-migrate\">Learn\nmore</a>.&nbsp;</p>",
-      "status": null,
-      "created": "2026-09-16T17:19:02.1256185Z",
-      "modified": "2026-09-16T17:19:02.1256185Z",
+      "title": "Generally Available: High-scale mesh in Azure Virtual Network Manager",
+      "description": "<p>High-scale mesh using <a href=\"https://learn.microsoft.com/en-us/azure/virtual-network-manager/concept-connectivity-configuration#enable-high-scale-private-endpoints-in-azure-virtual-network-manager-connected-groups\">connected\ngroup</a> in Azure Virtual Network\nManager is now in general availability. In available regions, customers may connect\nup to 3,000 virtual networks in a single mesh connectivity configuration by\ndefault and higher scale IP connectivity within those virtual networks available\nby request.&nbsp;</p><p>Manage\nconnectivity across large virtual network environments without creating and\nmaintaining individual peerings. High-scale mesh uses the familiar network\ngroup and connectivity configuration model, helping you keep applications and\nbusiness units in separate virtual networks while simplifying direct\nnetwork-to-network\nconnectivity.&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</p><a href=\"https://learn.microsoft.com/en-us/azure/virtual-network-manager/concept-connectivity-configuration#enable-high-scale-connectivity-in-azure-virtual-network-manager-connected-groups\">Learn\nmore</a>. <br>",
+      "status": "Launched",
+      "created": "2026-09-17T17:40:33.6598501Z",
+      "modified": "2026-09-17T17:40:33.6598501Z",
       "locale": null,
       "availabilities": [
         {
-          "ring": "Retirement",
-          "year": 2026,
-          "month": "October"
-        }
-      ]
-    },
-    {
-      "id": "571056",
-      "productCategories": [
-        "Databases",
-        "Hybrid + multicloud"
-      ],
-      "tags": [
-        "Feature"
-      ],
-      "products": [
-        "Azure SQL Database"
-      ],
-      "generalAvailabilityDate": null,
-      "previewAvailabilityDate": "2026-09",
-      "privatePreviewAvailabilityDate": null,
-      "title": "Public Preview: Azure SQL updates for mid-September 2026 ",
-      "description": "In mid-September&nbsp;2026, the following updates and enhancements were made to Azure SQL:<ul data-editing-info=\"{&quot;orderedStyleType&quot;:1,&quot;unorderedStyleType&quot;:1}\"><li data-leveltext=\"\" data-font=\"Symbol\" data-list=\"\" data-list-defn-props=\"{&quot;335552541&quot;:1,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}\" data-aria-posinset=\"1\" data-aria-level=\"1\"><p>Configure soft delete for the Azure SQL logical server. When the logical server is deleted, it goes into a soft deleted state and is self-restorable during the configured retention period. Any accidental deletes of the logical server can now be self-recovered within the retention period predictably and consistently, without having to call Microsoft support.</p></li></ul><p><a href=\"https://aka.ms/selfserverestore\">Learn more</a>.</p>",
-      "status": "In preview",
-      "created": "2026-09-16T17:15:10.2621356Z",
-      "modified": "2026-09-16T17:15:10.2621356Z",
-      "locale": null,
-      "availabilities": [
-        {
-          "ring": "Preview",
-          "year": 2026,
-          "month": "September"
-        }
-      ]
-    },
-    {
-      "id": "571621",
-      "productCategories": [
-        "Containers"
-      ],
-      "tags": [
-        "Feature"
-      ],
-      "products": [
-        "Azure Red Hat OpenShift"
-      ],
-      "generalAvailabilityDate": null,
-      "previewAvailabilityDate": "2026-09",
-      "privatePreviewAvailabilityDate": null,
-      "title": "Public Preview: Azure Red Hat OpenShift with hosted control planes ",
-      "description": "<br><p>Azure Red Hat OpenShift with hosted control planes is now in public preview. It is a new deployment option for Azure Red Hat OpenShift that runs the OpenShift control plane as a fully managed service, separate from the worker nodes that run customer applications.&nbsp;</p><p>Azure Red Hat OpenShift with hosted control planes accelerates application modernization by providing a fully managed OpenShift platform operated by Microsoft and Red Hat SREs, allowing teams to focus on building applications instead of managing infrastructure. Organizations can modernize at their own pace and run virtual machines, containers, and cloud-native applications on a single AI-ready platform.</p><p>This deployment model enables developers to move faster. Clusters provision in minutes, and development and test environments can scale down during idle periods and scale back up when needed. This helps teams to accelerate experimentation, shorten testing cycles, and bring applications to production more quickly while optimizing infrastructure spend.&nbsp;</p><p>Azure Red Hat OpenShift with hosted control planes simplifies operations across growing multi-cluster environments by separating control plane and worker node lifecycles, giving organizations greater flexibility over application upgrades. Teams can scale across regions and environments, customize networking, and maintain operational consistency while Microsoft and Red Hat manage the underlying platform.&nbsp;</p><p>Azure Red Hat OpenShift with hosted control planes strengthens security through managed identity and workload identity, using short-lived, automatically rotated tokens instead of stored credentials. Organizations can integrate with their existing identity providers and enhance compliance with default etcd encryption and bring-your-own- keys to meet data residency, sovereignty, and regulatory requirements.&nbsp;</p><p>Public preview is available in UK South, Canada Central, Australia East, Switzerland North, Brazil South, Central India, East US 2, and West Europe.&nbsp;</p><p></p><p>To get started, create a new Azure Red Hat OpenShift cluster with hosted control planes through the Azure CLI, REST API, or Bicep. Azure Red Hat OpenShift with standard architecture remains fully supported and actively developed.&nbsp;&nbsp;</p><p><a href=\"https://techcommunity.microsoft.com/blog/appsonazureblog/azure-red-hat-openshift-with-hosted-control-planes-now-available-in-public-previ/4555997\">Learn more</a>.</p>",
-      "status": "In preview",
-      "created": "2026-09-16T14:13:08.8483041Z",
-      "modified": "2026-09-16T14:13:08.8483041Z",
-      "locale": null,
-      "availabilities": [
-        {
-          "ring": "Preview",
-          "year": 2026,
-          "month": "September"
-        }
-      ]
-    },
-    {
-      "id": "569664",
-      "productCategories": [
-        "Databases",
-        "Hybrid + multicloud"
-      ],
-      "tags": [
-        "Features"
-      ],
-      "products": [
-        "Azure Database for PostgreSQL"
-      ],
-      "generalAvailabilityDate": null,
-      "previewAvailabilityDate": "2026-09",
-      "privatePreviewAvailabilityDate": null,
-      "title": "Public Preview: PostgreSQL skills and MCP plugin for Azure Database for PostgreSQL ",
-      "description": "The&nbsp;PostgreSQL&nbsp;skills and MCP plugin turns&nbsp;supported AI coding assistants into context-aware PostgreSQL experts that can both provide guidance and act on a connected database. The bundled plugin combines expert-curated skills for PostgreSQL and Azure Database for PostgreSQL with an MCP server that can inspect your live database context, run queries, apply changes, and support database operations.<p>The plugin uses&nbsp;your schema, PostgreSQL version, extensions, and Azure environment to deliver relevant guidance instead of generic recommendations. It covers scenarios such as query and index tuning, vector search&nbsp;and retrieval-augmented generation (RAG), JSONB, partitioning, security, Azure provisioning and scaling, high availability and failover, point-in-time restore, AI functions, and knowledge graphs with Apache AGE. It automatically routes between generic PostgreSQL and Azure-specific guidance based on your question and connection context.</p><p>The&nbsp;plugin&nbsp;is available through supported AI coding assistants, including GitHub Copilot CLI, Claude Code, and Codex CLI.&nbsp;</p>\n<p><a href=\"https://techcommunity.microsoft.com/blog/adforpostgresql/postgres-skills-give-your-ai-agent-postgresql-expertise/4556705\">Learn more.</a>&nbsp;&nbsp;</p>\n\n",
-      "status": "In preview",
-      "created": "2026-09-16T14:07:14.7248853Z",
-      "modified": "2026-09-16T14:07:14.7248853Z",
-      "locale": null,
-      "availabilities": [
-        {
-          "ring": "Preview",
+          "ring": "General Availability",
           "year": 2026,
           "month": "September"
         }

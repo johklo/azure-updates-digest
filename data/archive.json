@@ -1,7 +1,63 @@
 {
-  "updated_at": "2026-09-17T01:11:34.604939+00:00",
-  "count": 1003,
+  "updated_at": "2026-09-18T01:07:31.251372+00:00",
+  "count": 1005,
   "items": [
+    {
+      "id": "570509",
+      "productCategories": [],
+      "tags": [
+        "Features",
+        "Security",
+        "Services"
+      ],
+      "products": [],
+      "generalAvailabilityDate": null,
+      "previewAvailabilityDate": "2026-09",
+      "privatePreviewAvailabilityDate": null,
+      "title": "Public Preview: Azure Payments HSM v2",
+      "description": "<p><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">Azure Payments HSM v2</span><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\"> is a highly available,\nsingle-tenant Payment HSM service for payment processing, credential issuance,\nPIN processing, key management, and authentication data protection. Customers\nretain exclusive administrative control of an isolated, single-tenant Payment\nHSM cluster while Microsoft manages the underlying infrastructure,\navailability, and lifecycle operations. Azure Payments HSM v2 enables customers\nto protect sensitive payment assets, maintain key sovereignty, and meet the\nstringent security, compliance, audit, performance, and operational\nrequirements of the Payment Card Industry (PCI).&nbsp;</span></p><p><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">Azure Payment HSM v2 runs in PCI DSS and PCI 3DS\ncompliant Azure data centers, on security infrastructure certified to FIPS\n140-3 Level 3, PCI DSS, PCI 3DS, and PCI PIN (PTS).</span><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\"> Because payment HSM\nclusters are isolated per customer, customers can deploy the service as a\nvalidated component within their own PCI solution, simplifying ongoing audit\nand compliance.&nbsp;</span></p><p><a href=\"https://learn.microsoft.com/azure/payment-hsm-v2/overview\"><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">Learn more</span></a><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">.&nbsp;</span></p>",
+      "status": "In preview",
+      "created": "2026-09-17T18:36:44.4352804Z",
+      "modified": "2026-09-17T18:36:44.4352804Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "Preview",
+          "year": 2026,
+          "month": "September"
+        }
+      ]
+    },
+    {
+      "id": "571572",
+      "productCategories": [
+        "Networking"
+      ],
+      "tags": [
+        "Features",
+        "Management",
+        "Services"
+      ],
+      "products": [
+        "Azure Virtual Network Manager"
+      ],
+      "generalAvailabilityDate": "2026-09",
+      "previewAvailabilityDate": null,
+      "privatePreviewAvailabilityDate": null,
+      "title": "Generally Available: High-scale mesh in Azure Virtual Network Manager",
+      "description": "<p>High-scale mesh using <a href=\"https://learn.microsoft.com/en-us/azure/virtual-network-manager/concept-connectivity-configuration#enable-high-scale-private-endpoints-in-azure-virtual-network-manager-connected-groups\">connected\ngroup</a> in Azure Virtual Network\nManager is now in general availability. In available regions, customers may connect\nup to 3,000 virtual networks in a single mesh connectivity configuration by\ndefault and higher scale IP connectivity within those virtual networks available\nby request.&nbsp;</p><p>Manage\nconnectivity across large virtual network environments without creating and\nmaintaining individual peerings. High-scale mesh uses the familiar network\ngroup and connectivity configuration model, helping you keep applications and\nbusiness units in separate virtual networks while simplifying direct\nnetwork-to-network\nconnectivity.&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</p><a href=\"https://learn.microsoft.com/en-us/azure/virtual-network-manager/concept-connectivity-configuration#enable-high-scale-connectivity-in-azure-virtual-network-manager-connected-groups\">Learn\nmore</a>. <br>",
+      "status": "Launched",
+      "created": "2026-09-17T17:40:33.6598501Z",
+      "modified": "2026-09-17T17:40:33.6598501Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "General Availability",
+          "year": 2026,
+          "month": "September"
+        }
+      ]
+    },
     {
       "id": "571342",
       "productCategories": [],

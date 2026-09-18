@@ -25964,5 +25964,58 @@
       "파괴적 작업 확인, Azure 특정 제약 조건 적용, 변경 사항 검증을 통해 안전한 운영을 보장하여 검증되고 배포 인지형 데이터베이스 관리를 가능하게 합니다."
     ],
     "translated_at": "2026-09-17T01:12:25.570116+00:00"
+  },
+  "570509": {
+    "summary": "Azure Payments HSM v2 is now in public preview, offering a highly available, single-tenant payment HSM service that simplifies compliance and operational management for payment cryptography workloads.",
+    "key_points": [
+      "Provides isolated, single-tenant HSM clusters with exclusive administrative control for payment processing, key management, and PIN processing.",
+      "Runs in PCI DSS and PCI 3DS compliant Azure data centers with FIPS 140-3 Level 3 certification, supporting stringent PCI security and compliance requirements.",
+      "Reduces operational overhead by eliminating the need for physical HSM hardware procurement, deployment, and scaling, while ensuring high availability and low latency.",
+      "Enables financial institutions and payment service providers to modernize payment cryptography with cloud-native infrastructure integrated into Azure virtual networks."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/payment-hsm-v2/overview",
+    "doc_title": "What is Azure Payment HSM v2?",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/azure/payment-hsm-v2/overview"
+    ],
+    "source": "llm",
+    "updated_at": "2026-09-18T01:07:39.025737+00:00",
+    "title_ko": "Public Preview: Azure Payments HSM v2",
+    "summary_ko": "Azure Payments HSM v2가 Public Preview로 제공되며, 결제 암호화 작업에 대한 컴플라이언스와 운영 관리를 간소화하는 고가용성 단일 테넌트 결제 HSM 서비스를 제공합니다.",
+    "key_points_ko": [
+      "결제 처리, 키 관리 및 PIN 처리에 대해 독점적인 관리 제어가 가능한 격리된 단일 테넌트 HSM 클러스터를 제공합니다.",
+      "FIPS 140-3 Level 3 인증을 받은 PCI DSS 및 PCI 3DS 준수 Azure 데이터 센터에서 실행되어 엄격한 PCI 보안 및 컴플라이언스 요구 사항을 지원합니다.",
+      "물리적 HSM 하드웨어 구매, 배포 및 확장 필요성을 제거하여 운영 부담을 줄이고, 고가용성과 낮은 지연 시간을 보장합니다.",
+      "금융 기관과 결제 서비스 제공업체가 Azure 가상 네트워크에 통합된 클라우드 네이티브 인프라로 결제 암호화를 현대화할 수 있도록 지원합니다."
+    ],
+    "translated_at": "2026-09-18T01:07:48.172086+00:00"
+  },
+  "571572": {
+    "summary": "Azure Virtual Network Manager's high-scale mesh feature is now generally available, enabling customers to connect up to 3,000 virtual networks in a single mesh for simplified, scalable network connectivity.",
+    "key_points": [
+      "Supports up to 3,000 virtual networks in a single connected group mesh by default, with higher scale IP connectivity available on request.",
+      "Simplifies management by eliminating the need for individual peerings, allowing direct bi-directional communication between virtual networks.",
+      "Enables up to 20,000 private endpoints across connected groups when high-scale private endpoint feature is enabled.",
+      "Improves network performance and security by supporting mesh and hub-and-spoke topologies with centralized connectivity configuration."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/virtual-network-manager/concept-connectivity-configuration#enable-high-scale-private-endpoints-in-azure-virtual-network-manager-connected-groups",
+    "doc_title": "Connectivity Configurations in Azure Virtual Network Manager",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/en-us/azure/virtual-network-manager/concept-connectivity-configuration#enable-high-scale-private-endpoints-in-azure-virtual-network-manager-connected-groups",
+      "https://learn.microsoft.com/en-us/azure/virtual-network-manager/concept-connectivity-configuration#enable-high-scale-connectivity-in-azure-virtual-network-manager-connected-groups"
+    ],
+    "source": "llm",
+    "updated_at": "2026-09-18T01:07:43.330199+00:00",
+    "title_ko": "Generally Available: Azure Virtual Network Manager의 고규모 메시",
+    "summary_ko": "Azure Virtual Network Manager의 고규모 메시 기능이 Generally Available 상태로 제공되어, 고객이 단일 메시 내에서 최대 3,000개의 가상 네트워크를 연결하여 간소화되고 확장 가능한 네트워크 연결을 구현할 수 있습니다.",
+    "key_points_ko": [
+      "기본적으로 단일 연결 그룹 메시에서 최대 3,000개의 가상 네트워크를 지원하며, 요청 시 더 높은 규모의 IP 연결도 가능합니다.",
+      "개별 피어링이 필요 없어 관리가 간소화되며, 가상 네트워크 간 직접 양방향 통신을 허용합니다.",
+      "고규모 프라이빗 엔드포인트 기능이 활성화된 경우 연결된 그룹에서 최대 20,000개의 프라이빗 엔드포인트를 지원합니다.",
+      "중앙 집중식 연결 구성으로 메시 및 허브 앤 스포크 토폴로지를 지원하여 네트워크 성능과 보안을 향상합니다."
+    ],
+    "translated_at": "2026-09-18T01:07:52.990011+00:00"
   }
 }
