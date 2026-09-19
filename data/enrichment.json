@@ -26017,5 +26017,217 @@
       "중앙 집중식 연결 구성으로 메시 및 허브 앤 스포크 토폴로지를 지원하여 네트워크 성능과 보안을 향상합니다."
     ],
     "translated_at": "2026-09-18T01:07:52.990011+00:00"
+  },
+  "563536": {
+    "summary": "Foundry Agent Service now includes Foundry Routines in public preview, enabling native, governed triggers for running published agents automatically on schedules or events, simplifying orchestration and improving observability within the Foundry workspace.",
+    "key_points": [
+      "Introduces Foundry Routines as a native trigger primitive supporting recurring schedules, one-shot timers, and event-based triggers.",
+      "Eliminates the need for external orchestration infrastructure like Logic Apps or Azure Functions by integrating triggers inside Foundry.",
+      "Triggers, execution, and observability are managed within the governed Foundry workspace, enhancing monitoring and reducing failure modes.",
+      "Currently in public preview for evaluation without production SLAs; users can add Routines to published agents to get started."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/foundry/agents/overview",
+    "doc_title": "What is Microsoft Foundry Agent Service? - Microsoft Foundry",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/azure/ai-foundry/agents/overview"
+    ],
+    "source": "llm",
+    "updated_at": "2026-09-19T01:02:33.033160+00:00",
+    "title_ko": "Public Preview: Foundry Agent Service의 Foundry Routines",
+    "summary_ko": "Foundry Agent Service에 Foundry Routines가 Public Preview로 도입되어, 게시된 에이전트를 일정이나 이벤트에 따라 자동으로 실행하는 네이티브 및 거버넌스가 적용된 트리거를 지원합니다. 이를 통해 오케스트레이션이 간소화되고 Foundry 작업 영역 내에서 관측성이 향상됩니다.",
+    "key_points_ko": [
+      "반복 일정, 일회성 타이머, 이벤트 기반 트리거를 지원하는 네이티브 트리거 원시 기능으로 Foundry Routines를 도입합니다.",
+      "Logic Apps나 Azure Functions 같은 외부 오케스트레이션 인프라 없이 Foundry 내부에서 트리거를 통합하여 필요성을 제거합니다.",
+      "트리거, 실행 및 관측성이 거버넌스가 적용된 Foundry 작업 영역 내에서 관리되어 모니터링이 향상되고 실패 모드가 감소합니다.",
+      "현재 생산 SLA 없이 평가용 Public Preview 상태이며, 사용자는 게시된 에이전트에 Routines를 추가하여 시작할 수 있습니다."
+    ],
+    "translated_at": "2026-09-19T01:03:12.724233+00:00"
+  },
+  "571530": {
+    "summary": "Azure has introduced the Mdsv4 and Msv4 memory-optimized VM series in public preview, powered by 6th Gen Intel Xeon Scalable processors, to enhance performance and security for memory-intensive and SAP workloads.",
+    "key_points": [
+      "Mdsv4 and Msv4 VMs are designed for demanding, memory-intensive, and mission-critical workloads including SAP applications.",
+      "Built on 6th Generation Intel Xeon Scalable processors with advanced security and Azure Boost technologies.",
+      "Offer improved performance, scalability, efficiency, and reliability for large-scale enterprise applications.",
+      "Available in public preview, enabling customers to cost-effectively run SAP and other memory-heavy workloads on Azure."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/memory-optimized/mdsv4-series?tabs=sizebasic",
+    "doc_title": "Mdsv4 Medium Memory size series (Preview) - Azure Virtual Machines",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/memory-optimized/mdsv4-series?tabs=sizebasic",
+      "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/memory-optimized/msv4-series?tabs=sizebasic",
+      "https://review.learn.microsoft.com/en-us/azure/virtual-machines/sizes/memory-optimized/msv4-series?branch=pr-en-us-4058&tabs=sizebasic",
+      "https://techcommunity.microsoft.com/blog/sapapplications/announcing-public-preview-of-new-mv4-medium-memory-virtual-machines/4555418"
+    ],
+    "source": "llm",
+    "updated_at": "2026-09-19T01:02:37.288516+00:00",
+    "title_ko": "Public Preview: SAP용 Mdsv4 및 Msv4 시리즈 가상 머신",
+    "summary_ko": "Azure는 메모리 집약적이고 SAP 워크로드의 성능과 보안을 강화하기 위해 6세대 Intel Xeon Scalable 프로세서 기반의 Mdsv4 및 Msv4 메모리 최적화 VM 시리즈를 Public Preview로 도입했습니다.",
+    "key_points_ko": [
+      "Mdsv4 및 Msv4 VM은 SAP 애플리케이션을 포함한 까다롭고 메모리 집약적이며 미션 크리티컬한 워크로드를 위해 설계되었습니다.",
+      "6세대 Intel Xeon Scalable 프로세서와 고급 보안 및 Azure Boost 기술을 기반으로 구축되었습니다.",
+      "대규모 엔터프라이즈 애플리케이션에 대해 향상된 성능, 확장성, 효율성 및 신뢰성을 제공합니다.",
+      "Public Preview로 제공되어 고객이 비용 효율적으로 SAP 및 기타 메모리 집약적 워크로드를 Azure에서 실행할 수 있습니다."
+    ],
+    "translated_at": "2026-09-19T01:03:17.314455+00:00"
+  },
+  "571826": {
+    "summary": "Microsoft Foundry agents can now be enabled or disabled directly within the Agent 365 governance controls in Microsoft Admin Center, allowing IT administrators to manage agent availability without developer involvement, enhancing governance and compliance.",
+    "key_points": [
+      "Enable and disable actions for Foundry agents are generally available in Agent 365 governance within Microsoft Admin Center.",
+      "Administrators can control agent availability using the same elevation pattern as other agent application actions, no developer intervention needed.",
+      "This update closes a governance gap by integrating Foundry agents into Admin Center for consistent management alongside other agent types.",
+      "Improves compliance and security by allowing IT and governance teams to manage which agents are active across the organization."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/foundry/",
+    "doc_title": "Microsoft Foundry documentation",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/azure/ai-foundry/agents/"
+    ],
+    "source": "llm",
+    "updated_at": "2026-09-19T01:02:41.557284+00:00",
+    "title_ko": "Generally Available: Agent 365에서 Microsoft Foundry 에이전트의 활성화 및 비활성화 제어 기능",
+    "summary_ko": "Microsoft Foundry 에이전트를 이제 Microsoft Admin Center의 Agent 365 거버넌스 제어 내에서 직접 활성화하거나 비활성화할 수 있어, IT 관리자가 개발자 개입 없이 에이전트 가용성을 관리할 수 있으며 거버넌스와 컴플라이언스를 강화합니다.",
+    "key_points_ko": [
+      "Microsoft Admin Center 내 Agent 365 거버넌스에서 Foundry 에이전트의 활성화 및 비활성화 기능이 Generally Available 상태로 제공됩니다.",
+      "관리자는 다른 에이전트 애플리케이션 작업과 동일한 권한 상승 패턴을 사용하여 개발자 개입 없이 에이전트 가용성을 제어할 수 있습니다.",
+      "이번 업데이트로 Foundry 에이전트가 Admin Center에 통합되어 다른 에이전트 유형과 일관된 관리가 가능해져 거버넌스 공백이 해소됩니다.",
+      "IT 및 거버넌스 팀이 조직 내 활성 에이전트를 관리할 수 있어 컴플라이언스와 보안이 향상됩니다."
+    ],
+    "translated_at": "2026-09-19T01:03:21.264198+00:00"
+  },
+  "571821": {
+    "summary": "Microsoft Foundry introduces public preview of network egress controls for hosted agents, enabling customers to govern outbound connections with flexible, policy-based rules enforced within the agent sandbox, enhancing security and compliance without extra network appliances.",
+    "key_points": [
+      "Customers can create ordered rules based on destination hosts (including wildcard FQDNs) to allow, deny, transform headers, or rewrite destinations for outbound agent traffic.",
+      "Rules are enforced inside the Foundry-managed agent sandbox before traffic leaves, eliminating the need for separate network appliances for basic allow-listing.",
+      "Two enforcement modes are available: audit (logs would-be denied traffic) and enforce (blocks denied traffic), with all decisions logged to Application Insights for auditing.",
+      "The feature is in public preview for evaluation, not covered by production SLAs, and configured via the Guardrails section in the Foundry portal."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/foundry/",
+    "doc_title": "Microsoft Foundry documentation",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/en-us/azure/foundry/",
+      "https://learn.microsoft.com/azure/ai-foundry/concepts/agent-security"
+    ],
+    "source": "llm",
+    "updated_at": "2026-09-19T01:02:45.512662+00:00",
+    "title_ko": "Public Preview: Microsoft Foundry의 호스티드 에이전트용 네트워크 이그레스 제어",
+    "summary_ko": "Microsoft Foundry가 호스티드 에이전트용 네트워크 이그레스 제어 기능의 Public Preview를 도입하여, 고객이 에이전트 샌드박스 내에서 정책 기반 규칙으로 아웃바운드 연결을 관리할 수 있게 하여 추가 네트워크 장비 없이 보안과 컴플라이언스를 강화합니다.",
+    "key_points_ko": [
+      "고객은 대상 호스트(와일드카드 FQDN 포함)를 기준으로 순서가 지정된 규칙을 생성하여 아웃바운드 에이전트 트래픽에 대해 허용, 거부, 헤더 변환 또는 대상 재작성할 수 있습니다.",
+      "규칙은 트래픽이 나가기 전에 Foundry가 관리하는 에이전트 샌드박스 내에서 적용되어 기본 허용 목록 관리를 위한 별도의 네트워크 장비가 필요 없습니다.",
+      "두 가지 적용 모드가 제공됩니다: 감사(audit, 거부될 트래픽을 로그 기록)와 적용(enforce, 거부 트래픽 차단)이며, 모든 결정은 감사용으로 Application Insights에 기록됩니다.",
+      "이 기능은 평가용 Public Preview 상태이며, 프로덕션 SLA에 포함되지 않고 Foundry 포털의 Guardrails 섹션에서 구성할 수 있습니다."
+    ],
+    "translated_at": "2026-09-19T01:03:26.487502+00:00"
+  },
+  "571816": {
+    "summary": "Microsoft Foundry agents can now be published directly to Microsoft 365 Copilot and Teams, simplifying deployment and enabling centralized governance for enterprise IT.",
+    "key_points": [
+      "Foundry developers can publish agents directly into Microsoft 365 Copilot and Teams, making them discoverable where users already work.",
+      "Published agents remain governed by Microsoft Entra and Agent 365 controls, providing centralized visibility and maintaining IT governance.",
+      "The process requires appropriate licenses (Microsoft 365 Copilot or Agent 365) and permissions, with detailed provisioning steps available via the Foundry portal and Azure CLI.",
+      "This GA release eliminates the need for separate deployment pipelines, bot registrations, and app manifests, streamlining agent deployment and management."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/agent-365",
+    "doc_title": "Quickstart: Build your first autopilot - Microsoft Foundry",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/azure/foundry/agents/how-to/agent-365"
+    ],
+    "source": "llm",
+    "updated_at": "2026-09-19T01:02:50.347180+00:00",
+    "title_ko": "Generally Available: Microsoft Foundry 에이전트를 Microsoft 365 Copilot 및 Teams에 게시",
+    "summary_ko": "Microsoft Foundry 에이전트를 이제 Microsoft 365 Copilot 및 Teams에 직접 게시할 수 있어 배포가 간소화되고 엔터프라이즈 IT를 위한 중앙 집중식 거버넌스가 가능해졌습니다.",
+    "key_points_ko": [
+      "Foundry 개발자는 에이전트를 Microsoft 365 Copilot 및 Teams에 직접 게시할 수 있어 사용자가 이미 작업하는 환경에서 에이전트를 쉽게 찾을 수 있습니다.",
+      "게시된 에이전트는 Microsoft Entra 및 Agent 365 제어 하에 유지되어 중앙 집중식 가시성을 제공하고 IT 거버넌스를 유지합니다.",
+      "이 프로세스는 적절한 라이선스(Microsoft 365 Copilot 또는 Agent 365)와 권한이 필요하며, 자세한 프로비저닝 단계는 Foundry 포털과 Azure CLI를 통해 확인할 수 있습니다.",
+      "이번 GA 릴리스는 별도의 배포 파이프라인, 봇 등록 및 앱 매니페스트가 필요 없도록 하여 에이전트 배포 및 관리를 간소화합니다."
+    ],
+    "translated_at": "2026-09-19T01:03:30.540863+00:00"
+  },
+  "568414": {
+    "summary": "Azure Database for PostgreSQL Flexible Server now provides a logical_replication_slot_sync_status metric to monitor the synchronization state of logical replication slots, enhancing replication health visibility and alerting capabilities.",
+    "key_points": [
+      "Introduces logical_replication_slot_sync_status metric showing sync status per logical replication slot (synchronized, catching up, unknown).",
+      "Supports monitoring and alerting for replication slot health, critical for logical decoding and CDC tools like Debezium or Kafka.",
+      "Helps ensure replication consistency and responsiveness during maintenance, migrations, or system events.",
+      "Available as part of Azure Monitor metrics for PostgreSQL Flexible Server without requiring server restart."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/postgresql/monitor/concepts-monitoring",
+    "doc_title": "Monitor Using Metrics and Logs in Azure Database for PostgreSQL Flexible Server - Azure Database for PostgreSQL",
+    "doc_read": true,
+    "links": [
+      "https://aka.ms/pg-flex-replication-metrics"
+    ],
+    "source": "llm",
+    "updated_at": "2026-09-19T01:02:55.774733+00:00",
+    "title_ko": "Generally Available: Azure PostgreSQL Flexible Server용 논리 복제 슬롯 동기화 상태 메트릭",
+    "summary_ko": "Azure Database for PostgreSQL Flexible Server가 이제 논리 복제 슬롯의 동기화 상태를 모니터링할 수 있는 logical_replication_slot_sync_status 메트릭을 제공하여 복제 상태 가시성과 경고 기능을 향상합니다.",
+    "key_points_ko": [
+      "논리 복제 슬롯별 동기화 상태(동기화됨, 따라잡는 중, 알 수 없음)를 보여주는 logical_replication_slot_sync_status 메트릭을 도입합니다.",
+      "Debezium 또는 Kafka와 같은 논리 디코딩 및 CDC 도구에 중요한 복제 슬롯 상태 모니터링 및 경고를 지원합니다.",
+      "유지 관리, 마이그레이션 또는 시스템 이벤트 중 복제 일관성과 응답성을 보장하는 데 도움을 줍니다.",
+      "서버 재시작 없이 PostgreSQL Flexible Server용 Azure Monitor 메트릭의 일부로 제공됩니다."
+    ],
+    "translated_at": "2026-09-19T01:03:35.463746+00:00"
+  },
+  "571042": {
+    "summary": "Azure Database for PostgreSQL flexible server now offers expanded and improved troubleshooting guides that provide detailed workflows and telemetry correlation to help diagnose and resolve performance issues more effectively.",
+    "key_points": [
+      "Updated guides cover high CPU, memory, IOPS, temporary file usage, and autovacuum issues with end-to-end investigation workflows.",
+      "Guides integrate Azure Monitor metrics, Query Store statistics, session data, and server logs for comprehensive root cause analysis.",
+      "Requires enabling telemetry sources and server logs to Log Analytics workspace; supports read replicas with adjusted behavior.",
+      "Helps customers identify specific queries, sessions, waits, or configurations causing issues and apply targeted mitigations before scaling."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/postgresql/troubleshoot/concepts-troubleshooting-guides",
+    "doc_title": "Troubleshooting Guides - Azure Database for PostgreSQL",
+    "doc_read": true,
+    "links": [
+      "https://aka.ms/AzurePostgresTSGs"
+    ],
+    "source": "llm",
+    "updated_at": "2026-09-19T01:03:00.744737+00:00",
+    "title_ko": "Generally Available: Azure Database for PostgreSQL용 새롭고 향상된 문제 해결 가이드",
+    "summary_ko": "Azure Database for PostgreSQL flexible server가 확장되고 개선된 문제 해결 가이드를 제공하여, 상세한 워크플로우와 텔레메트리 연계를 통해 성능 문제를 보다 효과적으로 진단하고 해결할 수 있도록 지원합니다.",
+    "key_points_ko": [
+      "업데이트된 가이드는 높은 CPU, 메모리, IOPS, 임시 파일 사용량, autovacuum 문제를 포함한 종합적인 조사 워크플로우를 다룹니다.",
+      "가이드는 Azure Monitor 메트릭, Query Store 통계, 세션 데이터, 서버 로그를 통합하여 포괄적인 근본 원인 분석을 제공합니다.",
+      "Log Analytics 작업 영역에 텔레메트리 소스와 서버 로그를 활성화해야 하며, 읽기 전용 복제본에 대해서는 조정된 동작을 지원합니다.",
+      "고객이 문제를 일으키는 특정 쿼리, 세션, 대기 또는 구성을 식별하고, 확장 전에 목표 지향적인 완화 조치를 적용할 수 있도록 돕습니다."
+    ],
+    "translated_at": "2026-09-19T01:03:40.310234+00:00"
+  },
+  "571047": {
+    "summary": "Azure Database for PostgreSQL elastic clusters now generally support PostgreSQL 18, enabling distributed, cloud-scale workloads to leverage the latest PostgreSQL features with improved performance and developer capabilities.",
+    "key_points": [
+      "Supports PostgreSQL 18 in fully managed, distributed elastic clusters powered by Citus 14.0.",
+      "Enables real-time analytics, high-ingest event platforms, and microservices with schema-based sharding at scale.",
+      "Improves performance, reliability, and developer experience with new SQL features, parallel query execution, and I/O enhancements.",
+      "Available for building new applications or modernizing existing workloads with flexible scaling and operational simplicity on Azure."
+    ],
+    "doc_url": "https://techcommunity.microsoft.com/blog/adforpostgresql/preview-pg18-for-elastic-clusters-of-azure-postgres/4555821",
+    "doc_title": "Preview PG18 for Elastic Clusters of Azure Postgres | Microsoft Community Hub",
+    "doc_read": true,
+    "links": [
+      "https://aka.ms/ECPG18"
+    ],
+    "source": "llm",
+    "updated_at": "2026-09-19T01:03:07.553163+00:00",
+    "title_ko": "Generally Available: Azure Database for PostgreSQL elastic clusters의 PG18 지원",
+    "summary_ko": "Azure Database for PostgreSQL elastic clusters가 이제 PostgreSQL 18을 Generally Available 상태로 지원하여 분산형 클라우드 규모 워크로드가 최신 PostgreSQL 기능을 향상된 성능과 개발자 기능과 함께 활용할 수 있습니다.",
+    "key_points_ko": [
+      "Citus 14.0 기반의 완전 관리형 분산 elastic clusters에서 PostgreSQL 18을 지원합니다.",
+      "스키마 기반 샤딩을 통해 실시간 분석, 고수집 이벤트 플랫폼, 마이크로서비스를 대규모로 구현할 수 있습니다.",
+      "새로운 SQL 기능, 병렬 쿼리 실행, I/O 향상으로 성능, 신뢰성, 개발자 경험을 개선합니다.",
+      "Azure에서 유연한 확장성과 운영의 단순성을 바탕으로 신규 애플리케이션 구축이나 기존 워크로드 현대화에 사용할 수 있습니다."
+    ],
+    "translated_at": "2026-09-19T01:03:44.766643+00:00"
   }
 }
