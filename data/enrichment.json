@@ -26229,5 +26229,85 @@
       "Azure에서 유연한 확장성과 운영의 단순성을 바탕으로 신규 애플리케이션 구축이나 기존 워크로드 현대화에 사용할 수 있습니다."
     ],
     "translated_at": "2026-09-19T01:03:44.766643+00:00"
+  },
+  "572579": {
+    "summary": "Azure Sphere OS version 26.09 is now generally available, updating the Linux kernel to version 6.1.x for long-term support, marking the final major kernel update before Azure Sphere's retirement in 2031.",
+    "key_points": [
+      "Updates Azure Sphere OS Linux kernel from 5.10.x to 6.1.x, aligning with Linux CIP Platform for Super Long-Term Support.",
+      "No changes to SDK or new functional features; update is OS-only.",
+      "Devices connected to the internet will automatically receive the OS update from the cloud.",
+      "This is the final major kernel update before Azure Sphere retirement planned for 2031."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure-sphere/resources/support?view=azure-sphere-legacy",
+    "doc_title": "Support - Azure Sphere",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/azure-sphere/resources/support"
+    ],
+    "source": "llm",
+    "updated_at": "2026-09-22T01:30:37.936856+00:00",
+    "title_ko": "Generally Available: Azure Sphere OS 버전 26.09가 이제 제공됩니다",
+    "summary_ko": "Azure Sphere OS 버전 26.09가 Generally Available 상태로 제공되며, Linux 커널을 장기 지원을 위한 6.1.x 버전으로 업데이트했습니다. 이는 2031년 Azure Sphere Retirement 전에 마지막 주요 커널 업데이트입니다.",
+    "key_points_ko": [
+      "Azure Sphere OS Linux 커널을 5.10.x에서 6.1.x로 업데이트하여 Linux CIP Platform의 Super Long-Term Support와 일치시켰습니다.",
+      "SDK 변경이나 새로운 기능 추가 없이 OS 업데이트만 포함됩니다.",
+      "인터넷에 연결된 장치는 클라우드에서 자동으로 OS 업데이트를 받습니다.",
+      "이 업데이트는 2031년 예정된 Azure Sphere Retirement 전에 마지막 주요 커널 업데이트입니다."
+    ],
+    "translated_at": "2026-09-22T01:30:51.943714+00:00"
+  },
+  "572214": {
+    "summary": "Microsoft has introduced a guided Copilot experience in VS Code that streamlines building and deploying Azure apps, providing a structured workflow to improve reliability and predictability.",
+    "key_points": [
+      "Guided workflow ensures first-try success by building projects that run and deploy without multiple manual fixes.",
+      "Real UI surfaces key decisions like architecture and deployment targets, replacing open-ended chat prompts with clear checkpoints.",
+      "Supports JavaScript and TypeScript projects including web apps, Azure Functions, Container Apps, and Static Web Apps with integrations for PostgreSQL, Azure Storage, Key Vault, and Azure OpenAI.",
+      "The experience is currently in public preview as an additional option alongside existing Copilot chat workflows, with .NET and Python support planned for future releases."
+    ],
+    "doc_url": "https://techcommunity.microsoft.com/blog/AppsonAzureBlog/introducing-a-guided-copilot-experience-for-building-azure-apps-in-vs-code/4557120",
+    "doc_title": "Introducing a Guided Copilot Experience for Building Azure Apps in VS Code | Microsoft Community Hub",
+    "doc_read": true,
+    "links": [
+      "https://techcommunity.microsoft.com/blog/AppsonAzureBlog/introducing-a-guided-copilot-experience-for-building-azure-apps-in-vs-code/4557120"
+    ],
+    "source": "llm",
+    "updated_at": "2026-09-22T01:30:43.972372+00:00",
+    "title_ko": "Public Preview: VS Code에서 Azure 앱 빌드를 위한 가이드형 Copilot 경험 소개",
+    "summary_ko": "Microsoft는 VS Code에서 Azure 앱 빌드 및 배포를 간소화하는 가이드형 Copilot 경험을 도입하여 신뢰성과 예측 가능성을 높이는 구조화된 워크플로우를 제공합니다.",
+    "key_points_ko": [
+      "가이드형 워크플로우는 여러 번의 수동 수정 없이 실행 및 배포 가능한 프로젝트를 빌드하여 첫 시도 성공을 보장합니다.",
+      "실제 UI는 아키텍처 및 배포 대상과 같은 주요 결정을 명확한 체크포인트로 제시하여 열린 채팅 프롬프트를 대체합니다.",
+      "JavaScript 및 TypeScript 프로젝트를 지원하며, 웹 앱, Azure Functions, Container Apps, Static Web Apps와 PostgreSQL, Azure Storage, Key Vault, Azure OpenAI 통합을 포함합니다.",
+      "이 경험은 현재 기존 Copilot 채팅 워크플로우와 함께 추가 옵션으로 public preview 상태이며, .NET 및 Python 지원은 향후 릴리스에서 계획되어 있습니다."
+    ],
+    "translated_at": "2026-09-22T01:30:55.483987+00:00"
+  },
+  "572219": {
+    "summary": "Azure Functions now generally supports PowerShell 7.6, enabling developers to build and deploy apps using the latest PowerShell version for improved functionality and compatibility.",
+    "key_points": [
+      "PowerShell 7.6 support is generally available for Azure Functions, allowing local development and deployment to Azure Functions plans.",
+      "Supports both Windows and Linux operating systems with guidance on updating language versions and dependencies.",
+      "Requires running on Azure Functions runtime version 4.x and may involve migrating from in-process to isolated worker model before November 10, 2026.",
+      "Includes detailed steps for updating projects, dependencies, and runtime settings to ensure smooth upgrade and minimize downtime using deployment slots."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/azure-functions/update-language-versions?tabs=azure-portal%2Cwindows&pivots=programming-language-powershell#update-the-language-version",
+    "doc_title": "Update Language Versions in Azure Functions",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/en-us/azure/azure-functions/update-language-versions?tabs=azure-portal%2Cwindows&pivots=programming-language-powershell#update-the-language-version",
+      "https://learn.microsoft.com/en-us/powershell/scripting/whats-new/what-s-new-in-powershell-76?view=powershell-7.6",
+      "https://learn.microsoft.com/en-us/azure/azure-functions/supported-languages?tabs=isolated-process%2Cv4&pivots=programming-language-powershell#languages-by-runtime-version"
+    ],
+    "source": "llm",
+    "updated_at": "2026-09-22T01:30:47.812173+00:00",
+    "title_ko": "Generally Available: Azure Functions의 PowerShell 7.6 지원",
+    "summary_ko": "Azure Functions가 이제 PowerShell 7.6을 Generally Available 상태로 지원하여 개발자가 최신 PowerShell 버전을 사용해 향상된 기능과 호환성으로 앱을 빌드하고 배포할 수 있습니다.",
+    "key_points_ko": [
+      "PowerShell 7.6 지원이 Azure Functions에 Generally Available로 제공되어 로컬 개발과 Azure Functions 플랜으로의 배포가 가능합니다.",
+      "Windows와 Linux 운영 체제 모두를 지원하며 언어 버전과 종속성 업데이트에 대한 가이드가 포함되어 있습니다.",
+      "Azure Functions 런타임 버전 4.x에서 실행되어야 하며 2026년 11월 10일 이전에 인프로세스에서 격리된 워커 모델로 마이그레이션이 필요할 수 있습니다.",
+      "프로젝트, 종속성, 런타임 설정 업데이트를 위한 상세 단계가 포함되어 있어 원활한 업그레이드와 배포 슬롯을 활용한 다운타임 최소화를 보장합니다."
+    ],
+    "translated_at": "2026-09-22T01:30:59.717863+00:00"
   }
 }
