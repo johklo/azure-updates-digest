@@ -26309,5 +26309,58 @@
       "프로젝트, 종속성, 런타임 설정 업데이트를 위한 상세 단계가 포함되어 있어 원활한 업그레이드와 배포 슬롯을 활용한 다운타임 최소화를 보장합니다."
     ],
     "translated_at": "2026-09-22T01:30:59.717863+00:00"
+  },
+  "572771": {
+    "summary": "Support for Node.js 22 in Azure Functions will end on April 30, 2027, requiring customers to upgrade to Node.js 24 to maintain security, support, and performance.",
+    "key_points": [
+      "Node.js 22 support and security updates will end on April 30, 2027; apps will continue running but without patches or support.",
+      "Customers must upgrade to Node.js 24 before the deadline to avoid security vulnerabilities and ensure continued support eligibility.",
+      "Upgrading involves updating function app runtime to version 4.x, verifying extension bundles, binding extensions, package dependencies, and local development tools compatibility.",
+      "Testing and deployment best practices include using staging slots to minimize downtime and enable rollback during the upgrade process."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/azure-functions/update-language-versions?tabs=azure-portal,windows&pivots=programming-language-javascript",
+    "doc_title": "Update Language Versions in Azure Functions",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/azure/azure-functions/update-language-versions?tabs=azure-portal,windows&pivots=programming-language-javascript",
+      "https://learn.microsoft.com/azure/azure-functions/language-support-policy?pivots=programming-language-javascript"
+    ],
+    "source": "llm",
+    "updated_at": "2026-09-23T01:19:54.826219+00:00",
+    "title_ko": "Retirement: Node.js 22 지원이 2027년 4월 30일 종료됩니다",
+    "summary_ko": "Azure Functions에서 Node.js 22에 대한 지원이 2027년 4월 30일에 종료되며, 보안, 지원 및 성능 유지를 위해 고객은 Node.js 24로 업그레이드해야 합니다.",
+    "key_points_ko": [
+      "Node.js 22에 대한 지원 및 보안 업데이트가 2027년 4월 30일에 종료됩니다; 앱은 계속 실행되지만 패치나 지원은 제공되지 않습니다.",
+      "고객은 보안 취약점을 방지하고 지속적인 지원 자격을 유지하기 위해 마감일 이전에 Node.js 24로 업그레이드해야 합니다.",
+      "업그레이드는 함수 앱 런타임을 버전 4.x로 업데이트하고, 확장 번들, 바인딩 확장, 패키지 종속성 및 로컬 개발 도구 호환성을 확인하는 작업을 포함합니다.",
+      "테스트 및 배포 모범 사례로는 다운타임을 최소화하고 업그레이드 과정에서 롤백을 가능하게 하기 위해 스테이징 슬롯을 사용하는 것이 포함됩니다."
+    ],
+    "translated_at": "2026-09-23T01:20:05.732702+00:00"
+  },
+  "571919": {
+    "summary": "Flex Nodes for AKS, now in public preview, enable hybrid and edge infrastructure integration as connected worker nodes to a centralized AKS control plane, allowing consistent Kubernetes management while meeting latency, regulatory, and sovereignty requirements.",
+    "key_points": [
+      "Flex Nodes run on user-managed VMs or bare metal hosts outside the AKS-managed Azure VM model, extending AKS to hybrid and edge environments.",
+      "The flex node agent bootstraps and maintains node configuration, enabling isolated Kubernetes node environments that integrate with the AKS cluster control plane.",
+      "Supports multiple authentication methods and separate identities for secure communication with Azure and Kubernetes.",
+      "Ideal for scenarios requiring local execution without local operations, such as AI inference, industrial apps, data residency needs, and capacity outside the cluster's Azure region."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/aks/flex-nodes-for-aks-overview",
+    "doc_title": "What are flex nodes for AKS? (preview) - Azure Kubernetes Service",
+    "doc_read": true,
+    "links": [
+      "https://aka.ms/aks/flexnodeforaks"
+    ],
+    "source": "llm",
+    "updated_at": "2026-09-23T01:20:00.656377+00:00",
+    "title_ko": "Public Preview: AKS용 Flex Nodes",
+    "summary_ko": "Public Preview로 제공되는 AKS용 Flex Nodes는 하이브리드 및 엣지 인프라를 중앙 집중식 AKS 컨트롤 플레인에 연결된 워커 노드로 통합할 수 있게 하여, 지연 시간, 규제 및 주권 요구 사항을 충족하면서 일관된 Kubernetes 관리를 가능하게 합니다.",
+    "key_points_ko": [
+      "Flex Nodes는 AKS가 관리하는 Azure VM 모델 외부의 사용자 관리 VM 또는 베어 메탈 호스트에서 실행되어 AKS를 하이브리드 및 엣지 환경으로 확장합니다.",
+      "Flex node 에이전트는 노드 구성을 부트스트랩하고 유지 관리하여 AKS 클러스터 컨트롤 플레인과 통합되는 격리된 Kubernetes 노드 환경을 제공합니다.",
+      "여러 인증 방법과 별도의 ID를 지원하여 Azure 및 Kubernetes와의 안전한 통신을 보장합니다.",
+      "AI 추론, 산업용 애플리케이션, 데이터 거주 요구 사항, 클러스터의 Azure 지역 외부 용량 등 로컬 운영 없이 로컬 실행이 필요한 시나리오에 적합합니다."
+    ],
+    "translated_at": "2026-09-23T01:20:10.370938+00:00"
   }
 }

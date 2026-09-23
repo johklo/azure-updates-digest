@@ -1,7 +1,68 @@
 {
-  "updated_at": "2026-09-22T01:30:26.370352+00:00",
-  "count": 1016,
+  "updated_at": "2026-09-23T01:19:46.245688+00:00",
+  "count": 1018,
   "items": [
+    {
+      "id": "572771",
+      "productCategories": [
+        "Compute",
+        "Containers",
+        "Internet of Things"
+      ],
+      "tags": [
+        "Retirements",
+        "Compliance",
+        "Security"
+      ],
+      "products": [
+        "Azure Functions"
+      ],
+      "generalAvailabilityDate": null,
+      "previewAvailabilityDate": null,
+      "privatePreviewAvailabilityDate": null,
+      "title": "Retirement: Support for Node.js 22 ends on April 30, 2027",
+      "description": "<p>Support for Node.js 22 will end on&nbsp;April 30, 2027, please transition to Node.js 24 by that date. Your Azure Function apps will continue to run, but security patches and updates will no longer be provided and customer support for Node.js 22 will be discontinued. Running function apps on unsupported runtime or language version may lead to issues and degraded performance. Upgrade is required to maintain support eligibility.</p><p><b>Required Action</b></p><p>To avoid potential security vulnerabilities, minimize risk for your Azure Functions apps, and take advantage of latest features, <a href=\"https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Flearn.microsoft.com%2Fazure%2Fazure-functions%2Fupdate-language-versions%3Ftabs%3Dazure-portal%252Cwindows%26pivots%3Dprogramming-language-javascript&amp;data=05%7C02%7Cmadhura.bharadwaj%40microsoft.com%7Cc15cb84efdec4d76d95b08ded612894f%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C639183572266980221%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&amp;sdata=mICGyl8r42RxDx9xQR8U7sLHp7dvuEsb%2FEiPxMpRNyU%3D&amp;reserved=0\" data-auth=\"NotApplicable\" data-linkindex=\"2\" title=\"Original URL: https://learn.microsoft.com/azure/azure-functions/update-language-versions?tabs=azure-portal%2Cwindows&amp;pivots=programming-language-javascript. Click or tap if you trust this link.\" data-ogsc=\"\">follow the steps to upgrade your app</a> to Node.js 24 before&nbsp;April 30, 2027.</p><a href=\"https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Flearn.microsoft.com%2Fazure%2Fazure-functions%2Flanguage-support-policy%3Fpivots%3Dprogramming-language-javascript&amp;data=05%7C02%7Cmadhura.bharadwaj%40microsoft.com%7Cc15cb84efdec4d76d95b08ded612894f%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C639183572266971110%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&amp;sdata=EFm%2BGoUKd4WGqk61y6xSdwvAmwKN85QYcucldd1s2Vk%3D&amp;reserved=0\" title=\"Original URL: https://learn.microsoft.com/azure/azure-functions/language-support-policy?pivots=programming-language-javascript. Click or tap if you trust this link.\">Learn\nmore</a>.<br>",
+      "status": null,
+      "created": "2026-09-22T19:22:34.3836913Z",
+      "modified": "2026-09-22T19:22:34.3836913Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "Retirement",
+          "year": 2027,
+          "month": "April"
+        }
+      ]
+    },
+    {
+      "id": "571919",
+      "productCategories": [
+        "Compute",
+        "Containers"
+      ],
+      "tags": [
+        "Feature"
+      ],
+      "products": [
+        "Azure Kubernetes Service (AKS)"
+      ],
+      "generalAvailabilityDate": null,
+      "previewAvailabilityDate": "2026-09",
+      "privatePreviewAvailabilityDate": null,
+      "title": "Public Preview: Flex Nodes for AKS",
+      "description": "Flex Nodes for AKS is a deployment option for application and platform teams to use hybrid and edge infrastructure as connected worker nodes to an AKS control plane in Azure. Flex Nodes provide a consistent Kubernetes control plane while enabling teams to govern and secure compute for latency, regulatory, or sovereign needs. Rather than deploying an operating a complete Kubernetes cluster with a local control plane, Flex Nodes for AKS are designed for connected environments where only the worker nodes run at the edge or on customer infrastructure. Flex Nodes for AKS is ideal for applications that require local execution but not local operations, including AI inference, data processing, industrial applications, content delivery, branch office services, and latency-sensitive business workloads.<br><br><a href=\"https://aka.ms/aks/flexnodeforaks\">Learn more</a>.<br><br>",
+      "status": "In preview",
+      "created": "2026-09-22T18:51:48.5685957Z",
+      "modified": "2026-09-22T18:51:48.5685957Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "Preview",
+          "year": 2026,
+          "month": "September"
+        }
+      ]
+    },
     {
       "id": "572579",
       "productCategories": [

@@ -1,97 +1,68 @@
 {
-  "generated_at": "2026-09-22T01:30:26.370352+00:00",
-  "window_start": "2026-09-15T01:30:26.370352+00:00",
-  "window_end": "2026-09-22T01:30:26.370352+00:00",
+  "generated_at": "2026-09-23T01:19:46.245688+00:00",
+  "window_start": "2026-09-16T01:19:46.245688+00:00",
+  "window_end": "2026-09-23T01:19:46.245688+00:00",
   "window_days": 7,
-  "fetched_count": 17,
-  "matched_count": 17,
-  "count": 3,
+  "fetched_count": 19,
+  "matched_count": 19,
+  "count": 2,
   "items": [
     {
-      "id": "572579",
-      "productCategories": [
-        "Internet of Things"
-      ],
-      "tags": [
-        "Operating System"
-      ],
-      "products": [
-        "Azure Sphere"
-      ],
-      "generalAvailabilityDate": "2026-09",
-      "previewAvailabilityDate": null,
-      "privatePreviewAvailabilityDate": null,
-      "title": "Generally Available: Azure Sphere OS version 26.09 is now available",
-      "description": "Azure Sphere OS version 26.09 is now available in the Retail&nbsp;feed. This release includes updates to the Azure Sphere OS only, with no update to the SDK. If your devices are connected to the internet, they will receive the updated OS from the cloud.<p>The 26.09 OS Retail release migrates the underlying Azure Sphere OS Linux Kernel version from the 5.10.x to 6.1.x branch, aligning Azure Sphere with the Linux CIP Platform for Super Long-Term Support. This will be Azure Sphere's final major kernel update prior to retirement in 2031.</p><p>Please note that there are no functional changes or new features in this release.</p><p><a href=\"https://learn.microsoft.com/azure-sphere/resources/support\" title=\"https://learn.microsoft.com/azure-sphere/resources/support\">Learn more</a>.&nbsp;</p>",
-      "status": "Launched",
-      "created": "2026-09-21T18:44:49.7842536Z",
-      "modified": "2026-09-21T18:44:49.7842536Z",
-      "locale": null,
-      "availabilities": [
-        {
-          "ring": "General Availability",
-          "year": 2026,
-          "month": "September"
-        }
-      ]
-    },
-    {
-      "id": "572214",
-      "productCategories": [
-        "Developer tools"
-      ],
-      "tags": [
-        "Features",
-        "SDK and Tools",
-        "Feature"
-      ],
-      "products": [
-        "Visual Studio Code"
-      ],
-      "generalAvailabilityDate": null,
-      "previewAvailabilityDate": "2026-09",
-      "privatePreviewAvailabilityDate": null,
-      "title": "Public Preview: Introducing a Guided Copilot Experience for Building Azure Apps in VS Code",
-      "description": "<p>Today we're previewing a new way to build cloud apps with GitHub Copilot in VS Code: a guided Copilot experience&nbsp;that takes you from idea to a deployed Azure app through a structured, predictable workflow instead of a free-form chat session that may or may not land where you need it to.</p><p><strong>The problem: Copilot is powerful, but unpredictable</strong></p><p>Ask Copilot to <em>\"build me a Node.js API on Azure Functions with a Postgres database\"</em> today, and you might get a working project, or you might not. Sometimes Copilot scaffolds the app but skips infrastructure. Sometimes it generates a deployment script that fails halfway through. Sometimes it forgets what you were building three prompts later.</p><p>The underlying model is capable. The problem is the <em>shape</em>&nbsp;of the experience: an open-ended chat with no checkpoints, no guardrails, and no consistent path from <em>\"I have an idea\"</em> to <em>\"it's running in Azure.\"</em></p><p>Learn more:&nbsp;</p><ul><li><a href=\"https://techcommunity.microsoft.com/blog/AppsonAzureBlog/introducing-a-guided-copilot-experience-for-building-azure-apps-in-vs-code/4557120\">Read\nthe blog</a>&nbsp;</li><li><a href=\"https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-node-azure-pack\">Install\nthe Azure Tools extension for VS Code</a>&nbsp;</li></ul><br>",
-      "status": "In preview",
-      "created": "2026-09-21T16:58:19.4839139Z",
-      "modified": "2026-09-21T16:58:19.4839139Z",
-      "locale": null,
-      "availabilities": [
-        {
-          "ring": "Preview",
-          "year": 2026,
-          "month": "September"
-        }
-      ]
-    },
-    {
-      "id": "572219",
+      "id": "572771",
       "productCategories": [
         "Compute",
         "Containers",
         "Internet of Things"
       ],
       "tags": [
-        "Security",
-        "Services",
-        "Feature"
+        "Retirements",
+        "Compliance",
+        "Security"
       ],
       "products": [
         "Azure Functions"
       ],
-      "generalAvailabilityDate": "2026-09",
+      "generalAvailabilityDate": null,
       "previewAvailabilityDate": null,
       "privatePreviewAvailabilityDate": null,
-      "title": "Generally Available: Azure Functions support for PowerShell 7.6",
-      "description": "<p>Azure Functions support for PowerShell 7.6 is\nnow&nbsp;generally available.&nbsp;&nbsp;</p><p>You can now develop apps using PowerShell 7.6 locally and\ndeploy them to Azure Functions plans.&nbsp;&nbsp;</p><p>&nbsp;Learn more:&nbsp;</p><ul><li><a href=\"https://learn.microsoft.com/en-us/azure/azure-functions/update-language-versions?tabs=azure-portal%2Cwindows&amp;pivots=programming-language-powershell#update-the-language-version\">Updating\nyour app to PowerShell 7.6</a>&nbsp;&nbsp;</li><li><a href=\"https://learn.microsoft.com/en-us/powershell/scripting/whats-new/what-s-new-in-powershell-76?view=powershell-7.6\">What's\nnew in PowerShell 7.6?</a>&nbsp;&nbsp;</li><li><a href=\"https://learn.microsoft.com/en-us/azure/azure-functions/supported-languages?tabs=isolated-process%2Cv4&amp;pivots=programming-language-powershell#languages-by-runtime-version\">Azure\nFunctions&nbsp;PowerShell&nbsp;versions and their end of support dates</a>&nbsp;&nbsp;</li></ul>",
-      "status": "Launched",
-      "created": "2026-09-21T16:55:34.6324521Z",
-      "modified": "2026-09-21T16:55:34.6324521Z",
+      "title": "Retirement: Support for Node.js 22 ends on April 30, 2027",
+      "description": "<p>Support for Node.js 22 will end on&nbsp;April 30, 2027, please transition to Node.js 24 by that date. Your Azure Function apps will continue to run, but security patches and updates will no longer be provided and customer support for Node.js 22 will be discontinued. Running function apps on unsupported runtime or language version may lead to issues and degraded performance. Upgrade is required to maintain support eligibility.</p><p><b>Required Action</b></p><p>To avoid potential security vulnerabilities, minimize risk for your Azure Functions apps, and take advantage of latest features, <a href=\"https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Flearn.microsoft.com%2Fazure%2Fazure-functions%2Fupdate-language-versions%3Ftabs%3Dazure-portal%252Cwindows%26pivots%3Dprogramming-language-javascript&amp;data=05%7C02%7Cmadhura.bharadwaj%40microsoft.com%7Cc15cb84efdec4d76d95b08ded612894f%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C639183572266980221%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&amp;sdata=mICGyl8r42RxDx9xQR8U7sLHp7dvuEsb%2FEiPxMpRNyU%3D&amp;reserved=0\" data-auth=\"NotApplicable\" data-linkindex=\"2\" title=\"Original URL: https://learn.microsoft.com/azure/azure-functions/update-language-versions?tabs=azure-portal%2Cwindows&amp;pivots=programming-language-javascript. Click or tap if you trust this link.\" data-ogsc=\"\">follow the steps to upgrade your app</a> to Node.js 24 before&nbsp;April 30, 2027.</p><a href=\"https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Flearn.microsoft.com%2Fazure%2Fazure-functions%2Flanguage-support-policy%3Fpivots%3Dprogramming-language-javascript&amp;data=05%7C02%7Cmadhura.bharadwaj%40microsoft.com%7Cc15cb84efdec4d76d95b08ded612894f%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C639183572266971110%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&amp;sdata=EFm%2BGoUKd4WGqk61y6xSdwvAmwKN85QYcucldd1s2Vk%3D&amp;reserved=0\" title=\"Original URL: https://learn.microsoft.com/azure/azure-functions/language-support-policy?pivots=programming-language-javascript. Click or tap if you trust this link.\">Learn\nmore</a>.<br>",
+      "status": null,
+      "created": "2026-09-22T19:22:34.3836913Z",
+      "modified": "2026-09-22T19:22:34.3836913Z",
       "locale": null,
       "availabilities": [
         {
-          "ring": "General Availability",
+          "ring": "Retirement",
+          "year": 2027,
+          "month": "April"
+        }
+      ]
+    },
+    {
+      "id": "571919",
+      "productCategories": [
+        "Compute",
+        "Containers"
+      ],
+      "tags": [
+        "Feature"
+      ],
+      "products": [
+        "Azure Kubernetes Service (AKS)"
+      ],
+      "generalAvailabilityDate": null,
+      "previewAvailabilityDate": "2026-09",
+      "privatePreviewAvailabilityDate": null,
+      "title": "Public Preview: Flex Nodes for AKS",
+      "description": "Flex Nodes for AKS is a deployment option for application and platform teams to use hybrid and edge infrastructure as connected worker nodes to an AKS control plane in Azure. Flex Nodes provide a consistent Kubernetes control plane while enabling teams to govern and secure compute for latency, regulatory, or sovereign needs. Rather than deploying an operating a complete Kubernetes cluster with a local control plane, Flex Nodes for AKS are designed for connected environments where only the worker nodes run at the edge or on customer infrastructure. Flex Nodes for AKS is ideal for applications that require local execution but not local operations, including AI inference, data processing, industrial applications, content delivery, branch office services, and latency-sensitive business workloads.<br><br><a href=\"https://aka.ms/aks/flexnodeforaks\">Learn more</a>.<br><br>",
+      "status": "In preview",
+      "created": "2026-09-22T18:51:48.5685957Z",
+      "modified": "2026-09-22T18:51:48.5685957Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "Preview",
           "year": 2026,
           "month": "September"
         }
