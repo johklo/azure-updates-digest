@@ -26362,5 +26362,61 @@
       "AI 추론, 산업용 애플리케이션, 데이터 거주 요구 사항, 클러스터의 Azure 지역 외부 용량 등 로컬 운영 없이 로컬 실행이 필요한 시나리오에 적합합니다."
     ],
     "translated_at": "2026-09-23T01:20:10.370938+00:00"
+  },
+  "572770": {
+    "summary": "Support for PowerShell 7.4 in Azure Functions will end on November 10, 2026, requiring customers to upgrade to PowerShell 7.6 to maintain security, support, and performance.",
+    "key_points": [
+      "PowerShell 7.4 support and security updates end on November 10, 2026; customers must upgrade to PowerShell 7.6.",
+      "Azure Function apps running on PowerShell 7.4 will continue to run but without security patches or customer support, risking vulnerabilities and degraded performance.",
+      "Linux Consumption plan users must first upgrade to Flex Consumption plan before moving to PowerShell 7.6.",
+      "Updating requires verifying extension bundles, binding extensions, package dependencies, local tools, and testing the function app locally; migration from in-process to isolated worker model is mandatory before the deadline."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/azure-functions/update-language-versions?tabs=azure-portal%2Cwindows&pivots=programming-language-powershell",
+    "doc_title": "Update Language Versions in Azure Functions",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/en-us/azure/azure-functions/update-language-versions?tabs=azure-portal%2Cwindows&pivots=programming-language-powershell",
+      "https://learn.microsoft.com/azure/app-service/language-support-policy"
+    ],
+    "source": "llm",
+    "updated_at": "2026-09-24T01:15:06.172694+00:00",
+    "title_ko": "Retirement: PowerShell 7.4 지원이 2026년 11월 10일 종료됩니다",
+    "summary_ko": "Azure Functions에서 PowerShell 7.4 지원이 2026년 11월 10일에 종료되며, 보안, 지원 및 성능 유지를 위해 고객은 PowerShell 7.6으로 업그레이드해야 합니다.",
+    "key_points_ko": [
+      "PowerShell 7.4 지원 및 보안 업데이트가 2026년 11월 10일에 종료되며, 고객은 PowerShell 7.6으로 업그레이드해야 합니다.",
+      "PowerShell 7.4에서 실행 중인 Azure Function 앱은 계속 실행되지만 보안 패치나 고객 지원이 제공되지 않아 취약점 및 성능 저하 위험이 있습니다.",
+      "Linux Consumption 플랜 사용자는 PowerShell 7.6으로 이동하기 전에 먼저 Flex Consumption 플랜으로 업그레이드해야 합니다.",
+      "업데이트 시 확장 번들, 바인딩 확장, 패키지 종속성, 로컬 도구를 확인하고 함수 앱을 로컬에서 테스트해야 하며, 마감일 이전에 인프로세스에서 격리된 워커 모델로의 마이그레이션이 필수입니다."
+    ],
+    "translated_at": "2026-09-24T01:15:22.549214+00:00"
+  },
+  "572838": {
+    "summary": "Support for .NET 8 and .NET 9 in Azure Functions ends on November 10, 2026, requiring customers to upgrade to .NET 10 to maintain security, performance, and support.",
+    "key_points": [
+      "After November 10, 2026, Azure Functions running on .NET 8 or .NET 9 will no longer receive security updates, new features, or performance optimizations.",
+      "Apps using unsupported .NET versions may face security vulnerabilities, performance degradation, and limited scaling capabilities.",
+      "Customers must migrate in-process model apps to the isolated worker model before upgrading to .NET 10; isolated worker model apps can upgrade directly.",
+      "Linux Consumption plan users must upgrade to the Flex Consumption plan before moving to .NET 10."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/azure-functions/language-support-policy",
+    "doc_title": "Azure Functions language stack support policy",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/azure/azure-functions/language-support-policy",
+      "https://learn.microsoft.com/azure/azure-functions/migrate-dotnet-to-isolated-model?tabs=net8",
+      "https://learn.microsoft.com/azure/azure-functions/update-language-versions?tabs=azure-portal%2Cwindows&pivots=programming-language-csharp",
+      "https://learn.microsoft.com/en-us/azure/azure-functions/language-support-policy?pivots=programming-language-csharp"
+    ],
+    "source": "llm",
+    "updated_at": "2026-09-24T01:15:12.675083+00:00",
+    "title_ko": "Retirement: .NET 8 및 .NET 9 지원이 2026년 11월 10일 종료—앱을 .NET 10으로 업그레이드하세요",
+    "summary_ko": "Azure Functions에서 .NET 8 및 .NET 9에 대한 지원이 2026년 11월 10일에 종료되며, 보안, 성능 및 지원 유지를 위해 고객은 .NET 10으로 업그레이드해야 합니다.",
+    "key_points_ko": [
+      "2026년 11월 10일 이후에는 .NET 8 또는 .NET 9에서 실행되는 Azure Functions가 보안 업데이트, 신규 기능, 성능 최적화를 더 이상 받지 않습니다.",
+      "지원되지 않는 .NET 버전을 사용하는 앱은 보안 취약점, 성능 저하 및 제한된 확장성 문제에 직면할 수 있습니다.",
+      "고객은 .NET 10으로 업그레이드하기 전에 인프로세스 모델 앱을 격리 워커 모델로 마이그레이션해야 하며, 격리 워커 모델 앱은 직접 업그레이드할 수 있습니다.",
+      "Linux Consumption 플랜 사용자는 .NET 10으로 전환하기 전에 Flex Consumption 플랜으로 업그레이드해야 합니다."
+    ],
+    "translated_at": "2026-09-24T01:15:31.314239+00:00"
   }
 }
