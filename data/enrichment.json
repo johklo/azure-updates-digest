@@ -26418,5 +26418,57 @@
       "Linux Consumption 플랜 사용자는 .NET 10으로 전환하기 전에 Flex Consumption 플랜으로 업그레이드해야 합니다."
     ],
     "translated_at": "2026-09-24T01:15:31.314239+00:00"
+  },
+  "557117": {
+    "summary": "Microsoft will retire several standalone Azure Communication Services (ACS) offerings by September 30, 2028, requiring customers to transition to Teams-integrated solutions or update SDKs to maintain functionality.",
+    "key_points": [
+      "Multiple standalone ACS services including Email, SMS, Chat, and Number Management will be retired and cease functioning after September 30, 2028.",
+      "ACS services with breaking changes, such as Voice/Video Calling SDK and Call Automation, will continue only when integrated with Microsoft Teams and require SDK updates to the latest major versions.",
+      "New customers cannot sign up for retiring ACS services starting October 23, 2026; existing customers can use them until the retirement date to support transition.",
+      "Customers must update applications to supported Teams-aligned services or face service disruption; Microsoft provides migration guidance and support resources to facilitate this transition."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/communication-services/acs-retirement-and-breaking-changes-guide",
+    "doc_title": "Retirement and breaking changes guide for Azure Communication Services",
+    "doc_read": true,
+    "links": [
+      "https://aka.ms/acs-retirement-and-breaking-changes-guide"
+    ],
+    "source": "llm",
+    "updated_at": "2026-09-25T01:16:13.999452+00:00",
+    "title_ko": "Retirement: Azure Communication Services (ACS) 독립형 서비스가 2028년 9월 30일에 Retirement됩니다",
+    "summary_ko": "Microsoft는 2028년 9월 30일까지 여러 Azure Communication Services(ACS) 독립형 서비스를 Retirement하며, 고객은 기능 유지를 위해 Teams 통합 솔루션으로 전환하거나 SDK를 업데이트해야 합니다.",
+    "key_points_ko": [
+      "Email, SMS, Chat, Number Management를 포함한 여러 ACS 독립형 서비스가 2028년 9월 30일 이후 Retirement되어 작동이 중단됩니다.",
+      "Voice/Video Calling SDK 및 Call Automation과 같이 Breaking changes가 있는 ACS 서비스는 Microsoft Teams와 통합된 경우에만 계속 제공되며 최신 주요 버전 SDK로 업데이트해야 합니다.",
+      "2026년 10월 23일부터 신규 고객은 Retirement 대상 ACS 서비스에 가입할 수 없으며, 기존 고객은 전환 지원을 위해 Retirement일까지 서비스를 사용할 수 있습니다.",
+      "고객은 지원되는 Teams 연동 서비스로 애플리케이션을 업데이트해야 하며, 그렇지 않으면 서비스 중단이 발생할 수 있습니다; Microsoft는 전환을 돕기 위한 마이그레이션 가이드와 지원 리소스를 제공합니다."
+    ],
+    "translated_at": "2026-09-25T01:16:27.265042+00:00"
+  },
+  "572573": {
+    "summary": "Instant Access for application-consistent VM restore points with Premium v2 or Ultra disks is now generally available, enabling immediate disk restoration from snapshots to reduce recovery time objectives.",
+    "key_points": [
+      "Instant Access allows disk restore to start as soon as the snapshot is created, bypassing the wait for full data replication.",
+      "Introduces a new consolidated read-only property 'instantAccessState' on restore points to simplify restore decision-making.",
+      "Supported only for application-consistent restore points on VMs with Premium SSD v2 or Ultra data disks; not supported for crash-consistent restore points.",
+      "Available via REST API, Azure SDK, CLI, and ARM templates; not yet supported in the Azure Portal."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/virtual-machines/virtual-machines-create-restore-points#instant-access",
+    "doc_title": "Use virtual machine restore points - Azure Virtual Machines",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/en-us/azure/virtual-machines/virtual-machines-create-restore-points#instant-access"
+    ],
+    "source": "llm",
+    "updated_at": "2026-09-25T01:16:18.960978+00:00",
+    "title_ko": "Generally Available: VM 복원 지점에 대한 Instant Access",
+    "summary_ko": "Premium v2 또는 Ultra 디스크를 사용하는 애플리케이션 일관성 VM 복원 지점에 대한 Instant Access가 이제 Generally Available 상태로 제공되어, 스냅샷에서 즉시 디스크 복원이 가능해져 복구 시간 목표를 단축합니다.",
+    "key_points_ko": [
+      "Instant Access는 스냅샷 생성 즉시 디스크 복원을 시작할 수 있어 전체 데이터 복제 완료를 기다릴 필요가 없습니다.",
+      "복원 결정 과정을 간소화하기 위해 복원 지점에 새로운 통합 읽기 전용 속성 'instantAccessState'를 도입했습니다.",
+      "Premium SSD v2 또는 Ultra 데이터 디스크가 장착된 VM의 애플리케이션 일관성 복원 지점에만 지원되며, 크래시 일관성 복원 지점은 지원하지 않습니다.",
+      "REST API, Azure SDK, CLI, ARM 템플릿을 통해 사용할 수 있으며, Azure Portal에서는 아직 지원되지 않습니다."
+    ],
+    "translated_at": "2026-09-25T01:16:33.014839+00:00"
   }
 }
