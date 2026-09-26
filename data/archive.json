@@ -1,7 +1,35 @@
 {
-  "updated_at": "2026-09-25T01:16:03.227456+00:00",
-  "count": 1022,
+  "updated_at": "2026-09-26T01:18:14.692976+00:00",
+  "count": 1023,
   "items": [
+    {
+      "id": "573048",
+      "productCategories": [
+        "Databases"
+      ],
+      "tags": [
+        "Feature"
+      ],
+      "products": [
+        "Azure HorizonDB"
+      ],
+      "generalAvailabilityDate": null,
+      "previewAvailabilityDate": "2026-09",
+      "privatePreviewAvailabilityDate": null,
+      "title": "Public Preview: Azure HorizonDB supports PostgreSQL 18",
+      "description": "Azure HorizonDB is a fully managed, PostgreSQL-compatible, cloud-native database service designed for scalable, high-performance workloads.<br><br>Azure HorizonDB,&nbsp;now in public preview, includes PostgreSQL 18 support.<br><p><a href=\"https://www.postgresql.org/about/press/\">Learn more</a>.&nbsp;</p>",
+      "status": "In preview",
+      "created": "2026-09-25T18:07:26.9300290Z",
+      "modified": "2026-09-25T18:07:26.9300290Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "Preview",
+          "year": 2026,
+          "month": "September"
+        }
+      ]
+    },
     {
       "id": "557117",
       "productCategories": [

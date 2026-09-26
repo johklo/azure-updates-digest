@@ -26470,5 +26470,29 @@
       "REST API, Azure SDK, CLI, ARM 템플릿을 통해 사용할 수 있으며, Azure Portal에서는 아직 지원되지 않습니다."
     ],
     "translated_at": "2026-09-25T01:16:33.014839+00:00"
+  },
+  "573048": {
+    "summary": "Azure HorizonDB now supports PostgreSQL 18 in public preview, enabling customers to leverage the latest PostgreSQL features in a fully managed, scalable cloud database service.",
+    "key_points": [
+      "Azure HorizonDB is a fully managed, PostgreSQL-compatible, cloud-native database service.",
+      "Public preview release includes support for PostgreSQL version 18.",
+      "Designed for scalable, high-performance workloads in the cloud.",
+      "Allows customers to utilize the newest PostgreSQL capabilities with managed service benefits."
+    ],
+    "doc_url": "",
+    "doc_title": "",
+    "doc_read": false,
+    "links": [],
+    "source": "llm",
+    "updated_at": "2026-09-26T01:18:27.087775+00:00",
+    "title_ko": "Public Preview: Azure HorizonDB가 PostgreSQL 18을 지원합니다",
+    "summary_ko": "Azure HorizonDB가 Public Preview로 PostgreSQL 18을 지원하여, 고객이 최신 PostgreSQL 기능을 완전 관리형 확장 가능한 클라우드 데이터베이스 서비스에서 활용할 수 있게 되었습니다.",
+    "key_points_ko": [
+      "Azure HorizonDB는 완전 관리형 PostgreSQL 호환 클라우드 네이티브 데이터베이스 서비스입니다.",
+      "Public Preview 릴리스에는 PostgreSQL 버전 18 지원이 포함되어 있습니다.",
+      "클라우드에서 확장 가능하고 고성능 워크로드를 위해 설계되었습니다.",
+      "고객이 관리형 서비스의 이점과 함께 최신 PostgreSQL 기능을 활용할 수 있습니다."
+    ],
+    "translated_at": "2026-09-26T01:18:31.098221+00:00"
   }
 }
