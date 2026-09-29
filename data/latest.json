@@ -1,10 +1,121 @@
 {
-  "generated_at": "2026-09-28T01:28:02.088339+00:00",
-  "window_start": "2026-09-21T01:28:02.088339+00:00",
-  "window_end": "2026-09-28T01:28:02.088339+00:00",
+  "generated_at": "2026-09-29T02:31:01.149249+00:00",
+  "window_start": "2026-09-22T02:31:01.149249+00:00",
+  "window_end": "2026-09-29T02:31:01.149249+00:00",
   "window_days": 7,
-  "fetched_count": 10,
-  "matched_count": 10,
-  "count": 0,
-  "items": []
+  "fetched_count": 11,
+  "matched_count": 11,
+  "count": 4,
+  "items": [
+    {
+      "id": "571800",
+      "productCategories": [
+        "Databases",
+        "Hybrid + multicloud"
+      ],
+      "tags": [
+        "Feature"
+      ],
+      "products": [
+        "Azure SQL Database"
+      ],
+      "generalAvailabilityDate": "2026-09",
+      "previewAvailabilityDate": null,
+      "privatePreviewAvailabilityDate": null,
+      "title": "Generally Available: Vector search and vector indexes in Azure SQL ",
+      "description": "<p>Vector search and vector indexes&nbsp;are now generally available in Azure SQL Database. Using the <a href=\"https://learn.microsoft.com/sql/t-sql/statements/create-vector-index-transact-sql?view=sql-server-ver17\" rel=\"noreferrer noopener\">CREATE VECTOR INDEX</a>&nbsp;and <a href=\"https://learn.microsoft.com/sql/t-sql/functions/vector-search-transact-sql?view=sql-server-ver17\" rel=\"noreferrer noopener\">VECTOR_SEARCH</a>&nbsp;T-SQL capabilities, you can perform efficient approximate nearest neighbor (ANN) searches for AI scenarios such as semantic search, retrieval-augmented generation (RAG), recommendation systems, and image search. Built on the DiskANN&nbsp;algorithm, vector indexes enable efficient vector similarity search over large datasets while allowing you to combine vector search with relational queries and filtering&nbsp;directly in Azure SQL Database.&nbsp;</p><p>By bringing AI retrieval directly into Azure SQL Database, you can build AI-powered applications on your enterprise data without requiring a separate vector database, simplifying application architecture while leveraging&nbsp;the reliability, security, and governance capabilities of Azure SQL Database.&nbsp;</p><p><a href=\"https://learn.microsoft.com/sql/sql-server/ai/vectors?view=sql-server-ver17\" rel=\"noreferrer noopener\">Learn more</a>.</p>",
+      "status": "Launched",
+      "created": "2026-09-28T22:07:19.1716197Z",
+      "modified": "2026-09-28T22:07:19.1716197Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "General Availability",
+          "year": 2026,
+          "month": "September"
+        }
+      ]
+    },
+    {
+      "id": "572998",
+      "productCategories": [
+        "Databases",
+        "Hybrid + multicloud"
+      ],
+      "tags": [
+        "Feature"
+      ],
+      "products": [
+        "Azure SQL Database"
+      ],
+      "generalAvailabilityDate": null,
+      "previewAvailabilityDate": "2026-09",
+      "privatePreviewAvailabilityDate": null,
+      "title": "Public Preview: Azure SQL Dev Hub",
+      "description": "Azure SQL Dev Hub gives you a central starting point for building applications with Azure SQL, whether you’re developing directly or using AI agents. You can find guidance for connecting to Azure SQL from .NET, Python, Node.js, and Java, along with resources for working with schemas and queries.<br><br>You can also access runnable samples, troubleshooting guidance, and SQL agent skills in one place, making it easier to get started and build with Azure SQL using the tools and frameworks you already use.<br><p><a href=\"https://aka.ms/azuresql-hub\">Learn more</a>.&nbsp;</p>",
+      "status": "In preview",
+      "created": "2026-09-28T22:06:05.6611888Z",
+      "modified": "2026-09-28T22:06:05.6611888Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "Preview",
+          "year": 2026,
+          "month": "September"
+        }
+      ]
+    },
+    {
+      "id": "571632",
+      "productCategories": [
+        "Databases"
+      ],
+      "tags": [
+        "Feature"
+      ],
+      "products": [
+        "Azure SQL Managed Instance"
+      ],
+      "generalAvailabilityDate": "2026-09",
+      "previewAvailabilityDate": null,
+      "privatePreviewAvailabilityDate": null,
+      "title": "Generally Available: Azure SQL Managed Instance updates for late-September 2026",
+      "description": "<p>In\nlate September 2026, the following updates and\nenhancements were made to Azure SQL Managed Instance:&nbsp;&nbsp;</p><ul type=\"disc\">\n <li>Use\n     the flexible memory feature in Azure SQL Managed Instance to change the\n     amount of memory allocated to your SQL managed instance without changing\n     the number of vCores.&nbsp;&nbsp;</li>\n <li>Get\n     support for higher transaction log write throughput limits in Azure SQL\n     Managed Instance Business Critical, enabling greater performance for\n     write-intensive workloads.&nbsp;&nbsp;</li></ul><p>Learn more:&nbsp;</p><ul><li><a href=\"https://aka.ms/sqlmi-add-mem-blog\">Flexible Memory in Azure SQL Managed\nInstance</a>&nbsp;</li><li><a href=\"https://aka.ms/sqlmi-bc-perf-improvement\">Azure SQL Managed Instance\nBusiness Critical</a>&nbsp;</li></ul>",
+      "status": "Launched",
+      "created": "2026-09-28T18:52:10.2686871Z",
+      "modified": "2026-09-28T18:52:10.2686871Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "General Availability",
+          "year": 2026,
+          "month": "September"
+        }
+      ]
+    },
+    {
+      "id": "572968",
+      "productCategories": [],
+      "tags": [
+        "Regions & Datacenters"
+      ],
+      "products": [],
+      "generalAvailabilityDate": "2026-09",
+      "previewAvailabilityDate": null,
+      "privatePreviewAvailabilityDate": null,
+      "title": "Generally Available: Luxembourg - Azure Extended Zones",
+      "description": "<p>We are announcing the general availability of the Luxembourg Azure Extended Zone.&nbsp;</p><p>Azure Extended Zones are small-footprint extensions of Azure placed in metro areas, industry centers, or specific jurisdictions, to serve low latency and data residency workloads. They support a selection of virtual machine (VMs), container, networking, storage, and other Azure services. Azure Extended Zones can run latency-sensitive and throughput-intensive applications close to end users, within data residency boundaries.</p><a href=\"https://learn.microsoft.com/en-us/azure/extended-zones/\" title=\"https://learn.microsoft.com/en-us/azure/extended-zones/\">Learn more</a>.<br><p></p>",
+      "status": "Launched",
+      "created": "2026-09-28T17:08:48.0813740Z",
+      "modified": "2026-09-28T17:08:48.0813740Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "General Availability",
+          "year": 2026,
+          "month": "September"
+        }
+      ]
+    }
+  ]
 }

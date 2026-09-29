@@ -26494,5 +26494,112 @@
       "고객이 관리형 서비스의 이점과 함께 최신 PostgreSQL 기능을 활용할 수 있습니다."
     ],
     "translated_at": "2026-09-26T01:18:31.098221+00:00"
+  },
+  "571800": {
+    "summary": "Azure SQL Database now generally supports vector search and vector indexes using the DiskANN algorithm, enabling efficient AI-driven approximate nearest neighbor searches directly within the database for improved application simplicity and performance.",
+    "key_points": [
+      "Capability: Supports CREATE VECTOR INDEX and VECTOR_SEARCH T-SQL commands for approximate nearest neighbor (ANN) searches using the DiskANN algorithm.",
+      "Availability: Generally available in Azure SQL Database with full DML support, iterative filtering, optimizer-driven execution, and advanced quantization.",
+      "Customer impact: Enables AI-powered applications like semantic search, RAG, recommendations, and image search without needing separate vector databases, simplifying architecture and leveraging Azure SQL's security and governance.",
+      "Migration: Existing vector indexes from earlier versions must be dropped and recreated to access latest features; migration should be planned during maintenance windows to avoid service disruption."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/sql/t-sql/statements/create-vector-index-transact-sql?view=sql-server-ver17",
+    "doc_title": "CREATE VECTOR INDEX (Transact-SQL) - SQL Server",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/sql/t-sql/statements/create-vector-index-transact-sql?view=sql-server-ver17",
+      "https://learn.microsoft.com/sql/t-sql/functions/vector-search-transact-sql?view=sql-server-ver17",
+      "https://learn.microsoft.com/sql/sql-server/ai/vectors?view=sql-server-ver17"
+    ],
+    "source": "llm",
+    "updated_at": "2026-09-29T02:31:11.081459+00:00",
+    "title_ko": "Generally Available: Azure SQL의 벡터 검색 및 벡터 인덱스",
+    "summary_ko": "Azure SQL Database가 이제 DiskANN 알고리즘을 사용한 벡터 검색 및 벡터 인덱스를 Generally Available 상태로 지원하여, 데이터베이스 내에서 직접 효율적인 AI 기반 근사 최근접 이웃 검색을 가능하게 하여 애플리케이션의 단순성과 성능을 향상합니다.",
+    "key_points_ko": [
+      "기능: DiskANN 알고리즘을 사용한 근사 최근접 이웃(ANN) 검색을 위해 CREATE VECTOR INDEX 및 VECTOR_SEARCH T-SQL 명령을 지원합니다.",
+      "가용성: Azure SQL Database에서 완전한 DML 지원, 반복 필터링, 옵티마이저 기반 실행 및 고급 양자화를 포함하여 Generally Available 상태입니다.",
+      "고객 영향: 별도의 벡터 데이터베이스 없이 의미 기반 검색, RAG, 추천, 이미지 검색과 같은 AI 기반 애플리케이션을 가능하게 하여 아키텍처를 단순화하고 Azure SQL의 보안 및 거버넌스를 활용합니다.",
+      "마이그레이션: 이전 버전의 기존 벡터 인덱스는 최신 기능을 사용하려면 삭제 후 재생성해야 하며, 서비스 중단을 피하기 위해 유지보수 창 동안 마이그레이션을 계획해야 합니다."
+    ],
+    "translated_at": "2026-09-29T02:31:32.370296+00:00"
+  },
+  "572998": {
+    "summary": "Azure SQL Dev Hub is now in public preview, providing a centralized starting point with AI agent integration to simplify building applications on Azure SQL across multiple programming languages.",
+    "key_points": [
+      "Offers guidance and runnable samples for connecting to Azure SQL using .NET, Python, Node.js, and Java.",
+      "Includes AI agent skills to provision, connect, migrate, seed, and ship databases with user oversight.",
+      "Supports building apps with features like vector search, row-level security, and Microsoft Entra identity integration.",
+      "Available as a free cloud offer and local container preview, enabling easy setup and verification in three steps."
+    ],
+    "doc_url": "https://microsoft.github.io/azure-sql-dev-hub/",
+    "doc_title": "Azure SQL Developer Hub",
+    "doc_read": true,
+    "links": [
+      "https://aka.ms/azuresql-hub"
+    ],
+    "source": "llm",
+    "updated_at": "2026-09-29T02:31:15.442650+00:00",
+    "title_ko": "Public Preview: Azure SQL Dev Hub",
+    "summary_ko": "Azure SQL Dev Hub가 Public Preview로 제공되어, AI 에이전트 통합을 통해 여러 프로그래밍 언어에서 Azure SQL 기반 애플리케이션 개발을 간소화하는 중앙 집중식 시작점을 제공합니다.",
+    "key_points_ko": [
+      ".NET, Python, Node.js, Java를 사용해 Azure SQL에 연결하는 가이드와 실행 가능한 샘플을 제공합니다.",
+      "사용자 감독 하에 데이터베이스 프로비저닝, 연결, 마이그레이션, 시딩, 배포를 수행하는 AI 에이전트 기능을 포함합니다.",
+      "벡터 검색, 행 수준 보안, Microsoft Entra 아이덴티티 통합과 같은 기능을 활용한 앱 개발을 지원합니다.",
+      "무료 클라우드 오퍼와 로컬 컨테이너 프리뷰로 제공되어, 세 단계만에 손쉽게 설정하고 검증할 수 있습니다."
+    ],
+    "translated_at": "2026-09-29T02:31:37.399476+00:00"
+  },
+  "571632": {
+    "summary": "Azure SQL Managed Instance now generally supports Flexible Memory, allowing independent scaling of memory without changing vCores, plus higher transaction log write throughput in Business Critical tier, enhancing performance and cost efficiency for memory- and write-intensive workloads.",
+    "key_points": [
+      "Flexible Memory is generally available for Business Critical and next-gen General Purpose tiers on premium-series hardware, enabling customizable memory-to-vCore ratios.",
+      "Higher transaction log write throughput limits are supported in Business Critical tier, improving performance for write-intensive workloads.",
+      "Flexible Memory allows online memory scaling with minimal downtime (~60 minutes), managed via Azure Portal, PowerShell, SDK, or API (minimum version 2024-08-01).",
+      "Usage-based pricing charges only for additional memory beyond default allocation, optimizing cost for memory-intensive scenarios like analytics and caching."
+    ],
+    "doc_url": "https://techcommunity.microsoft.com/blog/azuresqlblog/unlocking-more-power-with-flexible-memory-in-azure-sql-managed-instance/4425054",
+    "doc_title": "Unlocking More Power with Flexible Memory in Azure SQL Managed Instance | Microsoft Community Hub",
+    "doc_read": true,
+    "links": [
+      "https://aka.ms/sqlmi-add-mem-blog",
+      "https://aka.ms/sqlmi-bc-perf-improvement"
+    ],
+    "source": "llm",
+    "updated_at": "2026-09-29T02:31:22.378306+00:00",
+    "title_ko": "Generally Available: 2026년 9월 말 Azure SQL Managed Instance 업데이트",
+    "summary_ko": "Azure SQL Managed Instance가 이제 Flexible Memory를 Generally Available 상태로 지원하여 vCore 변경 없이 메모리를 독립적으로 확장할 수 있으며, Business Critical 계층에서 더 높은 트랜잭션 로그 쓰기 처리량을 제공해 메모리 및 쓰기 집약적 워크로드의 성능과 비용 효율성을 향상합니다.",
+    "key_points_ko": [
+      "Flexible Memory가 Business Critical 및 차세대 General Purpose 계층의 프리미엄 시리즈 하드웨어에서 Generally Available 상태로 제공되어 메모리와 vCore 비율을 맞춤 설정할 수 있습니다.",
+      "Business Critical 계층에서 더 높은 트랜잭션 로그 쓰기 처리량 한도를 지원해 쓰기 집약적 워크로드의 성능을 개선합니다.",
+      "Flexible Memory는 약 60분의 최소 다운타임으로 온라인 메모리 확장을 가능하게 하며, Azure Portal, PowerShell, SDK 또는 API(최소 버전 2024-08-01)를 통해 관리할 수 있습니다.",
+      "사용량 기반 과금은 기본 할당량을 초과하는 추가 메모리에 대해서만 부과되어, 분석 및 캐싱 같은 메모리 집약적 시나리오에서 비용 최적화를 지원합니다."
+    ],
+    "translated_at": "2026-09-29T02:31:43.421772+00:00"
+  },
+  "572968": {
+    "summary": "The Luxembourg Azure Extended Zone is now generally available, enabling customers to run low latency and data residency-sensitive workloads closer to end users within specific jurisdictions.",
+    "key_points": [
+      "Azure Extended Zones are small-footprint Azure extensions placed in metro areas or industry centers to support latency-sensitive and data residency workloads.",
+      "The Luxembourg Extended Zone supports a selection of VMs, containers, networking, storage, and other Azure services.",
+      "Customers can deploy and manage virtual machines and Arc-enabled workloads such as AKS clusters, ContainerApps, and Managed SQL Instances within this zone.",
+      "This availability helps enterprises meet data residency requirements while improving application performance by reducing latency."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/extended-zones/",
+    "doc_title": "Azure Extended Zones documentation",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/en-us/azure/extended-zones/"
+    ],
+    "source": "llm",
+    "updated_at": "2026-09-29T02:31:26.433265+00:00",
+    "title_ko": "Generally Available: 룩셈부르크 - Azure Extended Zones",
+    "summary_ko": "룩셈부르크 Azure Extended Zone이 이제 Generally Available 상태로 제공되어, 고객이 특정 관할 구역 내에서 최종 사용자와 더 가까운 위치에서 지연 시간이 짧고 데이터 거주에 민감한 워크로드를 실행할 수 있습니다.",
+    "key_points_ko": [
+      "Azure Extended Zones는 지연 시간에 민감하고 데이터 거주 워크로드를 지원하기 위해 대도시 지역 또는 산업 중심지에 배치된 소규모 Azure 확장입니다.",
+      "룩셈부르크 Extended Zone은 선택된 VM, 컨테이너, 네트워킹, 스토리지 및 기타 Azure 서비스를 지원합니다.",
+      "고객은 이 존 내에서 가상 머신과 AKS 클러스터, ContainerApps, Managed SQL Instances와 같은 Arc 지원 워크로드를 배포하고 관리할 수 있습니다.",
+      "이 가용성은 기업이 데이터 거주 요구 사항을 충족하는 동시에 지연 시간을 줄여 애플리케이션 성능을 향상하는 데 도움이 됩니다."
+    ],
+    "translated_at": "2026-09-29T02:31:48.002082+00:00"
   }
 }
