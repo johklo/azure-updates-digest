@@ -27322,5 +27322,164 @@
       "아이덴티티 아키텍처를 단순화하고 인프라 의존성을 줄이며 하이브리드 및 클라우드 우선 환경에서 SMB 접근 방식을 현대화합니다."
     ],
     "translated_at": "2026-09-30T01:58:05.101609+00:00"
+  },
+  "571894": {
+    "summary": "Microsoft has introduced a public preview of managed SQL Server performance monitoring on Azure Virtual Machines, simplifying telemetry collection and analysis without custom scripts.",
+    "key_points": [
+      "The SQL IaaS Agent extension collects and sends SQL Server performance data to a Microsoft-managed telemetry pipeline for processing and storage.",
+      "Resource-level and estate-wide dashboards, integrated with Fabric Database Hub, provide unified monitoring and help identify performance trends and bottlenecks.",
+      "Supports SQL Server 2016 and later Enterprise and Standard editions; Developer, Express, and Evaluation editions collect limited client connection data only.",
+      "Performance data can be securely queried using Kusto Query Language via an RBAC-protected Azure Data Explorer proxy endpoint for deeper analysis."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/azure-sql/virtual-machines/windows/enable-performance-monitoring-sql-vm?view=azuresql-vm",
+    "doc_title": "Enable Performance Monitoring for SQL Server on Azure VMs (Preview) - SQL Server on Azure VMs",
+    "doc_read": true,
+    "links": [
+      "https://aka.ms/PerformanceMonitoring_SQLVM",
+      "https://aka.ms/SqlPerformanceMonitoring_PreviewAnnoucement"
+    ],
+    "source": "llm",
+    "updated_at": "2026-10-01T01:54:22.130894+00:00",
+    "title_ko": "Public Preview: Azure Virtual Machines의 SQL Server용 SQL 성능 모니터링",
+    "summary_ko": "Microsoft는 Azure Virtual Machines에서 관리되는 SQL Server 성능 모니터링의 Public Preview를 도입하여, 맞춤 스크립트 없이도 텔레메트리 수집과 분석을 간소화했습니다.",
+    "key_points_ko": [
+      "SQL IaaS Agent 확장이 SQL Server 성능 데이터를 수집하여 Microsoft가 관리하는 텔레메트리 파이프라인으로 전송해 처리 및 저장합니다.",
+      "Fabric Database Hub와 통합된 리소스 수준 및 전체 환경 대시보드는 통합 모니터링을 제공하며 성능 추세와 병목 현상을 식별하는 데 도움을 줍니다.",
+      "SQL Server 2016 이후의 Enterprise 및 Standard 에디션을 지원하며, Developer, Express, Evaluation 에디션은 제한된 클라이언트 연결 데이터만 수집합니다.",
+      "성능 데이터는 RBAC로 보호되는 Azure Data Explorer 프록시 엔드포인트를 통해 Kusto Query Language로 안전하게 쿼리하여 심층 분석할 수 있습니다."
+    ],
+    "translated_at": "2026-10-01T01:54:49.060729+00:00"
+  },
+  "573414": {
+    "summary": "Microsoft Azure retired the NVv3-series virtual machines on September 30, 2026, requiring customers to migrate to supported VM types to maintain service and support.",
+    "key_points": [
+      "Standard_NV12s_v3, Standard_NV12hs_v3, Standard_NV24s_v3, Standard_NV24ms_v3, Standard_NV32ms_v3, and Standard_NV48s_v3 VMs were retired on September 30, 2026.",
+      "Remaining NVv3-series VMs are deallocated, stop working, and no longer incur charges or receive SLA/support.",
+      "Reserved Instance purchases for NVv3-series ended on November 2, 2025.",
+      "Azure UAE North region has an extended retirement date until January 31, 2027, after which migration off NVv3-series VMs is mandatory."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/lifecycle/retirement/nvv3-series-retirement",
+    "doc_title": "NVv3 series retirement - Azure Virtual Machines",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/gpu-accelerated/nvv3-series-retirement"
+    ],
+    "source": "llm",
+    "updated_at": "2026-10-01T01:54:26.069392+00:00",
+    "title_ko": "Retirement: NVv3-series Azure Virtual Machines",
+    "summary_ko": "Microsoft Azure는 2026년 9월 30일에 NVv3-series 가상 머신을 Retirement했으며, 고객은 서비스 및 지원 유지를 위해 지원되는 VM 유형으로 마이그레이션해야 합니다.",
+    "key_points_ko": [
+      "Standard_NV12s_v3, Standard_NV12hs_v3, Standard_NV24s_v3, Standard_NV24ms_v3, Standard_NV32ms_v3, 및 Standard_NV48s_v3 VM은 2026년 9월 30일에 Retirement되었습니다.",
+      "남아 있는 NVv3-series VM은 할당 해제(deallocated)되어 작동이 중지되며, 더 이상 요금이 청구되지 않고 SLA/지원도 받지 못합니다.",
+      "NVv3-series에 대한 Reserved Instance 구매는 2025년 11월 2일에 종료되었습니다.",
+      "Azure UAE North 지역은 Retirement 날짜가 2027년 1월 31일까지 연장되었으며, 이후에는 NVv3-series VM에서 반드시 마이그레이션해야 합니다."
+    ],
+    "translated_at": "2026-10-01T01:54:52.719794+00:00"
+  },
+  "573415": {
+    "summary": "Microsoft Azure retired the NVv4-series virtual machines on September 30, 2026, ending support and billing for these VMs to encourage migration to newer VM series.",
+    "key_points": [
+      "NVv4-series VMs including Standard_NV4as_v4 to Standard_NV32ahs_v4 were retired on September 30, 2026.",
+      "Remaining NVv4 VMs were deallocated, stopped working, and no longer incur charges or have SLA/support.",
+      "Reserved Instance purchases for NVv4 ended November 2, 2025; Compute Pre-Purchase sales ended June 2, 2026.",
+      "Customers needing technical help for resizing or migration can create a support request under Virtual Machine service type."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/lifecycle/retirement/nvv4-retirement",
+    "doc_title": "NVv4 series retirement - Azure Virtual Machines",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/lifecycle/retirement/nvv4-retirement"
+    ],
+    "source": "llm",
+    "updated_at": "2026-10-01T01:54:30.460537+00:00",
+    "title_ko": "Retirement: NVv4-series Azure Virtual Machines",
+    "summary_ko": "Microsoft Azure는 2026년 9월 30일에 NVv4-series 가상 머신을 Retirement하여 해당 VM에 대한 지원과 과금이 종료되었으며, 최신 VM 시리즈로의 마이그레이션을 권장합니다.",
+    "key_points_ko": [
+      "Standard_NV4as_v4부터 Standard_NV32ahs_v4까지 포함한 NVv4-series VM이 2026년 9월 30일에 Retirement되었습니다.",
+      "남아있는 NVv4 VM은 할당 해제되고 작동이 중지되었으며, 더 이상 과금되지 않고 SLA/지원도 제공되지 않습니다.",
+      "NVv4에 대한 Reserved Instance 구매는 2025년 11월 2일에 종료되었고, Compute Pre-Purchase 판매는 2026년 6월 2일에 종료되었습니다.",
+      "크기 조정 또는 마이그레이션에 기술 지원이 필요한 고객은 Virtual Machine 서비스 유형으로 지원 요청을 생성할 수 있습니다."
+    ],
+    "translated_at": "2026-10-01T01:54:56.628387+00:00"
+  },
+  "573214": {
+    "summary": "Azure Kubernetes Service (AKS) now supports Ubuntu 26.04 in public preview, offering a smaller host footprint, Linux LTS kernel 7.0, and rollback flexibility to Ubuntu 24.04, helping teams manage OS transitions with improved security and compatibility.",
+    "key_points": [
+      "Ubuntu 26.04 support introduces the Ubuntu2604 OS SKU using Ubuntu Minimal as the baseline image.",
+      "Available in preview for Kubernetes version 1.36 and later; requires registering the Ubuntu2604Preview feature flag.",
+      "Preserves existing AKS workflows for create, update, and node pool management with a controlled migration path and rollback to Ubuntu 24.04 where supported.",
+      "Smaller default host footprint and updated Linux LTS kernel 7.0 improve security and performance for AKS node pools."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/aks/upgrade-os-version",
+    "doc_title": "Upgrade Operating System (OS) Version in Azure Kubernetes Service (AKS) Clusters - Azure Kubernetes Service",
+    "doc_read": true,
+    "links": [
+      "https://aka.ms/aks/upgrade-os-version"
+    ],
+    "source": "llm",
+    "updated_at": "2026-10-01T01:54:35.365053+00:00",
+    "title_ko": "Public Preview: AKS에서 Ubuntu 26.04 지원",
+    "summary_ko": "Azure Kubernetes Service(AKS)가 이제 Public Preview로 Ubuntu 26.04를 지원하며, 더 작은 호스트 풋프린트, Linux LTS 커널 7.0, 그리고 Ubuntu 24.04로의 롤백 유연성을 제공하여 팀이 보안성과 호환성을 개선하면서 OS 전환을 관리할 수 있도록 돕습니다.",
+    "key_points_ko": [
+      "Ubuntu 26.04 지원은 Ubuntu Minimal을 기본 이미지로 사용하는 Ubuntu2604 OS SKU를 도입합니다.",
+      "Kubernetes 버전 1.36 이상에서 Preview로 제공되며, Ubuntu2604Preview 기능 플래그 등록이 필요합니다.",
+      "기존 AKS 워크플로우(생성, 업데이트, 노드 풀 관리)를 유지하며, 지원되는 경우 Ubuntu 24.04로의 제어된 마이그레이션 경로와 롤백을 제공합니다.",
+      "더 작은 기본 호스트 풋프린트와 업데이트된 Linux LTS 커널 7.0이 AKS 노드 풀의 보안성과 성능을 향상시킵니다."
+    ],
+    "translated_at": "2026-10-01T01:55:01.466608+00:00"
+  },
+  "573385": {
+    "summary": "Azure canvases for GitHub Copilot introduce interactive shared workspaces that integrate Azure tools and workflows directly within Copilot conversations, enhancing collaboration and productivity.",
+    "key_points": [
+      "Provides interactive shared workspaces combining Azure tools, dashboards, and guided workflows with GitHub Copilot.",
+      "Enables exploration of Azure resources, cost analysis, and building hosted skills within a single workspace.",
+      "Keeps progress, controls, and next steps visible and actionable alongside Copilot interactions.",
+      "Improves collaboration and streamlines cloud management tasks for enterprise users."
+    ],
+    "doc_url": "",
+    "doc_title": "",
+    "doc_read": false,
+    "links": [],
+    "source": "llm",
+    "updated_at": "2026-10-01T01:54:39.093059+00:00",
+    "title_ko": "Announcing: GitHub Copilot용 Azure 캔버스",
+    "summary_ko": "GitHub Copilot용 Azure 캔버스는 Copilot 대화 내에서 Azure 도구와 워크플로를 직접 통합한 인터랙티브 공유 작업 공간을 제공하여 협업과 생산성을 향상합니다.",
+    "key_points_ko": [
+      "Azure 도구, 대시보드, 가이드 워크플로를 GitHub Copilot과 결합한 인터랙티브 공유 작업 공간을 제공합니다.",
+      "단일 작업 공간 내에서 Azure 리소스 탐색, 비용 분석, 호스팅된 스킬 구축이 가능합니다.",
+      "진행 상황, 제어 및 다음 단계를 Copilot 상호작용과 함께 가시적이고 실행 가능하게 유지합니다.",
+      "엔터프라이즈 사용자를 위한 협업을 개선하고 클라우드 관리 작업을 간소화합니다."
+    ],
+    "translated_at": "2026-10-01T01:55:04.827443+00:00"
+  },
+  "572346": {
+    "summary": "Microsoft is retiring the Dv3, Dsv3, Ev3, and Esv3 Azure VM series by November 15, 2029, requiring customers to migrate to newer VM generations to ensure continued support and improved performance.",
+    "key_points": [
+      "Dv3, Dsv3, Ev3, and Esv3 VM series will retire on November 15, 2029, entering the End-of-Life stage and losing support.",
+      "Customers should migrate workloads to newer VM series like Dsv5 or Esv5 before the retirement date to avoid service interruption.",
+      "Reserved Instances for these VM series stopped being available for purchase or renewal as of July 1, 2026; customers are advised to consider Azure savings plans for continued cost savings.",
+      "Microsoft offers support and migration assistance through active support plans and community resources to help customers transition smoothly."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/cost-management-billing/reservations/manage-reserved-vm-instance",
+    "doc_title": "Manage Azure Reservations - Microsoft Cost Management",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/en-us/azure/cost-management-billing/reservations/manage-reserved-vm-instance",
+      "https://learn.microsoft.com/en-us/azure/cost-management-billing/savings-plan/reservation-trade-in",
+      "https://learn.microsoft.com/en-us/azure/cost-management-billing/savings-plan/savings-plan-overview#how-are-savings-plans-purchased",
+      "https://learn.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request",
+      "https://learn.microsoft.com/en-us/answers/tags/133/azure"
+    ],
+    "source": "llm",
+    "updated_at": "2026-10-01T01:54:43.410024+00:00",
+    "title_ko": "Retirement: Dv3, Dsv3, Ev3, 및 Esv3 Azure VM",
+    "summary_ko": "Microsoft는 2029년 11월 15일까지 Dv3, Dsv3, Ev3, 및 Esv3 Azure VM 시리즈를 Retirement할 예정이며, 고객은 지속적인 지원과 향상된 성능을 위해 최신 VM 세대로 마이그레이션해야 합니다.",
+    "key_points_ko": [
+      "Dv3, Dsv3, Ev3, 및 Esv3 VM 시리즈는 2029년 11월 15일에 Retirement되어 End-of-Life 단계에 진입하며 지원이 종료됩니다.",
+      "고객은 서비스 중단을 방지하기 위해 Retirement 날짜 이전에 Dsv5 또는 Esv5와 같은 최신 VM 시리즈로 워크로드를 마이그레이션해야 합니다.",
+      "이 VM 시리즈에 대한 Reserved Instances는 2026년 7월 1일부터 구매 및 갱신이 중단되었으며, 고객은 지속적인 비용 절감을 위해 Azure savings plans를 고려하는 것이 권장됩니다.",
+      "Microsoft는 활성 지원 플랜과 커뮤니티 리소스를 통해 고객이 원활하게 전환할 수 있도록 지원 및 마이그레이션 도움을 제공합니다."
+    ],
+    "translated_at": "2026-10-01T01:55:09.187864+00:00"
   }
 }

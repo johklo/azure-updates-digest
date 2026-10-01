@@ -1,7 +1,178 @@
 {
-  "updated_at": "2026-09-30T01:53:50.917403+00:00",
-  "count": 1054,
+  "updated_at": "2026-10-01T01:54:04.687124+00:00",
+  "count": 1060,
   "items": [
+    {
+      "id": "571894",
+      "productCategories": [
+        "Compute",
+        "Databases"
+      ],
+      "tags": [
+        "Feature"
+      ],
+      "products": [
+        "SQL Server on Azure Virtual Machines"
+      ],
+      "generalAvailabilityDate": null,
+      "previewAvailabilityDate": "2026-09",
+      "privatePreviewAvailabilityDate": null,
+      "title": "Public Preview: SQL performance monitoring for SQL Server on Azure Virtual Machines ",
+      "description": "<p>The public preview of Microsoft-managed performance monitoring for SQL Server on Azure Virtual Machines is now available.&nbsp;You can now monitor&nbsp;SQL Server on Azure Virtual Machines without building custom collection scripts or correlating telemetry across disconnected tools. The SQL IaaS Agent extension collects performance data from your SQL Server instances and sends it to a Microsoft-managed telemetry pipeline for processing and storage.&nbsp;</p><p>Resource-level and estate-wide dashboards help you identify&nbsp;performance trends, anomalies, and resource bottlenecks. Integration with Fabric Database Hub brings this telemetry into a unified monitoring experience. For deeper analysis and custom visualizations, you can securely query your data with Kusto Query Language through an RBAC-protected Azure Data Explorer proxy endpoint.&nbsp;</p><p>Learn more:&nbsp;&nbsp;</p><ul type=\"disc\">\n <li><a href=\"https://aka.ms/PerformanceMonitoring_SQLVM\">Documentation</a>&nbsp;&nbsp;</li>\n <li><a href=\"https://aka.ms/SqlPerformanceMonitoring_PreviewAnnoucement\">Announcement\n     blog</a>&nbsp;&nbsp;</li></ul>",
+      "status": "In preview",
+      "created": "2026-09-30T21:13:13.6139783Z",
+      "modified": "2026-09-30T21:13:13.6139783Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "Preview",
+          "year": 2026,
+          "month": "September"
+        }
+      ]
+    },
+    {
+      "id": "573414",
+      "productCategories": [
+        "Compute"
+      ],
+      "tags": [
+        "Retirements"
+      ],
+      "products": [
+        "Virtual Machines"
+      ],
+      "generalAvailabilityDate": null,
+      "previewAvailabilityDate": null,
+      "privatePreviewAvailabilityDate": null,
+      "title": "Retirement: NVv3-series Azure Virtual Machines",
+      "description": "<p>On September 30, 2026, Microsoft Azure retired the Standard_NV12s_v3, Standard_NV12hs_v3, Standard_NV24s_v3, Standard_NV24ms_v3, Standard_NV32ms_v3, and Standard_NV48s_v3 virtual machines (VMs) in the NVv3-series VMs.</p><p>Any remaining NVv3-series VMs will be set to a deallocated state. They'll stop working and no longer incur billing charges. NVv3 will no longer be under SLA or have support included.&nbsp;</p><p>Note: 1-year and 3-year Reserved Instance (RI) purchases for the NVv3-series ended on November 2, 2025.</p><p>Note: If you're currently using NVv3-series Azure VMs in the Azure UAE North region, you can continue using the NVv3-series VMs beyond the general retirement date of September 30, 2026 until the extension date of January 31, 2027. Customers in the Azure UAE North region must migrate off the NVv3-series VMs by January 31, 2027.</p><a href=\"https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/gpu-accelerated/nvv3-series-retirement\" title=\"https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/gpu-accelerated/nvv3-series-retirement\">Learn\nmore</a>.<br>",
+      "status": null,
+      "created": "2026-09-30T18:26:47.0594641Z",
+      "modified": "2026-09-30T18:26:47.0594641Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "Retirement",
+          "year": 2026,
+          "month": "September"
+        }
+      ]
+    },
+    {
+      "id": "573415",
+      "productCategories": [
+        "Compute"
+      ],
+      "tags": [
+        "Retirements"
+      ],
+      "products": [
+        "Virtual Machines"
+      ],
+      "generalAvailabilityDate": null,
+      "previewAvailabilityDate": null,
+      "privatePreviewAvailabilityDate": null,
+      "title": "Retirement: NVv4-series Azure Virtual Machines",
+      "description": "<p>On September 30, 2026, Microsoft Azure retired the Standard_NV4as_v4, Standard_NV4ahs_v4, Standard_NV8as_v4, Standard_NV8ahs_v4, Standard_NV16as_v4, Standard_NV16ahs_v4, Standard_NV32as_v4, and Standard_NV32ahs_v4 virtual machines (VMs) in the NVv4-series VMs.&nbsp;</p><p>Any remaining NVv4-series VMs will be set to a deallocated state. They'll stop working and no longer incur billing charges. NVv4 will no longer be under SLA or have support included.&nbsp;</p><p>Note:&nbsp;1-year and 3-year Reserved Instance (RI) purchases for the NVv4-series ended on November 2, 2025.</p><p>Note:&nbsp;All Compute Pre-Purchase (CPP) sales for the NVv4-series ended on June 2, 2026.</p><a href=\"https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/lifecycle/retirement/nvv4-retirement\">Learn\nmore</a>.&nbsp;",
+      "status": null,
+      "created": "2026-09-30T18:24:01.2462397Z",
+      "modified": "2026-09-30T18:24:01.2462397Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "Retirement",
+          "year": 2026,
+          "month": "September"
+        }
+      ]
+    },
+    {
+      "id": "573214",
+      "productCategories": [
+        "Compute",
+        "Containers"
+      ],
+      "tags": [
+        "Feature"
+      ],
+      "products": [
+        "Azure Kubernetes Service (AKS)"
+      ],
+      "generalAvailabilityDate": null,
+      "previewAvailabilityDate": "2026-09",
+      "privatePreviewAvailabilityDate": null,
+      "title": "Public Preview: Ubuntu 26.04 support in AKS",
+      "description": "Teams running Ubuntu node pools on AKS need to stay current with Ubuntu LTS releases, but each OS transition can introduce package footprint, security, and compatibility concerns. Ubuntu 26.04 support introduces the Ubuntu2604 OS SKU using Ubuntu Minimal as the baseline image, while preserving existing AKS create, update, and node pool workflows. You get a smaller default host footprint, Linux LTS kernel 7.0, and a controlled migration path with rollback flexibility to Ubuntu 24.04 where supported. <br><br><a href=\"https://aka.ms/aks/upgrade-os-version\">Learn more.</a>",
+      "status": "In preview",
+      "created": "2026-09-30T17:11:11.2479988Z",
+      "modified": "2026-09-30T17:11:11.2479988Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "Preview",
+          "year": 2026,
+          "month": "September"
+        }
+      ]
+    },
+    {
+      "id": "573385",
+      "productCategories": [
+        "Management and governance"
+      ],
+      "tags": [
+        "SDK and Tools",
+        "Announcement"
+      ],
+      "products": [
+        "Azure Copilot"
+      ],
+      "generalAvailabilityDate": null,
+      "previewAvailabilityDate": null,
+      "privatePreviewAvailabilityDate": null,
+      "title": "Announcing: Azure canvases for GitHub Copilot",
+      "description": "<p>Discover Azure canvases for GitHub Copilot, interactive shared workspaces that bring Azure tools, dashboards, and guided workflows directly alongside your Copilot conversations. Explore Azure resources, analyze costs, and build hosted skills while keeping progress, controls, and next steps visible and actionable in one workspace.</p><p><a href=\"https://developer.microsoft.com/blog/azure-canvases/\">Learn more</a>.</p>",
+      "status": null,
+      "created": "2026-09-30T17:09:51.5337578Z",
+      "modified": "2026-09-30T17:09:51.5337578Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "Effective",
+          "year": 2026,
+          "month": "September"
+        }
+      ]
+    },
+    {
+      "id": "572346",
+      "productCategories": [
+        "Compute"
+      ],
+      "tags": [
+        "Retirements"
+      ],
+      "products": [
+        "Virtual Machines"
+      ],
+      "generalAvailabilityDate": null,
+      "previewAvailabilityDate": null,
+      "privatePreviewAvailabilityDate": null,
+      "title": "Retirement: Dv3, Dsv3, Ev3, and Esv3 Azure VMs ",
+      "description": "<p>As part of the Microsoft <a href=\"https://aka.ms/VM-lifecycle/learn/vm-lifecycle-policy\">Azure VM lifecycle\npolicy</a>, Microsoft is announcing the retirement of the Dv3, Dsv3, Ev3,\nand Esv3 Azure VM series in public cloud Azure regions. These VMs will\nenter the End-of-Life lifecycle stage and <a></a><a></a><a>retire on November 15, </a><a></a><a>2029</a>.</p><p><a>We know migrating production workloads\ntakes planning and engineering time. To keep your applications and workloads\nrunning without interruption, migrate any Dv3, Dsv3, Ev3, or Esv3 series VMs to\na newer VM series before November 15, 2029. </a><a></a><a></a><a>After\nthis date, Dv3, Dsv3, Ev3, and Esv3 virtual machines will enter the Retired\nlifecycle stage and will no longer be supported on Azure. Virtual machines not\ntransitioned by that time may be deallocated and ultimately deleted as the\nunderlying hardware and platform infrastructure are retired. We recommend evaluating\navailable modernization options as soon as possible and moving to newer VM\ngenerations, such as Azure Dsv5 or Esv5v5 series virtual machines, to maintain\nuninterrupted service and gain improved performance, security, and reliability.</a>&nbsp;</p><p>Additionally, <a></a><a></a><a href=\"https://azure.microsoft.com/en-us/updates?id=560948\">as\npreviously communicated</a>, as of July 1, 2026, one-year and three-year\nReserved Instances (RIs) for the&nbsp;Dv3, Dsv3, Ev3, and Esv3&nbsp;VM series\nare no longer available for purchase or renewal. If you would<a></a><a></a><a></a><a></a><a> like to continue</a><a></a><a></a><a></a><a> commitment savings</a>, we recommend reviewing your&nbsp;<a href=\"https://learn.microsoft.com/en-us/azure/cost-management-billing/reservations/manage-reserved-vm-instance\">current reserved instance&nbsp;orders</a>&nbsp;and<a> if RIs are still in\neffect for these VMs, consider a </a><a href=\"https://learn.microsoft.com/en-us/azure/cost-management-billing/savings-plan/reservation-trade-in\">trade-in</a> of\nactive reservations for <a href=\"https://learn.microsoft.com/en-us/azure/cost-management-billing/savings-plan/savings-plan-overview#how-are-savings-plans-purchased\">Azure\nsavings plan</a>\nfor compute contracts. &nbsp;</p><p><b>Help and support&nbsp;&nbsp;</b></p><p>Microsoft is committed to ensuring every customer navigates\nthis transition quickly, successfully, and with clarity. Customers with an\nactive support plan can submit a <a href=\"https://learn.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request\">support\nrequest</a> for technical assistance with migration planning and execution. For\ngeneral questions, <a href=\"https://learn.microsoft.com/en-us/answers/tags/133/azure\">Microsoft\nQ&amp;A</a> provides access to community experts.&nbsp;</p><p>Learn more:&nbsp;&nbsp;</p><ul type=\"disc\">\n <li><a href=\"https://aka.ms/VM-lifecycle/learn/vm-lifecycle-policy\">Azure Virtual\n     Machines Lifecycle policy</a><a></a><a></a><a></a><a></a><a></a>&nbsp;</li>\n <li><a href=\"https://aka.ms/VM-Lifecycle/learn/modernize-to-v5\">v5 modernization\n     guide</a> &nbsp;</li></ul><br>",
+      "status": null,
+      "created": "2026-09-30T17:07:30.9170547Z",
+      "modified": "2026-09-30T17:07:30.9170547Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "Retirement",
+          "year": 2029,
+          "month": "November"
+        }
+      ]
+    },
     {
       "id": "570800",
       "productCategories": [
@@ -180,7 +351,7 @@
       "previewAvailabilityDate": "2026-09",
       "privatePreviewAvailabilityDate": null,
       "title": "Public Preview: SQL Performance Monitoring for Azure SQL Database",
-      "description": "The public preview of Microsoft-managed performance monitoring for Azure SQL Database is now available.&nbsp;&nbsp;<p>You can now monitor Azure SQL Database without building custom collection scripts or correlating telemetry across disconnected tools. Built-in data collection sends performance telemetry from your databases to a Microsoft-managed telemetry pipeline for processing and storage.&nbsp;&nbsp;</p><p>Resource-level and estate-wide dashboards help you identify performance trends, anomalies, and resource bottlenecks. Integration with Fabric Database Hub brings this telemetry into a unified, estate-level monitoring experience. For deeper analysis and custom visualizations, you can securely query your data with Kusto Query Language through an RBAC-protected Azure Data Explorer proxy endpoint.&nbsp;&nbsp;</p><p>Learn more:&nbsp;&nbsp;</p><ul type=\"disc\">\n <li><a href=\"https://aka.ms/PerformanceMonitoring_SQLDB\">Documentation</a>&nbsp;&nbsp;</li>\n <li><a href=\"https://ppc-word-edit.officeapps.live.com/we/(https:/aka.ms/SqlPerformanceMonitoring_PreviewAnnoucement\">Announcement\n     blog</a>&nbsp;&nbsp;</li></ul>",
+      "description": "<div><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">The public preview of Microsoft-managed performance monitoring for Azure SQL Database is now available.&nbsp;&nbsp;</span></div><p><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">You can now monitor Azure SQL Database without building custom collection scripts or correlating telemetry across disconnected tools. Built-in data collection sends performance telemetry from your databases to a Microsoft-managed telemetry pipeline for processing and storage.&nbsp;&nbsp;</span></p><p><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">Resource-level and estate-wide dashboards help you identify performance trends, anomalies, and resource bottlenecks. Integration with Fabric Database Hub brings this telemetry into a unified, estate-level monitoring experience. For deeper analysis and custom visualizations, you can securely query your data with Kusto Query Language through an RBAC-protected Azure Data Explorer proxy endpoint.&nbsp;&nbsp;</span></p><p><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">Learn more:&nbsp;&nbsp;</span></p><ul type=\"disc\"><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">\n </span><li><a href=\"https://aka.ms/PerformanceMonitoring_SQLDB\"><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">Documentation</span></a><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">&nbsp;&nbsp;</span></li><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">\n </span><li><a href=\"https://aka.ms/SqlPerformanceMonitoring_PreviewAnnoucement\" style=\"\"><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">Announcement\n     blog</span></a><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">&nbsp;</span></li></ul>",
       "status": "In preview",
       "created": "2026-09-29T18:13:31.3678314Z",
       "modified": "2026-09-29T18:13:31.3678314Z",
