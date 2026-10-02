@@ -27481,5 +27481,35 @@
       "Microsoft는 활성 지원 플랜과 커뮤니티 리소스를 통해 고객이 원활하게 전환할 수 있도록 지원 및 마이그레이션 도움을 제공합니다."
     ],
     "translated_at": "2026-10-01T01:55:09.187864+00:00"
+  },
+  "569592": {
+    "summary": "Microsoft announced the retirement of DCsv3 and DCdsv3-series Azure VMs by October 31, 2029, urging customers to migrate to newer VM series or container solutions to avoid service disruption and leverage improved capabilities.",
+    "key_points": [
+      "DCsv3 and DCdsv3-series Linux, Windows, and Dedicated Host VMs will be retired and unavailable after October 31, 2029.",
+      "Customers should migrate workloads to DCasv6/DCadsv6/DCesv6/DCedsv6 or memory-optimized ECasv6/ECadsv6/ECesv6/ECedsv6 confidential VM series, or use Azure Confidential Container Instances or Virtual nodes on Azure Kubernetes Service for containerized apps.",
+      "Reserved VM Instances for DCsv3/DCdsv3 series will not be available for purchase or renewal after October 31, 2026, with capacity restrictions starting November 1, 2026.",
+      "Migration is required before the retirement date to prevent service interruptions, with detailed guidance and support available via Microsoft Q&A and migration documentation."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/general-purpose/dcasv6-series?tabs=sizebasic",
+    "doc_title": "DCasv6 size series - Azure Virtual Machines",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/azure/virtual-machines/sizes/general-purpose/dcasv6-series?tabs=sizebasic",
+      "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/general-purpose/dcadsv6-series?tabs=sizebasic",
+      "https://learn.microsoft.com/azure/virtual-machines/sizes/general-purpose/dcesv6-series?tabs=sizebasic",
+      "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/general-purpose/dcedsv6-series?tabs=sizebasic",
+      "https://learn.microsoft.com/azure/virtual-machines/sizes/memory-optimized/ecasv6-series?tabs=sizebasic"
+    ],
+    "source": "llm",
+    "updated_at": "2026-10-02T02:03:59.786935+00:00",
+    "title_ko": "Retirement: DCsv3 및 DCdsv3 시리즈 Azure Virtual Machines가 2029년 10월 31일에 Retirement됩니다",
+    "summary_ko": "Microsoft는 2029년 10월 31일까지 DCsv3 및 DCdsv3 시리즈 Azure VM의 Retirement를 발표했으며, 고객이 서비스 중단을 방지하고 향상된 기능을 활용할 수 있도록 최신 VM 시리즈 또는 컨테이너 솔루션으로 마이그레이션할 것을 권장합니다.",
+    "key_points_ko": [
+      "DCsv3 및 DCdsv3 시리즈의 Linux, Windows, Dedicated Host VM은 2029년 10월 31일 이후 Retirement되어 사용할 수 없습니다.",
+      "고객은 워크로드를 DCasv6/DCadsv6/DCesv6/DCedsv6 또는 메모리 최적화된 ECasv6/ECadsv6/ECesv6/ECedsv6 confidential VM 시리즈로 마이그레이션하거나, 컨테이너화된 앱의 경우 Azure Confidential Container Instances 또는 Azure Kubernetes Service의 Virtual nodes를 사용해야 합니다.",
+      "DCsv3/DCdsv3 시리즈에 대한 Reserved VM Instances는 2026년 10월 31일 이후 구매 또는 갱신이 불가능하며, 2026년 11월 1일부터 용량 제한이 적용됩니다.",
+      "서비스 중단을 방지하려면 Retirement 날짜 이전에 마이그레이션이 필요하며, 자세한 가이드와 지원은 Microsoft Q&A 및 마이그레이션 문서를 통해 제공됩니다."
+    ],
+    "translated_at": "2026-10-02T02:04:05.808185+00:00"
   }
 }

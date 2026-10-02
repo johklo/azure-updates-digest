@@ -1,43 +1,14 @@
 {
-  "generated_at": "2026-10-01T01:54:04.687124+00:00",
-  "window_start": "2026-09-24T01:54:04.687124+00:00",
-  "window_end": "2026-10-01T01:54:04.687124+00:00",
+  "generated_at": "2026-10-02T02:03:51.136816+00:00",
+  "window_start": "2026-09-25T02:03:51.136816+00:00",
+  "window_end": "2026-10-02T02:03:51.136816+00:00",
   "window_days": 7,
-  "fetched_count": 40,
-  "matched_count": 40,
-  "count": 6,
+  "fetched_count": 39,
+  "matched_count": 39,
+  "count": 1,
   "items": [
     {
-      "id": "571894",
-      "productCategories": [
-        "Compute",
-        "Databases"
-      ],
-      "tags": [
-        "Feature"
-      ],
-      "products": [
-        "SQL Server on Azure Virtual Machines"
-      ],
-      "generalAvailabilityDate": null,
-      "previewAvailabilityDate": "2026-09",
-      "privatePreviewAvailabilityDate": null,
-      "title": "Public Preview: SQL performance monitoring for SQL Server on Azure Virtual Machines ",
-      "description": "<p>The public preview of Microsoft-managed performance monitoring for SQL Server on Azure Virtual Machines is now available.&nbsp;You can now monitor&nbsp;SQL Server on Azure Virtual Machines without building custom collection scripts or correlating telemetry across disconnected tools. The SQL IaaS Agent extension collects performance data from your SQL Server instances and sends it to a Microsoft-managed telemetry pipeline for processing and storage.&nbsp;</p><p>Resource-level and estate-wide dashboards help you identify&nbsp;performance trends, anomalies, and resource bottlenecks. Integration with Fabric Database Hub brings this telemetry into a unified monitoring experience. For deeper analysis and custom visualizations, you can securely query your data with Kusto Query Language through an RBAC-protected Azure Data Explorer proxy endpoint.&nbsp;</p><p>Learn more:&nbsp;&nbsp;</p><ul type=\"disc\">\n <li><a href=\"https://aka.ms/PerformanceMonitoring_SQLVM\">Documentation</a>&nbsp;&nbsp;</li>\n <li><a href=\"https://aka.ms/SqlPerformanceMonitoring_PreviewAnnoucement\">Announcement\n     blog</a>&nbsp;&nbsp;</li></ul>",
-      "status": "In preview",
-      "created": "2026-09-30T21:13:13.6139783Z",
-      "modified": "2026-09-30T21:13:13.6139783Z",
-      "locale": null,
-      "availabilities": [
-        {
-          "ring": "Preview",
-          "year": 2026,
-          "month": "September"
-        }
-      ]
-    },
-    {
-      "id": "573414",
+      "id": "569592",
       "productCategories": [
         "Compute"
       ],
@@ -45,136 +16,24 @@
         "Retirements"
       ],
       "products": [
-        "Virtual Machines"
+        "Linux Virtual Machines",
+        "Virtual Machines",
+        "Windows Virtual Machines"
       ],
       "generalAvailabilityDate": null,
       "previewAvailabilityDate": null,
       "privatePreviewAvailabilityDate": null,
-      "title": "Retirement: NVv3-series Azure Virtual Machines",
-      "description": "<p>On September 30, 2026, Microsoft Azure retired the Standard_NV12s_v3, Standard_NV12hs_v3, Standard_NV24s_v3, Standard_NV24ms_v3, Standard_NV32ms_v3, and Standard_NV48s_v3 virtual machines (VMs) in the NVv3-series VMs.</p><p>Any remaining NVv3-series VMs will be set to a deallocated state. They'll stop working and no longer incur billing charges. NVv3 will no longer be under SLA or have support included.&nbsp;</p><p>Note: 1-year and 3-year Reserved Instance (RI) purchases for the NVv3-series ended on November 2, 2025.</p><p>Note: If you're currently using NVv3-series Azure VMs in the Azure UAE North region, you can continue using the NVv3-series VMs beyond the general retirement date of September 30, 2026 until the extension date of January 31, 2027. Customers in the Azure UAE North region must migrate off the NVv3-series VMs by January 31, 2027.</p><a href=\"https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/gpu-accelerated/nvv3-series-retirement\" title=\"https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/gpu-accelerated/nvv3-series-retirement\">Learn\nmore</a>.<br>",
+      "title": "Retirement: DCsv3 and DCdsv3-series Azure Virtual Machines will be retired on October 31, 2029",
+      "description": "<p>On October 31,&nbsp;2029,&nbsp;DCsv3 and DCdsv3-series\nAzure&nbsp;Linux, Windows and Dedicated&nbsp;Host&nbsp;virtual\nmachines&nbsp;will be retired. After that date, they will no longer be\navailable for use or purchase.&nbsp;&nbsp;</p><p>Before October 31, 2029, migrate your workloads to one of\nthe following options that best aligns with your business needs:&nbsp;&nbsp;</p><ul type=\"disc\">\n <li>To use\n     a VM-based programming model consider <a href=\"https://learn.microsoft.com/azure/virtual-machines/sizes/general-purpose/dcasv6-series?tabs=sizebasic\">DCasv6</a>/<a href=\"https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/general-purpose/dcadsv6-series?tabs=sizebasic\">DCadsv6</a>/<a href=\"https://learn.microsoft.com/azure/virtual-machines/sizes/general-purpose/dcesv6-series?tabs=sizebasic\">DCesv6</a>/<a href=\"https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/general-purpose/dcedsv6-series?tabs=sizebasic\">DCedsv6</a>\n     or memory optimized <a href=\"https://learn.microsoft.com/azure/virtual-machines/sizes/memory-optimized/ecasv6-series?tabs=sizebasic\">ECasv6</a>/<a href=\"https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/memory-optimized/ecadsv6-series?tabs=sizebasic\">ECadsv6</a>/<a href=\"https://learn.microsoft.com/azure/virtual-machines/ecesv5-ecedsv5-series\">ECesv6</a>/<a href=\"https://learn.microsoft.com/en-us/azure/virtual-machines/ecedsv6-series\">ECedsv6</a>&nbsp;\n     series confidential VMs (CVMs),&nbsp;&nbsp;&nbsp;</li></ul><ul type=\"disc\">\n <li>For\n     containerized applications, consider using&nbsp;<a href=\"https://learn.microsoft.com/azure/container-instances/container-instances-confidential-overview\">Azure\n     Confidential Container Instances (C-ACI)</a>&nbsp;or&nbsp;<a href=\"https://learn.microsoft.com/azure/container-instances/container-instances-virtual-nodes\">Virtual\n     nodes on Azure Container Instances (C-VN2)</a>&nbsp;for Azure Kubernetes\n     Service (AKS).&nbsp;&nbsp;</li></ul><p>Your billing may change. For details, see the Azure Virtual\nMachines <a href=\"https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fazure.microsoft.com%2Fpricing%2Fdetails%2Fvirtual-machines%2Flinux-previous%2F&amp;data=05%7C02%7Cmilicaspuzic%40microsoft.com%7Cf246ebc8018f44aebbf408defd414b16%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C639226654229819315%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&amp;sdata=uZPFScnKY6uAcViggNeqZ8wv%2BCwurEb8aFEaRhy7kt0%3D&amp;reserved=0\" title=\"Original URL: https://azure.microsoft.com/pricing/details/virtual-machines/linux-previous/. Click or tap if you trust this link.\">pricing\npage</a>.&nbsp;</p><p>Additionally,&nbsp;3-year&nbsp;and 1-year&nbsp;Reserved VM\nInstances (RIs) for these series will no longer be available for purchase or\nrenewal after October 31,&nbsp;2026.&nbsp;&nbsp;</p><p><b>Required action&nbsp;</b></p><p>To avoid service disruptions, migrate your DCsv3 and/or\nDCdsv3-series VMs to one of the recommended options before October 31, 2029.</p><p>Starting&nbsp;November 1,&nbsp;2026, capacity restrictions\nwill be applied to DCsv3/DCdsv3-series VMs.&nbsp;</p><p><b>Help and support&nbsp;</b></p><p>For technical questions, issues, and help get answers in <a href=\"https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Flearn.microsoft.com%2Fsearch%2F%3Fterms%3Dconfidential%2520computing%26category%3DQnA&amp;data=05%7C02%7Cmilicaspuzic%40microsoft.com%7Cf246ebc8018f44aebbf408defd414b16%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C639226654229860908%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&amp;sdata=uzviQzhmou32bIW%2FBMv9DJth4DVh8b9Tgx6gK%2Fw6NSU%3D&amp;reserved=0\" title=\"Original URL: https://learn.microsoft.com/search/?terms=confidential%20computing&amp;category=QnA. Click or tap if you trust this link.\">Microsoft\nQ&amp;A</a>.&nbsp;&nbsp;</p><p>Learn more:&nbsp;</p><ul><li><a href=\"https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Faka.ms%2Fdcsv3-dcdsv3-series-retirement&amp;data=05%7C02%7Cmilicaspuzic%40microsoft.com%7Cf246ebc8018f44aebbf408defd414b16%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C639226654229839506%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&amp;sdata=WvslONDsNGSd1rrwzOEJ%2BgvenYMpQze7aii9dMzx6Z0%3D&amp;reserved=0\" title=\"Original URL: https://aka.ms/dcsv3-dcdsv3-series-retirement. Click or tap if you trust this link.\">Migration\nguide</a>&nbsp;</li><li><a href=\"https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Faka.ms%2FServicesRetirementWorkbook&amp;data=05%7C02%7Cmilicaspuzic%40microsoft.com%7Cf246ebc8018f44aebbf408defd414b16%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C639226654229882799%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&amp;sdata=XJ4faSHkFXJXD4PwDb0%2F0dPBzVQsDjaK%2BG0WpNxwdyw%3D&amp;reserved=0\" title=\"Original URL: https://aka.ms/ServicesRetirementWorkbook. Click or tap if you trust this link.\">Azure\nRetirement Workbook</a> (<i>Please note that retirements may not be visible in\nthe workbook for up to two weeks after being announced)</i>&nbsp;</li></ul>",
       "status": null,
-      "created": "2026-09-30T18:26:47.0594641Z",
-      "modified": "2026-09-30T18:26:47.0594641Z",
-      "locale": null,
-      "availabilities": [
-        {
-          "ring": "Retirement",
-          "year": 2026,
-          "month": "September"
-        }
-      ]
-    },
-    {
-      "id": "573415",
-      "productCategories": [
-        "Compute"
-      ],
-      "tags": [
-        "Retirements"
-      ],
-      "products": [
-        "Virtual Machines"
-      ],
-      "generalAvailabilityDate": null,
-      "previewAvailabilityDate": null,
-      "privatePreviewAvailabilityDate": null,
-      "title": "Retirement: NVv4-series Azure Virtual Machines",
-      "description": "<p>On September 30, 2026, Microsoft Azure retired the Standard_NV4as_v4, Standard_NV4ahs_v4, Standard_NV8as_v4, Standard_NV8ahs_v4, Standard_NV16as_v4, Standard_NV16ahs_v4, Standard_NV32as_v4, and Standard_NV32ahs_v4 virtual machines (VMs) in the NVv4-series VMs.&nbsp;</p><p>Any remaining NVv4-series VMs will be set to a deallocated state. They'll stop working and no longer incur billing charges. NVv4 will no longer be under SLA or have support included.&nbsp;</p><p>Note:&nbsp;1-year and 3-year Reserved Instance (RI) purchases for the NVv4-series ended on November 2, 2025.</p><p>Note:&nbsp;All Compute Pre-Purchase (CPP) sales for the NVv4-series ended on June 2, 2026.</p><a href=\"https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/lifecycle/retirement/nvv4-retirement\">Learn\nmore</a>.&nbsp;",
-      "status": null,
-      "created": "2026-09-30T18:24:01.2462397Z",
-      "modified": "2026-09-30T18:24:01.2462397Z",
-      "locale": null,
-      "availabilities": [
-        {
-          "ring": "Retirement",
-          "year": 2026,
-          "month": "September"
-        }
-      ]
-    },
-    {
-      "id": "573214",
-      "productCategories": [
-        "Compute",
-        "Containers"
-      ],
-      "tags": [
-        "Feature"
-      ],
-      "products": [
-        "Azure Kubernetes Service (AKS)"
-      ],
-      "generalAvailabilityDate": null,
-      "previewAvailabilityDate": "2026-09",
-      "privatePreviewAvailabilityDate": null,
-      "title": "Public Preview: Ubuntu 26.04 support in AKS",
-      "description": "Teams running Ubuntu node pools on AKS need to stay current with Ubuntu LTS releases, but each OS transition can introduce package footprint, security, and compatibility concerns. Ubuntu 26.04 support introduces the Ubuntu2604 OS SKU using Ubuntu Minimal as the baseline image, while preserving existing AKS create, update, and node pool workflows. You get a smaller default host footprint, Linux LTS kernel 7.0, and a controlled migration path with rollback flexibility to Ubuntu 24.04 where supported. <br><br><a href=\"https://aka.ms/aks/upgrade-os-version\">Learn more.</a>",
-      "status": "In preview",
-      "created": "2026-09-30T17:11:11.2479988Z",
-      "modified": "2026-09-30T17:11:11.2479988Z",
-      "locale": null,
-      "availabilities": [
-        {
-          "ring": "Preview",
-          "year": 2026,
-          "month": "September"
-        }
-      ]
-    },
-    {
-      "id": "573385",
-      "productCategories": [
-        "Management and governance"
-      ],
-      "tags": [
-        "SDK and Tools",
-        "Announcement"
-      ],
-      "products": [
-        "Azure Copilot"
-      ],
-      "generalAvailabilityDate": null,
-      "previewAvailabilityDate": null,
-      "privatePreviewAvailabilityDate": null,
-      "title": "Announcing: Azure canvases for GitHub Copilot",
-      "description": "<p>Discover Azure canvases for GitHub Copilot, interactive shared workspaces that bring Azure tools, dashboards, and guided workflows directly alongside your Copilot conversations. Explore Azure resources, analyze costs, and build hosted skills while keeping progress, controls, and next steps visible and actionable in one workspace.</p><p><a href=\"https://developer.microsoft.com/blog/azure-canvases/\">Learn more</a>.</p>",
-      "status": null,
-      "created": "2026-09-30T17:09:51.5337578Z",
-      "modified": "2026-09-30T17:09:51.5337578Z",
-      "locale": null,
-      "availabilities": [
-        {
-          "ring": "Effective",
-          "year": 2026,
-          "month": "September"
-        }
-      ]
-    },
-    {
-      "id": "572346",
-      "productCategories": [
-        "Compute"
-      ],
-      "tags": [
-        "Retirements"
-      ],
-      "products": [
-        "Virtual Machines"
-      ],
-      "generalAvailabilityDate": null,
-      "previewAvailabilityDate": null,
-      "privatePreviewAvailabilityDate": null,
-      "title": "Retirement: Dv3, Dsv3, Ev3, and Esv3 Azure VMs ",
-      "description": "<p>As part of the Microsoft <a href=\"https://aka.ms/VM-lifecycle/learn/vm-lifecycle-policy\">Azure VM lifecycle\npolicy</a>, Microsoft is announcing the retirement of the Dv3, Dsv3, Ev3,\nand Esv3 Azure VM series in public cloud Azure regions. These VMs will\nenter the End-of-Life lifecycle stage and <a></a><a></a><a>retire on November 15, </a><a></a><a>2029</a>.</p><p><a>We know migrating production workloads\ntakes planning and engineering time. To keep your applications and workloads\nrunning without interruption, migrate any Dv3, Dsv3, Ev3, or Esv3 series VMs to\na newer VM series before November 15, 2029. </a><a></a><a></a><a>After\nthis date, Dv3, Dsv3, Ev3, and Esv3 virtual machines will enter the Retired\nlifecycle stage and will no longer be supported on Azure. Virtual machines not\ntransitioned by that time may be deallocated and ultimately deleted as the\nunderlying hardware and platform infrastructure are retired. We recommend evaluating\navailable modernization options as soon as possible and moving to newer VM\ngenerations, such as Azure Dsv5 or Esv5v5 series virtual machines, to maintain\nuninterrupted service and gain improved performance, security, and reliability.</a>&nbsp;</p><p>Additionally, <a></a><a></a><a href=\"https://azure.microsoft.com/en-us/updates?id=560948\">as\npreviously communicated</a>, as of July 1, 2026, one-year and three-year\nReserved Instances (RIs) for the&nbsp;Dv3, Dsv3, Ev3, and Esv3&nbsp;VM series\nare no longer available for purchase or renewal. If you would<a></a><a></a><a></a><a></a><a> like to continue</a><a></a><a></a><a></a><a> commitment savings</a>, we recommend reviewing your&nbsp;<a href=\"https://learn.microsoft.com/en-us/azure/cost-management-billing/reservations/manage-reserved-vm-instance\">current reserved instance&nbsp;orders</a>&nbsp;and<a> if RIs are still in\neffect for these VMs, consider a </a><a href=\"https://learn.microsoft.com/en-us/azure/cost-management-billing/savings-plan/reservation-trade-in\">trade-in</a> of\nactive reservations for <a href=\"https://learn.microsoft.com/en-us/azure/cost-management-billing/savings-plan/savings-plan-overview#how-are-savings-plans-purchased\">Azure\nsavings plan</a>\nfor compute contracts. &nbsp;</p><p><b>Help and support&nbsp;&nbsp;</b></p><p>Microsoft is committed to ensuring every customer navigates\nthis transition quickly, successfully, and with clarity. Customers with an\nactive support plan can submit a <a href=\"https://learn.microsoft.com/azure/azure-portal/supportability/how-to-create-azure-support-request\">support\nrequest</a> for technical assistance with migration planning and execution. For\ngeneral questions, <a href=\"https://learn.microsoft.com/en-us/answers/tags/133/azure\">Microsoft\nQ&amp;A</a> provides access to community experts.&nbsp;</p><p>Learn more:&nbsp;&nbsp;</p><ul type=\"disc\">\n <li><a href=\"https://aka.ms/VM-lifecycle/learn/vm-lifecycle-policy\">Azure Virtual\n     Machines Lifecycle policy</a><a></a><a></a><a></a><a></a><a></a>&nbsp;</li>\n <li><a href=\"https://aka.ms/VM-Lifecycle/learn/modernize-to-v5\">v5 modernization\n     guide</a> &nbsp;</li></ul><br>",
-      "status": null,
-      "created": "2026-09-30T17:07:30.9170547Z",
-      "modified": "2026-09-30T17:07:30.9170547Z",
+      "created": "2026-10-01T17:02:55.8403654Z",
+      "modified": "2026-10-01T17:02:55.8403654Z",
       "locale": null,
       "availabilities": [
         {
           "ring": "Retirement",
           "year": 2029,
-          "month": "November"
+          "month": "October"
         }
       ]
     }
