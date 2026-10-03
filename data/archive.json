@@ -1,7 +1,36 @@
 {
-  "updated_at": "2026-10-02T02:03:51.136816+00:00",
-  "count": 1061,
+  "updated_at": "2026-10-03T01:47:48.401240+00:00",
+  "count": 1062,
   "items": [
+    {
+      "id": "571504",
+      "productCategories": [
+        "Databases",
+        "Hybrid + multicloud"
+      ],
+      "tags": [
+        "Feature"
+      ],
+      "products": [
+        "Azure Database for PostgreSQL"
+      ],
+      "generalAvailabilityDate": null,
+      "previewAvailabilityDate": "2026-10",
+      "privatePreviewAvailabilityDate": null,
+      "title": "Public Preview:  Major version upgrades (MVU) for Azure Database for PostgreSQL elastic clusters ",
+      "description": "<p>MVUs are now available for elastic clusters in Azure Database for PostgreSQL. You can upgrade an existing elastic cluster to a supported newer PostgreSQL version in place without provisioning a replacement cluster, migrating distributed data, or changing your application connection endpoint. This managed upgrade experience helps reduce the downtime, complexity, and operational effort associated with traditional migration-based upgrades.&nbsp;</p><p>You can use MVUs to keep distributed PostgreSQL workloads on supported versions and adopt the latest PostgreSQL and Citus&nbsp;performance improvements, capabilities, and security updates. By extending the Flexible Server upgrade experience to elastic clusters, you can manage the version lifecycle of sharded workloads more efficiently while retaining&nbsp;your existing cluster topology and configuration.&nbsp;</p><p><a href=\"https://aka.ms/ECMVU\" rel=\"noreferrer noopener\">Learn more</a>.</p>",
+      "status": "In preview",
+      "created": "2026-10-02T17:35:21.6842344Z",
+      "modified": "2026-10-02T17:35:21.6842344Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "Preview",
+          "year": 2026,
+          "month": "October"
+        }
+      ]
+    },
     {
       "id": "569592",
       "productCategories": [

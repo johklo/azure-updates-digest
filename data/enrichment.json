@@ -27511,5 +27511,31 @@
       "서비스 중단을 방지하려면 Retirement 날짜 이전에 마이그레이션이 필요하며, 자세한 가이드와 지원은 Microsoft Q&A 및 마이그레이션 문서를 통해 제공됩니다."
     ],
     "translated_at": "2026-10-02T02:04:05.808185+00:00"
+  },
+  "571504": {
+    "summary": "Azure Database for PostgreSQL elastic clusters now support in-place major version upgrades (MVUs), enabling easier, lower-downtime upgrades without data migration or endpoint changes.",
+    "key_points": [
+      "MVUs allow upgrading elastic clusters to newer PostgreSQL versions without provisioning new clusters or migrating data, reducing downtime and operational complexity.",
+      "The upgrade process includes prechecks, implicit backups, and uses pg_upgrade tool, supporting skipping versions and automatic minor version updates.",
+      "High availability is temporarily disabled during upgrades and re-enabled afterward, requiring sufficient capacity and proper network configurations.",
+      "Certain limitations apply, such as no support for read replicas during upgrades and the need to delete replicas before upgrading; rollback requires point-in-time recovery."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/postgresql/configure-maintain/concepts-major-version-upgrade",
+    "doc_title": "Major Version Upgrades - Azure Database for PostgreSQL",
+    "doc_read": true,
+    "links": [
+      "https://aka.ms/ECMVU"
+    ],
+    "source": "llm",
+    "updated_at": "2026-10-03T01:47:57.593645+00:00",
+    "title_ko": "Public Preview: Azure Database for PostgreSQL elastic clusters의 주요 버전 업그레이드(MVU)",
+    "summary_ko": "Azure Database for PostgreSQL elastic clusters가 이제 인플레이스 주요 버전 업그레이드(MVU)를 지원하여 데이터 마이그레이션이나 엔드포인트 변경 없이 더 쉽고 다운타임이 적은 업그레이드를 가능하게 합니다.",
+    "key_points_ko": [
+      "MVU는 새로운 PostgreSQL 버전으로 elastic clusters를 새로 프로비저닝하거나 데이터를 마이그레이션하지 않고 업그레이드할 수 있어 다운타임과 운영 복잡성을 줄입니다.",
+      "업그레이드 과정에는 사전 점검, 암묵적 백업이 포함되며 pg_upgrade 도구를 사용해 버전 건너뛰기와 자동 마이너 버전 업데이트를 지원합니다.",
+      "업그레이드 중에는 고가용성이 일시적으로 비활성화되며, 이후 다시 활성화되므로 충분한 용량과 적절한 네트워크 구성이 필요합니다.",
+      "업그레이드 중 읽기 복제본 지원이 없고, 복제본은 업그레이드 전에 삭제해야 하며, 롤백은 시점 복구를 통해 수행해야 하는 등의 제한 사항이 있습니다."
+    ],
+    "translated_at": "2026-10-03T01:48:01.589608+00:00"
   }
 }
