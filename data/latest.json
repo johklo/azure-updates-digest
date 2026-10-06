@@ -1,10 +1,159 @@
 {
-  "generated_at": "2026-10-05T01:45:01.981518+00:00",
-  "window_start": "2026-09-28T01:45:01.981518+00:00",
-  "window_end": "2026-10-05T01:45:01.981518+00:00",
+  "generated_at": "2026-10-06T02:46:20.621087+00:00",
+  "window_start": "2026-09-29T02:46:20.621087+00:00",
+  "window_end": "2026-10-06T02:46:20.621087+00:00",
   "window_days": 7,
-  "fetched_count": 39,
-  "matched_count": 39,
-  "count": 0,
-  "items": []
+  "fetched_count": 40,
+  "matched_count": 40,
+  "count": 5,
+  "items": [
+    {
+      "id": "572940",
+      "productCategories": [
+        "Databases"
+      ],
+      "tags": [
+        "Feature"
+      ],
+      "products": [
+        "Azure HorizonDB"
+      ],
+      "generalAvailabilityDate": null,
+      "previewAvailabilityDate": "2026-10",
+      "privatePreviewAvailabilityDate": null,
+      "title": "Public Preview: Azure HorizonDB expands to additional regions",
+      "description": "Azure HorizonDB is expanding to additional Azure regions, giving you greater flexibility to deploy PostgreSQL workloads closer to your applications and users.<br><br>With expanded regional availability, you have more options when choosing where to deploy Azure HorizonDB based on your workload needs.<br><br><a href=\"https://learn.microsoft.com/en-us/azure/horizondb/overview#azure-regions\">Learn\nmore</a>.&nbsp; &nbsp;",
+      "status": "In preview",
+      "created": "2026-10-05T18:51:57.6539655Z",
+      "modified": "2026-10-05T18:51:57.6539655Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "Preview",
+          "year": 2026,
+          "month": "October"
+        }
+      ]
+    },
+    {
+      "id": "571499",
+      "productCategories": [
+        "Compute",
+        "Databases"
+      ],
+      "tags": [
+        "Feature"
+      ],
+      "products": [
+        "SQL Server on Azure Virtual Machines"
+      ],
+      "generalAvailabilityDate": "2026-10",
+      "previewAvailabilityDate": null,
+      "privatePreviewAvailabilityDate": null,
+      "title": "Generally Available: SQL Server on Azure Virtual Machines in Azure Bleu ",
+      "description": "<p>SQL Server on Azure Virtual Machines is now available in Azure Bleu, enabling you to deploy and manage SQL Server workloads in France's sovereign cloud environment while meeting data residency and sovereignty requirements.&nbsp;</p><p>&nbsp;<a href=\"https://learn.microsoft.com/azure/azure-sql/virtual-machines/windows/sql-server-on-azure-vm-iaas-what-is-overview\" rel=\"noreferrer noopener\">Learn more.</a>&nbsp;</p>",
+      "status": "Launched",
+      "created": "2026-10-05T18:12:09.4716262Z",
+      "modified": "2026-10-05T18:12:09.4716262Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "General Availability",
+          "year": 2026,
+          "month": "October"
+        }
+      ]
+    },
+    {
+      "id": "573875",
+      "productCategories": [
+        "Analytics"
+      ],
+      "tags": [
+        "Announcement"
+      ],
+      "products": [
+        "Microsoft Fabric"
+      ],
+      "generalAvailabilityDate": null,
+      "previewAvailabilityDate": null,
+      "privatePreviewAvailabilityDate": null,
+      "title": "Announcing: Table discovery in OneLake Catalog search",
+      "description": "<div>Starting October 15, 2026, Search in Microsoft Fabric will return tables from semantic models, lakehouses, and mirrored databases as individual results. Users can search by table name or description, or find a table by an exact column-name match. &nbsp;More object types will become available over time.&nbsp;This applies to Fabric's global search, the OneLake Catalog UI, the Search API, search in Fabric's MCP servers, the /find command in the Fabric CLI, and the discovery skill.<b><br></b></div><b><br></b><b>What you need to know:&nbsp;</b><br>Table visibility in search follows permissions on the parent item, not data-level permissions on the table. If a user has Read permission or higher on the item, they can discover all tables under that item, even tables they can't query.&nbsp;<br><br>Search does not grant access to table data; existing data-access controls still apply when a user opens or queries a table. Tables in semantic models protected by object-level security are excluded from search.&nbsp;<b><b><br></b></b><b><br></b><b>Action:</b>&nbsp;<br>Review \"Users can find objects in search\" setting in the Fabric admin portal under Tenant settings. It's enabled by default. Turn it off if your organization isn't ready for users to find tables by search; item and data access won't change.<br>",
+      "status": null,
+      "created": "2026-10-05T17:55:23.4226434Z",
+      "modified": "2026-10-05T17:55:23.4226434Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "Effective",
+          "year": 2026,
+          "month": "October"
+        }
+      ]
+    },
+    {
+      "id": "573425",
+      "productCategories": [
+        "Management and governance",
+        "Storage",
+        "Databases",
+        "Hybrid + multicloud"
+      ],
+      "tags": [
+        "Feature"
+      ],
+      "products": [
+        "Azure Backup",
+        "Azure Database for PostgreSQL"
+      ],
+      "generalAvailabilityDate": null,
+      "previewAvailabilityDate": "2026-10",
+      "privatePreviewAvailabilityDate": null,
+      "title": "Public Preview: Azure Backup for PostgreSQL flexible server and elastic cluster (v2)",
+      "description": "Azure Backup for PostgreSQL flexible server and elastic cluster (v2) preview brings enterprise-grade long-term retention to PostgreSQL. Backups are taken as physical backups from managed disk snapshots and vaulted in an Azure Backup vault, so protection now extends to servers of up to 32 TB on Premium SSD v1 and up to 64 TB on Premium SSD v2. The first backup is full and every backup after it is incremental, which keeps daily protection practical at multi-terabyte scale, with a recovery point objective goal of one day and retention configurable from 7 days up to 10 years.<br><br>The v1 solution took logical backups, which capped server size at 1 TB, allowed a single vaulted backup each week, produced full copies every time, and returned data as files that had to be imported by hand before it could be used. Physical backups lift those constraints together, extend protection to elastic cluster as well as flexible server, and introduce Restore as Server.<br><br>The preview includes the following capabilities:<ul data-editing-info=\"{&quot;orderedStyleType&quot;:1,&quot;unorderedStyleType&quot;:1}\"><li>Backup for both PostgreSQL flexible server and elastic cluster.</li><li>Servers of up to 32 TB on Premium SSD v1 and up to 64 TB on Premium SSD v2.</li><li>Daily and weekly schedules, along with on-demand backups.</li><li>Incremental backups after the first full backup, with a recovery point objective goal of one day.</li><li>Restore as Server onto a pre-created flexible server or elastic cluster, with no intermediate storage account and no manual import.</li><li>Retention up to 10 years with independent daily, weekly, monthly and yearly rules, protected by vault soft delete, immutability, Multi-user authorization and Customer Managed Key encryption.</li><li>Support for WORM immutable backups, so that recovery points cannot be altered or deleted before their retention period expires.</li></ul>Billing will be enabled from October 15, 2026. &nbsp;<br><p>Learn more:&nbsp;</p><ul><li><a href=\"https://learn.microsoft.com/en-us/azure/backup/backup-azure-postgresql-flex-server-elastic-cluster-v2-overview\">Documentation&nbsp;&nbsp;</a>&nbsp;</li><li><a href=\"https://azure.microsoft.com/pricing/details/backup\">Azure Backup pricing</a>&nbsp;</li><li><a href=\"https://azure.microsoft.com/pricing/calculator/\">Pricing calculator</a>&nbsp;</li></ul>",
+      "status": "In preview",
+      "created": "2026-10-05T17:44:31.2594690Z",
+      "modified": "2026-10-05T17:44:31.2594690Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "Preview",
+          "year": 2026,
+          "month": "October"
+        }
+      ]
+    },
+    {
+      "id": "573861",
+      "productCategories": [
+        "Networking",
+        "Security"
+      ],
+      "tags": [
+        "Features",
+        "Security"
+      ],
+      "products": [
+        "Application Gateway",
+        "Web Application Firewall"
+      ],
+      "generalAvailabilityDate": null,
+      "previewAvailabilityDate": "2026-10",
+      "privatePreviewAvailabilityDate": null,
+      "title": "Public Preview: IPv6 Support for Application Gateway WAF ",
+      "description": "<p>Announcing the Public Preview of IPv6 support for Application Gateway WAF.</p><p>Application Gateway Web Application Firewall (WAF) now supports inspection and enforcement for IPv6 traffic in Public Preview, marking a major step forward in modernizing the platform for dual‑stack environments. As IPv6 adoption accelerates globally due to IPv4 exhaustion and modern connectivity requirements, this enhancement enables customers to embrace IPv6 without compromising their security posture.</p><p>With this update, Application Gateway WAF extends its full protection stack -including managed rule sets, custom rules, and diagnostics - to IPv6 traffic. Customers operating dual‑stack applications can now apply consistent security controls across both IPv4 and IPv6. Additionally, IPv6 geo‑based custom rules are available through AFEC enrollment, providing more granular traffic governance during the preview.</p><a href=\"https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Flearn.microsoft.com%2Fazure%2Fweb-application-firewall%2Fag%2Fcustom-rules-geo-based-ipv6&amp;data=05%7C02%7Cedenyaakobi%40microsoft.com%7Cd6525f07b5e54c782ea108df22f818a4%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C639268121298736526%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&amp;sdata=zIpjWQwmzivv9u7%2FkCBGc94Wu5gR5FsYOA9vc5BCtE8%3D&amp;reserved=0\">Learn\nmore</a>.<br><br>",
+      "status": "In preview",
+      "created": "2026-10-05T17:41:41.9221035Z",
+      "modified": "2026-10-05T17:41:41.9221035Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "Preview",
+          "year": 2026,
+          "month": "October"
+        }
+      ]
+    }
+  ]
 }

@@ -27537,5 +27537,133 @@
       "업그레이드 중 읽기 복제본 지원이 없고, 복제본은 업그레이드 전에 삭제해야 하며, 롤백은 시점 복구를 통해 수행해야 하는 등의 제한 사항이 있습니다."
     ],
     "translated_at": "2026-10-03T01:48:01.589608+00:00"
+  },
+  "572940": {
+    "summary": "Azure HorizonDB is now available in additional Azure regions, enabling customers to deploy PostgreSQL workloads closer to their applications and users for improved performance and flexibility.",
+    "key_points": [
+      "Expanded regional availability provides more deployment options tailored to workload needs.",
+      "Azure HorizonDB is a fully managed, AI-ready PostgreSQL database designed for high performance and scale.",
+      "Separation of compute and storage layers allows independent scaling, faster failover, and efficient resource utilization.",
+      "Native AI capabilities and integration with Azure ecosystem support intelligent applications and hybrid workloads."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/horizondb/overview#azure-regions",
+    "doc_title": "What Is Azure HorizonDB? - Azure HorizonDB",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/en-us/azure/horizondb/overview#azure-regions"
+    ],
+    "source": "llm",
+    "updated_at": "2026-10-06T02:46:28.600686+00:00",
+    "title_ko": "Public Preview: Azure HorizonDB가 추가 지역으로 확장됩니다",
+    "summary_ko": "Azure HorizonDB가 추가 Azure 지역에서 제공되어 고객이 PostgreSQL 워크로드를 애플리케이션과 사용자에 더 가까운 곳에 배포하여 성능과 유연성을 향상할 수 있습니다.",
+    "key_points_ko": [
+      "확장된 지역 가용성으로 워크로드 요구에 맞춘 다양한 배포 옵션을 제공합니다.",
+      "Azure HorizonDB는 고성능과 확장을 위해 설계된 완전 관리형 AI 준비 PostgreSQL 데이터베이스입니다.",
+      "컴퓨트와 스토리지 계층 분리로 독립적 확장, 빠른 장애 조치 및 효율적인 리소스 활용이 가능합니다.",
+      "네이티브 AI 기능과 Azure 생태계 통합으로 지능형 애플리케이션과 하이브리드 워크로드를 지원합니다."
+    ],
+    "translated_at": "2026-10-06T02:46:49.060701+00:00"
+  },
+  "571499": {
+    "summary": "SQL Server on Azure Virtual Machines is now generally available in Azure Bleu, enabling deployment in France's sovereign cloud to meet data residency and sovereignty requirements.",
+    "key_points": [
+      "Capability: Run full editions of SQL Server on Azure VMs with simplified licensing and no on-premises hardware management.",
+      "Availability: Now available in Azure Bleu region, supporting France's sovereign cloud environment.",
+      "Customer Impact: Enables customers to comply with data residency and sovereignty regulations while leveraging Azure's cloud infrastructure.",
+      "Management: Features like automated backup, patching, and performance optimization are accessible via the SQL IaaS Agent extension and Azure portal."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/azure-sql/virtual-machines/windows/sql-server-on-azure-vm-iaas-what-is-overview?view=azuresql",
+    "doc_title": "Overview of SQL Server on Azure Windows Virtual Machines - SQL Server on Azure VMs",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/azure/azure-sql/virtual-machines/windows/sql-server-on-azure-vm-iaas-what-is-overview"
+    ],
+    "source": "llm",
+    "updated_at": "2026-10-06T02:46:32.819423+00:00",
+    "title_ko": "Generally Available: Azure Bleu에서의 Azure Virtual Machines용 SQL Server",
+    "summary_ko": "Azure Virtual Machines용 SQL Server가 이제 Azure Bleu에서 Generally Available 상태로 제공되어, 프랑스 주권 클라우드에서 데이터 거주 및 주권 요구 사항을 충족하는 배포가 가능합니다.",
+    "key_points_ko": [
+      "기능: 간소화된 라이선싱과 온프레미스 하드웨어 관리 없이 Azure VM에서 SQL Server의 전체 에디션을 실행할 수 있습니다.",
+      "가용성: 프랑스 주권 클라우드 환경을 지원하는 Azure Bleu 리전에서 제공됩니다.",
+      "고객 영향: 고객이 데이터 거주 및 주권 규정을 준수하면서 Azure 클라우드 인프라를 활용할 수 있도록 지원합니다.",
+      "관리: SQL IaaS Agent 확장과 Azure 포털을 통해 자동 백업, 패치, 성능 최적화 등의 기능을 사용할 수 있습니다."
+    ],
+    "translated_at": "2026-10-06T02:46:53.413513+00:00"
+  },
+  "573875": {
+    "summary": "Microsoft Fabric Search now includes table discovery from semantic models, lakehouses, and mirrored databases, enhancing data findability while respecting existing permissions.",
+    "key_points": [
+      "Search returns tables as individual results from semantic models, lakehouses, and mirrored databases starting October 15, 2026.",
+      "Users can search tables by name, description, or exact column-name match across multiple Fabric search interfaces.",
+      "Table visibility in search depends on parent item permissions, not data-level permissions; search does not grant data access.",
+      "Admins can control table discovery via the 'Users can find objects in search' setting in the Fabric admin portal, enabled by default."
+    ],
+    "doc_url": "",
+    "doc_title": "",
+    "doc_read": false,
+    "links": [],
+    "source": "llm",
+    "updated_at": "2026-10-06T02:46:36.937939+00:00",
+    "title_ko": "Announcing: OneLake Catalog 검색에서 테이블 검색 기능",
+    "summary_ko": "Microsoft Fabric Search가 이제 시맨틱 모델, 레이크하우스, 미러링된 데이터베이스에서 테이블 검색을 지원하여 데이터 탐색성을 향상시키면서 기존 권한을 준수합니다.",
+    "key_points_ko": [
+      "2026년 10월 15일부터 시맨틱 모델, 레이크하우스, 미러링된 데이터베이스에서 개별 결과로 테이블 검색이 가능합니다.",
+      "사용자는 여러 Fabric 검색 인터페이스에서 테이블 이름, 설명 또는 정확한 열 이름 일치로 테이블을 검색할 수 있습니다.",
+      "검색에서 테이블 가시성은 데이터 수준 권한이 아닌 상위 항목 권한에 따라 결정되며, 검색이 데이터 접근 권한을 부여하지는 않습니다.",
+      "관리자는 Fabric 관리 포털의 'Users can find objects in search' 설정을 통해 테이블 검색 기능을 제어할 수 있으며, 기본값은 활성화 상태입니다."
+    ],
+    "translated_at": "2026-10-06T02:46:56.649807+00:00"
+  },
+  "573425": {
+    "summary": "Azure Backup for PostgreSQL flexible server and elastic cluster (v2) preview introduces physical backups with long-term retention and enhanced scalability, improving backup efficiency and restore capabilities for enterprise-scale PostgreSQL deployments.",
+    "key_points": [
+      "Supports physical backups via managed disk snapshots for flexible servers and elastic clusters up to 32 TB (Premium SSD v1) and 64 TB (Premium SSD v2), overcoming the 1 TB limit of v1 logical backups.",
+      "Provides incremental backups after the initial full backup with daily or weekly schedules, enabling practical multi-terabyte daily protection and configurable retention from 7 days up to 10 years.",
+      "Includes Restore as Server feature allowing direct restore to pre-created PostgreSQL flexible servers or elastic clusters without intermediate storage or manual import.",
+      "Offers enterprise-grade data protection with WORM immutable backups, vault soft delete, multi-user authorization, and customer-managed key encryption to safeguard against ransomware and accidental deletion."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-postgresql-flex-server-elastic-cluster-v2-overview",
+    "doc_title": "About Azure Backup for PostgreSQL flexible server and elastic cluster (v2) - Azure Backup",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/en-us/azure/backup/backup-azure-postgresql-flex-server-elastic-cluster-v2-overview"
+    ],
+    "source": "llm",
+    "updated_at": "2026-10-06T02:46:41.592657+00:00",
+    "title_ko": "Public Preview: Azure Backup for PostgreSQL flexible server 및 elastic cluster (v2)",
+    "summary_ko": "Azure Backup for PostgreSQL flexible server 및 elastic cluster (v2) Preview는 장기 보존이 가능한 물리적 백업과 향상된 확장성을 도입하여, 엔터프라이즈 규모 PostgreSQL 배포의 백업 효율성과 복원 기능을 개선합니다.",
+    "key_points_ko": [
+      "유연한 서버와 elastic cluster에 대해 관리 디스크 스냅샷을 통한 물리적 백업을 지원하며, Premium SSD v1은 최대 32 TB, Premium SSD v2는 최대 64 TB까지 지원하여 v1 논리 백업의 1 TB 한계를 극복합니다.",
+      "초기 전체 백업 이후 증분 백업을 제공하며, 일간 또는 주간 스케줄을 통해 실용적인 다중 테라바이트 일일 보호가 가능하고, 보존 기간은 7일에서 최대 10년까지 구성할 수 있습니다.",
+      "Restore as Server 기능을 포함하여 중간 저장소나 수동 가져오기 없이 미리 생성된 PostgreSQL flexible server 또는 elastic cluster로 직접 복원이 가능합니다.",
+      "WORM 불변 백업, vault 소프트 삭제, 다중 사용자 권한 부여, 고객 관리 키 암호화를 통해 랜섬웨어 및 실수로 인한 삭제로부터 보호하는 엔터프라이즈급 데이터 보호를 제공합니다."
+    ],
+    "translated_at": "2026-10-06T02:47:01.713875+00:00"
+  },
+  "573861": {
+    "summary": "Azure Application Gateway WAF now supports IPv6 traffic inspection and enforcement in Public Preview, enabling consistent security for dual-stack environments as IPv6 adoption grows.",
+    "key_points": [
+      "Application Gateway WAF extends full protection, including managed and custom rules plus diagnostics, to IPv6 traffic in dual-stack deployments.",
+      "IPv6 geo-based custom rules are available during preview via AFEC enrollment, allowing granular traffic governance.",
+      "Dual-stack configuration is required; IPv4-only gateways cannot be upgraded to dual-stack and IPv6-only gateways are unsupported.",
+      "Feature registration is required to enable IPv6 geo-based custom rules, with platform validations preventing unsupported configurations."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/web-application-firewall/ag/custom-rules-geo-based-ipv6",
+    "doc_title": "IPv6 Geo-Based Custom Rules (Preview) - Azure Web Application Firewall",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/azure/web-application-firewall/ag/custom-rules-geo-based-ipv6"
+    ],
+    "source": "llm",
+    "updated_at": "2026-10-06T02:46:45.154852+00:00",
+    "title_ko": "Public Preview: Application Gateway WAF의 IPv6 지원",
+    "summary_ko": "Azure Application Gateway WAF가 Public Preview로 IPv6 트래픽 검사 및 적용을 지원하여, IPv6 채택이 증가하는 듀얼 스택 환경에서 일관된 보안을 제공합니다.",
+    "key_points_ko": [
+      "Application Gateway WAF가 듀얼 스택 배포에서 관리형 및 사용자 지정 규칙과 진단을 포함한 완전한 보호를 IPv6 트래픽에도 확장합니다.",
+      "IPv6 기반 지역별 사용자 지정 규칙은 AFEC 등록을 통해 Preview 기간 동안 제공되어 세밀한 트래픽 관리가 가능합니다.",
+      "듀얼 스택 구성이 필요하며, IPv4 전용 게이트웨이는 듀얼 스택으로 업그레이드할 수 없고 IPv6 전용 게이트웨이는 지원되지 않습니다.",
+      "IPv6 기반 지역별 사용자 지정 규칙을 활성화하려면 기능 등록이 필요하며, 플랫폼 검증을 통해 지원되지 않는 구성이 차단됩니다."
+    ],
+    "translated_at": "2026-10-06T02:47:04.827722+00:00"
   }
 }
