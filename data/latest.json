@@ -1,157 +1,153 @@
 {
-  "generated_at": "2026-10-06T02:46:20.621087+00:00",
-  "window_start": "2026-09-29T02:46:20.621087+00:00",
-  "window_end": "2026-10-06T02:46:20.621087+00:00",
+  "generated_at": "2026-10-07T02:10:26.456119+00:00",
+  "window_start": "2026-09-30T02:10:26.456119+00:00",
+  "window_end": "2026-10-07T02:10:26.456119+00:00",
   "window_days": 7,
-  "fetched_count": 40,
-  "matched_count": 40,
+  "fetched_count": 18,
+  "matched_count": 18,
   "count": 5,
   "items": [
     {
-      "id": "572940",
-      "productCategories": [
-        "Databases"
-      ],
-      "tags": [
-        "Feature"
-      ],
-      "products": [
-        "Azure HorizonDB"
-      ],
-      "generalAvailabilityDate": null,
-      "previewAvailabilityDate": "2026-10",
-      "privatePreviewAvailabilityDate": null,
-      "title": "Public Preview: Azure HorizonDB expands to additional regions",
-      "description": "Azure HorizonDB is expanding to additional Azure regions, giving you greater flexibility to deploy PostgreSQL workloads closer to your applications and users.<br><br>With expanded regional availability, you have more options when choosing where to deploy Azure HorizonDB based on your workload needs.<br><br><a href=\"https://learn.microsoft.com/en-us/azure/horizondb/overview#azure-regions\">Learn\nmore</a>.&nbsp; &nbsp;",
-      "status": "In preview",
-      "created": "2026-10-05T18:51:57.6539655Z",
-      "modified": "2026-10-05T18:51:57.6539655Z",
-      "locale": null,
-      "availabilities": [
-        {
-          "ring": "Preview",
-          "year": 2026,
-          "month": "October"
-        }
-      ]
-    },
-    {
-      "id": "571499",
+      "id": "570232",
       "productCategories": [
         "Compute",
-        "Databases"
+        "Containers"
       ],
       "tags": [
-        "Feature"
+        "Retirements"
       ],
       "products": [
-        "SQL Server on Azure Virtual Machines"
-      ],
-      "generalAvailabilityDate": "2026-10",
-      "previewAvailabilityDate": null,
-      "privatePreviewAvailabilityDate": null,
-      "title": "Generally Available: SQL Server on Azure Virtual Machines in Azure Bleu ",
-      "description": "<p>SQL Server on Azure Virtual Machines is now available in Azure Bleu, enabling you to deploy and manage SQL Server workloads in France's sovereign cloud environment while meeting data residency and sovereignty requirements.&nbsp;</p><p>&nbsp;<a href=\"https://learn.microsoft.com/azure/azure-sql/virtual-machines/windows/sql-server-on-azure-vm-iaas-what-is-overview\" rel=\"noreferrer noopener\">Learn more.</a>&nbsp;</p>",
-      "status": "Launched",
-      "created": "2026-10-05T18:12:09.4716262Z",
-      "modified": "2026-10-05T18:12:09.4716262Z",
-      "locale": null,
-      "availabilities": [
-        {
-          "ring": "General Availability",
-          "year": 2026,
-          "month": "October"
-        }
-      ]
-    },
-    {
-      "id": "573875",
-      "productCategories": [
-        "Analytics"
-      ],
-      "tags": [
-        "Announcement"
-      ],
-      "products": [
-        "Microsoft Fabric"
+        "Azure Kubernetes Service (AKS)"
       ],
       "generalAvailabilityDate": null,
       "previewAvailabilityDate": null,
       "privatePreviewAvailabilityDate": null,
-      "title": "Announcing: Table discovery in OneLake Catalog search",
-      "description": "<div>Starting October 15, 2026, Search in Microsoft Fabric will return tables from semantic models, lakehouses, and mirrored databases as individual results. Users can search by table name or description, or find a table by an exact column-name match. &nbsp;More object types will become available over time.&nbsp;This applies to Fabric's global search, the OneLake Catalog UI, the Search API, search in Fabric's MCP servers, the /find command in the Fabric CLI, and the discovery skill.<b><br></b></div><b><br></b><b>What you need to know:&nbsp;</b><br>Table visibility in search follows permissions on the parent item, not data-level permissions on the table. If a user has Read permission or higher on the item, they can discover all tables under that item, even tables they can't query.&nbsp;<br><br>Search does not grant access to table data; existing data-access controls still apply when a user opens or queries a table. Tables in semantic models protected by object-level security are excluded from search.&nbsp;<b><b><br></b></b><b><br></b><b>Action:</b>&nbsp;<br>Review \"Users can find objects in search\" setting in the Fabric admin portal under Tenant settings. It's enabled by default. Turn it off if your organization isn't ready for users to find tables by search; item and data access won't change.<br>",
+      "title": "Retirement: Pod name dimension in AKS pod platform metrics",
+      "description": "Beginning September 30, 2027, support for the pod name dimension on the following&nbsp;<a href=\"https://learn.microsoft.com/azure/aks/monitor-aks-reference#category-pods\">Azure\nMonitor platform metrics</a> is retiring, and these metrics are transitioning to aggregate pod counters:<br><ul data-editing-info=\"{&quot;orderedStyleType&quot;:1,&quot;unorderedStyleType&quot;:1}\"><li>Number of pods by phase (kube_pod_status_phase)</li><li>Number of pods in Ready state (kube_pod_status_ready)</li></ul><b>After this change:</b><ul data-editing-info=\"{&quot;orderedStyleType&quot;:1,&quot;unorderedStyleType&quot;:1}\"><li>Metric names remain unchanged.</li><li>Aggregate pod counts remain available.</li><li>Namespace-level monitoring scenarios remain supported.</li><li>The pod name dimension will no longer be available for filtering, grouping, or alerting.</li></ul>During the deprecation period, AKS will maintain both the existing and the new aggregate implementations. Both are populated with data, existing monitoring experiences will continue to function, and you will have at least one year of historical data in the aggregate implementation before retirement.<br>You may be affected if any dashboard, workbook, alert, automation, or monitoring workflow:<br><ul data-editing-info=\"{&quot;orderedStyleType&quot;:1,&quot;unorderedStyleType&quot;:1}\"><li>Uses kube_pod_status_phase or kube_pod_status_ready and filters on the pod name dimension.</li><li>Splits or groups results by the pod name dimension.</li></ul><b>Recommended action: </b><br><ul data-editing-info=\"{&quot;orderedStyleType&quot;:1,&quot;unorderedStyleType&quot;:1}\"><li>If you use aggregate pod counts, no action is required.</li><li>If you use the pod name dimension, update dashboards, alerts, workbooks, and automation before September 30, 2027. For pod-level monitoring and troubleshooting, we recommend using&nbsp;<a href=\"https://learn.microsoft.com/azure/azure-monitor/metrics/prometheus-metrics-overview#azure-monitor-managed-service-for-prometheus\">Azure\nMonitor Managed Prometheus</a> and <a href=\"https://learn.microsoft.com/azure/azure-monitor/containers/prometheus-metrics-scrape-default#kube-state\">Kubernetes-native\npod metrics</a>.</li></ul><b>Help and support</b><br>If you have questions, get answers from community experts in <a></a><a href=\"https://learn.microsoft.com/answers/tags/200/azure-kubernetes-service\">Microsoft Q&amp;A</a>. <br>",
       "status": null,
-      "created": "2026-10-05T17:55:23.4226434Z",
-      "modified": "2026-10-05T17:55:23.4226434Z",
+      "created": "2026-10-06T22:37:54.7986170Z",
+      "modified": "2026-10-06T22:37:54.7986170Z",
       "locale": null,
       "availabilities": [
         {
-          "ring": "Effective",
-          "year": 2026,
-          "month": "October"
+          "ring": "Retirement",
+          "year": 2027,
+          "month": "September"
         }
       ]
     },
     {
-      "id": "573425",
+      "id": "568178",
       "productCategories": [
-        "Management and governance",
-        "Storage",
+        "Compute",
+        "Mobile",
+        "Web",
+        "Hybrid + multicloud"
+      ],
+      "tags": [
+        "Retirements"
+      ],
+      "products": [
+        "App Service",
+        "Azure Stack Hub"
+      ],
+      "generalAvailabilityDate": null,
+      "previewAvailabilityDate": null,
+      "privatePreviewAvailabilityDate": null,
+      "title": "Retirement: Azure App Service on Azure Stack Hub",
+      "description": "<p style=\"\"><span style=\"font-family: Arial; font-size: 10pt; color: rgb(0, 0, 0);\">Azure App Service on Azure Stack Hub will be retired on </span><span style=\"font-family: Arial; font-size: 10pt; color: rgb(0, 0, 0);\">September\n30, 2029</span><span style=\"font-family: Arial; font-size: 10pt; color: rgb(0, 0, 0);\">.&nbsp;</span></p><p style=\"margin: 0cm 0cm 8pt;\"><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">Starting </span><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">September 30, 2026</span><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">, new installations will\nno longer be supported, and no new product releases, features, or enhancements\nwill be made available. Existing supported deployments can continue to run and\nupgrade to the latest available release until retirement.&nbsp;</span></p><p style=\"margin: 0cm 0cm 8pt;\"><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">Customers should begin planning migration to Azure App\nService in Azure now to continue receiving support, security updates, platform improvements,\nand new capabilities.&nbsp;</span></p><p style=\"margin: 0cm 0cm 8pt;\"><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">On </span><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">September 30</span><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">th</span><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">, 2029</span><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">, App Service on\nAzure Stack will reach retirement and Microsoft support will end.&nbsp;</span></p><p style=\"margin: 0cm 0cm 8pt;\"><span style=\"font-family: Arial; font-size: 10pt;\"><b>Recommended action&nbsp;&nbsp;</b></span></p><p style=\"margin: 0cm 0cm 8pt;\"><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">Assessand migrate applications as soon as possible. Azure\nApp Service in Azure provides a fully managed platform with global availability,\nWindows and Linux hosting options, autoscale, deployment slots, advanced\nnetworking and security, Azure services integration, and continuous innovation.&nbsp;</span></p><p style=\"margin: 0cm 0cm 8pt;\"><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">For applications with complex Windows dependencies, evaluate\nManaged Instance on Azure App Service. It can help accelerate migration for\napplications requiring registry access, COM components, custom runtimes, or\nother Windows-specific dependencies.&nbsp;</span></p><div></div><p style=\"margin: 0cm 0cm 8pt;\"><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">For a successful transition, inventory applications and\ndependencies, assess compatibility, select the appropriate Azure hosting\ntarget, migrate code, configuration, and data, validate workloads, and complete\nmigration before September 30, 2029.&nbsp;</span></p><p></p><div style=\"margin-top: 13.3333px; margin-bottom: 13.3333px;\"><p style=\"margin: 0in 0in 8pt;\"><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">Learn more:&nbsp;&nbsp;</span></p><ul style=\"\"><li style=\"\"><a href=\"https://go.microsoft.com/fwlink/?LinkId=2372122\" style=\"\"><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">Benefits</span></a><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">&nbsp;</span></li><li style=\"\"><a href=\"https://go.microsoft.com/fwlink/?LinkId=2372018\" style=\"\"><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">Plan</span></a><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">&nbsp;</span></li><li style=\"\"><a href=\"https://go.microsoft.com/fwlink/?LinkId=2372019\" style=\"\"><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">Migrate</span></a><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">&nbsp;</span></li></ul></div>",
+      "status": null,
+      "created": "2026-10-06T18:24:43.7287643Z",
+      "modified": "2026-10-06T18:24:43.7287643Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "Retirement",
+          "year": 2029,
+          "month": "September"
+        }
+      ]
+    },
+    {
+      "id": "568585",
+      "productCategories": [
+        "Compute",
+        "Mobile",
+        "Web"
+      ],
+      "tags": [
+        "Retirements"
+      ],
+      "products": [
+        "App Service"
+      ],
+      "generalAvailabilityDate": null,
+      "previewAvailabilityDate": null,
+      "privatePreviewAvailabilityDate": null,
+      "title": "Retirement: Support for Java 8, 11 and 17 will end on September 1, 2027",
+      "description": "On September 1, 2027 support for Java 8, 11 and 17 will end. Your\napps that are hosted on App Service will continue to run, but security updates\nwill no longer be available, and we’ll no longer provide customer service for Java\n8, 11 and 17.<p><b>Required action&nbsp;</b>&nbsp;</p>To avoid potential security vulnerabilities and\nminimize risk for your App Service apps,&nbsp;<a href=\"https://aka.ms/javasupport\">follow the steps to upgrade your app</a>&nbsp;to\nJava 25&nbsp;before September 1, 2027.&nbsp;<br><br><a href=\"https://learn.microsoft.com/azure/app-service/language-support-policy\">Learn\nmore</a>.&nbsp;<br>",
+      "status": null,
+      "created": "2026-10-06T18:21:59.3548773Z",
+      "modified": "2026-10-06T18:21:59.3548773Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "Retirement",
+          "year": 2027,
+          "month": "September"
+        }
+      ]
+    },
+    {
+      "id": "569236",
+      "productCategories": [
         "Databases",
         "Hybrid + multicloud"
       ],
       "tags": [
-        "Feature"
+        "Retirements"
       ],
       "products": [
-        "Azure Backup",
-        "Azure Database for PostgreSQL"
+        "Azure SQL Database"
       ],
       "generalAvailabilityDate": null,
-      "previewAvailabilityDate": "2026-10",
+      "previewAvailabilityDate": null,
       "privatePreviewAvailabilityDate": null,
-      "title": "Public Preview: Azure Backup for PostgreSQL flexible server and elastic cluster (v2)",
-      "description": "Azure Backup for PostgreSQL flexible server and elastic cluster (v2) preview brings enterprise-grade long-term retention to PostgreSQL. Backups are taken as physical backups from managed disk snapshots and vaulted in an Azure Backup vault, so protection now extends to servers of up to 32 TB on Premium SSD v1 and up to 64 TB on Premium SSD v2. The first backup is full and every backup after it is incremental, which keeps daily protection practical at multi-terabyte scale, with a recovery point objective goal of one day and retention configurable from 7 days up to 10 years.<br><br>The v1 solution took logical backups, which capped server size at 1 TB, allowed a single vaulted backup each week, produced full copies every time, and returned data as files that had to be imported by hand before it could be used. Physical backups lift those constraints together, extend protection to elastic cluster as well as flexible server, and introduce Restore as Server.<br><br>The preview includes the following capabilities:<ul data-editing-info=\"{&quot;orderedStyleType&quot;:1,&quot;unorderedStyleType&quot;:1}\"><li>Backup for both PostgreSQL flexible server and elastic cluster.</li><li>Servers of up to 32 TB on Premium SSD v1 and up to 64 TB on Premium SSD v2.</li><li>Daily and weekly schedules, along with on-demand backups.</li><li>Incremental backups after the first full backup, with a recovery point objective goal of one day.</li><li>Restore as Server onto a pre-created flexible server or elastic cluster, with no intermediate storage account and no manual import.</li><li>Retention up to 10 years with independent daily, weekly, monthly and yearly rules, protected by vault soft delete, immutability, Multi-user authorization and Customer Managed Key encryption.</li><li>Support for WORM immutable backups, so that recovery points cannot be altered or deleted before their retention period expires.</li></ul>Billing will be enabled from October 15, 2026. &nbsp;<br><p>Learn more:&nbsp;</p><ul><li><a href=\"https://learn.microsoft.com/en-us/azure/backup/backup-azure-postgresql-flex-server-elastic-cluster-v2-overview\">Documentation&nbsp;&nbsp;</a>&nbsp;</li><li><a href=\"https://azure.microsoft.com/pricing/details/backup\">Azure Backup pricing</a>&nbsp;</li><li><a href=\"https://azure.microsoft.com/pricing/calculator/\">Pricing calculator</a>&nbsp;</li></ul>",
-      "status": "In preview",
-      "created": "2026-10-05T17:44:31.2594690Z",
-      "modified": "2026-10-05T17:44:31.2594690Z",
+      "title": "Retirement: Always Encrypted with Intel SGX Enclaves",
+      "description": "Always Encrypted with Intel SGX enclaves in Azure SQL Database will retire on&nbsp;October 31, 2027&nbsp;as support for SGX-enabled DC-series hardware is phased out. Customers should transition to Virtualization-Based Security (VBS) enclaves, a hardware-independent alternative, or consider SQL Server on Confidential VMs.<h3 class=\"h5\">Customer impact</h3>After retirement, workloads using Intel SGX enclaves will no longer have enclave functionality. Databases running on DC-series compute tiers should be migrated to supported compute tiers to continue using enclave-enabled features.<h3 class=\"h5\">Recommended actions</h3><ul><li>Migrate from DC-series to a supported Standard-series (non-DC) compute tier.</li><li>Enable VBS enclaves for Always Encrypted. No attestation is required.</li><li>Update client drivers to versions that support VBS enclaves.</li><li>Update connection strings to remove SGX attestation parameters and use VBS enclave mode.</li></ul>We recommend planning and validating your migration well in advance of the retirement date to ensure a smooth transition.",
+      "status": null,
+      "created": "2026-10-06T16:42:33.6279734Z",
+      "modified": "2026-10-06T16:42:33.6279734Z",
       "locale": null,
       "availabilities": [
         {
-          "ring": "Preview",
-          "year": 2026,
+          "ring": "Retirement",
+          "year": 2027,
           "month": "October"
         }
       ]
     },
     {
-      "id": "573861",
-      "productCategories": [
-        "Networking",
-        "Security"
-      ],
+      "id": "573782",
+      "productCategories": [],
       "tags": [
-        "Features",
-        "Security"
+        "Feature"
       ],
-      "products": [
-        "Application Gateway",
-        "Web Application Firewall"
-      ],
+      "products": [],
       "generalAvailabilityDate": null,
-      "previewAvailabilityDate": "2026-10",
+      "previewAvailabilityDate": "2026-09",
       "privatePreviewAvailabilityDate": null,
-      "title": "Public Preview: IPv6 Support for Application Gateway WAF ",
-      "description": "<p>Announcing the Public Preview of IPv6 support for Application Gateway WAF.</p><p>Application Gateway Web Application Firewall (WAF) now supports inspection and enforcement for IPv6 traffic in Public Preview, marking a major step forward in modernizing the platform for dual‑stack environments. As IPv6 adoption accelerates globally due to IPv4 exhaustion and modern connectivity requirements, this enhancement enables customers to embrace IPv6 without compromising their security posture.</p><p>With this update, Application Gateway WAF extends its full protection stack -including managed rule sets, custom rules, and diagnostics - to IPv6 traffic. Customers operating dual‑stack applications can now apply consistent security controls across both IPv4 and IPv6. Additionally, IPv6 geo‑based custom rules are available through AFEC enrollment, providing more granular traffic governance during the preview.</p><a href=\"https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Flearn.microsoft.com%2Fazure%2Fweb-application-firewall%2Fag%2Fcustom-rules-geo-based-ipv6&amp;data=05%7C02%7Cedenyaakobi%40microsoft.com%7Cd6525f07b5e54c782ea108df22f818a4%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C639268121298736526%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&amp;sdata=zIpjWQwmzivv9u7%2FkCBGc94Wu5gR5FsYOA9vc5BCtE8%3D&amp;reserved=0\">Learn\nmore</a>.<br><br>",
+      "title": "Public Preview: AKS on bare metal now on Ubuntu",
+      "description": "<p>Running Kubernetes on-premises often means adding a\nvirtualization layer, adapting to unfamiliar infrastructure, or giving up\ncontrol over the hardware and software your applications depend on. For AI\nworkloads, these tradeoffs can limit access to local data, reduce available\ncompute capacity, and restrict your choice of GPUs, drivers, and runtimes.</p><p>AKS on bare metal\nUbuntu, now in public preview, brings the AKS experience directly to customer\nowned Ubuntu infrastructure. Deploy a complete Kubernetes cluster on your hardware\nusing Azure CLI. Choose the CPU and GPU hardware and supporting software stack\nthat fit your workloads.</p><p>Run applications close to your data, dedicate more\ninfrastructure capacity to your workloads, and manage Kubernetes through\nfamiliar AKS and Azure workflows. You keep the flexibility of Ubuntu and your\nhardware while extending a consistent AKS operating model to your on-premises\nenvironment.</p><a href=\"https://aka.ms/aks-bare-metal\">Learn more</a>.<br>",
       "status": "In preview",
-      "created": "2026-10-05T17:41:41.9221035Z",
-      "modified": "2026-10-05T17:41:41.9221035Z",
+      "created": "2026-10-06T15:44:06.5345459Z",
+      "modified": "2026-10-06T15:44:06.5345459Z",
       "locale": null,
       "availabilities": [
         {
           "ring": "Preview",
           "year": 2026,
-          "month": "October"
+          "month": "September"
         }
       ]
     }

@@ -1,7 +1,151 @@
 {
-  "updated_at": "2026-10-06T02:46:20.621087+00:00",
-  "count": 1067,
+  "updated_at": "2026-10-07T02:10:26.456119+00:00",
+  "count": 1072,
   "items": [
+    {
+      "id": "570232",
+      "productCategories": [
+        "Compute",
+        "Containers"
+      ],
+      "tags": [
+        "Retirements"
+      ],
+      "products": [
+        "Azure Kubernetes Service (AKS)"
+      ],
+      "generalAvailabilityDate": null,
+      "previewAvailabilityDate": null,
+      "privatePreviewAvailabilityDate": null,
+      "title": "Retirement: Pod name dimension in AKS pod platform metrics",
+      "description": "Beginning September 30, 2027, support for the pod name dimension on the following&nbsp;<a href=\"https://learn.microsoft.com/azure/aks/monitor-aks-reference#category-pods\">Azure\nMonitor platform metrics</a> is retiring, and these metrics are transitioning to aggregate pod counters:<br><ul data-editing-info=\"{&quot;orderedStyleType&quot;:1,&quot;unorderedStyleType&quot;:1}\"><li>Number of pods by phase (kube_pod_status_phase)</li><li>Number of pods in Ready state (kube_pod_status_ready)</li></ul><b>After this change:</b><ul data-editing-info=\"{&quot;orderedStyleType&quot;:1,&quot;unorderedStyleType&quot;:1}\"><li>Metric names remain unchanged.</li><li>Aggregate pod counts remain available.</li><li>Namespace-level monitoring scenarios remain supported.</li><li>The pod name dimension will no longer be available for filtering, grouping, or alerting.</li></ul>During the deprecation period, AKS will maintain both the existing and the new aggregate implementations. Both are populated with data, existing monitoring experiences will continue to function, and you will have at least one year of historical data in the aggregate implementation before retirement.<br>You may be affected if any dashboard, workbook, alert, automation, or monitoring workflow:<br><ul data-editing-info=\"{&quot;orderedStyleType&quot;:1,&quot;unorderedStyleType&quot;:1}\"><li>Uses kube_pod_status_phase or kube_pod_status_ready and filters on the pod name dimension.</li><li>Splits or groups results by the pod name dimension.</li></ul><b>Recommended action: </b><br><ul data-editing-info=\"{&quot;orderedStyleType&quot;:1,&quot;unorderedStyleType&quot;:1}\"><li>If you use aggregate pod counts, no action is required.</li><li>If you use the pod name dimension, update dashboards, alerts, workbooks, and automation before September 30, 2027. For pod-level monitoring and troubleshooting, we recommend using&nbsp;<a href=\"https://learn.microsoft.com/azure/azure-monitor/metrics/prometheus-metrics-overview#azure-monitor-managed-service-for-prometheus\">Azure\nMonitor Managed Prometheus</a> and <a href=\"https://learn.microsoft.com/azure/azure-monitor/containers/prometheus-metrics-scrape-default#kube-state\">Kubernetes-native\npod metrics</a>.</li></ul><b>Help and support</b><br>If you have questions, get answers from community experts in <a></a><a href=\"https://learn.microsoft.com/answers/tags/200/azure-kubernetes-service\">Microsoft Q&amp;A</a>. <br>",
+      "status": null,
+      "created": "2026-10-06T22:37:54.7986170Z",
+      "modified": "2026-10-06T22:37:54.7986170Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "Retirement",
+          "year": 2027,
+          "month": "September"
+        }
+      ]
+    },
+    {
+      "id": "568178",
+      "productCategories": [
+        "Compute",
+        "Mobile",
+        "Web",
+        "Hybrid + multicloud"
+      ],
+      "tags": [
+        "Retirements"
+      ],
+      "products": [
+        "App Service",
+        "Azure Stack Hub"
+      ],
+      "generalAvailabilityDate": null,
+      "previewAvailabilityDate": null,
+      "privatePreviewAvailabilityDate": null,
+      "title": "Retirement: Azure App Service on Azure Stack Hub",
+      "description": "<p style=\"\"><span style=\"font-family: Arial; font-size: 10pt; color: rgb(0, 0, 0);\">Azure App Service on Azure Stack Hub will be retired on </span><span style=\"font-family: Arial; font-size: 10pt; color: rgb(0, 0, 0);\">September\n30, 2029</span><span style=\"font-family: Arial; font-size: 10pt; color: rgb(0, 0, 0);\">.&nbsp;</span></p><p style=\"margin: 0cm 0cm 8pt;\"><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">Starting </span><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">September 30, 2026</span><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">, new installations will\nno longer be supported, and no new product releases, features, or enhancements\nwill be made available. Existing supported deployments can continue to run and\nupgrade to the latest available release until retirement.&nbsp;</span></p><p style=\"margin: 0cm 0cm 8pt;\"><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">Customers should begin planning migration to Azure App\nService in Azure now to continue receiving support, security updates, platform improvements,\nand new capabilities.&nbsp;</span></p><p style=\"margin: 0cm 0cm 8pt;\"><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">On </span><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">September 30</span><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">th</span><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">, 2029</span><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">, App Service on\nAzure Stack will reach retirement and Microsoft support will end.&nbsp;</span></p><p style=\"margin: 0cm 0cm 8pt;\"><span style=\"font-family: Arial; font-size: 10pt;\"><b>Recommended action&nbsp;&nbsp;</b></span></p><p style=\"margin: 0cm 0cm 8pt;\"><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">Assessand migrate applications as soon as possible. Azure\nApp Service in Azure provides a fully managed platform with global availability,\nWindows and Linux hosting options, autoscale, deployment slots, advanced\nnetworking and security, Azure services integration, and continuous innovation.&nbsp;</span></p><p style=\"margin: 0cm 0cm 8pt;\"><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">For applications with complex Windows dependencies, evaluate\nManaged Instance on Azure App Service. It can help accelerate migration for\napplications requiring registry access, COM components, custom runtimes, or\nother Windows-specific dependencies.&nbsp;</span></p><div></div><p style=\"margin: 0cm 0cm 8pt;\"><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">For a successful transition, inventory applications and\ndependencies, assess compatibility, select the appropriate Azure hosting\ntarget, migrate code, configuration, and data, validate workloads, and complete\nmigration before September 30, 2029.&nbsp;</span></p><p></p><div style=\"margin-top: 13.3333px; margin-bottom: 13.3333px;\"><p style=\"margin: 0in 0in 8pt;\"><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">Learn more:&nbsp;&nbsp;</span></p><ul style=\"\"><li style=\"\"><a href=\"https://go.microsoft.com/fwlink/?LinkId=2372122\" style=\"\"><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">Benefits</span></a><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">&nbsp;</span></li><li style=\"\"><a href=\"https://go.microsoft.com/fwlink/?LinkId=2372018\" style=\"\"><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">Plan</span></a><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">&nbsp;</span></li><li style=\"\"><a href=\"https://go.microsoft.com/fwlink/?LinkId=2372019\" style=\"\"><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">Migrate</span></a><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">&nbsp;</span></li></ul></div>",
+      "status": null,
+      "created": "2026-10-06T18:24:43.7287643Z",
+      "modified": "2026-10-06T18:24:43.7287643Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "Retirement",
+          "year": 2029,
+          "month": "September"
+        }
+      ]
+    },
+    {
+      "id": "568585",
+      "productCategories": [
+        "Compute",
+        "Mobile",
+        "Web"
+      ],
+      "tags": [
+        "Retirements"
+      ],
+      "products": [
+        "App Service"
+      ],
+      "generalAvailabilityDate": null,
+      "previewAvailabilityDate": null,
+      "privatePreviewAvailabilityDate": null,
+      "title": "Retirement: Support for Java 8, 11 and 17 will end on September 1, 2027",
+      "description": "On September 1, 2027 support for Java 8, 11 and 17 will end. Your\napps that are hosted on App Service will continue to run, but security updates\nwill no longer be available, and we’ll no longer provide customer service for Java\n8, 11 and 17.<p><b>Required action&nbsp;</b>&nbsp;</p>To avoid potential security vulnerabilities and\nminimize risk for your App Service apps,&nbsp;<a href=\"https://aka.ms/javasupport\">follow the steps to upgrade your app</a>&nbsp;to\nJava 25&nbsp;before September 1, 2027.&nbsp;<br><br><a href=\"https://learn.microsoft.com/azure/app-service/language-support-policy\">Learn\nmore</a>.&nbsp;<br>",
+      "status": null,
+      "created": "2026-10-06T18:21:59.3548773Z",
+      "modified": "2026-10-06T18:21:59.3548773Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "Retirement",
+          "year": 2027,
+          "month": "September"
+        }
+      ]
+    },
+    {
+      "id": "569236",
+      "productCategories": [
+        "Databases",
+        "Hybrid + multicloud"
+      ],
+      "tags": [
+        "Retirements"
+      ],
+      "products": [
+        "Azure SQL Database"
+      ],
+      "generalAvailabilityDate": null,
+      "previewAvailabilityDate": null,
+      "privatePreviewAvailabilityDate": null,
+      "title": "Retirement: Always Encrypted with Intel SGX Enclaves",
+      "description": "Always Encrypted with Intel SGX enclaves in Azure SQL Database will retire on&nbsp;October 31, 2027&nbsp;as support for SGX-enabled DC-series hardware is phased out. Customers should transition to Virtualization-Based Security (VBS) enclaves, a hardware-independent alternative, or consider SQL Server on Confidential VMs.<h3 class=\"h5\">Customer impact</h3>After retirement, workloads using Intel SGX enclaves will no longer have enclave functionality. Databases running on DC-series compute tiers should be migrated to supported compute tiers to continue using enclave-enabled features.<h3 class=\"h5\">Recommended actions</h3><ul><li>Migrate from DC-series to a supported Standard-series (non-DC) compute tier.</li><li>Enable VBS enclaves for Always Encrypted. No attestation is required.</li><li>Update client drivers to versions that support VBS enclaves.</li><li>Update connection strings to remove SGX attestation parameters and use VBS enclave mode.</li></ul>We recommend planning and validating your migration well in advance of the retirement date to ensure a smooth transition.",
+      "status": null,
+      "created": "2026-10-06T16:42:33.6279734Z",
+      "modified": "2026-10-06T16:42:33.6279734Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "Retirement",
+          "year": 2027,
+          "month": "October"
+        }
+      ]
+    },
+    {
+      "id": "573782",
+      "productCategories": [],
+      "tags": [
+        "Feature"
+      ],
+      "products": [],
+      "generalAvailabilityDate": null,
+      "previewAvailabilityDate": "2026-09",
+      "privatePreviewAvailabilityDate": null,
+      "title": "Public Preview: AKS on bare metal now on Ubuntu",
+      "description": "<p>Running Kubernetes on-premises often means adding a\nvirtualization layer, adapting to unfamiliar infrastructure, or giving up\ncontrol over the hardware and software your applications depend on. For AI\nworkloads, these tradeoffs can limit access to local data, reduce available\ncompute capacity, and restrict your choice of GPUs, drivers, and runtimes.</p><p>AKS on bare metal\nUbuntu, now in public preview, brings the AKS experience directly to customer\nowned Ubuntu infrastructure. Deploy a complete Kubernetes cluster on your hardware\nusing Azure CLI. Choose the CPU and GPU hardware and supporting software stack\nthat fit your workloads.</p><p>Run applications close to your data, dedicate more\ninfrastructure capacity to your workloads, and manage Kubernetes through\nfamiliar AKS and Azure workflows. You keep the flexibility of Ubuntu and your\nhardware while extending a consistent AKS operating model to your on-premises\nenvironment.</p><a href=\"https://aka.ms/aks-bare-metal\">Learn more</a>.<br>",
+      "status": "In preview",
+      "created": "2026-10-06T15:44:06.5345459Z",
+      "modified": "2026-10-06T15:44:06.5345459Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "Preview",
+          "year": 2026,
+          "month": "September"
+        }
+      ]
+    },
     {
       "id": "572940",
       "productCategories": [

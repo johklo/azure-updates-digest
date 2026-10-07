@@ -27665,5 +27665,139 @@
       "IPv6 기반 지역별 사용자 지정 규칙을 활성화하려면 기능 등록이 필요하며, 플랫폼 검증을 통해 지원되지 않는 구성이 차단됩니다."
     ],
     "translated_at": "2026-10-06T02:47:04.827722+00:00"
+  },
+  "570232": {
+    "summary": "Azure Monitor is retiring the pod name dimension in AKS pod platform metrics by September 30, 2027, transitioning to aggregate pod counters to simplify monitoring and improve scalability.",
+    "key_points": [
+      "The pod name dimension will no longer be available for filtering, grouping, or alerting on kube_pod_status_phase and kube_pod_status_ready metrics after September 30, 2027.",
+      "Metric names and aggregate pod counts remain unchanged, preserving namespace-level monitoring scenarios.",
+      "During the deprecation period, both existing pod name dimension and new aggregate implementations will be supported with at least one year of historical data.",
+      "Customers using pod name dimension in dashboards, alerts, or automation should update their monitoring workflows before the retirement date; pod-level monitoring is recommended via Azure Monitor Managed Prometheus and Kubernetes-native pod metrics."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/aks/monitor-aks-reference",
+    "doc_title": "Monitoring data reference for Azure Kubernetes Service - Azure Kubernetes Service",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/azure/aks/monitor-aks-reference#category-pods",
+      "https://learn.microsoft.com/azure/azure-monitor/metrics/prometheus-metrics-overview#azure-monitor-managed-service-for-prometheus",
+      "https://learn.microsoft.com/azure/azure-monitor/containers/prometheus-metrics-scrape-default#kube-state",
+      "https://learn.microsoft.com/answers/tags/200/azure-kubernetes-service"
+    ],
+    "source": "llm",
+    "updated_at": "2026-10-07T02:10:34.695237+00:00",
+    "title_ko": "Retirement: AKS pod 플랫폼 메트릭의 Pod name dimension",
+    "summary_ko": "Azure Monitor는 2027년 9월 30일까지 AKS pod 플랫폼 메트릭에서 pod name dimension을 Retirement하며, 모니터링을 단순화하고 확장성을 개선하기 위해 집계된 pod 카운터로 전환합니다.",
+    "key_points_ko": [
+      "2027년 9월 30일 이후 kube_pod_status_phase 및 kube_pod_status_ready 메트릭에서 pod name dimension을 사용한 필터링, 그룹화, 알림이 더 이상 지원되지 않습니다.",
+      "메트릭 이름과 집계된 pod 카운트는 변경되지 않아 네임스페이스 수준 모니터링 시나리오는 유지됩니다.",
+      "Deprecation 기간 동안 기존 pod name dimension과 새로운 집계 구현이 모두 지원되며 최소 1년간의 이력 데이터가 제공됩니다.",
+      "대시보드, 알림 또는 자동화에서 pod name dimension을 사용하는 고객은 Retirement 이전에 모니터링 워크플로우를 업데이트해야 하며, pod 수준 모니터링은 Azure Monitor Managed Prometheus 및 Kubernetes-native pod 메트릭을 통해 권장됩니다."
+    ],
+    "translated_at": "2026-10-07T02:10:55.599764+00:00"
+  },
+  "568178": {
+    "summary": "Azure App Service on Azure Stack Hub will be retired by September 30, 2029, requiring customers to migrate to Azure App Service in Azure to benefit from ongoing support, security updates, and new features.",
+    "key_points": [
+      "New installations of Azure App Service on Azure Stack Hub will not be supported after September 30, 2026, with full retirement and end of support on September 30, 2029.",
+      "Azure App Service in Azure offers a fully managed, globally available platform with advanced features like autoscaling, deployment slots, and enhanced networking and security.",
+      "Migration enables access to continuous platform innovations, higher-capacity Premium plans, and support for mixed Windows and Linux workloads with lower operational overhead.",
+      "Customers should inventory applications, assess compatibility, and complete migration before retirement to maintain support and leverage improved scalability and security."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure-stack/operator/app-service-benefits-migrate-to-azure?view=azs-2604",
+    "doc_title": "Benefits of Migrating to Azure App Service in Azure - Azure Stack Hub",
+    "doc_read": true,
+    "links": [
+      "https://go.microsoft.com/fwlink/?LinkId=2372122",
+      "https://go.microsoft.com/fwlink/?LinkId=2372018",
+      "https://go.microsoft.com/fwlink/?LinkId=2372019"
+    ],
+    "source": "llm",
+    "updated_at": "2026-10-07T02:10:39.310015+00:00",
+    "title_ko": "Retirement: Azure Stack Hub의 Azure App Service",
+    "summary_ko": "Azure Stack Hub의 Azure App Service는 2029년 9월 30일까지 Retirement되며, 고객은 지속적인 지원, 보안 업데이트 및 새로운 기능을 활용하기 위해 Azure의 Azure App Service로 마이그레이션해야 합니다.",
+    "key_points_ko": [
+      "2026년 9월 30일 이후에는 Azure Stack Hub의 Azure App Service 신규 설치가 지원되지 않으며, 2029년 9월 30일에 완전 Retirement 및 지원 종료가 이루어집니다.",
+      "Azure의 Azure App Service는 자동 확장, 배포 슬롯, 향상된 네트워킹 및 보안과 같은 고급 기능을 갖춘 완전 관리형 글로벌 플랫폼을 제공합니다.",
+      "마이그레이션을 통해 지속적인 플랫폼 혁신, 더 높은 용량의 Premium 플랜, Windows와 Linux 혼합 워크로드 지원 및 낮은 운영 부담을 누릴 수 있습니다.",
+      "고객은 지원 유지와 향상된 확장성 및 보안을 활용하기 위해 Retirement 전에 애플리케이션을 목록화하고 호환성을 평가하며 마이그레이션을 완료해야 합니다."
+    ],
+    "translated_at": "2026-10-07T02:11:00.011679+00:00"
+  },
+  "568585": {
+    "summary": "Support for Java 8, 11, and 17 on Azure App Service will end on September 1, 2027, requiring customers to upgrade to Java 25 to maintain security updates and support.",
+    "key_points": [
+      "Support and security updates for Java 8, 11, and 17 will cease after September 1, 2027, though apps will continue to run.",
+      "Customers must upgrade their App Service apps to Java 25 before the deadline to avoid security vulnerabilities and loss of customer service.",
+      "Azure App Service provides Microsoft and Adoptium OpenJDK builds for Java versions 8, 11, 17, 21, and 25 with quarterly security patches for supported versions.",
+      "Deprecation notices are given at least six months in advance to help developers plan upgrades and maintain secure, supported environments."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/app-service/language-support-policy",
+    "doc_title": "Language Runtime Support Policy - Azure App Service",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/azure/app-service/language-support-policy",
+      "https://aka.ms/javasupport"
+    ],
+    "source": "llm",
+    "updated_at": "2026-10-07T02:10:43.228914+00:00",
+    "title_ko": "Retirement: Java 8, 11 및 17 지원이 2027년 9월 1일 종료됩니다",
+    "summary_ko": "Azure App Service에서 Java 8, 11, 17에 대한 지원이 2027년 9월 1일에 종료되며, 고객은 보안 업데이트와 지원 유지를 위해 Java 25로 업그레이드해야 합니다.",
+    "key_points_ko": [
+      "Java 8, 11, 17에 대한 지원 및 보안 업데이트는 2027년 9월 1일 이후 중단되지만, 애플리케이션은 계속 실행됩니다.",
+      "고객은 보안 취약점과 고객 서비스 손실을 방지하기 위해 마감일 이전에 App Service 애플리케이션을 Java 25로 업그레이드해야 합니다.",
+      "Azure App Service는 Java 버전 8, 11, 17, 21, 25에 대해 Microsoft 및 Adoptium OpenJDK 빌드를 제공하며, 지원되는 버전에 대해 분기별 보안 패치를 제공합니다.",
+      "개발자가 업그레이드를 계획하고 안전하며 지원되는 환경을 유지할 수 있도록 최소 6개월 전에 Deprecation 공지가 제공됩니다."
+    ],
+    "translated_at": "2026-10-07T02:11:04.265426+00:00"
+  },
+  "569236": {
+    "summary": "Azure SQL Database is retiring Always Encrypted with Intel SGX enclaves by October 31, 2027, due to phasing out SGX-enabled DC-series hardware, urging customers to migrate to hardware-independent VBS enclaves or Confidential VMs for continued enclave functionality.",
+    "key_points": [
+      "Always Encrypted with Intel SGX enclaves support ends on October 31, 2027, as DC-series hardware is phased out.",
+      "Customers must migrate workloads from DC-series to supported Standard-series compute tiers to maintain enclave features.",
+      "Virtualization-Based Security (VBS) enclaves offer a hardware-independent alternative with no attestation required.",
+      "Client drivers and connection strings need updating to support VBS enclaves and remove SGX attestation parameters."
+    ],
+    "doc_url": "",
+    "doc_title": "",
+    "doc_read": false,
+    "links": [],
+    "source": "llm",
+    "updated_at": "2026-10-07T02:10:47.452375+00:00",
+    "title_ko": "Retirement: Intel SGX Enclaves를 사용하는 Always Encrypted 서비스 종료",
+    "summary_ko": "Azure SQL Database는 SGX 지원 DC-series 하드웨어의 단계적 폐지로 인해 2027년 10월 31일까지 Intel SGX enclaves를 사용하는 Always Encrypted 기능을 종료합니다. 고객은 enclave 기능을 계속 사용하기 위해 하드웨어에 독립적인 VBS enclaves 또는 Confidential VM으로 마이그레이션해야 합니다.",
+    "key_points_ko": [
+      "Intel SGX enclaves를 사용하는 Always Encrypted 지원은 DC-series 하드웨어가 단계적으로 폐지됨에 따라 2027년 10월 31일에 종료됩니다.",
+      "고객은 enclave 기능 유지를 위해 DC-series에서 지원되는 Standard-series 컴퓨트 티어로 워크로드를 마이그레이션해야 합니다.",
+      "Virtualization-Based Security(VBS) enclaves는 하드웨어에 독립적인 대안으로, 별도의 attestation이 필요 없습니다.",
+      "클라이언트 드라이버와 연결 문자열을 업데이트하여 VBS enclaves를 지원하고 SGX attestation 매개변수를 제거해야 합니다."
+    ],
+    "translated_at": "2026-10-07T02:11:08.990890+00:00"
+  },
+  "573782": {
+    "summary": "AKS on bare metal is now available in public preview on customer-owned Ubuntu infrastructure, enabling direct Kubernetes deployment without a hypervisor for greater control and flexibility on-premises.",
+    "key_points": [
+      "Deploy Kubernetes clusters directly on Ubuntu hosts using Azure CLI, maintaining full control over hardware and software.",
+      "Supports running Kubernetes without virtualization overhead, improving performance for AI and data-intensive workloads.",
+      "Integrates with Azure Arc for centralized Kubernetes lifecycle management while preserving Ubuntu host maintenance responsibility.",
+      "Enables consistent AKS experience on existing customer infrastructure, facilitating edge and on-premises deployments with flexible hardware and software choices."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/aks-hybrid-edge/bare-metal/aks-bare-metal-overview",
+    "doc_title": "What is Azure Kubernetes Service on bare metal? (preview)",
+    "doc_read": true,
+    "links": [
+      "https://aka.ms/aks-bare-metal"
+    ],
+    "source": "llm",
+    "updated_at": "2026-10-07T02:10:51.754673+00:00",
+    "title_ko": "Public Preview: AKS on bare metal이 이제 Ubuntu에서 제공됩니다",
+    "summary_ko": "AKS on bare metal이 고객 소유의 Ubuntu 인프라에서 Public Preview로 제공되어 하이퍼바이저 없이 직접 Kubernetes를 배포할 수 있어 온프레미스에서 더 높은 제어력과 유연성을 제공합니다.",
+    "key_points_ko": [
+      "Azure CLI를 사용해 Ubuntu 호스트에 Kubernetes 클러스터를 직접 배포하여 하드웨어와 소프트웨어에 대한 완전한 제어를 유지합니다.",
+      "가상화 오버헤드 없이 Kubernetes를 실행할 수 있어 AI 및 데이터 집약적 워크로드의 성능을 향상합니다.",
+      "Ubuntu 호스트 유지 관리를 유지하면서 중앙 집중식 Kubernetes 수명 주기 관리를 위해 Azure Arc와 통합됩니다.",
+      "기존 고객 인프라에서 일관된 AKS 경험을 제공하여 유연한 하드웨어 및 소프트웨어 선택으로 엣지 및 온프레미스 배포를 지원합니다."
+    ],
+    "translated_at": "2026-10-07T02:11:12.990739+00:00"
   }
 }
