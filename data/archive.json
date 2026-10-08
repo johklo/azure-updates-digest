@@ -1,7 +1,60 @@
 {
-  "updated_at": "2026-10-07T02:10:26.456119+00:00",
-  "count": 1072,
+  "updated_at": "2026-10-08T02:36:17.275082+00:00",
+  "count": 1074,
   "items": [
+    {
+      "id": "573744",
+      "productCategories": [
+        "Compute",
+        "Containers"
+      ],
+      "tags": [
+        "Feature"
+      ],
+      "products": [
+        "Azure Kubernetes Service (AKS)"
+      ],
+      "generalAvailabilityDate": "2026-10",
+      "previewAvailabilityDate": null,
+      "privatePreviewAvailabilityDate": null,
+      "title": "Generally Available: Anyscale on Azure",
+      "description": "Anyscale on Azure is now Generally Available. Anyscale on Azure is a managed platform for running distributed Python workloads on Ray. It deploys directly onto your Azure Kubernetes Service (AKS) cluster and integrates with the Azure services your team already uses.&nbsp;Unlike other processing engines which either only support one hardware type (e.g. CPUs) or focus on a single workload (e.g. inference), Ray turns a heterogeneous cluster of CPUs and GPUs into a single Python runtime composing data preparation, distributed training, fine-tuning, reinforcement learning, high-throughput inference, and agentic execution as one program.&nbsp;Anyscale on Azure brings Ray, the distributed compute runtime,&nbsp; into your Azure tenant as an Azure Native service, that includes purpose-built developer tooling and unified pane for cluster management, built through deep engineering collaboration between Anyscale and Microsoft.",
+      "status": "Launched",
+      "created": "2026-10-07T17:06:00.3228241Z",
+      "modified": "2026-10-07T17:06:00.3228241Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "General Availability",
+          "year": 2026,
+          "month": "October"
+        }
+      ]
+    },
+    {
+      "id": "573443",
+      "productCategories": [],
+      "tags": [
+        "Feature"
+      ],
+      "products": [],
+      "generalAvailabilityDate": "2026-10",
+      "previewAvailabilityDate": null,
+      "privatePreviewAvailabilityDate": null,
+      "title": "Generally Available: Enabling the Bulk admin role for SQL Server on Linux",
+      "description": "Starting with SQL Server 2025 CU9 and SQL Server 2022 CU27, SQL Server on Linux supports the bulkadmin fixed server role and the ADMINISTER BULK OPERATIONS permission for performing bulk data import operations without requiring users to be members of the sysadmin fixed server role.&nbsp;<br><br>This capability enables you to use operations such as BULK INSERT and OPENROWSET(BULK...) while following a least-privilege security model. Previously on SQL Server on Linux, these operations required sysadmin membership.<br><br>With this release, organizations running SQL Server on Linux can provide users with the permissions required for bulk data loading without granting broader sysadmin privileges, improving alignment with the principle of least privilege. The feature applies to SQL Server on Linux, including on-premises, SQL Server on Azure VMs and container deployments.<br><p><a href=\"https://learn.microsoft.com/en-us/sql/linux/security/bulk-operations?view=sql-server-ver17\">Learn\nmore</a>.&nbsp;</p>",
+      "status": "Launched",
+      "created": "2026-10-07T16:57:04.0990443Z",
+      "modified": "2026-10-07T16:57:04.0990443Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "General Availability",
+          "year": 2026,
+          "month": "October"
+        }
+      ]
+    },
     {
       "id": "570232",
       "productCategories": [

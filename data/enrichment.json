@@ -27799,5 +27799,55 @@
       "기존 고객 인프라에서 일관된 AKS 경험을 제공하여 유연한 하드웨어 및 소프트웨어 선택으로 엣지 및 온프레미스 배포를 지원합니다."
     ],
     "translated_at": "2026-10-07T02:11:12.990739+00:00"
+  },
+  "573744": {
+    "summary": "Anyscale on Azure is now generally available, providing a managed platform to run distributed Python workloads on Ray directly within Azure Kubernetes Service, enhancing integration and operational efficiency for enterprise customers.",
+    "key_points": [
+      "Anyscale on Azure deploys on Azure Kubernetes Service (AKS) and integrates with existing Azure services.",
+      "Supports heterogeneous clusters combining CPUs and GPUs for diverse workloads including data prep, training, inference, and reinforcement learning.",
+      "Offers Azure Native service experience with developer tooling and unified cluster management.",
+      "Enables enterprises to run complex distributed Python applications efficiently within their Azure environment."
+    ],
+    "doc_url": "",
+    "doc_title": "",
+    "doc_read": false,
+    "links": [],
+    "source": "llm",
+    "updated_at": "2026-10-08T02:36:33.254905+00:00",
+    "title_ko": "Generally Available: Azure에서 Anyscale",
+    "summary_ko": "Azure에서 Anyscale이 이제 Generally Available 상태로 제공되며, Azure Kubernetes Service 내에서 Ray를 통해 분산 Python 워크로드를 관리형 플랫폼으로 실행할 수 있어 엔터프라이즈 고객의 통합 및 운영 효율성을 향상합니다.",
+    "key_points_ko": [
+      "Anyscale on Azure는 Azure Kubernetes Service (AKS)에 배포되며 기존 Azure 서비스와 통합됩니다.",
+      "데이터 준비, 학습, 추론, 강화 학습 등 다양한 워크로드를 위한 CPU와 GPU를 결합한 이기종 클러스터를 지원합니다.",
+      "개발자 도구와 통합 클러스터 관리를 제공하는 Azure Native 서비스 경험을 제공합니다.",
+      "엔터프라이즈가 Azure 환경 내에서 복잡한 분산 Python 애플리케이션을 효율적으로 실행할 수 있도록 합니다."
+    ],
+    "translated_at": "2026-10-08T02:36:40.060935+00:00"
+  },
+  "573443": {
+    "summary": "SQL Server on Linux now supports the bulkadmin server role and ADMINISTER BULK OPERATIONS permission to enable bulk data import without requiring sysadmin privileges, enhancing security by enabling least-privilege access.",
+    "key_points": [
+      "Available starting with SQL Server 2025 CU9 and SQL Server 2022 CU27 on Linux, including on-premises, Azure VMs, and containers.",
+      "Allows use of BULK INSERT and OPENROWSET(BULK...) operations without sysadmin role membership, improving security posture.",
+      "Requires Linux file system permissions and explicit directory path approval via mssql-conf for bulk data import operations.",
+      "Supports granting permissions either by adding users to the bulkadmin fixed server role or granting ADMINISTER BULK OPERATIONS permission directly."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/sql/linux/security/bulk-operations?view=sql-server-ver17",
+    "doc_title": "Configure Bulk Import Operations for SQL Server on Linux - SQL Server",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/en-us/sql/linux/security/bulk-operations?view=sql-server-ver17"
+    ],
+    "source": "llm",
+    "updated_at": "2026-10-08T02:36:36.467291+00:00",
+    "title_ko": "Generally Available: SQL Server on Linux에서 Bulk admin 역할 활성화",
+    "summary_ko": "SQL Server on Linux가 이제 bulkadmin 서버 역할과 ADMINISTER BULK OPERATIONS 권한을 지원하여 sysadmin 권한 없이도 대량 데이터 가져오기를 가능하게 하며, 최소 권한 접근을 통해 보안을 강화합니다.",
+    "key_points_ko": [
+      "SQL Server 2025 CU9 및 SQL Server 2022 CU27부터 Linux에서 사용 가능하며, 온프레미스, Azure VM, 컨테이너 환경을 포함합니다.",
+      "sysadmin 역할 멤버십 없이 BULK INSERT 및 OPENROWSET(BULK...) 작업을 사용할 수 있어 보안 상태가 향상됩니다.",
+      "대량 데이터 가져오기 작업에는 Linux 파일 시스템 권한과 mssql-conf를 통한 명시적 디렉터리 경로 승인이 필요합니다.",
+      "사용자를 bulkadmin 고정 서버 역할에 추가하거나 ADMINISTER BULK OPERATIONS 권한을 직접 부여하는 방식으로 권한 부여를 지원합니다."
+    ],
+    "translated_at": "2026-10-08T02:36:43.965422+00:00"
   }
 }
