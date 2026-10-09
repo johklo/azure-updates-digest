@@ -27849,5 +27849,180 @@
       "사용자를 bulkadmin 고정 서버 역할에 추가하거나 ADMINISTER BULK OPERATIONS 권한을 직접 부여하는 방식으로 권한 부여를 지원합니다."
     ],
     "translated_at": "2026-10-08T02:36:43.965422+00:00"
+  },
+  "574430": {
+    "summary": "AKS now generally supports provisioning and managing a StandardV2 NAT Gateway for clusters using AKS-managed virtual networks, offering improved performance and zone redundancy.",
+    "key_points": [
+      "StandardV2 NAT Gateway is the new default SKU for managed NAT Gateways in supported regions, replacing Standard SKU for new AKS clusters using managedNATGateway outbound type.",
+      "StandardV2 provides zone redundancy by default, higher bandwidth and throughput, and IPv6 support, enhancing cluster outbound connectivity reliability and performance.",
+      "Existing AKS clusters can migrate from Standard NAT Gateway or load balancer to StandardV2, but downgrades from StandardV2 to Standard are not supported.",
+      "StandardV2 NAT Gateway requires StandardV2 public IP addresses and prefixes, which are incompatible with existing Standard SKU public IP resources, necessitating planning for IP resource management."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/aks/nat-gateway",
+    "doc_title": "Create a Managed or User-Assigned NAT Gateway for your Azure Kubernetes Service (AKS) Cluster - Azure Kubernetes Service",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/en-us/azure/aks/nat-gateway"
+    ],
+    "source": "llm",
+    "updated_at": "2026-10-09T02:50:56.279211+00:00",
+    "title_ko": "Generally Available: AKS용 관리형 StandardV2 NAT Gateway",
+    "summary_ko": "AKS가 이제 AKS 관리형 가상 네트워크를 사용하는 클러스터에 대해 StandardV2 NAT Gateway의 프로비저닝 및 관리를 Generally Available 상태로 지원하며, 향상된 성능과 영역 중복성을 제공합니다.",
+    "key_points_ko": [
+      "StandardV2 NAT Gateway는 지원되는 지역에서 관리형 NAT Gateway의 새로운 기본 SKU로, managedNATGateway 아웃바운드 유형을 사용하는 신규 AKS 클러스터에 대해 기존 Standard SKU를 대체합니다.",
+      "StandardV2는 기본적으로 영역 중복성을 제공하며, 더 높은 대역폭과 처리량, IPv6 지원을 통해 클러스터 아웃바운드 연결의 신뢰성과 성능을 향상합니다.",
+      "기존 AKS 클러스터는 Standard NAT Gateway 또는 로드 밸런서에서 StandardV2로 마이그레이션할 수 있으나, StandardV2에서 Standard로의 다운그레이드는 지원되지 않습니다.",
+      "StandardV2 NAT Gateway는 StandardV2 공용 IP 주소 및 프리픽스를 필요로 하며, 이는 기존 Standard SKU 공용 IP 리소스와 호환되지 않아 IP 리소스 관리에 대한 계획이 필요합니다."
+    ],
+    "translated_at": "2026-10-09T02:51:21.780450+00:00"
+  },
+  "573691": {
+    "summary": "Azure Database for PostgreSQL flexible server is now generally available in the East US 3 region, expanding deployment options for customers.",
+    "key_points": [
+      "Flexible server deployment is now supported in the East US 3 Azure region.",
+      "This availability provides customers with more geographic options for hosting PostgreSQL databases.",
+      "Supports full application compatibility with the community PostgreSQL engine for easy migration.",
+      "Customers can leverage Azure Database Migration Service or dump and restore methods for migration."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/postgresql/overview",
+    "doc_title": "What Is Azure Database for PostgreSQL flexible server? - Azure Database for PostgreSQL",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/azure/postgresql/flexible-server/overview#azure-regions"
+    ],
+    "source": "llm",
+    "updated_at": "2026-10-09T02:51:00.235362+00:00",
+    "title_ko": "Generally Available: East US 3 지역의 Azure Database for PostgreSQL flexible server",
+    "summary_ko": "Azure Database for PostgreSQL flexible server가 이제 East US 3 지역에서 Generally Available 상태로 제공되어 고객의 배포 옵션이 확대되었습니다.",
+    "key_points_ko": [
+      "Flexible server 배포가 이제 East US 3 Azure 지역에서 지원됩니다.",
+      "이번 제공으로 고객은 PostgreSQL 데이터베이스 호스팅을 위한 지리적 선택지가 더 다양해졌습니다.",
+      "커뮤니티 PostgreSQL 엔진과의 완전한 애플리케이션 호환성을 지원하여 손쉬운 마이그레이션이 가능합니다.",
+      "고객은 Azure Database Migration Service 또는 덤프 및 복원 방식을 활용해 마이그레이션할 수 있습니다."
+    ],
+    "translated_at": "2026-10-09T02:51:25.456087+00:00"
+  },
+  "567933": {
+    "summary": "Microsoft Dev Box will be retired on September 18, 2028, with a transition period starting in 2026, encouraging customers to migrate to Windows 365 for developer cloud environments.",
+    "key_points": [
+      "Microsoft Dev Box enters closing-down phase starting September 14, 2026, and will be fully retired by September 18, 2028.",
+      "No new feature development will occur; existing deployments remain supported during the transition period.",
+      "Windows 365 is the recommended replacement for virtualized developer environments, reflecting Microsoft's strategic focus.",
+      "Customers should review current Dev Box usage, plan migration scenarios, validate requirements, and begin testing new workflows early to avoid disruption."
+    ],
+    "doc_url": "",
+    "doc_title": "",
+    "doc_read": false,
+    "links": [],
+    "source": "llm",
+    "updated_at": "2026-10-09T02:51:03.923900+00:00",
+    "title_ko": "Retirement: Microsoft Dev Box는 2028년 9월 18일에 Retirement됩니다",
+    "summary_ko": "Microsoft Dev Box는 2028년 9월 18일에 Retirement되며, 2026년부터 전환 기간이 시작되어 고객이 개발자 클라우드 환경을 위해 Windows 365로 마이그레이션할 것을 권장합니다.",
+    "key_points_ko": [
+      "Microsoft Dev Box는 2026년 9월 14일부터 종료 단계에 들어가며, 2028년 9월 18일까지 완전히 Retirement됩니다.",
+      "새로운 기능 개발은 중단되며, 전환 기간 동안 기존 배포는 계속 지원됩니다.",
+      "Windows 365는 가상화된 개발자 환경에 대한 권장 대체 솔루션으로, Microsoft의 전략적 초점을 반영합니다.",
+      "고객은 현재 Dev Box 사용 현황을 검토하고, 마이그레이션 시나리오를 계획하며, 요구 사항을 검증하고, 중단을 방지하기 위해 새로운 워크플로우 테스트를 조기에 시작해야 합니다."
+    ],
+    "translated_at": "2026-10-09T02:51:29.479469+00:00"
+  },
+  "567934": {
+    "summary": "Azure Deployment Environments will be retired on February 22, 2027, requiring customers to plan and transition to alternative environment provisioning solutions to avoid service disruption.",
+    "key_points": [
+      "Retirement date set for February 22, 2027, with closing-down starting September 14, 2026.",
+      "Customers must review and inventory current usage across subscriptions, projects, templates, and workflows.",
+      "Identify and validate alternative environment provisioning and developer self-service approaches.",
+      "Early migration planning and communication are critical to minimize operational and development impact."
+    ],
+    "doc_url": "",
+    "doc_title": "",
+    "doc_read": false,
+    "links": [],
+    "source": "llm",
+    "updated_at": "2026-10-09T02:51:06.842613+00:00",
+    "title_ko": "Retirement: Azure Deployment Environments가 2027년 2월 22일에 Retirement됩니다",
+    "summary_ko": "Azure Deployment Environments가 2027년 2월 22일에 Retirement되어, 고객은 서비스 중단을 방지하기 위해 대체 환경 프로비저닝 솔루션으로 전환 및 계획해야 합니다.",
+    "key_points_ko": [
+      "Retirement 날짜는 2027년 2월 22일로 설정되었으며, 종료 절차는 2026년 9월 14일부터 시작됩니다.",
+      "고객은 구독, 프로젝트, 템플릿 및 워크플로우 전반에 걸쳐 현재 사용 현황을 검토하고 목록화해야 합니다.",
+      "대체 환경 프로비저닝 및 개발자 셀프 서비스 방식을 식별하고 검증해야 합니다.",
+      "운영 및 개발 영향 최소화를 위해 조기 마이그레이션 계획과 커뮤니케이션이 매우 중요합니다."
+    ],
+    "translated_at": "2026-10-09T02:51:33.591997+00:00"
+  },
+  "574343": {
+    "summary": "Azure Web Application Firewall (WAF) on Application Gateway and Front Door now generally supports exceptions that allow specific requests to bypass WAF inspection at granular levels, improving policy tuning and reducing false positives.",
+    "key_points": [
+      "Exceptions can be configured by request URI, remote IP address, or request header name and value to bypass inspection at the rule, rule group, or managed ruleset level.",
+      "Available generally for Azure Application Gateway and Azure Front Door WAF policies via Azure portal and CLI/PowerShell commands.",
+      "Helps customers precisely tune WAF policies by excluding safe, expected requests from inspection while maintaining other protections.",
+      "Limits include up to 60 exceptions per WAF policy and per Application Gateway, with up to 600 IP addresses per exception."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/web-application-firewall/ag/application-gateway-exceptions",
+    "doc_title": "Azure Application Gateway WAF Exceptions List (Preview)",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/azure/web-application-firewall/ag/application-gateway-exceptions",
+      "https://learn.microsoft.com/en-us/azure/web-application-firewall/afds/front-door-exceptions"
+    ],
+    "source": "llm",
+    "updated_at": "2026-10-09T02:51:10.241067+00:00",
+    "title_ko": "Generally Available: Azure Application Gateway 및 Azure Front Door용 WAF 예외 기능",
+    "summary_ko": "Azure Application Gateway와 Front Door의 Azure Web Application Firewall(WAF)은 이제 특정 요청이 세밀한 수준에서 WAF 검사를 우회할 수 있도록 하는 예외를 Generally Available 상태로 지원하여 정책 조정이 개선되고 오탐이 감소합니다.",
+    "key_points_ko": [
+      "예외는 요청 URI, 원격 IP 주소 또는 요청 헤더 이름과 값으로 구성할 수 있으며, 규칙, 규칙 그룹 또는 관리형 규칙 세트 수준에서 검사를 우회할 수 있습니다.",
+      "Azure 포털과 CLI/PowerShell 명령을 통해 Azure Application Gateway 및 Azure Front Door WAF 정책에 대해 Generally Available로 제공됩니다.",
+      "안전하고 예상된 요청을 검사 대상에서 제외하여 고객이 WAF 정책을 정밀하게 조정하면서도 다른 보호 기능은 유지할 수 있도록 돕습니다.",
+      "제한 사항으로는 WAF 정책 및 Application Gateway당 최대 60개의 예외와 예외당 최대 600개의 IP 주소가 포함됩니다."
+    ],
+    "translated_at": "2026-10-09T02:51:37.931191+00:00"
+  },
+  "574204": {
+    "summary": "Microsoft Agent 365 integration with Azure API Management is now in public preview, enabling centralized governance and runtime enforcement for MCP servers and tools, enhancing security and operational control.",
+    "key_points": [
+      "Organizations can discover and inventory Azure API Management gateways and MCP servers within Agent 365.",
+      "Access to MCP servers is controlled from Agent 365 with enforcement applied at runtime by Azure API Management.",
+      "The AI Gateway tier (in preview) allows tool-level access controls, activity monitoring, and threat protection using Microsoft Defender and Purview.",
+      "This integration centralizes governance for AI administrators while enabling platform teams to enforce policies within the customer’s Azure environment."
+    ],
+    "doc_url": "",
+    "doc_title": "",
+    "doc_read": false,
+    "links": [],
+    "source": "llm",
+    "updated_at": "2026-10-09T02:51:13.786400+00:00",
+    "title_ko": "Public Preview: Microsoft Agent 365와 Azure API Management 통합",
+    "summary_ko": "Microsoft Agent 365와 Azure API Management의 통합이 Public Preview로 제공되어 MCP 서버 및 도구에 대한 중앙 집중식 거버넌스와 런타임 적용을 가능하게 하여 보안과 운영 제어를 강화합니다.",
+    "key_points_ko": [
+      "조직은 Agent 365 내에서 Azure API Management 게이트웨이와 MCP 서버를 검색하고 인벤토리화할 수 있습니다.",
+      "MCP 서버에 대한 접근은 Agent 365에서 제어되며 Azure API Management가 런타임에 이를 적용합니다.",
+      "AI Gateway 티어(Preview)는 도구 수준의 접근 제어, 활동 모니터링, Microsoft Defender 및 Purview를 이용한 위협 보호를 제공합니다.",
+      "이 통합은 AI 관리자를 위한 중앙 집중식 거버넌스를 제공하는 동시에 플랫폼 팀이 고객의 Azure 환경 내에서 정책을 적용할 수 있도록 지원합니다."
+    ],
+    "translated_at": "2026-10-09T02:51:41.549995+00:00"
+  },
+  "571831": {
+    "summary": "Multiparty private offers in Microsoft Marketplace have expanded to Hong Kong, enabling partners to procure third-party cloud and AI solutions for customers, enhancing market reach and customer trust.",
+    "key_points": [
+      "Capability: Allows Microsoft partners to procure third-party cloud and AI solutions on behalf of customers through Marketplace.",
+      "Availability: Now expanded to include the Hong Kong market.",
+      "Customer impact: Customers benefit from trusted partners managing their cloud and AI initiatives.",
+      "Partner impact: Software companies can enter new markets by collaborating with partners who have established customer relationships."
+    ],
+    "doc_url": "",
+    "doc_title": "",
+    "doc_read": false,
+    "links": [],
+    "source": "llm",
+    "updated_at": "2026-10-09T02:51:16.862115+00:00",
+    "title_ko": "Announcing: Microsoft Marketplace의 다자간 비공개 제안이 홍콩으로 확장",
+    "summary_ko": "Microsoft Marketplace의 다자간 비공개 제안이 홍콩으로 확장되어, 파트너가 고객을 대신해 타사 클라우드 및 AI 솔루션을 조달할 수 있게 되어 시장 접근성과 고객 신뢰를 강화합니다.",
+    "key_points_ko": [
+      "기능: Microsoft 파트너가 Marketplace를 통해 고객을 대신하여 타사 클라우드 및 AI 솔루션을 조달할 수 있습니다.",
+      "가용성: 이제 홍콩 시장까지 확장되었습니다.",
+      "고객 영향: 고객은 신뢰할 수 있는 파트너가 클라우드 및 AI 이니셔티브를 관리함으로써 혜택을 받습니다.",
+      "파트너 영향: 소프트웨어 회사는 기존 고객 관계를 보유한 파트너와 협력하여 새로운 시장에 진입할 수 있습니다."
+    ],
+    "translated_at": "2026-10-09T02:51:45.469918+00:00"
   }
 }
