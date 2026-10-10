@@ -28024,5 +28024,24 @@
       "파트너 영향: 소프트웨어 회사는 기존 고객 관계를 보유한 파트너와 협력하여 새로운 시장에 진입할 수 있습니다."
     ],
     "translated_at": "2026-10-09T02:51:45.469918+00:00"
+  },
+  "570313": {
+    "summary": "After retirement, the Azure Key Vault Secrets Provider Extension will no longer receive new features, bug fixes, security updates, or technical support.",
+    "key_points": [
+      "Customers currently using the extension should plan to migrate to the Azure Key Vault Secret Store Extension before the retirement date.",
+      "The Azure Key Vault Secrets Provider Extension for Azure Arc-enabled Kubernetes will be retired on October 9, 2027.",
+      "Migration guidance is available to help customers transition their workloads and configurations to the Azure Key Vault Secret Store Extension ahead of retirement.",
+      "The Azure Key Vault Secret Store Extension provides equivalent functionality for accessing and synchronizing secrets from Azure Key Vault for workloads running on Azure Arc-enabled Kubernetes clusters."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/azure-arc/kubernetes/tutorial-akv-secrets-provider",
+    "doc_title": "Use Azure Key Vault Secrets Provider extension to fetch secrets into Azure Arc-enabled Kubernetes clusters - Azure Arc",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/en-us/azure/azure-arc/kubernetes/tutorial-akv-secrets-provider",
+      "https://learn.microsoft.com/en-us/azure/azure-arc/kubernetes/secret-store-extension?tabs=arc-k8s%2Csimplified-configuration",
+      "https://learn.microsoft.com/en-us/azure/azure-arc/kubernetes/secret-store-extension-migration?tabs=direct"
+    ],
+    "source": "extractive",
+    "updated_at": "2026-10-10T02:11:14.111269+00:00"
   }
 }

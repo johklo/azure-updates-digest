@@ -1,7 +1,31 @@
 {
-  "updated_at": "2026-10-09T02:50:44.453837+00:00",
-  "count": 1081,
+  "updated_at": "2026-10-10T02:11:08.368266+00:00",
+  "count": 1082,
   "items": [
+    {
+      "id": "570313",
+      "productCategories": [],
+      "tags": [
+        "Retirements"
+      ],
+      "products": [],
+      "generalAvailabilityDate": null,
+      "previewAvailabilityDate": null,
+      "privatePreviewAvailabilityDate": null,
+      "title": "Retirement: Azure Key Vault Secrets Provider Extension for Azure Arc enabled Kubernetes clusters",
+      "description": "<div>The <a href=\"https://learn.microsoft.com/en-us/azure/azure-arc/kubernetes/tutorial-akv-secrets-provider\">Azure Key Vault Secrets Provider Extension</a> for Azure Arc-enabled Kubernetes will be retired on October 9, 2027.<br></div><br>Customers currently using the extension should plan to migrate to the Azure Key Vault Secret Store Extension before the retirement date. The <a href=\"https://learn.microsoft.com/en-us/azure/azure-arc/kubernetes/secret-store-extension?tabs=arc-k8s%2Csimplified-configuration\">Azure Key Vault Secret Store Extension</a> provides equivalent functionality for accessing and synchronizing secrets from Azure Key Vault for workloads running on Azure Arc-enabled Kubernetes clusters. In addition, the Azure Key Vault Secret Store Extension includes enhancements such as support for offline access to secrets and authentication using workload identity federation, enabling applications to access Azure Key Vault without storing long-lived credentials on the cluster.<br><p>After retirement, the Azure Key Vault Secrets Provider Extension will no longer receive new features, bug fixes, security updates, or technical support.</p><p></p><p><a href=\"https://learn.microsoft.com/en-us/azure/azure-arc/kubernetes/secret-store-extension-migration?tabs=direct\">Migration guidance</a> is available to help customers transition their workloads and configurations to the Azure Key Vault Secret Store Extension ahead of retirement.</p>",
+      "status": null,
+      "created": "2026-10-09T20:27:17.3413744Z",
+      "modified": "2026-10-09T20:27:17.3413744Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "Retirement",
+          "year": 2027,
+          "month": "October"
+        }
+      ]
+    },
     {
       "id": "574430",
       "productCategories": [

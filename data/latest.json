@@ -1,214 +1,32 @@
 {
-  "generated_at": "2026-10-09T02:50:44.453837+00:00",
-  "window_start": "2026-10-02T02:50:44.453837+00:00",
-  "window_end": "2026-10-09T02:50:44.453837+00:00",
+  "generated_at": "2026-10-10T02:11:08.368266+00:00",
+  "window_start": "2026-10-03T02:11:08.368266+00:00",
+  "window_end": "2026-10-10T02:11:08.368266+00:00",
   "window_days": 7,
   "fetched_count": 20,
   "matched_count": 20,
-  "count": 7,
+  "count": 1,
   "items": [
     {
-      "id": "574430",
-      "productCategories": [
-        "Compute",
-        "Containers",
-        "Networking"
-      ],
-      "tags": [
-        "Features"
-      ],
-      "products": [
-        "Azure Kubernetes Service (AKS)",
-        "Azure NAT Gateway"
-      ],
-      "generalAvailabilityDate": "2026-10",
-      "previewAvailabilityDate": null,
-      "privatePreviewAvailabilityDate": null,
-      "title": "Generally Available: Managed StandardV2 NAT Gateway for AKS",
-      "description": "<p>AKS will now provision and manage a StandardV2 NAT Gateway\nfor clusters using an AKS-managed virtual network.</p><p>StandardV2 is now the default managed NAT Gateway SKU for\nnew clusters in supported regions when using the managedNATGateway outbound\ntype. StandardV2 NAT Gateway provides zone redundancy by default, higher\nbandwidth and throughput, and IPv6 support.</p><p>Existing AKS clusters can migrate from a managed Standard\nNAT Gateway or load balancer to a managed StandardV2 NAT Gateway.</p><a href=\"https://learn.microsoft.com/en-us/azure/aks/nat-gateway\">Learn more</a>.<br>",
-      "status": "Launched",
-      "created": "2026-10-08T22:51:01.6329557Z",
-      "modified": "2026-10-08T22:51:01.6329557Z",
-      "locale": null,
-      "availabilities": [
-        {
-          "ring": "General Availability",
-          "year": 2026,
-          "month": "October"
-        }
-      ]
-    },
-    {
-      "id": "573691",
-      "productCategories": [
-        "Databases",
-        "Hybrid + multicloud"
-      ],
-      "tags": [
-        "Feature"
-      ],
-      "products": [
-        "Azure Database for PostgreSQL"
-      ],
-      "generalAvailabilityDate": "2026-10",
-      "previewAvailabilityDate": null,
-      "privatePreviewAvailabilityDate": null,
-      "title": "Generally Available: Azure Database for PostgreSQL flexible server in East US 3 ",
-      "description": "<p>Now you can deploy Azure Database for PostgreSQL&nbsp;flexible server in the&nbsp;East US 3&nbsp;Azure region.&nbsp;&nbsp;</p><p><a href=\"https://learn.microsoft.com/azure/postgresql/flexible-server/overview#azure-regions\" rel=\"noreferrer noopener\">Learn more</a>.&nbsp;&nbsp;</p>",
-      "status": "Launched",
-      "created": "2026-10-08T19:56:31.5764663Z",
-      "modified": "2026-10-08T19:56:31.5764663Z",
-      "locale": null,
-      "availabilities": [
-        {
-          "ring": "General Availability",
-          "year": 2026,
-          "month": "October"
-        }
-      ]
-    },
-    {
-      "id": "567933",
-      "productCategories": [
-        "Developer tools",
-        "DevOps",
-        "Virtual desktop infrastructure"
-      ],
-      "tags": [
-        "Retirements"
-      ],
-      "products": [
-        "Microsoft Dev Box"
-      ],
-      "generalAvailabilityDate": null,
-      "previewAvailabilityDate": null,
-      "privatePreviewAvailabilityDate": null,
-      "title": "Retirement: Microsoft Dev Box will be retired on September 18, 2028",
-      "description": "<p>Microsoft Dev Box will\nretire on September 18, 2028. Beginning on September 14, 2026,\nMicrosoft Dev Box will begin the closing-down process. After retirement,\nMicrosoft Dev Box will no longer be available.&nbsp;</p><p>Microsoft Dev Box is currently in maintenance mode, and\nMicrosoft’s investments for developer cloud environments are focused on Windows\n365. Existing Microsoft Dev Box usage remains supported during the transition\nperiod, and we recommend that you begin planning your migration now to avoid\ndisruption to developer workflows.&nbsp;</p><p><b>What this means for you</b>&nbsp;</p><ul><li>If\nyou currently use Microsoft Dev Box, you can continue using your existing\ndeployments during the transition period.&nbsp;</li><li>No\nnew feature development is planned for the service.&nbsp;</li><li><font face=\"Aptos, sans-serif\">You\nshould evaluate and begin planning your mov</font>e to Windows 365,<font face=\"Aptos, sans-serif\"> which is\nthe recommended path forward for virtualized developer environments.&nbsp;</font></li></ul><p><b>Recommended action</b>&nbsp;</p><ul><li>Review\nyour current Dev Box usage, including dev centers, projects, pools, images, and\ndeveloper workflows.&nbsp;</li><li>Identify\nwhich scenarios can transition directly to Windows 365 and which require\nadditional planning.&nbsp;</li><li>Validate\nidentity, device management, networking, image, and licensing requirements for\nyour future-state environment.&nbsp;</li><li>Begin\ntesting replacement workflows as early as possible to reduce risk before\nretirement.&nbsp;&nbsp;</li></ul><p>If you have questions or need support, please contact your\nMicrosoft representative.&nbsp;</p>",
-      "status": null,
-      "created": "2026-10-08T18:23:25.2897312Z",
-      "modified": "2026-10-08T18:23:25.2897312Z",
-      "locale": null,
-      "availabilities": [
-        {
-          "ring": "Retirement",
-          "year": 2028,
-          "month": "September"
-        }
-      ]
-    },
-    {
-      "id": "567934",
-      "productCategories": [
-        "Developer tools",
-        "DevOps"
-      ],
-      "tags": [
-        "Retirements"
-      ],
-      "products": [
-        "Azure Deployment Environments"
-      ],
-      "generalAvailabilityDate": null,
-      "previewAvailabilityDate": null,
-      "privatePreviewAvailabilityDate": null,
-      "title": "Retirement: Azure Deployment Environments will be retired on February 22, 2027",
-      "description": "<div>Azure Deployment\nEnvironments will retire on February 22, 2027. Beginning on September\n14, 2026, Azure Deployment Environments will begin the closing-down\nprocess. After retirement, the service will no longer be available.&nbsp;</div><p>To help avoid disruption, we recommend that you begin\nassessing your current usage and planning your transition now. Review the\nenvironments, templates, and workflows in your organization that depend on\nAzure Deployment Environments and identify the replacement approach that best\nsupports your requirements.&nbsp;</p><p><b>What this means for you</b>&nbsp;</p><ul><li>You\nshould review all current Azure Deployment Environments usage across\nsubscriptions, projects, templates, and deployment workflows.&nbsp;</li><li>You\nshould identify an alternative approach for environment provisioning and\ndeveloper self-service before the retirement date.&nbsp;</li><li>You\nshould begin validating your migration plan as early as possible to minimize\noperational and development impact.&nbsp;</li></ul><p><b>Recommended action</b>&nbsp;</p><ul><li>Inventory\nyour current environments, templates, catalogs, and provisioning workflows.&nbsp;</li><li>Determine\nthe target platform or service that will replace Azure Deployment Environments\nfor your organization.&nbsp;</li><li>Test\nyour migration path, including governance, access control,\ninfrastructure-as-code compatibility, and developer workflow readiness.&nbsp;</li><li>Communicate\ninternal timelines to platform engineering teams, developers, and\nadministrators.&nbsp;</li></ul>",
-      "status": null,
-      "created": "2026-10-08T18:20:34.0097044Z",
-      "modified": "2026-10-08T18:20:34.0097044Z",
-      "locale": null,
-      "availabilities": [
-        {
-          "ring": "Retirement",
-          "year": 2027,
-          "month": "February"
-        }
-      ]
-    },
-    {
-      "id": "574343",
-      "productCategories": [
-        "Networking",
-        "Security"
-      ],
-      "tags": [
-        "Features",
-        "Security"
-      ],
-      "products": [
-        "Application Gateway",
-        "Azure Front Door",
-        "Web Application Firewall"
-      ],
-      "generalAvailabilityDate": "2026-10",
-      "previewAvailabilityDate": null,
-      "privatePreviewAvailabilityDate": null,
-      "title": "Generally Available: Exceptions in WAF for Azure Application Gateway and Azure Front Door",
-      "description": "<div style=\"font-family: Arial; font-size: 10pt;\"><br></div><p>Announcing the general availability of exceptions\nfor Web Application Firewall on Azure Application Gateway and Azure Front Door.</p><p>Azure Web\nApplication Firewall (WAF) helps protect your web applications from common\nthreats and attacks. In some cases, WAF may block requests that are safe and\nexpected for your application. Existing exclusions help reduce false positives\nby omitting specific request attributes, such as headers, cookies, query string\narguments, or body fields, from WAF evaluation while the rest of the request\ncontinues to be inspected.&nbsp;</p><p>Exceptions\nprovide additional flexibility by allowing specific requests to bypass WAF\ninspection at the rule, rule group, or managed ruleset level. Exceptions can be\ndefined using request URI, remote IP address, or request header name and value,\nhelping customers tune WAF policies more precisely while keeping other\nprotections active.&nbsp;</p><p>To configure exceptions, navigate to your WAF policy in the Azure portal, select Managed\nrules, and then add an exception.&nbsp;</p><p></p><p>Learn more:&nbsp;</p><ul><li><a href=\"https://learn.microsoft.com/azure/web-application-firewall/ag/application-gateway-exceptions\">Application\nGateway documentation</a>&nbsp;</li><li><a href=\"https://learn.microsoft.com/en-us/azure/web-application-firewall/afds/front-door-exceptions\">Front\nDoor documentation</a>&nbsp;</li></ul><p></p>",
-      "status": "Launched",
-      "created": "2026-10-08T17:29:30.8258325Z",
-      "modified": "2026-10-08T17:29:30.8258325Z",
-      "locale": null,
-      "availabilities": [
-        {
-          "ring": "General Availability",
-          "year": 2026,
-          "month": "October"
-        }
-      ]
-    },
-    {
-      "id": "574204",
-      "productCategories": [
-        "Integration",
-        "Internet of Things",
-        "Mobile",
-        "Web"
-      ],
-      "tags": [
-        "Feature"
-      ],
-      "products": [
-        "API Management"
-      ],
-      "generalAvailabilityDate": null,
-      "previewAvailabilityDate": "2026-10",
-      "privatePreviewAvailabilityDate": null,
-      "title": "Public Preview: Microsoft Agent 365 integration with Azure API Management",
-      "description": "<div style=\"\"><p data-pm-slice=\"1 1 []\" style=\"\"><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">The integration between </span><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">Microsoft Agent 365 and Azure API Management</span><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\"> is now available in public preview, helping organizations connect centralized governance with runtime enforcement for MCP servers and tools.</span></p><p style=\"\"><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">With this integration, organizations can:</span></p><ul data-spread=\"false\" style=\"\"><li style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\"><p><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">Discover Azure API Management gateways and MCP servers in Agent 365</span><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">, creating a centralized inventory of gateway-managed tools.</span></p></li><li style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\"><p><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">Control access to MCP servers</span><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\"> from Agent 365, with enforcement applied by Azure API Management at runtime.</span></p></li><li style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\"><p><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">Apply tool-level access controls</span><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\"> with the Azure API Management AI Gateway tier, including blocking individual tools without disabling the entire MCP server.</span></p></li><li style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\"><p><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">Monitor tool activity</span><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\"> to support auditing, operational visibility, and incident investigation.</span></p></li><li style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\"><p><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">Protect tool interactions</span><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\"> using Microsoft Defender and Microsoft Purview capabilities to evaluate tool requests and responses for security threats and sensitive-information risks.</span></p></li></ul><p style=\"\"><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">Azure API Management v2 tiers support centralized MCP inventory and server-level blocking and unblocking. The </span><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">AI Gateway tier, currently in preview,</span><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\"> adds individual tool-level blocking, tool activity observability, and tool threat protection.</span></p><p style=\"\"><span style=\"font-family: Arial; font-size: 10pt; font-weight: 400;\">This integration enables AI administrators to manage governance centrally in Agent 365 while platform teams enforce those policies through Azure API Management in the customer’s Azure environment.</span></p></div>",
-      "status": "In preview",
-      "created": "2026-10-08T17:24:34.4082770Z",
-      "modified": "2026-10-08T17:24:34.4082770Z",
-      "locale": null,
-      "availabilities": [
-        {
-          "ring": "Preview",
-          "year": 2026,
-          "month": "October"
-        }
-      ]
-    },
-    {
-      "id": "571831",
+      "id": "570313",
       "productCategories": [],
       "tags": [
-        "Announcement"
+        "Retirements"
       ],
       "products": [],
       "generalAvailabilityDate": null,
       "previewAvailabilityDate": null,
       "privatePreviewAvailabilityDate": null,
-      "title": "Announcing: Multiparty private offers in Microsoft Marketplace expands to Hong Kong",
-      "description": "Multiparty private offers give&nbsp;Microsoft&nbsp;partners a way to&nbsp;procure&nbsp;third-party cloud and AI solutions for customers through Marketplace. Software companies can expand into new markets by working with partners that bring established customer relationships, while customers rely on their trusted&nbsp;partners&nbsp;to manage their cloud and AI initiatives.&nbsp;<br>",
+      "title": "Retirement: Azure Key Vault Secrets Provider Extension for Azure Arc enabled Kubernetes clusters",
+      "description": "<div>The <a href=\"https://learn.microsoft.com/en-us/azure/azure-arc/kubernetes/tutorial-akv-secrets-provider\">Azure Key Vault Secrets Provider Extension</a> for Azure Arc-enabled Kubernetes will be retired on October 9, 2027.<br></div><br>Customers currently using the extension should plan to migrate to the Azure Key Vault Secret Store Extension before the retirement date. The <a href=\"https://learn.microsoft.com/en-us/azure/azure-arc/kubernetes/secret-store-extension?tabs=arc-k8s%2Csimplified-configuration\">Azure Key Vault Secret Store Extension</a> provides equivalent functionality for accessing and synchronizing secrets from Azure Key Vault for workloads running on Azure Arc-enabled Kubernetes clusters. In addition, the Azure Key Vault Secret Store Extension includes enhancements such as support for offline access to secrets and authentication using workload identity federation, enabling applications to access Azure Key Vault without storing long-lived credentials on the cluster.<br><p>After retirement, the Azure Key Vault Secrets Provider Extension will no longer receive new features, bug fixes, security updates, or technical support.</p><p></p><p><a href=\"https://learn.microsoft.com/en-us/azure/azure-arc/kubernetes/secret-store-extension-migration?tabs=direct\">Migration guidance</a> is available to help customers transition their workloads and configurations to the Azure Key Vault Secret Store Extension ahead of retirement.</p>",
       "status": null,
-      "created": "2026-10-08T14:17:44.5087831Z",
-      "modified": "2026-10-08T14:17:44.5087831Z",
+      "created": "2026-10-09T20:27:17.3413744Z",
+      "modified": "2026-10-09T20:27:17.3413744Z",
       "locale": null,
       "availabilities": [
         {
-          "ring": "Effective",
-          "year": 2026,
+          "ring": "Retirement",
+          "year": 2027,
           "month": "October"
         }
       ]
