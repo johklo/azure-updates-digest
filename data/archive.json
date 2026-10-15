@@ -1,7 +1,61 @@
 {
-  "updated_at": "2026-10-14T01:41:41.474285+00:00",
-  "count": 1082,
+  "updated_at": "2026-10-15T01:18:02.031882+00:00",
+  "count": 1084,
   "items": [
+    {
+      "id": "576377",
+      "productCategories": [],
+      "tags": [
+        "Feature"
+      ],
+      "products": [],
+      "generalAvailabilityDate": "2026-10",
+      "previewAvailabilityDate": null,
+      "privatePreviewAvailabilityDate": null,
+      "title": "Generally Available: Azure Cloud HSM hardware audit logging",
+      "description": "Hardware Audit Logging for Azure Cloud HSM provides hardware-generated audit records for supported HSM management operations, helping organizations strengthen security monitoring, compliance reporting, governance, and forensic investigations. Customers can access human-readable records alongside HSM-signed binary audit data, signatures, and certificates to independently verify the authenticity and integrity of signed audit batches. Audit events are delivered to Azure Monitor Log Analytics for use in existing monitoring and investigation workflows.<br>",
+      "status": "Launched",
+      "created": "2026-10-14T19:17:47.0248415Z",
+      "modified": "2026-10-14T19:17:47.0248415Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "General Availability",
+          "year": 2026,
+          "month": "October"
+        }
+      ]
+    },
+    {
+      "id": "576214",
+      "productCategories": [
+        "Management and governance",
+        "Migration"
+      ],
+      "tags": [
+        "Management",
+        "Feature"
+      ],
+      "products": [
+        "Azure Site Recovery"
+      ],
+      "generalAvailabilityDate": "2026-10",
+      "previewAvailabilityDate": null,
+      "privatePreviewAvailabilityDate": null,
+      "title": "Generally Available: Azure Site Recovery Support for Azure ARC-enabled Windows VMWare/Physical servers",
+      "description": "Azure Site Recovery (ASR) now supports disaster recovery for Azure ARC-enabled Windows VMWare virtual machines and on-premise physical servers. Customers can protect ARC-managed machines with ASR while continuing to use Azure ARC for governance, inventory, monitoring and management capabilities.&nbsp;<br><br><a href=\"https://learn.microsoft.com/en-us/azure/site-recovery/feature-updates-whats-new#azure-site-recovery-support-for-azure-arc-enabled-windows-vmwarephysical-servers\">Learn more.</a>",
+      "status": "Launched",
+      "created": "2026-10-14T19:13:31.7366427Z",
+      "modified": "2026-10-14T19:13:31.7366427Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "General Availability",
+          "year": 2026,
+          "month": "October"
+        }
+      ]
+    },
     {
       "id": "570313",
       "productCategories": [],

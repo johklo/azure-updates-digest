@@ -28052,5 +28052,55 @@
       "Azure Key Vault Secret Store Extension은 Azure Arc-enabled Kubernetes 클러스터에서 실행되는 워크로드가 Azure Key Vault의 시크릿에 접근하고 동기화하는 데 동등한 기능을 제공합니다."
     ],
     "translated_at": "2026-10-12T02:10:36.699785+00:00"
+  },
+  "576377": {
+    "summary": "Azure Cloud HSM now generally supports hardware-generated audit logging to enhance security monitoring and compliance.",
+    "key_points": [
+      "Provides hardware-generated audit records for supported HSM management operations.",
+      "Delivers both human-readable and HSM-signed binary audit data with signatures and certificates.",
+      "Audit events integrate with Azure Monitor Log Analytics for streamlined monitoring and investigation.",
+      "Helps organizations improve security monitoring, compliance reporting, governance, and forensic investigations."
+    ],
+    "doc_url": "",
+    "doc_title": "",
+    "doc_read": false,
+    "links": [],
+    "source": "llm",
+    "updated_at": "2026-10-15T01:18:09.524281+00:00",
+    "title_ko": "Generally Available: Azure Cloud HSM 하드웨어 감사 로깅",
+    "summary_ko": "Azure Cloud HSM이 이제 하드웨어 생성 감사 로깅을 Generally Available하여 보안 모니터링과 규정 준수를 강화합니다.",
+    "key_points_ko": [
+      "지원되는 HSM 관리 작업에 대해 하드웨어 생성 감사 기록을 제공합니다.",
+      "서명과 인증서가 포함된 사람이 읽을 수 있는 감사 데이터와 HSM 서명 이진 감사 데이터를 모두 제공합니다.",
+      "감사 이벤트가 Azure Monitor Log Analytics와 통합되어 모니터링과 조사를 간소화합니다.",
+      "조직이 보안 모니터링, 규정 준수 보고, 거버넌스 및 포렌식 조사를 개선하는 데 도움을 줍니다."
+    ],
+    "translated_at": "2026-10-15T01:18:19.649059+00:00"
+  },
+  "576214": {
+    "summary": "Azure Site Recovery is now generally available to support disaster recovery for Azure ARC-enabled Windows VMWare virtual machines and on-premises physical servers, enabling integrated protection alongside Azure ARC management capabilities.",
+    "key_points": [
+      "Supports disaster recovery for Azure ARC-managed Windows VMWare VMs and physical servers.",
+      "Allows customers to continue using Azure ARC for governance, inventory, monitoring, and management while protecting machines with ASR.",
+      "Enhances hybrid cloud disaster recovery by integrating Azure ARC and Azure Site Recovery services.",
+      "Available generally, enabling enterprise customers to protect diverse environments with unified Azure tools."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/site-recovery/feature-updates-whats-new#azure-site-recovery-support-for-azure-arc-enabled-windows-vmwarephysical-servers",
+    "doc_title": "New feature updates in Azure Site Recovery - Azure Site Recovery",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/en-us/azure/site-recovery/feature-updates-whats-new#azure-site-recovery-support-for-azure-arc-enabled-windows-vmwarephysical-servers"
+    ],
+    "source": "llm",
+    "updated_at": "2026-10-15T01:18:14.044183+00:00",
+    "title_ko": "Generally Available: Azure Site Recovery의 Azure ARC 지원 Windows VMWare/물리 서버 지원",
+    "summary_ko": "Azure Site Recovery가 이제 Generally Available 상태로 Azure ARC 지원 Windows VMWare 가상 머신과 온프레미스 물리 서버에 대한 재해 복구를 지원하여 Azure ARC 관리 기능과 통합된 보호를 제공합니다.",
+    "key_points_ko": [
+      "Azure ARC로 관리되는 Windows VMWare VM과 물리 서버에 대한 재해 복구를 지원합니다.",
+      "고객이 ASR로 머신을 보호하는 동안 Azure ARC를 통해 거버넌스, 인벤토리, 모니터링 및 관리를 계속 사용할 수 있습니다.",
+      "Azure ARC와 Azure Site Recovery 서비스를 통합하여 하이브리드 클라우드 재해 복구를 강화합니다.",
+      "Generally Available로 제공되어 엔터프라이즈 고객이 통합된 Azure 도구로 다양한 환경을 보호할 수 있습니다."
+    ],
+    "translated_at": "2026-10-15T01:18:25.946200+00:00"
   }
 }
