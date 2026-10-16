@@ -28102,5 +28102,84 @@
       "Generally Available로 제공되어 엔터프라이즈 고객이 통합된 Azure 도구로 다양한 환경을 보호할 수 있습니다."
     ],
     "translated_at": "2026-10-15T01:18:25.946200+00:00"
+  },
+  "576542": {
+    "summary": "Azure Files-to-Azure Files data copy and synchronization via Azure Storage Mover is now in public preview, enabling secure, incremental cross-region and cross-subscription file share data transfers to support business continuity and data consolidation.",
+    "key_points": [
+      "Supports copying and syncing SMB Azure file shares across storage accounts, regions, and subscriptions within the same Microsoft Entra tenant.",
+      "Enables scheduled incremental transfers with centralized scheduling, monitoring, auditing, and metadata preservation for managed recurring file share copy operations.",
+      "Currently in preview, available via Azure portal only, with support limited to SSD provisioned v2 SMB shares and up to 10 concurrent jobs per subscription per region.",
+      "Facilitates scenarios like disaster recovery, data residency compliance, file share consolidation, and placing data closer to applications or analytics workloads."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/storage-mover/azure-files-to-azure-files-copy",
+    "doc_title": "Get started with Azure Files-to-Azure Files data copy in Azure Storage Mover (preview)",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/en-us/azure/storage-mover/azure-files-to-azure-files-copy",
+      "https://learn.microsoft.com/en-us/azure/storage-mover/service-overview"
+    ],
+    "source": "llm",
+    "updated_at": "2026-10-16T01:04:07.294739+00:00",
+    "title_ko": "Public Preview: Azure Storage Mover를 통한 Azure Files 간 교차 지역 데이터 복사 및 동기화",
+    "summary_ko": "Azure Storage Mover를 이용한 Azure Files 간 데이터 복사 및 동기화가 Public Preview로 제공되어, 안전하고 증분 방식의 교차 지역 및 교차 구독 파일 공유 데이터 전송을 지원함으로써 비즈니스 연속성과 데이터 통합을 지원합니다.",
+    "key_points_ko": [
+      "동일한 Microsoft Entra 테넌트 내에서 스토리지 계정, 지역, 구독 간 SMB Azure 파일 공유 복사 및 동기화를 지원합니다.",
+      "중앙 집중식 스케줄링, 모니터링, 감사 및 메타데이터 보존 기능을 갖춘 관리형 반복 파일 공유 복사 작업에 대해 예약된 증분 전송을 가능하게 합니다.",
+      "현재 Preview 상태로 Azure 포털을 통해서만 이용 가능하며, 지원은 SSD 프로비저닝 v2 SMB 공유 및 구독당 지역별 최대 10개의 동시 작업으로 제한됩니다.",
+      "재해 복구, 데이터 거주지 규정 준수, 파일 공유 통합, 애플리케이션 또는 분석 워크로드에 데이터를 더 가깝게 배치하는 시나리오를 지원합니다."
+    ],
+    "translated_at": "2026-10-16T01:04:25.976732+00:00"
+  },
+  "571025": {
+    "summary": "Azure Standard Service Endpoint is now generally available, offering scalable, secure IaaS-to-PaaS connectivity with improved manageability and network security integration, addressing limitations of traditional service endpoints.",
+    "key_points": [
+      "Enables associating a single public IP as a network identifier across multiple subnets and VNets within the same tenant and region, simplifying configuration and reducing management overhead.",
+      "Overcomes scalability limits of traditional service endpoints, supporting thousands of connections without resource provider throttling.",
+      "Integrates with network security perimeter to enforce centralized, IP-based access controls for Azure PaaS services like Storage, SQL Database, Cosmos DB, and Key Vault, enhancing security posture.",
+      "Available in Azure public cloud and select national clouds (UsSec and UsNAT), offered as a paid feature billed per VNet per hour."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/private-link/service-endpoint-standard-overview",
+    "doc_title": "What is a standard service endpoint? - Azure Private Link",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/en-us/azure/private-link/service-endpoint-standard-overview"
+    ],
+    "source": "llm",
+    "updated_at": "2026-10-16T01:04:12.580866+00:00",
+    "title_ko": "Generally Available: Standard service endpoint",
+    "summary_ko": "Azure Standard Service Endpoint가 이제 Generally Available 상태로 제공되며, 확장 가능하고 안전한 IaaS-to-PaaS 연결을 제공하여 관리 용이성과 네트워크 보안 통합을 개선하고 기존 서비스 엔드포인트의 한계를 해결합니다.",
+    "key_points_ko": [
+      "단일 공용 IP를 동일 테넌트 및 지역 내 여러 서브넷과 VNet에 네트워크 식별자로 연결할 수 있어 구성 단순화 및 관리 부담을 줄입니다.",
+      "기존 서비스 엔드포인트의 확장성 한계를 극복하여 수천 개의 연결을 리소스 공급자 제한 없이 지원합니다.",
+      "Storage, SQL Database, Cosmos DB, Key Vault와 같은 Azure PaaS 서비스에 대해 중앙 집중식 IP 기반 접근 제어를 시행하는 네트워크 보안 경계와 통합되어 보안 태세를 강화합니다.",
+      "Azure 퍼블릭 클라우드 및 일부 국가별 클라우드(UsSec 및 UsNAT)에서 제공되며, VNet당 시간 단위로 과금되는 유료 기능입니다."
+    ],
+    "translated_at": "2026-10-16T01:04:33.022940+00:00"
+  },
+  "576334": {
+    "summary": "Automatic zone balance for Virtual Machine Scale Sets is now generally available, enabling continuous monitoring and automatic redistribution of VM instances across availability zones to improve application resilience against single-zone outages.",
+    "key_points": [
+      "Automatically detects and rebalances VM instances across two or more availability zones using a create-before-delete approach to minimize downtime.",
+      "Includes safeguards such as respecting instance protection policies, coordinating with Azure Autoscale, and limiting rebalancing to one VM at a time.",
+      "Best suited for stateless workloads and requires application health monitoring, zonal instances, and at least two availability zones.",
+      "Can be enabled via Azure portal, CLI, PowerShell, or REST API, helping customers maintain high availability and zone-level resiliency."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/auto-zone-balance-overview",
+    "doc_title": "Automatic zone balance for Virtual Machine Scale Sets - Azure Virtual Machine Scale Sets",
+    "doc_read": true,
+    "links": [
+      "https://aka.ms/AutoZoneBalanceDocs"
+    ],
+    "source": "llm",
+    "updated_at": "2026-10-16T01:04:19.245206+00:00",
+    "title_ko": "Generally Available: Virtual Machine Scale Sets용 자동 영역 균형 조정",
+    "summary_ko": "Virtual Machine Scale Sets용 자동 영역 균형 조정이 이제 Generally Available 상태로 제공되어, 단일 영역 장애에 대한 애플리케이션 복원력을 높이기 위해 가용성 영역 전반에 걸쳐 VM 인스턴스를 지속적으로 모니터링하고 자동으로 재분배할 수 있습니다.",
+    "key_points_ko": [
+      "다운타임을 최소화하기 위해 생성 후 삭제(create-before-delete) 방식을 사용하여 두 개 이상의 가용성 영역에 걸쳐 VM 인스턴스를 자동으로 감지하고 재균형 조정합니다.",
+      "인스턴스 보호 정책 준수, Azure Autoscale과의 조정, 한 번에 하나의 VM만 재균형 조정하는 등의 안전장치를 포함합니다.",
+      "무상태 워크로드에 가장 적합하며 애플리케이션 상태 모니터링, 영역별 인스턴스, 최소 두 개 이상의 가용성 영역이 필요합니다.",
+      "Azure 포털, CLI, PowerShell 또는 REST API를 통해 활성화할 수 있어 고객이 고가용성과 영역 수준 복원력을 유지하는 데 도움을 줍니다."
+    ],
+    "translated_at": "2026-10-16T01:04:40.227929+00:00"
   }
 }

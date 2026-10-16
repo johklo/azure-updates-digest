@@ -1,7 +1,89 @@
 {
-  "updated_at": "2026-10-15T01:18:02.031882+00:00",
-  "count": 1084,
+  "updated_at": "2026-10-16T01:03:52.719207+00:00",
+  "count": 1087,
   "items": [
+    {
+      "id": "576542",
+      "productCategories": [
+        "Storage"
+      ],
+      "tags": [
+        "Feature"
+      ],
+      "products": [
+        "Azure Files"
+      ],
+      "generalAvailabilityDate": null,
+      "previewAvailabilityDate": "2026-10",
+      "privatePreviewAvailabilityDate": null,
+      "title": "Public Preview: Azure Files cross-region data copy and synchronization with Azure Storage Mover",
+      "description": "Azure Files customers can now copy and synchronize file share data across storage accounts, Azure regions, and subscriptions within the same tenant using Azure Storage Mover. Schedule incremental transfers to maintain secondary copies that can support business continuity scenarios, copy data across regions, consolidate file shares, or place data closer to applications and analytics workloads. Centralized scheduling, monitoring, auditing, and metadata preservation provide a managed approach to recurring file share copy operations.<br><br>Azure Files-to-Azure Files data copy is now in preview for SMB shares. Sign up <a href=\"https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fforms.cloud.microsoft%2Fpages%2Fresponsepage.aspx%3Fid%3Dv4j5cvGGr0GRqy180BHbR8CNg9dCXCtNsi4tmyLcYApUOENIOThaQlpMRzlVTk9JVURNNEVUWDVGSC4u%26origin%3DlprLink%26route%3Dshorturl&amp;data=05%7C02%7Cv-spenrogers%40microsoft.com%7C4a68723e9fa84cdc569808df296129ea%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C639275169431799659%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&amp;sdata=CzlhktBUzICmcbixglcVxNgIdq4FMR8ENExvQq3eDSU%3D&amp;reserved=0\" data-auth=\"NotApplicable\" title=\"Original URL: https://forms.cloud.microsoft/pages/responsepage.aspx?id=v4j5cvGGr0GRqy180BHbR8CNg9dCXCtNsi4tmyLcYApUOENIOThaQlpMRzlVTk9JVURNNEVUWDVGSC4u&amp;origin=lprLink&amp;route=shorturl. Click or tap if you trust this link.\" data-linkindex=\"0\"><u>here</u></a>.<br><br>For questions or feedback, please reach out to the team at <a href=\"mailto:azurefiles@microsoft.com\" title=\"mailto:azurefiles@microsoft.com\" data-linkindex=\"3\"><u>azurefiles@microsoft.com</u></a>&nbsp;<br><br>Learn more:<ul><li><a href=\"https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Flearn.microsoft.com%2Fen-us%2Fazure%2Fstorage-mover%2Fazure-files-to-azure-files-copy&amp;data=05%7C02%7Cv-spenrogers%40microsoft.com%7C4a68723e9fa84cdc569808df296129ea%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C639275169431816092%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&amp;sdata=8bQGavIRQTPmarwlcwj1jVw4KJWVxHwAZjpbwMZqZU8%3D&amp;reserved=0\" data-auth=\"NotApplicable\" title=\"Original URL: https://learn.microsoft.com/en-us/azure/storage-mover/azure-files-to-azure-files-copy. Click or tap if you trust this link.\" data-linkindex=\"1\"><u>Get started with Azure Files-to-Azure Files data copy in Azure Storage Mover (preview)</u></a></li><li><a href=\"https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Flearn.microsoft.com%2Fen-us%2Fazure%2Fstorage-mover%2Fservice-overview&amp;data=05%7C02%7Cv-spenrogers%40microsoft.com%7C4a68723e9fa84cdc569808df296129ea%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C639275169431826584%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&amp;sdata=Jg1Yk%2BRFF4XhrU%2BOPsqDH2QIFkdR%2Fal3Ej5Akp78WQk%3D&amp;reserved=0\" data-auth=\"NotApplicable\" title=\"Original URL: https://learn.microsoft.com/en-us/azure/storage-mover/service-overview. Click or tap if you trust this link.\" data-linkindex=\"2\"><u>Introduction to Azure Storage Mover</u></a></li></ul>",
+      "status": "In preview",
+      "created": "2026-10-15T19:05:18.0767410Z",
+      "modified": "2026-10-15T19:05:18.0767410Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "Preview",
+          "year": 2026,
+          "month": "October"
+        }
+      ]
+    },
+    {
+      "id": "571025",
+      "productCategories": [
+        "Networking"
+      ],
+      "tags": [
+        "Features",
+        "Pricing & Offerings",
+        "SDK and Tools"
+      ],
+      "products": [
+        "Azure Private Link"
+      ],
+      "generalAvailabilityDate": "2026-10",
+      "previewAvailabilityDate": null,
+      "privatePreviewAvailabilityDate": null,
+      "title": "Generally Available: Standard service endpoint ",
+      "description": "<p>Standard service endpoint, a\nnew capability in the Azure Private Link family, provides a scalable and secure\napproach for connecting Azure IaaS workloads to Azure PaaS services. Standard service\nendpoint addresses the manageability, and the scale limitations of traditional\nservice endpoints by using Public IP addresses as network identifiers and\nintegrating with network security perimeter. This enables organizations to\nachieve large-scale IaaS-to-PaaS connectivity while maintaining strong network\naccess controls and simplified operations.&nbsp;</p><p>With standard service endpoint,\ncustomers can associate a public IP instance with multiple subnets and virtual\nnetworks across subscriptions within the same tenant and region. When combined\nwith network security perimeter, organizations can create a logical security\nboundary around supported Azure services, including Azure Storage, Azure SQL\nDatabase, Azure Cosmos DB, and Azure Key Vault. Access can then be restricted\nso that only approved networks and workloads are allowed to communicate with\nthese resources, helping reduce operational complexity while strengthening\nsecurity posture.&nbsp;</p><p>Standard service endpoint is a\npaid Azure feature and is billed at a fixed rate per virtual network (VNet) per\nhour.&nbsp;</p><p>Learn more:&nbsp;</p><ul><li><a href=\"https://learn.microsoft.com/en-us/azure/private-link/service-endpoint-standard-overview\">Documentation</a>&nbsp;&nbsp;</li><li><a href=\"https://azure.microsoft.com/en-us/pricing/details/private-link/\">Azure\nPrivate Link pricing</a>&nbsp;</li></ul>",
+      "status": "Launched",
+      "created": "2026-10-15T17:39:51.2291921Z",
+      "modified": "2026-10-15T17:39:51.2291921Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "General Availability",
+          "year": 2026,
+          "month": "October"
+        }
+      ]
+    },
+    {
+      "id": "576334",
+      "productCategories": [],
+      "tags": [
+        "Feature"
+      ],
+      "products": [],
+      "generalAvailabilityDate": "2026-10",
+      "previewAvailabilityDate": null,
+      "privatePreviewAvailabilityDate": null,
+      "title": "Generally Availabile: Automatic zone balance for Virtual Machine Scale Sets",
+      "description": "Automatic zone balance for Virtual Machine Scale Sets is now generally available. This feature continuously monitors scale sets deployed across availability zones and automatically redistributes VM instances when zonal imbalances occur. This helps reduce the risk that a single-zone outage disproportionately affects an application.<br><br>Automatic zone balance uses a create-before-delete approach: Azure creates a replacement VM in an under-provisioned zone and validates its health before removing an instance from an over-provisioned zone. Built-in safeguards respect instance protection policies, coordinate with Azure Autoscale, avoid active or recently completed scale-set operations, apply cooldown periods, and replace only one VM at a time.&nbsp;<br><br>This capability is best suited for stateless workloads and requires at least two availability zones, zonal instances, and application health monitoring. It can be enabled through the Azure portal, Azure CLI, PowerShell, or REST API.<br><br><a href=\"https://aka.ms/AutoZoneBalanceDocs\">Learn more</a>.<br><br>",
+      "status": "Launched",
+      "created": "2026-10-15T16:54:20.9981512Z",
+      "modified": "2026-10-15T16:54:20.9981512Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "General Availability",
+          "year": 2026,
+          "month": "October"
+        }
+      ]
+    },
     {
       "id": "576377",
       "productCategories": [],
