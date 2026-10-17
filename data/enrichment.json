@@ -28181,5 +28181,57 @@
       "Azure 포털, CLI, PowerShell 또는 REST API를 통해 활성화할 수 있어 고객이 고가용성과 영역 수준 복원력을 유지하는 데 도움을 줍니다."
     ],
     "translated_at": "2026-10-16T01:04:40.227929+00:00"
+  },
+  "576556": {
+    "summary": "Azure Databricks now offers a Private Network Gateway in Public Preview, enabling secure, simplified, and controlled serverless compute connectivity to virtual networks and transitively connected networks through a single managed gateway.",
+    "key_points": [
+      "Capability: Provides a single managed gateway for serverless compute to access multiple private resources, route egress through customer firewalls, and use stable source IPs.",
+      "Integration: Works with existing network connectivity configurations (NCCs) and complements Azure Private Link for flexible serverless network security.",
+      "Traffic control: Supports SPECIFIC_DESTINATIONS and ALL_TRAFFIC modes for fine-grained or full egress routing through customer security appliances.",
+      "Preview limitations: Gateway and subnet must be in the same region as the NCC; supports bandwidth tiers from 10 to 100 Gbps; configurable via account console, REST API, or Terraform."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/databricks/security/network/serverless-network-security/private-network-gateway",
+    "doc_title": "Private network gateway - Azure Databricks",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/en-us/azure/databricks/security/network/serverless-network-security/private-network-gateway"
+    ],
+    "source": "llm",
+    "updated_at": "2026-10-17T01:10:45.265656+00:00",
+    "title_ko": "Public Preview: Azure Databricks 프라이빗 네트워크 게이트웨이",
+    "summary_ko": "Azure Databricks가 이제 Public Preview로 프라이빗 네트워크 게이트웨이를 제공하여, 단일 관리형 게이트웨이를 통해 가상 네트워크 및 전이 연결된 네트워크에 대한 서버리스 컴퓨트의 보안적이고 간소화된 제어된 연결을 지원합니다.",
+    "key_points_ko": [
+      "기능: 서버리스 컴퓨트가 여러 프라이빗 리소스에 접근하고, 고객 방화벽을 통한 아웃바운드 경로 설정 및 안정적인 소스 IP 사용을 위한 단일 관리형 게이트웨이를 제공합니다.",
+      "통합: 기존 네트워크 연결 구성(NCC)과 연동되며, 유연한 서버리스 네트워크 보안을 위해 Azure Private Link를 보완합니다.",
+      "트래픽 제어: 고객 보안 장비를 통한 세밀한 또는 전체 아웃바운드 라우팅을 위해 SPECIFIC_DESTINATIONS 및 ALL_TRAFFIC 모드를 지원합니다.",
+      "Preview 제한 사항: 게이트웨이와 서브넷은 NCC와 동일한 지역에 있어야 하며, 10~100 Gbps 대역폭 티어를 지원하고, 계정 콘솔, REST API 또는 Terraform을 통해 구성할 수 있습니다."
+    ],
+    "translated_at": "2026-10-17T01:10:59.474717+00:00"
+  },
+  "574296": {
+    "summary": "Azure Key Vault Managed HSM now generally supports external key management, allowing organizations to retain physical control of key-encryption keys outside Microsoft infrastructure, meeting regulatory and sovereignty requirements.",
+    "key_points": [
+      "Capability: Enables Azure services supporting customer-managed keys with Managed HSM to use keys stored in customer-operated external HSMs via a proxy implementing a standard EKM Proxy API.",
+      "Availability: Generally available in all Azure public regions with Azure Private Link integration in public preview; requires enablement per subscription through Microsoft account team.",
+      "Customer impact: Provides full customer sovereignty over key material outside Microsoft infrastructure but shifts responsibility for proxy, external HSM, networking, availability, and support to customers or their HSM vendors, with no Microsoft SLA coverage for these components.",
+      "Operational considerations: External key management introduces additional latency, operational complexity, and costs compared to native Managed HSM keys, and does not support backup/restore or key release scenarios."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/key-vault/managed-hsm/external-key-management-overview",
+    "doc_title": "What is Managed HSM external key management?",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/en-us/azure/key-vault/managed-hsm/external-key-management-overview"
+    ],
+    "source": "llm",
+    "updated_at": "2026-10-17T01:10:53.382729+00:00",
+    "title_ko": "Generally Available: Azure Key Vault Managed HSM용 외부 키 관리",
+    "summary_ko": "Azure Key Vault Managed HSM이 이제 외부 키 관리를 Generally Available 상태로 지원하여, 조직이 Microsoft 인프라 외부에서 키 암호화 키에 대한 물리적 제어를 유지할 수 있어 규제 및 주권 요구사항을 충족합니다.",
+    "key_points_ko": [
+      "기능: Managed HSM을 사용하는 고객 관리 키를 지원하는 Azure 서비스가 표준 EKM Proxy API를 구현하는 프록시를 통해 고객이 운영하는 외부 HSM에 저장된 키를 사용할 수 있도록 합니다.",
+      "가용성: Azure Private Link 통합은 Public Preview로 제공되며, 모든 Azure 공용 지역에서 Generally Available 상태입니다; Microsoft 계정 팀을 통해 구독별 활성화가 필요합니다.",
+      "고객 영향: Microsoft 인프라 외부에서 키 자료에 대한 완전한 고객 주권을 제공하지만, 프록시, 외부 HSM, 네트워킹, 가용성 및 지원에 대한 책임은 고객 또는 해당 HSM 공급업체에 있으며, 이 구성 요소들에 대해 Microsoft SLA는 적용되지 않습니다.",
+      "운영 고려사항: 외부 키 관리는 기본 Managed HSM 키에 비해 추가 지연, 운영 복잡성 및 비용이 발생하며, 백업/복원 또는 키 해제 시나리오는 지원하지 않습니다."
+    ],
+    "translated_at": "2026-10-17T01:11:04.212500+00:00"
   }
 }
