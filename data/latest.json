@@ -1,74 +1,10 @@
 {
-  "generated_at": "2026-10-17T01:10:36.930428+00:00",
-  "window_start": "2026-10-10T01:10:36.930428+00:00",
-  "window_end": "2026-10-17T01:10:36.930428+00:00",
+  "generated_at": "2026-10-18T00:44:11.299860+00:00",
+  "window_start": "2026-10-11T00:44:11.299860+00:00",
+  "window_end": "2026-10-18T00:44:11.299860+00:00",
   "window_days": 7,
   "fetched_count": 7,
   "matched_count": 7,
-  "count": 2,
-  "items": [
-    {
-      "id": "576556",
-      "productCategories": [
-        "AI + machine learning",
-        "Analytics"
-      ],
-      "tags": [
-        "Feature"
-      ],
-      "products": [
-        "Azure Databricks"
-      ],
-      "generalAvailabilityDate": null,
-      "previewAvailabilityDate": "2026-10",
-      "privatePreviewAvailabilityDate": null,
-      "title": "Public Preview: Azure Databricks Private network gateway",
-      "description": "<p>Private network gateway for Azure Databricks is\nnow in Public Preview, enabling serverless compute to connect to resources in\nyour virtual network (VNet) and transitively connected networks through a\nsingle managed gateway. Customers can use the gateway to access multiple\nprivate resources, route serverless egress through their own firewalls or\nnetwork security appliances, and use stable, identifiable source IP addresses.&nbsp;</p><p>This simplifies secure connectivity for\nserverless workloads while giving organizations greater control over network\ntraffic and access to private resources.&nbsp;</p><p>Private network gateway integrates with existing network\nconnectivity configurations (NCCs) and complements Azure Private Link,\nproviding additional flexibility for securing serverless network connectivity.&nbsp;</p><p><a href=\"https://learn.microsoft.com/en-us/azure/databricks/security/network/serverless-network-security/private-network-gateway\">Learn\nmore</a>.&nbsp;&nbsp;</p>",
-      "status": "In preview",
-      "created": "2026-10-16T16:59:02.9623080Z",
-      "modified": "2026-10-16T16:59:02.9623080Z",
-      "locale": null,
-      "availabilities": [
-        {
-          "ring": "Preview",
-          "year": 2026,
-          "month": "October"
-        }
-      ]
-    },
-    {
-      "id": "574296",
-      "productCategories": [
-        "Security"
-      ],
-      "tags": [
-        "Security",
-        "Feature"
-      ],
-      "products": [
-        "Key Vault"
-      ],
-      "generalAvailabilityDate": "2026-10",
-      "previewAvailabilityDate": "2026-07",
-      "privatePreviewAvailabilityDate": null,
-      "title": "Generally Available: External key management for Azure Key Vault Managed HSM",
-      "description": "External key management for Azure Key Vault Managed HSM is now generally available in all Azure public regions. For organizations with regulatory or sovereignty requirements to retain physical control of key-encryption keys, it lets Azure services that support customer-managed keys with Managed HSM use keys held in a customer-operated hardware security module (HSM) outside Microsoft infrastructure. Managed HSM delegates key wrap and unwrap operations through a customer-operated proxy; the external key material stays outside Microsoft infrastructure.<br><br>Access requires enablement through your Microsoft account team. Connectivity to the proxy over the public internet is available with the GA feature. Azure Private Link integration is in public preview. Customers or their HSM providers are responsible for the external HSM, proxy, and network availability; these components are outside the Managed HSM service-level agreement (SLA).<br><br><a href=\"https://learn.microsoft.com/en-us/azure/key-vault/managed-hsm/external-key-management-overview\">Learn\nmore</a>.<br>",
-      "status": "Launched",
-      "created": "2026-10-16T16:50:27.1967037Z",
-      "modified": "2026-10-16T16:50:27.1967037Z",
-      "locale": null,
-      "availabilities": [
-        {
-          "ring": "Preview",
-          "year": 2026,
-          "month": "July"
-        },
-        {
-          "ring": "General Availability",
-          "year": 2026,
-          "month": "October"
-        }
-      ]
-    }
-  ]
+  "count": 0,
+  "items": []
 }
