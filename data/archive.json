@@ -1,7 +1,66 @@
 {
-  "updated_at": "2026-10-19T00:57:02.895253+00:00",
-  "count": 1089,
+  "updated_at": "2026-10-20T01:38:36.810391+00:00",
+  "count": 1091,
   "items": [
+    {
+      "id": "577165",
+      "productCategories": [
+        "DevOps",
+        "Management and governance"
+      ],
+      "tags": [
+        "Feature"
+      ],
+      "products": [
+        "Azure Monitor"
+      ],
+      "generalAvailabilityDate": "2026-10",
+      "previewAvailabilityDate": null,
+      "privatePreviewAvailabilityDate": null,
+      "title": "Generally Available: Metrics usage insights for Azure Monitor workspace",
+      "description": "Metrics usage insights is now generally available, giving you greater visibility into what’s driving metrics usage across your Azure Monitor workspace. Monitor workspace utilization, identify unused metrics, understand usage trends, and investigate changes in ingestion volume to help optimize costs and plan capacity.<br><br><a href=\"https://learn.microsoft.com/azure/azure-monitor/metrics/metrics-usage-insights\">Learn more</a>.<br>",
+      "status": "Launched",
+      "created": "2026-10-19T20:23:15.1677523Z",
+      "modified": "2026-10-19T20:23:15.1677523Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "General Availability",
+          "year": 2026,
+          "month": "October"
+        }
+      ]
+    },
+    {
+      "id": "573917",
+      "productCategories": [
+        "Networking",
+        "Management and governance"
+      ],
+      "tags": [
+        "Features"
+      ],
+      "products": [
+        "Azure DNS",
+        "Traffic Manager"
+      ],
+      "generalAvailabilityDate": "2026-10",
+      "previewAvailabilityDate": null,
+      "privatePreviewAvailabilityDate": null,
+      "title": "Generally Available: Azure DNS enables DNS-based load balancing through Traffic Manager linked records",
+      "description": "<p>Azure DNS now provides DNS based load balancing by seamless\nintegration with Azure Traffic Manager. Customers can directly associate an\nAzure DNS record set with a Traffic Manager profile, eliminating the need to\ncreate a CNAME record pointing to the trafficmanager.net domain.&nbsp;</p><p>This integration reduces DNS lookup latency by removing the\nadditional CNAME lookup and enables DNSSEC compatibility for load-balanced\nrecords by removing the unsigned trafficmanager.net domain from the DNS\nresolution chain.&nbsp;</p><a href=\"https://learn.microsoft.com/azure/dns/dns-traffic-manager-linked-records\">Learn\nmore</a>.&nbsp;<br><p></p>",
+      "status": "Launched",
+      "created": "2026-10-19T17:55:40.3803959Z",
+      "modified": "2026-10-19T17:55:40.3803959Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "General Availability",
+          "year": 2026,
+          "month": "October"
+        }
+      ]
+    },
     {
       "id": "576556",
       "productCategories": [

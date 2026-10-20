@@ -28233,5 +28233,57 @@
       "운영 고려사항: 외부 키 관리는 기본 Managed HSM 키에 비해 추가 지연, 운영 복잡성 및 비용이 발생하며, 백업/복원 또는 키 해제 시나리오는 지원하지 않습니다."
     ],
     "translated_at": "2026-10-17T01:11:04.212500+00:00"
+  },
+  "577165": {
+    "summary": "Metrics usage insights for Azure Monitor workspace is now generally available, enabling customers to monitor and optimize metrics ingestion, usage trends, and costs effectively.",
+    "key_points": [
+      "Provides detailed analysis of metrics usage, ingestion volume, throttling limits, and cost optimization opportunities by sending usage data to a Log Analytics workspace.",
+      "Available for all Azure Monitor workspaces with configuration via diagnostic settings and requires approximately 24 hours for data ingestion before insights are available.",
+      "Includes dashboards for Limits & Usage, Workspace Exploration, Unused Metrics, and Ingestion Volume Change to help identify unused metrics, monitor trends, and investigate cost changes.",
+      "Enables customers to optimize costs by identifying unused metrics to remove and plan capacity based on ingestion volume trends and throttling alerts."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/azure-monitor/metrics/metrics-usage-insights",
+    "doc_title": "Metrics usage insights in Azure Monitor (Preview) - Azure Monitor",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/azure/azure-monitor/metrics/metrics-usage-insights"
+    ],
+    "source": "llm",
+    "updated_at": "2026-10-20T01:38:47.486920+00:00",
+    "title_ko": "Generally Available: Azure Monitor workspace용 Metrics 사용 인사이트",
+    "summary_ko": "Azure Monitor workspace용 Metrics 사용 인사이트가 이제 Generally Available 상태로 제공되어, 고객이 메트릭 수집, 사용 추세 및 비용을 효과적으로 모니터링하고 최적화할 수 있습니다.",
+    "key_points_ko": [
+      "사용량 데이터를 Log Analytics workspace로 전송하여 메트릭 사용, 수집량, 제한 조절 및 비용 최적화 기회를 상세히 분석합니다.",
+      "진단 설정을 통해 구성 가능하며 모든 Azure Monitor workspace에서 사용할 수 있고, 인사이트 제공 전 약 24시간의 데이터 수집 시간이 필요합니다.",
+      "Limits & Usage, Workspace Exploration, Unused Metrics, Ingestion Volume Change 대시보드를 포함하여 미사용 메트릭 식별, 추세 모니터링 및 비용 변동 조사에 도움을 줍니다.",
+      "미사용 메트릭을 찾아 제거하고 수집량 추세 및 제한 조절 경고를 기반으로 용량 계획을 세워 비용 최적화를 지원합니다."
+    ],
+    "translated_at": "2026-10-20T01:38:56.548241+00:00"
+  },
+  "573917": {
+    "summary": "Azure DNS now supports DNS-based load balancing through direct integration with Azure Traffic Manager linked records, improving performance and DNSSEC compatibility.",
+    "key_points": [
+      "Directly associate Azure DNS record sets with Traffic Manager profiles, eliminating the need for CNAME records to trafficmanager.net.",
+      "Reduces DNS lookup latency and enables DNSSEC compatibility by removing unsigned intermediate hops in DNS resolution.",
+      "Supports up to 50 linked records per Traffic Manager profile, including zone apex (naked domain) support where CNAMEs are not allowed.",
+      "Strictly Typed Profiles enforce endpoint type consistency, reducing misconfigurations and aligning TTL with Traffic Manager health monitoring."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/dns/dns-traffic-manager-linked-records",
+    "doc_title": "Traffic Manager Linked Records overview - Azure DNS",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/azure/dns/dns-traffic-manager-linked-records"
+    ],
+    "source": "llm",
+    "updated_at": "2026-10-20T01:38:51.931945+00:00",
+    "title_ko": "Generally Available: Azure DNS가 Traffic Manager 연결 레코드를 통한 DNS 기반 부하 분산 지원",
+    "summary_ko": "Azure DNS가 이제 Azure Traffic Manager 연결 레코드와 직접 통합되어 DNS 기반 부하 분산을 지원하며, 성능과 DNSSEC 호환성을 향상합니다.",
+    "key_points_ko": [
+      "Azure DNS 레코드 세트를 Traffic Manager 프로필과 직접 연결하여 trafficmanager.net에 대한 CNAME 레코드 필요성을 제거합니다.",
+      "DNS 조회 지연 시간을 줄이고 DNS 해석 과정에서 서명되지 않은 중간 홉을 제거하여 DNSSEC 호환성을 가능하게 합니다.",
+      "CNAME이 허용되지 않는 영역 최상위 도메인(naked domain) 지원을 포함하여 Traffic Manager 프로필당 최대 50개의 연결된 레코드를 지원합니다.",
+      "Strictly Typed Profiles는 엔드포인트 유형 일관성을 강제하여 잘못된 구성 가능성을 줄이고 TTL을 Traffic Manager 상태 모니터링과 일치시킵니다."
+    ],
+    "translated_at": "2026-10-20T01:39:00.982377+00:00"
   }
 }
