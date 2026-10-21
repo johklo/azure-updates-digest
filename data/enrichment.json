@@ -28285,5 +28285,109 @@
       "Strictly Typed Profiles는 엔드포인트 유형 일관성을 강제하여 잘못된 구성 가능성을 줄이고 TTL을 Traffic Manager 상태 모니터링과 일치시킵니다."
     ],
     "translated_at": "2026-10-20T01:39:00.982377+00:00"
+  },
+  "576242": {
+    "summary": "Azure announced the public preview of the disable VNet peering route feature, enabling more granular control over traffic routing between peered virtual networks to simplify route management in large hub-and-spoke architectures.",
+    "key_points": [
+      "Disable VNet peering route (DPR) suppresses system-generated peering routes on subnets linked to a route table while keeping the peering connection intact.",
+      "Ideal for large hub-and-spoke networks, allowing traffic to be directed through network virtual appliances like Azure Firewall using summarized user-defined routes.",
+      "DPR is managed via route-table configurations or Azure Virtual Network Manager routing rule collections; it requires manual configuration of replacement UDRs and inspection paths.",
+      "This feature helps reduce complexity in route management as networks scale, improving traffic control without disrupting existing peering connections."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview?branch=main#disable-peering-route-propagation-preview",
+    "doc_title": "Azure Virtual Network Peering",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview?branch=main#disable-peering-route-propagation-preview"
+    ],
+    "source": "llm",
+    "updated_at": "2026-10-21T01:24:08.362395+00:00",
+    "title_ko": "Public Preview: VNet 피어링 경로 비활성화",
+    "summary_ko": "Azure는 VNet 피어링 경로 비활성화 기능의 Public Preview를 발표했습니다. 이 기능은 피어링된 가상 네트워크 간 트래픽 라우팅에 대해 더 세밀한 제어를 가능하게 하여 대규모 허브 앤 스포크 아키텍처에서 경로 관리를 단순화합니다.",
+    "key_points_ko": [
+      "Disable VNet peering route(DPR)는 피어링 연결은 유지하면서 라우트 테이블에 연결된 서브넷의 시스템 생성 피어링 경로를 억제합니다.",
+      "대규모 허브 앤 스포크 네트워크에 적합하며, 요약된 사용자 정의 경로를 사용해 Azure Firewall과 같은 네트워크 가상 어플라이언스를 통한 트래픽 경로 지정을 허용합니다.",
+      "DPR는 라우트 테이블 구성 또는 Azure Virtual Network Manager 라우팅 규칙 컬렉션을 통해 관리되며, 대체 UDR 및 검사 경로를 수동으로 구성해야 합니다.",
+      "이 기능은 네트워크 확장 시 경로 관리 복잡성을 줄이고 기존 피어링 연결을 방해하지 않으면서 트래픽 제어를 개선하는 데 도움을 줍니다."
+    ],
+    "translated_at": "2026-10-21T01:24:30.050784+00:00"
+  },
+  "577156": {
+    "summary": "Azure Front Door Premium WAF now generally supports service tag match conditions in custom rules, enabling easier and more precise control of traffic from Azure services without managing IP lists.",
+    "key_points": [
+      "Service tag match condition allows custom WAF rules to match HTTP request source IPs against Azure service tags, which are automatically updated IP address groups.",
+      "Supports use cases like allowing trusted Azure services, blocking unexpected Azure service traffic, restricting sensitive paths, and rate limiting service traffic.",
+      "Available in Azure Front Door Premium WAF with match variables SocketAddr (recommended) and RemoteAddr, selectable service tags, and no wildcard support.",
+      "Improves security and operational efficiency by simplifying rule management and enabling fine-grained traffic control based on Azure service origin."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/web-application-firewall/afds/service-tag-match-condition",
+    "doc_title": "Service Tag Match Condition for Azure Front Door - Azure Web Application Firewall",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/en-us/azure/web-application-firewall/afds/service-tag-match-condition"
+    ],
+    "source": "llm",
+    "updated_at": "2026-10-21T01:24:13.671222+00:00",
+    "title_ko": "Generally Available: Azure Front Door Premium WAF용 서비스 태그 매치 조건",
+    "summary_ko": "Azure Front Door Premium WAF가 이제 커스텀 규칙에서 서비스 태그 매치 조건을 Generally Available 상태로 지원하여, IP 목록 관리를 하지 않고도 Azure 서비스 트래픽을 더 쉽고 정밀하게 제어할 수 있습니다.",
+    "key_points_ko": [
+      "서비스 태그 매치 조건은 커스텀 WAF 규칙이 HTTP 요청의 출발지 IP를 자동으로 업데이트되는 Azure 서비스 태그 IP 주소 그룹과 매치할 수 있게 합니다.",
+      "신뢰할 수 있는 Azure 서비스 허용, 예상치 못한 Azure 서비스 트래픽 차단, 민감 경로 제한, 서비스 트래픽 속도 제한 등의 사용 사례를 지원합니다.",
+      "Azure Front Door Premium WAF에서 SocketAddr(권장) 및 RemoteAddr 매치 변수와 선택 가능한 서비스 태그를 사용하며, 와일드카드 지원은 없습니다.",
+      "규칙 관리를 단순화하고 Azure 서비스 출처 기반의 세밀한 트래픽 제어를 가능하게 하여 보안과 운영 효율성을 향상합니다."
+    ],
+    "translated_at": "2026-10-21T01:24:36.360433+00:00"
+  },
+  "577130": {
+    "summary": "Azure Application Gateway now supports keyless TLS termination using Azure Key Vault Managed HSM, ensuring private keys remain secure within FIPS 140-3 Level 3 validated HSMs and enhancing security and compliance for TLS operations.",
+    "key_points": [
+      "TLS handshake signatures are performed inside Azure Key Vault Managed HSM, with private keys never exported to the gateway.",
+      "Supports private key custody, managed identities, RBAC, and monitoring through Managed HSM diagnostic logs.",
+      "Enables separation of duties and centralized key management with cryptographic evidence of key generation and storage.",
+      "Leverages Azure Key Vault Managed HSM's high availability, single-tenant isolation, and FIPS 140-3 Level 3 validation for enhanced security and compliance."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/key-vault/managed-hsm/overview",
+    "doc_title": "Azure Key Vault Managed HSM Overview - Azure Key Vault Managed HSM",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/azure/key-vault/managed-hsm/overview",
+      "https://aka.ms/appgw/keylesstls",
+      "https://aka.ms/appgw/keylesstls/configure"
+    ],
+    "source": "llm",
+    "updated_at": "2026-10-21T01:24:19.560617+00:00",
+    "title_ko": "Generally Available: Azure Key Vault Managed HSM을 이용한 Application Gateway의 키리스 TLS",
+    "summary_ko": "Azure Application Gateway가 이제 Azure Key Vault Managed HSM을 사용한 키리스 TLS 종료를 지원하여, 개인 키가 FIPS 140-3 Level 3 검증을 받은 HSM 내에 안전하게 유지되도록 하며 TLS 작업의 보안성과 규정 준수를 강화합니다.",
+    "key_points_ko": [
+      "TLS 핸드셰이크 서명은 Azure Key Vault Managed HSM 내부에서 수행되며, 개인 키는 게이트웨이로 절대 내보내지 않습니다.",
+      "Managed HSM 진단 로그를 통한 개인 키 관리, 관리 ID, RBAC 및 모니터링을 지원합니다.",
+      "업무 분리와 중앙 집중식 키 관리를 가능하게 하며, 키 생성 및 저장에 대한 암호학적 증거를 제공합니다.",
+      "Azure Key Vault Managed HSM의 고가용성, 단일 테넌트 격리, FIPS 140-3 Level 3 검증을 활용하여 보안성과 규정 준수를 강화합니다."
+    ],
+    "translated_at": "2026-10-21T01:24:42.495446+00:00"
+  },
+  "575329": {
+    "summary": "Advanced platform metrics for Azure Monitor are now generally available, offering finer-grained signals to help customers quickly and accurately identify resource changes and trends.",
+    "key_points": [
+      "Provides more detailed and granular monitoring data for Azure resources.",
+      "Can be enabled directly from the Azure portal with an in-product prompt for eligible subscriptions.",
+      "Expanded availability to Fairfax and Mooncake regions beyond the public cloud.",
+      "Helps customers improve resource monitoring and troubleshooting efficiency."
+    ],
+    "doc_url": "",
+    "doc_title": "",
+    "doc_read": false,
+    "links": [],
+    "source": "llm",
+    "updated_at": "2026-10-21T01:24:23.132132+00:00",
+    "title_ko": "Generally Available: Azure Monitor용 고급 플랫폼 메트릭",
+    "summary_ko": "Azure Monitor용 고급 플랫폼 메트릭이 이제 Generally Available 상태로 제공되어, 고객이 리소스 변경 사항과 추세를 더 빠르고 정확하게 식별할 수 있도록 더 세분화된 신호를 제공합니다.",
+    "key_points_ko": [
+      "Azure 리소스에 대해 더 상세하고 세분화된 모니터링 데이터를 제공합니다.",
+      "적격 구독에 대해 제품 내 프롬프트를 통해 Azure 포털에서 직접 활성화할 수 있습니다.",
+      "퍼블릭 클라우드를 넘어 Fairfax 및 Mooncake 지역으로 가용성을 확장했습니다.",
+      "고객이 리소스 모니터링 및 문제 해결 효율성을 향상하는 데 도움이 됩니다."
+    ],
+    "translated_at": "2026-10-21T01:24:47.174231+00:00"
   }
 }
