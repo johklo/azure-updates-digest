@@ -28389,5 +28389,60 @@
       "고객이 리소스 모니터링 및 문제 해결 효율성을 향상하는 데 도움이 됩니다."
     ],
     "translated_at": "2026-10-21T01:24:47.174231+00:00"
+  },
+  "577273": {
+    "summary": "Microsoft Entra ID will enable organizations to choose their own third-party telephony providers for SMS and voice authentication starting October 30, 2026, supporting regulatory and operational needs while retiring Microsoft-provided telephony by February 1, 2027.",
+    "key_points": [
+      "Starting October 30, 2026, organizations can select supported third-party telephony providers via Microsoft Security Store for SMS and voice authentication.",
+      "Microsoft recommends migrating to phishing-resistant methods like passkeys, reserving telephony for users with specific business, regulatory, or technical requirements.",
+      "Microsoft-provided SMS and voice authentication will retire on February 1, 2027, with mandatory passkey registration for affected users to maintain access.",
+      "Organizations must prepare by identifying users needing telephony, evaluating providers, planning transitions, and validating Azure subscription and purchasing requirements."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sms-voice-retirement",
+    "doc_title": "Passkeys by default and retirement of Microsoft-provided SMS and voice authentication - Microsoft Entra ID",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sms-voice-retirement",
+      "https://learn.microsoft.com/en-us/security/store/customers/how-to-purchase-a-saas-solution-and-deploy-a-linked-solution",
+      "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-phone-providers",
+      "https://github.com/Azure-Samples/ExternalPhoneProvider-AzureFunction-Sample/blob/main/docs/COST-CALCULATOR.md"
+    ],
+    "source": "llm",
+    "updated_at": "2026-10-22T01:21:49.619185+00:00",
+    "title_ko": "Announcing: Microsoft Entra용 Choose Your Own Telephony (CYOT) 발표",
+    "summary_ko": "Microsoft Entra ID는 2026년 10월 30일부터 조직이 SMS 및 음성 인증을 위해 자체적으로 선택한 타사 전화 서비스 제공업체를 사용할 수 있도록 지원하며, 2027년 2월 1일까지 Microsoft 제공 전화 서비스를 종료하여 규제 및 운영 요구 사항을 충족합니다.",
+    "key_points_ko": [
+      "2026년 10월 30일부터 조직은 Microsoft Security Store를 통해 SMS 및 음성 인증용으로 지원되는 타사 전화 서비스 제공업체를 선택할 수 있습니다.",
+      "Microsoft는 피싱 방지 기능이 있는 패스키와 같은 인증 방법으로의 전환을 권장하며, 전화 서비스는 특정 비즈니스, 규제 또는 기술적 요구가 있는 사용자에게만 제한적으로 사용하도록 권장합니다.",
+      "Microsoft 제공 SMS 및 음성 인증은 2027년 2월 1일에 종료되며, 영향을 받는 사용자는 접근 권한 유지를 위해 필수적으로 패스키 등록을 해야 합니다.",
+      "조직은 전화 서비스가 필요한 사용자를 식별하고, 제공업체를 평가하며, 전환 계획을 수립하고, Azure 구독 및 구매 요건을 검증하는 등 준비 작업을 해야 합니다."
+    ],
+    "translated_at": "2026-10-22T01:22:00.755391+00:00"
+  },
+  "576716": {
+    "summary": "Azure Cosmos DB Safe Key Rotation is now generally available, providing timestamp metadata for account keys to enhance credential management and reduce service disruptions.",
+    "key_points": [
+      "Introduces timestamp metadata showing when each account key was last used.",
+      "Helps identify active keys before rotating or retiring credentials.",
+      "Reduces risk of service disruptions caused by disabling in-use keys.",
+      "Supports improved credential management, application continuity, and security compliance."
+    ],
+    "doc_url": "https://review.learn.microsoft.com/en-us/azure/cosmos-db/how-to-rotate-keys?branch=pr-en-us-803&tabs=azure-cli",
+    "doc_title": "",
+    "doc_read": false,
+    "links": [
+      "https://review.learn.microsoft.com/en-us/azure/cosmos-db/how-to-rotate-keys?branch=pr-en-us-803&tabs=azure-cli"
+    ],
+    "source": "llm",
+    "updated_at": "2026-10-22T01:21:54.147383+00:00",
+    "title_ko": "Generally Available: Azure Cosmos DB 안전한 키 교체",
+    "summary_ko": "Azure Cosmos DB Safe Key Rotation이 Generally Available 상태로 제공되며, 계정 키에 타임스탬프 메타데이터를 추가하여 자격 증명 관리를 강화하고 서비스 중단을 줄입니다.",
+    "key_points_ko": [
+      "각 계정 키가 마지막으로 사용된 시점을 보여주는 타임스탬프 메타데이터를 도입합니다.",
+      "자격 증명을 교체하거나 폐기하기 전에 활성 키를 식별하는 데 도움을 줍니다.",
+      "사용 중인 키를 비활성화하여 발생할 수 있는 서비스 중단 위험을 줄입니다.",
+      "향상된 자격 증명 관리, 애플리케이션 연속성 및 보안 규정 준수를 지원합니다."
+    ],
+    "translated_at": "2026-10-22T01:22:04.768342+00:00"
   }
 }
