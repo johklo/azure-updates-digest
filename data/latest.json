@@ -1,66 +1,39 @@
 {
-  "generated_at": "2026-10-22T01:21:40.676931+00:00",
-  "window_start": "2026-10-15T01:21:40.676931+00:00",
-  "window_end": "2026-10-22T01:21:40.676931+00:00",
+  "generated_at": "2026-10-23T01:20:16.946697+00:00",
+  "window_start": "2026-10-16T01:20:16.946697+00:00",
+  "window_end": "2026-10-23T01:20:16.946697+00:00",
   "window_days": 7,
-  "fetched_count": 13,
-  "matched_count": 13,
-  "count": 2,
+  "fetched_count": 11,
+  "matched_count": 11,
+  "count": 1,
   "items": [
     {
-      "id": "577273",
+      "id": "577618",
       "productCategories": [
-        "Identity"
-      ],
-      "tags": [
-        "Announcement"
-      ],
-      "products": [
-        "Microsoft Entra ID (formerly Azure AD)"
-      ],
-      "generalAvailabilityDate": null,
-      "previewAvailabilityDate": null,
-      "privatePreviewAvailabilityDate": null,
-      "title": "Announcing: Choose Your Own Telephony (CYOT) for Microsoft Entra",
-      "description": "<p><b>What and why</b></p><p>Starting October 30, 2026, Microsoft Entra ID will make the&nbsp;Choose Your Own Telephony Provider experience available. This feature enables organizations to use a supported third-party telecommunications provider for SMS and voice authentication. Organizations select a supported provider through Microsoft Security Store and manage their commercial relationship directly with the provider.</p><p>Microsoft recommends phishing-resistant authentication methods, such as passkeys, instead of SMS or voice authentication.&nbsp;Organizations should use a telephony provider for user populations that have a business, regulatory, or technical requirement for telephony-based authentication.</p><p>Starting October 30, 2026, organizations can choose to enable CYOT.&nbsp;Organizations planning to adopt CYOT should begin preparing before October 30.&nbsp;Microsoft-provided SMS and voice authentication are scheduled to begin retiring on February 1, 2027.</p><p><b>What you need to do to prepare</b></p><p>If your organization plans to adopt CYOT, we recommend preparing the following ahead of its targeted GA date of October 30, 2026:</p><ol><li data-leveltext=\"%1.\" data-font=\"\" data-list=\"\" data-list-defn-props=\"{&quot;335552541&quot;:0,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769242&quot;:[65533,0],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;%1.&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}\" data-aria-posinset=\"1\" data-aria-level=\"1\"><p>Identify the users who require SMS or voice authentication. Determine which user populations have a documented business, regulatory, or technical requirement for telephony-based authentication.</p></li><li data-leveltext=\"%1.\" data-font=\"\" data-list=\"\" data-list-defn-props=\"{&quot;335552541&quot;:0,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769242&quot;:[65533,0],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;%1.&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}\" data-aria-posinset=\"2\" data-aria-level=\"1\"><p>Evaluate phishing-resistant alternatives. Confirm that a phishing-resistant authentication method does not meet the requirements for these users.</p></li><li data-leveltext=\"%1.\" data-font=\"\" data-list=\"\" data-list-defn-props=\"{&quot;335552541&quot;:0,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769242&quot;:[65533,0],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;%1.&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}\" data-aria-posinset=\"3\" data-aria-level=\"1\"><p>Review supported telephony providers. Compare providers based on geographic coverage, supported delivery channels, pricing, support, security, and compliance capabilities.</p></li><li data-leveltext=\"%1.\" data-font=\"\" data-list=\"\" data-list-defn-props=\"{&quot;335552541&quot;:0,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769242&quot;:[65533,0],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;%1.&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}\" data-aria-posinset=\"4\" data-aria-level=\"1\"><p>Review organizational requirements. Work with the appropriate teams in your organization to review procurement, privacy, and regulatory requirements before selecting a provider.</p></li><li data-leveltext=\"%1.\" data-font=\"\" data-list=\"\" data-list-defn-props=\"{&quot;335552541&quot;:0,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769242&quot;:[65533,0],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;%1.&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}\" data-aria-posinset=\"5\" data-aria-level=\"1\"><p>Plan your transition. Review the <a href=\"https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sms-voice-retirement\" rel=\"noreferrer noopener\">guidance for the retirement of Microsoft-provided SMS and voice authentication</a> and plan your deployment accordingly.</p></li><li data-leveltext=\"%1.\" data-font=\"\" data-list=\"\" data-list-defn-props=\"{&quot;335552541&quot;:0,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769242&quot;:[65533,0],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;%1.&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}\" data-aria-posinset=\"6\" data-aria-level=\"1\"><p>Validate Azure subscription and purchasing requirements. Confirm that the <a href=\"https://learn.microsoft.com/en-us/security/store/customers/how-to-purchase-a-saas-solution-and-deploy-a-linked-solution\" rel=\"noreferrer noopener\">subscription is eligible</a> and that your organization permits the required Azure Marketplace or Security Store provider purchase.</p></li><li data-leveltext=\"%1.\" data-font=\"\" data-list=\"\" data-list-defn-props=\"{&quot;335552541&quot;:0,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769242&quot;:[65533,0],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;%1.&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}\" data-aria-posinset=\"7\" data-aria-level=\"1\"><p>Estimate costs. Review provider pricing and expected Azure infrastructure charges before deployment.</p></li></ol><p>Learn more</p><ul data-editing-info=\"{&quot;orderedStyleType&quot;:1,&quot;unorderedStyleType&quot;:1}\"><li data-leveltext=\"\" data-font=\"Symbol\" data-list=\"\" data-list-defn-props=\"{&quot;335552541&quot;:1,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}\" data-aria-posinset=\"1\" data-aria-level=\"1\"><p><a href=\"https://learn.microsoft.com/en-us/entra/identity/authentication/concept-phone-providers\" rel=\"noreferrer noopener\">Supported telecommunications providers and provider offers</a></p></li><li data-leveltext=\"\" data-font=\"Symbol\" data-list=\"\" data-list-defn-props=\"{&quot;335552541&quot;:1,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}\" data-aria-posinset=\"2\" data-aria-level=\"1\"><p><a href=\"https://github.com/Azure-Samples/ExternalPhoneProvider-AzureFunction-Sample/blob/main/docs/COST-CALCULATOR.md\" rel=\"noreferrer noopener\">Azure resource requirements and pricing guidance</a></p></li></ul><p></p>",
-      "status": null,
-      "created": "2026-10-21T17:38:32.9112077Z",
-      "modified": "2026-10-21T17:38:32.9112077Z",
-      "locale": null,
-      "availabilities": [
-        {
-          "ring": "Effective",
-          "year": 2026,
-          "month": "October"
-        }
-      ]
-    },
-    {
-      "id": "576716",
-      "productCategories": [
-        "Databases",
-        "Internet of Things"
+        "Storage",
+        "Analytics"
       ],
       "tags": [
         "Feature"
       ],
       "products": [
-        "Azure Cosmos DB"
+        "Azure Blob Storage",
+        "Azure Data Lake Storage"
       ],
-      "generalAvailabilityDate": "2026-10",
+      "generalAvailabilityDate": "2026-05",
       "previewAvailabilityDate": null,
       "privatePreviewAvailabilityDate": null,
-      "title": "Generally Available: Azure Cosmos DB Safe Key Rotation",
-      "description": "<p>Safe Key Rotation for Azure Cosmos DB is now generally available. You can view timestamp metadata showing when each account key was last used, helping you identify active keys before rotating or retiring credentials.</p><p>This visibility helps reduce the risk of service disruptions caused by disabling keys that are still in use. It also gives you actionable insights to improve credential management, maintain application continuity, and support modern security and compliance practices.</p><p><a href=\"https://review.learn.microsoft.com/en-us/azure/cosmos-db/how-to-rotate-keys?branch=pr-en-us-803&amp;tabs=azure-cli\">Learn\nmore</a>.&nbsp;</p>",
+      "title": "Generally Available: ABFS Vectored Read for Azure Data Lake Storage",
+      "description": "<p data-line=\"22\" dir=\"auto\">ABFS Vectored Read helps compatible analytics engines reduce request overhead for selective reads in Azure Data Lake Storage. By combining nearby file ranges into fewer storage requests and executing reads asynchronously, it can reduce network round trips for workloads such as selective Parquet queries.</p><p>Compatible Spark workloads can enable the capability through configuration, without rewriting queries or migrating data.</p><a href=\"https://techcommunity.microsoft.com/blog/analyticsonazure/optimize-selective-analytics-reads-in-azure-data-lake-storage-with-abfs-vectored/4564592\">Learn\nmore</a>.&nbsp;<br><p data-line=\"34\" dir=\"auto\"></p><p data-line=\"31\" dir=\"auto\"></p><p data-line=\"29\" dir=\"auto\"></p>",
       "status": "Launched",
-      "created": "2026-10-21T17:13:16.6926859Z",
-      "modified": "2026-10-21T17:13:16.6926859Z",
+      "created": "2026-10-22T18:01:00.8638115Z",
+      "modified": "2026-10-22T18:01:00.8638115Z",
       "locale": null,
       "availabilities": [
         {
           "ring": "General Availability",
           "year": 2026,
-          "month": "October"
+          "month": "May"
         }
       ]
     }

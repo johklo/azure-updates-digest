@@ -28444,5 +28444,31 @@
       "향상된 자격 증명 관리, 애플리케이션 연속성 및 보안 규정 준수를 지원합니다."
     ],
     "translated_at": "2026-10-22T01:22:04.768342+00:00"
+  },
+  "577618": {
+    "summary": "ABFS Vectored Read is now generally available, enabling compatible analytics engines to reduce request overhead and improve performance for selective reads in Azure Data Lake Storage without requiring query rewrites or data migration.",
+    "key_points": [
+      "Combines nearby file ranges into fewer asynchronous storage requests to reduce network round trips for selective Parquet queries.",
+      "Compatible Spark workloads can enable the feature via configuration (spark.hadoop.parquet.hadoop.vectored.io.enabled=true) without changing queries.",
+      "Requires Apache Hadoop 3.3.5+ with hadoop-azure module and parquet-hadoop 1.12.3+; not supported in Azure Databricks or Photon runtimes currently.",
+      "Benefits depend on workload characteristics and environment; customers should benchmark selective-read workloads against baselines to measure improvements."
+    ],
+    "doc_url": "https://techcommunity.microsoft.com/blog/analyticsonazure/optimize-selective-analytics-reads-in-azure-data-lake-storage-with-abfs-vectored/4564592",
+    "doc_title": "Optimize selective analytics reads in Azure Data Lake Storage with ABFS Vectored Read | Microsoft Community Hub",
+    "doc_read": true,
+    "links": [
+      "https://techcommunity.microsoft.com/blog/analyticsonazure/optimize-selective-analytics-reads-in-azure-data-lake-storage-with-abfs-vectored/4564592"
+    ],
+    "source": "llm",
+    "updated_at": "2026-10-23T01:20:29.144449+00:00",
+    "title_ko": "Generally Available: Azure Data Lake Storage용 ABFS Vectored Read",
+    "summary_ko": "ABFS Vectored Read가 Generally Available 상태로 제공되어, 호환되는 분석 엔진이 쿼리 재작성이나 데이터 마이그레이션 없이 Azure Data Lake Storage에서 선택적 읽기 시 요청 오버헤드를 줄이고 성능을 향상할 수 있습니다.",
+    "key_points_ko": [
+      "선택적 Parquet 쿼리에 대해 네트워크 왕복 횟수를 줄이기 위해 인접한 파일 범위를 더 적은 비동기 스토리지 요청으로 결합합니다.",
+      "호환되는 Spark 워크로드는 쿼리를 변경하지 않고 구성(spark.hadoop.parquet.hadoop.vectored.io.enabled=true)을 통해 기능을 활성화할 수 있습니다.",
+      "Apache Hadoop 3.3.5+와 hadoop-azure 모듈, parquet-hadoop 1.12.3+가 필요하며, 현재 Azure Databricks나 Photon 런타임에서는 지원되지 않습니다.",
+      "효과는 워크로드 특성과 환경에 따라 다르므로, 고객은 선택적 읽기 워크로드를 기준선과 비교하여 성능 개선을 벤치마크해야 합니다."
+    ],
+    "translated_at": "2026-10-23T01:20:35.812267+00:00"
   }
 }
