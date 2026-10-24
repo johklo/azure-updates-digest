@@ -1,7 +1,36 @@
 {
-  "updated_at": "2026-10-23T01:20:16.946697+00:00",
-  "count": 1098,
+  "updated_at": "2026-10-24T01:25:04.048395+00:00",
+  "count": 1099,
   "items": [
+    {
+      "id": "577963",
+      "productCategories": [
+        "Management and governance",
+        "Storage"
+      ],
+      "tags": [
+        "Feature"
+      ],
+      "products": [
+        "Azure Backup"
+      ],
+      "generalAvailabilityDate": "2026-10",
+      "previewAvailabilityDate": null,
+      "privatePreviewAvailabilityDate": null,
+      "title": "Generally Available: Item Level Recovery for Azure VMs with Premium SSDv2 and Ultra Disks in Azure Backup",
+      "description": "Azure Backup now supports Item-Level Recovery (ILR) for Azure virtual machines using Premium SSD v2 and Ultra disks with both 512 byte and 4KB logical sector sizes. You can now recover individual files and folders from your Azure VMs with Premium SSDv2 and Ultra disks.&nbsp;<br><br>You can generate a file-recovery executable or script through the Azure portal, CLI, or PowerShell, then run it on a compatible machine to access the recovery point, selectively browse, and copy individual files or folders without performing a full disk or virtual machine restore, in parity with the existing ILR behavior.&nbsp;<br><br><a href=\"https://learn.microsoft.com/en-us/azure/backup/whats-new#item-level-recovery-support-for-premium-ssd-v2-and-ultra-disks\">Learn more</a>.<br>",
+      "status": "Launched",
+      "created": "2026-10-23T19:21:07.0797800Z",
+      "modified": "2026-10-23T19:21:07.0797800Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "General Availability",
+          "year": 2026,
+          "month": "October"
+        }
+      ]
+    },
     {
       "id": "577618",
       "productCategories": [

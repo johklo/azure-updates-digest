@@ -28470,5 +28470,31 @@
       "효과는 워크로드 특성과 환경에 따라 다르므로, 고객은 선택적 읽기 워크로드를 기준선과 비교하여 성능 개선을 벤치마크해야 합니다."
     ],
     "translated_at": "2026-10-23T01:20:35.812267+00:00"
+  },
+  "577963": {
+    "summary": "Azure Backup now supports Item-Level Recovery for Azure VMs using Premium SSD v2 and Ultra disks, enabling selective file and folder recovery without full VM restore, enhancing recovery flexibility and efficiency.",
+    "key_points": [
+      "Supports Item-Level Recovery (ILR) for Azure VMs with Premium SSD v2 and Ultra disks with both 512 byte and 4KB logical sector sizes.",
+      "Users can generate a recovery executable or script via Azure portal, CLI, or PowerShell to selectively browse and recover files/folders from recovery points.",
+      "Eliminates the need for full disk or VM restore when recovering individual files, improving recovery speed and reducing downtime.",
+      "Brings parity in ILR capabilities across different disk types, expanding recovery options for enterprise customers using premium storage."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/backup/whats-new#item-level-recovery-support-for-premium-ssd-v2-and-ultra-disks",
+    "doc_title": "What's new in the Azure Backup service - Azure Backup",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/en-us/azure/backup/whats-new#item-level-recovery-support-for-premium-ssd-v2-and-ultra-disks"
+    ],
+    "source": "llm",
+    "updated_at": "2026-10-24T01:25:16.022495+00:00",
+    "title_ko": "Generally Available: Azure Backup의 Premium SSDv2 및 Ultra 디스크를 사용하는 Azure VM용 항목 수준 복구",
+    "summary_ko": "Azure Backup이 이제 Premium SSD v2 및 Ultra 디스크를 사용하는 Azure VM에 대해 항목 수준 복구(Item-Level Recovery)를 지원하여 전체 VM 복원 없이도 선택적으로 파일과 폴더를 복구할 수 있어 복구 유연성과 효율성을 향상합니다.",
+    "key_points_ko": [
+      "512바이트 및 4KB 논리 섹터 크기를 가진 Premium SSD v2 및 Ultra 디스크를 사용하는 Azure VM에 대해 항목 수준 복구(ILR)를 지원합니다.",
+      "사용자는 Azure 포털, CLI 또는 PowerShell을 통해 복구 실행 파일 또는 스크립트를 생성하여 복구 지점에서 파일/폴더를 선택적으로 탐색하고 복구할 수 있습니다.",
+      "개별 파일 복구 시 전체 디스크 또는 VM 복원이 필요 없어 복구 속도가 빨라지고 다운타임이 줄어듭니다.",
+      "다양한 디스크 유형 간 ILR 기능의 균형을 맞춰 프리미엄 스토리지를 사용하는 엔터프라이즈 고객의 복구 옵션을 확장합니다."
+    ],
+    "translated_at": "2026-10-24T01:25:21.561331+00:00"
   }
 }
