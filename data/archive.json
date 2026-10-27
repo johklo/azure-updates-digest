@@ -1,7 +1,36 @@
 {
-  "updated_at": "2026-10-26T01:02:57.868583+00:00",
-  "count": 1099,
+  "updated_at": "2026-10-27T01:53:23.723158+00:00",
+  "count": 1100,
   "items": [
+    {
+      "id": "577782",
+      "productCategories": [
+        "Management and governance",
+        "Networking"
+      ],
+      "tags": [
+        "Features"
+      ],
+      "products": [
+        "Network Watcher"
+      ],
+      "generalAvailabilityDate": "2026-10",
+      "previewAvailabilityDate": null,
+      "privatePreviewAvailabilityDate": null,
+      "title": "Generally Available: Network Watcher VNet flow logs filtering",
+      "description": "Azure Network Watcher VNet flow logs filtering is now generally available, enabling you to control which\nnetwork traffic flows are logged based on specific criteria such as IP\naddresses, ports, protocols, encryption state, flow state, and traffic direction.&nbsp;<p>With this capability, you\ncan focus logging on the traffic that matters most for monitoring,\ntroubleshooting, security, compliance, and network optimization. Filtering\nhelps reduce log volume by capturing only relevant flows, which can lower\nstorage costs and make analysis easier by reducing noise.&nbsp;</p><p>This feature is now\naccessible through the Azure portal, in addition to PowerShell, making it\neasier to configure and manage filtering for VNet flow logs directly from the\nportal.&nbsp;</p><a href=\"https://learn.microsoft.com/azure/network-watcher/vnet-flow-logs-filtering\">Learn\nmore</a>.",
+      "status": "Launched",
+      "created": "2026-10-26T16:02:05.5935580Z",
+      "modified": "2026-10-26T16:02:05.5935580Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "General Availability",
+          "year": 2026,
+          "month": "October"
+        }
+      ]
+    },
     {
       "id": "577963",
       "productCategories": [
