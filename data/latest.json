@@ -1,32 +1,90 @@
 {
-  "generated_at": "2026-10-27T01:53:23.723158+00:00",
-  "window_start": "2026-10-20T01:53:23.723158+00:00",
-  "window_end": "2026-10-27T01:53:23.723158+00:00",
+  "generated_at": "2026-10-28T02:03:55.004530+00:00",
+  "window_start": "2026-10-21T02:03:55.004530+00:00",
+  "window_end": "2026-10-28T02:03:55.004530+00:00",
   "window_days": 7,
-  "fetched_count": 9,
-  "matched_count": 9,
-  "count": 1,
+  "fetched_count": 8,
+  "matched_count": 8,
+  "count": 3,
   "items": [
     {
-      "id": "577782",
+      "id": "578358",
       "productCategories": [
-        "Management and governance",
-        "Networking"
+        "Storage"
       ],
       "tags": [
-        "Features"
+        "Management"
       ],
       "products": [
-        "Network Watcher"
+        "Azure Blob Storage"
       ],
       "generalAvailabilityDate": "2026-10",
       "previewAvailabilityDate": null,
       "privatePreviewAvailabilityDate": null,
-      "title": "Generally Available: Network Watcher VNet flow logs filtering",
-      "description": "Azure Network Watcher VNet flow logs filtering is now generally available, enabling you to control which\nnetwork traffic flows are logged based on specific criteria such as IP\naddresses, ports, protocols, encryption state, flow state, and traffic direction.&nbsp;<p>With this capability, you\ncan focus logging on the traffic that matters most for monitoring,\ntroubleshooting, security, compliance, and network optimization. Filtering\nhelps reduce log volume by capturing only relevant flows, which can lower\nstorage costs and make analysis easier by reducing noise.&nbsp;</p><p>This feature is now\naccessible through the Azure portal, in addition to PowerShell, making it\neasier to configure and manage filtering for VNet flow logs directly from the\nportal.&nbsp;</p><a href=\"https://learn.microsoft.com/azure/network-watcher/vnet-flow-logs-filtering\">Learn\nmore</a>.",
+      "title": "Generally Available: Higher limit of Azure Blob Storage accounts per region per subscription",
+      "description": "Higher Azure Storage account resource quotas are now generally available, supporting up to 1,000 storage accounts with standard endpoints per region, per subscription, up from the default of 250. Manage more accounts in a single subscription, reducing the need to distribute resources across multiple subscriptions.&nbsp;<br><br>Request quota increases through the Azure Portal, Azure CLI, or Azure PowerShell without opening a support ticket. Azure Storage Resource Provider (SRP) API read, write, and list operations automatically scale to support higher approved account quotas.&nbsp;<br><br>These changes apply to account management operations through the Storage Resource Provider control plane, not to data plane operations within a storage account.<br><br><a href=\"https://learn.microsoft.com/azure/quotas/storage-account-quota-requests\">Learn more</a>.",
       "status": "Launched",
-      "created": "2026-10-26T16:02:05.5935580Z",
-      "modified": "2026-10-26T16:02:05.5935580Z",
+      "created": "2026-10-27T21:16:52.9993698Z",
+      "modified": "2026-10-27T21:16:52.9993698Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "General Availability",
+          "year": 2026,
+          "month": "October"
+        }
+      ]
+    },
+    {
+      "id": "577260",
+      "productCategories": [
+        "AI + machine learning"
+      ],
+      "tags": [
+        "Feature"
+      ],
+      "products": [
+        "Microsoft Foundry"
+      ],
+      "generalAvailabilityDate": "2026-10",
+      "previewAvailabilityDate": null,
+      "privatePreviewAvailabilityDate": null,
+      "title": "Generally Available: Cost management and tagging for Claude models in Microsoft Foundry",
+      "description": "Microsoft Foundry now brings Claude models into Azure Cost Management alongside the rest of your Foundry spend, generally available. Until now, Claude charges appeared under SaaS rather than under the Foundry resource used to deploy them, and Claude deployments lacked the tags enterprises rely on for showback and chargeback, leaving finance and platform teams to reconcile costs by hand. With this release, Claude costs appear under the associated Foundry resource; Claude deployments and Foundry resources support tags that follow your organization's existing conventions; and Claude cost records carry model and usage_type tags, so you can filter and group spending by Claude model and separate input-token from output-token costs. Customers get one consistent, resource-level view of Claude spending and can allocate usage to the responsible teams and workloads without a separate reconciliation process. To get started, open Cost analysis in Azure Cost Management and group by resource or tag.&nbsp;<br><div><br></div><div><a href=\"https://learn.microsoft.com/azure/foundry/concepts/manage-costs\">Learn more</a>.</div>",
+      "status": "Launched",
+      "created": "2026-10-27T17:19:43.4374073Z",
+      "modified": "2026-10-27T17:19:43.4374073Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "General Availability",
+          "year": 2026,
+          "month": "October"
+        }
+      ]
+    },
+    {
+      "id": "578153",
+      "productCategories": [
+        "Networking",
+        "Security"
+      ],
+      "tags": [
+        "Features",
+        "Security"
+      ],
+      "products": [
+        "Azure Front Door",
+        "Web Application Firewall"
+      ],
+      "generalAvailabilityDate": "2026-10",
+      "previewAvailabilityDate": null,
+      "privatePreviewAvailabilityDate": null,
+      "title": "Generally Available: Azure Front Door profile and route level WAF policies ",
+      "description": "<p>Announcing the general availability of profile and route\nlevel policies for Azure Web Application Firewall (WAF) on Azure Front Door\nPremium. WAF policies are no longer limited to individual domains: you can now\napply broad baseline protection across an entire Azure Front Door profile and\nuse targeted policies for the routes that need different controls.&nbsp;&nbsp;&nbsp;</p><p>You can associate a WAF policy at the profile, domain, or\nroute scope. For example, use a profile level policy for common protections\nacross every domain in a profile, then apply a route level policy to sensitive\npaths such as sign-in, checkout, or API routes. This reduces policy duplication\nfor teams that run many applications behind a single Azure Front Door profile,\nwhile keeping granular controls where they're needed.&nbsp;&nbsp;&nbsp;</p><p>When more than one scope applies to a request, Azure Front\nDoor uses the most specific policy: a route level policy takes precedence over\na domain level policy, and a domain level policy takes precedence over a\nprofile level policy. Existing domain level associations continue to work\nwithout any changes.&nbsp;&nbsp;&nbsp;</p><p><a href=\"https://learn.microsoft.com/en-us/azure/web-application-firewall/afds/afds-overview#policy-attachment-scopes\">Learn\nmore</a>.&nbsp;&nbsp;</p>",
+      "status": "Launched",
+      "created": "2026-10-27T16:58:04.0040776Z",
+      "modified": "2026-10-27T16:58:04.0040776Z",
       "locale": null,
       "availabilities": [
         {

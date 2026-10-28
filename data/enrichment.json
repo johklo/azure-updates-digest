@@ -28522,5 +28522,83 @@
       "필터에서 논리 연산자 우선순위를 지원하며 생성 또는 업데이트 시 흐름 기록 유형을 사용자 지정할 수 있습니다."
     ],
     "translated_at": "2026-10-27T01:53:38.631472+00:00"
+  },
+  "578358": {
+    "summary": "Azure Blob Storage accounts per region per subscription quota has increased from 250 to 1,000, enabling customers to manage more storage accounts within a single subscription for better resource consolidation.",
+    "key_points": [
+      "Quota for standard endpoint storage accounts increased to 1,000 per region per subscription, up from 250.",
+      "Quota increase requests can be made via Azure Portal, CLI, or PowerShell without support tickets.",
+      "Storage Resource Provider API operations scale automatically to support higher approved quotas.",
+      "Change applies to account management operations, not data plane operations within storage accounts."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/quotas/storage-account-quota-requests",
+    "doc_title": "Increase Azure Storage account quotas - Azure Quotas",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/azure/quotas/storage-account-quota-requests"
+    ],
+    "source": "llm",
+    "updated_at": "2026-10-28T02:04:03.671724+00:00",
+    "title_ko": "Generally Available: 지역별 구독당 Azure Blob Storage 계정 한도 상향",
+    "summary_ko": "Azure Blob Storage의 지역별 구독당 계정 한도가 250개에서 1,000개로 증가하여, 고객이 단일 구독 내에서 더 많은 스토리지 계정을 관리하며 리소스 통합을 개선할 수 있습니다.",
+    "key_points_ko": [
+      "표준 엔드포인트 스토리지 계정 한도가 지역별 구독당 250개에서 1,000개로 증가했습니다.",
+      "한도 증가는 Azure Portal, CLI 또는 PowerShell을 통해 지원 티켓 없이 요청할 수 있습니다.",
+      "Storage Resource Provider API 작업은 승인된 더 높은 한도를 자동으로 지원하도록 확장됩니다.",
+      "이 변경 사항은 계정 관리 작업에 적용되며, 스토리지 계정 내 데이터 플레인 작업에는 적용되지 않습니다."
+    ],
+    "translated_at": "2026-10-28T02:04:14.706276+00:00"
+  },
+  "577260": {
+    "summary": "Microsoft Foundry now integrates Claude model costs into Azure Cost Management with tagging support, enabling enterprises to accurately allocate and manage Claude-related expenses alongside other Foundry resources.",
+    "key_points": [
+      "Claude model charges are now reported under the associated Foundry resource instead of as generic SaaS charges.",
+      "Claude deployments and Foundry resources support organizational tagging conventions, facilitating showback and chargeback processes.",
+      "Cost records include model and usage_type tags to filter and group spending by Claude model and token usage type (input/output).",
+      "Customers gain a consistent, resource-level view of Claude spending, eliminating manual reconciliation and improving financial and platform team workflows."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/foundry/concepts/manage-costs",
+    "doc_title": "Plan and Manage Costs - Microsoft Foundry",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/azure/foundry/concepts/manage-costs"
+    ],
+    "source": "llm",
+    "updated_at": "2026-10-28T02:04:07.348884+00:00",
+    "title_ko": "Generally Available: Microsoft Foundry의 Claude 모델 비용 관리 및 태깅 기능",
+    "summary_ko": "Microsoft Foundry가 Claude 모델 비용을 Azure Cost Management에 통합하고 태깅을 지원하여, 기업이 Claude 관련 비용을 다른 Foundry 리소스와 함께 정확하게 할당하고 관리할 수 있게 되었습니다.",
+    "key_points_ko": [
+      "Claude 모델 비용이 일반 SaaS 비용이 아닌 관련 Foundry 리소스 아래에서 보고됩니다.",
+      "Claude 배포와 Foundry 리소스가 조직의 태깅 규칙을 지원하여 비용 청구 및 할당 프로세스를 용이하게 합니다.",
+      "비용 기록에 모델 및 usage_type 태그가 포함되어 Claude 모델별 및 토큰 사용 유형(입력/출력)별로 지출을 필터링하고 그룹화할 수 있습니다.",
+      "고객은 Claude 지출에 대해 일관된 리소스 수준 뷰를 확보하여 수동 조정 작업을 없애고 재무 및 플랫폼 팀의 업무 효율을 향상시킵니다."
+    ],
+    "translated_at": "2026-10-28T02:04:17.978083+00:00"
+  },
+  "578153": {
+    "summary": "Azure Front Door Premium now supports general availability of WAF policies at profile and route levels, enabling broader baseline protection and more granular controls to reduce policy duplication and enhance security management.",
+    "key_points": [
+      "WAF policies can be applied at profile, domain, or route scopes, with route-level policies taking precedence over domain and profile levels.",
+      "Profile-level policies provide broad baseline protection across all domains in a Front Door profile, while route-level policies allow targeted controls for sensitive paths.",
+      "This capability reduces policy duplication for teams managing multiple applications behind a single Azure Front Door profile.",
+      "Existing domain-level WAF policy associations continue to function without changes, ensuring backward compatibility."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/web-application-firewall/afds/afds-overview#policy-attachment-scopes",
+    "doc_title": "What Is Azure Web Application Firewall on Azure Front Door?",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/en-us/azure/web-application-firewall/afds/afds-overview#policy-attachment-scopes"
+    ],
+    "source": "llm",
+    "updated_at": "2026-10-28T02:04:10.805378+00:00",
+    "title_ko": "Generally Available: Azure Front Door 프로필 및 라우트 수준 WAF 정책",
+    "summary_ko": "Azure Front Door Premium이 프로필 및 라우트 수준에서 WAF 정책의 Generally Available를 지원하여 더 넓은 기본 보호와 세분화된 제어를 가능하게 하여 정책 중복을 줄이고 보안 관리를 향상합니다.",
+    "key_points_ko": [
+      "WAF 정책은 프로필, 도메인 또는 라우트 범위에 적용할 수 있으며, 라우트 수준 정책이 도메인 및 프로필 수준보다 우선합니다.",
+      "프로필 수준 정책은 Front Door 프로필 내 모든 도메인에 걸쳐 광범위한 기본 보호를 제공하며, 라우트 수준 정책은 민감한 경로에 대한 타겟 제어를 허용합니다.",
+      "이 기능은 단일 Azure Front Door 프로필 뒤에서 여러 애플리케이션을 관리하는 팀의 정책 중복을 줄입니다.",
+      "기존 도메인 수준 WAF 정책 연관은 변경 없이 계속 작동하여 이전 버전과의 호환성을 보장합니다."
+    ],
+    "translated_at": "2026-10-28T02:04:22.250595+00:00"
   }
 }
