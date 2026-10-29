@@ -28600,5 +28600,83 @@
       "기존 도메인 수준 WAF 정책 연관은 변경 없이 계속 작동하여 이전 버전과의 호환성을 보장합니다."
     ],
     "translated_at": "2026-10-28T02:04:22.250595+00:00"
+  },
+  "577689": {
+    "summary": "Azure Container Apps is deprecating the Log Analytics logging destination in favor of Azure Monitor due to the legacy HTTP Data Collector API reaching end of support, requiring customers to migrate for continued secure log ingestion.",
+    "key_points": [
+      "Log Analytics logging destination for Azure Container Apps is now legacy; existing setups continue to work but migration to Azure Monitor is recommended.",
+      "The legacy HTTP Data Collector API support ends on September 14, 2026, with only critical security updates thereafter.",
+      "Migration involves switching to the Logs ingestion API, which supports schema management, RBAC, and OAuth-based authentication via Microsoft Entra.",
+      "Customers must review and update monitoring resources (queries, dashboards, alerts, workbooks) that depend on legacy tables ContainerAppConsoleLogs_CL and ContainerAppSystemLogs_CL."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/custom-logs-migrate?tabs=cli",
+    "doc_title": "Migrate From the HTTP Data Collector API to the Logs Ingestion API - Azure Monitor",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/custom-logs-migrate?tabs=cli",
+      "https://learn.microsoft.com/azure/container-apps/migrate-logs-azure-monitor?pivots=azure-portal",
+      "https://learn.microsoft.com/azure/azure-monitor/logs/custom-logs-migrate?tabs=cli"
+    ],
+    "source": "llm",
+    "updated_at": "2026-10-29T02:14:14.784256+00:00",
+    "title_ko": "Announcing: Azure Container Apps 로깅 대상 Log Analytics에서 Azure Monitor로 마이그레이션",
+    "summary_ko": "Azure Container Apps는 기존 HTTP Data Collector API의 지원 종료로 인해 Log Analytics 로깅 대상을 Azure Monitor로 전환하며, 고객이 안전한 로그 수집을 위해 마이그레이션해야 합니다.",
+    "key_points_ko": [
+      "Azure Container Apps의 Log Analytics 로깅 대상은 이제 레거시이며, 기존 설정은 계속 작동하지만 Azure Monitor로의 마이그레이션을 권장합니다.",
+      "레거시 HTTP Data Collector API 지원은 2026년 9월 14일에 종료되며, 이후에는 중요한 보안 업데이트만 제공됩니다.",
+      "마이그레이션은 스키마 관리, RBAC, Microsoft Entra 기반 OAuth 인증을 지원하는 Logs ingestion API로 전환하는 것을 포함합니다.",
+      "고객은 레거시 테이블 ContainerAppConsoleLogs_CL 및 ContainerAppSystemLogs_CL에 의존하는 쿼리, 대시보드, 경고, 워크북 등 모니터링 리소스를 검토하고 업데이트해야 합니다."
+    ],
+    "translated_at": "2026-10-29T02:14:27.511356+00:00"
+  },
+  "577117": {
+    "summary": "Azure Backup now supports Cross-Tenant Restore in public preview, enabling organizations to restore Azure VM backups into a different Azure tenant to enhance cyber resilience without duplicating backup data.",
+    "key_points": [
+      "Capability: Restore Azure VMs from backup recovery points into separate Azure tenants using the Azure portal or Resiliency experience.",
+      "Scope: Supports restoring managed disks <4 TB or VMs with <16 disks from Vault-Standard recovery points, including legacy unmanaged disk backups.",
+      "Storage requirements: Storage accounts must be in the same region as the vault; Blob Storage accounts are unsupported; Zone redundant storage (ZRS) is supported.",
+      "Customer impact: Enables independent recovery paths across tenants, strengthening cyber resilience while avoiding the cost and complexity of maintaining duplicate backups."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-arm-restore-vms",
+    "doc_title": "Restore VMs by using the Azure portal using Azure Backup - Azure Backup",
+    "doc_read": true,
+    "links": [
+      "https://aka.ms/azbctr"
+    ],
+    "source": "llm",
+    "updated_at": "2026-10-29T02:14:19.130872+00:00",
+    "title_ko": "Public Preview: Azure Backup의 Cross Tenant Restore",
+    "summary_ko": "Azure Backup이 Public Preview로 Cross-Tenant Restore를 지원하여, 조직이 백업 데이터를 중복하지 않고도 다른 Azure 테넌트로 Azure VM 백업을 복원해 사이버 복원력을 강화할 수 있습니다.",
+    "key_points_ko": [
+      "기능: Azure 포털 또는 Resiliency 경험을 통해 백업 복구 지점에서 별도의 Azure 테넌트로 Azure VM을 복원할 수 있습니다.",
+      "범위: Vault-Standard 복구 지점에서 관리 디스크 <4 TB 또는 디스크 16개 미만의 VM 복원을 지원하며, 기존의 관리되지 않는 디스크 백업도 포함됩니다.",
+      "스토리지 요구 사항: 스토리지 계정은 볼트와 동일한 지역에 있어야 하며, Blob Storage 계정은 지원되지 않습니다. 영역 중복 스토리지(ZRS)는 지원됩니다.",
+      "고객 영향: 테넌트 간 독립적인 복구 경로를 제공하여 사이버 복원력을 강화하며, 중복 백업 유지에 따른 비용과 복잡성을 줄입니다."
+    ],
+    "translated_at": "2026-10-29T02:14:32.045479+00:00"
+  },
+  "576547": {
+    "summary": "Microsoft Marketplace private offers now allow customers to purchase all included products in a single step, simplifying the buying process while maintaining governance controls.",
+    "key_points": [
+      "Simplifies purchase experience by combining acceptance and purchase into one step for eligible private offers.",
+      "Currently enabled for SaaS and Professional Services offer types.",
+      "Maintains purchase governance aligned with Azure role-based access controls via the billing admin role.",
+      "Helps organizations optimize spending with flexible pricing and contract terms tailored to their needs."
+    ],
+    "doc_url": "",
+    "doc_title": "",
+    "doc_read": false,
+    "links": [],
+    "source": "llm",
+    "updated_at": "2026-10-29T02:14:22.862481+00:00",
+    "title_ko": "Generally Available: Marketplace 개인 오퍼 향상 기능",
+    "summary_ko": "Microsoft Marketplace 개인 오퍼는 이제 고객이 포함된 모든 제품을 한 번에 구매할 수 있도록 하여 구매 과정을 간소화하면서도 거버넌스 제어를 유지합니다.",
+    "key_points_ko": [
+      "적격 개인 오퍼에 대해 수락과 구매를 한 단계로 결합하여 구매 경험을 간소화합니다.",
+      "현재 SaaS 및 Professional Services 오퍼 유형에 대해 활성화되어 있습니다.",
+      "청구 관리자 역할을 통한 Azure 역할 기반 액세스 제어와 일치하는 구매 거버넌스를 유지합니다.",
+      "조직이 필요에 맞춘 유연한 가격 및 계약 조건으로 지출을 최적화할 수 있도록 지원합니다."
+    ],
+    "translated_at": "2026-10-29T02:14:34.880109+00:00"
   }
 }
