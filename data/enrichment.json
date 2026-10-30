@@ -28678,5 +28678,83 @@
       "조직이 필요에 맞춘 유연한 가격 및 계약 조건으로 지출을 최적화할 수 있도록 지원합니다."
     ],
     "translated_at": "2026-10-29T02:14:34.880109+00:00"
+  },
+  "578850": {
+    "summary": "Large OS Disk Encryption (LOSDE) is now generally available for Azure Confidential VM migrations, enabling secure migration of larger OS disks into confidential computing environments without shrinking or re-encrypting images.",
+    "key_points": [
+      "Supports migration of OS disks larger than 127 GB for Windows, Ubuntu, Red Hat Enterprise Linux, and Rocky Linux workloads.",
+      "Encrypts OS disks with confidential disk encryption bound to the VM's virtual TPM, ensuring disk content is accessible only to the VM after attestation.",
+      "Allows use of customer-managed keys backed by Azure Key Vault Premium or Managed HSM, maintaining customer control over encryption keys.",
+      "Integrates with Azure Migrate to automate secure migration workflows, simplifying cloud modernization and expanding adoption of Azure Confidential VMs."
+    ],
+    "doc_url": "https://techcommunity.microsoft.com/blog/microsoft-security-blog/large-os-disk-encryption-is-now-generally-available-for-azure-confidential-vm-mi/4564613",
+    "doc_title": "Large OS Disk Encryption is now generally available for Azure Confidential VM migrations | Microsoft Community Hub",
+    "doc_read": true,
+    "links": [
+      "https://techcommunity.microsoft.com/blog/microsoft-security-blog/large-os-disk-encryption-is-now-generally-available-for-azure-confidential-vm-mi/4564613"
+    ],
+    "source": "llm",
+    "updated_at": "2026-10-30T02:27:41.314491+00:00",
+    "title_ko": "Generally Available: Azure Confidential VM 마이그레이션을 위한 대용량 OS 디스크 암호화",
+    "summary_ko": "대용량 OS 디스크 암호화(LOSDE)가 Azure Confidential VM 마이그레이션에 대해 Generally Available 상태로 제공되어, 이미지 축소나 재암호화 없이 더 큰 OS 디스크를 기밀 컴퓨팅 환경으로 안전하게 마이그레이션할 수 있습니다.",
+    "key_points_ko": [
+      "Windows, Ubuntu, Red Hat Enterprise Linux, Rocky Linux 워크로드에 대해 127GB를 초과하는 OS 디스크 마이그레이션을 지원합니다.",
+      "VM의 가상 TPM에 바인딩된 기밀 디스크 암호화를 통해 OS 디스크를 암호화하여, 검증 후 VM만 디스크 내용을 접근할 수 있도록 보장합니다.",
+      "Azure Key Vault Premium 또는 Managed HSM으로 지원되는 고객 관리 키를 사용할 수 있어, 암호화 키에 대한 고객의 제어권을 유지합니다.",
+      "Azure Migrate와 통합되어 보안 마이그레이션 워크플로우를 자동화하며, 클라우드 현대화 작업을 간소화하고 Azure Confidential VM 채택을 확대합니다."
+    ],
+    "translated_at": "2026-10-30T02:27:55.038466+00:00"
+  },
+  "578681": {
+    "summary": "Azure Front Door Premium WAF's HTTP DDoS ruleset is now generally available, providing adaptive, automated layer 7 DDoS protection that baselines traffic and mitigates attacks with minimal configuration, enhancing application uptime and security.",
+    "key_points": [
+      "Automated traffic baselines at profile and per-client levels with three sensitivity settings enable adaptive detection and mitigation of HTTP-layer DDoS attacks.",
+      "Two GA rules target anomalously high request rates and suspected bots using Microsoft Threat Intelligence, with additional geo rules in preview to handle distributed attacks by country/region.",
+      "WAF exceptions allow trusted traffic like health probes and load tests to bypass the ruleset, minimizing false positives and operational impact.",
+      "All rules default to Log action for safe evaluation before enforcement, with monitoring metrics available to track rule matches and ruleset activity."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/web-application-firewall/afds/http-ddos-ruleset",
+    "doc_title": "HTTP DDoS Ruleset - Front Door WAF",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/en-us/azure/web-application-firewall/afds/http-ddos-ruleset"
+    ],
+    "source": "llm",
+    "updated_at": "2026-10-30T02:27:46.014696+00:00",
+    "title_ko": "Generally Available: Azure Front Door Premium WAF용 HTTP DDoS 규칙 세트",
+    "summary_ko": "Azure Front Door Premium WAF의 HTTP DDoS 규칙 세트가 이제 Generally Available 상태로 제공되어, 트래픽을 기준선으로 삼고 최소한의 구성으로 공격을 완화하는 적응형 자동 레이어 7 DDoS 보호를 제공하여 애플리케이션 가용성과 보안을 강화합니다.",
+    "key_points_ko": [
+      "프로필 및 클라이언트별 수준에서 세 가지 민감도 설정을 통해 자동화된 트래픽 기준선을 생성하여 HTTP 레이어 DDoS 공격을 적응형으로 탐지 및 완화합니다.",
+      "두 가지 GA 규칙은 비정상적으로 높은 요청률과 Microsoft Threat Intelligence를 활용한 의심 봇을 대상으로 하며, 국가/지역별 분산 공격을 처리하기 위한 추가 지리 규칙은 Preview 상태입니다.",
+      "WAF 예외는 헬스 프로브 및 부하 테스트와 같은 신뢰할 수 있는 트래픽이 규칙 세트를 우회하도록 허용하여 오탐지 및 운영 영향을 최소화합니다.",
+      "모든 규칙은 시행 전에 안전한 평가를 위해 기본적으로 Log 작업으로 설정되며, 규칙 일치 및 규칙 세트 활동을 추적할 수 있는 모니터링 지표를 제공합니다."
+    ],
+    "translated_at": "2026-10-30T02:27:59.324890+00:00"
+  },
+  "578662": {
+    "summary": "Azure MCP Server 3.0 is now generally available, introducing enhanced AI agent integrations, infrastructure as code support, improved backup and recovery tools, cost optimization features, and stronger security defaults to streamline Azure management and increase operational safety.",
+    "key_points": [
+      "Introduces Terraform tools for provider docs, verified modules, resource export, and policy validation to improve infrastructure as code workflows.",
+      "Enhances protection and recovery with Azure Backup and Resilience Management tools supporting recovery plans, readiness checks, and drills.",
+      "Expands Azure Advisor capabilities for cost optimization including recommendation summaries, impact ranking, and utilization projections.",
+      "Implements safer security defaults for new Storage accounts, Event Hubs namespaces, NFS file shares, and Recovery Services vaults to limit access by default."
+    ],
+    "doc_url": "https://devblogs.microsoft.com/azure-sdk/azure-mcp-server-3-0-stable-release/",
+    "doc_title": "Azure MCP Server 3.0 stable release: More tools. More possibilities - Azure SDK Blog",
+    "doc_read": true,
+    "links": [
+      "https://devblogs.microsoft.com/azure-sdk/azure-mcp-server-3-0-stable-release/"
+    ],
+    "source": "llm",
+    "updated_at": "2026-10-30T02:27:50.446255+00:00",
+    "title_ko": "Generally Available: Azure MCP Server 3.0",
+    "summary_ko": "Azure MCP Server 3.0이 이제 Generally Available 상태로 제공되며, 향상된 AI 에이전트 통합, 인프라 코드 지원, 개선된 백업 및 복구 도구, 비용 최적화 기능, 그리고 강화된 보안 기본 설정을 도입하여 Azure 관리 효율성과 운영 안전성을 높입니다.",
+    "key_points_ko": [
+      "인프라 코드 워크플로우 개선을 위해 프로바이더 문서, 검증된 모듈, 리소스 내보내기, 정책 검증을 위한 Terraform 도구를 도입합니다.",
+      "복구 계획, 준비 상태 점검, 훈련을 지원하는 Azure Backup 및 Resilience Management 도구로 보호 및 복구 기능을 강화합니다.",
+      "추천 요약, 영향도 순위, 활용도 예측을 포함한 비용 최적화를 위해 Azure Advisor 기능을 확장합니다.",
+      "새로운 Storage 계정, Event Hubs 네임스페이스, NFS 파일 공유, Recovery Services 볼트에 대해 기본적으로 접근을 제한하는 더 안전한 보안 기본 설정을 구현합니다."
+    ],
+    "translated_at": "2026-10-30T02:28:04.299836+00:00"
   }
 }
