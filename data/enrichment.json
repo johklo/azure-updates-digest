@@ -28756,5 +28756,31 @@
       "새로운 Storage 계정, Event Hubs 네임스페이스, NFS 파일 공유, Recovery Services 볼트에 대해 기본적으로 접근을 제한하는 더 안전한 보안 기본 설정을 구현합니다."
     ],
     "translated_at": "2026-10-30T02:28:04.299836+00:00"
+  },
+  "577491": {
+    "summary": "Azure SQL Database now supports database-level user-assigned managed identities for authenticating queries to Azure Blob Storage and ADLS Gen2, enhancing security by isolating access per database and eliminating the need for shared secrets.",
+    "key_points": [
+      "Enables assigning a unique user-assigned managed identity to each database to authenticate external data queries without SAS tokens or shared server identities.",
+      "Supports both same-tenant and cross-tenant scenarios, including integration with customer-managed keys and federated client IDs for encryption key access.",
+      "Available in public preview, allowing fine-grained access control by granting storage permissions per database, reducing secret management overhead and improving data isolation.",
+      "Uses familiar T-SQL commands like CREATE DATABASE SCOPED CREDENTIAL with IDENTITY = 'DATABASE MANAGED IDENTITY' to configure authentication for external tables and OPENROWSET queries."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/azure-sql/database/database-level-managed-identity?view=azuresql",
+    "doc_title": "Use Database-Level Managed Identity with Azure SQL Database - Azure SQL Database",
+    "doc_read": true,
+    "links": [
+      "https://aka.ms/Database_Level_UAMI_AzureSQL"
+    ],
+    "source": "llm",
+    "updated_at": "2026-10-31T02:07:55.815208+00:00",
+    "title_ko": "Public Preview: Create Database Scoped Credential T-SQL에서 데이터베이스 수준 관리 ID(FIC 포함) 지원",
+    "summary_ko": "Azure SQL Database가 이제 Azure Blob Storage 및 ADLS Gen2에 대한 쿼리 인증을 위해 데이터베이스 수준의 사용자 할당 관리 ID를 지원하여, 데이터베이스별로 액세스를 분리하고 공유 비밀 키 없이 보안을 강화합니다.",
+    "key_points_ko": [
+      "각 데이터베이스에 고유한 사용자 할당 관리 ID를 할당하여 SAS 토큰이나 공유 서버 ID 없이 외부 데이터 쿼리를 인증할 수 있습니다.",
+      "고객 관리 키 및 암호화 키 접근을 위한 연합 클라이언트 ID 통합을 포함해 동일 테넌트 및 교차 테넌트 시나리오를 모두 지원합니다.",
+      "Public Preview로 제공되며, 데이터베이스별로 저장소 권한을 부여해 세밀한 액세스 제어가 가능하고 비밀 관리 부담을 줄이며 데이터 격리를 향상합니다.",
+      "CREATE DATABASE SCOPED CREDENTIAL 명령어에서 IDENTITY = 'DATABASE MANAGED IDENTITY'를 사용하는 익숙한 T-SQL 명령으로 외부 테이블 및 OPENROWSET 쿼리 인증 구성을 지원합니다."
+    ],
+    "translated_at": "2026-10-31T02:08:00.707889+00:00"
   }
 }

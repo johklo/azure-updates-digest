@@ -1,7 +1,36 @@
 {
-  "updated_at": "2026-10-30T02:27:28.881178+00:00",
-  "count": 1109,
+  "updated_at": "2026-10-31T02:07:41.213580+00:00",
+  "count": 1110,
   "items": [
+    {
+      "id": "577491",
+      "productCategories": [
+        "Databases",
+        "Hybrid + multicloud"
+      ],
+      "tags": [
+        "Feature"
+      ],
+      "products": [
+        "Azure SQL Database"
+      ],
+      "generalAvailabilityDate": null,
+      "previewAvailabilityDate": "2026-10",
+      "privatePreviewAvailabilityDate": null,
+      "title": "Public Preview: Support database-level managed identity (including FIC) in Create Database Scoped Credential T-SQL ",
+      "description": "<p>With database-level managed identity in Azure SQL Database, you can use a user-assigned managed identity for each database to query files in Azure Blob Storage and Azure Data Lake Storage Gen2 through external tables and OPENROWSET. You can authenticate these queries without storing shared access signature (SAS) tokens or relying on a shared server-level identity.&nbsp;</p><p>By assigning separate identities and storage permissions to your databases, you can limit each database to the data it needs—for example, granting your HR database access to HR files and your finance database access to finance files. This helps you isolate access across databases on the same logical server and reduces secret-management overhead, while retaining&nbsp;familiar T-SQL queries over external data.&nbsp;</p><p><a href=\"https://aka.ms/Database_Level_UAMI_AzureSQL\">Learn\nmore</a>.&nbsp;&nbsp;</p>",
+      "status": "In preview",
+      "created": "2026-10-30T17:16:27.2734710Z",
+      "modified": "2026-10-30T17:16:27.2734710Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "Preview",
+          "year": 2026,
+          "month": "October"
+        }
+      ]
+    },
     {
       "id": "578850",
       "productCategories": [],

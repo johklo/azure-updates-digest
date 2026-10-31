@@ -1,91 +1,36 @@
 {
-  "generated_at": "2026-10-30T02:27:28.881178+00:00",
-  "window_start": "2026-10-23T02:27:28.881178+00:00",
-  "window_end": "2026-10-30T02:27:28.881178+00:00",
+  "generated_at": "2026-10-31T02:07:41.213580+00:00",
+  "window_start": "2026-10-24T02:07:41.213580+00:00",
+  "window_end": "2026-10-31T02:07:41.213580+00:00",
   "window_days": 7,
   "fetched_count": 11,
   "matched_count": 11,
-  "count": 3,
+  "count": 1,
   "items": [
     {
-      "id": "578850",
-      "productCategories": [],
+      "id": "577491",
+      "productCategories": [
+        "Databases",
+        "Hybrid + multicloud"
+      ],
       "tags": [
         "Feature"
       ],
-      "products": [],
-      "generalAvailabilityDate": "2026-10",
-      "previewAvailabilityDate": null,
-      "privatePreviewAvailabilityDate": null,
-      "title": "Generally Available: Large OS Disk Encryption for Azure Confidential VM migrations",
-      "description": "Large OS Disk Encryption (LOSDE) is now generally available for Azure Confidential VM migration scenarios. Organizations can move larger, production-scale workloads into confidential computing with the OS disk fully protected, instead of being held back by disk size.<p>During migration, the OS disk is encrypted with confidential disk encryption. This protects all critical partitions and binds the encryption keys to the VM's virtual TPM, so disk content is accessible only to that VM, not to the host or hypervisor. Keys are released only after the platform passes attestation. Because encryption happens as part of the move, teams don't have to shrink, rebuild or re-encrypt large system images, and workloads move into a hardware-enforced trusted execution environment without code changes. Customers keep control of their keys, using platform-managed keys or their own keys backed by Azure Key Vault Premium or Managed HSM.</p><p><a href=\"https://techcommunity.microsoft.com/blog/microsoft-security-blog/large-os-disk-encryption-is-now-generally-available-for-azure-confidential-vm-mi/4564613\">Learn more</a>.&nbsp;</p>",
-      "status": "Launched",
-      "created": "2026-10-29T21:19:52.9485924Z",
-      "modified": "2026-10-29T21:19:52.9485924Z",
-      "locale": null,
-      "availabilities": [
-        {
-          "ring": "General Availability",
-          "year": 2026,
-          "month": "October"
-        }
-      ]
-    },
-    {
-      "id": "578681",
-      "productCategories": [
-        "Networking",
-        "Security"
-      ],
-      "tags": [
-        "Features",
-        "Security"
-      ],
       "products": [
-        "Azure Front Door",
-        "Web Application Firewall"
+        "Azure SQL Database"
       ],
-      "generalAvailabilityDate": "2026-10",
-      "previewAvailabilityDate": null,
+      "generalAvailabilityDate": null,
+      "previewAvailabilityDate": "2026-10",
       "privatePreviewAvailabilityDate": null,
-      "title": "Generally Available: HTTP DDoS ruleset for Azure Front Door Premium WAF",
-      "description": "Announcing the general\navailability of the HTTP DDoS ruleset for Azure Web Application Firewall (WAF)\non Azure Front Door Premium.&nbsp;<p>HTTP-layer DDoS attacks remain a leading cause of\napplication downtime, and static controls such as IP filters and fixed rate\nlimits often can't keep pace with distributed botnets. The HTTP DDoS ruleset\nprovides automated, adaptive layer 7 protection that learns, detects, and\ndefends with minimal configuration. Once assigned, it continuously baselines\nnormal traffic for each Azure Front Door profile and, when a surge indicates an\nattack, selectively mitigates offending clients with no emergency tuning required.&nbsp;</p><p>With general availability, the HTTP DDoS ruleset features:&nbsp;</p><ul><li>Automated traffic baselines\nat both the profile and per-client level, with three sensitivity levels for\neach rule.&nbsp;</li><li>Two generally available\nrules: one for clients sending anomalously high request rates, and one for\nsuspected bots identified by Microsoft Threat Intelligence.&nbsp;</li><li>Support for WAF exceptions,\nso trusted traffic such as health probes and load tests can be exempted from\nthe ruleset.&nbsp;</li></ul><p>Two new geo rules in the ruleset are also available in preview.\nThey learn thresholds for the countries and regions that send most of your\ntraffic, plus a combined threshold for all others, to help mitigate highly\ndistributed attacks. All rules default to the Log action, so you can review\nmatches before enforcing them.&nbsp;</p><p><a href=\"https://learn.microsoft.com/en-us/azure/web-application-firewall/afds/http-ddos-ruleset\">Learn\nmore</a>.&nbsp;</p>",
-      "status": "Launched",
-      "created": "2026-10-29T17:09:49.2718472Z",
-      "modified": "2026-10-29T17:09:49.2718472Z",
+      "title": "Public Preview: Support database-level managed identity (including FIC) in Create Database Scoped Credential T-SQL ",
+      "description": "<p>With database-level managed identity in Azure SQL Database, you can use a user-assigned managed identity for each database to query files in Azure Blob Storage and Azure Data Lake Storage Gen2 through external tables and OPENROWSET. You can authenticate these queries without storing shared access signature (SAS) tokens or relying on a shared server-level identity.&nbsp;</p><p>By assigning separate identities and storage permissions to your databases, you can limit each database to the data it needs—for example, granting your HR database access to HR files and your finance database access to finance files. This helps you isolate access across databases on the same logical server and reduces secret-management overhead, while retaining&nbsp;familiar T-SQL queries over external data.&nbsp;</p><p><a href=\"https://aka.ms/Database_Level_UAMI_AzureSQL\">Learn\nmore</a>.&nbsp;&nbsp;</p>",
+      "status": "In preview",
+      "created": "2026-10-30T17:16:27.2734710Z",
+      "modified": "2026-10-30T17:16:27.2734710Z",
       "locale": null,
       "availabilities": [
         {
-          "ring": "General Availability",
-          "year": 2026,
-          "month": "October"
-        }
-      ]
-    },
-    {
-      "id": "578662",
-      "productCategories": [
-        "Developer tools"
-      ],
-      "tags": [
-        "Features",
-        "SDK and Tools"
-      ],
-      "products": [
-        "SDKs"
-      ],
-      "generalAvailabilityDate": "2026-10",
-      "previewAvailabilityDate": null,
-      "privatePreviewAvailabilityDate": null,
-      "title": "Generally Available: Azure MCP Server 3.0",
-      "description": "<br>Azure MCP Server 3.0 is now generally available, expanding how AI agents and developer tools interact with Azure through the open Model Context Protocol (MCP).<br><br>This release introduces new and expanded capabilities:<ul data-editing-info=\"{&quot;orderedStyleType&quot;:1,&quot;unorderedStyleType&quot;:1}\"><li>Infrastructure as code: Azure Terraform tools for provider documentation, Azure Verified Modules, resource export, and policy validation.</li><li>Protection and recovery: Azure Backup and Azure Resilience Management tools for backup protection, recovery plans, readiness checks, and drills.</li><li>Cost optimization: Expanded Azure Advisor capabilities and optimization tools for reviewing recommendations, comparing resource options, and understanding utilization.</li><li>More predictable integrations: Clearer tool contracts, stricter input and endpoint validation, and opt-in structured output.</li></ul>Version 3.0 also introduces safer defaults when creating Storage accounts, Event Hubs namespaces, NFS file shares, and Recovery Services vaults.<br><br>This release includes breaking changes. Review the upgrade guidance before updating existing integrations or shared deployments.<br><br><a href=\"https://devblogs.microsoft.com/azure-sdk/azure-mcp-server-3-0-stable-release/\">Learn more</a>.",
-      "status": "Launched",
-      "created": "2026-10-29T17:04:58.3369171Z",
-      "modified": "2026-10-29T17:04:58.3369171Z",
-      "locale": null,
-      "availabilities": [
-        {
-          "ring": "General Availability",
+          "ring": "Preview",
           "year": 2026,
           "month": "October"
         }
