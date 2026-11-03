@@ -28782,5 +28782,217 @@
       "CREATE DATABASE SCOPED CREDENTIAL 명령어에서 IDENTITY = 'DATABASE MANAGED IDENTITY'를 사용하는 익숙한 T-SQL 명령으로 외부 테이블 및 OPENROWSET 쿼리 인증 구성을 지원합니다."
     ],
     "translated_at": "2026-10-31T02:08:00.707889+00:00"
+  },
+  "577975": {
+    "summary": "Azure Migrate now publicly previews discovery and assessment of on-premises NAS shares from Dell PowerScale and NetApp ONTAP, enabling integrated migration planning with servers and applications.",
+    "key_points": [
+      "Supports discovery of SMB, NFS, and S3 shares on Dell PowerScale/Isilon and NetApp ONTAP/FAS clusters using read-only credentials.",
+      "Allows grouping, tagging, filtering, and assessment of NAS shares alongside existing server and application inventories within Azure Migrate.",
+      "Provides readiness checks, right-sized Azure target configurations, monthly cost estimates, and business case generation comparing Azure storage to on-premises costs.",
+      "Replaces manual NAS migration planning with automated, verified inventory and cost analysis, improving accuracy and efficiency for large or multi-protocol storage estates."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/migrate/add-server-credentials?view=migrate",
+    "doc_title": "Provide Infrastructure Credentials to Discover Storage and Network, and Guest OS Credentials to Discover Software, Dependencies, and Databases - Azure Migrate",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/en-us/azure/migrate/add-server-credentials?view=migrate"
+    ],
+    "source": "llm",
+    "updated_at": "2026-11-03T03:52:05.468467+00:00",
+    "title_ko": "Public Preview: Azure Migrate를 통한 온프레미스 NAS 공유 검색 및 평가 기능 제공",
+    "summary_ko": "Azure Migrate가 Dell PowerScale 및 NetApp ONTAP의 온프레미스 NAS 공유 검색 및 평가 기능을 Public Preview로 제공하여 서버 및 애플리케이션과 통합된 마이그레이션 계획 수립을 지원합니다.",
+    "key_points_ko": [
+      "읽기 전용 자격 증명을 사용하여 Dell PowerScale/Isilon 및 NetApp ONTAP/FAS 클러스터의 SMB, NFS, S3 공유 검색을 지원합니다.",
+      "기존 서버 및 애플리케이션 인벤토리와 함께 NAS 공유를 그룹화, 태그 지정, 필터링 및 평가할 수 있습니다.",
+      "준비 상태 점검, 적정 크기의 Azure 대상 구성, 월별 비용 추정 및 Azure 스토리지와 온프레미스 비용을 비교한 비즈니스 케이스 생성을 제공합니다.",
+      "수동 NAS 마이그레이션 계획을 자동화된 검증된 인벤토리 및 비용 분석으로 대체하여 대규모 또는 다중 프로토콜 스토리지 환경의 정확성과 효율성을 향상합니다."
+    ],
+    "translated_at": "2026-11-03T03:52:33.989929+00:00"
+  },
+  "576255": {
+    "summary": "Microsoft Defender for IoT's OT security component will be deprecated by October 2029 to encourage customers to transition to third-party OT security solutions integrated via OT data connectors, ensuring continued OT asset and vulnerability visibility within Microsoft Security Exposure Management.",
+    "key_points": [
+      "Defender for IoT OT Security will be fully deprecated in October 2029 after a three-year transition period; existing deployments remain supported with security updates but no new OT features.",
+      "Enterprise IoT capabilities in Microsoft Defender for Endpoint and device discovery/vulnerability assessments remain unaffected.",
+      "Microsoft supports integration with third-party OT security providers (Armis, Dragos, Forescout) via OT data connectors that import OT asset and vulnerability data into the Defender portal.",
+      "Customers must plan and complete migration to alternative OT security solutions before October 2029 to maintain OT security visibility and management within Microsoft Security Exposure Management."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/security-exposure-management/ot-data-connectors",
+    "doc_title": "OT data connectors in Microsoft Security Exposure Management - Microsoft Security Exposure Management",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/en-us/security-exposure-management/ot-data-connectors",
+      "https://learn.microsoft.com/en-us/security-exposure-management/overview-data-connectors",
+      "https://learn.microsoft.com/en-us/defender-for-iot/enterprise-iot"
+    ],
+    "source": "llm",
+    "updated_at": "2026-11-03T03:52:09.337199+00:00",
+    "title_ko": "Retirement: Microsoft Defender for IoT의 OT 보안",
+    "summary_ko": "Microsoft Defender for IoT의 OT 보안 구성 요소는 2029년 10월까지 Deprecated되어 고객이 OT 데이터 커넥터를 통해 통합된 타사 OT 보안 솔루션으로 전환하도록 권장합니다. 이를 통해 Microsoft Security Exposure Management 내에서 OT 자산 및 취약점 가시성을 지속적으로 확보할 수 있습니다.",
+    "key_points_ko": [
+      "Defender for IoT OT Security는 3년의 전환 기간 후 2029년 10월에 완전히 Deprecated됩니다; 기존 배포는 보안 업데이트를 받으며 지원되지만 새로운 OT 기능은 제공되지 않습니다.",
+      "Microsoft Defender for Endpoint의 엔터프라이즈 IoT 기능과 장치 검색/취약점 평가는 영향을 받지 않습니다.",
+      "Microsoft는 OT 자산 및 취약점 데이터를 Defender 포털로 가져오는 OT 데이터 커넥터를 통해 Armis, Dragos, Forescout와 같은 타사 OT 보안 공급자와의 통합을 지원합니다.",
+      "고객은 2029년 10월 이전에 대체 OT 보안 솔루션으로의 마이그레이션을 계획하고 완료하여 Microsoft Security Exposure Management 내에서 OT 보안 가시성과 관리를 유지해야 합니다."
+    ],
+    "translated_at": "2026-11-03T03:52:38.205928+00:00"
+  },
+  "574541": {
+    "summary": "Azure Database for PostgreSQL Flexible Server now allows migration from virtual network integration to a private endpoint-capable network configuration, enhancing secure access via private IP addresses.",
+    "key_points": [
+      "Enables changing existing VNet-integrated servers to private endpoint-capable configuration for secure Azure Private Link access.",
+      "Migration takes about 20 minutes with up to 10 minutes of server inaccessibility and requires reconfiguration of connectivity options post-migration.",
+      "Existing backups, including geo-redundant ones, remain intact; however, logical replication subscribers may need network adjustments to maintain connectivity.",
+      "The change is irreversible and requires updating infrastructure-as-code scripts like Terraform to reflect the new network setup."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/postgresql/network/how-to-migrate-vnet-private-endpoint-capable-server?tabs=portal-migrate",
+    "doc_title": "Change from Virtual Network Integration to a Private Endpoint-Capable Network Configuration in Azure Database for PostgreSQL Flexible Server - Azure Database for PostgreSQL",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/azure/postgresql/network/how-to-migrate-vnet-private-endpoint-capable-server?tabs=portal-migrate"
+    ],
+    "source": "llm",
+    "updated_at": "2026-11-03T03:52:13.062580+00:00",
+    "title_ko": "Generally Available: Azure Database for PostgreSQL flexible server에서 가상 네트워크 통합에서 프라이빗 엔드포인트 지원 네트워크 구성으로 변경",
+    "summary_ko": "Azure Database for PostgreSQL Flexible Server는 이제 가상 네트워크 통합에서 프라이빗 엔드포인트 지원 네트워크 구성으로 마이그레이션할 수 있어, 프라이빗 IP 주소를 통한 보안 액세스를 강화합니다.",
+    "key_points_ko": [
+      "기존 VNet 통합 서버를 프라이빗 엔드포인트 지원 구성으로 변경하여 Azure Private Link를 통한 보안 액세스를 가능하게 합니다.",
+      "마이그레이션은 약 20분 소요되며 최대 10분간 서버 접속이 불가능하고, 마이그레이션 후 연결 옵션 재구성이 필요합니다.",
+      "기존 백업(지리적 중복 백업 포함)은 유지되나, 논리적 복제 구독자는 연결 유지를 위해 네트워크 조정이 필요할 수 있습니다.",
+      "이 변경은 되돌릴 수 없으며, Terraform과 같은 인프라 코드 스크립트를 새 네트워크 구성에 맞게 업데이트해야 합니다."
+    ],
+    "translated_at": "2026-11-03T03:52:42.104995+00:00"
+  },
+  "570498": {
+    "summary": "Azure Fluid Relay will be retired on February 2, 2027, requiring customers to transition to a self-hosted Fluid service solution to avoid service disruption and maintain real-time collaborative application functionality.",
+    "key_points": [
+      "Azure Fluid Relay service ends availability on February 2, 2027; continued use after this date may cause disruptions.",
+      "Customers must migrate to the self-hosted Fluid service solution available in the Fluid Framework GitHub repository.",
+      "Self-hosting requires customers to manage hosting, operations, and associated infrastructure costs based on their deployment.",
+      "The self-hosted solution includes deployment scripts and tools for creating and managing Fluid service components such as AKS, Cosmos DB, and Event Hubs."
+    ],
+    "doc_url": "https://github.com/microsoft/FluidFramework/tree/main/tools/selfhost",
+    "doc_title": "FluidFramework/tools/selfhost at main · microsoft/FluidFramework · GitHub",
+    "doc_read": true,
+    "links": [
+      "https://github.com/microsoft/FluidFramework/tree/main/tools/selfhost"
+    ],
+    "source": "llm",
+    "updated_at": "2026-11-03T03:52:16.634553+00:00",
+    "title_ko": "Retirement: Azure Fluid Relay",
+    "summary_ko": "Azure Fluid Relay는 2027년 2월 2일에 Retirement되며, 고객은 서비스 중단을 방지하고 실시간 협업 애플리케이션 기능을 유지하기 위해 자체 호스팅 Fluid 서비스 솔루션으로 전환해야 합니다.",
+    "key_points_ko": [
+      "Azure Fluid Relay 서비스는 2027년 2월 2일에 제공이 종료되며, 이 날짜 이후 계속 사용 시 서비스 중단이 발생할 수 있습니다.",
+      "고객은 Fluid Framework GitHub 리포지토리에서 제공하는 자체 호스팅 Fluid 서비스 솔루션으로 마이그레이션해야 합니다.",
+      "자체 호스팅은 고객이 배포에 따라 호스팅, 운영 및 관련 인프라 비용을 직접 관리해야 합니다.",
+      "자체 호스팅 솔루션에는 AKS, Cosmos DB, Event Hubs와 같은 Fluid 서비스 구성 요소를 생성 및 관리하기 위한 배포 스크립트와 도구가 포함되어 있습니다."
+    ],
+    "translated_at": "2026-11-03T03:52:45.859199+00:00"
+  },
+  "578628": {
+    "summary": "Azure Storage Actions is now generally available with enhancements including automatic task update propagation, the ability to stop in-progress task runs, and new case-sensitive string operators, improving task management and precision in data operations.",
+    "key_points": [
+      "Automatic propagation of task definition updates ensures changes apply to existing assignments without manual updates, maintaining consistent data management.",
+      "Users can now asynchronously stop in-progress task assignment runs individually or across all assignments, providing greater control over task execution.",
+      "Introduction of case-sensitive string operators (equals, contains, startsWith, endsWith, matches) allows more precise targeting of blobs where capitalization matters.",
+      "These features enhance operational control and flexibility for managing automated data operations across Azure Blob and Data Lake Storage."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/storage-actions/overview",
+    "doc_title": "About Azure Storage Actions - Azure Storage Actions",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/en-us/azure/storage-actions/overview"
+    ],
+    "source": "llm",
+    "updated_at": "2026-11-03T03:52:20.034871+00:00",
+    "title_ko": "Generally Available: Azure Storage Actions가 자동 작업 업데이트, 실행 제어 및 대소문자 구분 매칭 기능을 추가합니다",
+    "summary_ko": "Azure Storage Actions가 자동 작업 업데이트 전파, 진행 중 작업 실행 중지 기능, 대소문자 구분 문자열 연산자 추가 등 향상된 기능과 함께 Generally Available 상태로 출시되어 작업 관리와 데이터 작업의 정밀도를 개선합니다.",
+    "key_points_ko": [
+      "작업 정의 업데이트의 자동 전파로 기존 할당에 수동 업데이트 없이 변경 사항이 적용되어 일관된 데이터 관리를 유지합니다.",
+      "사용자는 이제 진행 중인 작업 할당 실행을 개별적으로 또는 모든 할당에 대해 비동기적으로 중지할 수 있어 작업 실행에 대한 제어가 강화됩니다.",
+      "대소문자 구분 문자열 연산자(equals, contains, startsWith, endsWith, matches)가 도입되어 대소문자가 중요한 Blob을 보다 정밀하게 타겟팅할 수 있습니다.",
+      "이 기능들은 Azure Blob 및 Data Lake Storage 전반에서 자동화된 데이터 작업 관리를 위한 운영 제어와 유연성을 향상시킵니다."
+    ],
+    "translated_at": "2026-11-03T03:52:49.896376+00:00"
+  },
+  "577992": {
+    "summary": "Azure SQL Database now allows users to restart single databases, Hyperscale databases, and elastic pools directly from the Azure portal, simplifying management without scripting or support requests.",
+    "key_points": [
+      "Capability to restart or fail over databases and elastic pools via the Azure portal UI.",
+      "Supports single databases, Hyperscale databases, and databases within elastic pools.",
+      "Restarting an elastic pool restarts all databases contained within that pool.",
+      "Eliminates the need to use REST API scripts or contact support for database restarts."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/azure-sql/database/restart-database?view=azuresql",
+    "doc_title": "Restart a Database or Elastic Pool (Preview) - Azure SQL Database",
+    "doc_read": true,
+    "links": [
+      "https://aka.ms/restartsqldborep"
+    ],
+    "source": "llm",
+    "updated_at": "2026-11-03T03:52:23.412038+00:00",
+    "title_ko": "Generally Available: Azure SQL DB에서 Azure 포털을 통해 데이터베이스 재시작 기능 제공",
+    "summary_ko": "Azure SQL Database가 이제 Azure 포털에서 단일 데이터베이스, Hyperscale 데이터베이스, 그리고 elastic pool을 직접 재시작할 수 있도록 지원하여, 스크립트 작성이나 지원 요청 없이도 관리가 간편해졌습니다.",
+    "key_points_ko": [
+      "Azure 포털 UI를 통해 데이터베이스와 elastic pool을 재시작하거나 장애 조치할 수 있는 기능 제공.",
+      "단일 데이터베이스, Hyperscale 데이터베이스, 그리고 elastic pool 내 데이터베이스를 지원함.",
+      "elastic pool을 재시작하면 해당 풀에 포함된 모든 데이터베이스가 함께 재시작됨.",
+      "데이터베이스 재시작을 위해 REST API 스크립트 사용이나 지원팀 연락이 불필요해짐."
+    ],
+    "translated_at": "2026-11-03T03:52:53.134713+00:00"
+  },
+  "579021": {
+    "summary": "Azure Service Bus Premium now generally supports Geo-Replication on partitioned namespaces, enabling high throughput and regional failover for mission-critical messaging workloads.",
+    "key_points": [
+      "Combines partitioning throughput benefits with geo-replication reliability for message and metadata replication across Azure regions.",
+      "Available for Premium tier partitioned namespaces, allowing enabling on existing or new namespaces with a single secondary region.",
+      "Supports customer-managed promotion of secondary region to primary for seamless failover or planned migration without client changes.",
+      "Ensures continuous synchronization with synchronous/asynchronous replication modes and provides replication lag metrics for monitoring."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-geo-replication",
+    "doc_title": "Azure Service Bus Geo-Replication - Azure Service Bus",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/azure/service-bus-messaging/service-bus-geo-replication",
+      "https://learn.microsoft.com/azure/service-bus-messaging/service-bus-geo-replication#setup"
+    ],
+    "source": "llm",
+    "updated_at": "2026-11-03T03:52:26.848324+00:00",
+    "title_ko": "Generally Available: Azure Service Bus Premium의 파티션 네임스페이스에 대한 지리적 복제",
+    "summary_ko": "Azure Service Bus Premium이 이제 파티션 네임스페이스에 대한 지리적 복제를 Generally Available 상태로 지원하여, 미션 크리티컬 메시징 워크로드에 대해 높은 처리량과 지역 장애 조치를 가능하게 합니다.",
+    "key_points_ko": [
+      "파티셔닝 처리량 이점과 지리적 복제 신뢰성을 결합하여 Azure 지역 간 메시지 및 메타데이터 복제를 지원합니다.",
+      "Premium 계층 파티션 네임스페이스에 제공되며, 기존 또는 신규 네임스페이스에서 단일 보조 지역을 설정할 수 있습니다.",
+      "고객이 관리하는 보조 지역을 기본 지역으로 승격할 수 있어 클라이언트 변경 없이 원활한 장애 조치 또는 계획된 마이그레이션을 지원합니다.",
+      "동기/비동기 복제 모드를 통해 지속적인 동기화를 보장하며, 모니터링을 위한 복제 지연 메트릭을 제공합니다."
+    ],
+    "translated_at": "2026-11-03T03:52:56.964695+00:00"
+  },
+  "579111": {
+    "summary": "Azure Site Recovery for Azure Local is now generally available, enabling enterprise customers to easily protect and recover Windows and Linux VMs by replicating workloads to Azure with streamlined setup and secure failover capabilities.",
+    "key_points": [
+      "Supports disaster recovery for Hyper-V VMs on Azure Local with replication to Azure cloud.",
+      "Enables non-disruptive test failovers, planned/unplanned failovers to Azure, and failback to on-premises Azure Local.",
+      "Available in all Azure Local-supported regions with setup integrated into the Azure portal.",
+      "Improves disaster recovery readiness by allowing validation of recovery plans without impacting production workloads."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/azure-local/manage/azure-site-recovery?view=azloc-2610",
+    "doc_title": "Protect your Hyper-V virtual machine workloads on Azure Local with Azure Site Recovery - Azure Local",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/en-us/azure/azure-local/manage/azure-site-recovery?view=azloc-2610",
+      "https://techcommunity.microsoft.com/blog/azurestackblog/azure-site-recovery-for-azure-local-is-now-generally-available/4529925"
+    ],
+    "source": "llm",
+    "updated_at": "2026-11-03T03:52:29.698613+00:00",
+    "title_ko": "Generally Available: Azure Local용 Azure Site Recovery",
+    "summary_ko": "Azure Local용 Azure Site Recovery가 이제 Generally Available 상태로 제공되어, 엔터프라이즈 고객이 Windows 및 Linux VM을 손쉽게 보호하고 복구할 수 있도록 워크로드를 Azure로 복제하는 간소화된 설정과 안전한 장애 조치 기능을 제공합니다.",
+    "key_points_ko": [
+      "Azure Local의 Hyper-V VM에 대한 재해 복구를 지원하며 Azure 클라우드로 복제합니다.",
+      "중단 없는 테스트 장애 조치, 계획된/비계획된 Azure 장애 조치 및 온프레미스 Azure Local로의 장애 복구를 가능하게 합니다.",
+      "모든 Azure Local 지원 지역에서 이용 가능하며 Azure 포털에 통합된 설정을 제공합니다.",
+      "프로덕션 워크로드에 영향을 주지 않고 복구 계획을 검증하여 재해 복구 준비 태세를 향상합니다."
+    ],
+    "translated_at": "2026-11-03T03:53:00.341347+00:00"
   }
 }
