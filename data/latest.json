@@ -1,33 +1,119 @@
 {
-  "generated_at": "2026-11-03T03:51:57.819636+00:00",
-  "window_start": "2026-10-27T03:51:57.819636+00:00",
-  "window_end": "2026-11-03T03:51:57.819636+00:00",
+  "generated_at": "2026-11-04T02:56:58.071864+00:00",
+  "window_start": "2026-10-28T02:56:58.071864+00:00",
+  "window_end": "2026-11-04T02:56:58.071864+00:00",
   "window_days": 7,
-  "fetched_count": 18,
-  "matched_count": 18,
-  "count": 8,
+  "fetched_count": 21,
+  "matched_count": 21,
+  "count": 6,
   "items": [
     {
-      "id": "577975",
+      "id": "576382",
       "productCategories": [
-        "Management and governance",
-        "Migration"
+        "Networking",
+        "Security"
       ],
       "tags": [
-        "Features",
-        "Services"
+        "Features"
       ],
       "products": [
-        "Azure Migrate"
+        "Application Gateway"
+      ],
+      "generalAvailabilityDate": null,
+      "previewAvailabilityDate": "2026-11",
+      "privatePreviewAvailabilityDate": null,
+      "title": "Public Preview: JWT validation for Application Gateway for Containers",
+      "description": "<p>Application Gateway for Containers now supports centralized\nJSON Web Token validation through the AuthPolicy custom resource. Teams can\nvalidate a token signature, issuer, lifetime, and configured audience by using\nsigning keys retrieved from a trusted HTTPS JSON Web Key Set endpoint. Requests\nwith missing or invalid credentials are rejected at the gateway instead of\nbeing forwarded to the backend.&nbsp;</p><p>AuthPolicy can protect an ApplicationLoadBalancer, Gateway,\nHTTPRoute, GRPCRoute, or MCPRoute. Policies inherit through the resource\nhierarchy, while a more specific route-level policy can replace an inherited\npolicy or explicitly opt a route out. Optional OAuth Protected Resource\nMetadata helps OAuth-aware clients discover authorization servers and supported\nscopes.&nbsp;</p><ul><li>Apply consistent JWT\nvalidation to HTTP, gRPC, and MCP routes&nbsp;</li></ul><ul type=\"disc\">\n <li>Use\n     Microsoft Entra ID or third-party identity providers that publish trusted\n     JWKS signing keys&nbsp;</li>\n <li>Combine\n     JWT validation with WAF so malicious traffic is inspected before\n     authentication&nbsp;</li>\n <li>Publish\n     OAuth resource metadata to enable authorization server discovery&nbsp;</li></ul><p>Learn more:&nbsp;</p><ul><li><a href=\"https://aka.ms/agc/jwtvalidation\">JWT validation for Application Gateway\nfor Containers</a>&nbsp;</li><li><a href=\"https://aka.ms/agc/jwtvalidation/configure\">Configure JWT validation for\nApplication Gateway for Containers - Gateway API</a>&nbsp;</li></ul><br>",
+      "status": "In preview",
+      "created": "2026-11-03T21:17:08.6435886Z",
+      "modified": "2026-11-03T21:17:08.6435886Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "Preview",
+          "year": 2026,
+          "month": "November"
+        }
+      ]
+    },
+    {
+      "id": "576388",
+      "productCategories": [
+        "Networking",
+        "Security"
+      ],
+      "tags": [
+        "Features"
+      ],
+      "products": [
+        "Application Gateway"
+      ],
+      "generalAvailabilityDate": null,
+      "previewAvailabilityDate": "2026-11",
+      "privatePreviewAvailabilityDate": null,
+      "title": "Public Preview: MCP gateway for Application Gateway for Containers",
+      "description": "<p>Application Gateway for Containers now supports Model\nContext Protocol routing through the new MCPRoute custom resource. Platform\nteams can publish MCP servers behind a stable hostname and path while\ncentralizing TLS, JWT validation, Web Application Firewall protection, backend\nhealth monitoring, and routing policy at the gateway.&nbsp;</p><p>MCPRoute supports both direct routing to a single MCP\nserver and aggregation of multiple independent servers behind one logical\nendpoint. For aggregated deployments, Application Gateway for Containers merges\ntool, resource, and prompt discovery responses, namespaces capability names to\navoid collisions, and routes invocations to the backend that owns the selected\ncapability.&nbsp;</p><ul><li>Expose one governed\nendpoint for MCP clients and Kubernetes-hosted MCP servers&nbsp;</li><li>Aggregate capabilities from\nmultiple MCP servers&nbsp;&nbsp;</li><li>Session affinity for MCP\nservers that maintain in-memory session state&nbsp;</li><li>Apply JWT validation, WAF,\nbackend TLS, health checks, and cross-namespace references&nbsp;</li></ul><p>Learn more:&nbsp;</p><ul><li><a href=\"https://aka.ms/agc/mcpgateway\">Model Context Protocol capabilities in\nApplication Gateway for Containers</a>&nbsp;</li><li><a href=\"https://aka.ms/agc/mcpgateway/configure\">Configure Model Context Protocol\nrouting for Application Gateway for Containers</a>&nbsp;</li></ul>",
+      "status": "In preview",
+      "created": "2026-11-03T21:16:36.3961615Z",
+      "modified": "2026-11-03T21:16:36.3961615Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "Preview",
+          "year": 2026,
+          "month": "November"
+        }
+      ]
+    },
+    {
+      "id": "576393",
+      "productCategories": [
+        "Networking",
+        "Security"
+      ],
+      "tags": [
+        "Features"
+      ],
+      "products": [
+        "Application Gateway"
+      ],
+      "generalAvailabilityDate": null,
+      "previewAvailabilityDate": "2026-11",
+      "privatePreviewAvailabilityDate": null,
+      "title": "Public Preview: Private ingress for Application Gateway for Containers",
+      "description": "<p>Application\nGateway for Containers now supports private frontends that are reachable only\nthrough approved Azure Private Link private endpoints. This enables\norganizations to keep internal applications, shared services, and cross-cluster\ntraffic on private connectivity while retaining Kubernetes-native Layer 7\nrouting, TLS, health probing, and Web Application Firewall capabilities.&nbsp;</p><p>Private ingress supports connectivity across virtual\nnetworks, subscriptions, Microsoft Entra tenants, and Azure regions without\nrequiring VNet peering. A single Application Gateway for Containers resource\ncan also host public and private frontends, allowing teams to use separate\nexposure models and security policies for different workloads.&nbsp;</p><ul><li>Remove the public IP\naddress and direct internet path from the frontend&nbsp;</li><li>Enforce access through\nexplicitly provisioned and approved private endpoints&nbsp;</li><li>&nbsp;Connect workloads across VNets, subscriptions,\ntenants, and regions, including environments with overlapping CIDR ranges&nbsp;&nbsp;</li><li>Place an Azure Firewall,\nnetwork virtual appliance, or another upstream service in front of Kubernetes\nworkloads&nbsp;</li></ul><p>Learn more: &nbsp;&nbsp;</p><ul><li><a href=\"http://aka.ms/agc/privateingress\">Private ingress with Application\nGateway for Containers</a>&nbsp;&nbsp;</li><li><a href=\"https://aka.ms/agc/privateingress/configure\">Configure private ingress\nwith Application Gateway for Containers - Gateway API</a>&nbsp;</li></ul>",
+      "status": "In preview",
+      "created": "2026-11-03T21:15:46.6456991Z",
+      "modified": "2026-11-03T21:15:46.6456991Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "Preview",
+          "year": 2026,
+          "month": "November"
+        }
+      ]
+    },
+    {
+      "id": "578655",
+      "productCategories": [
+        "Storage"
+      ],
+      "tags": [
+        "Feature"
+      ],
+      "products": [
+        "Storage Accounts",
+        "Azure Storage Discovery"
       ],
       "generalAvailabilityDate": null,
       "previewAvailabilityDate": "2026-10",
       "privatePreviewAvailabilityDate": null,
-      "title": "Public Preview: On-prem NAS share discovery and assessment are now available using Azure Migrate",
-      "description": "<p>Azure\nMigrate now supports discovery and assessment for network-attached storage,\nallowing customers and partners to plan migrations of Dell PowerScale (OneFS)\nand NetApp ONTAP storage to Azure. The Azure Migrate appliance connects\ndirectly to your NAS clusters using read-only credentials, inventories every\nSMB, NFS, and S3 share, and evaluates each share against Azure Files, Azure\nBlob Storage, and Azure NetApp Files.&nbsp;</p><p><b>Key benefits include:&nbsp;</b></p><ul><li>Discover Dell PowerScale/Isilon and NetApp ONTAP/FAS clusters\nand the shares they host&nbsp;</li><li>Group, tag, and filter NAS shares alongside your existing\nserver, application, and database inventory&nbsp;</li><li>Assess each share with readiness, a right-sized Azure target\nconfiguration, and monthly cost estimates&nbsp;</li><li>Generate a business case comparing Azure storage services\nagainst on-premises cost, and sequence moves using wave plans&nbsp;</li></ul><p>This capability replaces manual, spreadsheet-driven\nNAS planning with a verified per-share inventory and a defensible cost basis,\nespecially for large or multi-protocol storage estates.&nbsp;</p><p>NAS\nis often the largest and least-understood part of an on-premises estate.\nBringing NAS discovery and assessment into Azure Migrate means storage is\nplanned in the same project, and the same business case, as the servers and\napplications that depend on it.&nbsp;</p><p><b>Getting started:&nbsp;</b></p><a></a><a></a><a>To\nget started, update your Azure Migrate appliance, add your NAS cluster as a\ndiscovery source, and run an assessment directly from the Azure portal.</a> Write to us at <a href=\"mailto:azurestoragemigrations\">azurestoragemigrations</a><a href=\"mailto:azurestoragemigrations@microsoft.com\">@microsoft.</a><a href=\"mailto:azurestoragemigrations@microsoft.com\">com</a> with questions or feedback.&nbsp;<br><p><a href=\"https://learn.microsoft.com/en-us/azure/migrate/add-server-credentials?view=migrate\">Learn\nmore</a>.&nbsp;</p><br>",
+      "title": "Public Preview: Advanced capacity insights are now available in Azure Storage Discovery",
+      "description": "<p>Advanced capacity insights are now available for preview in Azure Storage Discovery. Storage Discovery now provides greater visibility into storage usage through insights such as access patterns, data age, storage tiers, object size distribution, retention states, and versioning. With these insights, teams can identify opportunities, understand factors contributing to storage growth, and inform storage management decisions at scale.</p><p>Learn more:</p><ul><li><a href=\"https://go.microsoft.com/fwlink/?LinkId=2384105\" rel=\"noreferrer noopener\" title=\"https://go.microsoft.com/fwlink/?linkid=2384105\">Discover what's new with advanced capacity insights</a></li><li><a href=\"https://go.microsoft.com/fwlink/?LinkId=2384106\" rel=\"noreferrer noopener\" title=\"https://go.microsoft.com/fwlink/?linkid=2384106\">Explore advanced capacity insights and capabilities</a></li><li><a href=\"https://learn.microsoft.com/en-us/azure/storage-discovery/\" rel=\"noreferrer noopener\" title=\"https://learn.microsoft.com/en-us/azure/storage-discovery/\">Get started with Azure Storage Discovery</a></li></ul>",
       "status": "In preview",
-      "created": "2026-11-02T19:37:11.4021224Z",
-      "modified": "2026-11-02T19:37:11.4021224Z",
+      "created": "2026-11-03T20:20:29.2609469Z",
+      "modified": "2026-11-03T20:20:29.2609469Z",
       "locale": null,
       "availabilities": [
         {
@@ -38,31 +124,7 @@
       ]
     },
     {
-      "id": "576255",
-      "productCategories": [],
-      "tags": [
-        "Retirements"
-      ],
-      "products": [],
-      "generalAvailabilityDate": null,
-      "previewAvailabilityDate": null,
-      "privatePreviewAvailabilityDate": null,
-      "title": "Retirement: OT security in Microsoft Defender for IoT",
-      "description": "This is the formal notice that Microsoft plans to deprecate the operational technology (OT) security component of Microsoft Defender for IoT. The service will be fully deprecated in October 2029, following a three-year transition period.<p>This change applies only to Defender for IoT OT Security. Enterprise IoT capabilities in Microsoft Defender for Endpoint are not affected. Device discovery and vulnerability assessment will continue to be available.</p><p><strong>When this will happen</strong></p><p>Deprecation is planned for October 2029. This notice begins the transition period and does not require you to immediately stop using your existing deployment. Complete your migration to an alternative OT security solution before retirement.</p><p><strong>How this will affect your organization</strong></p><p>If you use Defender for IoT OT Security, you will need to transition to an alternative solution before October 2029. During the transition, the service will remain supported with routine security updates and bug fixes, but no new OT-specific capabilities or feature investments will be introduced. Existing customer agreements and renewals will be honored through October 2029.</p><p><strong>What you can do to prepare</strong></p><ol data-editing-info=\"{&quot;orderedStyleType&quot;:1,&quot;unorderedStyleType&quot;:1}\" data-listchain=\"__List_Chain_10\"><li><p><strong>Assess your environment.</strong> Review existing OT deployments, sensors, integrations, licenses, contracts, and security requirements.</p></li><li><p><strong>Evaluate your options.</strong> Select an OT security solution that meets your organization’s needs. Microsoft offers connectors for Armis, Dragos, and Forescout, but you are not required to use a specific provider. OT data connectors in Microsoft Security Exposure Management support these three providers.</p></li><li><p><strong>Understand Microsoft integrations.</strong> Supported third-party OT connectors can bring OT asset and vulnerability data into Microsoft Security Exposure Management and the Defender portal.  Third-party solutions require separate licensing and deployment.</p></li><li><p><strong>Build your transition plan.</strong> Account for procurement, testing, operational validation, continuity, data export, and sensor decommissioning, with migration completed before October 2029.</p></li><li><p><strong>Engage early.</strong> Contact OT security providers directly or work with your Microsoft account team to help coordinate an introduction.</p></li></ol><p>Learn more:</p><ul><li><a href=\"https://learn.microsoft.com/en-us/security-exposure-management/ot-data-connectors\">OT data connectors</a>&nbsp;</li><li><a href=\"https://learn.microsoft.com/en-us/security-exposure-management/overview-data-connectors\">Data connectors overview</a>&nbsp;</li><li><a href=\"https://learn.microsoft.com/en-us/defender-for-iot/enterprise-iot\">Enterprise IoT</a>&nbsp;</li></ul>",
-      "status": null,
-      "created": "2026-11-02T19:22:28.7388312Z",
-      "modified": "2026-11-02T19:22:28.7388312Z",
-      "locale": null,
-      "availabilities": [
-        {
-          "ring": "Retirement",
-          "year": 2029,
-          "month": "October"
-        }
-      ]
-    },
-    {
-      "id": "574541",
+      "id": "579305",
       "productCategories": [
         "Databases",
         "Hybrid + multicloud"
@@ -71,165 +133,46 @@
         "Feature"
       ],
       "products": [
-        "Azure Database for PostgreSQL"
-      ],
-      "generalAvailabilityDate": "2026-11",
-      "previewAvailabilityDate": null,
-      "privatePreviewAvailabilityDate": null,
-      "title": "Generally Available: Change from virtual network integration to a private endpoint capable network configuration in Azure Database for PostgreSQL flexible server  ",
-      "description": "You now have greater flexibility in network design for Azure Database for PostgreSQL Flexible Server workloads. Now you can change&nbsp;existing VNet-integrated servers from delegated-subnet networking to a private endpoint-capable configuration, enabling secure access over a private IP address through Azure Private Link. The migration retains&nbsp;existing backups; however, you should plan for a temporary connectivity interruption and configure a private endpoint or appropriate firewall&nbsp;rules after migration.&nbsp;<p><a href=\"https://learn.microsoft.com/azure/postgresql/network/how-to-migrate-vnet-private-endpoint-capable-server?tabs=portal-migrate\" rel=\"noreferrer noopener\">Learn more</a>.&nbsp;&nbsp;</p>",
-      "status": "Launched",
-      "created": "2026-11-02T19:20:33.9327007Z",
-      "modified": "2026-11-02T19:20:33.9327007Z",
-      "locale": null,
-      "availabilities": [
-        {
-          "ring": "General Availability",
-          "year": 2026,
-          "month": "November"
-        }
-      ]
-    },
-    {
-      "id": "570498",
-      "productCategories": [
-        "Web"
-      ],
-      "tags": [
-        "Retirements"
-      ],
-      "products": [
-        "Azure Fluid Relay"
+        "Azure SQL Database",
+        "Azure SQL Managed Instance"
       ],
       "generalAvailabilityDate": null,
-      "previewAvailabilityDate": null,
+      "previewAvailabilityDate": "2026-11",
       "privatePreviewAvailabilityDate": null,
-      "title": "Retirement: Azure Fluid Relay",
-      "description": "On February 2, 2027, we will retire Azure Fluid Relay. After this date, Azure Fluid Relay will reach end of availability, and workloads that continue to depend on the service may experience disruption.<br><br>The Fluid Framework remains available as an open-source framework for building distributed, real-time collaborative web applications. A <a href=\"https://github.com/microsoft/FluidFramework/tree/main/tools/selfhost\">self-hosted Fluid service solution</a> is available as the replacement. You can continue using Azure Fluid Relay until February 1, 2027 while you complete your transition.<br><br><b>How this affects you:<br></b>If your applications continue to use Azure Fluid Relay after February 2, 2027, they may experience service disruption. Moving to the self-hosted solution means that you will be responsible for hosting and operating the Fluid service in your environment. Operational and infrastructure costs will depend on your deployment architecture, scale, and operational requirements.<br><br><b>What you need to do:<br></b>Transition workloads that depend on Azure Fluid Relay to a <a href=\"https://github.com/microsoft/FluidFramework/tree/main/tools/selfhost\">self-hosted Fluid service solution</a> before February 2, 2027. Review your Azure subscriptions and identify applications that use Azure Fluid Relay, plan and complete the transition, and use the self-hosted Fluid service solution in the Fluid Framework GitHub repository as the migration and replacement resource.",
-      "status": null,
-      "created": "2026-11-02T19:01:41.6188992Z",
-      "modified": "2026-11-02T19:01:41.6188992Z",
+      "title": "Public Preview: Extend immutability for PITR backups for Azure SQL Database and Azure SQL Managed Instance",
+      "description": "<div>With this enhancement, you have the ability to lock your retention to the configured PITR retention, beyond the default 7 days of immutable backups that are already available. This is especially useful for financial customers who typically have 35 days of PITR retention. The current default immutability is up to 7 days, and with this enhancement you can extend and lock immutability up to 35 days.<br></div>Once locked, only extensions to PITR retention are allowed. This setting is permanent for the life of the database.<br><p><a href=\"https://learn.microsoft.com/en-us/azure/azure-sql/automatic-backup-immutability?view=azuresql\">Learn\nmore</a>.&nbsp;</p>",
+      "status": "In preview",
+      "created": "2026-11-03T18:36:12.9198081Z",
+      "modified": "2026-11-03T18:36:12.9198081Z",
       "locale": null,
       "availabilities": [
         {
-          "ring": "Retirement",
-          "year": 2027,
-          "month": "February"
-        }
-      ]
-    },
-    {
-      "id": "578628",
-      "productCategories": [
-        "Storage",
-        "Analytics"
-      ],
-      "tags": [
-        "Services",
-        "Feature"
-      ],
-      "products": [
-        "Azure Blob Storage",
-        "Azure Data Lake Storage",
-        "Azure Storage Actions"
-      ],
-      "generalAvailabilityDate": "2026-11",
-      "previewAvailabilityDate": null,
-      "privatePreviewAvailabilityDate": null,
-      "title": "Generally Available: Azure Storage Actions adds automatic task updates, execution controls, and case-sensitive matching",
-      "description": "Azure Storage Actions is introducing three enhancements to simplify task management and give you more control over automated data operations across Azure Blob and Data Lake Storage:<br><ul data-editing-info=\"{&quot;orderedStyleType&quot;:1,&quot;unorderedStyleType&quot;:1}\"><li><b>Automatic propagation of task definition updates:</b>&nbsp;When you update a storage task definition the changes now automatically apply to its existing assignments. Scheduled assignment runs use the updated definition on their next run, keeping your data management logic consistent without updating each assignment individually.</li><li><b>Stop in-progress task assignment runs:</b>&nbsp;You can request a stop for an individual task assignment’s in-progress run or across all assignments associated with a storage task. This gives you greater control when a run needs to be interrupted. Stop requests are processed asynchronously.</li><li><b>Case-sensitive operators:</b> Target data more precisely with case-sensitive variants of `equals`, `contains`, `startsWith`, `endsWith`, and `matches` string operators. These additional operators provide you more flexibility, helping you select the intended blobs when capitalization matters. Existing operators retain their case-insensitive behavior.</li></ul><a href=\"https://learn.microsoft.com/en-us/azure/storage-actions/overview\">Learn\nmore</a>.<br>",
-      "status": "Launched",
-      "created": "2026-11-02T18:34:01.6952101Z",
-      "modified": "2026-11-02T18:34:01.6952101Z",
-      "locale": null,
-      "availabilities": [
-        {
-          "ring": "General Availability",
+          "ring": "Preview",
           "year": 2026,
           "month": "November"
         }
       ]
     },
     {
-      "id": "577992",
+      "id": "578926",
       "productCategories": [
-        "Databases",
-        "Hybrid + multicloud"
-      ],
-      "tags": [
-        "Feature"
-      ],
-      "products": [
-        "Azure SQL Database"
-      ],
-      "generalAvailabilityDate": "2026-10",
-      "previewAvailabilityDate": null,
-      "privatePreviewAvailabilityDate": null,
-      "title": "Generally Available: Restart databases in Azure SQL DB via the Azure portal ",
-      "description": "<p>You&nbsp;can now restart&nbsp;or fail&nbsp;over databases directly from the Azure portal, including single databases, Hyperscale databases, and databases in elastic pools,&nbsp;without writing scripts against the Rest API&nbsp;or contacting support.&nbsp;</p><p>&nbsp;<a href=\"https://aka.ms/restartsqldborep\" rel=\"noreferrer noopener\">Learn more</a><span style=\"color: rgb(0, 0, 0);\">.&nbsp;&nbsp;</span></p>",
-      "status": "Launched",
-      "created": "2026-11-02T18:02:48.2891474Z",
-      "modified": "2026-11-02T18:02:48.2891474Z",
-      "locale": null,
-      "availabilities": [
-        {
-          "ring": "General Availability",
-          "year": 2026,
-          "month": "October"
-        }
-      ]
-    },
-    {
-      "id": "579021",
-      "productCategories": [
-        "Integration"
-      ],
-      "tags": [
-        "Feature"
-      ],
-      "products": [
-        "Service Bus"
-      ],
-      "generalAvailabilityDate": "2026-11",
-      "previewAvailabilityDate": null,
-      "privatePreviewAvailabilityDate": null,
-      "title": "Generally Available: Geo-Replication on partitioned namespaces for Azure Service Bus Premium",
-      "description": "<p><a href=\"https://learn.microsoft.com/azure/service-bus-messaging/service-bus-geo-replication\">Geo-Replication</a> on partitioned namespaces for\nAzure Service Bus Premium is now generally available. You can now combine the\nthroughput benefits of partitioning with the reliability of replicating your\nmessages and metadata to a secondary Azure region.&nbsp;</p><p>Partitioned namespaces distribute queues and topics across\nmultiple message brokers and messaging stores within a region, allowing\nthroughput to scale beyond a single broker.&nbsp;</p><p>You can enable Geo-Replication on an existing partitioned\nPremium namespace or configure both capabilities on a new namespace.&nbsp;</p><p><a href=\"https://learn.microsoft.com/azure/service-bus-messaging/service-bus-geo-replication#setup\">Learn\nmore</a>.&nbsp;</p>",
-      "status": "Launched",
-      "created": "2026-11-02T18:00:51.0272861Z",
-      "modified": "2026-11-02T18:00:51.0272861Z",
-      "locale": null,
-      "availabilities": [
-        {
-          "ring": "General Availability",
-          "year": 2026,
-          "month": "November"
-        }
-      ]
-    },
-    {
-      "id": "579111",
-      "productCategories": [
-        "Hybrid + multicloud",
         "Management and governance",
         "Migration"
       ],
       "tags": [
-        "Management",
         "Feature"
       ],
       "products": [
-        "Azure Arc",
         "Azure Site Recovery"
       ],
       "generalAvailabilityDate": "2026-10",
       "previewAvailabilityDate": null,
       "privatePreviewAvailabilityDate": null,
-      "title": "Generally Available: Azure Site Recovery for Azure Local",
-      "description": "<p>Azure Site Recovery support for Azure Local is now generally available, making enterprise-grade disaster recovery simpler, accessible, easier to setup and secure than ever before. Customers can protect supported Windows and Linux virtual machines by replicating workloads to Azure, extending their disaster recovery capabilities to the cloud.</p><p>With streamlined setup in the Azure portal, customers can validate their recovery plans without disrupting production replication, fail over to Azure during planned or unplanned outages, and return workloads to Azure Local when their on-premises environment is ready. The capability is available in all Azure Local-supported regions.</p><p></p><p>Learn more:&nbsp;</p><ul><li><a href=\"https://techcommunity.microsoft.com/blog/azurestackblog/azure-site-recovery-for-azure-local-is-now-generally-available/4529925\">Tech\nCommunity blog</a>&nbsp;</li><li><a href=\"https://learn.microsoft.com/en-us/azure/azure-local/manage/azure-site-recovery?view=azloc-2610\">Official\ndocumentation</a>&nbsp;</li></ul>",
+      "title": "Generally Available: Enhanced Azure Site Recovery support for VMSS Flex",
+      "description": "Azure Site Recovery now offers an enhanced disaster recovery experience for virtual machines in Virtual Machine Scale Sets with flexible orchestration. The update improves target configuration and end-to-end recovery workflows, including failover, reprotection, and failback.<br><br><a href=\"https://aka.ms/asr-support-vmss-flex\">Learn more</a>. <br>",
       "status": "Launched",
-      "created": "2026-11-02T17:49:48.2752135Z",
-      "modified": "2026-11-02T17:49:48.2752135Z",
+      "created": "2026-11-03T18:32:01.6214795Z",
+      "modified": "2026-11-03T18:32:01.6214795Z",
       "locale": null,
       "availabilities": [
         {

@@ -28994,5 +28994,166 @@
       "프로덕션 워크로드에 영향을 주지 않고 복구 계획을 검증하여 재해 복구 준비 태세를 향상합니다."
     ],
     "translated_at": "2026-11-03T03:53:00.341347+00:00"
+  },
+  "576382": {
+    "summary": "Application Gateway for Containers now supports centralized JWT validation via AuthPolicy, enabling secure token verification at the gateway to protect backend services and improve security.",
+    "key_points": [
+      "Supports JWT validation for HTTP, gRPC, and MCP routes using AuthPolicy Kubernetes custom resource.",
+      "Validates token signature, issuer, lifetime, and audience with signing keys from trusted HTTPS JWKS endpoints.",
+      "Rejects requests with missing or invalid tokens at the gateway, preventing unauthorized backend access.",
+      "Integrates with Microsoft Entra ID and third-party identity providers, and complements Web Application Firewall (WAF) for layered security."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/application-gateway/for-containers/jwt-validation",
+    "doc_title": "JWT validation for Application Gateway for Containers",
+    "doc_read": true,
+    "links": [
+      "https://aka.ms/agc/jwtvalidation",
+      "https://aka.ms/agc/jwtvalidation/configure"
+    ],
+    "source": "llm",
+    "updated_at": "2026-11-04T02:57:28.620946+00:00",
+    "title_ko": "Public Preview: Application Gateway for Containers용 JWT 검증",
+    "summary_ko": "Application Gateway for Containers가 이제 AuthPolicy를 통한 중앙 집중식 JWT 검증을 지원하여 게이트웨이에서 토큰을 안전하게 확인하고 백엔드 서비스를 보호하며 보안을 강화합니다.",
+    "key_points_ko": [
+      "AuthPolicy Kubernetes 커스텀 리소스를 사용하여 HTTP, gRPC 및 MCP 경로에 대한 JWT 검증을 지원합니다.",
+      "신뢰할 수 있는 HTTPS JWKS 엔드포인트에서 서명 키를 받아 토큰 서명, 발행자, 유효 기간 및 대상자를 검증합니다.",
+      "누락되었거나 유효하지 않은 토큰이 포함된 요청을 게이트웨이에서 거부하여 무단 백엔드 접근을 방지합니다.",
+      "Microsoft Entra ID 및 타사 ID 공급자와 통합되며, Web Application Firewall(WAF)과 함께 다층 보안을 제공합니다."
+    ],
+    "translated_at": "2026-11-04T02:57:58.894283+00:00"
+  },
+  "576388": {
+    "summary": "Application Gateway for Containers now supports Model Context Protocol (MCP) routing via the new MCPRoute custom resource, enabling centralized, secure, and scalable access to multiple MCP servers through a single gateway endpoint.",
+    "key_points": [
+      "Introduces MCPRoute custom resource to extend Kubernetes Gateway API for MCP-aware routing and aggregation.",
+      "Supports direct routing to single MCP servers and aggregation of multiple MCP servers behind one logical endpoint.",
+      "Centralizes TLS, JWT validation, Web Application Firewall, backend health monitoring, and routing policies at the gateway.",
+      "Improves operational efficiency by providing session affinity, cross-namespace references, and a stable client-facing endpoint."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/application-gateway/for-containers/mcp-gateway",
+    "doc_title": "Model Context Protocol (MCP) capabilities in Application Gateway for Containers",
+    "doc_read": true,
+    "links": [
+      "https://aka.ms/agc/mcpgateway",
+      "https://aka.ms/agc/mcpgateway/configure"
+    ],
+    "source": "llm",
+    "updated_at": "2026-11-04T02:57:33.256240+00:00",
+    "title_ko": "Public Preview: Application Gateway for Containers용 MCP 게이트웨이",
+    "summary_ko": "Application Gateway for Containers가 이제 새로운 MCPRoute 커스텀 리소스를 통해 Model Context Protocol(MCP) 라우팅을 지원하여 단일 게이트웨이 엔드포인트를 통해 여러 MCP 서버에 중앙 집중적이고 안전하며 확장 가능한 접근을 가능하게 합니다.",
+    "key_points_ko": [
+      "MCP 인식 라우팅 및 집계를 위해 Kubernetes Gateway API를 확장하는 MCPRoute 커스텀 리소스를 도입합니다.",
+      "단일 MCP 서버로의 직접 라우팅과 하나의 논리적 엔드포인트 뒤에 여러 MCP 서버를 집계하는 기능을 지원합니다.",
+      "게이트웨이에서 TLS, JWT 검증, 웹 애플리케이션 방화벽, 백엔드 상태 모니터링 및 라우팅 정책을 중앙 집중화합니다.",
+      "세션 친화성, 네임스페이스 간 참조, 안정적인 클라이언트 대상 엔드포인트를 제공하여 운영 효율성을 향상합니다."
+    ],
+    "translated_at": "2026-11-04T02:58:04.941381+00:00"
+  },
+  "576393": {
+    "summary": "Application Gateway for Containers now supports private ingress via Azure Private Link private endpoints, enabling secure, private connectivity for Kubernetes workloads across VNets, subscriptions, tenants, and regions without VNet peering, enhancing security and network architecture flexibility.",
+    "key_points": [
+      "Supports private frontends accessible only through explicitly provisioned Azure Private Link private endpoints, removing public internet exposure.",
+      "Enables cross-boundary private connectivity across VNets, subscriptions, Microsoft Entra tenants, and Azure regions, including overlapping CIDR ranges, without requiring VNet peering.",
+      "Allows hosting of both public and private frontends on a single Application Gateway for Containers resource, enabling different exposure models and security policies per workload.",
+      "Facilitates architectures with upstream firewalls or network virtual appliances for centralized traffic inspection, while preserving Kubernetes-native Layer 7 routing, TLS, health probing, and WAF capabilities."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/application-gateway/for-containers/private-ingress",
+    "doc_title": "Private ingress with Application Gateway for Containers",
+    "doc_read": true,
+    "links": [
+      "http://aka.ms/agc/privateingress",
+      "https://aka.ms/agc/privateingress/configure"
+    ],
+    "source": "llm",
+    "updated_at": "2026-11-04T02:57:38.899333+00:00",
+    "title_ko": "Public Preview: Application Gateway for Containers의 프라이빗 인그레스",
+    "summary_ko": "Application Gateway for Containers가 이제 Azure Private Link 프라이빗 엔드포인트를 통한 프라이빗 인그레스를 지원하여, VNet 피어링 없이도 VNet, 구독, 테넌트, 지역 간 Kubernetes 워크로드에 대해 안전하고 프라이빗한 연결을 가능하게 하여 보안과 네트워크 아키텍처 유연성을 향상합니다.",
+    "key_points_ko": [
+      "명시적으로 프로비저닝된 Azure Private Link 프라이빗 엔드포인트를 통해서만 접근 가능한 프라이빗 프런트엔드를 지원하여 공용 인터넷 노출을 제거합니다.",
+      "VNet 피어링 없이도 VNet, 구독, Microsoft Entra 테넌트, Azure 지역 간 중첩 CIDR 범위를 포함한 경계 간 프라이빗 연결을 가능하게 합니다.",
+      "단일 Application Gateway for Containers 리소스에서 공용 및 프라이빗 프런트엔드를 모두 호스팅할 수 있어 워크로드별로 다른 노출 모델과 보안 정책을 적용할 수 있습니다.",
+      "업스트림 방화벽 또는 네트워크 가상 어플라이언스를 통한 중앙 집중식 트래픽 검사 아키텍처를 지원하면서 Kubernetes 네이티브 Layer 7 라우팅, TLS, 헬스 프로빙, WAF 기능을 유지합니다."
+    ],
+    "translated_at": "2026-11-04T02:58:11.071247+00:00"
+  },
+  "578655": {
+    "summary": "Azure Storage Discovery now offers advanced capacity insights in public preview, enhancing visibility into storage usage to help organizations optimize storage management.",
+    "key_points": [
+      "Introduces advanced capacity insights including access patterns, data age, storage tiers, object size distribution, retention states, and versioning.",
+      "Available in public preview, enabling organizations to explore detailed storage usage analytics.",
+      "Helps teams identify growth drivers and opportunities for optimization across large-scale, distributed data estates.",
+      "Supports informed storage management decisions by providing deep, actionable insights into storage capacity and configurations."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/storage-discovery/",
+    "doc_title": "Azure Storage Discovery documentation",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/en-us/azure/storage-discovery/",
+      "https://go.microsoft.com/fwlink/?LinkId=2384105",
+      "https://go.microsoft.com/fwlink/?LinkId=2384106"
+    ],
+    "source": "llm",
+    "updated_at": "2026-11-04T02:57:43.492799+00:00",
+    "title_ko": "Public Preview: Azure Storage Discovery에서 고급 용량 인사이트 제공",
+    "summary_ko": "Azure Storage Discovery가 Public Preview로 고급 용량 인사이트를 제공하여 저장소 사용 현황에 대한 가시성을 높이고 조직이 저장소 관리를 최적화할 수 있도록 지원합니다.",
+    "key_points_ko": [
+      "액세스 패턴, 데이터 연령, 저장소 계층, 객체 크기 분포, 보존 상태 및 버전 관리 등 고급 용량 인사이트를 도입합니다.",
+      "Public Preview로 제공되어 조직이 상세한 저장소 사용 분석을 탐색할 수 있습니다.",
+      "대규모 분산 데이터 자산 전반에서 성장 요인과 최적화 기회를 식별하는 데 도움을 줍니다.",
+      "저장소 용량 및 구성에 대한 깊이 있고 실행 가능한 인사이트를 제공하여 정보에 기반한 저장소 관리 결정을 지원합니다."
+    ],
+    "translated_at": "2026-11-04T02:58:16.052625+00:00"
+  },
+  "579305": {
+    "summary": "Azure SQL Database and Managed Instance now support permanently locking backup immutability to the configured PITR retention period beyond the default 7 days, enhancing data protection especially for customers with longer retention needs.",
+    "key_points": [
+      "Capability to lock immutability to the full configured PITR retention period, up to 35 days, beyond the default 7 days.",
+      "Locking immutability is permanent and only allows increasing, not decreasing, the PITR retention period for the database.",
+      "Immutability protection continues even if the database is deleted, ensuring retained backups remain immutable.",
+      "Integrated into managed backup service without requiring additional storage account or policy management, simplifying backup protection."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/azure-sql/automatic-backup-immutability?view=azuresql",
+    "doc_title": "Automatic backup immutability for Azure SQL Database and Azure SQL Managed Instance - Azure SQL",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/en-us/azure/azure-sql/automatic-backup-immutability?view=azuresql"
+    ],
+    "source": "llm",
+    "updated_at": "2026-11-04T02:57:47.338660+00:00",
+    "title_ko": "Public Preview: Azure SQL Database 및 Azure SQL Managed Instance의 PITR 백업에 대한 불변성 확장",
+    "summary_ko": "Azure SQL Database와 Managed Instance가 기본 7일을 넘어 구성된 PITR 보존 기간까지 백업 불변성을 영구적으로 잠글 수 있게 되어, 특히 장기 보존이 필요한 고객의 데이터 보호를 강화합니다.",
+    "key_points_ko": [
+      "기본 7일을 넘어 최대 35일까지 구성된 전체 PITR 보존 기간에 불변성을 잠글 수 있는 기능.",
+      "불변성 잠금은 영구적이며 데이터베이스의 PITR 보존 기간을 줄이는 것이 아니라 늘리는 것만 허용함.",
+      "데이터베이스가 삭제되어도 불변성 보호가 계속되어 보존된 백업이 불변 상태로 유지됨.",
+      "추가 스토리지 계정이나 정책 관리 없이 관리형 백업 서비스에 통합되어 백업 보호를 간소화함."
+    ],
+    "translated_at": "2026-11-04T02:58:21.137495+00:00"
+  },
+  "578926": {
+    "summary": "Azure Site Recovery now generally supports enhanced disaster recovery for VMs in Virtual Machine Scale Sets with flexible orchestration, improving failover, reprotection, and failback workflows to ensure better resilience and recovery management.",
+    "key_points": [
+      "Supports individual VM replication within VMSS Flex, requiring manual selection of VMs for protection and recovery plans for group failover.",
+      "Target scale sets must be pre-created and configured; scale set configuration and autoscale settings are not replicated automatically.",
+      "Failover places recovery VMs in the configured availability zone and fault domain; reprotect and failback restore workloads to original VMSS Flex configurations.",
+      "New VMs added post-replication enablement are not automatically protected; capacity reservations and proximity placement groups have specific limitations."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/site-recovery/azure-to-azure-how-to-enable-replication-vmss-flex",
+    "doc_title": "Enable disaster recovery for VMs in Virtual Machine Scale Sets with Flexible orchestration - Azure Site Recovery",
+    "doc_read": true,
+    "links": [
+      "https://aka.ms/asr-support-vmss-flex"
+    ],
+    "source": "llm",
+    "updated_at": "2026-11-04T02:57:52.741837+00:00",
+    "title_ko": "Generally Available: VMSS Flex에 대한 향상된 Azure Site Recovery 지원",
+    "summary_ko": "Azure Site Recovery가 이제 Virtual Machine Scale Sets의 유연한 오케스트레이션을 사용하는 VM에 대해 향상된 재해 복구를 Generally Available 상태로 지원하여, 장애 조치, 재보호 및 복구 워크플로우를 개선하여 더 나은 복원력과 복구 관리를 보장합니다.",
+    "key_points_ko": [
+      "VMSS Flex 내 개별 VM 복제를 지원하며, 보호할 VM과 그룹 장애 조치를 위한 복구 계획을 수동으로 선택해야 합니다.",
+      "대상 스케일 세트는 사전에 생성 및 구성되어야 하며, 스케일 세트 구성과 자동 확장 설정은 자동으로 복제되지 않습니다.",
+      "장애 조치 시 복구 VM은 구성된 가용 영역과 장애 도메인에 배치되며, 재보호 및 복구는 원래 VMSS Flex 구성으로 워크로드를 복원합니다.",
+      "복제 활성화 후 추가된 새 VM은 자동으로 보호되지 않으며, 용량 예약 및 근접 배치 그룹에는 특정 제한 사항이 있습니다."
+    ],
+    "translated_at": "2026-11-04T02:58:27.020444+00:00"
   }
 }
