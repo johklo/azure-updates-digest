@@ -1,130 +1,14 @@
 {
-  "generated_at": "2026-11-04T02:56:58.071864+00:00",
-  "window_start": "2026-10-28T02:56:58.071864+00:00",
-  "window_end": "2026-11-04T02:56:58.071864+00:00",
+  "generated_at": "2026-11-05T03:18:57.372315+00:00",
+  "window_start": "2026-10-29T03:18:57.372315+00:00",
+  "window_end": "2026-11-05T03:18:57.372315+00:00",
   "window_days": 7,
-  "fetched_count": 21,
-  "matched_count": 21,
-  "count": 6,
+  "fetched_count": 22,
+  "matched_count": 22,
+  "count": 4,
   "items": [
     {
-      "id": "576382",
-      "productCategories": [
-        "Networking",
-        "Security"
-      ],
-      "tags": [
-        "Features"
-      ],
-      "products": [
-        "Application Gateway"
-      ],
-      "generalAvailabilityDate": null,
-      "previewAvailabilityDate": "2026-11",
-      "privatePreviewAvailabilityDate": null,
-      "title": "Public Preview: JWT validation for Application Gateway for Containers",
-      "description": "<p>Application Gateway for Containers now supports centralized\nJSON Web Token validation through the AuthPolicy custom resource. Teams can\nvalidate a token signature, issuer, lifetime, and configured audience by using\nsigning keys retrieved from a trusted HTTPS JSON Web Key Set endpoint. Requests\nwith missing or invalid credentials are rejected at the gateway instead of\nbeing forwarded to the backend.&nbsp;</p><p>AuthPolicy can protect an ApplicationLoadBalancer, Gateway,\nHTTPRoute, GRPCRoute, or MCPRoute. Policies inherit through the resource\nhierarchy, while a more specific route-level policy can replace an inherited\npolicy or explicitly opt a route out. Optional OAuth Protected Resource\nMetadata helps OAuth-aware clients discover authorization servers and supported\nscopes.&nbsp;</p><ul><li>Apply consistent JWT\nvalidation to HTTP, gRPC, and MCP routes&nbsp;</li></ul><ul type=\"disc\">\n <li>Use\n     Microsoft Entra ID or third-party identity providers that publish trusted\n     JWKS signing keys&nbsp;</li>\n <li>Combine\n     JWT validation with WAF so malicious traffic is inspected before\n     authentication&nbsp;</li>\n <li>Publish\n     OAuth resource metadata to enable authorization server discovery&nbsp;</li></ul><p>Learn more:&nbsp;</p><ul><li><a href=\"https://aka.ms/agc/jwtvalidation\">JWT validation for Application Gateway\nfor Containers</a>&nbsp;</li><li><a href=\"https://aka.ms/agc/jwtvalidation/configure\">Configure JWT validation for\nApplication Gateway for Containers - Gateway API</a>&nbsp;</li></ul><br>",
-      "status": "In preview",
-      "created": "2026-11-03T21:17:08.6435886Z",
-      "modified": "2026-11-03T21:17:08.6435886Z",
-      "locale": null,
-      "availabilities": [
-        {
-          "ring": "Preview",
-          "year": 2026,
-          "month": "November"
-        }
-      ]
-    },
-    {
-      "id": "576388",
-      "productCategories": [
-        "Networking",
-        "Security"
-      ],
-      "tags": [
-        "Features"
-      ],
-      "products": [
-        "Application Gateway"
-      ],
-      "generalAvailabilityDate": null,
-      "previewAvailabilityDate": "2026-11",
-      "privatePreviewAvailabilityDate": null,
-      "title": "Public Preview: MCP gateway for Application Gateway for Containers",
-      "description": "<p>Application Gateway for Containers now supports Model\nContext Protocol routing through the new MCPRoute custom resource. Platform\nteams can publish MCP servers behind a stable hostname and path while\ncentralizing TLS, JWT validation, Web Application Firewall protection, backend\nhealth monitoring, and routing policy at the gateway.&nbsp;</p><p>MCPRoute supports both direct routing to a single MCP\nserver and aggregation of multiple independent servers behind one logical\nendpoint. For aggregated deployments, Application Gateway for Containers merges\ntool, resource, and prompt discovery responses, namespaces capability names to\navoid collisions, and routes invocations to the backend that owns the selected\ncapability.&nbsp;</p><ul><li>Expose one governed\nendpoint for MCP clients and Kubernetes-hosted MCP servers&nbsp;</li><li>Aggregate capabilities from\nmultiple MCP servers&nbsp;&nbsp;</li><li>Session affinity for MCP\nservers that maintain in-memory session state&nbsp;</li><li>Apply JWT validation, WAF,\nbackend TLS, health checks, and cross-namespace references&nbsp;</li></ul><p>Learn more:&nbsp;</p><ul><li><a href=\"https://aka.ms/agc/mcpgateway\">Model Context Protocol capabilities in\nApplication Gateway for Containers</a>&nbsp;</li><li><a href=\"https://aka.ms/agc/mcpgateway/configure\">Configure Model Context Protocol\nrouting for Application Gateway for Containers</a>&nbsp;</li></ul>",
-      "status": "In preview",
-      "created": "2026-11-03T21:16:36.3961615Z",
-      "modified": "2026-11-03T21:16:36.3961615Z",
-      "locale": null,
-      "availabilities": [
-        {
-          "ring": "Preview",
-          "year": 2026,
-          "month": "November"
-        }
-      ]
-    },
-    {
-      "id": "576393",
-      "productCategories": [
-        "Networking",
-        "Security"
-      ],
-      "tags": [
-        "Features"
-      ],
-      "products": [
-        "Application Gateway"
-      ],
-      "generalAvailabilityDate": null,
-      "previewAvailabilityDate": "2026-11",
-      "privatePreviewAvailabilityDate": null,
-      "title": "Public Preview: Private ingress for Application Gateway for Containers",
-      "description": "<p>Application\nGateway for Containers now supports private frontends that are reachable only\nthrough approved Azure Private Link private endpoints. This enables\norganizations to keep internal applications, shared services, and cross-cluster\ntraffic on private connectivity while retaining Kubernetes-native Layer 7\nrouting, TLS, health probing, and Web Application Firewall capabilities.&nbsp;</p><p>Private ingress supports connectivity across virtual\nnetworks, subscriptions, Microsoft Entra tenants, and Azure regions without\nrequiring VNet peering. A single Application Gateway for Containers resource\ncan also host public and private frontends, allowing teams to use separate\nexposure models and security policies for different workloads.&nbsp;</p><ul><li>Remove the public IP\naddress and direct internet path from the frontend&nbsp;</li><li>Enforce access through\nexplicitly provisioned and approved private endpoints&nbsp;</li><li>&nbsp;Connect workloads across VNets, subscriptions,\ntenants, and regions, including environments with overlapping CIDR ranges&nbsp;&nbsp;</li><li>Place an Azure Firewall,\nnetwork virtual appliance, or another upstream service in front of Kubernetes\nworkloads&nbsp;</li></ul><p>Learn more: &nbsp;&nbsp;</p><ul><li><a href=\"http://aka.ms/agc/privateingress\">Private ingress with Application\nGateway for Containers</a>&nbsp;&nbsp;</li><li><a href=\"https://aka.ms/agc/privateingress/configure\">Configure private ingress\nwith Application Gateway for Containers - Gateway API</a>&nbsp;</li></ul>",
-      "status": "In preview",
-      "created": "2026-11-03T21:15:46.6456991Z",
-      "modified": "2026-11-03T21:15:46.6456991Z",
-      "locale": null,
-      "availabilities": [
-        {
-          "ring": "Preview",
-          "year": 2026,
-          "month": "November"
-        }
-      ]
-    },
-    {
-      "id": "578655",
-      "productCategories": [
-        "Storage"
-      ],
-      "tags": [
-        "Feature"
-      ],
-      "products": [
-        "Storage Accounts",
-        "Azure Storage Discovery"
-      ],
-      "generalAvailabilityDate": null,
-      "previewAvailabilityDate": "2026-10",
-      "privatePreviewAvailabilityDate": null,
-      "title": "Public Preview: Advanced capacity insights are now available in Azure Storage Discovery",
-      "description": "<p>Advanced capacity insights are now available for preview in Azure Storage Discovery. Storage Discovery now provides greater visibility into storage usage through insights such as access patterns, data age, storage tiers, object size distribution, retention states, and versioning. With these insights, teams can identify opportunities, understand factors contributing to storage growth, and inform storage management decisions at scale.</p><p>Learn more:</p><ul><li><a href=\"https://go.microsoft.com/fwlink/?LinkId=2384105\" rel=\"noreferrer noopener\" title=\"https://go.microsoft.com/fwlink/?linkid=2384105\">Discover what's new with advanced capacity insights</a></li><li><a href=\"https://go.microsoft.com/fwlink/?LinkId=2384106\" rel=\"noreferrer noopener\" title=\"https://go.microsoft.com/fwlink/?linkid=2384106\">Explore advanced capacity insights and capabilities</a></li><li><a href=\"https://learn.microsoft.com/en-us/azure/storage-discovery/\" rel=\"noreferrer noopener\" title=\"https://learn.microsoft.com/en-us/azure/storage-discovery/\">Get started with Azure Storage Discovery</a></li></ul>",
-      "status": "In preview",
-      "created": "2026-11-03T20:20:29.2609469Z",
-      "modified": "2026-11-03T20:20:29.2609469Z",
-      "locale": null,
-      "availabilities": [
-        {
-          "ring": "Preview",
-          "year": 2026,
-          "month": "October"
-        }
-      ]
-    },
-    {
-      "id": "579305",
+      "id": "579300",
       "productCategories": [
         "Databases",
         "Hybrid + multicloud"
@@ -133,17 +17,74 @@
         "Feature"
       ],
       "products": [
-        "Azure SQL Database",
-        "Azure SQL Managed Instance"
+        "Azure Database for PostgreSQL"
+      ],
+      "generalAvailabilityDate": "2026-11",
+      "previewAvailabilityDate": null,
+      "privatePreviewAvailabilityDate": null,
+      "title": "Generally Available: Azure Database for PostgreSQL stable REST API version 2026-10-01",
+      "description": "The Azure Database for PostgreSQL Flexible Server REST API version 2026-10-01 is now generally available. This stable API release introduces expanded capabilities for maintenance management, immutable backups, multi-tenant encryption (cross-tenant customer-managed keys (**CMKs**), Federal Information Processing Standards (**FIPS**) configuration, network migration, Premium SSD v2 storage, and major version upgrade prechecks. It also enhances autonomous tuning recommendations and introduces more flexible PostgreSQL version handling.<br><br>These enhancements enable customers to automate more server management operations, strengthen security, and streamline database administration through a stable, production-ready API.<br><p><a href=\"https://learn.microsoft.com/azure/postgresql/release-notes/release-notes-api#api-releases\">Learn\nmore</a>.&nbsp;</p>",
+      "status": "Launched",
+      "created": "2026-11-04T18:42:12.6780656Z",
+      "modified": "2026-11-04T18:42:12.6780656Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "General Availability",
+          "year": 2026,
+          "month": "November"
+        }
+      ]
+    },
+    {
+      "id": "578966",
+      "productCategories": [
+        "Networking"
+      ],
+      "tags": [
+        "Features"
+      ],
+      "products": [
+        "Azure Route Server"
+      ],
+      "generalAvailabilityDate": null,
+      "previewAvailabilityDate": null,
+      "privatePreviewAvailabilityDate": null,
+      "title": "Generally Available: Route maps for Azure Route Server",
+      "description": "Route maps for Azure Route Server are now generally available in the Azure public cloud. Route maps provide fine-grained control over inbound and outbound routing across hybrid connections. Customers can manage routes advertised to and from Azure Route Server BGP peerings with Network Virtual Appliances (NVAs), ExpressRoute gateways, and VPN gateways in the same virtual network. Route maps provide the following capabilities: <br><ul data-editing-info=\"{&quot;orderedStyleType&quot;:1,&quot;unorderedStyleType&quot;:2}\"><li>Route summarization: Summarize routes when on-premises networks connect to the virtual network through ExpressRoute or VPN. <br></li></ul><ul data-editing-info=\"{&quot;orderedStyleType&quot;:1,&quot;unorderedStyleType&quot;:2}\"><li>Route control: Control routes entering and leaving Azure Route Server between on-premises networks, NVAs, and virtual networks. <br></li></ul><ul data-editing-info=\"{&quot;orderedStyleType&quot;:1,&quot;unorderedStyleType&quot;:2}\"><li>Path selection: Modify BGP attributes such as AS-PATH to make routes more or less preferred. <br></li></ul><ul data-editing-info=\"{&quot;orderedStyleType&quot;:1,&quot;unorderedStyleType&quot;:2}\"><li>Route tagging: Tag routes by using the BGP Community attribute.</li></ul><a href=\"https://learn.microsoft.com/azure/route-server/route-maps-about\">Learn more</a>.<br>",
+      "status": null,
+      "created": "2026-11-04T18:39:41.8215548Z",
+      "modified": "2026-11-04T18:39:41.8215548Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "Effective",
+          "year": 2026,
+          "month": "November"
+        }
+      ]
+    },
+    {
+      "id": "579507",
+      "productCategories": [
+        "Networking",
+        "Security"
+      ],
+      "tags": [
+        "Features",
+        "Security"
+      ],
+      "products": [
+        "Azure Firewall"
       ],
       "generalAvailabilityDate": null,
       "previewAvailabilityDate": "2026-11",
       "privatePreviewAvailabilityDate": null,
-      "title": "Public Preview: Extend immutability for PITR backups for Azure SQL Database and Azure SQL Managed Instance",
-      "description": "<div>With this enhancement, you have the ability to lock your retention to the configured PITR retention, beyond the default 7 days of immutable backups that are already available. This is especially useful for financial customers who typically have 35 days of PITR retention. The current default immutability is up to 7 days, and with this enhancement you can extend and lock immutability up to 35 days.<br></div>Once locked, only extensions to PITR retention are allowed. This setting is permanent for the life of the database.<br><p><a href=\"https://learn.microsoft.com/en-us/azure/azure-sql/automatic-backup-immutability?view=azuresql\">Learn\nmore</a>.&nbsp;</p>",
+      "title": "Public Preview: Azure Firewall IPv6 now supports application rules",
+      "description": "<br>Azure Firewall now supports application rules in IPv6\nPublic Preview, enabling layer 7 filtering for IPv6 HTTP and HTTPS traffic. The\nenhancement extends application-level controls to IPv6 and dual-stack\ndeployments, helping customers maintain consistent policies across IPv4 and\nIPv6 environments.<br><br><a href=\"https://learn.microsoft.com/en-us/azure/firewall/deploy-dual-stack-firewall?tabs=portal\">Learn more</a>.",
       "status": "In preview",
-      "created": "2026-11-03T18:36:12.9198081Z",
-      "modified": "2026-11-03T18:36:12.9198081Z",
+      "created": "2026-11-04T18:09:43.6615776Z",
+      "modified": "2026-11-04T18:09:43.6615776Z",
       "locale": null,
       "availabilities": [
         {
@@ -154,31 +95,34 @@
       ]
     },
     {
-      "id": "578926",
+      "id": "579162",
       "productCategories": [
-        "Management and governance",
-        "Migration"
+        "Storage",
+        "Compute"
       ],
       "tags": [
+        "Compliance",
+        "Management",
         "Feature"
       ],
       "products": [
-        "Azure Site Recovery"
+        "Azure Disk Storage",
+        "Virtual Machines"
       ],
-      "generalAvailabilityDate": "2026-10",
+      "generalAvailabilityDate": null,
       "previewAvailabilityDate": null,
-      "privatePreviewAvailabilityDate": null,
-      "title": "Generally Available: Enhanced Azure Site Recovery support for VMSS Flex",
-      "description": "Azure Site Recovery now offers an enhanced disaster recovery experience for virtual machines in Virtual Machine Scale Sets with flexible orchestration. The update improves target configuration and end-to-end recovery workflows, including failover, reprotection, and failback.<br><br><a href=\"https://aka.ms/asr-support-vmss-flex\">Learn more</a>. <br>",
-      "status": "Launched",
-      "created": "2026-11-03T18:32:01.6214795Z",
-      "modified": "2026-11-03T18:32:01.6214795Z",
+      "privatePreviewAvailabilityDate": "2026-06",
+      "title": "Public Preview: Multi-disk crash-consistent VM restore points for Premium SSD v2 and Ultra Disks on VMs with SCSI disk controller",
+      "description": "<p>Multi-disk crash-consistent restore points for Azure virtual machines with Premium SSD v2 and&nbsp;Ultra data disks are now available in public preview on VMs with SCSI disk controllers. You can use this to capture the agent-less crash consistent&nbsp;restore point&nbsp;of&nbsp;a&nbsp;VM.</p><p>This preview extends existing multi-disk crash-consistent restore point support to Premium SSD v2 and Ultra data disks. Existing support for Standard HDD, Standard SSD, and Premium SSD disks is unchanged.</p><p>Instant Access is&nbsp;also supported&nbsp;for&nbsp;multi-disk crash-consistent restore points&nbsp;in&nbsp;this&nbsp;preview.&nbsp;This&nbsp;applies only to VMs with Premium SSD v2 and&nbsp;Ultra data disks. With Instant Access, you can begin restoring a disk as soon as the restore&nbsp;point&nbsp;is created instead of waiting for the background data copy to complete, helping reduce your recovery time objective.</p><p><b>How to use it</b></p><p>Set consistencyMode&nbsp;to CrashConsistent&nbsp;when creating a restore point in a restore point collection. </p><p><a href=\"https://aka.ms/mdccPv2PublicPreview\" rel=\"noreferrer noopener\">Learn more.</a>&nbsp;</p>",
+      "status": "In preview",
+      "created": "2026-11-04T17:13:51.5498713Z",
+      "modified": "2026-11-04T17:13:51.5498713Z",
       "locale": null,
       "availabilities": [
         {
-          "ring": "General Availability",
+          "ring": "Private Preview",
           "year": 2026,
-          "month": "October"
+          "month": "June"
         }
       ]
     }
