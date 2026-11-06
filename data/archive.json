@@ -1,7 +1,68 @@
 {
-  "updated_at": "2026-11-05T03:18:57.372315+00:00",
-  "count": 1128,
+  "updated_at": "2026-11-06T03:17:44.572183+00:00",
+  "count": 1130,
   "items": [
+    {
+      "id": "577668",
+      "productCategories": [
+        "Networking",
+        "Security"
+      ],
+      "tags": [
+        "Features",
+        "Security"
+      ],
+      "products": [
+        "Azure Front Door"
+      ],
+      "generalAvailabilityDate": "2026-11",
+      "previewAvailabilityDate": null,
+      "privatePreviewAvailabilityDate": null,
+      "title": "Generally Available: Azure Front Door TLS key exchange policy with post-quantum support ",
+      "description": "<p>Azure Front Door now supports configurable TLS key exchange\npolicies, including hybrid post-quantum key exchange, to help you prepare for\nevolving cryptographic threats while meeting your security and client\ncompatibility requirements. Choose a predefined Standard or Enhanced policy, or\nuse a Custom policy to select supported classical and hybrid post-quantum key\nexchange groups, including the option to select X25519. Hybrid post-quantum key\nexchange requires TLS 1.3 and protects client-to-edge connections; it does not\napply to connections from Azure Front Door to your origin.&nbsp;</p>\n\nFor additional control over TLS encryption,\nAzure Front Door also supports disabling the &nbsp;TLS_AES_128_GCM_SHA256&nbsp;\ncipher suite when TLS 1.3 is configured as the minimum TLS version in TLS\nPolicy. Together, these updates give you more flexibility to tailor key\nexchange and cipher suite settings to your application’s security requirements.<p></p><p><a href=\"https://learn.microsoft.com/en-us/azure/frontdoor/tls-key-exchange-policy\">Learn more</a>.</p>",
+      "status": "Launched",
+      "created": "2026-11-05T23:19:48.2874662Z",
+      "modified": "2026-11-05T23:19:48.2874662Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "General Availability",
+          "year": 2026,
+          "month": "November"
+        }
+      ]
+    },
+    {
+      "id": "579280",
+      "productCategories": [
+        "Networking",
+        "Security"
+      ],
+      "tags": [
+        "Features",
+        "Security"
+      ],
+      "products": [
+        "Application Gateway",
+        "Web Application Firewall"
+      ],
+      "generalAvailabilityDate": "2026-11",
+      "previewAvailabilityDate": null,
+      "privatePreviewAvailabilityDate": null,
+      "title": "Generally Available: WAF Insights for Azure Application Gateway",
+      "description": "<br>WAF Insights for Azure Application Gateway Web Application Firewall (WAF) is now generally available. WAF Insights is a built-in experience in the WAF policy that brings WAF logs and metrics together in interactive dashboards, so you can investigate blocked requests, analyze attack patterns, and identify false positives without writing queries.<br><br>With general availability, WAF Insights supports both Azure Diagnostics and resource-specific logs, renames the Triage tab to Investigate, and counts each request once by its final WAF outcome. Use the Monitor tab to track WAF activity and the most active rules, and the Investigate tab to drill down from a rule or a URL to the exact request and every rule it matched.<br><br><a href=\"https://learn.microsoft.com/azure/web-application-firewall/ag/insights\">Learn\nmore</a>.&nbsp;<br><br>",
+      "status": "Launched",
+      "created": "2026-11-05T17:11:31.2371706Z",
+      "modified": "2026-11-05T17:11:31.2371706Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "General Availability",
+          "year": 2026,
+          "month": "November"
+        }
+      ]
+    },
     {
       "id": "579300",
       "productCategories": [
@@ -394,7 +455,7 @@
       "previewAvailabilityDate": null,
       "privatePreviewAvailabilityDate": null,
       "title": "Retirement: Azure Fluid Relay",
-      "description": "On February 2, 2027, we will retire Azure Fluid Relay. After this date, Azure Fluid Relay will reach end of availability, and workloads that continue to depend on the service may experience disruption.<br><br>The Fluid Framework remains available as an open-source framework for building distributed, real-time collaborative web applications. A <a href=\"https://github.com/microsoft/FluidFramework/tree/main/tools/selfhost\">self-hosted Fluid service solution</a> is available as the replacement. You can continue using Azure Fluid Relay until February 1, 2027 while you complete your transition.<br><br><b>How this affects you:<br></b>If your applications continue to use Azure Fluid Relay after February 2, 2027, they may experience service disruption. Moving to the self-hosted solution means that you will be responsible for hosting and operating the Fluid service in your environment. Operational and infrastructure costs will depend on your deployment architecture, scale, and operational requirements.<br><br><b>What you need to do:<br></b>Transition workloads that depend on Azure Fluid Relay to a <a href=\"https://github.com/microsoft/FluidFramework/tree/main/tools/selfhost\">self-hosted Fluid service solution</a> before February 2, 2027. Review your Azure subscriptions and identify applications that use Azure Fluid Relay, plan and complete the transition, and use the self-hosted Fluid service solution in the Fluid Framework GitHub repository as the migration and replacement resource.",
+      "description": "<div>On June 2, 2027, we will retire Azure Fluid Relay. After this date, Azure Fluid Relay will reach end of availability, and workloads that continue to depend on the service may experience disruption.<br></div><br><div>The Fluid Framework remains available as an open-source framework for building distributed, real-time collaborative web applications. A <a href=\"https://github.com/microsoft/FluidFramework/tree/main/tools/selfhost\">self-hosted Fluid service solution</a> is available as the replacement. You can continue using Azure Fluid Relay until June 1, 2027 while you complete your transition.<br></div><br><b>How this affects you:<br></b><div>If your applications continue to use Azure Fluid Relay after June 2, 2027, they may experience service disruption. Moving to the self-hosted solution means that you will be responsible for hosting and operating the Fluid service in your environment. Operational and infrastructure costs will depend on your deployment architecture, scale, and operational requirements.<br></div><br><b>What you need to do:<br></b><div>Transition workloads that depend on Azure Fluid Relay to a <a href=\"https://github.com/microsoft/FluidFramework/tree/main/tools/selfhost\">self-hosted Fluid service solution</a> before June 2, 2027. Review your Azure subscriptions and identify applications that use Azure Fluid Relay, plan and complete the transition, and use the self-hosted Fluid service solution in the Fluid Framework GitHub repository as the migration and replacement resource.&nbsp;</div>",
       "status": null,
       "created": "2026-11-02T19:01:41.6188992Z",
       "modified": "2026-11-02T19:01:41.6188992Z",
@@ -403,7 +464,7 @@
         {
           "ring": "Retirement",
           "year": 2027,
-          "month": "February"
+          "month": "June"
         }
       ]
     },

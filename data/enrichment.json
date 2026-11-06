@@ -29259,5 +29259,57 @@
       "Windows Server 2016/2019/2022 및 인증된 Linux 배포판을 지원하며, 임시 OS 디스크, 공유 디스크, 32비트 OS는 제외됩니다."
     ],
     "translated_at": "2026-11-05T03:19:47.582707+00:00"
+  },
+  "577668": {
+    "summary": "Azure Front Door now offers configurable TLS key exchange policies with hybrid post-quantum support to enhance security against evolving cryptographic threats while maintaining client compatibility.",
+    "key_points": [
+      "Supports predefined Standard and Enhanced policies or Custom policies to select classical and hybrid post-quantum key exchange groups, including X25519.",
+      "Hybrid post-quantum key exchange requires TLS 1.3 and secures client-to-edge connections, not edge-to-origin connections.",
+      "Allows disabling TLS_AES_128_GCM_SHA256 cipher suite when TLS 1.3 is the minimum version for finer control over TLS encryption.",
+      "Customers must test client compatibility and monitor handshake success to ensure seamless deployment and maintain application connectivity."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/frontdoor/tls-key-exchange-policy",
+    "doc_title": "TLS Key Exchange Policy - Azure Front Door",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/en-us/azure/frontdoor/tls-key-exchange-policy"
+    ],
+    "source": "llm",
+    "updated_at": "2026-11-06T03:17:53.536335+00:00",
+    "title_ko": "Generally Available: Azure Front Door TLS 키 교환 정책에 포스트 양자 지원 추가",
+    "summary_ko": "Azure Front Door가 진화하는 암호 위협에 대응하면서 클라이언트 호환성을 유지할 수 있도록 하이브리드 포스트 양자 지원이 포함된 구성 가능한 TLS 키 교환 정책을 제공합니다.",
+    "key_points_ko": [
+      "X25519를 포함한 고전 및 하이브리드 포스트 양자 키 교환 그룹을 선택할 수 있는 사전 정의된 Standard 및 Enhanced 정책 또는 Custom 정책을 지원합니다.",
+      "하이브리드 포스트 양자 키 교환은 TLS 1.3을 요구하며 클라이언트-엣지 연결을 보호하지만 엣지-오리진 연결은 보호하지 않습니다.",
+      "TLS 1.3이 최소 버전일 때 TLS_AES_128_GCM_SHA256 암호 제품군을 비활성화하여 TLS 암호화에 대한 세밀한 제어가 가능합니다.",
+      "고객은 원활한 배포와 애플리케이션 연결 유지를 위해 클라이언트 호환성 테스트와 핸드셰이크 성공 모니터링을 수행해야 합니다."
+    ],
+    "translated_at": "2026-11-06T03:18:02.853576+00:00"
+  },
+  "579280": {
+    "summary": "Azure Application Gateway WAF Insights is now generally available, providing integrated dashboards for easier monitoring and investigation of WAF activity without query writing, enhancing security operations and incident response.",
+    "key_points": [
+      "WAF Insights combines logs and metrics in interactive dashboards within the WAF policy for detailed monitoring and investigation.",
+      "Supports Azure Diagnostics logs with renamed Investigate tab (formerly Triage) and counts requests by final WAF outcome for accuracy.",
+      "Monitor tab offers high-level trend tracking; Investigate tab enables drill-down from rules or URLs to specific requests and matched rules.",
+      "Helps identify blocked requests, analyze attack patterns, detect false positives, and supports operational awareness and incident workflows."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/web-application-firewall/ag/insights",
+    "doc_title": "Azure Application Gateway WAF Insights (Preview)",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/azure/web-application-firewall/ag/insights"
+    ],
+    "source": "llm",
+    "updated_at": "2026-11-06T03:17:57.964870+00:00",
+    "title_ko": "Generally Available: Azure Application Gateway용 WAF Insights",
+    "summary_ko": "Azure Application Gateway WAF Insights가 이제 Generally Available 상태로 제공되어, 쿼리 작성 없이도 WAF 활동을 쉽게 모니터링하고 조사할 수 있는 통합 대시보드를 제공하여 보안 운영과 사고 대응을 강화합니다.",
+    "key_points_ko": [
+      "WAF Insights는 WAF 정책 내에서 로그와 메트릭을 결합한 인터랙티브 대시보드를 통해 상세한 모니터링과 조사를 지원합니다.",
+      "이전 Triage 탭이 Investigate 탭으로 이름이 변경되었으며, Azure Diagnostics 로그를 지원하고 최종 WAF 결과별 요청 수를 집계하여 정확성을 높입니다.",
+      "Monitor 탭은 고수준 추세 추적을 제공하며, Investigate 탭은 규칙 또는 URL에서 특정 요청과 일치하는 규칙으로 세부 분석이 가능합니다.",
+      "차단된 요청 식별, 공격 패턴 분석, 오탐지 탐지에 도움을 주며 운영 인식과 사고 대응 워크플로우를 지원합니다."
+    ],
+    "translated_at": "2026-11-06T03:18:06.596625+00:00"
   }
 }
