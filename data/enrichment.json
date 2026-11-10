@@ -29311,5 +29311,61 @@
       "차단된 요청 식별, 공격 패턴 분석, 오탐지 탐지에 도움을 주며 운영 인식과 사고 대응 워크플로우를 지원합니다."
     ],
     "translated_at": "2026-11-06T03:18:06.596625+00:00"
+  },
+  "575106": {
+    "summary": "Support for .NET 8 and .NET 9 on Azure Static Web Apps managed Functions APIs will end on November 10, 2026, requiring customers to upgrade to .NET 10 to maintain security, support, and performance.",
+    "key_points": [
+      "Support and security updates for .NET 8 and .NET 9 on Azure Functions end November 10, 2026; apps will continue running but without patches.",
+      "Customers must migrate managed Functions APIs to .NET 10, updating project files, packages, and configuration to the isolated worker model if applicable.",
+      "The default runtime for Azure Static Web Apps managed Functions APIs will switch to .NET 10 after the retirement date; explicit apiRuntime settings ensure correct runtime usage.",
+      "Linked (bring-your-own) Function Apps have a separate upgrade and deployment lifecycle and must be updated independently."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/azure-functions/language-support-policy",
+    "doc_title": "Azure Functions language stack support policy",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/azure/azure-functions/language-support-policy",
+      "https://learn.microsoft.com/azure/azure-functions/migrate-dotnet-to-isolated-model?tabs=net10",
+      "https://learn.microsoft.com/azure/azure-functions/update-language-versions?pivots=programming-language-csharp",
+      "https://learn.microsoft.com/azure/azure-functions/dotnet-isolated-process-guide#project-and-package-references",
+      "https://learn.microsoft.com/azure/static-web-apps/languages-runtimes"
+    ],
+    "source": "llm",
+    "updated_at": "2026-11-10T04:31:27.656303+00:00",
+    "title_ko": "Retirement: Static Web Apps에서 .NET 8 및 .NET 9 지원이 2026년 11월 10일 종료됩니다",
+    "summary_ko": "Azure Static Web Apps 관리형 Functions API에서 .NET 8 및 .NET 9 지원이 2026년 11월 10일에 종료되며, 고객은 보안, 지원 및 성능 유지를 위해 .NET 10으로 업그레이드해야 합니다.",
+    "key_points_ko": [
+      "Azure Functions에서 .NET 8 및 .NET 9에 대한 지원 및 보안 업데이트가 2026년 11월 10일에 종료됩니다; 앱은 계속 실행되지만 패치는 제공되지 않습니다.",
+      "고객은 관리형 Functions API를 .NET 10으로 마이그레이션해야 하며, 프로젝트 파일, 패키지 및 구성(적용 가능한 경우 isolated worker 모델)도 업데이트해야 합니다.",
+      "Static Web Apps 관리형 Functions API의 기본 런타임은 Retirement 이후 .NET 10으로 전환되며, 명시적인 apiRuntime 설정을 통해 올바른 런타임 사용을 보장할 수 있습니다.",
+      "연결된(bring-your-own) Function Apps는 별도의 업그레이드 및 배포 수명 주기를 가지며 독립적으로 업데이트해야 합니다."
+    ],
+    "translated_at": "2026-11-10T04:31:35.242610+00:00"
+  },
+  "579854": {
+    "summary": "Azure File Sync now offers a guided Azure portal experience in public preview to simplify onboarding of Arc-enabled Windows Servers, streamlining deployment and management of hybrid file services.",
+    "key_points": [
+      "Provides a unified, guided workflow in the Azure portal for agent installation, server registration, and sync configuration with Azure file shares.",
+      "Supports hybrid file data centralization by syncing Windows Server files to Azure Files while maintaining local file server access.",
+      "Enables cloud tiering to optimize local storage by keeping frequently accessed files locally and tiering others to Azure.",
+      "Simplifies Azure File Sync deployment and management for organizations using Azure Arc to manage Windows Servers."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/storage/file-sync/file-sync-deployment-guide?tabs=azure-portal%2Cproactive-portal#install-on-azure-arc-enabled-servers",
+    "doc_title": "Deploy Azure File Sync",
+    "doc_read": true,
+    "links": [
+      "https://aka.ms/AFS-Arc"
+    ],
+    "source": "llm",
+    "updated_at": "2026-11-10T04:31:30.899074+00:00",
+    "title_ko": "Public Preview: Azure File Sync로 Arc-enabled Windows Server 현대화",
+    "summary_ko": "Azure File Sync가 Arc-enabled Windows Server 온보딩을 간소화하는 Azure 포털 내 가이드 경험을 Public Preview로 제공하여 하이브리드 파일 서비스의 배포 및 관리를 효율화합니다.",
+    "key_points_ko": [
+      "에이전트 설치, 서버 등록, Azure 파일 공유와의 동기화 구성을 위한 통합 가이드 워크플로우를 Azure 포털에서 제공합니다.",
+      "Windows Server 파일을 Azure Files와 동기화하여 하이브리드 파일 데이터 중앙화를 지원하며, 로컬 파일 서버 접근도 유지합니다.",
+      "자주 액세스하는 파일은 로컬에 유지하고 나머지는 Azure로 티어링하여 로컬 스토리지를 최적화하는 클라우드 티어링을 활성화합니다.",
+      "Azure Arc로 Windows Server를 관리하는 조직을 위해 Azure File Sync 배포 및 관리를 간소화합니다."
+    ],
+    "translated_at": "2026-11-10T04:31:38.737174+00:00"
   }
 }
