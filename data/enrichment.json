@@ -29367,5 +29367,135 @@
       "Azure Arc로 Windows Server를 관리하는 조직을 위해 Azure File Sync 배포 및 관리를 간소화합니다."
     ],
     "translated_at": "2026-11-10T04:31:38.737174+00:00"
+  },
+  "578454": {
+    "summary": "Distributed accelerator for cloud storage (DACS) is now in public preview on AKS, providing a distributed NVMe cache to speed up AI model loading and dataset reads by reducing repeated Azure Blob Storage access.",
+    "key_points": [
+      "DACS runs within AKS clusters using local NVMe disks to cache frequently read data from Azure Blob Storage, improving inference and training workload performance.",
+      "Supports up to 100-node Linux AKS clusters with dedicated NVMe cache nodes; cache servers distribute model data chunks without centralized dependency.",
+      "Enables faster warm-model loading, quicker scale-out and recovery by reusing cached data, and reduces repeated Blob Storage reads, benefiting AI workloads at scale.",
+      "Integrates with workloads via Azure Container Storage, Run:ai Model Streamer, BlobFuse2, or native Python client, with Azure Blob Storage as fallback and durable source of truth."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/storage/container-storage/distributed-accelerator-for-cloud-storage-overview",
+    "doc_title": "What is distributed accelerator for cloud storage? (preview) - Azure Storage",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/en-us/azure/storage/container-storage/distributed-accelerator-for-cloud-storage-overview"
+    ],
+    "source": "llm",
+    "updated_at": "2026-11-11T02:37:41.582398+00:00",
+    "title_ko": "Public Preview: AKS에서 클라우드 스토리지를 위한 분산 가속기",
+    "summary_ko": "Distributed accelerator for cloud storage(DACS)가 AKS에서 Public Preview로 제공되며, 분산 NVMe 캐시를 통해 반복적인 Azure Blob Storage 접근을 줄여 AI 모델 로딩과 데이터셋 읽기 속도를 향상합니다.",
+    "key_points_ko": [
+      "DACS는 AKS 클러스터 내에서 로컬 NVMe 디스크를 사용해 Azure Blob Storage에서 자주 읽는 데이터를 캐시하여 추론 및 학습 워크로드 성능을 개선합니다.",
+      "전용 NVMe 캐시 노드를 갖춘 최대 100노드 Linux AKS 클러스터를 지원하며, 캐시 서버는 중앙 집중식 의존성 없이 모델 데이터 청크를 분산합니다.",
+      "캐시된 데이터를 재사용해 더 빠른 워밍 모델 로딩, 신속한 스케일 아웃 및 복구를 가능하게 하며, 반복적인 Blob Storage 읽기를 줄여 대규모 AI 워크로드에 이점을 제공합니다.",
+      "Azure Container Storage, Run:ai Model Streamer, BlobFuse2 또는 네이티브 Python 클라이언트를 통해 워크로드와 통합되며, Azure Blob Storage는 폴백 및 내구성 있는 진실 소스로 작동합니다."
+    ],
+    "translated_at": "2026-11-11T02:38:06.511929+00:00"
+  },
+  "578773": {
+    "summary": "Azure Functions now generally supports building apps targeting .NET 11 using the isolated worker model, enabling improved runtime performance and enhanced developer capabilities.",
+    "key_points": [
+      "Supports .NET 11 with the isolated worker model while maintaining Azure Functions programming model and host integration.",
+      "Benefits include runtime performance optimizations, richer APIs, enhanced tooling, fewer assembly conflicts, and full control over app startup and dependency injection.",
+      "Requires Azure.Functions.Sdk version 1.0.1+ and explicit Microsoft.Azure.Functions.Worker package; currently supports C# only, with F# support temporarily unavailable.",
+      "Linux Consumption plan does not support .NET 10+ apps; use Flex Consumption plan for Linux deployments targeting .NET 11."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/azure-functions/dotnet-isolated-process-guide",
+    "doc_title": "Guide for running C# Azure Functions in an isolated worker process",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/en-us/azure/azure-functions/dotnet-isolated-process-guide"
+    ],
+    "source": "llm",
+    "updated_at": "2026-11-11T02:37:47.051848+00:00",
+    "title_ko": "Generally Available: .NET 11 지원하는 Azure Functions",
+    "summary_ko": "Azure Functions가 이제 isolated worker 모델을 사용하여 .NET 11을 대상으로 하는 앱 빌드를 Generally Available 상태로 지원하며, 이를 통해 런타임 성능 향상과 개발자 기능 강화가 가능합니다.",
+    "key_points_ko": [
+      ".NET 11을 isolated worker 모델로 지원하며 Azure Functions 프로그래밍 모델과 호스트 통합을 유지합니다.",
+      "런타임 성능 최적화, 풍부한 API, 향상된 도구, 어셈블리 충돌 감소, 앱 시작 및 의존성 주입에 대한 완전한 제어 등의 이점을 제공합니다.",
+      "Azure.Functions.Sdk 버전 1.0.1 이상과 명시적인 Microsoft.Azure.Functions.Worker 패키지가 필요하며, 현재는 C#만 지원하고 F# 지원은 일시적으로 제공되지 않습니다.",
+      "Linux Consumption 플랜은 .NET 10 이상 앱을 지원하지 않으므로, .NET 11을 대상으로 하는 Linux 배포에는 Flex Consumption 플랜을 사용해야 합니다."
+    ],
+    "translated_at": "2026-11-11T02:38:11.557374+00:00"
+  },
+  "579383": {
+    "summary": "Azure Front Door now supports native gRPC routing in public preview, enabling secure, efficient, and health-aware delivery of gRPC applications over HTTP/2 and HTTPS.",
+    "key_points": [
+      "Supports routing gRPC calls to specific services and methods with load balancing across healthy origins using Azure Front Door Standard and Premium.",
+      "Enables unary and streaming RPCs with full HTTP/2 and HTTPS support from client to origin, including native gRPC health probes for traffic distribution.",
+      "Supports Azure Front Door security and routing features such as rule sets and Edge Actions on gRPC-enabled routes, requiring HTTPS forwarding.",
+      "Requires gRPC-enabled origins with TLS and HTTP/2, configuration of origin groups and health probes, and supports testing via grpcurl and .proto files."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/frontdoor/grpc",
+    "doc_title": "gRPC support in Azure Front Door (preview)",
+    "doc_read": true,
+    "links": [
+      "https://aka.ms/afdgrpc"
+    ],
+    "source": "llm",
+    "updated_at": "2026-11-11T02:37:50.888696+00:00",
+    "title_ko": "Public Preview: Azure Front Door가 네이티브 gRPC 지원 추가",
+    "summary_ko": "Azure Front Door가 Public Preview로 네이티브 gRPC 라우팅을 지원하여 HTTP/2 및 HTTPS를 통해 gRPC 애플리케이션을 안전하고 효율적이며 상태 인식 방식으로 전달할 수 있습니다.",
+    "key_points_ko": [
+      "Azure Front Door Standard 및 Premium을 사용해 건강한 오리진 간 부하 분산과 함께 특정 서비스 및 메서드로 gRPC 호출 라우팅을 지원합니다.",
+      "클라이언트에서 오리진까지 완전한 HTTP/2 및 HTTPS 지원과 함께 단일 및 스트리밍 RPC를 가능하게 하며, 트래픽 분배를 위한 네이티브 gRPC 상태 프로브를 포함합니다.",
+      "HTTPS 포워딩이 필요하며, gRPC 활성화 경로에서 규칙 집합 및 Edge Actions 같은 Azure Front Door 보안 및 라우팅 기능을 지원합니다.",
+      "TLS 및 HTTP/2가 활성화된 gRPC 오리진과 오리진 그룹 및 상태 프로브 구성이 필요하며, grpcurl 및 .proto 파일을 통한 테스트를 지원합니다."
+    ],
+    "translated_at": "2026-11-11T02:38:16.399365+00:00"
+  },
+  "579310": {
+    "summary": "Azure Front Door edge actions are now generally available, enabling customers to run lightweight JavaScript functions at the edge for improved performance, security, and application flexibility.",
+    "key_points": [
+      "Edge actions allow execution of custom JavaScript during client request/response processing at Azure Front Door edge locations.",
+      "Built on secure Hyperlight micro-VM technology, providing hardware-backed isolation for code execution.",
+      "Supports scenarios like A/B testing, canary deployments, header manipulation, request filtering, dynamic origin selection, and edge authentication.",
+      "Edge actions integrate with Azure Front Door features such as rules engine, caching, routing, and Web Application Firewall (WAF)."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/frontdoor/edge-actions",
+    "doc_title": "Edge Actions - Azure Front Door",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/en-us/azure/frontdoor/edge-actions"
+    ],
+    "source": "llm",
+    "updated_at": "2026-11-11T02:37:54.928954+00:00",
+    "title_ko": "Generally Available: Azure Front Door edge actions",
+    "summary_ko": "Azure Front Door edge actions가 이제 Generally Available 상태로 제공되어, 고객이 엣지에서 경량 JavaScript 함수를 실행하여 성능, 보안 및 애플리케이션 유연성을 향상할 수 있습니다.",
+    "key_points_ko": [
+      "Edge actions는 Azure Front Door 엣지 위치에서 클라이언트 요청/응답 처리 중에 사용자 지정 JavaScript 실행을 허용합니다.",
+      "보안 Hyperlight 마이크로 VM 기술을 기반으로 하여 코드 실행에 하드웨어 기반 격리를 제공합니다.",
+      "A/B 테스트, 카나리 배포, 헤더 조작, 요청 필터링, 동적 오리진 선택, 엣지 인증과 같은 시나리오를 지원합니다.",
+      "Edge actions는 규칙 엔진, 캐싱, 라우팅, Web Application Firewall(WAF) 등 Azure Front Door 기능과 통합됩니다."
+    ],
+    "translated_at": "2026-11-11T02:38:21.525080+00:00"
+  },
+  "579746": {
+    "summary": "Azure Route Server now supports IPv4/IPv6 dual-stack mode in public preview, allowing simultaneous route exchange for both protocols to enhance hybrid network architectures.",
+    "key_points": [
+      "Supports dual-stack IPv4/IPv6 routing for ExpressRoute, VPN Gateway, and network virtual appliance connections in hub or spoke virtual networks.",
+      "Existing IPv4-only connections remain unchanged, enabling gradual adoption of IPv6 without disrupting current connectivity.",
+      "Dual-stack mode is enabled via the Azure portal by adding an IPv6 /64 prefix to the RouteServerSubnet; the change is irreversible and may take up to 40 minutes to complete.",
+      "Customers must resync hub-and-spoke virtual network peerings after enabling IPv6 to maintain correct configurations and verify provisioning status before proceeding."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/route-server/enable-route-server-dual-stack",
+    "doc_title": "Enable IPv4/IPv6 dual-stack mode on Azure Route Server",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/azure/route-server/enable-route-server-dual-stack"
+    ],
+    "source": "llm",
+    "updated_at": "2026-11-11T02:38:00.235999+00:00",
+    "title_ko": "Public Preview: Azure Route Server 이중 스택 IPv4/IPv6 지원",
+    "summary_ko": "Azure Route Server가 Public Preview로 IPv4/IPv6 이중 스택 모드를 지원하여 두 프로토콜의 경로 교환을 동시에 수행함으로써 하이브리드 네트워크 아키텍처를 강화합니다.",
+    "key_points_ko": [
+      "ExpressRoute, VPN Gateway 및 네트워크 가상 어플라이언스 연결에 대해 허브 또는 스포크 가상 네트워크에서 이중 스택 IPv4/IPv6 라우팅을 지원합니다.",
+      "기존의 IPv4 전용 연결은 변경되지 않아 현재 연결을 방해하지 않고 IPv6를 점진적으로 도입할 수 있습니다.",
+      "Azure 포털에서 RouteServerSubnet에 IPv6 /64 프리픽스를 추가하여 이중 스택 모드를 활성화하며, 이 변경은 되돌릴 수 없고 완료까지 최대 40분이 소요될 수 있습니다.",
+      "IPv6 활성화 후 허브-스포크 가상 네트워크 피어링을 다시 동기화해야 하며, 올바른 구성을 유지하고 프로비저닝 상태를 확인한 후 진행해야 합니다."
+    ],
+    "translated_at": "2026-11-11T02:38:27.096265+00:00"
   }
 }
