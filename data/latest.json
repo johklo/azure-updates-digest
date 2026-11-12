@@ -1,160 +1,37 @@
 {
-  "generated_at": "2026-11-11T02:37:30.221260+00:00",
-  "window_start": "2026-11-04T02:37:30.221260+00:00",
-  "window_end": "2026-11-11T02:37:30.221260+00:00",
+  "generated_at": "2026-11-12T03:40:28.887237+00:00",
+  "window_start": "2026-11-05T03:40:28.887237+00:00",
+  "window_end": "2026-11-12T03:40:28.887237+00:00",
   "window_days": 7,
-  "fetched_count": 12,
-  "matched_count": 12,
-  "count": 5,
+  "fetched_count": 9,
+  "matched_count": 9,
+  "count": 1,
   "items": [
     {
-      "id": "578454",
-      "productCategories": [
-        "Containers"
-      ],
-      "tags": [
-        "Feature"
-      ],
-      "products": [
-        "Azure Container Storage"
-      ],
-      "generalAvailabilityDate": null,
-      "previewAvailabilityDate": "2026-11",
-      "privatePreviewAvailabilityDate": "2026-06",
-      "title": "Public Preview: Distributed accelerator for cloud storage on AKS",
-      "description": "Distributed accelerator for cloud storage (DACS) is now in public preview for AI workloads running on Azure Kubernetes Service (AKS). DACS is a distributed read-through cache that runs within your AKS cluster and uses local NVMe disks across nodes to keep frequently read data from Azure Blob Storage close to GPU compute.<p>For inference workloads, DACS helps reduce warm-model loading times and repeated Blob Storage reads as workloads scale out, restart, or recover from node replacement. New and replacement nodes can reuse model data already cached in the cluster instead of downloading it again from Blob Storage. DACS can also accelerate training workloads that repeatedly read the same portions of a dataset. Performance gains depend on how often data is reused and whether the cache is cold or warm.</p>Enable and manage DACS on your AKS cluster through Azure Container Storage and integrate your workloads using Run:ai Model Streamer, BlobFuse2, or the native Python client. Azure Blob Storage remains the durable source of truth, with clients reading directly from Blob Storage when data isn't cached or the cache is unavailable.<p><a href=\"https://learn.microsoft.com/en-us/azure/storage/container-storage/distributed-accelerator-for-cloud-storage-overview\">Learn\nmore</a>.&nbsp;</p>",
-      "status": "In preview",
-      "created": "2026-11-10T20:08:32.4161774Z",
-      "modified": "2026-11-10T20:08:32.4161774Z",
-      "locale": null,
-      "availabilities": [
-        {
-          "ring": "Preview",
-          "year": 2026,
-          "month": "November"
-        },
-        {
-          "ring": "Private Preview",
-          "year": 2026,
-          "month": "June"
-        }
-      ]
-    },
-    {
-      "id": "578773",
-      "productCategories": [
-        "Compute",
-        "Containers",
-        "Internet of Things"
-      ],
-      "tags": [
-        "Features",
-        "SDK and Tools",
-        "Feature"
-      ],
-      "products": [
-        "Azure Functions"
-      ],
-      "generalAvailabilityDate": "2026-11",
-      "previewAvailabilityDate": null,
-      "privatePreviewAvailabilityDate": null,
-      "title": "Generally Available: Azure Functions support for .NET 11",
-      "description": "<p>Azure Functions support for .NET 11 is now generally available.</p><p>You can now\nbuild Azure Functions apps targeting .NET 11 using the isolated worker model,\nwhile continuing to use the Azure Functions programming model and host\nintegration.&nbsp;</p><p>Your\nserverless applications can now take advantage of the new runtime performance\noptimizations, richer APIs, and enhanced developer tooling through the latest\n.NET runtime, C#, library, and SDK improvements in this release.&nbsp;</p><p><a href=\"https://learn.microsoft.com/en-us/azure/azure-functions/dotnet-isolated-process-guide\">Learn\nmore</a>.&nbsp;&nbsp;</p>",
-      "status": "Launched",
-      "created": "2026-11-10T20:07:45.4312431Z",
-      "modified": "2026-11-10T20:07:45.4312431Z",
-      "locale": null,
-      "availabilities": [
-        {
-          "ring": "General Availability",
-          "year": 2026,
-          "month": "November"
-        }
-      ]
-    },
-    {
-      "id": "579383",
+      "id": "580155",
       "productCategories": [
         "Networking",
         "Security"
-      ],
-      "tags": [
-        "Features",
-        "Services"
-      ],
-      "products": [
-        "Azure Front Door"
-      ],
-      "generalAvailabilityDate": null,
-      "previewAvailabilityDate": "2026-11",
-      "privatePreviewAvailabilityDate": null,
-      "title": "Public Preview: Azure Front Door adds native gRPC support ",
-      "description": "<p>Announcing the public preview of gRPC support in Azure Front\nDoor.&nbsp;</p>Build and deliver gRPC applications through\nAzure Front Door Standard and Premium. Now in preview, gRPC support lets you\nroute calls to specific services and methods, distribute traffic across healthy\norigins, and use supported Azure Front Door security and routing capabilities. gRPC\nis supported over HTTP/2 and HTTPS from the client through Azure Front Door to\nthe origin, including unary and streaming RPCs. You can also configure gRPC\nhealth probes to load balance traffic to healthy origins.<br><br><a href=\"https://aka.ms/afdgrpc\">Learn more</a>.",
-      "status": "In preview",
-      "created": "2026-11-10T18:55:53.5128625Z",
-      "modified": "2026-11-10T18:55:53.5128625Z",
-      "locale": null,
-      "availabilities": [
-        {
-          "ring": "Preview",
-          "year": 2026,
-          "month": "November"
-        }
-      ]
-    },
-    {
-      "id": "579310",
-      "productCategories": [
-        "Networking",
-        "Security"
-      ],
-      "tags": [
-        "Features",
-        "Services"
-      ],
-      "products": [
-        "Azure Front Door"
-      ],
-      "generalAvailabilityDate": "2026-11",
-      "previewAvailabilityDate": null,
-      "privatePreviewAvailabilityDate": null,
-      "title": "Generally Available: Azure Front Door edge actions ",
-      "description": "<p>Announcing the general availability of Azure Front Door edge\nactions (serverless compute at the edge).&nbsp;</p><p>With edge actions, customers can execute lightweight\nJavaScript functions during Azure Front Door client request/response processing\nto make real-time decisions closer to users, improving performance, security,\nand application flexibility without adding complexity to origin infrastructure.&nbsp;</p><p>Common scenarios include A/B testing, canary deployments,\nheader manipulation, request filtering, dynamic origin selection, advanced\nrouting, authentication/authorization at the edge, and many more. &nbsp;</p>Edge actions integrate seamlessly with Azure\nFront Door capabilities such as rules engine, caching, routing, and Web\nApplication Firewall (WAF). Built on Hyperlight, Microsoft’s secure micro-VM\ntechnology, edge actions provide hardware-backed isolation for customer code\nexecution.<br><p><a href=\"https://learn.microsoft.com/en-us/azure/frontdoor/edge-actions\">Learn\nmore</a>.&nbsp;&nbsp;</p>",
-      "status": "Launched",
-      "created": "2026-11-10T18:55:09.7505976Z",
-      "modified": "2026-11-10T18:55:09.7505976Z",
-      "locale": null,
-      "availabilities": [
-        {
-          "ring": "General Availability",
-          "year": 2026,
-          "month": "November"
-        }
-      ]
-    },
-    {
-      "id": "579746",
-      "productCategories": [
-        "Networking"
       ],
       "tags": [
         "Features"
       ],
       "products": [
-        "Azure Route Server"
+        "Azure Front Door",
+        "Web Application Firewall"
       ],
       "generalAvailabilityDate": null,
-      "previewAvailabilityDate": null,
+      "previewAvailabilityDate": "2026-11",
       "privatePreviewAvailabilityDate": null,
-      "title": "Public Preview: Azure Route Server dual-stack IPv4/IPv6 support",
-      "description": "Azure Route Server now supports IPv4/IPv6 dual-stack mode in public preview, enabling route exchange for both address families across supported hybrid networking connections. Existing IPv4 connections remain unchanged, so organizations can adopt IPv6 routing in their Azure architectures while keeping their current IPv4 connectivity. In dual-stack mode, you can apply Azure Route Server route maps to ExpressRoute and VPN Gateway connections, and to network virtual appliance connections in hub or spoke virtual networks.<br><br><a href=\"https://learn.microsoft.com/azure/route-server/enable-route-server-dual-stack\">Learn more</a>.<br>",
-      "status": null,
-      "created": "2026-11-10T18:21:41.1197236Z",
-      "modified": "2026-11-10T18:21:41.1197236Z",
+      "title": "Public Preview: Rate limit grouping for Azure Front Door Premium WAF",
+      "description": "<p>Announcing the public preview\nof rate limit grouping for Azure Web Application Firewall (WAF) on Azure Front\nDoor Premium.&nbsp;</p><p>By default, a rate limit rule counts requests separately for\neach client IP address. Distributed attacks get around this by spreading their\ntraffic across thousands of IP addresses, so that each one stays under the\nthreshold. Rate limit grouping adds new group-by options that count requests by\nan attribute those clients share, so traffic from many IP addresses counts\ntoward a single threshold.&nbsp;</p><p>&nbsp;With this preview, you can group each rate limit rule by:&nbsp;</p><ul><li>JA4 fingerprint, to limit\nattacks that rotate through many IP addresses but reuse the same client\nsoftware.&nbsp;</li><li>AS number, to cap traffic\nfrom networks your users don't usually come from, such as hosting and cloud\nproviders, without maintaining lists of their IP ranges.&nbsp;</li><li>Country/region, to cap the\ntraffic that any single country or region can send.&nbsp;</li></ul><p>You can also choose None to count all requests that match a\nrule together, for example to cap the total request rate to a sign-in page.\nExisting rate limit rules keep counting requests per IP address, so nothing\nchanges until you choose a grouping. Configure grouping in the Azure portal,\nARM templates, Bicep, the REST API, or Azure PowerShell, and keep a per-IP rule\nalongside your grouped rules.&nbsp;</p><p><a href=\"https://learn.microsoft.com/en-us/azure/web-application-firewall/afds/waf-front-door-rate-limit\">Learn\nmore</a>.</p>",
+      "status": "In preview",
+      "created": "2026-11-11T18:18:27.6691522Z",
+      "modified": "2026-11-11T18:18:27.6691522Z",
       "locale": null,
       "availabilities": [
         {
-          "ring": "Effective",
+          "ring": "Preview",
           "year": 2026,
           "month": "November"
         }

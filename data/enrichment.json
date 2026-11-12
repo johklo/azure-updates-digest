@@ -29497,5 +29497,31 @@
       "IPv6 활성화 후 허브-스포크 가상 네트워크 피어링을 다시 동기화해야 하며, 올바른 구성을 유지하고 프로비저닝 상태를 확인한 후 진행해야 합니다."
     ],
     "translated_at": "2026-11-11T02:38:27.096265+00:00"
+  },
+  "580155": {
+    "summary": "Azure Front Door Premium WAF now supports rate limit grouping by JA4 fingerprint, AS number, country/region, or none to better mitigate distributed attacks by aggregating request counts across shared client attributes.",
+    "key_points": [
+      "Introduces public preview of rate limit grouping to count requests by shared client attributes beyond IP address.",
+      "Grouping options include JA4 fingerprint, AS number, country/region, or None, enabling more effective blocking of distributed attacks.",
+      "Available only on Azure Front Door Premium and configurable via Azure portal, ARM templates, Bicep, REST API, or PowerShell.",
+      "Helps customers cap traffic from attack sources that rotate IPs or originate from specific networks or regions, improving protection accuracy."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/web-application-firewall/afds/waf-front-door-rate-limit",
+    "doc_title": "WAF Rate Limiting for Azure Front Door",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/en-us/azure/web-application-firewall/afds/waf-front-door-rate-limit"
+    ],
+    "source": "llm",
+    "updated_at": "2026-11-12T03:40:41.074846+00:00",
+    "title_ko": "Public Preview: Azure Front Door Premium WAF용 속도 제한 그룹화",
+    "summary_ko": "Azure Front Door Premium WAF가 이제 JA4 지문, AS 번호, 국가/지역 또는 없음 기준으로 속도 제한 그룹화를 지원하여 공유 클라이언트 속성별로 요청 수를 집계해 분산 공격을 더 효과적으로 완화합니다.",
+    "key_points_ko": [
+      "IP 주소를 넘어 공유 클라이언트 속성별로 요청을 집계하는 속도 제한 그룹화 Public Preview를 도입합니다.",
+      "그룹화 옵션으로 JA4 지문, AS 번호, 국가/지역 또는 없음이 포함되어 분산 공격 차단을 더욱 효과적으로 수행할 수 있습니다.",
+      "Azure Front Door Premium에서만 사용 가능하며 Azure 포털, ARM 템플릿, Bicep, REST API 또는 PowerShell을 통해 구성할 수 있습니다.",
+      "IP를 변경하거나 특정 네트워크 또는 지역에서 발생하는 공격 소스의 트래픽을 제한하여 보호 정확도를 향상하는 데 도움이 됩니다."
+    ],
+    "translated_at": "2026-11-12T03:40:46.274130+00:00"
   }
 }

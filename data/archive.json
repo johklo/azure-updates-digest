@@ -1,7 +1,37 @@
 {
-  "updated_at": "2026-11-11T02:37:30.221260+00:00",
-  "count": 1137,
+  "updated_at": "2026-11-12T03:40:28.887237+00:00",
+  "count": 1138,
   "items": [
+    {
+      "id": "580155",
+      "productCategories": [
+        "Networking",
+        "Security"
+      ],
+      "tags": [
+        "Features"
+      ],
+      "products": [
+        "Azure Front Door",
+        "Web Application Firewall"
+      ],
+      "generalAvailabilityDate": null,
+      "previewAvailabilityDate": "2026-11",
+      "privatePreviewAvailabilityDate": null,
+      "title": "Public Preview: Rate limit grouping for Azure Front Door Premium WAF",
+      "description": "<p>Announcing the public preview\nof rate limit grouping for Azure Web Application Firewall (WAF) on Azure Front\nDoor Premium.&nbsp;</p><p>By default, a rate limit rule counts requests separately for\neach client IP address. Distributed attacks get around this by spreading their\ntraffic across thousands of IP addresses, so that each one stays under the\nthreshold. Rate limit grouping adds new group-by options that count requests by\nan attribute those clients share, so traffic from many IP addresses counts\ntoward a single threshold.&nbsp;</p><p>&nbsp;With this preview, you can group each rate limit rule by:&nbsp;</p><ul><li>JA4 fingerprint, to limit\nattacks that rotate through many IP addresses but reuse the same client\nsoftware.&nbsp;</li><li>AS number, to cap traffic\nfrom networks your users don't usually come from, such as hosting and cloud\nproviders, without maintaining lists of their IP ranges.&nbsp;</li><li>Country/region, to cap the\ntraffic that any single country or region can send.&nbsp;</li></ul><p>You can also choose None to count all requests that match a\nrule together, for example to cap the total request rate to a sign-in page.\nExisting rate limit rules keep counting requests per IP address, so nothing\nchanges until you choose a grouping. Configure grouping in the Azure portal,\nARM templates, Bicep, the REST API, or Azure PowerShell, and keep a per-IP rule\nalongside your grouped rules.&nbsp;</p><p><a href=\"https://learn.microsoft.com/en-us/azure/web-application-firewall/afds/waf-front-door-rate-limit\">Learn\nmore</a>.</p>",
+      "status": "In preview",
+      "created": "2026-11-11T18:18:27.6691522Z",
+      "modified": "2026-11-11T18:18:27.6691522Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "Preview",
+          "year": 2026,
+          "month": "November"
+        }
+      ]
+    },
     {
       "id": "578454",
       "productCategories": [
