@@ -29523,5 +29523,110 @@
       "IP를 변경하거나 특정 네트워크 또는 지역에서 발생하는 공격 소스의 트래픽을 제한하여 보호 정확도를 향상하는 데 도움이 됩니다."
     ],
     "translated_at": "2026-11-12T03:40:46.274130+00:00"
+  },
+  "577673": {
+    "summary": "Azure Front Door Premium now publicly previews JWT validation via Auth Policy to authenticate Microsoft Entra ID bearer tokens at the edge, enhancing security and reducing origin load.",
+    "key_points": [
+      "JWT validation supports tokens issued by Microsoft Entra ID, verifying signature, expiration, issuer, and audience before forwarding requests.",
+      "Authentication policies can be associated at profile, domain, or route scope with precedence Route > Domain > Profile.",
+      "Supports Block mode to reject invalid tokens with HTTP 401 and Log mode to evaluate without blocking.",
+      "Allows configuration of token header location and optional forwarding of validated tokens to origins, requiring secure origin access to prevent bypass."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/frontdoor/authentication-policy",
+    "doc_title": "Validate JSON Web Tokens with an authentication policy (Preview) - Azure Front Door",
+    "doc_read": true,
+    "links": [
+      "https://aka.ms/afdx/jwt-validation"
+    ],
+    "source": "llm",
+    "updated_at": "2026-11-13T03:17:31.195648+00:00",
+    "title_ko": "Public Preview: Azure Front Door Auth Policy를 통한 JWT 검증",
+    "summary_ko": "Azure Front Door Premium이 이제 Public Preview로 Auth Policy를 통해 Microsoft Entra ID 베어러 토큰을 엣지에서 인증하는 JWT 검증 기능을 제공하여 보안을 강화하고 오리진 부하를 줄입니다.",
+    "key_points_ko": [
+      "JWT 검증은 Microsoft Entra ID에서 발급한 토큰을 지원하며, 요청을 전달하기 전에 서명, 만료, 발행자 및 대상자를 확인합니다.",
+      "인증 정책은 프로필, 도메인 또는 라우트 범위에 연결할 수 있으며 우선순위는 Route > Domain > Profile입니다.",
+      "유효하지 않은 토큰을 HTTP 401로 거부하는 Block 모드와 차단 없이 평가하는 Log 모드를 지원합니다.",
+      "토큰 헤더 위치 구성과 검증된 토큰을 오리진으로 선택적으로 전달하는 기능을 제공하며, 우회 방지를 위해 안전한 오리진 액세스가 필요합니다."
+    ],
+    "translated_at": "2026-11-13T03:17:50.887191+00:00"
+  },
+  "577678": {
+    "summary": "Azure Front Door Premium now generally supports mutual TLS (mTLS) authentication with flexible modes and simplified trusted CA configuration, enhancing secure client authentication for sensitive applications.",
+    "key_points": [
+      "Supports four mTLS modes: require and validate, require without validation, validate if presented, and passthrough to origin, allowing flexible client certificate enforcement and validation locations.",
+      "Simplifies trusted CA setup by requiring only the trusted root CA certificate upload to Azure Key Vault; Azure Front Door builds and validates the full client certificate chain at request time.",
+      "Validates client certificates for date validity, Extended Key Usage, SAN/CN against allowed list, and revocation status via OCSP, responding with HTTP 403 if revoked.",
+      "Supports both public and private CA-issued certificates but recommends transitioning to private CAs for client authentication due to industry changes affecting public CA EKU issuance."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/frontdoor/mutual-tls",
+    "doc_title": "Mutual TLS authentication - Azure Front Door",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/en-us/azure/frontdoor/mutual-tls"
+    ],
+    "source": "llm",
+    "updated_at": "2026-11-13T03:17:35.727832+00:00",
+    "title_ko": "Generally Available: Azure Front Door 상호 TLS 인증",
+    "summary_ko": "Azure Front Door Premium이 이제 유연한 모드와 간소화된 신뢰할 수 있는 CA 구성으로 상호 TLS(mTLS) 인증을 Generally Available 상태로 지원하여 민감한 애플리케이션의 안전한 클라이언트 인증을 강화합니다.",
+    "key_points_ko": [
+      "네 가지 mTLS 모드를 지원합니다: require and validate, require without validation, validate if presented, passthrough to origin으로 클라이언트 인증서 적용과 검증 위치를 유연하게 설정할 수 있습니다.",
+      "신뢰할 수 있는 CA 설정을 간소화하여 Azure Key Vault에 신뢰할 수 있는 루트 CA 인증서만 업로드하면 되며, Azure Front Door가 요청 시 전체 클라이언트 인증서 체인을 구축하고 검증합니다.",
+      "클라이언트 인증서의 유효 기간, Extended Key Usage, SAN/CN이 허용 목록과 일치하는지, OCSP를 통한 폐기 상태를 검증하며, 폐기된 경우 HTTP 403으로 응답합니다.",
+      "공용 및 사설 CA 발급 인증서를 모두 지원하지만, 공용 CA EKU 발급에 영향을 주는 업계 변화로 인해 클라이언트 인증에는 사설 CA로 전환할 것을 권장합니다."
+    ],
+    "translated_at": "2026-11-13T03:17:56.004652+00:00"
+  },
+  "578207": {
+    "summary": "Azure Monitor Workspace now supports auto scaling of ingestion limits to dynamically adjust quotas based on usage, reducing manual management and preventing throttling.",
+    "key_points": [
+      "Auto scaling is an opt-in feature that automatically raises or lowers ingestion limits per workspace based on observed metrics volume and utilization.",
+      "This capability eliminates the need for manual support requests to increase limits and avoids over-provisioning by aligning limits with actual usage.",
+      "Users can monitor ingestion utilization via Azure Monitor workspace metrics and receive alerts on scale changes through recommended alert rules and activity logs.",
+      "The feature is available via Azure CLI, ARM templates, and Bicep deployments, enabling easy enablement and integration into existing workflows."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/azure-monitor/metrics/azure-monitor-workspace-monitor-ingest-limits",
+    "doc_title": "Monitor Azure Monitor workspace metrics ingestion - Azure Monitor",
+    "doc_read": true,
+    "links": [
+      "https://aka.ms/azuremonitorworkspace-autoscale"
+    ],
+    "source": "llm",
+    "updated_at": "2026-11-13T03:17:41.446760+00:00",
+    "title_ko": "Public Preview: Azure Monitor workspace에서 수집 한도 자동 확장 기능",
+    "summary_ko": "Azure Monitor Workspace가 이제 사용량에 따라 할당량을 동적으로 조정하는 수집 한도 자동 확장을 지원하여 수동 관리 부담을 줄이고 제한 조치를 방지합니다.",
+    "key_points_ko": [
+      "자동 확장은 옵트인 기능으로, 관찰된 메트릭 볼륨과 활용도를 기반으로 작업 공간별 수집 한도를 자동으로 상향 또는 하향 조정합니다.",
+      "이 기능은 한도 증대를 위한 수동 지원 요청을 없애고 실제 사용량에 맞춰 한도를 조정하여 과도한 프로비저닝을 방지합니다.",
+      "사용자는 Azure Monitor workspace 메트릭을 통해 수집 활용도를 모니터링하고 권장 알림 규칙 및 활동 로그를 통해 확장 변경 알림을 받을 수 있습니다.",
+      "이 기능은 Azure CLI, ARM 템플릿, Bicep 배포를 통해 제공되어 기존 워크플로우에 쉽게 활성화하고 통합할 수 있습니다."
+    ],
+    "translated_at": "2026-11-13T03:18:00.996368+00:00"
+  },
+  "574158": {
+    "summary": "Microsoft has introduced a public preview of managed performance monitoring for Azure SQL Managed Instance, simplifying telemetry collection and analysis to improve performance management.",
+    "key_points": [
+      "Provides built-in collection and storage of performance telemetry with resource-level and at-scale dashboards for Azure SQL Managed Instance.",
+      "Enables secure querying of performance data using Kusto Query Language (KQL) via an RBAC-protected Azure Data Explorer proxy endpoint for deeper analysis.",
+      "Currently in public preview, available in supported Azure regions excluding government, sovereign, and air-gapped clouds.",
+      "Reduces reliance on custom scripts and disconnected tools, helping customers identify performance trends, anomalies, and bottlenecks more efficiently."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/fabric/database/hub/add-sql?tabs=americas",
+    "doc_title": "Enable performance monitoring for Microsoft SQL (preview) - Microsoft Fabric",
+    "doc_read": true,
+    "links": [
+      "https://aka.ms/PerformanceMonitoring_SQLMI",
+      "https://aka.ms/SqlPerformanceMonitoring_PreviewAnnouncement"
+    ],
+    "source": "llm",
+    "updated_at": "2026-11-13T03:17:45.636481+00:00",
+    "title_ko": "Public Preview: Azure SQL Managed Instance용 SQL 성능 모니터링",
+    "summary_ko": "Microsoft는 Azure SQL Managed Instance용 관리형 성능 모니터링의 Public Preview를 도입하여 성능 관리 개선을 위한 텔레메트리 수집 및 분석을 간소화했습니다.",
+    "key_points_ko": [
+      "Azure SQL Managed Instance에 대해 리소스 수준 및 대규모 대시보드를 제공하는 내장 성능 텔레메트리 수집 및 저장 기능을 제공합니다.",
+      "RBAC로 보호되는 Azure Data Explorer 프록시 엔드포인트를 통해 Kusto Query Language(KQL)를 사용하여 성능 데이터를 안전하게 쿼리할 수 있어 심층 분석이 가능합니다.",
+      "현재 Public Preview 상태로, 정부, 주권, 에어갭 클라우드를 제외한 지원되는 Azure 지역에서 이용할 수 있습니다.",
+      "사용자 지정 스크립트 및 분리된 도구에 대한 의존도를 줄여 고객이 성능 추세, 이상 현상 및 병목 현상을 보다 효율적으로 식별할 수 있도록 지원합니다."
+    ],
+    "translated_at": "2026-11-13T03:18:05.379483+00:00"
   }
 }
