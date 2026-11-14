@@ -1,128 +1,37 @@
 {
-  "generated_at": "2026-11-13T03:17:17.384407+00:00",
-  "window_start": "2026-11-06T03:17:17.384407+00:00",
-  "window_end": "2026-11-13T03:17:17.384407+00:00",
+  "generated_at": "2026-11-14T02:56:56.047229+00:00",
+  "window_start": "2026-11-07T02:56:56.047229+00:00",
+  "window_end": "2026-11-14T02:56:56.047229+00:00",
   "window_days": 7,
-  "fetched_count": 12,
-  "matched_count": 12,
-  "count": 4,
+  "fetched_count": 13,
+  "matched_count": 13,
+  "count": 1,
   "items": [
     {
-      "id": "577673",
+      "id": "578818",
       "productCategories": [
-        "Networking",
-        "Security"
+        "Analytics",
+        "Storage"
       ],
       "tags": [
-        "Features",
-        "Security"
+        "Retirements"
       ],
       "products": [
-        "Azure Front Door"
+        "Azure Data Share"
       ],
       "generalAvailabilityDate": null,
-      "previewAvailabilityDate": "2026-11",
-      "privatePreviewAvailabilityDate": null,
-      "title": "Public Preview: JWT validation with Azure Front Door Auth Policy ",
-      "description": "JSON Web Token (JWT) validation through Azure Front Door Auth Policy is now in public preview on Azure Front Door Premium. Validate bearer tokens issued by Microsoft Entra ID at the edge before requests reach your APIs or web applications, helping you centralize authentication checks and reduce unnecessary traffic to your origins.<br><p>Associate an Auth Policy with a profile, domain, or route, and configure the expected issuer and audience for token validation. Use Block mode to reject requests with missing or invalid tokens with an HTTP 401 Unauthorized response or&nbsp;evaluate requests without blocking them in Log mode. This preview focuses on validating&nbsp;existing bearer tokens; your application remains&nbsp;responsible for application-specific authorization, and origin&nbsp;access should be restricted to prevent clients from bypassing Azure Front Door.</p><p><a href=\"https://aka.ms/afdx/jwt-validation\">Learn more</a>.</p>",
-      "status": "In preview",
-      "created": "2026-11-12T22:36:37.3662486Z",
-      "modified": "2026-11-12T22:36:37.3662486Z",
-      "locale": null,
-      "availabilities": [
-        {
-          "ring": "Preview",
-          "year": 2026,
-          "month": "November"
-        }
-      ]
-    },
-    {
-      "id": "577678",
-      "productCategories": [
-        "Networking",
-        "Security"
-      ],
-      "tags": [
-        "Features",
-        "Security"
-      ],
-      "products": [
-        "Azure Front Door"
-      ],
-      "generalAvailabilityDate": "2026-11",
       "previewAvailabilityDate": null,
       "privatePreviewAvailabilityDate": null,
-      "title": "Generally Available: Azure Front Door mutual TLS authentication",
-      "description": "<p>Mutual TLS (mTLS), also known as client certificate\nauthentication, is now generally available on Azure Front Door Premium. Use\nX.509 client certificates to help protect sensitive applications and APIs in\nbusiness-to-business, Internet of Things, financial services, and enterprise\nscenarios.&nbsp;</p><p>Choose from four modes: require and validate, require\nwithout validation, validate when presented, or pass through to the origin.\nThese modes let you control whether client certificates are mandatory and\nwhether Azure Front Door or your origin performs certificate validation. When\nforwarded to the origin, the client certificate is provided in the\nX-Azure-ClientCertificate request header.&nbsp;</p>General availability also simplifies trusted CA configuration. You can\nupload only the trusted root CA certificate to Azure Key Vault and associate it\nwith your Front Door custom domain, without uploading intermediate CA\ncertificates. With this configuration, clients must present their client\ncertificate and all required intermediate certificates during the TLS\nhandshake. When edge validation is enabled, Azure Front Door builds and\nvalidates the certificate chain at request time against the configured trusted\nroot CA.<br><br><font face=\"Arial, sans-serif\"><a href=\"https://learn.microsoft.com/en-us/azure/frontdoor/mutual-tls\">Learn more</a>.</font>",
-      "status": "Launched",
-      "created": "2026-11-12T22:27:35.8851339Z",
-      "modified": "2026-11-12T22:27:35.8851339Z",
+      "title": "Retirement: Azure Data Share will be retired on November 12, 2029 ",
+      "description": "<p>Azure Data Share will retire on November 12, 2029.&nbsp;Before that date, transition your data sharing workloads to Microsoft Fabric, which offers External data sharing, Cross tenant delegated shortcuts and IQ share&nbsp;or an appropriate data-source-specific&nbsp;sharing option.</p><p>This change affects data providers, recipients, and applications that use Azure Data Share for snapshot-based or in-place sharing.</p><p>Recommended actions</p><ol><li data-leveltext=\"%1.\" data-font=\"\" data-list=\"\" data-list-defn-props=\"{&quot;335551671&quot;:1,&quot;335552541&quot;:0,&quot;335559683&quot;:0,&quot;335559684&quot;:-1,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769242&quot;:[65533,0,46],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;%1.&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}\" data-aria-posinset=\"1\" data-aria-level=\"1\"><p>Assess a transition path for each workload. Options include:</p></li></ol><ul><ul><li data-leveltext=\"\" data-font=\"Symbol\" data-list=\"\" data-list-defn-props=\"{&quot;335552541&quot;:1,&quot;335559683&quot;:0,&quot;335559684&quot;:-2,&quot;335559685&quot;:1080,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}\" data-aria-posinset=\"1\" data-aria-level=\"1\"><p>Fabric external data sharing for supported OneLake data.</p></li><li data-leveltext=\"\" data-font=\"Symbol\" data-list=\"\" data-list-defn-props=\"{&quot;335552541&quot;:1,&quot;335559683&quot;:0,&quot;335559684&quot;:-2,&quot;335559685&quot;:1080,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}\" data-aria-posinset=\"2\" data-aria-level=\"1\"><p>Azure Data Factory or Fabric Data Factory pipelines for supported copies&nbsp;</p></li><li data-leveltext=\"\" data-font=\"Symbol\" data-list=\"\" data-list-defn-props=\"{&quot;335552541&quot;:1,&quot;335559683&quot;:0,&quot;335559684&quot;:-2,&quot;335559685&quot;:1080,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}\" data-aria-posinset=\"3\" data-aria-level=\"1\"><p>Azure SQL Database data virtualization (preview) for read-only file queries. File queries do not deliver snapshots or replace sharing lifecycle management.&nbsp;</p></li><li data-leveltext=\"\" data-font=\"Symbol\" data-list=\"\" data-list-defn-props=\"{&quot;335552541&quot;:1,&quot;335559683&quot;:0,&quot;335559684&quot;:-2,&quot;335559685&quot;:1080,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}\" data-aria-posinset=\"3\" data-aria-level=\"1\"><p>These are not one-to-one replacements, and no automatic migration&nbsp;path&nbsp;is established.</p></li></ul></ul><ol start=\"2\"><li data-leveltext=\"%1.\" data-font=\"\" data-list=\"\" data-list-defn-props=\"{&quot;335551671&quot;:1,&quot;335552541&quot;:0,&quot;335559683&quot;:0,&quot;335559684&quot;:-1,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769242&quot;:[65533,0,46],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;%1.&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}\" data-aria-posinset=\"2\" data-aria-level=\"1\"><p>Inventory your shares, subscriptions, schedules, integrations, and dependencies.&nbsp;</p></li><li data-leveltext=\"%1.\" data-font=\"\" data-list=\"\" data-list-defn-props=\"{&quot;335551671&quot;:1,&quot;335552541&quot;:0,&quot;335559683&quot;:0,&quot;335559684&quot;:-1,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769242&quot;:[65533,0,46],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;%1.&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}\" data-aria-posinset=\"3\" data-aria-level=\"1\"><p>Coordinate with providers and recipients.</p></li><li data-leveltext=\"%1.\" data-font=\"\" data-list=\"\" data-list-defn-props=\"{&quot;335551671&quot;:1,&quot;335552541&quot;:0,&quot;335559683&quot;:0,&quot;335559684&quot;:-1,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769242&quot;:[65533,0,46],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;%1.&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}\" data-aria-posinset=\"4\" data-aria-level=\"1\"><p>Validate access, networking, data completeness, refresh behavior, monitoring, and recovery before cutover.&nbsp;</p></li></ol><p>Do not delete&nbsp;or disable production&nbsp;Azure Data Share resources before testing is complete.</p><p>Continue using existing Azure support channels for supported incidents until November 12, 2029. Engage your Microsoft account team for transition planning as needed.</p><a href=\"https://aka.ms/ADS-alternatives\">Learn more</a>.&nbsp;<br><br>",
+      "status": null,
+      "created": "2026-11-13T19:54:45.4590064Z",
+      "modified": "2026-11-13T19:54:45.4590064Z",
       "locale": null,
       "availabilities": [
         {
-          "ring": "General Availability",
-          "year": 2026,
-          "month": "November"
-        }
-      ]
-    },
-    {
-      "id": "578207",
-      "productCategories": [
-        "Compute",
-        "Containers",
-        "DevOps",
-        "Management and governance"
-      ],
-      "tags": [
-        "Feature"
-      ],
-      "products": [
-        "Azure Kubernetes Service (AKS)",
-        "Azure Monitor"
-      ],
-      "generalAvailabilityDate": null,
-      "previewAvailabilityDate": "2026-11",
-      "privatePreviewAvailabilityDate": null,
-      "title": "Public Preview: Auto scaling of ingestion limits in Azure Monitor workspace",
-      "description": "Auto scaling introduces a\nper-workspace capability in Azure Monitor Workspace (AMW) to automatically\nscale ingestion limits based on observed usage patterns. When enabled, the\nsystem dynamically adjusts ingestion limits (quota ceiling) to maintain healthy\nutilization and reduce the need for manual limit management.&nbsp;Limits are increased as your metrics volume\ngrows and can be decreased when usage stays low for a sustained period of time.<br><br><a href=\"https://aka.ms/azuremonitorworkspace-autoscale\">Learn more</a>.",
-      "status": "In preview",
-      "created": "2026-11-12T18:23:52.2198592Z",
-      "modified": "2026-11-12T18:23:52.2198592Z",
-      "locale": null,
-      "availabilities": [
-        {
-          "ring": "Preview",
-          "year": 2026,
-          "month": "November"
-        }
-      ]
-    },
-    {
-      "id": "574158",
-      "productCategories": [
-        "Databases"
-      ],
-      "tags": [
-        "Feature"
-      ],
-      "products": [
-        "Azure SQL Managed Instance"
-      ],
-      "generalAvailabilityDate": null,
-      "previewAvailabilityDate": "2026-11",
-      "privatePreviewAvailabilityDate": null,
-      "title": "Public Preview: SQL performance monitoring for Azure SQL Managed Instance",
-      "description": "<p>The public preview of Microsoft-managed performance\nmonitoring for Azure SQL Managed Instance is now available.&nbsp;</p><p>Customers monitoring business-critical SQL Managed Instance\nworkloads often rely on custom scripts and disconnected monitoring tools. This\nrequires them to manage telemetry infrastructure and manually correlate\nperformance insights across their SQL Managed Instance estate.&nbsp;</p><p>The new experience collects and stores performance telemetry\nand provides resource-level and at-scale dashboards to help identify\nperformance trends, anomalies, and resource bottlenecks. For deeper analysis\nand custom visualizations, you can securely query their monitoring data using\nKusto Query Language (KQL) through an RBAC-protected Azure Data Explorer proxy\nendpoint.&nbsp;</p><p>Learn more:&nbsp;&nbsp;</p><ul><li><a href=\"https://aka.ms/PerformanceMonitoring_SQLMI\">Documentation</a>&nbsp;</li><li><a href=\"https://aka.ms/SqlPerformanceMonitoring_PreviewAnnouncement\">Announcement\nblog</a>&nbsp;</li></ul>",
-      "status": "In preview",
-      "created": "2026-11-12T16:59:40.8211798Z",
-      "modified": "2026-11-12T16:59:40.8211798Z",
-      "locale": null,
-      "availabilities": [
-        {
-          "ring": "Preview",
-          "year": 2026,
+          "ring": "Retirement",
+          "year": 2029,
           "month": "November"
         }
       ]

@@ -1,7 +1,36 @@
 {
-  "updated_at": "2026-11-13T03:17:17.384407+00:00",
-  "count": 1142,
+  "updated_at": "2026-11-14T02:56:56.047229+00:00",
+  "count": 1143,
   "items": [
+    {
+      "id": "578818",
+      "productCategories": [
+        "Analytics",
+        "Storage"
+      ],
+      "tags": [
+        "Retirements"
+      ],
+      "products": [
+        "Azure Data Share"
+      ],
+      "generalAvailabilityDate": null,
+      "previewAvailabilityDate": null,
+      "privatePreviewAvailabilityDate": null,
+      "title": "Retirement: Azure Data Share will be retired on November 12, 2029 ",
+      "description": "<p>Azure Data Share will retire on November 12, 2029.&nbsp;Before that date, transition your data sharing workloads to Microsoft Fabric, which offers External data sharing, Cross tenant delegated shortcuts and IQ share&nbsp;or an appropriate data-source-specific&nbsp;sharing option.</p><p>This change affects data providers, recipients, and applications that use Azure Data Share for snapshot-based or in-place sharing.</p><p>Recommended actions</p><ol><li data-leveltext=\"%1.\" data-font=\"\" data-list=\"\" data-list-defn-props=\"{&quot;335551671&quot;:1,&quot;335552541&quot;:0,&quot;335559683&quot;:0,&quot;335559684&quot;:-1,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769242&quot;:[65533,0,46],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;%1.&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}\" data-aria-posinset=\"1\" data-aria-level=\"1\"><p>Assess a transition path for each workload. Options include:</p></li></ol><ul><ul><li data-leveltext=\"\" data-font=\"Symbol\" data-list=\"\" data-list-defn-props=\"{&quot;335552541&quot;:1,&quot;335559683&quot;:0,&quot;335559684&quot;:-2,&quot;335559685&quot;:1080,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}\" data-aria-posinset=\"1\" data-aria-level=\"1\"><p>Fabric external data sharing for supported OneLake data.</p></li><li data-leveltext=\"\" data-font=\"Symbol\" data-list=\"\" data-list-defn-props=\"{&quot;335552541&quot;:1,&quot;335559683&quot;:0,&quot;335559684&quot;:-2,&quot;335559685&quot;:1080,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}\" data-aria-posinset=\"2\" data-aria-level=\"1\"><p>Azure Data Factory or Fabric Data Factory pipelines for supported copies&nbsp;</p></li><li data-leveltext=\"\" data-font=\"Symbol\" data-list=\"\" data-list-defn-props=\"{&quot;335552541&quot;:1,&quot;335559683&quot;:0,&quot;335559684&quot;:-2,&quot;335559685&quot;:1080,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}\" data-aria-posinset=\"3\" data-aria-level=\"1\"><p>Azure SQL Database data virtualization (preview) for read-only file queries. File queries do not deliver snapshots or replace sharing lifecycle management.&nbsp;</p></li><li data-leveltext=\"\" data-font=\"Symbol\" data-list=\"\" data-list-defn-props=\"{&quot;335552541&quot;:1,&quot;335559683&quot;:0,&quot;335559684&quot;:-2,&quot;335559685&quot;:1080,&quot;335559991&quot;:360,&quot;469769226&quot;:&quot;Symbol&quot;,&quot;469769242&quot;:[8226],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}\" data-aria-posinset=\"3\" data-aria-level=\"1\"><p>These are not one-to-one replacements, and no automatic migration&nbsp;path&nbsp;is established.</p></li></ul></ul><ol start=\"2\"><li data-leveltext=\"%1.\" data-font=\"\" data-list=\"\" data-list-defn-props=\"{&quot;335551671&quot;:1,&quot;335552541&quot;:0,&quot;335559683&quot;:0,&quot;335559684&quot;:-1,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769242&quot;:[65533,0,46],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;%1.&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}\" data-aria-posinset=\"2\" data-aria-level=\"1\"><p>Inventory your shares, subscriptions, schedules, integrations, and dependencies.&nbsp;</p></li><li data-leveltext=\"%1.\" data-font=\"\" data-list=\"\" data-list-defn-props=\"{&quot;335551671&quot;:1,&quot;335552541&quot;:0,&quot;335559683&quot;:0,&quot;335559684&quot;:-1,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769242&quot;:[65533,0,46],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;%1.&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}\" data-aria-posinset=\"3\" data-aria-level=\"1\"><p>Coordinate with providers and recipients.</p></li><li data-leveltext=\"%1.\" data-font=\"\" data-list=\"\" data-list-defn-props=\"{&quot;335551671&quot;:1,&quot;335552541&quot;:0,&quot;335559683&quot;:0,&quot;335559684&quot;:-1,&quot;335559685&quot;:720,&quot;335559991&quot;:360,&quot;469769242&quot;:[65533,0,46],&quot;469777803&quot;:&quot;left&quot;,&quot;469777804&quot;:&quot;%1.&quot;,&quot;469777815&quot;:&quot;hybridMultilevel&quot;}\" data-aria-posinset=\"4\" data-aria-level=\"1\"><p>Validate access, networking, data completeness, refresh behavior, monitoring, and recovery before cutover.&nbsp;</p></li></ol><p>Do not delete&nbsp;or disable production&nbsp;Azure Data Share resources before testing is complete.</p><p>Continue using existing Azure support channels for supported incidents until November 12, 2029. Engage your Microsoft account team for transition planning as needed.</p><a href=\"https://aka.ms/ADS-alternatives\">Learn more</a>.&nbsp;<br><br>",
+      "status": null,
+      "created": "2026-11-13T19:54:45.4590064Z",
+      "modified": "2026-11-13T19:54:45.4590064Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "Retirement",
+          "year": 2029,
+          "month": "November"
+        }
+      ]
+    },
     {
       "id": "577673",
       "productCategories": [

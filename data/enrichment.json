@@ -29628,5 +29628,31 @@
       "사용자 지정 스크립트 및 분리된 도구에 대한 의존도를 줄여 고객이 성능 추세, 이상 현상 및 병목 현상을 보다 효율적으로 식별할 수 있도록 지원합니다."
     ],
     "translated_at": "2026-11-13T03:18:05.379483+00:00"
+  },
+  "578818": {
+    "summary": "Azure Data Share will be retired on November 12, 2029, requiring customers to transition data sharing workloads to Microsoft Fabric or other data-source-specific sharing options to ensure continued functionality and support.",
+    "key_points": [
+      "Azure Data Share retirement date set for November 12, 2029, impacting data providers, recipients, and applications using snapshot-based or in-place sharing.",
+      "Transition options include Microsoft Fabric external data sharing, cross-tenant delegated shortcuts, IQ Share, Azure Data Factory pipelines, and Azure SQL Database data virtualization.",
+      "No automatic migration path exists; customers must inventory shares, subscriptions, schedules, and dependencies, and validate access, networking, and data completeness before cutover.",
+      "Customers should continue using Azure Data Share until retirement and coordinate with Microsoft account teams for transition planning and support."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/data-share/retirement",
+    "doc_title": "Azure Data Share retirement",
+    "doc_read": true,
+    "links": [
+      "https://aka.ms/ADS-alternatives"
+    ],
+    "source": "llm",
+    "updated_at": "2026-11-14T02:57:04.697723+00:00",
+    "title_ko": "Retirement: Azure Data Share가 2029년 11월 12일에 Retirement됩니다",
+    "summary_ko": "Azure Data Share가 2029년 11월 12일에 Retirement되어, 고객은 지속적인 기능과 지원을 위해 Microsoft Fabric 또는 기타 데이터 소스별 공유 옵션으로 데이터 공유 워크로드를 전환해야 합니다.",
+    "key_points_ko": [
+      "Azure Data Share의 Retirement 날짜가 2029년 11월 12일로 설정되어 스냅샷 기반 또는 인플레이스 공유를 사용하는 데이터 제공자, 수신자 및 애플리케이션에 영향을 미칩니다.",
+      "전환 옵션에는 Microsoft Fabric 외부 데이터 공유, 크로스 테넌트 위임 바로가기, IQ Share, Azure Data Factory 파이프라인, Azure SQL Database 데이터 가상화가 포함됩니다.",
+      "자동 마이그레이션 경로가 없으므로 고객은 공유, 구독, 일정 및 종속성을 목록화하고 전환 전에 액세스, 네트워킹 및 데이터 완전성을 검증해야 합니다.",
+      "고객은 Retirement 시점까지 Azure Data Share를 계속 사용하고 전환 계획 및 지원을 위해 Microsoft 계정 팀과 협력해야 합니다."
+    ],
+    "translated_at": "2026-11-14T02:57:09.131437+00:00"
   }
 }
