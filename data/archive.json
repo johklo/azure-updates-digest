@@ -1,7 +1,135 @@
 {
-  "updated_at": "2026-11-18T04:03:58.257821+00:00",
-  "count": 1304,
+  "updated_at": "2026-11-19T04:01:07.326331+00:00",
+  "count": 1308,
   "items": [
+    {
+      "id": "581604",
+      "productCategories": [
+        "Networking",
+        "Security"
+      ],
+      "tags": [
+        "Features",
+        "Microsoft Ignite",
+        "Security"
+      ],
+      "products": [
+        "Azure Front Door",
+        "Web Application Firewall"
+      ],
+      "generalAvailabilityDate": null,
+      "previewAvailabilityDate": "2026-11",
+      "privatePreviewAvailabilityDate": null,
+      "title": "Public Preview: AI bot ruleset for Azure Front Door Premium WAF",
+      "description": "<p>Announcing the public preview\nof the AI bot ruleset for Azure Web Application Firewall (WAF) on Azure Front\nDoor Premium.&nbsp;</p><p>AI crawlers and agents visit your site for different reasons,\nand you may want to allow some but not others. Robots.txt only works when a bot\nchooses to follow it, and some bots pretend to be a well-known AI crawler. The\nAI bot ruleset identifies AI bots, groups them by purpose, and enforces your\nchoice for each group at the edge.&nbsp;</p><p>With this preview, you can choose an action for each of four\ncategories:&nbsp;</p><ul><li>AI training, for verified\ncrawlers that collect public content to train or fine-tune AI models.&nbsp;</li><li>AI search, for verified\ncrawlers that index content to power AI search, answers, and summaries.&nbsp;</li><li>AI interactive agents, for\nverified agents that fetch pages in real time when a person asks an AI\nassistant.&nbsp;</li><li>Miscellaneous AI agents,\nfor AI bots that can't be verified, including bots that falsely claim to be a\nwell-known AI crawler.&nbsp;</li></ul><p>Microsoft keeps the AI bot\nsignatures up to date, with no ruleset version change needed. Every rule starts\nwith the Log action, so you can review your AI bot traffic in WAF logs and WAF\ninsights before anything is blocked. You can set each category to Allow, Block,\nLog, JS challenge, or CAPTCHA, and configure the ruleset in the Azure portal,\nAzure PowerShell, Azure CLI, or Bicep.&nbsp;</p><p><a href=\"https://learn.microsoft.com/en-us/azure/web-application-firewall/afds/ai-bot-ruleset\">Learn\nmore</a>.</p>",
+      "status": "In preview",
+      "created": "2026-11-18T18:27:29.1275597Z",
+      "modified": "2026-11-18T18:27:29.1275597Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "Preview",
+          "year": 2026,
+          "month": "November"
+        }
+      ]
+    },
+    {
+      "id": "581645",
+      "productCategories": [
+        "AI + machine learning",
+        "Analytics"
+      ],
+      "tags": [
+        "Microsoft Ignite",
+        "Announcement"
+      ],
+      "products": [
+        "Azure Databricks"
+      ],
+      "generalAvailabilityDate": null,
+      "previewAvailabilityDate": null,
+      "privatePreviewAvailabilityDate": null,
+      "title": "Announcing: The new Azure Databricks on Azure Government is now in Beta",
+      "description": "<p>A new Azure Databricks environment is now available in Beta on\nMicrosoft Azure Government. It brings the modern data and AI platform from\nglobal Azure to U.S. public sector agencies and their partners, delivered as a\nfirst-party Azure service.&nbsp;</p><p>The Beta includes Unity Catalog for unified governance across data\nand AI assets, and Databricks SQL with serverless compute for scalable\nanalytics without managing infrastructure. It also includes system tables for\nusage, audit and cost visibility. The Compliance Security Profile is on by\ndefault in every workspace, Azure Private Link is required, and customer data\nstays in the US Gov Virginia and US Gov Arizona regions.&nbsp;</p><p>The Beta is for non-production workloads only and must not be used\nto process Controlled Unclassified Information (CUI) or other regulated data.\nAccess is enabled per subscription.&nbsp;&nbsp;</p><a href=\"https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Flearn.microsoft.com%2Fen-us%2Fazure%2Fdatabricks%2Fsecurity%2Fprivacy%2Fgov-cloud&amp;data=05%7C02%7Cv-mendoncama%40microsoft.com%7Ca6c0812be41147694d3d08df4504a061%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C639305558301880741%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&amp;sdata=ewyWn44v3WHpuzsN15%2BS7i8Ma4VYCBDfT%2BhdAKSjUJw%3D&amp;reserved=0\">Learn\nmore</a>.&nbsp;<br>",
+      "status": null,
+      "created": "2026-11-18T18:01:03.3565183Z",
+      "modified": "2026-11-18T18:01:03.3565183Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "Effective",
+          "year": 2026,
+          "month": "November"
+        }
+      ]
+    },
+    {
+      "id": "581048",
+      "productCategories": [
+        "Management and governance",
+        "Storage"
+      ],
+      "tags": [
+        "Management",
+        "Microsoft Ignite",
+        "Feature"
+      ],
+      "products": [
+        "Azure Backup"
+      ],
+      "generalAvailabilityDate": "2026-11",
+      "previewAvailabilityDate": "2026-04",
+      "privatePreviewAvailabilityDate": null,
+      "title": "Generally Available: Cross-subscription backup for Azure Virtual Machines in Azure Backup",
+      "description": "<p>Azure Backup now supports cross-subscription backup for Azure Virtual Machines, enabling customers to protect VMs using a Recovery Services vault located in a different Azure subscription within the same tenant.</p><p>This capability allows organizations to centralize backup management across multiple subscriptions, simplifying backup administration, improving governance, and reducing the need to maintain separate backup vaults in each subscription. It is particularly valuable for enterprises managing large Azure environments with dedicated subscriptions for backup and security operations.</p><a href=\"https://learn.microsoft.com/en-us/azure/backup/backup-azure-arm-vms-prepare#apply-a-backup-policy\">Learn\nmore</a>.<br>",
+      "status": "Launched",
+      "created": "2026-11-18T18:00:04.9934447Z",
+      "modified": "2026-11-18T18:00:04.9934447Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "Preview",
+          "year": 2026,
+          "month": "April"
+        },
+        {
+          "ring": "General Availability",
+          "year": 2026,
+          "month": "November"
+        }
+      ]
+    },
+    {
+      "id": "579943",
+      "productCategories": [
+        "Databases",
+        "Hybrid + multicloud"
+      ],
+      "tags": [
+        "Microsoft Ignite",
+        "Feature"
+      ],
+      "products": [
+        "Azure SQL Database"
+      ],
+      "generalAvailabilityDate": null,
+      "previewAvailabilityDate": "2026-11",
+      "privatePreviewAvailabilityDate": null,
+      "title": "Public Preview: AI-powered application and database modernization with Modernize CLI",
+      "description": "<p>Modernize CLI brings application and database modernization\ntogether as one connected, agentic journey. It assesses application\narchitecture, dependencies, and cloud readiness while discovering the databases\nthe application relies on and invoking specialized database skills for\ncompatibility, migration readiness, and target recommendations. The combined\ninsights create a coordinated modernization plan spanning application code and\nthe data layer. You can then use GitHub Copilot to remediate the application\nand database changes and validate the workload end to end on Azure,\ntransforming what were traditionally separate modernization efforts into a\nsingle integrated experience.&nbsp;</p><p><a href=\"https://aka.ms/appdbmodernizecli\">Learn more</a>.</p>",
+      "status": "In preview",
+      "created": "2026-11-18T17:58:45.3920431Z",
+      "modified": "2026-11-18T17:58:45.3920431Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "Preview",
+          "year": 2026,
+          "month": "November"
+        }
+      ]
+    },
     {
       "id": "581227",
       "productCategories": [
@@ -50,7 +178,7 @@
       "previewAvailabilityDate": "2026-11",
       "privatePreviewAvailabilityDate": null,
       "title": "Public Preview: Immutable snapshots for Azure Disk Storage ",
-      "description": "Immutable snapshots for Azure Disk Storage are now available in public preview. Immutable snapshots complement Azure Backup immutable vaults. Use vaults for cost-efficient long-term retention, and immutable snapshots for short-term backups that need faster restore. <br><div><br></div><div>Snapshots are read-only after creation, and you can apply an immutability policy to existing snapshots of any Azure disk type to prevent deletion for up to 90 days. While the policy is active, no one can delete the snapshot, regardless of role or permissions. This helps protect your backups from accidental or malicious deletion and supports regulatory data retention requirements. You can still restore disks, copy snapshots to other regions, and perform all other snapshot operations. Choose between two types of immutability policies: <br></div><ol data-editing-info=\"{&quot;orderedStyleType&quot;:1,&quot;unorderedStyleType&quot;:1}\"><li><b>Unlocked policies</b> let authorized users test a policy before locking it. Authorized users can extend, shorten, or remove an unlocked policy.</li><li><b>Locked policies</b> provide compliance-grade protection. They can only be extended. No one, including administrators and Azure, can shorten or remove them, so the snapshot can't be deleted until the retention period ends. Use them to protect backups from ransomware, meet regulatory requirements for short-term backups that need fast restore, and guard against rogue AI agent behavior.</li></ol>There's no additional charge for immutability policies; protected snapshots continue to be billed at standard managed disk snapshot rates until you delete them.&nbsp;<br><p>Learn more:</p><ul type=\"disc\">\n <li><a href=\"https://azure.microsoft.com/pricing/details/managed-disks/\">Pricing\n     page</a></li>\n <li><a href=\"https://aka.ms/ImmutableDiskSnapshots\">Documentation</a></li></ul><br>",
+      "description": "<br>Immutable snapshots for Azure Disk Storage are now available in public preview. You can now apply an immutability policy to snapshots of any Azure disk type to prevent deletion for up to 90 days. While the policy is active, no one can delete the snapshot, regardless of role or permissions. This helps protect backups from ransomware, meet regulatory requirements for short-term backups that need fast restore, and guard against rogue AI agent behavior. &nbsp;Immutable snapshots complement Azure Backup immutable vaults. Use vaults for cost-efficient long-term retention, and immutable snapshots for short-term backups that need faster restore.<br>Choose between two types of immutability policies: <br><ol data-editing-info=\"{&quot;orderedStyleType&quot;:1,&quot;unorderedStyleType&quot;:1}\"><li><b>Unlocked policies</b> let authorized users test a policy before locking it. Authorized users can extend, shorten, or remove an unlocked policy.</li><li><b>Locked policies</b> provide compliance-grade protection. They can only be extended. No one, including administrators and Azure, can shorten or remove them, so the snapshot can't be deleted until the retention period ends.&nbsp;</li></ol>There's no additional charge for immutability policies; protected snapshots continue to be billed at standard managed disk snapshot rates until you delete them.&nbsp;<p>Learn more:</p><ul type=\"disc\"><li><a href=\"https://azure.microsoft.com/pricing/details/managed-disks/\">Pricing page</a></li><li><a href=\"https://aka.ms/ImmutableDiskSnapshots\">Documentation</a></li></ul>",
       "status": "In preview",
       "created": "2026-11-18T00:00:09.0058720Z",
       "modified": "2026-11-18T00:00:09.0058720Z",
