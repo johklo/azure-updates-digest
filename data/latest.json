@@ -1,65 +1,28 @@
 {
-  "generated_at": "2026-11-19T04:01:07.326331+00:00",
-  "window_start": "2026-11-12T04:01:07.326331+00:00",
-  "window_end": "2026-11-19T04:01:07.326331+00:00",
+  "generated_at": "2026-11-20T03:54:18.351055+00:00",
+  "window_start": "2026-11-13T03:54:18.351055+00:00",
+  "window_end": "2026-11-20T03:54:18.351055+00:00",
   "window_days": 7,
-  "fetched_count": 170,
-  "matched_count": 170,
-  "count": 4,
+  "fetched_count": 171,
+  "matched_count": 171,
+  "count": 5,
   "items": [
     {
-      "id": "581604",
-      "productCategories": [
-        "Networking",
-        "Security"
-      ],
-      "tags": [
-        "Features",
-        "Microsoft Ignite",
-        "Security"
-      ],
-      "products": [
-        "Azure Front Door",
-        "Web Application Firewall"
-      ],
-      "generalAvailabilityDate": null,
-      "previewAvailabilityDate": "2026-11",
-      "privatePreviewAvailabilityDate": null,
-      "title": "Public Preview: AI bot ruleset for Azure Front Door Premium WAF",
-      "description": "<p>Announcing the public preview\nof the AI bot ruleset for Azure Web Application Firewall (WAF) on Azure Front\nDoor Premium.&nbsp;</p><p>AI crawlers and agents visit your site for different reasons,\nand you may want to allow some but not others. Robots.txt only works when a bot\nchooses to follow it, and some bots pretend to be a well-known AI crawler. The\nAI bot ruleset identifies AI bots, groups them by purpose, and enforces your\nchoice for each group at the edge.&nbsp;</p><p>With this preview, you can choose an action for each of four\ncategories:&nbsp;</p><ul><li>AI training, for verified\ncrawlers that collect public content to train or fine-tune AI models.&nbsp;</li><li>AI search, for verified\ncrawlers that index content to power AI search, answers, and summaries.&nbsp;</li><li>AI interactive agents, for\nverified agents that fetch pages in real time when a person asks an AI\nassistant.&nbsp;</li><li>Miscellaneous AI agents,\nfor AI bots that can't be verified, including bots that falsely claim to be a\nwell-known AI crawler.&nbsp;</li></ul><p>Microsoft keeps the AI bot\nsignatures up to date, with no ruleset version change needed. Every rule starts\nwith the Log action, so you can review your AI bot traffic in WAF logs and WAF\ninsights before anything is blocked. You can set each category to Allow, Block,\nLog, JS challenge, or CAPTCHA, and configure the ruleset in the Azure portal,\nAzure PowerShell, Azure CLI, or Bicep.&nbsp;</p><p><a href=\"https://learn.microsoft.com/en-us/azure/web-application-firewall/afds/ai-bot-ruleset\">Learn\nmore</a>.</p>",
-      "status": "In preview",
-      "created": "2026-11-18T18:27:29.1275597Z",
-      "modified": "2026-11-18T18:27:29.1275597Z",
-      "locale": null,
-      "availabilities": [
-        {
-          "ring": "Preview",
-          "year": 2026,
-          "month": "November"
-        }
-      ]
-    },
-    {
-      "id": "581645",
-      "productCategories": [
-        "AI + machine learning",
-        "Analytics"
-      ],
+      "id": "580700",
+      "productCategories": [],
       "tags": [
         "Microsoft Ignite",
         "Announcement"
       ],
-      "products": [
-        "Azure Databricks"
-      ],
+      "products": [],
       "generalAvailabilityDate": null,
       "previewAvailabilityDate": null,
       "privatePreviewAvailabilityDate": null,
-      "title": "Announcing: The new Azure Databricks on Azure Government is now in Beta",
-      "description": "<p>A new Azure Databricks environment is now available in Beta on\nMicrosoft Azure Government. It brings the modern data and AI platform from\nglobal Azure to U.S. public sector agencies and their partners, delivered as a\nfirst-party Azure service.&nbsp;</p><p>The Beta includes Unity Catalog for unified governance across data\nand AI assets, and Databricks SQL with serverless compute for scalable\nanalytics without managing infrastructure. It also includes system tables for\nusage, audit and cost visibility. The Compliance Security Profile is on by\ndefault in every workspace, Azure Private Link is required, and customer data\nstays in the US Gov Virginia and US Gov Arizona regions.&nbsp;</p><p>The Beta is for non-production workloads only and must not be used\nto process Controlled Unclassified Information (CUI) or other regulated data.\nAccess is enabled per subscription.&nbsp;&nbsp;</p><a href=\"https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Flearn.microsoft.com%2Fen-us%2Fazure%2Fdatabricks%2Fsecurity%2Fprivacy%2Fgov-cloud&amp;data=05%7C02%7Cv-mendoncama%40microsoft.com%7Ca6c0812be41147694d3d08df4504a061%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C639305558301880741%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&amp;sdata=ewyWn44v3WHpuzsN15%2BS7i8Ma4VYCBDfT%2BhdAKSjUJw%3D&amp;reserved=0\">Learn\nmore</a>.&nbsp;<br>",
+      "title": "Announcing: Multiparty private offers in Microsoft Marketplace expands to Malaysia and Saudi Arabia",
+      "description": "<div style=\"font-family: Arial; font-size: 10pt;\"><span style=\"font-family: &quot;Segoe UI&quot;, &quot;Segoe UI Web (West European)&quot;, &quot;Segoe UI&quot;, -apple-system, BlinkMacSystemFont, Roboto, &quot;Helvetica Neue&quot;, sans-serif; font-size: 14px; color: rgb(0, 0, 0);\">Multiparty private offers give&nbsp;Microsoft&nbsp;partners a way to&nbsp;procure&nbsp;third-party cloud and AI solutions for customers through Marketplace. Software companies can expand into new markets by working with partners that bring established customer relationships, while customers rely on their trusted&nbsp;partners&nbsp;to manage their cloud and AI initiatives.</span></div>",
       "status": null,
-      "created": "2026-11-18T18:01:03.3565183Z",
-      "modified": "2026-11-18T18:01:03.3565183Z",
+      "created": "2026-11-20T00:00:14.3678929Z",
+      "modified": "2026-11-20T00:00:14.3678929Z",
       "locale": null,
       "availabilities": [
         {
@@ -70,34 +33,23 @@
       ]
     },
     {
-      "id": "581048",
-      "productCategories": [
-        "Management and governance",
-        "Storage"
-      ],
+      "id": "581907",
+      "productCategories": [],
       "tags": [
-        "Management",
-        "Microsoft Ignite",
-        "Feature"
+        "Features",
+        "Microsoft Ignite"
       ],
-      "products": [
-        "Azure Backup"
-      ],
+      "products": [],
       "generalAvailabilityDate": "2026-11",
-      "previewAvailabilityDate": "2026-04",
+      "previewAvailabilityDate": null,
       "privatePreviewAvailabilityDate": null,
-      "title": "Generally Available: Cross-subscription backup for Azure Virtual Machines in Azure Backup",
-      "description": "<p>Azure Backup now supports cross-subscription backup for Azure Virtual Machines, enabling customers to protect VMs using a Recovery Services vault located in a different Azure subscription within the same tenant.</p><p>This capability allows organizations to centralize backup management across multiple subscriptions, simplifying backup administration, improving governance, and reducing the need to maintain separate backup vaults in each subscription. It is particularly valuable for enterprises managing large Azure environments with dedicated subscriptions for backup and security operations.</p><a href=\"https://learn.microsoft.com/en-us/azure/backup/backup-azure-arm-vms-prepare#apply-a-backup-policy\">Learn\nmore</a>.<br>",
+      "title": "Generally Available: Soft delete in Azure Compute Gallery ",
+      "description": "<p>Soft delete in Azure Compute Gallery is now generally available, so you can recover image versions that were deleted&nbsp;by accident. You can set a retention period of 7 to 365 days. During retention, you can still deploy from soft-deleted images (API version 2026-03-03). When the retention period ends, a configurable grace period of 7 to 90 days&nbsp;begins. During the grace period, images can no longer be used for deployments but can still be recovered. Soft Delete works with Private, Direct Shared and Community galleries.&nbsp;</p><p><a href=\"https://aka.ms/sigsoftdelete\">Learn more</a>.</p>",
       "status": "Launched",
-      "created": "2026-11-18T18:00:04.9934447Z",
-      "modified": "2026-11-18T18:00:04.9934447Z",
+      "created": "2026-11-19T23:47:55.3863601Z",
+      "modified": "2026-11-19T23:47:55.3863601Z",
       "locale": null,
       "availabilities": [
-        {
-          "ring": "Preview",
-          "year": 2026,
-          "month": "April"
-        },
         {
           "ring": "General Availability",
           "year": 2026,
@@ -106,7 +58,7 @@
       ]
     },
     {
-      "id": "579943",
+      "id": "574587",
       "productCategories": [
         "Databases",
         "Hybrid + multicloud"
@@ -116,16 +68,71 @@
         "Feature"
       ],
       "products": [
-        "Azure SQL Database"
+        "Azure Database for PostgreSQL"
       ],
       "generalAvailabilityDate": null,
       "previewAvailabilityDate": "2026-11",
       "privatePreviewAvailabilityDate": null,
-      "title": "Public Preview: AI-powered application and database modernization with Modernize CLI",
-      "description": "<p>Modernize CLI brings application and database modernization\ntogether as one connected, agentic journey. It assesses application\narchitecture, dependencies, and cloud readiness while discovering the databases\nthe application relies on and invoking specialized database skills for\ncompatibility, migration readiness, and target recommendations. The combined\ninsights create a coordinated modernization plan spanning application code and\nthe data layer. You can then use GitHub Copilot to remediate the application\nand database changes and validate the workload end to end on Azure,\ntransforming what were traditionally separate modernization efforts into a\nsingle integrated experience.&nbsp;</p><p><a href=\"https://aka.ms/appdbmodernizecli\">Learn more</a>.</p>",
+      "title": "Public Preview: PostgreSQL 19 on Azure Database for PostgreSQL  ",
+      "description": "<p>You can now try PostgreSQL 19 in public preview on Azure Database for PostgreSQL – Flexible Server in the East Asia region. With this preview, you can provision new PostgreSQL 19 servers through the Azure portal and Azure CLI, enabling you to test major version upgrades from supported earlier PostgreSQL versions to PostgreSQL 19.&nbsp;</p><p>This release gives you early access&nbsp;to PostgreSQL 19 in a fully managed Azure environment and additional&nbsp;time to validate&nbsp;new deployments and upgrade scenarios before general availability. You can test application compatibility, evaluate workloads, and prepare your PostgreSQL estate for broader adoption of PostgreSQL 19.&nbsp;&nbsp;</p><p><a href=\"https://aka.ms/pg19\" rel=\"noreferrer noopener\">Learn more</a>.</p>",
       "status": "In preview",
-      "created": "2026-11-18T17:58:45.3920431Z",
-      "modified": "2026-11-18T17:58:45.3920431Z",
+      "created": "2026-11-19T23:25:49.6660496Z",
+      "modified": "2026-11-19T23:25:49.6660496Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "Preview",
+          "year": 2026,
+          "month": "November"
+        }
+      ]
+    },
+    {
+      "id": "581254",
+      "productCategories": [],
+      "tags": [
+        "Features",
+        "Microsoft Inspire"
+      ],
+      "products": [],
+      "generalAvailabilityDate": null,
+      "previewAvailabilityDate": "2026-11",
+      "privatePreviewAvailabilityDate": null,
+      "title": "Public Preview: Zone resilience for Azure VMs",
+      "description": "<p>Zone resilience for Azure VMs, now in public preview, lets you recover an eligible zonal VM in another availability zone in the same region, retaining the existing VM resource and configuration.</p><p>ZRS managed disks replicate data synchronously across zones but don't restart an affected VM. Zone resilience reuses supported disks and configuration, with a near-zero recovery point objective (RPO) for data committed to disks.</p><p><strong>Key capabilities:</strong></p><ul><li>Change zone placement without creating a new VM resource</li><li>Recover with existing OS and data disks rather than restoring copies</li><li>Choose the target zone and when recovery starts</li></ul><p>Zone resilience is a customer-initiated recovery option, not automatic failover. Recovery involves downtime and depends on available capacity in the target zone. Enable it while the source zone is healthy, on a standalone zonal VM that uses Premium SSD ZRS or Standard SSD ZRS for the OS disk and every data disk. The preview doesn't support Virtual Machine Scale Sets, On-demand Capacity Reservations, Azure Site Recovery or write-accelerated data disks. It provides in-region recovery and doesn't replace regional disaster recovery or multi-zone high availability designs. Use the preview for evaluation and testing with nonproduction VMs.</p><br>",
+      "status": "In preview",
+      "created": "2026-11-19T20:34:19.2046614Z",
+      "modified": "2026-11-19T20:34:19.2046614Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "Preview",
+          "year": 2026,
+          "month": "November"
+        }
+      ]
+    },
+    {
+      "id": "579579",
+      "productCategories": [
+        "Databases",
+        "Hybrid + multicloud"
+      ],
+      "tags": [
+        "Microsoft Ignite",
+        "Feature"
+      ],
+      "products": [
+        "Azure Database for PostgreSQL"
+      ],
+      "generalAvailabilityDate": null,
+      "previewAvailabilityDate": "2026-11",
+      "privatePreviewAvailabilityDate": null,
+      "title": "Public Preview: Database Agent for Azure Database for PostgreSQL ",
+      "description": "<p>Database Agent helps you detect, understand, and respond to database health and performance issues&nbsp;more quickly in Azure Database&nbsp;for PostgreSQL. It proactively monitors&nbsp;database health to identify&nbsp;issues, brings together database metrics, configuration, workload signals, query plans, and logs to determine&nbsp;the likely root&nbsp;cause, and explains the supporting evidence in clear language.&nbsp;&nbsp;</p><p>Database Agent also provides&nbsp;actionable remediation guidance&nbsp;so you can review the evidence and decide what to do next. Instead of manually correlating telemetry and diagnostic data for each issue, you can spend less time investigating database problems and more time resolving them.&nbsp;&nbsp;</p><p><a href=\"https://aka.ms/databaseagent\" rel=\"noreferrer noopener\">Learn more</a>.&nbsp;</p>",
+      "status": "In preview",
+      "created": "2026-11-19T17:25:28.7060942Z",
+      "modified": "2026-11-19T17:25:28.7060942Z",
       "locale": null,
       "availabilities": [
         {

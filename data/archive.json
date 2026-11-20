@@ -1,7 +1,142 @@
 {
-  "updated_at": "2026-11-19T04:01:07.326331+00:00",
-  "count": 1308,
+  "updated_at": "2026-11-20T03:54:18.351055+00:00",
+  "count": 1313,
   "items": [
+    {
+      "id": "580700",
+      "productCategories": [],
+      "tags": [
+        "Microsoft Ignite",
+        "Announcement"
+      ],
+      "products": [],
+      "generalAvailabilityDate": null,
+      "previewAvailabilityDate": null,
+      "privatePreviewAvailabilityDate": null,
+      "title": "Announcing: Multiparty private offers in Microsoft Marketplace expands to Malaysia and Saudi Arabia",
+      "description": "<div style=\"font-family: Arial; font-size: 10pt;\"><span style=\"font-family: &quot;Segoe UI&quot;, &quot;Segoe UI Web (West European)&quot;, &quot;Segoe UI&quot;, -apple-system, BlinkMacSystemFont, Roboto, &quot;Helvetica Neue&quot;, sans-serif; font-size: 14px; color: rgb(0, 0, 0);\">Multiparty private offers give&nbsp;Microsoft&nbsp;partners a way to&nbsp;procure&nbsp;third-party cloud and AI solutions for customers through Marketplace. Software companies can expand into new markets by working with partners that bring established customer relationships, while customers rely on their trusted&nbsp;partners&nbsp;to manage their cloud and AI initiatives.</span></div>",
+      "status": null,
+      "created": "2026-11-20T00:00:14.3678929Z",
+      "modified": "2026-11-20T00:00:14.3678929Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "Effective",
+          "year": 2026,
+          "month": "November"
+        }
+      ]
+    },
+    {
+      "id": "581907",
+      "productCategories": [],
+      "tags": [
+        "Features",
+        "Microsoft Ignite"
+      ],
+      "products": [],
+      "generalAvailabilityDate": "2026-11",
+      "previewAvailabilityDate": null,
+      "privatePreviewAvailabilityDate": null,
+      "title": "Generally Available: Soft delete in Azure Compute Gallery ",
+      "description": "<p>Soft delete in Azure Compute Gallery is now generally available, so you can recover image versions that were deleted&nbsp;by accident. You can set a retention period of 7 to 365 days. During retention, you can still deploy from soft-deleted images (API version 2026-03-03). When the retention period ends, a configurable grace period of 7 to 90 days&nbsp;begins. During the grace period, images can no longer be used for deployments but can still be recovered. Soft Delete works with Private, Direct Shared and Community galleries.&nbsp;</p><p><a href=\"https://aka.ms/sigsoftdelete\">Learn more</a>.</p>",
+      "status": "Launched",
+      "created": "2026-11-19T23:47:55.3863601Z",
+      "modified": "2026-11-19T23:47:55.3863601Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "General Availability",
+          "year": 2026,
+          "month": "November"
+        }
+      ]
+    },
+    {
+      "id": "574587",
+      "productCategories": [
+        "Databases",
+        "Hybrid + multicloud"
+      ],
+      "tags": [
+        "Microsoft Ignite",
+        "Feature"
+      ],
+      "products": [
+        "Azure Database for PostgreSQL"
+      ],
+      "generalAvailabilityDate": null,
+      "previewAvailabilityDate": "2026-11",
+      "privatePreviewAvailabilityDate": null,
+      "title": "Public Preview: PostgreSQL 19 on Azure Database for PostgreSQL  ",
+      "description": "<p>You can now try PostgreSQL 19 in public preview on Azure Database for PostgreSQL – Flexible Server in the East Asia region. With this preview, you can provision new PostgreSQL 19 servers through the Azure portal and Azure CLI, enabling you to test major version upgrades from supported earlier PostgreSQL versions to PostgreSQL 19.&nbsp;</p><p>This release gives you early access&nbsp;to PostgreSQL 19 in a fully managed Azure environment and additional&nbsp;time to validate&nbsp;new deployments and upgrade scenarios before general availability. You can test application compatibility, evaluate workloads, and prepare your PostgreSQL estate for broader adoption of PostgreSQL 19.&nbsp;&nbsp;</p><p><a href=\"https://aka.ms/pg19\" rel=\"noreferrer noopener\">Learn more</a>.</p>",
+      "status": "In preview",
+      "created": "2026-11-19T23:25:49.6660496Z",
+      "modified": "2026-11-19T23:25:49.6660496Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "Preview",
+          "year": 2026,
+          "month": "November"
+        }
+      ]
+    },
+    {
+      "id": "581254",
+      "productCategories": [],
+      "tags": [
+        "Features",
+        "Microsoft Inspire"
+      ],
+      "products": [],
+      "generalAvailabilityDate": null,
+      "previewAvailabilityDate": "2026-11",
+      "privatePreviewAvailabilityDate": null,
+      "title": "Public Preview: Zone resilience for Azure VMs",
+      "description": "<p>Zone resilience for Azure VMs, now in public preview, lets you recover an eligible zonal VM in another availability zone in the same region, retaining the existing VM resource and configuration.</p><p>ZRS managed disks replicate data synchronously across zones but don't restart an affected VM. Zone resilience reuses supported disks and configuration, with a near-zero recovery point objective (RPO) for data committed to disks.</p><p><strong>Key capabilities:</strong></p><ul><li>Change zone placement without creating a new VM resource</li><li>Recover with existing OS and data disks rather than restoring copies</li><li>Choose the target zone and when recovery starts</li></ul><p>Zone resilience is a customer-initiated recovery option, not automatic failover. Recovery involves downtime and depends on available capacity in the target zone. Enable it while the source zone is healthy, on a standalone zonal VM that uses Premium SSD ZRS or Standard SSD ZRS for the OS disk and every data disk. The preview doesn't support Virtual Machine Scale Sets, On-demand Capacity Reservations, Azure Site Recovery or write-accelerated data disks. It provides in-region recovery and doesn't replace regional disaster recovery or multi-zone high availability designs. Use the preview for evaluation and testing with nonproduction VMs.</p><br>",
+      "status": "In preview",
+      "created": "2026-11-19T20:34:19.2046614Z",
+      "modified": "2026-11-19T20:34:19.2046614Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "Preview",
+          "year": 2026,
+          "month": "November"
+        }
+      ]
+    },
+    {
+      "id": "579579",
+      "productCategories": [
+        "Databases",
+        "Hybrid + multicloud"
+      ],
+      "tags": [
+        "Microsoft Ignite",
+        "Feature"
+      ],
+      "products": [
+        "Azure Database for PostgreSQL"
+      ],
+      "generalAvailabilityDate": null,
+      "previewAvailabilityDate": "2026-11",
+      "privatePreviewAvailabilityDate": null,
+      "title": "Public Preview: Database Agent for Azure Database for PostgreSQL ",
+      "description": "<p>Database Agent helps you detect, understand, and respond to database health and performance issues&nbsp;more quickly in Azure Database&nbsp;for PostgreSQL. It proactively monitors&nbsp;database health to identify&nbsp;issues, brings together database metrics, configuration, workload signals, query plans, and logs to determine&nbsp;the likely root&nbsp;cause, and explains the supporting evidence in clear language.&nbsp;&nbsp;</p><p>Database Agent also provides&nbsp;actionable remediation guidance&nbsp;so you can review the evidence and decide what to do next. Instead of manually correlating telemetry and diagnostic data for each issue, you can spend less time investigating database problems and more time resolving them.&nbsp;&nbsp;</p><p><a href=\"https://aka.ms/databaseagent\" rel=\"noreferrer noopener\">Learn more</a>.&nbsp;</p>",
+      "status": "In preview",
+      "created": "2026-11-19T17:25:28.7060942Z",
+      "modified": "2026-11-19T17:25:28.7060942Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "Preview",
+          "year": 2026,
+          "month": "November"
+        }
+      ]
+    },
     {
       "id": "581604",
       "productCategories": [
