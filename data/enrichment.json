@@ -34228,5 +34228,450 @@
       "중앙 집중식 방화벽 관리를 통해 조직이 광범위한 Azure 네트워크 보안 전략의 일환으로 컨테이너 워크로드 보안을 강화하는 데 도움을 줍니다."
     ],
     "translated_at": "2026-11-21T03:51:17.299227+00:00"
+  },
+  "581333": {
+    "summary": "Foundry IQ introduces Enterprise Knowledge Graph in public preview, enabling extraction and querying of entities and relationships from unstructured content to improve multi-step question answering and disambiguation.",
+    "key_points": [
+      "Extracts entities and relationships from Azure Blob Storage content guided by a user-provided ontology during indexing.",
+      "Supports querying the knowledge graph via knowledge bases or directly with GQL using REST API or SDKs (Python 3.10+, .NET 8+).",
+      "Currently API-only feature with no UI support except via Foundry IQ skills plugin; requires new knowledge bases for entity graph retrieval.",
+      "No additional charge during preview for the entity graph feature itself; costs apply for model token usage."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/search/agentic-knowledge-source-how-to-entity-graph",
+    "doc_title": "Create and query an entity graph - Foundry IQ (Azure AI Search)",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/azure/search/agentic-knowledge-source-how-to-entity-graph"
+    ],
+    "source": "llm",
+    "updated_at": "2026-11-24T06:50:44.195186+00:00",
+    "title_ko": "Public Preview: Foundry IQ의 Enterprise Knowledge Graph",
+    "summary_ko": "Foundry IQ가 Enterprise Knowledge Graph를 Public Preview로 도입하여 비정형 콘텐츠에서 엔터티와 관계를 추출하고 쿼리할 수 있게 하여 다단계 질문 응답 및 중의성 해소를 개선합니다.",
+    "key_points_ko": [
+      "사용자가 제공한 온톨로지를 기반으로 인덱싱 중 Azure Blob Storage 콘텐츠에서 엔터티와 관계를 추출합니다.",
+      "REST API 또는 SDK(Python 3.10+, .NET 8+)를 통해 지식 기반 또는 GQL로 직접 지식 그래프 쿼리를 지원합니다.",
+      "현재 UI 지원 없이 API 전용 기능이며 Foundry IQ skills 플러그인을 통해서만 사용 가능하며, 엔터티 그래프 검색을 위해 새로운 지식 기반이 필요합니다.",
+      "프리뷰 기간 동안 엔터티 그래프 기능 자체에 대한 추가 비용은 없으며, 모델 토큰 사용에 대해서만 비용이 발생합니다."
+    ],
+    "translated_at": "2026-11-24T06:52:16.892375+00:00"
+  },
+  "581338": {
+    "summary": "Microsoft Foundry introduces an updated Guardrails experience in public preview, enabling administrators to enforce runtime safety controls on agents while allowing developers controlled flexibility, improving security and compliance in AI deployments.",
+    "key_points": [
+      "Guardrails now enforce administrator policies by preventing developers from changing policy-managed settings, while still allowing addition of permitted agent-specific controls.",
+      "Policies and guardrails can be reused across multiple agents and models within a project, maintaining backward compatibility with existing guardrails.",
+      "Guardrails can be created, configured, and managed via the Microsoft Foundry portal or REST API, with a guided wizard for adding controls and assigning them to agents or models.",
+      "Certain controls, such as those related to violence, hate, sexual content, and self-harm, can only be edited by overriding rather than deletion, ensuring stricter content filtering for approved Managed Customers."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/foundry/guardrails/how-to-create-guardrails",
+    "doc_title": "How to configure guardrails and controls in Microsoft Foundry - Microsoft Foundry",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/azure/foundry/guardrails/how-to-create-guardrails"
+    ],
+    "source": "llm",
+    "updated_at": "2026-11-24T06:50:49.513861+00:00",
+    "title_ko": "Public Preview: Microsoft Foundry의 업데이트된 Guardrails 경험",
+    "summary_ko": "Microsoft Foundry가 Public Preview로 업데이트된 Guardrails 경험을 도입하여, 관리자가 에이전트에 대한 런타임 안전 제어를 강제하는 동시에 개발자에게는 제한된 유연성을 제공하여 AI 배포 시 보안과 규정 준수를 향상합니다.",
+    "key_points_ko": [
+      "Guardrails는 이제 관리자가 정책으로 관리하는 설정 변경을 개발자가 하지 못하도록 하면서도 허용된 에이전트별 제어 추가는 가능하도록 정책을 강제합니다.",
+      "정책과 guardrails는 프로젝트 내 여러 에이전트와 모델에서 재사용할 수 있으며, 기존 guardrails와의 하위 호환성을 유지합니다.",
+      "Guardrails는 Microsoft Foundry 포털 또는 REST API를 통해 생성, 구성 및 관리할 수 있으며, 제어 추가와 에이전트 또는 모델에 할당하는 과정을 안내하는 마법사가 제공됩니다.",
+      "폭력, 증오, 성적 콘텐츠, 자해 관련 제어와 같은 특정 제어는 삭제가 아닌 오버라이딩으로만 편집할 수 있어, 승인된 Managed Customers에 대해 더 엄격한 콘텐츠 필터링을 보장합니다."
+    ],
+    "translated_at": "2026-11-24T06:52:22.347345+00:00"
+  },
+  "581343": {
+    "summary": "Foundry IQ introduces a public preview of an iterative retrieval model that breaks down complex questions into focused searches, improving answer accuracy by reviewing and refining search results within a configured budget.",
+    "key_points": [
+      "Capability: Uses an iterative retrieval model to perform multiple focused searches and refine results before answering complex questions.",
+      "Availability: Public preview with support for Python, C#, and REST APIs, requiring specific roles and the latest preview client libraries.",
+      "Customer impact: Enables more precise and context-aware search experiences by leveraging agentic query execution and configurable runtime limits.",
+      "Integration: Supports creating and querying synthetic policy indexes with filters and debug options to tailor and troubleshoot search queries."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/search/agentic-retrieval-how-to-use-microsoft-retriever",
+    "doc_title": "Use Microsoft Retriever 1 in Foundry IQ (Azure AI Search) - Foundry IQ (Azure AI Search)",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/azure/search/agentic-retrieval-how-to-use-microsoft-retriever"
+    ],
+    "source": "llm",
+    "updated_at": "2026-11-24T06:50:55.787518+00:00",
+    "title_ko": "Public Preview: Foundry IQ의 IQ Retriever Zero",
+    "summary_ko": "Foundry IQ는 복잡한 질문을 집중 검색으로 분해하는 반복 검색 모델의 Public Preview를 도입하여, 구성된 예산 내에서 검색 결과를 검토하고 개선함으로써 답변 정확도를 향상합니다.",
+    "key_points_ko": [
+      "기능: 반복 검색 모델을 사용하여 여러 차례 집중 검색을 수행하고 결과를 개선한 후 복잡한 질문에 답변합니다.",
+      "가용성: Python, C#, REST API를 지원하는 Public Preview로, 특정 역할과 최신 프리뷰 클라이언트 라이브러리가 필요합니다.",
+      "고객 영향: 에이전트 기반 쿼리 실행과 구성 가능한 런타임 제한을 활용해 보다 정밀하고 상황에 맞는 검색 경험을 제공합니다.",
+      "통합: 필터 및 디버그 옵션을 포함한 합성 정책 인덱스 생성 및 쿼리를 지원하여 검색 쿼리를 맞춤화하고 문제를 해결할 수 있습니다."
+    ],
+    "translated_at": "2026-11-24T06:52:28.941961+00:00"
+  },
+  "581353": {
+    "summary": "Azure Speech in Foundry Tools now offers public preview of HD V3 voices with advanced style and instruction control, enabling more natural and customizable speech synthesis for diverse applications.",
+    "key_points": [
+      "Provides HD V3 voices with style control using natural language descriptions and SSML support for nuanced voice delivery.",
+      "Supports multilingual Dragon HD Omni voices with automatic language detection and word boundary events for precise timing.",
+      "Available in standard Azure and China regions, using the same Speech SDK and REST APIs as non-HD voices.",
+      "Enables advanced parameter tuning (temperature, top_p, top_k) for expressive and emotionally varied speech output."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/ai-services/speech-service/high-definition-voices",
+    "doc_title": "What are neural text to speech HD voices? - Foundry Tools",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/azure/ai-services/speech-service/high-definition-voices"
+    ],
+    "source": "llm",
+    "updated_at": "2026-11-24T06:51:00.955832+00:00",
+    "title_ko": "Public Preview: Foundry Tools의 Azure Speech에서 HD V3 음성에 대한 스타일 및 지시 제어",
+    "summary_ko": "Foundry Tools의 Azure Speech가 HD V3 음성에 대한 스타일 및 지시 제어 기능을 Public Preview로 제공하여, 다양한 애플리케이션에서 보다 자연스럽고 맞춤화된 음성 합성을 가능하게 합니다.",
+    "key_points_ko": [
+      "자연어 설명과 SSML 지원을 활용한 스타일 제어로 세밀한 음성 전달이 가능한 HD V3 음성을 제공합니다.",
+      "자동 언어 감지 및 단어 경계 이벤트를 지원하는 다국어 Dragon HD Omni 음성을 지원하여 정밀한 타이밍을 구현합니다.",
+      "표준 Azure 및 중국 리전에서 사용 가능하며, 비-HD 음성과 동일한 Speech SDK 및 REST API를 사용합니다.",
+      "표현력 있고 감정이 다양한 음성 출력을 위해 온도(temperature), top_p, top_k와 같은 고급 매개변수 조정을 지원합니다."
+    ],
+    "translated_at": "2026-11-24T06:52:34.210667+00:00"
+  },
+  "581358": {
+    "summary": "Microsoft Foundry now offers a public preview of human annotation for agent evaluations, enabling reviewers to add detailed feedback to agent traces to build and curate evaluation datasets with task-specific rubrics, improving agent quality over time.",
+    "key_points": [
+      "Reviewers can add ratings, tags, comments, and expected outputs to agent traces to create detailed evaluation datasets.",
+      "Foundry generates task-specific rubrics for each test case, allowing precise scoring and actionable evaluation results.",
+      "The feature supports iterative agent improvement by comparing evaluation results with human judgments and validating changes against trusted datasets.",
+      "Customers can curate golden datasets for consistent benchmarking and identify quality gaps to enhance agent performance continuously."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/foundry/observability/how-to/human-in-the-loop",
+    "doc_title": "Human in the loop (preview) - Microsoft Foundry",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/azure/foundry/observability/how-to/human-in-the-loop",
+      "https://aka.ms/miq-ignitelaunchblog"
+    ],
+    "source": "llm",
+    "updated_at": "2026-11-24T06:51:06.021685+00:00",
+    "title_ko": "Public Preview: Microsoft Foundry의 에이전트 평가를 위한 인간 주석 기능",
+    "summary_ko": "Microsoft Foundry가 에이전트 평가를 위한 인간 주석 기능의 Public Preview를 제공하여, 리뷰어가 에이전트 트레이스에 상세한 피드백을 추가하고 작업별 루브릭을 활용해 평가 데이터셋을 구축 및 관리함으로써 에이전트 품질을 점진적으로 향상할 수 있습니다.",
+    "key_points_ko": [
+      "리뷰어는 에이전트 트레이스에 평가 점수, 태그, 코멘트, 예상 출력값을 추가하여 상세한 평가 데이터셋을 생성할 수 있습니다.",
+      "Foundry는 각 테스트 케이스에 대해 작업별 루브릭을 생성하여 정밀한 점수 매기기와 실행 가능한 평가 결과를 제공합니다.",
+      "이 기능은 평가 결과를 인간 판단과 비교하고 신뢰할 수 있는 데이터셋을 통해 변경 사항을 검증하여 에이전트의 반복적 개선을 지원합니다.",
+      "고객은 일관된 벤치마킹을 위한 골든 데이터셋을 관리하고 품질 격차를 식별하여 에이전트 성능을 지속적으로 향상할 수 있습니다."
+    ],
+    "translated_at": "2026-11-24T06:52:39.434424+00:00"
+  },
+  "581363": {
+    "summary": "Microsoft Foundry now generally supports Agent Insights, enabling analysis of agent traces to identify recurring issues and optimize agent performance, improving troubleshooting and operational efficiency.",
+    "key_points": [
+      "Agent Insights analyzes traces to surface recurring patterns and group related issues for prioritized investigation and improvement.",
+      "Users can review insights and supporting traces, then use Agent Optimizer to test fixes before updating agents.",
+      "Requires a Foundry project with GPT-5 or newer model, connected Azure Monitor Application Insights, and appropriate RBAC permissions.",
+      "Supports on-demand and scheduled insights scans via the Foundry portal and Python SDK, enhancing automation and operational workflows."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/foundry/observability/how-to/agent-insights",
+    "doc_title": "Find recurring issues with insights - Microsoft Foundry",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/azure/foundry/observability/how-to/agent-insights"
+    ],
+    "source": "llm",
+    "updated_at": "2026-11-24T06:51:11.447292+00:00",
+    "title_ko": "Generally Available: Microsoft Foundry의 Agent Insights",
+    "summary_ko": "Microsoft Foundry가 이제 Agent Insights를 Generally Available 상태로 지원하여 에이전트 추적을 분석하고 반복되는 문제를 식별하며 에이전트 성능을 최적화할 수 있어 문제 해결과 운영 효율성을 향상합니다.",
+    "key_points_ko": [
+      "Agent Insights는 추적을 분석하여 반복되는 패턴을 도출하고 관련 문제를 그룹화하여 우선 순위에 따라 조사 및 개선할 수 있게 합니다.",
+      "사용자는 인사이트와 지원 추적을 검토한 후 Agent Optimizer를 사용해 수정 사항을 테스트하고 에이전트를 업데이트할 수 있습니다.",
+      "GPT-5 이상 모델이 포함된 Foundry 프로젝트, 연결된 Azure Monitor Application Insights, 적절한 RBAC 권한이 필요합니다.",
+      "Foundry 포털과 Python SDK를 통해 온디맨드 및 예약된 인사이트 스캔을 지원하여 자동화 및 운영 워크플로우를 강화합니다."
+    ],
+    "translated_at": "2026-11-24T06:52:43.848049+00:00"
+  },
+  "581368": {
+    "summary": "Foundry IQ now generally supports direct file uploads to managed knowledge sources, simplifying content ingestion without requiring separate storage or indexers.",
+    "key_points": [
+      "Enables direct file upload to a managed knowledge source in Foundry IQ for automatic processing and indexing.",
+      "Removes the need to provision external storage accounts or schedule indexers, streamlining knowledge base creation.",
+      "Supports minimal and standard content extraction modes with specific format and permission requirements.",
+      "Available with detailed SDK, REST API, and authentication guidance to facilitate integration and management."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/search/agentic-knowledge-source-how-to-file",
+    "doc_title": "Create a File Knowledge Source for Agentic Retrieval - Foundry IQ (Azure AI Search)",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/azure/search/agentic-knowledge-source-how-to-file"
+    ],
+    "source": "llm",
+    "updated_at": "2026-11-24T06:51:16.481736+00:00",
+    "title_ko": "Generally Available: Foundry IQ용 파일 지식 소스",
+    "summary_ko": "Foundry IQ가 이제 관리형 지식 소스에 대한 직접 파일 업로드를 Generally Available 상태로 지원하여 별도의 저장소나 인덱서 없이도 콘텐츠 수집을 간소화합니다.",
+    "key_points_ko": [
+      "Foundry IQ에서 관리형 지식 소스로 직접 파일 업로드를 가능하게 하여 자동 처리 및 인덱싱을 지원합니다.",
+      "외부 저장소 계정을 프로비저닝하거나 인덱서 일정을 설정할 필요가 없어 지식 베이스 생성이 간소화됩니다.",
+      "특정 형식 및 권한 요구 사항을 갖춘 최소 및 표준 콘텐츠 추출 모드를 지원합니다.",
+      "통합 및 관리를 용이하게 하는 상세한 SDK, REST API 및 인증 가이드와 함께 제공됩니다."
+    ],
+    "translated_at": "2026-11-24T06:52:48.864879+00:00"
+  },
+  "581378": {
+    "summary": "Microsoft Foundry now supports calling the model router using 'auto' mode without requiring a prior deployment, enabling easier experimentation and development.",
+    "key_points": [
+      "Set model to 'auto' in Responses or Chat Completions requests to use model router without deployment in supported regions.",
+      "Auto mode uses Balanced routing across available models and returns the model name in each response.",
+      "Admins can configure routing mode, models, and content filters or disable Auto per Foundry resource.",
+      "Auto mode has lower rate limits and processes data as Global Standard; production workloads should deploy model router and switch to that deployment."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/foundry/openai/how-to/model-router",
+    "doc_title": "Quickstart: Get started with model router - Microsoft Foundry",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/azure/foundry/openai/how-to/model-router",
+      "https://aka.ms/foundrymodelsignite2026"
+    ],
+    "source": "llm",
+    "updated_at": "2026-11-24T06:51:22.296063+00:00",
+    "title_ko": "Public Preview: Microsoft Foundry에서 배포 없이 모델 라우터 호출하기",
+    "summary_ko": "Microsoft Foundry가 이제 사전 배포 없이 'auto' 모드를 사용해 모델 라우터를 호출하는 기능을 지원하여 실험과 개발을 더욱 쉽게 할 수 있습니다.",
+    "key_points_ko": [
+      "지원되는 지역에서 Responses 또는 Chat Completions 요청 시 모델을 'auto'로 설정하면 배포 없이 모델 라우터를 사용할 수 있습니다.",
+      "Auto 모드는 사용 가능한 모델 간에 Balanced 라우팅을 사용하며 각 응답에 모델 이름을 반환합니다.",
+      "관리자는 Foundry 리소스별로 라우팅 모드, 모델, 콘텐츠 필터를 구성하거나 Auto를 비활성화할 수 있습니다.",
+      "Auto 모드는 더 낮은 속도 제한을 가지며 데이터를 Global Standard로 처리하므로, 프로덕션 워크로드는 모델 라우터를 배포하고 해당 배포로 전환해야 합니다."
+    ],
+    "translated_at": "2026-11-24T06:52:54.109551+00:00"
+  },
+  "581383": {
+    "summary": "Microsoft Foundry's model router now supports the Messages API in public preview, enabling automatic model selection for messages-based applications while maintaining the Anthropic request and response format.",
+    "key_points": [
+      "Messages API requests route exclusively to deployed Claude models within the same Foundry resource, not the full model router pool.",
+      "Users send requests to the /anthropic/v1/messages endpoint with model set to 'auto' or a specific model router deployment name.",
+      "The feature is in public preview, requiring deployment of Claude models as Global Standard deployments and is not recommended for production workloads.",
+      "Supports authentication via API keys or Microsoft Entra ID tokens, with specific header requirements for the Messages API (x-api-key)."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/foundry/openai/how-to/model-router-apis",
+    "doc_title": "Call model router with Responses, Chat Completions, or Messages - Microsoft Foundry",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/azure/foundry/openai/how-to/model-router-apis",
+      "https://aka.ms/foundrymodelsignite2026"
+    ],
+    "source": "llm",
+    "updated_at": "2026-11-24T06:51:27.973218+00:00",
+    "title_ko": "Public Preview: Microsoft Foundry에서 모델 라우터와 함께 Messages API 사용",
+    "summary_ko": "Microsoft Foundry의 모델 라우터가 이제 Messages API를 Public Preview로 지원하여, Anthropic 요청 및 응답 형식을 유지하면서 메시지 기반 애플리케이션에 대해 자동 모델 선택을 가능하게 합니다.",
+    "key_points_ko": [
+      "Messages API 요청은 전체 모델 라우터 풀 대신 동일한 Foundry 리소스 내에 배포된 Claude 모델로만 라우팅됩니다.",
+      "사용자는 model을 'auto' 또는 특정 모델 라우터 배포 이름으로 설정하여 /anthropic/v1/messages 엔드포인트에 요청을 보냅니다.",
+      "이 기능은 Public Preview 상태로, Claude 모델을 Global Standard 배포로 배포해야 하며, 프로덕션 워크로드에는 권장되지 않습니다.",
+      "Messages API에 대해 x-api-key 헤더가 필요한 API 키 또는 Microsoft Entra ID 토큰을 통한 인증을 지원합니다."
+    ],
+    "translated_at": "2026-11-24T06:52:58.749127+00:00"
+  },
+  "581388": {
+    "summary": "Microsoft Foundry's model router now supports using your existing model deployments to serve routed requests, optimizing resource use and improving routing efficiency in public preview.",
+    "key_points": [
+      "Model router prioritizes your provisioned throughput (PTU) OpenAI deployments, then pay-as-you-go deployments, before using router-managed capacity.",
+      "Supports exact model name and version deployment from the supported model pool within the same Foundry resource.",
+      "Routing fees apply in addition to existing PTU or pay-as-you-go usage charges when your deployments serve requests.",
+      "Public preview feature enables cost optimization by leveraging existing capacity while maintaining routing quality and failover capabilities."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/foundry/openai/concepts/model-router-how-it-works",
+    "doc_title": "How model router works in Microsoft Foundry - Microsoft Foundry",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/azure/foundry/openai/concepts/model-router-how-it-works#how-model-router-chooses-capacity",
+      "https://aka.ms/foundrymodelsignite2026"
+    ],
+    "source": "llm",
+    "updated_at": "2026-11-24T06:51:33.541664+00:00",
+    "title_ko": "Public Preview: Microsoft Foundry에서 모델 라우터로 모델 배포 사용하기",
+    "summary_ko": "Microsoft Foundry의 모델 라우터가 이제 기존 모델 배포를 사용하여 라우팅된 요청을 처리할 수 있어, 자원 사용을 최적화하고 라우팅 효율성을 향상시키는 Public Preview 상태입니다.",
+    "key_points_ko": [
+      "모델 라우터는 먼저 프로비저닝된 처리량(PTU) OpenAI 배포를 우선시하고, 그 다음으로 종량제 배포를 사용하며, 마지막으로 라우터 관리 용량을 사용합니다.",
+      "동일한 Foundry 리소스 내에서 지원되는 모델 풀에서 정확한 모델 이름과 버전 배포를 지원합니다.",
+      "배포가 요청을 처리할 때 기존 PTU 또는 종량제 사용 요금 외에 라우팅 요금이 추가로 부과됩니다.",
+      "Public Preview 기능은 기존 용량을 활용하여 비용을 최적화하면서 라우팅 품질과 장애 조치 기능을 유지할 수 있게 합니다."
+    ],
+    "translated_at": "2026-11-24T06:53:04.077602+00:00"
+  },
+  "581393": {
+    "summary": "Microsoft Foundry's model router now generally supports the Responses API protocol, enabling seamless automatic model selection for Responses-based applications without switching to Chat Completions, enhancing flexibility and integration.",
+    "key_points": [
+      "Model router supports Responses API protocol at both resource and project endpoints in general availability.",
+      "Features include streaming, function tools, structured outputs, image input, multi-turn conversations, stored responses, background mode, and built-in tools like web search and code interpreter.",
+      "Setting model to the model router deployment name enables automatic model selection; 'auto' mode (model router without deployment) is in public preview.",
+      "Supports authentication via API key or Microsoft Entra ID with role-based access control, and works with Python and JavaScript SDKs for easy integration."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/foundry/openai/how-to/model-router-apis",
+    "doc_title": "Call model router with Responses, Chat Completions, or Messages - Microsoft Foundry",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/azure/foundry/openai/how-to/model-router-apis",
+      "https://aka.ms/foundrymodelsignite2026"
+    ],
+    "source": "llm",
+    "updated_at": "2026-11-24T06:51:38.256742+00:00",
+    "title_ko": "Generally Available: Microsoft Foundry의 Model router가 이제 Responses API 프로토콜을 지원합니다",
+    "summary_ko": "Microsoft Foundry의 model router가 이제 Responses API 프로토콜을 Generally Available 상태로 지원하여, Responses 기반 애플리케이션에서 Chat Completions로 전환하지 않고도 원활한 자동 모델 선택이 가능해져 유연성과 통합성을 향상합니다.",
+    "key_points_ko": [
+      "Model router가 리소스 및 프로젝트 엔드포인트 모두에서 Responses API 프로토콜을 Generally Available로 지원합니다.",
+      "스트리밍, 함수 도구, 구조화된 출력, 이미지 입력, 다중 대화, 저장된 응답, 백그라운드 모드, 웹 검색 및 코드 인터프리터 같은 내장 도구를 포함한 기능을 제공합니다.",
+      "모델을 model router 배포 이름으로 설정하면 자동 모델 선택이 가능하며, 'auto' 모드(model router 배포 없이)는 Public Preview로 제공됩니다.",
+      "API 키 또는 Microsoft Entra ID를 통한 인증과 역할 기반 액세스 제어를 지원하며, Python 및 JavaScript SDK와 연동되어 손쉬운 통합이 가능합니다."
+    ],
+    "translated_at": "2026-11-24T06:53:09.889161+00:00"
+  },
+  "581398": {
+    "summary": "AI Gateway now supports automatic model selection using Microsoft Foundry's model router to dynamically rank and route requests to the best backend model, improving flexibility and efficiency in multi-model deployments.",
+    "key_points": [
+      "Automatic model selection uses model router to rank models behind an alias per request, combining ranking with alias priorities and weights.",
+      "Supports multiple selection modes: Balanced, Quality, Cost, and two precedence options: Model first and Priorities first.",
+      "Backends can be Foundry, Azure OpenAI, provider-hosted, other clouds (Amazon Bedrock, Google Vertex AI), or self-hosted OpenAI-compatible endpoints.",
+      "Available in all AI Gateway regions with API version 2026-11-01; preview feature with no model router routing fee during preview, but backend usage charges apply."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/foundry/openai/how-to/model-router-ai-gateway",
+    "doc_title": "Use model router with AI Gateway - Microsoft Foundry",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/azure/foundry/openai/how-to/model-router-ai-gateway"
+    ],
+    "source": "llm",
+    "updated_at": "2026-11-24T06:51:43.505529+00:00",
+    "title_ko": "Public Preview: AI Gateway에서 모델 라우터 사용",
+    "summary_ko": "AI Gateway가 이제 Microsoft Foundry의 모델 라우터를 사용한 자동 모델 선택을 지원하여 요청을 최적의 백엔드 모델로 동적으로 순위 매기고 라우팅함으로써 다중 모델 배포에서 유연성과 효율성을 향상합니다.",
+    "key_points_ko": [
+      "자동 모델 선택은 모델 라우터를 사용해 요청별로 별칭 뒤의 모델을 순위 매기며, 순위와 별칭 우선순위 및 가중치를 결합합니다.",
+      "Balanced, Quality, Cost의 여러 선택 모드와 Model first, Priorities first의 두 가지 우선순위 옵션을 지원합니다.",
+      "백엔드는 Foundry, Azure OpenAI, 공급자 호스팅, 다른 클라우드(Amazon Bedrock, Google Vertex AI), 또는 자체 호스팅 OpenAI 호환 엔드포인트일 수 있습니다.",
+      "모든 AI Gateway 지역에서 API 버전 2026-11-01로 제공되며, 프리뷰 기간 동안 모델 라우터 라우팅 요금은 없지만 백엔드 사용 요금은 적용됩니다."
+    ],
+    "translated_at": "2026-11-24T06:53:15.940761+00:00"
+  },
+  "581478": {
+    "summary": "Foundry Toolkit for VS Code now supports deploying hosted agents from customer-managed container registries beyond Azure Container Registry, enabling reuse of approved registries and image pipelines.",
+    "key_points": [
+      "Supports deployment of hosted agents from prebuilt images in any customer-managed container registry, not just Azure Container Registry.",
+      "Users select and retain the registry connection within their Foundry project for consistent redeployment.",
+      "Allows reuse of existing approved registries and image-build pipelines without copying images or rebuilding locally.",
+      "Registry authentication is maintained via the configured service connection; existing deployment methods remain supported."
+    ],
+    "doc_url": "",
+    "doc_title": "",
+    "doc_read": false,
+    "links": [],
+    "source": "llm",
+    "updated_at": "2026-11-24T06:51:47.480976+00:00",
+    "title_ko": "Generally Available: Foundry Toolkit for VS Code에서 자체 컨테이너 레지스트리에서 호스티드 에이전트 배포 지원",
+    "summary_ko": "Foundry Toolkit for VS Code가 이제 Azure Container Registry뿐만 아니라 고객이 관리하는 컨테이너 레지스트리에서 호스티드 에이전트를 배포할 수 있도록 지원하여 승인된 레지스트리와 이미지 파이프라인을 재사용할 수 있습니다.",
+    "key_points_ko": [
+      "Azure Container Registry뿐만 아니라 모든 고객 관리 컨테이너 레지스트리의 사전 구축된 이미지에서 호스티드 에이전트 배포를 지원합니다.",
+      "사용자는 Foundry 프로젝트 내에서 레지스트리 연결을 선택하고 유지하여 일관된 재배포를 보장합니다.",
+      "이미지를 복사하거나 로컬에서 다시 빌드하지 않고 기존 승인된 레지스트리와 이미지 빌드 파이프라인을 재사용할 수 있습니다.",
+      "레지스트리 인증은 구성된 서비스 연결을 통해 유지되며, 기존 배포 방법도 계속 지원됩니다."
+    ],
+    "translated_at": "2026-11-24T06:53:21.498992+00:00"
+  },
+  "582030": {
+    "summary": "Azure Firewall network rules now generally support wildcard domains, simplifying management of dynamic subdomains and enhancing security policy efficiency.",
+    "key_points": [
+      "Allows use of wildcard patterns (e.g., *.contoso.com) in FQDN-based network rules to control outbound traffic.",
+      "Requires DNS proxy enabled for Azure Firewall to resolve and learn IP addresses from DNS responses.",
+      "Currently available in West Central US, East Asia, and UK South regions.",
+      "Helps customers reduce the number of individual FQDN entries and manage access to related domains more efficiently."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/firewall/fqdn-filtering-network-rules",
+    "doc_title": "Azure Firewall FQDN filtering in network rules",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/en-us/azure/firewall/fqdn-filtering-network-rules"
+    ],
+    "source": "llm",
+    "updated_at": "2026-11-24T06:51:52.878076+00:00",
+    "title_ko": "Generally Available: Azure Firewall 네트워크 규칙에서 와일드카드 도메인 지원",
+    "summary_ko": "Azure Firewall 네트워크 규칙이 이제 와일드카드 도메인을 Generally Available 상태로 지원하여 동적 서브도메인 관리를 간소화하고 보안 정책 효율성을 향상합니다.",
+    "key_points_ko": [
+      "FQDN 기반 네트워크 규칙에서 와일드카드 패턴(예: *.contoso.com)을 사용해 아웃바운드 트래픽을 제어할 수 있습니다.",
+      "DNS 응답에서 IP 주소를 확인하고 학습하려면 Azure Firewall에 DNS 프록시가 활성화되어 있어야 합니다.",
+      "현재 West Central US, East Asia, UK South 지역에서 제공됩니다.",
+      "고객이 개별 FQDN 항목 수를 줄이고 관련 도메인에 대한 접근을 보다 효율적으로 관리할 수 있도록 돕습니다."
+    ],
+    "translated_at": "2026-11-24T06:53:25.853619+00:00"
+  },
+  "577474": {
+    "summary": "Azure AI Content Safety is retiring several preview features by April 30, 2027, requiring customers to migrate to supported alternatives to maintain content moderation capabilities.",
+    "key_points": [
+      "Preview features retiring include Analyze Multimodal, Custom categories (rapid) for text and image, connected and disconnected containers for Text and Image, Embedded Content Safety SDK, and Groundedness detection.",
+      "Retirement affects users relying on these specific preview capabilities for detecting and filtering harmful user- and AI-generated content.",
+      "Customers should review recommended alternatives and plan migration before the retirement date to ensure continuous content safety and moderation.",
+      "Azure AI Content Safety continues to provide guardrails and moderation APIs for various scenarios including generative AI prompts, online marketplaces, gaming, social messaging, and media companies."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/ai-services/content-safety/overview",
+    "doc_title": "What is Azure AI Content Safety? - Azure AI services",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/en-us/azure/ai-services/content-safety/overview"
+    ],
+    "source": "llm",
+    "updated_at": "2026-11-24T06:51:57.986735+00:00",
+    "title_ko": "Retirement: Azure AI Content Safety 일부 선택 기능 2027년 4월 30일에 Retirement 예정",
+    "summary_ko": "Azure AI Content Safety는 2027년 4월 30일까지 여러 Preview 기능을 Retirement하며, 고객은 콘텐츠 검열 기능 유지를 위해 지원되는 대안으로 마이그레이션해야 합니다.",
+    "key_points_ko": [
+      "Retirement되는 Preview 기능에는 Analyze Multimodal, 텍스트 및 이미지용 Custom categories (rapid), 텍스트 및 이미지용 연결 및 비연결 컨테이너, Embedded Content Safety SDK, Groundedness detection이 포함됩니다.",
+      "이 Retirement는 유해한 사용자 및 AI 생성 콘텐츠를 탐지하고 필터링하는 특정 Preview 기능에 의존하는 사용자에게 영향을 미칩니다.",
+      "고객은 권장 대안을 검토하고 Retirement 날짜 이전에 마이그레이션 계획을 수립하여 콘텐츠 안전 및 검열을 지속적으로 유지해야 합니다.",
+      "Azure AI Content Safety는 생성 AI 프롬프트, 온라인 마켓플레이스, 게임, 소셜 메시징, 미디어 회사 등 다양한 시나리오에 대한 가드레일 및 검열 API를 계속 제공합니다."
+    ],
+    "translated_at": "2026-11-24T06:53:31.226015+00:00"
+  },
+  "574535": {
+    "summary": "Azure Database for PostgreSQL's enhanced Burstable tier (Basv2) improves performance predictability and burst utilization, enabling more cost-effective steady workloads with automatic scaling for demand spikes.",
+    "key_points": [
+      "Enhanced Burstable tier (Basv2) offers better cost-performance balance by improving burst utilization and performance predictability.",
+      "Supports running steady workloads more economically while automatically scaling to handle demand spikes without manual intervention.",
+      "Available in public preview, allowing customers to test improved burstable compute options in flexible server deployments.",
+      "Helps avoid restarts or scaling events when credits are low, improving workload stability and efficiency."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/postgresql/compute-storage/concepts-compute",
+    "doc_title": "Compute Options - Azure Database for PostgreSQL",
+    "doc_read": true,
+    "links": [
+      "https://aka.ms/Burstable_Performance"
+    ],
+    "source": "llm",
+    "updated_at": "2026-11-24T06:52:06.505213+00:00",
+    "title_ko": "Public Preview: Azure Database for PostgreSQL 향상된 Burstable tier (Basv2)",
+    "summary_ko": "Azure Database for PostgreSQL의 향상된 Burstable tier (Basv2)는 성능 예측 가능성과 버스트 활용도를 개선하여, 수요 급증 시 자동 확장을 통해 보다 비용 효율적인 안정적인 워크로드 운영을 지원합니다.",
+    "key_points_ko": [
+      "향상된 Burstable tier (Basv2)는 버스트 활용도와 성능 예측 가능성을 개선하여 비용 대비 성능 균형을 향상합니다.",
+      "수동 개입 없이 수요 급증에 대응하는 자동 확장 기능으로 안정적인 워크로드를 보다 경제적으로 운영할 수 있습니다.",
+      "Public Preview로 제공되어 고객이 유연한 서버 배포에서 개선된 버스트 컴퓨트 옵션을 테스트할 수 있습니다.",
+      "크레딧이 부족할 때 재시작이나 확장 이벤트를 방지하여 워크로드 안정성과 효율성을 높입니다."
+    ],
+    "translated_at": "2026-11-24T06:53:35.462217+00:00"
+  },
+  "579285": {
+    "summary": "WAF Insights for Azure Front Door is now generally available, providing integrated dashboards to analyze WAF logs and metrics for improved security monitoring and investigation without writing queries.",
+    "key_points": [
+      "Built-in interactive dashboards combine WAF logs and metrics to investigate blocked requests, analyze attack patterns, and identify false positives.",
+      "Available for Azure Front Door Standard and Premium profiles, with managed rule sets supported on Premium tier; also supports Azure Front Door (classic) in log-based views.",
+      "Features Monitor and Investigate tabs for tracking WAF activity and drilling down from rules or URLs to individual requests correlated with access logs.",
+      "Enables customization and extension through Azure Monitor workbooks, requiring diagnostic logs sent to Log Analytics workspace and appropriate permissions."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/web-application-firewall/afds/insights",
+    "doc_title": "Azure Front Door WAF Insights",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/azure/web-application-firewall/afds/insights"
+    ],
+    "source": "llm",
+    "updated_at": "2026-11-24T06:52:10.890023+00:00",
+    "title_ko": "Generally Available: Azure Front Door용 WAF Insights",
+    "summary_ko": "Azure Front Door용 WAF Insights가 이제 Generally Available 상태로 제공되며, 쿼리를 작성하지 않고도 보안 모니터링과 조사를 개선할 수 있도록 WAF 로그와 메트릭을 분석하는 통합 대시보드를 제공합니다.",
+    "key_points_ko": [
+      "내장된 인터랙티브 대시보드는 WAF 로그와 메트릭을 결합하여 차단된 요청을 조사하고, 공격 패턴을 분석하며, 오탐을 식별합니다.",
+      "Azure Front Door Standard 및 Premium 프로필에서 사용할 수 있으며, 관리형 규칙 세트는 Premium 티어에서 지원됩니다; 또한 로그 기반 뷰에서 Azure Front Door (classic)를 지원합니다.",
+      "WAF 활동을 추적하고 규칙 또는 URL에서 액세스 로그와 연관된 개별 요청으로 세부 조사할 수 있는 Monitor 및 Investigate 탭을 제공합니다.",
+      "진단 로그가 Log Analytics 작업 영역으로 전송되고 적절한 권한이 필요하며, Azure Monitor 워크북을 통해 맞춤화 및 확장이 가능합니다."
+    ],
+    "translated_at": "2026-11-24T06:53:40.776103+00:00"
   }
 }
