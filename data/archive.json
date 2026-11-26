@@ -1,7 +1,67 @@
 {
-  "updated_at": "2026-11-25T05:17:38.945282+00:00",
-  "count": 1344,
+  "updated_at": "2026-11-26T04:46:19.849590+00:00",
+  "count": 1346,
   "items": [
+    {
+      "id": "582326",
+      "productCategories": [
+        "Networking"
+      ],
+      "tags": [
+        "Management",
+        "Services",
+        "Feature"
+      ],
+      "products": [
+        "Virtual Network"
+      ],
+      "generalAvailabilityDate": null,
+      "previewAvailabilityDate": "2026-11",
+      "privatePreviewAvailabilityDate": null,
+      "title": "Public Preview: ECMP Nexthop ",
+      "description": "<p>Equal-Cost Multi-Path (ECMP)\nrouting for Azure Virtual Network is now available in public preview, enabling\ncustomers to distribute traffic across multiple network appliances using a\nsingle user-defined route (UDR).&nbsp;</p><p>\nCustomers can configure 2 to 16 next-hop IP addresses per route, scaling\naggregate network throughput beyond individual appliance limits without\nincreasing routing complexity. This capability supports bandwidth-intensive AI\nworkloads, large-scale data platforms, and enterprise hub-and-spoke\narchitectures.&nbsp;</p><a href=\"https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview#equal-cost-multipath-routing-for-user-defined-routes-public-preview\">Learn more</a>.",
+      "status": "In preview",
+      "created": "2026-11-25T23:14:20.6450026Z",
+      "modified": "2026-11-25T23:14:20.6450026Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "Preview",
+          "year": 2026,
+          "month": "November"
+        }
+      ]
+    },
+    {
+      "id": "568586",
+      "productCategories": [
+        "Compute",
+        "Containers",
+        "Internet of Things"
+      ],
+      "tags": [
+        "Retirements"
+      ],
+      "products": [
+        "Azure Functions"
+      ],
+      "generalAvailabilityDate": null,
+      "previewAvailabilityDate": null,
+      "privatePreviewAvailabilityDate": null,
+      "title": "Retirement: Support for Java 8, 11 and 17 in Azure Functions ends on September 1, 2027",
+      "description": "Support for Java 8, 11 and 17 on Azure Functions is ending on September\n1, 2027. Your apps that are hosted on Azure Functions will continue to run, but\nsecurity updates will no longer be available, and we’ll no longer provide\ncustomer service for Java 8, 11 and 17.&nbsp;<b><br></b><b><br></b><b>Required action</b><p>To avoid potential security vulnerabilities, minimize risk\nfor your Azure Functions apps, and take advantage of latest features, <a href=\"https://go.microsoft.com/fwlink/?LinkId=2373703\">follow\nthe steps</a>&nbsp;to upgrade your Function app to Java 25 before September 1, 2027.</p><p><a href=\"https://go.microsoft.com/fwlink/?linkid=2286247\">Learn more</a>.</p>",
+      "status": null,
+      "created": "2026-11-25T21:53:30.4642216Z",
+      "modified": "2026-11-25T21:53:30.4642216Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "Retirement",
+          "year": 2027,
+          "month": "September"
+        }
+      ]
+    },
     {
       "id": "582171",
       "productCategories": [

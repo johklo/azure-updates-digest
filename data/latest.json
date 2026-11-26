@@ -1,242 +1,69 @@
 {
-  "generated_at": "2026-11-25T05:17:38.945282+00:00",
-  "window_start": "2026-11-18T05:17:38.945282+00:00",
-  "window_end": "2026-11-25T05:17:38.945282+00:00",
+  "generated_at": "2026-11-26T04:46:19.849590+00:00",
+  "window_start": "2026-11-19T04:46:19.849590+00:00",
+  "window_end": "2026-11-26T04:46:19.849590+00:00",
   "window_days": 7,
-  "fetched_count": 41,
-  "matched_count": 41,
-  "count": 8,
+  "fetched_count": 39,
+  "matched_count": 39,
+  "count": 2,
   "items": [
     {
-      "id": "582171",
+      "id": "582326",
       "productCategories": [
-        "Management and governance",
-        "Migration"
+        "Networking"
       ],
       "tags": [
         "Management",
+        "Services",
         "Feature"
       ],
       "products": [
-        "Azure Site Recovery"
+        "Virtual Network"
       ],
-      "generalAvailabilityDate": "2026-11",
+      "generalAvailabilityDate": null,
+      "previewAvailabilityDate": "2026-11",
+      "privatePreviewAvailabilityDate": null,
+      "title": "Public Preview: ECMP Nexthop ",
+      "description": "<p>Equal-Cost Multi-Path (ECMP)\nrouting for Azure Virtual Network is now available in public preview, enabling\ncustomers to distribute traffic across multiple network appliances using a\nsingle user-defined route (UDR).&nbsp;</p><p>\nCustomers can configure 2 to 16 next-hop IP addresses per route, scaling\naggregate network throughput beyond individual appliance limits without\nincreasing routing complexity. This capability supports bandwidth-intensive AI\nworkloads, large-scale data platforms, and enterprise hub-and-spoke\narchitectures.&nbsp;</p><a href=\"https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview#equal-cost-multipath-routing-for-user-defined-routes-public-preview\">Learn more</a>.",
+      "status": "In preview",
+      "created": "2026-11-25T23:14:20.6450026Z",
+      "modified": "2026-11-25T23:14:20.6450026Z",
+      "locale": null,
+      "availabilities": [
+        {
+          "ring": "Preview",
+          "year": 2026,
+          "month": "November"
+        }
+      ]
+    },
+    {
+      "id": "568586",
+      "productCategories": [
+        "Compute",
+        "Containers",
+        "Internet of Things"
+      ],
+      "tags": [
+        "Retirements"
+      ],
+      "products": [
+        "Azure Functions"
+      ],
+      "generalAvailabilityDate": null,
       "previewAvailabilityDate": null,
       "privatePreviewAvailabilityDate": null,
-      "title": "Generally Available: Azure Site Recovery support for zonal disaster recovery for Ultra disks",
-      "description": "Azure Site Recovery now supports Zone-to-Zone Disaster\nRecovery (Zonal DR) for Azure Ultra disks. Customers can protect\nperformance-intensive virtual machines across Availability Zones against zonal\ndisruptions by replication and recovering them to another zone within the same\nAzure region. This capability improves resiliency for mission critical\nworkloads and demanding applications requiring ultra disks.&nbsp;<br><br><a href=\"https://learn.microsoft.com/en-us/azure/site-recovery/feature-updates-whats-new#azure-site-recovery-support-for-zonal-disaster-recovery-for-ultra-disks\">Learn more.</a><br>",
-      "status": "Launched",
-      "created": "2026-11-24T17:48:22.7623841Z",
-      "modified": "2026-11-24T17:48:22.7623841Z",
+      "title": "Retirement: Support for Java 8, 11 and 17 in Azure Functions ends on September 1, 2027",
+      "description": "Support for Java 8, 11 and 17 on Azure Functions is ending on September\n1, 2027. Your apps that are hosted on Azure Functions will continue to run, but\nsecurity updates will no longer be available, and we’ll no longer provide\ncustomer service for Java 8, 11 and 17.&nbsp;<b><br></b><b><br></b><b>Required action</b><p>To avoid potential security vulnerabilities, minimize risk\nfor your Azure Functions apps, and take advantage of latest features, <a href=\"https://go.microsoft.com/fwlink/?LinkId=2373703\">follow\nthe steps</a>&nbsp;to upgrade your Function app to Java 25 before September 1, 2027.</p><p><a href=\"https://go.microsoft.com/fwlink/?linkid=2286247\">Learn more</a>.</p>",
+      "status": null,
+      "created": "2026-11-25T21:53:30.4642216Z",
+      "modified": "2026-11-25T21:53:30.4642216Z",
       "locale": null,
       "availabilities": [
         {
-          "ring": "General Availability",
-          "year": 2026,
-          "month": "November"
-        }
-      ]
-    },
-    {
-      "id": "581483",
-      "productCategories": [
-        "AI + machine learning"
-      ],
-      "tags": [
-        "Features",
-        "Microsoft Ignite"
-      ],
-      "products": [
-        "Microsoft Foundry"
-      ],
-      "generalAvailabilityDate": null,
-      "previewAvailabilityDate": "2026-11",
-      "privatePreviewAvailabilityDate": null,
-      "title": "Public Preview: Optimize agents from insights in Foundry Agent Service",
-      "description": "<p>Optimization from insights is in public preview in Foundry Agent Service. In the Foundry portal, start from an eligible insight in a prompt-agent trace to generate and evaluate candidate changes to the agent's instructions and function-calling tool descriptions. This portal workflow supports only prompt agents that do not use the Microsoft Copilot harness; hosted agents use a separate optimization workflow.</p><p>For hosted-agent optimization, use the Microsoft Foundry Toolkit extension for Visual Studio Code or the Azure Developer CLI with the <code>microsoft.foundry</code> extension. Review candidate changes and evaluation results before promoting a new agent version. If an agent's tools can change production systems, use read-only access or isolated test resources during optimization.&nbsp;</p><p>Learn more:</p><p></p><ul data-editing-info=\"{&quot;orderedStyleType&quot;:1,&quot;unorderedStyleType&quot;:1}\"><li><a href=\"https://learn.microsoft.com/en-us/azure/foundry/agents/quickstarts/quickstart-optimize-hosted-agent\">Hosted-agent optimization quickstart</a></li><li><a href=\"https://learn.microsoft.com/azure/foundry/agents/how-to/optimize-agents-from-insights\">Fix insights with agent optimizer (preview)</a></li></ul>",
-      "status": "In preview",
-      "created": "2026-11-24T16:52:07.9692246Z",
-      "modified": "2026-11-24T16:52:07.9692246Z",
-      "locale": null,
-      "availabilities": [
-        {
-          "ring": "Preview",
-          "year": 2026,
-          "month": "November"
-        }
-      ]
-    },
-    {
-      "id": "581498",
-      "productCategories": [
-        "AI + machine learning"
-      ],
-      "tags": [
-        "Features",
-        "Microsoft Ignite"
-      ],
-      "products": [
-        "Microsoft Foundry"
-      ],
-      "generalAvailabilityDate": null,
-      "previewAvailabilityDate": "2026-11",
-      "privatePreviewAvailabilityDate": null,
-      "title": "Public Preview: Govern MCP tools with your own gateway in Microsoft Foundry Agent Service",
-      "description": "<p>In public preview, Microsoft Foundry Agent Service lets you route MCP tool traffic through existing AI Gateway or Azure API Management endpoints that your organization manages. Configure the MCP route in the gateway first, then enter the gateway-routed endpoint in Foundry. Foundry does not automatically register the MCP server or replace direct endpoints.</p><p>The gateway can apply access controls and policies, publish approved tools behind one endpoint, and expose logs and traces for MCP tool calls, policy decisions and backend routing. This gives platform teams centralized control while developers continue to build agents in Foundry.</p><p>The preview is intended for evaluation and is not covered by a production SLA.</p><p><a href=\"https://learn.microsoft.com/azure/foundry/agents/how-to/tools/governance\">Learn more</a>.</p>",
-      "status": "In preview",
-      "created": "2026-11-24T16:50:47.2399577Z",
-      "modified": "2026-11-24T16:50:47.2399577Z",
-      "locale": null,
-      "availabilities": [
-        {
-          "ring": "Preview",
-          "year": 2026,
-          "month": "November"
-        }
-      ]
-    },
-    {
-      "id": "581303",
-      "productCategories": [
-        "AI + machine learning"
-      ],
-      "tags": [
-        "Features",
-        "Microsoft Ignite"
-      ],
-      "products": [
-        "Microsoft Foundry"
-      ],
-      "generalAvailabilityDate": "2026-11",
-      "previewAvailabilityDate": null,
-      "privatePreviewAvailabilityDate": null,
-      "title": "Generally Available: Use Azure Storage permissions in Azure AI Search and Foundry IQ",
-      "description": "<p>Azure AI Search and Foundry IQ in Microsoft Foundry can use supported Azure Storage permissions to control access to search results.</p><p>Once configured, search applications and AI agents return content based on each user's access. This reduces the need to create and maintain separate security filters.</p><p>For Azure Data Lake Storage (ADLS) Gen2, you can use supported access control lists (ACLs), container-level role-based access control (RBAC), or both. For standard Azure Blob Storage, document-level access control supports container-level RBAC, not individual blob ACLs. Set up document-level access control for your indexer or knowledge source.</p><p style=\"font-family: Arial; font-size: 10pt;\"><a href=\"https://learn.microsoft.com/en-us/azure/search/search-document-level-access-overview\">Learn more</a>.</p>",
-      "status": "Launched",
-      "created": "2026-11-24T16:49:39.5528973Z",
-      "modified": "2026-11-24T16:49:39.5528973Z",
-      "locale": null,
-      "availabilities": [
-        {
-          "ring": "General Availability",
-          "year": 2026,
-          "month": "November"
-        }
-      ]
-    },
-    {
-      "id": "581313",
-      "productCategories": [
-        "AI + machine learning"
-      ],
-      "tags": [
-        "Features",
-        "Microsoft Ignite"
-      ],
-      "products": [
-        "Microsoft Foundry"
-      ],
-      "generalAvailabilityDate": null,
-      "previewAvailabilityDate": "2026-11",
-      "privatePreviewAvailabilityDate": null,
-      "title": "Public Preview: Native A2A passthrough for hosted agents in Foundry Agent Service",
-      "description": "<p>Bring your existing Agent2Agent (A2A) agents to Agent Service without a protocol conversion layer.</p><p>Previously, Agent Service converted incoming A2A requests to the Responses protocol. With A2A passthrough, Agent Service forwards native A2A requests directly to your hosted agent container. Your code handles A2A messages and tasks. Agent Service manages the endpoint, authentication, and hosted compute.</p><p>The preview supports incoming A2A v1.0 requests over JSON-RPC. Streaming, push notifications, and authenticated extended agent cards are not available. A2A passthrough handles incoming requests. It does not configure outbound calls to other agents.</p><p><a href=\"https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/host-agent-to-agent-server\">Learn more</a>.</p>",
-      "status": "In preview",
-      "created": "2026-11-24T16:48:25.5455634Z",
-      "modified": "2026-11-24T16:48:25.5455634Z",
-      "locale": null,
-      "availabilities": [
-        {
-          "ring": "Preview",
-          "year": 2026,
-          "month": "November"
-        }
-      ]
-    },
-    {
-      "id": "581318",
-      "productCategories": [
-        "AI + machine learning"
-      ],
-      "tags": [
-        "Features",
-        "Microsoft Ignite"
-      ],
-      "products": [
-        "Microsoft Foundry"
-      ],
-      "generalAvailabilityDate": null,
-      "previewAvailabilityDate": "2026-11",
-      "privatePreviewAvailabilityDate": null,
-      "title": "Public Preview: Azure Developer CLI extension for Azure Document Intelligence and Content Understanding in Foundry Tools",
-      "description": "<p>Within Microsoft Foundry, use <code>azd ai cu</code> commands to analyze documents with Azure Document Intelligence and Content Understanding in Foundry Tools. The extension for Azure Developer CLI (<code>azd</code>) can save analysis results as Markdown or JSON.</p><p>You can start without Python, a language SDK, or an initialized <code>azd</code> project. The <code>prebuilt-layout</code> analyzer extracts text and layout without language or embedding model deployments.</p><p><a href=\"https://learn.microsoft.com/en-us/azure/ai-services/content-understanding/quickstart/use-content-understanding-cli\">Learn more</a>.</p>",
-      "status": "In preview",
-      "created": "2026-11-24T16:45:59.0207335Z",
-      "modified": "2026-11-24T16:45:59.0207335Z",
-      "locale": null,
-      "availabilities": [
-        {
-          "ring": "Preview",
-          "year": 2026,
-          "month": "November"
-        }
-      ]
-    },
-    {
-      "id": "581323",
-      "productCategories": [
-        "AI + machine learning"
-      ],
-      "tags": [
-        "Features",
-        "Microsoft Ignite"
-      ],
-      "products": [
-        "Microsoft Foundry"
-      ],
-      "generalAvailabilityDate": null,
-      "previewAvailabilityDate": "2026-11",
-      "privatePreviewAvailabilityDate": null,
-      "title": "Public Preview: Cost controls for model and agent spending in Microsoft Foundry",
-      "description": "<p>Within Microsoft Foundry, cost controls set a spending or token budget for a Foundry resource or project. When usage reaches a threshold that you set, a cost control sends an alert through Azure Event Grid or blocks new requests.</p><p>You can apply a budget to all usage, or filter it by project, model deployment, agent, or hosted agent session. Budgets reset daily, weekly, or monthly. Cost controls count usage as requests run, so they can act before costs appear in Azure Cost Management.</p><p>During the preview, cost controls support Azure OpenAI model deployments. Spending totals are estimates and aren't reconciled with your Azure bill.</p><p style=\"font-family: Arial; font-size: 10pt;\"><a href=\"https://learn.microsoft.com/azure/foundry/concepts/cost-controls\">Learn more</a>.</p>",
-      "status": "In preview",
-      "created": "2026-11-24T16:43:40.4936477Z",
-      "modified": "2026-11-24T16:43:40.4936477Z",
-      "locale": null,
-      "availabilities": [
-        {
-          "ring": "Preview",
-          "year": 2026,
-          "month": "November"
-        }
-      ]
-    },
-    {
-      "id": "581328",
-      "productCategories": [
-        "AI + machine learning"
-      ],
-      "tags": [
-        "Features",
-        "Microsoft Ignite"
-      ],
-      "products": [
-        "Microsoft Foundry"
-      ],
-      "generalAvailabilityDate": null,
-      "previewAvailabilityDate": "2026-11",
-      "privatePreviewAvailabilityDate": null,
-      "title": "Public Preview: Central governance of hosted-agent outbound domains in Foundry Agent Service",
-      "description": "<p>Administrators can use Azure Policy to govern outbound destinations for hosted agents in Foundry Agent Service.&nbsp;Agent authors configure and attach a compliant egress policy before creating an agent version. The egress policy then controls outbound requests at runtime.</p><p><a href=\"https://learn.microsoft.com/azure/foundry/agents/how-to/govern-hosted-agent-egress-azure-policy\">Learn more</a>.</p>",
-      "status": "In preview",
-      "created": "2026-11-24T16:42:20.1070924Z",
-      "modified": "2026-11-24T16:42:20.1070924Z",
-      "locale": null,
-      "availabilities": [
-        {
-          "ring": "Preview",
-          "year": 2026,
-          "month": "November"
+          "ring": "Retirement",
+          "year": 2027,
+          "month": "September"
         }
       ]
     }

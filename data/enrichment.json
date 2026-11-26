@@ -34882,5 +34882,58 @@
       "이 기능은 엔터프라이즈가 호스티드 에이전트의 네트워크 이그레스 제어를 중앙에서 강제하여 기존 세션을 방해하지 않고 보안 태세를 강화하는 데 도움을 줍니다."
     ],
     "translated_at": "2026-11-25T05:18:54.269517+00:00"
+  },
+  "582326": {
+    "summary": "Azure Virtual Network now supports Equal-Cost Multi-Path (ECMP) routing in public preview, allowing traffic distribution across multiple network appliances via a single user-defined route to enhance throughput and simplify routing.",
+    "key_points": [
+      "Enables configuration of 2 to 16 next-hop IP addresses per user-defined route for load distribution.",
+      "Supports bandwidth-intensive workloads like AI, large-scale data platforms, and hub-and-spoke architectures.",
+      "Available in public preview requiring Microsoft.Network/AllowEcmpInRoute feature registration.",
+      "Helps scale aggregate network throughput beyond individual appliance limits without added routing complexity."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview#equal-cost-multipath-routing-for-user-defined-routes-public-preview",
+    "doc_title": "Azure virtual network traffic routing",
+    "doc_read": true,
+    "links": [
+      "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview#equal-cost-multipath-routing-for-user-defined-routes-public-preview"
+    ],
+    "source": "llm",
+    "updated_at": "2026-11-26T04:46:28.046581+00:00",
+    "title_ko": "Public Preview: ECMP Nexthop",
+    "summary_ko": "Azure Virtual Network가 이제 Public Preview로 Equal-Cost Multi-Path(ECMP) 라우팅을 지원하여, 단일 사용자 정의 경로를 통해 여러 네트워크 어플라이언스에 트래픽을 분산시켜 처리량을 향상하고 라우팅을 간소화합니다.",
+    "key_points_ko": [
+      "사용자 정의 경로당 2개에서 16개의 넥스트홉 IP 주소 구성을 가능하게 하여 부하 분산을 지원합니다.",
+      "AI, 대규모 데이터 플랫폼, 허브 앤 스포크 아키텍처와 같은 대역폭 집약적 워크로드를 지원합니다.",
+      "Microsoft.Network/AllowEcmpInRoute 기능 등록이 필요하며 Public Preview로 제공됩니다.",
+      "추가 라우팅 복잡성 없이 개별 어플라이언스 한계를 넘어 집계 네트워크 처리량 확장에 도움을 줍니다."
+    ],
+    "translated_at": "2026-11-26T04:46:37.045572+00:00"
+  },
+  "568586": {
+    "summary": "Azure Functions will retire support for Java 8, 11, and 17 on September 1, 2027, requiring customers to upgrade to Java 25 to maintain security and support.",
+    "key_points": [
+      "Support for Java 8, 11, and 17 in Azure Functions ends on September 1, 2027; apps will run but without security updates or customer support.",
+      "Customers must upgrade their Function apps to Java 25 before the deadline to avoid security vulnerabilities and access new features.",
+      "Updating involves migrating to the isolated worker model if using in-process, updating dependencies, testing locally, and ensuring runtime version 4.x.",
+      "Microsoft provides detailed guidance on updating language versions, managing dependencies, and using deployment slots to minimize downtime."
+    ],
+    "doc_url": "https://learn.microsoft.com/en-us/azure/azure-functions/update-language-versions?tabs=azure-portal%2Cwindows&pivots=programming-language-java",
+    "doc_title": "Update Language Versions in Azure Functions",
+    "doc_read": true,
+    "links": [
+      "https://go.microsoft.com/fwlink/?LinkId=2373703",
+      "https://go.microsoft.com/fwlink/?linkid=2286247"
+    ],
+    "source": "llm",
+    "updated_at": "2026-11-26T04:46:32.962553+00:00",
+    "title_ko": "Retirement: Azure Functions에서 Java 8, 11 및 17 지원이 2027년 9월 1일 종료됩니다",
+    "summary_ko": "Azure Functions는 2027년 9월 1일에 Java 8, 11 및 17에 대한 지원을 종료하며, 고객은 보안 및 지원 유지를 위해 Java 25로 업그레이드해야 합니다.",
+    "key_points_ko": [
+      "Azure Functions에서 Java 8, 11 및 17 지원이 2027년 9월 1일에 종료되며, 앱은 계속 실행되지만 보안 업데이트나 고객 지원은 제공되지 않습니다.",
+      "고객은 보안 취약점을 방지하고 새로운 기능을 이용하기 위해 마감일 이전에 Function 앱을 Java 25로 업그레이드해야 합니다.",
+      "업데이트는 인프로세스 모델을 사용하는 경우 격리된 워커 모델로 마이그레이션하고, 종속성을 업데이트하며, 로컬에서 테스트하고, 런타임 버전 4.x를 사용하는 것을 포함합니다.",
+      "Microsoft는 언어 버전 업데이트, 종속성 관리, 배포 슬롯 사용을 통한 다운타임 최소화에 관한 자세한 가이드를 제공합니다."
+    ],
+    "translated_at": "2026-11-26T04:46:41.022875+00:00"
   }
 }
